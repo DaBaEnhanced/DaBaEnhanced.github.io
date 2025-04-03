@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This contains various things I've written plus a bunch of stuff done using AI (mostly Claude)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-instagarm_username: clumsy.giba
+instagram_username: clumsy.giba
 github_username:  dabaenhanced
 
 # Build settings
