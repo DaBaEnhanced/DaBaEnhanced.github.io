@@ -28,7 +28,7 @@ instagram_username: clumsy.giba
 github_username:  dabaenhanced
 
 # Build settings
-theme: minima
+theme: hacker
 plugins:
   - jekyll-feed
 
