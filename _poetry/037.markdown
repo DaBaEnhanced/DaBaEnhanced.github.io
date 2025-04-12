@@ -1,0 +1,47 @@
+---
+layout: poetry
+title: "037 - The Executioner"
+date: 2025-04-03 12:03:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/037poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Executioner</h1>
+</div>
+<div style="text-align: center;">
+The nightmare began<br>
+at the end of time<br>
+it pursued me<br>
+and I ran away<br>
+But now it is near,<br>
+and my nightmare will begin.<br>
+It will start to destroy me<br>
+slowly...<br>
+slowly...<br>
+with the remorse<br>
+of those thousands of victims that I caused.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Il Carnefice</h1>
+</div>
+<div style="text-align: center;">
+L’incubo ebbe inizio<br>
+alla fine dei tempi<br>
+mi perseguitò<br>
+e io scappai<br>
+Ma ora è vicino,<br>
+e il mio incubo inizierà.<br>
+Incomincerà a distruggermi<br>
+lentamente...<br>
+lentamente...<br>
+con il rimorso<br>
+di quelle migliaia di vittime che io causai.<br>
+</div>

@@ -1,0 +1,32 @@
+---
+layout: poetry
+title: "031 - Mistress of Death"
+date: 2025-04-03 11:57:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/031poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Mistress of Death</h1>
+</div>
+<div style="text-align: center;">
+A war inside me<br>
+The sun over me<br>
+Regrets behind me<br>
+And You,<br>
+in front of me<br>
+Pale and beautiful<br>
+<br>
+And silence.<br>
+<br>
+In that moment<br>
+no fears,<br>
+no regrets,<br>
+no wrath,<br>
+I was free<br>
+and in peace<br>
+The only sound<br>
+the low hum<br>
+of a slowing heart.<br>
+</div>

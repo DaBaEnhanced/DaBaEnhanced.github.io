@@ -1,0 +1,36 @@
+---
+layout: poetry
+title: "012 - Remember Me"
+date: 2025-04-03 11:38:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/012poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Remember Me</h1>
+</div>
+<div style="text-align: center;">
+Like paper boats<br>
+sailing on desperate seas<br>
+<br>
+Like burning candles<br>
+fighting against the wind<br>
+<br>
+Will you remember me?<br>
+Will you remember me?<br>
+<br>
+As the mist slowly grows<br>
+and memories froze<br>
+<br>
+As the pain gently wither<br>
+and my sanity desperately slither<br>
+<br>
+Will you remember me?<br>
+Will you remember me?<br>
+<br>
+Torn roses and muffled cries<br>
+As the red sun slowly rise,<br>
+<br>
+Remember me, Remember me.<br>
+</div>

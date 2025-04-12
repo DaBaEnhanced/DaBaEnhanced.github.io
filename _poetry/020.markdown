@@ -1,0 +1,49 @@
+---
+layout: poetry
+title: "020 - Mother"
+date: 2025-04-03 11:46:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/020poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Mother</h1>
+</div>
+<div style="text-align: center;">
+Mother,<br>
+let me close my eyes<br>
+and dream of endless skies<br>
+<br>
+Mother,<br>
+let me close my eyes<br>
+and look through the disguise<br>
+<br>
+Look through this false life<br>
+into the abyss of the afterlife<br>
+<br>
+Mother,<br>
+will you guide me<br>
+Through this sorrow land<br>
+<br>
+Mother,<br>
+will you guide me<br>
+Through this last stand<br>
+<br>
+Soothe me and take my hand<br>
+as she reap my life’s last strand<br>
+<br>
+Mother,<br>
+let me rest on your shoulder<br>
+as my soul grows colder<br>
+<br>
+Mother,<br>
+hug me in a bed of flower<br>
+and lay my body in a steel tower<br>
+<br>
+Let me cry, for my time has drawn near<br>
+Oh, Mother, let me cry,<br>
+till my mind is devoid of fear<br>
+For the reaper is finally here<br>
+skinning me, tier after tier<br>
+</div>

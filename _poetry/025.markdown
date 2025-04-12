@@ -1,0 +1,87 @@
+---
+layout: poetry
+title: "025 - Memories"
+date: 2025-04-03 11:51:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/025poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Memories</h1>
+</div>
+<div style="text-align: center;">
+I burn<br>
+My heart burns<br>
+My mind burns<br>
+into coal<br>
+my memories<br>
+transform<br>
+like photographs<br>
+given to flames<br>
+like pages of a book,<br>
+Burned<br>
+Annihilated<br>
+Purified.<br>
+It nauseates me<br>
+the smell of my memories<br>
+the sight of my feelings<br>
+the sizzling of my soul<br>
+amidst all those flames<br>
+destroyed,<br>
+eliminated,<br>
+without pause<br>
+without mercy.<br>
+Thrown away<br>
+like garbage,<br>
+burned<br>
+like weeds<br>
+All this<br>
+lost forever<br>
+like ashes in the wind<br>
+futile<br>
+insignificant<br>
+without importance<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Ricordi</h1>
+</div>
+<div style="text-align: center;">
+Brucio<br>
+Brucia il mio cuore<br>
+Brucia la mia mente<br>
+in carbone<br>
+i miei ricordi<br>
+si trasformano<br>
+come fotografie<br>
+date alle fiamme<br>
+come pagine di un libro,<br>
+Bruciate<br>
+Annientate<br>
+Purificate.<br>
+Mi nausea<br>
+l’odore dei miei ricordi<br>
+la vista dei miei sentimenti<br>
+lo sfrigolio della mia anima<br>
+in mezzo a tutte quelle fiamme<br>
+distrutti,<br>
+eliminati,<br>
+senza sosta<br>
+senza pietà.<br>
+Gettati<br>
+come spazzatura,<br>
+bruciati<br>
+come erbacce<br>
+Tutto questo<br>
+perso per sempre<br>
+come cenere al vento<br>
+futili<br>
+insignificanti<br>
+senza importanza<br>
+</div>

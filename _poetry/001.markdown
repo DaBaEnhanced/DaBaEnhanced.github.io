@@ -1,0 +1,64 @@
+---
+layout: poetry
+title: "001 - Fragments"
+date: 2025-04-03 11:28:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/001poet.png"
+---
+
+<div style="text-align: center;">
+<h1> Fragments</h1>
+</div>
+<div style="text-align: center;">
+Infinite pain presses<br>
+Upon my shoulders<br>
+Bloody roses<br>
+Upon my hands<br>
+<br>
+Take these pages<br>
+Fragments of life,<br>
+Fragments of blood,<br>
+Sweet memories.<br>
+<br>
+Take these thorns<br>
+Fragments of love<br>
+Fragments of ice,<br>
+Bitter regrets<br>
+<br>
+Carry them far away,<br>
+Into oblivion,<br>
+Cast them<br>
+To the bottom of this bottle,<br>
+Sweet poison.<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1> Frammenti</h1>
+</div>
+<div style="text-align: center;">
+Infinito dolore preme<br>
+Sulle mie spalle<br>
+Sanguigne rose<br>
+Sulle mie mani<br>
+<br>
+Prendi queste pagine<br>
+Frammenti di vita,<br>
+Frammenti di sangue,<br>
+dolci ricordi.<br>
+<br>
+Prendi queste spine<br>
+Frammenti d’amore<br>
+Frammenti di ghiaccio,<br>
+amari rimpianti<br>
+<br>
+Portali lontano,<br>
+nell’oblio,<br>
+Gettali<br>
+nel fondo di questa bottiglia,<br>
+dolce veleno.<br>
+</div>

@@ -1,0 +1,50 @@
+---
+layout: poetry
+title: "016 - The Strawman"
+date: 2025-04-03 11:42:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/016poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Strawman</h1>
+</div>
+<div style="text-align: center;">
+Sometimes<br>
+i feel like cold stone<br>
+Sometimes<br>
+i feel like burning fire<br>
+A diamond heart<br>
+compressed hate<br>
+Strong as Lion<br>
+As a Warrior of old<br>
+Fearless,<br>
+<br>
+Sometimes<br>
+I feel constantly numb<br>
+Sometimes<br>
+I feel constantly dull<br>
+A hollow shell,<br>
+empty space.<br>
+Old and powerless,<br>
+loathing<br>
+all that remains<br>
+<br>
+I must scream<br>
+But I have no mouth<br>
+I must see<br>
+But I have no eyes<br>
+I must hear<br>
+But I have no ears<br>
+I must feel<br>
+But I have no soul<br>
+I must love<br>
+But I have no heart<br>
+<br>
+Let me live in darkness<br>
+Let me live in solitude<br>
+Let me live among illusions<br>
+and screeching crows<br>
+Goddamned and sublime.<br>
+</div>

@@ -1,0 +1,40 @@
+---
+layout: poetry
+title: "006 - Vapours of Sin"
+date: 2025-04-03 11:33:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/006poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Vapours of Sin</h1>
+</div>
+<div style="text-align: center;">
+I long<br>
+for human touch,<br>
+a caress,<br>
+a kiss.<br>
+Your Love.<br>
+<br>
+I long<br>
+for happiness,<br>
+a child’s laugh,<br>
+a gift.<br>
+Your Love.<br>
+<br>
+I long<br>
+for hope,<br>
+a better life,<br>
+a dream.<br>
+Your Love.<br>
+<br>
+But now,<br>
+I am alone.<br>
+The shattered pieces of my Soul<br>
+violating,<br>
+A Dark Mistress<br>
+awaiting,<br>
+In vapours of sin<br>
+wallowing.<br>
+</div>

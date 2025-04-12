@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "192 - The 7 Deadly Sins: Gluttony"
+date: 2025-04-03 00:01:47 +0200
+categories: jekyll update
+summary: A depiction
+thumbnail: "../assets/images/192vid.jpg"
+videoid: L4HWcW49xJ8
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    I wanted to create a small series with weird depictions of the 7 deadly sins and show how they are supposedly punished in hell according to Dante's Divine Commedy
+  </p>
+</div>

@@ -1,0 +1,115 @@
+---
+layout: poetry
+title: "028 - Ancient Memories"
+date: 2025-04-03 11:54:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/028poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Ancient Memories</h1>
+</div>
+<div style="text-align: center;">
+Ancient stone arches<br>
+crumbling,<br>
+with green leaves<br>
+luxuriant,<br>
+with knotted branches<br>
+girdled.<br>
+They surround this temple,<br>
+temple of my memories.<br>
+<br>
+Many things time<br>
+has erased.<br>
+Only the sweet perfume of your skin<br>
+I still feel,<br>
+the taste of your lips,<br>
+sweet memory.<br>
+<br>
+That pure white marble altar<br>
+abandoned endures,<br>
+Still by those marvelous flowers<br>
+surrounded,<br>
+Those seductive flowers that you<br>
+naively loved.<br>
+Eternal in time this place<br>
+has remained,<br>
+In its human decay<br>
+immersed,<br>
+In its natural vitality<br>
+survived.<br>
+<br>
+Only your sweet fragrance<br>
+has remained<br>
+where our minds and our bodies<br>
+lasciviously joined.<br>
+Your perfume, now immortal,<br>
+together with this place,<br>
+this carnal temple.<br>
+<br>
+On this unknown hill, alone,<br>
+eternally alive<br>
+in past memories, ancient<br>
+drowning,<br>
+Far from you, my love<br>
+dreaming,<br>
+and your return, my love<br>
+waiting.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Antichi Ricordi</h1>
+</div>
+<div style="text-align: center;">
+Antichi archi di pietra<br>
+fatiscenti,<br>
+di verdi foglie<br>
+rigogliosi,<br>
+di nodosi rami<br>
+cinti.<br>
+Circondano questo tempio,<br>
+tempio dei miei ricordi.<br>
+<br>
+Molte cose il tempo<br>
+ha cancellato<br>
+Solo il dolce profumo della tua pelle<br>
+ancora sento<br>
+il sapore delle tue labbra,<br>
+dolce ricordo.<br>
+<br>
+Quel bianchissimo altare marmoreo<br>
+abbandonato perdura,<br>
+Da quei meravigliosi fiori<br>
+ancora circondato,<br>
+Quei seducenti fiori che tu<br>
+ingenuamente amavi.<br>
+Eterno nel tempo questo posto<br>
+è rimasto,
+Nella sua umana decadenza<br>
+immerso,<br>
+Nella sua vitalità naturale<br>
+sopravvissuto.<br>
+<br>
+Solo il tuo dolce profumo<br>
+è rimasto<br>
+dove le nostre menti e i nostri corpi<br>
+lascivamente si unirono.<br>
+Il tuo profumo, ormai immortale,<br>
+insieme a questo luogo<br>
+questo carnale tempio.<br>
+<br>
+Su questo colle sconosciuto, solo,<br>
+eternamente vivo<br>
+nei ricordi passati, antichi<br>
+affogando<br>
+Lontano da te, amore mio<br>
+sognando<br>
+e il tuo ritorno, amore mio<br>
+aspettando<br>
+</div>

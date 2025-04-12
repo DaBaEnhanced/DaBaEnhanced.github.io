@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "004 - Desert City"
+date: 2025-04-03 00:02:47 +0200
+categories: jekyll update
+summary: Desert city, post apoc wars.
+thumbnail: "../assets/images/004vid.png"
+videoid: K6HvFo8vnoY
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    todo
+  </p>
+</div>

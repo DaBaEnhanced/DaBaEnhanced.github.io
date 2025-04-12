@@ -1,0 +1,70 @@
+---
+layout: poetry
+title: "011 - The Last Companions"
+date: 2025-04-03 11:38:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/011poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Last Companions</h1>
+</div>
+<div style="text-align: center;">
+Where are you,<br>
+Brother?<br>
+Where are you,<br>
+Mother?<br>
+Where are you,<br>
+My love?<br>
+<br>
+Lightning and Thunder<br>
+Echo in the valley<br>
+Desperate screams<br>
+Like animals to the slaughter<br>
+<br>
+Where are you,<br>
+Sister?<br>
+Where are you,<br>
+Father?<br>
+Where are you,<br>
+My love?<br>
+<br>
+Labored breaths<br>
+all that remains to me<br>
+And the Moon and the Stars<br>
+Last companions.<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Gli Ultimi Compagni</h1>
+</div>
+<div style="text-align: center;">
+Dove sei,<br>
+Fratello mio?<br>
+Dove sei,<br>
+Madre mia?<br>
+Dove sei,<br>
+Amore mio?<br>
+<br>
+Lampi e Tuoni<br>
+Echeggiano nella valle<br>
+Urla disperate<br>
+Come animali al macello<br>
+<br>
+Dove sei,<br>
+Sorella mia?<br>
+Dove sei,<br>
+Padre mio?<br>
+Dove sei,<br>
+Amore mio?<br>
+<br>
+Faticosi respiri<br>
+ciò che mi rimane<br>
+E la Luna e le Stelle<br>
+Ultime compagne.<br>
+</div>

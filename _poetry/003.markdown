@@ -1,0 +1,50 @@
+---
+layout: poetry
+title: "003 - My World"
+date: 2025-04-03 11:30:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/003poet.png"
+---
+
+<div style="text-align: center;">
+<h1>My World</h1>
+</div>
+<div style="text-align: center;">
+Where is my world?<br>
+Survived the collapse?<br>
+<br>
+Where is the promised city?<br>
+Survived the war?<br>
+<br>
+Where is my home?<br>
+Survived the fire?<br>
+<br>
+Where is my family?<br>
+Survived the hatred?<br>
+<br>
+Where are you my love?<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Il Mio Mondo</h1>
+</div>
+<div style="text-align: center;">
+Dov’è il mio mondo?<br>
+Sopravvissuto al collasso?<br>
+<br>
+Dov’è la città promessa?<br>
+Sopravvissuta alla guerra?<br>
+<br>
+Dov’è la mia casa?<br>
+Sopravvissuta al fuoco?<br>
+<br>
+Dov’è la mia famiglia?<br>
+Sopravvissuta all’odio?<br>
+<br>
+Dove sei amore mio?<br>
+</div>

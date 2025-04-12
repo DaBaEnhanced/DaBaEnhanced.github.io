@@ -1,0 +1,46 @@
+---
+layout: poetry
+title: "004 - Lemmings"
+date: 2025-04-03 11:31:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/004poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Lemmings</h1>
+</div>
+<div style="text-align: center;">
+They fall<br>
+at the horizon<br>
+By the thousands<br>
+from the cliff<br>
+down<br>
+into the void<br>
+and disappear<br>
+<br>
+They die,<br>
+young lemmings,<br>
+our hopes.<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Lemmings</h1>
+</div>
+<div style="text-align: center;">
+Cadono<br>
+all’orizzonte<br>
+A migliaia<br>
+dalla scogliera<br>
+giù<br>
+nel vuoto<br>
+e spariscono<br>
+<br>
+Muoiono,<br>
+giovani lemmings,<br>
+le nostre speranze.<br>
+</div>

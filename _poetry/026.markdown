@@ -1,0 +1,107 @@
+---
+layout: poetry
+title: "026 - My World"
+date: 2025-04-03 11:52:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/026poet.png"
+---
+
+<div style="text-align: center;">
+<h1>My World</h1>
+</div>
+<div style="text-align: center;">
+I have seen ancient suns<br>
+set upon eternity<br>
+I have perceived divine breath<br>
+blow upon immensity<br>
+I have heard boundless oceans<br>
+pour onto unknown beaches<br>
+<br>
+I have seen stars eternally<br>
+born and die enchained<br>
+I have perceived distant worlds<br>
+lost in the darkest corners<br>
+I have heard the universe's<br>
+pulsating heart<br>
+<br>
+I have seen devourers of worlds<br>
+and unceasing furnaces of stars<br>
+I have perceived echoes of heroes<br>
+eternal in the most remote lands<br>
+I have heard grand myths<br>
+lost in darkness<br>
+<br>
+I have seen cosmic legends<br>
+dazzle the sky like a thousand suns<br>
+I have perceived of distant galaxies<br>
+unceasing slow death<br>
+I have heard colossal explosions<br>
+destroy and build life<br>
+<br>
+I have seen my life<br>
+small amoeba in the infinite<br>
+I have perceived its uselessness<br>
+immersed in the eternal<br>
+its end I have heard<br>
+so distant, so near<br>
+<br>
+I have seen the eternity of the cosmos<br>
+and perceived the nothingness in me<br>
+But nowhere<br>
+have I perceived love<br>
+as uselessly as my heart feels it<br>
+on this small earth<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Il Mio Mondo</h1>
+</div>
+<div style="text-align: center;">
+Ho visto antichi soli<br>
+sull’eternità tramontare<br>
+Ho percepito alito divino<br>
+sull’immensità soffiare<br>
+Ho udito oceani sconfinati<br>
+su sconosciute spiagge riversarsi<br>
+<br>
+Ho visto stelle in eterno<br>
+nascer e morir incatenate<br>
+Ho percepito lontani mondi<br>
+negli angoli più bui sperduti<br>
+Ho udito dell’universo<br>
+il suo cuore pulsante<br>
+<br>
+Ho visto divoratori di mondi<br>
+e incessanti fornaci di stelle<br>
+Ho percepito echi di eroi<br>
+eterni nelle terre più remote<br>
+Ho udito grandiosi miti<br>
+nell’oscurità perduti<br>
+<br>
+Ho visto cosmiche leggende<br>
+abbagliar il cielo come mille soli<br>
+Ho percepito di galassie lontane<br>
+incessante lenta morte<br>
+Ho udito esplosioni colossali<br>
+la vita distruggere e costruire<br>
+<br>
+Ho visto la mia vita<br>
+piccola ameba nell’infinito<br>
+Ho percepito la sua inutilità<br>
+nell’eterno immersa<br>
+la sua fine ho udito<br>
+così lontana, così vicina<br>
+<br>
+Ho visto l’eternità del cosmo<br>
+e percepito il nulla in me<br>
+Ma in nessun luogo<br>
+ho percepito l’amore<br>
+come inutilmente lo sente il mio cuore<br>
+su questa piccola terra<br>
+</div>

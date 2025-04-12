@@ -1,0 +1,40 @@
+---
+layout: poetry
+title: "018 - Sublime Nature"
+date: 2025-04-03 11:44:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/018poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Sublime Nature</h1>
+</div>
+<div style="text-align: center;">
+I am the water<br>
+That slowly<br>
+Memories delete<br>
+<br>
+I am the wind<br>
+That silently<br>
+Pain erode<br>
+<br>
+I am the snow<br>
+That inexorably<br>
+Sorrow obliviate<br>
+<br>
+The singing of birds<br>
+Passionately<br>
+Filling these trees<br>
+<br>
+I am the silence in my soul<br>
+I am the rock in my hearth<br>
+I am the stars above me<br>
+And the earth beneath<br>
+Entangled in an eternal embrace<br>
+<br>
+For a moment<br>
+I am all these things,<br>
+Nature sublime<br>
+On the edge of the abyss.<br>
+</div>

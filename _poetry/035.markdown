@@ -1,0 +1,199 @@
+---
+layout: poetry
+title: "035 - Alive or Dead"
+date: 2025-04-03 12:01:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/035poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Alive or Dead</h1>
+</div>
+<div style="text-align: center;">
+I await<br>
+in this limbo<br>
+in this darkness<br>
+in this silence<br>
+undead<br>
+that's how I feel<br>
+unalive<br>
+<br>
+alive<br>
+dead<br>
+limbo<br>
+dream<br>
+am I awake?<br>
+I await<br>
+who?<br>
+I await<br>
+why?<br>
+<br>
+I am tired<br>
+I hardly write<br>
+silence<br>
+I like it<br>
+darkness<br>
+I'm afraid<br>
+when will you arrive?<br>
+<br>
+alive<br>
+dead<br>
+limbo<br>
+dream<br>
+am I awake?<br>
+I await<br>
+who?<br>
+I await<br>
+why?<br>
+<br>
+I don't remember<br>
+in my head only images<br>
+blurred<br>
+fire and tears<br>
+pain<br>
+so much pain<br>
+why?<br>
+<br>
+alive<br>
+dead<br>
+limbo<br>
+dream<br>
+am I awake?<br>
+I await<br>
+who?<br>
+I await<br>
+why?<br>
+<br>
+Blood<br>
+I hate this smell<br>
+hate<br>
+Strike! Strike! Strike!<br>
+Screams<br>
+that tear my heart<br>
+what happened?<br>
+<br>
+alive<br>
+dead<br>
+limbo<br>
+dream<br>
+am I awake?<br>
+I await<br>
+who?<br>
+I await<br>
+why?<br>
+<br>
+Pain, much pain<br>
+alone, abandoned<br>
+a face<br>
+Where did you go?<br>
+Why?<br>
+I remember<br>
+Love<br>
+<br>
+alive or dead?<br>
+I don't know<br>
+perhaps a dream<br>
+I await<br>
+you<br>
+I await<br>
+because I love you.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Vivo o Morto</h1>
+</div>
+<div style="text-align: center;">
+Io aspetto<br>
+in questo limbo<br>
+in questo buio<br>
+in questo silenzio<br>
+non morto<br>
+ecco come mi sento<br>
+non vivo<br>
+<br>
+vivo<br>
+morto<br>
+limbo<br>
+sogno<br>
+sono sveglio?<br>
+Io aspetto<br>
+chi?<br>
+Io aspetto<br>
+Perché?<br>
+<br>
+Sono stanco<br>
+a fatica scrivo<br>
+silenzio<br>
+mi piace<br>
+buio<br>
+ho paura<br>
+quando arriverai?<br>
+<br>
+vivo<br>
+morto<br>
+limbo<br>
+sogno<br>
+sono sveglio?<br>
+Io aspetto<br>
+chi?<br>
+Io aspetto<br>
+Perché?<br>
+<br>
+Non ricordo<br>
+nella testa solo immagini<br>
+sfocate<br>
+fuoco e lacrime<br>
+dolore<br>
+tanto dolore<br>
+perché?<br>
+<br>
+vivo<br>
+morto<br>
+limbo<br>
+sogno<br>
+sono sveglio?<br>
+Io aspetto<br>
+chi?<br>
+Io aspetto<br>
+Perché?<br>
+<br>
+Sangue<br>
+odio questo odore<br>
+odio<br>
+Colpisci! Colpisci! Colpisci!<br>
+Urla<br>
+che mi lacerano il cuore<br>
+cos’è successo?<br>
+<br>
+vivo<br>
+morto<br>
+limbo<br>
+sogno<br>
+sono sveglio?<br>
+Io aspetto<br>
+chi?<br>
+Io aspetto<br>
+Perché?<br>
+<br>
+Dolore, molto dolore<br>
+solo, abbandonato<br>
+un volto<br>
+Dove sei andata?<br>
+Perché?<br>
+Ricordo<br>
+Amore<br>
+<br>
+vivo o morto?<br>
+Non so<br>
+forse sogno<br>
+io aspetto<br>
+te<br>
+io aspetto<br>
+perché ti amo.<br>
+</div>

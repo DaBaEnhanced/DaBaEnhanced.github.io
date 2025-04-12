@@ -1,0 +1,17 @@
+---
+layout: post
+title: "About the short stories!"
+date: 2025-04-04 23:53:47 +0200
+categories: jekyll update
+excerpt: Somebody told me Claude 3.7 was really good at writing fiction,so, naturally, I had to try.
+---
+
+Somebody, somewhere, told me Claude 3.7 was really good at writing fiction, so, naturally, I had to give it a try.
+
+They also mentioned that it was far better than any competing system at actual role-playing (minus some caveats with dice rolls), and it seems to follow the main rulesets quite well.
+
+Now, I'm not much of a pen-and-paper RPG guy, but I am a huge sci-fi aficionado, with a special love for short stories. So, I tried using Claude to write some by giving it a basic plot and letting it generate the rest.
+
+To be honest, I'm quite impressed. You can read some of the results in the [short]({% link short.markdown %}) section. It's nothing spectacular—I don't think it's capable of replacing our best human writers yet—but it's definitely better than 99% of what passes for good writing nowadays.
+
+And most importantly, I didn’t cherry-pick particularly good results—these are generally the outcomes of just an initial prompt and a few refinements (usually just 2–3 additional prompts).

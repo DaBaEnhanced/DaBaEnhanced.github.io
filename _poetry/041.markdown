@@ -1,0 +1,87 @@
+---
+layout: poetry
+title: "041 - Masks"
+date: 2025-04-03 12:07:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/041poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Masks</h1>
+</div>
+<div style="text-align: center;">
+Masks,<br>
+loom<br>
+over me<br>
+They surround me,<br>
+They suffocate me.<br>
+With their pale faces,<br>
+Their empty eyes,<br>
+lifeless.<br>
+they push me<br>
+they incite me<br>
+they insult me<br>
+They press on<br>
+ever stronger.<br>
+I want to escape<br>
+but I cannot,<br>
+they surround me<br>
+empty faces<br>
+expressionless<br>
+smiling<br>
+fake.<br>
+They want to devour me<br>
+erase me.<br>
+I cannot move<br>
+go away<br>
+hide from them.<br>
+I am afraid<br>
+Go away!<br>
+Leave me alone,<br>
+in the dark,<br>
+in oblivion,<br>
+alone.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Maschere</h1>
+</div>
+<div style="text-align: center;">
+Maschere,<br>
+incombono<br>
+su di me<br>
+Mi circondano,<br>
+Mi soffocano.<br>
+Con i loro visi pallidi,<br>
+I loro occhi vuoti,<br>
+spenti.<br>
+mi spingono<br>
+mi incitano<br>
+mi insultano<br>
+Incalzano<br>
+sempre più forte.<br>
+Vorrei scappare<br>
+ma non posso,<br>
+mi circondano<br>
+volti vuoti<br>
+inespressivi<br>
+sorridenti<br>
+finti.<br>
+Vogliono divorarmi<br>
+cancellarmi.<br>
+Non posso muovermi<br>
+andar via<br>
+nascondermi da loro.<br>
+Ho paura<br>
+Andate via!<br>
+Lasciatemi solo,<br>
+nel buio,<br>
+nell’oblio,<br>
+solo.<br>
+</div>

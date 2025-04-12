@@ -1,0 +1,58 @@
+---
+layout: poetry
+title: "007 - Death"
+date: 2025-04-03 11:34:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/007poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Death</h1>
+</div>
+<div style="text-align: center;">
+Who Are You?<br>
+Indistinct shadow<br>
+that follows my every step.<br>
+<br>
+Who are you?<br>
+You who suffocate<br>
+my every thought<br>
+<br>
+Who are you?<br>
+You who hurt me<br>
+every moment<br>
+<br>
+Who are you?<br>
+Cursed spirit<br>
+that distances me from the world<br>
+<br>
+Who are you my love?<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Morte</h1>
+</div>
+<div style="text-align: center;">
+Chi sei?<br>
+Ombra indistinta<br>
+che seguo ad ogni passo.<br>
+<br>
+Chi sei?<br>
+Tu che soffochi<br>
+ogni mio pensiero<br>
+<br>
+Chi sei?<br>
+Tu che mi fai male<br>
+ogni istante<br>
+<br>
+Chi sei?<br>
+Spirito maledetto<br>
+che mi allontani dal mondo<br>
+<br>
+Chi sei amore mio?<br>
+</div>

@@ -1,0 +1,61 @@
+---
+layout: poetry
+title: "022 - Dream Hunters"
+date: 2025-04-03 11:48:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/022poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Dream Hunters</h1>
+</div>
+<div style="text-align: center;">
+Dreams not shattered<br>
+but gnawed away<br>
+piece by piece.<br>
+By giant rats skinned<br>
+men who feed on dreams.<br>
+Disguised with red ties<br>
+eyes glinting in the dark.<br>
+White and well-groomed,<br>
+merciless sewer dwellers.<br>
+In flaming crystal palaces<br>
+they devour our dreams<br>
+without pause<br>
+without rest<br>
+without end<br>
+they eat, they tear apart<br>
+our dreams no longer shattered<br>
+but gnawed away<br>
+piece by piece.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Cacciatori di Sogni</h1>
+</div>
+<div style="text-align: center;">
+Sogni non infranti<br>
+ma rosicchiati<br>
+pezzo dopo pezzo.<br>
+Da ratti giganti scorticati<br>
+uomini che si cibano di sogni.<br>
+Con rosse cravatte travestiti<br>
+occhi nel buio scintillanti.<br>
+Bianchi e pettinati,<br>
+di fogne abitatori spietati.<br>
+In fiammanti palazzi di cristallo<br>
+i nostri sogni fagocitano<br>
+senza sosta<br>
+senza riposo<br>
+senza fine<br>
+mangiano, sbranano<br>
+i nostri sogni non più infranti<br>
+ma rosicchiati<br>
+pezzo dopo pezzo.<br>
+</div>

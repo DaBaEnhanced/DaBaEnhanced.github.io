@@ -1,0 +1,76 @@
+---
+layout: poetry
+title: "010 - Faces in the Darkness"
+date: 2025-04-03 11:37:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/010poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Faces in the Darkness</h1>
+</div>
+<div style="text-align: center;">
+Who are these people<br>
+that crowd the darkness,<br>
+my subconscious.<br>
+In the shadow of my anguish<br>
+here I glimpse Giulia,<br>
+smiling<br>
+in her last chemical pleasure.<br>
+There I glimpse Marie,<br>
+sad and dark, sneering<br>
+at the bastard fate that divided us.<br>
+Thousands of unknown faces<br>
+Screech in the dark,<br>
+Scream,<br>
+Experience pleasure.<br>
+And I, sleepwalking, wander among them,<br>
+Memories blurred by time.<br>
+Sweet memories turned stale<br>
+Bitter regrets turned bland<br>
+Ancient grudges turned dull.<br>
+My existence drags on<br>
+Surrounded by these shadows,<br>
+Aging without passion<br>
+Forgetting the colors of the past<br>
+Forgetting the sounds of the past<br>
+And everything turning gray.<br>
+Until the end of my path.<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Volti nell’ Oscurità</h1>
+</div>
+<div style="text-align: center;">
+Chi sono queste persone<br>
+che affollano l’oscurità,<br>
+il mio subconscio.<br>
+All’ombra delle mie angosce<br>
+qui intravedo Giulia,<br>
+sorridente<br>
+nel suo ultimo chimico piacere.<br>
+La intravedo Marie,<br>
+triste e oscura ghignando<br>
+al destino bastardo che ci ha diviso.<br>
+Migliaia di volti sconosciuti<br>
+Stridono nel buio,<br>
+Urlano,<br>
+Provano piacere.<br>
+E io sonnambulo vago tra di loro,<br>
+Memorie offuscate dal tempo.<br>
+Dolci ricordi divenuti stantii<br>
+Amari rimpianti divenuti insipidi<br>
+Antichi rancori divenuti scialbi.<br>
+La mia esistenza si trascina<br>
+Da queste ombre circondata,<br>
+Senza passione invecchiando<br>
+Dimentico dei colori di un tempo<br>
+Dimentico dei suoni di un tempo<br>
+E tutto in grigio divenendo.<br>
+Fino alla fine del mio sentiero.<br>
+</div>

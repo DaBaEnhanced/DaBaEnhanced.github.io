@@ -1,0 +1,48 @@
+---
+layout: shorts
+title: "015 - The Cold Equations"
+date: 2025-04-03 11:40:47 +0200
+categories: jekyll update
+summary: Hard scifi
+thumbnail: "../assets/images/015short.png"
+---
+
+Captain Reza Kazemi tracked the enemy vessel on his tactical display, its trajectory a perfect hyperbola around the gas giant Epsilon Eridani b. His own ship, the UES Daedalus, maintained a higher orbit, giving them the energy advantage—for now.<br>
+_"Time to intercept?"_ he asked.<br>
+Lieutenant Shah responded immediately. _"Seven minutes, Captain. They're burning hard to match our orbital plane."_<br>
+Reza nodded. The enemy captain was good—conserving reaction mass while using the planet's gravity to assist their maneuver. A classic Hohmann transfer to intercept.<br>
+_"Prepare kinetic packages. Plot a burn to increase our orbital velocity by forty meters per second in three minutes."_<br>
+The bridge crew worked in silent efficiency, the only sounds the soft click of controls and the ever-present hum of the reactor. There were no dramatic explosions in vacuum, no thunderous roars of engines—just the cold, unforgiving physics of orbital mechanics.<br>
+When the burn began, Reza felt only the gentlest push against his crash couch. The acceleration was minimal, but enough. Their orbit expanded slightly, changing the intercept calculations by crucial seconds.<br>
+_"Enemy vessel adjusting,"_ called out Shah. _"They're burning lateral to compensate."_<br>
+Reza smiled grimly. Every correction burned precious reaction mass. In space, fuel was life.<br>
+_"Deploy first kinetic package on my mark,"_ he ordered. _"Set proximity trigger, ten-meter dispersal."_<br>
+The kinetic packages were simple—tungsten rods with minimal guidance systems. No explosives needed when relative velocity provided the killing energy.<br>
+_"Deployed,"_ confirmed the weapons officer.<br>
+On the display, a cloud of tiny dots separated from the Daedalus, their trajectories spreading slightly as they hurtled toward the calculated intercept point. Not aiming for the enemy ship directly—that would be too easy to evade—but for where it would be.<br>
+The enemy recognized the threat. Their engines flared brightly as they executed an emergency vector change, burning precious fuel to avoid the incoming projectiles.<br>
+Most of the kinetic package missed. But not all.<br>
+_"Two impacts registered,"_ reported Shah. _"Minor damage to their forward section."_<br>
+Reza nodded. _"Prepare for their counter—"_<br>
+The warning came too late. The enemy had launched their own attack—not kinetics, but a focused microwave array that suddenly bathed the Daedalus in electromagnetic radiation.<br>
+_"Comms down!"_ shouted the communications officer. _"Navigation systems compromised!"_<br>
+Without hesitation, Reza ordered, _"Execute emergency protocol Delta. Vent atmosphere from sectors three through seven."_<br>
+The controlled decompressions created thrust, pushing the Daedalus into a tumble that took them momentarily out of the enemy's targeting solution. The ship groaned under the structural stress.<br>
+_"Status of auxiliary navigation?"_<br>
+_"Online, Captain. Recalculating trajectory."_<br>
+Reza studied the new orbital projections. The tumble had cost them, placing them in a deteriorating orbit. He had one card left to play.<br>
+_"Arm the remaining kinetic packages. All of them."_<br>
+Shah looked at him. _"All, sir?"_<br>
+_"All. Set for maximum dispersal. We're going to fill their path with so much debris they can't possibly evade it all."_<br>
+As the weapons officer carried out the command, Reza felt the ship shudder again. Another hit.<br>
+_"Hull breach in engineering! Reactor containment compromised!"_<br>
+This was it, then. _"Launch packages, now!"_<br>
+The Daedalus released its entire remaining arsenal, a deadly cloud expanding outward. On the tactical display, Reza watched as the enemy ship tried to maneuver, burning furiously to escape the approaching swarm.<br>
+They almost made it.<br>
+Almost.<br>
+The impacts registered as blinking lights on the display—then nothing as the enemy vessel lost power. But their victory was short-lived. The Daedalus's reactor containment was failing, its orbit decaying.<br>
+_"Abandon ship,"_ ordered Reza calmly. _"All personnel to escape pods."_<br>
+He stayed behind, ensuring his crew made it to safety. When the final structural failure came, it was swift. The hull split around him, atmosphere venting violently into space. His pressure suit deployed automatically, but it was punctured in multiple places.<br>
+Reza found himself floating free, tumbling slowly away from the fragmenting remains of his ship. The stars wheeled around him in perfect silence as his oxygen depleted.<br>
+In his final moments, as the cold of space began to penetrate his damaged suit, Reza's thoughts weren't of glory or victory.<br> They were of physics—the beautiful, implacable equations that governed all their lives and deaths out here. The orbital mechanics that brought them to this point had been set in motion days ago, like a cosmic game of chess where the end was determined long before the final move.<br>
+His last view was of the gas giant below, massive and indifferent, as his ship and the enemy vessel, now just scattered debris, continued their inevitable fall toward its swirling clouds—following their prescribed orbits to the end.<br>

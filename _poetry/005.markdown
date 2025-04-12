@@ -1,0 +1,50 @@
+---
+layout: poetry
+title: "005 - Darkness"
+date: 2025-04-03 11:32:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/005poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Darkness</h1>
+</div>
+<div style="text-align: center;">
+I want to lose myself<br>
+in that black<br>
+fog<br>
+in that dark<br>
+sea<br>
+Far away<br>
+from myself<br>
+from everything<br>
+Hidden<br>
+in the depths<br>
+my soul<br>
+my mind<br>
+finally free<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Buio</h1>
+</div>
+<div style="text-align: center;">
+Voglio perdermi<br>
+in quella nebbia<br>
+nera<br>
+in quel mare<br>
+oscuro<br>
+Lontano<br>
+da me<br>
+da tutto<br>
+Nascosta<br>
+nel profondo<br>
+la mia anima<br>
+la mia mente<br>
+finalmente libera<br>
+</div>

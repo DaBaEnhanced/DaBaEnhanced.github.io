@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "003 - Beyond Reality"
+date: 2025-04-03 00:01:47 +0200
+categories: jekyll update
+summary: From galaxy and stars to beyond atoms.
+thumbnail: "../assets/images/003vid.jpg"
+videoid: NogHFrtzH_c
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    The main idea here was to create a video showing the universe from galaxy and stars to beyond atoms mixing various styles.
+  </p>
+</div>

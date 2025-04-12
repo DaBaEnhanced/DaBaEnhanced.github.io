@@ -1,0 +1,112 @@
+---
+layout: poetry
+title: "030 - The Oblivion of the Spirit"
+date: 2025-04-03 11:56:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/030poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Oblivion of the Spirit</h1>
+</div>
+<div style="text-align: center;">
+In chains<br>
+bound to something heavy<br>
+extremely heavy<br>
+that drags me toward the bottom<br>
+in this oily sea<br>
+turbid<br>
+I cannot breathe<br>
+I perceive the pressure<br>
+of all that looms above me<br>
+of all that pushes me<br>
+ever further down<br>
+ever lower<br>
+I am drowning<br>
+my lungs<br>
+are filling<br>
+with this mud<br>
+black<br>
+putrid<br>
+it seeps into my veins<br>
+enters my body<br>
+my mind<br>
+violently erupting<br>
+unstoppable<br>
+it infects my blood<br>
+burns my heart<br>
+burns my mind<br>
+annihilates my self<br>
+only to exhaust itself<br>
+<br>
+once they have disappeared<br>
+<br>
+<br>
+my feelings<br>
+<br>
+<br>
+<br>
+my thoughts<br>
+<br>
+<br>
+<br>
+<br>
+my emotions<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+my memories<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>L’Oblio dello Spirito</h1>
+</div>
+<div style="text-align: center;">
+In catene<br>
+legato a qualcosa di pesante<br>
+pesantissimo<br>
+che mi trascina verso il fondo<br>
+in questo mare oleoso<br>
+torbido<br>
+Mi manca il respiro<br>
+percepisco la pressione<br>
+di tutto ciò che mi sovrasta<br>
+di tutto ciòo che mi spinge<br>
+sempre più giùu<br>
+sempre più in basso<br>
+sto affogando<br>
+i miei polmoni<br>
+si stanno riempiendo<br>
+di questo fango<br>
+nero<br>
+putrido<br>
+si insinua nelle mie vene<br>
+entra nel mio corpo<br>
+nella mia mente<br>
+irrompendo violentemente<br>
+inarrestabile<br>
+infetta il mio sangue<br>
+brucia il mio cuore<br>
+brucia la mia mente<br>
+annienta il mio io<br>
+per poi esaurirsi<br>
+<br>
+una volta scomparsi<br>
+<br>
+<br>
+i miei sentimenti<br>
+<br><br><br>
+i miei pensieri<br>
+<br><br><br><br>
+le mie emozioni<br>
+<br><br><br><br><br>
+i miei ricordi<br>
+</div>

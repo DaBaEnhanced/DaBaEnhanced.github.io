@@ -1,0 +1,21 @@
+---
+layout: poetry
+title: "013 - The Button of Death"
+date: 2025-04-03 11:39:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/013poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Button of Death</h1>
+</div>
+<div style="text-align: center;">
+The war last I felt,<br>
+was a cold breeze.<br>
+I felt it enter my veins.<br>
+The breeze pushed me,<br>
+pushed me to do so.<br>
+I pressed the button<br>
+and brought death.<br>
+</div>

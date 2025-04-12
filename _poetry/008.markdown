@@ -1,0 +1,32 @@
+---
+layout: poetry
+title: "008 - Wounds"
+date: 2025-04-03 11:35:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/008poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Wounds</h1>
+</div>
+<div style="text-align: center;">
+In this limbo, awaiting.<br>
+In this darkness, fearing.<br>
+In this silence, shouting.<br>
+Undead and Unliving,<br>
+maybe dreaming.<br>
+<br>
+Where the river of tears wane.<br>
+Where the sea of sorrow crashed<br>
+on the sullen shores of my pain,<br>
+She awaits me, to my remorses latched.<br>
+<br>
+Don’t stop now, whore.<br>
+Keep punching. Keep beating.<br>
+Till everything is sore<br>
+Till every piece of my heart’s bleeding.<br>
+<br>
+As in Life, so in Death,<br>
+we will be one, again.<br>
+</div>

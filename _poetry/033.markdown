@@ -1,0 +1,63 @@
+---
+layout: poetry
+title: "033 - Small Love Poem"
+date: 2025-04-03 11:59:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/033poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Small Love Poem</h1>
+</div>
+<div style="text-align: center;">
+I feel cold on this summer night<br>
+Apprehension in the air, heart racing<br>
+The sky shines with bright stars<br>
+And the Milky Way encircles us, Me and You<br>
+<br>
+While our cruel time flows<br>
+White clouds flee across the sky<br>
+Slender fireflies of passion ignite<br>
+Only to die to the rhythm of our sighs<br>
+<br>
+And the moon slowly moves across the sky<br>
+And we are here, kissed by its rays<br>
+Lulled by the sound of wind through branches<br>
+Our breaths united, eternal moment<br>
+<br>
+In my mind a storm rages<br>
+Words sounds images memories<br>
+Above all, one light becomes more distinct<br>
+Above all, of one thing I am certain, I Love You.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Piccola Poesia d’Amore</h1>
+</div>
+<div style="text-align: center;">
+Sento freddo in questa notte estiva<br>
+Apprensione nell’aria, batticuore<br>
+Il cielo risplende di chiare stelle<br>
+E la via lattea ci cinge, Me e Te<br>
+<br>
+Mentre il nostro tempo crudele scorre<br>
+Bianche nuvole nel cielo fuggono<br>
+Esili lucciole d’ardor s’accendono<br>
+Per poi morire al ritmo dei nostri sospiri<br>
+<br>
+E la luna adagio nel ciel si sposta<br>
+E noi siam qui, dai suoi raggi baciati<br>
+Dal rumor del vento tra i rami cullati<br>
+i nostri respiri uniti, eterno istante<br>
+<br>
+Nella mia mente infuria tempesta<br>
+Parole suoni immagini ricordi<br>
+Su tutto una luce si fa più distinta<br>
+Su tutto d’una sol cosa son sicuro, Ti Amo.<br>
+</div>

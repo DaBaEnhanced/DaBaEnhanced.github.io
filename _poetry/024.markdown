@@ -1,0 +1,95 @@
+---
+layout: poetry
+title: "024 - My Condemnation"
+date: 2025-04-03 11:50:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/024poet.png"
+---
+
+<div style="text-align: center;">
+<h1>My Condemnation</h1>
+</div>
+<div style="text-align: center;">
+Far away time runs<br>
+quickly abandons me<br>
+like on this beach<br>
+the sand between fingers<br>
+Quickly, impatiently<br>
+my life flows<br>
+drained from the world into<br>
+the underground, stolen<br>
+<br>
+Empty exhausted inert<br>
+my miserable remains<br>
+this is what's left<br>
+nothing but a body<br>
+flesh without spirit<br>
+From the world shriveled<br>
+from that world out there,<br>
+repellent prison<br>
+<br>
+Without delay to escape<br>
+I want from this place<br>
+from all this chaos<br>
+from all this spite<br>
+from all this hypocrisy<br>
+to the highest mountains<br>
+hostile and impregnable<br>
+alone and happy, alive<br>
+<br>
+Too tired, worn out<br>
+every drop drained<br>
+every thought erased<br>
+every emotion, forever<br>
+chained to this life<br>
+enslaved to this world<br>
+devoid of joy and pain<br>
+my atrocious condemnation<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>La Mia Condanna</h1>
+</div>
+<div style="text-align: center;">
+Lontano il tempo corre<br>
+in fretta m’abbandona<br>
+come di questa spiaggia<br>
+la sabbia tra le dita<br>
+In fretta, impaziente<br>
+la mia vita fluisce<br>
+dal mondo drenata nel<br>
+sottosuolo rubata<br>
+<br>
+Vuoto sfinito inerte<br>
+le mie misere spoglie<br>
+ecco cosa rimane<br>
+null’altro che un corpo<br>
+carne senza spirito<br>
+Dal mondo rattrappito<br>
+da quel mondo la fuori,<br>
+repellente prigione<br>
+<br>
+Senza indugio fuggire<br>
+voglio da questo luogo<br>
+da tutto questo caos<br>
+da tutto questo astio<br>
+da tutta l’ipocrisia<br>
+sulle montagne più alte<br>
+ostili e inespugnabili<br>
+solo e felice, vivo<br>
+<br>
+Troppo stanco, logorato<br>
+ogni goccia prosciugata<br>
+ogni pensier cancellato<br>
+ogni emozione, per sempre<br>
+a questa vita incatenata<br>
+a questo mondo asservita<br>
+privo di gioia e dolor<br>
+mia atroce condanna<br>
+</div>

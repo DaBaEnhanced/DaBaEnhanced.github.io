@@ -1,0 +1,84 @@
+---
+layout: poetry
+title: "015 - Hate"
+date: 2025-04-03 11:41:47 +0200
+categories: jekyll update
+summary: Fragments of my sou
+thumbnail: "../assets/images/015poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Hate</h1>
+</div>
+<div style="text-align: center;">
+I Hate<br>
+I hate myself<br>
+for what I am,<br>
+so fragile, so pitiful<br>
+I hate my flesh<br>
+so sensitive, so weak<br>
+I hate my mind<br>
+so unstable, so impure<br>
+I hate my heart<br>
+that makes me suffer<br>
+<br>
+I hate you<br>
+for what you are,<br>
+so sweet, so enchanting<br>
+I hate your flesh<br>
+so perfect, so sensual<br>
+I hate your mind<br>
+so sensitive, so pure<br>
+I hate your heart<br>
+that makes me suffer<br>
+<br>
+I hate life<br>
+that made us meet<br>
+I hate the world<br>
+that divided us<br>
+I hate love<br>
+that unites us<br>
+I hate being<br>
+I hate hating<br>
+I Hate<br>
+</div>
+<br>
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Odio</h1>
+</div>
+<div style="text-align: center;">
+Io Odio<br>
+Odio me stesso<br>
+per quello che sono,<br>
+così fragile,così penoso<br>
+Odio la mia carne<br>
+così sensibile, così debole<br>
+Odio la mia mente<br>
+così instabile, così impura<br>
+Odio il mio cuore<br>
+che mi fa soffrire<br>
+<br>
+Odio te<br>
+per quello che sei,<br>
+così dolce, così incantevole<br>
+Odio la tua carne<br>
+così perfetta, così sensuale<br>
+Odio la tua mente<br>
+così sensibile, così pura<br>
+Odio il tuo cuore<br>
+che mi fa soffrire<br>
+<br>
+Odio la vita<br>
+che ci ha fatto incontrare<br>
+Odio il mondo<br>
+che ci ha diviso<br>
+Odio l’amore<br>
+che ci unisce<br>
+Odio essere<br>
+Odio odiare<br>
+Io Odio<br>
+</div>

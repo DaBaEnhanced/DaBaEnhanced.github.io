@@ -1,0 +1,113 @@
+---
+layout: poetry
+title: "017 - I, Noble Poet"
+date: 2025-04-03 11:43:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/017poet.png"
+---
+
+<div style="text-align: center;">
+<h1>I, Noble Poet</h1>
+</div>
+<div style="text-align: center;">
+I, noble poet, do writeth something complex<br>
+To achieve at last the embrace<br>
+With many ancient words that I adore<br>
+<br>
+I love to pen something obscure<br>
+To distance with a wall<br>
+Those who dare read my sublime golden verse<br>
+<br>
+I love to weary with phrases without sense<br>
+To proclaim "Lo! I too think!"<br>
+And then reveal the emptiness of my noble heart<br>
+<br>
+I speak of nothing o'er and o'er<br>
+To lull to sleep those who've listened thus far<br>
+<br>
+I write, I write with all my might<br>
+That I would cast myself into the ditch,<br>
+But why I ignore doing so, who knoweth<br>
+<br>
+I write continuously of wanting to leave the living<br>
+But then, hark! I am lost among the lascivious<br>
+And of my past I have straightway forgotten<br>
+<br>
+I write as if I were a new Dante<br>
+And of the Divine One I know only where his bones lie<br>
+But what mattereth if I have not studied him (forI never loved him)!<br>
+<br>
+I write tercets of abandoned love<br>
+Yet never have I kissed a maiden!<br>
+<br>
+I live as if I should not reach the morrow<br>
+Only because I wish not to be like ye fools:<br>
+Downcast gaze and weary face do not tempt me<br>
+<br>
+I live awaiting only that day<br>
+When around the buoy I shall turn<br>
+And finally shall have achieved perfect poetry<br>
+<br>
+I live only for that moment<br>
+When from on high I shall show ye my chin<br>
+And weary you I can with my small voice<br>
+<br>
+I live waiting to reach the summit,<br>
+But what care I, I am a noble poet!<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Io, Nobil poeta</h1>
+</div>
+<div style="text-align: center;">
+Amo scriver qualcosa di complesso<br>
+per raggiunger infin l’amplesso<br>
+con le molte vetuste parole ch’io ador<br>
+<br>
+Amo scriver qualcosa di oscuro<br>
+per poter allontanar con un muro<br>
+chi legger osa i miei sublimi versi d’or<br>
+<br>
+Amo tediar con frasi senza senso<br>
+per poter dir Pur’io penso!<br>
+e dimostrar poi il vuoto del mio nobil cor<br>
+<br>
+Amo parlar di nulla ancor e ancor<br>
+per addormentar chi m’ha ascoltato finor<br>
+<br>
+Scrivo, scrivo a più non posso<br>
+che vorrei gettarmi nel fosso,<br>
+ma il farlo chiss´a perch´e l’ho ignorato<br>
+<br>
+Scrivo continuamente di voler lasciar i vivi<br>
+ma poi, zac, e son perso tra i lascivi<br>
+e del passato mio subito mi son scordato<br>
+<br>
+Scrivo come se novello Dante fossi<br>
+e del Divin sol so dove giacion l’ossi<br>
+Ma che importa se non l’ho studiato (tanto non l’ho mai amato) !<br>
+<br>
+Scrivo terzine sull’amor abbandonato<br>
+eppur mai una donna ho baciato!<br>
+<br>
+Vivo come se al doman arrivar non dovessi<br>
+sol perché esser non voglio come voi fessi:<br>
+Sguardo basso e viso lasso non m’alletta<br>
+<br>
+Vivo aspettando sol quel giorno<br>
+quando alla boa girerò attorno<br>
+e finalmente raggiunto avrò poesia perfetta<br>
+<br>
+Vivo sol per quel momento<br>
+quando dall’alto vi mostrerò il mento<br>
+a tediarvi potrò con la mia vocetta<br>
+<br>
+Vivo aspettando di raggiunger la vetta,<br>
+Ma che m’importa, Io son nobil poeta!<br>
+</div>

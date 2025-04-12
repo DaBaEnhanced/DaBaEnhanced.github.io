@@ -1,0 +1,75 @@
+---
+layout: poetry
+title: "019 - Intoxicated"
+date: 2025-04-03 11:45:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/019poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Intoxicated</h1>
+</div>
+<div style="text-align: center;">
+I am intoxicated by you<br>
+You who illuminate my path<br>
+And darken my heart<br>
+<br>
+Your eyes<br>
+Your hair<br>
+Your lips<br>
+<br>
+I am intoxicated by you<br>
+You who occupy my every thought<br>
+Every single moment<br>
+<br>
+Your skin<br>
+Your scent<br>
+Your caresses<br>
+<br>
+I am intoxicated by you<br>
+You who inebriate my mind<br>
+and kill my heart<br>
+<br>
+I want to drink from your fountain<br>
+Quench the thirst of my love<br>
+for you<br>
+<br>
+Just one last time<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Ebbro</h1>
+</div>
+<div style="text-align: center;">
+Sono ebbro di te<br>
+Tu che illumini il mio cammino<br>
+E oscuri il mio cuore<br>
+<br>
+I tuoi occhi<br>
+I tuoi capelli<br>
+Le tue labbra<br>
+<br>
+Sono ebbro di te<br>
+Tu che occupi ogni mio pensiero<br>
+Ogni singolo istante<br>
+<br>
+La tua pelle<br>
+Il tuo profumo<br>
+Le tue carezze<br>
+<br>
+Sono ebbro di te<br>
+Tu che inebri la mia mente<br>
+e uccidi il mio cuore<br>
+<br>
+Voglio abbeverarmi alla tua fonte<br>
+Quietare la sete del mio amore<br>
+per te<br>
+<br>
+Solo un’ultima volta<br>
+</div>

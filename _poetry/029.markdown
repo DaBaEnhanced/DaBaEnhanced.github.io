@@ -1,0 +1,56 @@
+---
+layout: poetry
+title: "029 - The Soldier"
+date: 2025-04-03 11:55:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/029poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Soldier</h1>
+</div>
+<div style="text-align: center;">
+Blows<br>
+A cold wind<br>
+above this desolate valley.<br>
+Burn<br>
+The abandoned homes<br>
+of this little ghost town<br>
+Soldiers<br>
+a long snake<br>
+walking under the scorching sun<br>
+Red<br>
+their eyes<br>
+in the dust raised by their boots<br>
+<br>
+Tears,<br>
+Returning home<br>
+perhaps<br>
+or heading to the front<br>
+I do not know<br>
+in this eternal war.<br>
+Sadness,<br>
+wherever they will go<br>
+into battle<br>
+or far from it<br>
+homeward<br>
+or far away.<br>
+<br>
+I,<br>
+a green dot<br>
+lost in a sea of green.<br>
+Wherever I go I do not know<br>
+but who knows<br>
+in this infinite war<br>
+back home<br>
+or away.<br>
+Wherever I will go<br>
+There will be loneliness<br>
+Wherever I will go<br>
+There will be horror<br>
+Wherever I will go<br>
+There will be suffering<br>
+because wherever I will go<br>
+you won’t be there.<br>
+</div>

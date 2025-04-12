@@ -1,0 +1,117 @@
+---
+layout: poetry
+title: "036 - Even Death Can Die"
+date: 2025-04-03 12:02:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/036poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Even Death Can Die</h1>
+</div>
+<div style="text-align: center;">
+An immense field, green<br>
+a warm sun<br>
+and a dot, black<br>
+<br>
+Growing ever larger,<br>
+ever larger<br>
+Greedy death,<br>
+never sated with life<br>
+<br>
+The cry of a girl, heart-rending<br>
+tears shed for a life<br>
+now dying, now dead.<br>
+<br>
+Growing ever larger,<br>
+ever larger<br>
+That small dot,<br>
+now an immense stain<br>
+<br>
+Stop your horrible feast, greedy death!<br>
+Stop that unbearable crying!<br>
+That unbearable pain.<br>
+<br>
+Growing ever larger,<br>
+ever larger<br>
+That unbearable crying,<br>
+entered into our heads.<br>
+<br>
+unbearable<br>
+unsuppressible<br>
+too heart-rending<br>
+too intense<br>
+And death<br>
+<br>
+dies.<br>
+<br>
+But the girl continues to weep<br>
+in the middle of that field<br>
+now black<br>
+under that sun<br>
+almost completely darkened<br>
+and that heart-rending cry<br>
+echoes throughout that immense plain<br>
+tears shed for a life<br>
+now exterminated...<br>
+for a death<br>
+now useless...<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Anche la Morte Può Morire</h1>
+</div>
+<div style="text-align: center;">
+Un immenso campo, verde<br>
+un caldo sole<br>
+e un puntino, nero<br>
+<br>
+Sempre più grande,<br>
+sempre più grande<br>
+Avida morte,<br>
+di vita mai sazia<br>
+<br>
+Il pianto di una fanciulla, straziante<br>
+lacrime versate per una vita<br>
+ormai moribonda, ormai morta.<br>
+<br>
+Sempre più grande,<br>
+sempre più grande<br>
+Quel piccolo puntino,<br>
+ora immensa macchia<br>
+<br>
+Ferma il tuo orrendo pasto, avida morte!<br>
+Ferma quell’insopportabile pianto!<br>
+Quell’insopportabile dolore.<br>
+<br>
+Sempre più grande,<br>
+sempre più grande<br>
+Quell’insopportabil pianto,<br>
+nelle nostre teste entrato.<br>
+<br>
+insopportabile<br>
+insopprimibile<br>
+troppo straziante<br>
+troppo intenso<br>
+E la morte<br>
+<br>
+muore.<br>
+<br>
+Ma la fanciulla continua a piangere<br>
+nel mezzo di quel campo<br>
+ormai nero<br>
+sotto quel sole<br>
+quasi del tutto oscurato<br>
+e quel pianto straziante<br>
+echeggia per tutta quell’immensa pianura<br>
+lacrime versate per una vita<br>
+ormai sterminata...<br>
+per una morte<br>
+ormai inutile...<br>
+</div>

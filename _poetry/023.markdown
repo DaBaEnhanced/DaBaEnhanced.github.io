@@ -1,0 +1,113 @@
+---
+layout: poetry
+title: "023 - Rain"
+date: 2025-04-03 11:49:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/023poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Rain</h1>
+</div>
+<div style="text-align: center;">
+It's raining,<br>
+outside, in the world.<br>
+On cities,<br>
+on people<br>
+sad<br>
+anguished.<br>
+Like tears<br>
+infinite.<br>
+<br>
+It's raining,<br>
+the earth transforms<br>
+into mud<br>
+the people,<br>
+the animals<br>
+all run for shelter.<br>
+Only you<br>
+walk<br>
+under the rain<br>
+and the rain<br>
+hides<br>
+your tears.<br>
+<br>
+Time<br>
+flows without stopping.<br>
+I sit<br>
+and close my eyes<br>
+The world<br>
+a giant spinning top<br>
+harnessed<br>
+in morbid infinite cycles<br>
+Overwhelmed by memories<br>
+of hatred<br>
+of lost love.<br>
+You have not stopped<br>
+and you advance<br>
+on your long<br>
+journey<br>
+toward home<br>
+crying<br>
+sweet tears<br>
+ancient<br>
+memories<br>
+<br>
+Outside, in the world, it's still raining.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Pioggia</h1>
+</div>
+<div style="text-align: center;">
+Piove,<br>
+fuori, nel mondo.<br>
+Sulle città,<br>
+sulle persone<br>
+tristi<br>
+angosciate.<br>
+Come lacrime<br>
+infinite.<br>
+<br>
+Piove,<br>
+la terra si trasforma<br>
+in fango<br>
+le persone,<br>
+gli animali<br>
+tutti corrono al riparo.<br>
+Solo tu<br>
+cammini<br>
+sotto la pioggia<br>
+e la pioggia<br>
+nasconde<br>
+le tue lacrime.<br>
+<br>
+Il tempo<br>
+scorre senza fermarsi.<br>
+Mi siedo<br>
+e chiudo gli occhi<br>
+Il mondo<br>
+una gigante trottola<br>
+imbrigliata<br>
+in morbosi cicli infiniti<br>
+Sopraffatto dai ricordi<br>
+d’odio<br>
+d’amore perduto.<br>
+Tu non ti sei fermata<br>
+e avanzi<br>
+nel tuo lungo<br>
+cammino<br>
+verso casa<br>
+piangendo<br>
+dolci lacrime<br>
+antichi<br>
+ricordi<br>
+<br>
+Fuori, nel mondo, piove ancora.<br>
+</div>

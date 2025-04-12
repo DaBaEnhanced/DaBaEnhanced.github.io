@@ -1,0 +1,49 @@
+---
+layout: poetry
+title: "032 - Children of War"
+date: 2025-04-03 11:58:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/032poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Children of War</h1>
+</div>
+<div style="text-align: center;">
+I saw trees,<br>
+I saw green meadows,<br>
+I saw animals.<br>
+Then I saw men fighting.<br>
+<br>
+From that moment<br>
+I no longer saw trees,<br>
+I no longer saw green meadows,<br>
+I no longer saw animals.<br>
+<br>
+But in return<br>
+I saw death and destruction!<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Figli della Guerra</h1>
+</div>
+<div style="text-align: center;">
+Vedevo alberi,<br>
+vedevo prati verdi,<br>
+vedevo animali.<br>
+Poi ho visto uomini combattere.<br>
+<br>
+Da quel momento<br>
+non ho più visto alberi,<br>
+non ho più visto prati verdi,<br>
+non ho più visto animali.<br>
+<br>
+Ma in compenso<br>
+ho visto morte e distruzione!<br>
+</div>

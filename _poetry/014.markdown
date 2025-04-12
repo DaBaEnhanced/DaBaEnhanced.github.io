@@ -1,0 +1,58 @@
+---
+layout: poetry
+title: "014 - Little Lamb"
+date: 2025-04-03 11:40:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/014poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Little Lamb</h1>
+</div>
+<div style="text-align: center;">
+Small feet<br>
+In the sand<br>
+Sweet laugh<br>
+Little Lamb<br>
+<br>
+Small Toys<br>
+On the ground<br>
+Sweet laugh<br>
+Little hound<br>
+<br>
+Oh my love<br>
+Don’t cry for me<br>
+Oh my love<br>
+Revel with glee<br>
+<br>
+Small hand<br>
+on the wall<br>
+Sweet laugh<br>
+Little Doll<br>
+<br>
+Small nose<br>
+in the sky<br>
+Sweet laugh<br>
+Little Fly<br>
+<br>
+Oh my love<br>
+Around we run,<br>
+Oh my love<br>
+Bask in the sun<br>
+<br>
+Let the timekeeper<br>
+slowly hum<br>
+And the flower<br>
+gently bloom<br>
+<br>
+Let the bliss<br>
+softly flood us<br>
+And a kiss<br>
+tamely bless us<br>
+<br>
+For the hourglass<br>
+tirelessly march,<br>
+our dreams forever gone<br>
+and our innocence torched.<br>
+</div>

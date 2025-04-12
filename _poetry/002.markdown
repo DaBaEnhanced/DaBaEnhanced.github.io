@@ -1,0 +1,55 @@
+---
+layout: poetry
+title: "002 - Dreams"
+date: 2025-04-03 11:29:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/002poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Dreams</h1>
+</div>
+<div style="text-align: center;">
+They advance in the mist<br>
+indistinct shadows.<br>
+They march<br>
+aimlessly<br>
+eternally<br>
+like soldiers.<br>
+Empty eyes<br>
+Soulless faces<br>
+Flesh automata.<br>
+<br>
+They advance<br>
+unceasingly<br>
+in the mist<br>
+like ghosts<br>
+silently,<br>
+Our Dreams.<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Sogni</h1>
+</div>
+<div style="text-align: center;">
+Avanzano nella nebbia<br>
+ombre indistinte<br>
+Marciano<br>
+senza meta<br>
+eternamente<br>
+come soldati<br>
+Occhi vuoti<br>
+volti senz’anima<br>
+automi di carne<br>
+<br>
+Avanzano senza sosta<br>
+nella nebbia<br>
+come fantasmi<br>
+senza far rumore alcuno,<br>
+i nostri sogni.<br>
+</div>

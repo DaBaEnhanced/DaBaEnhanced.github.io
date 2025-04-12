@@ -1,0 +1,36 @@
+---
+layout: poetry
+title: "021 - Love Me"
+date: 2025-04-03 11:47:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/021poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Love Me</h1>
+</div>
+<div style="text-align: center;">
+Love me<br>
+Love me<br>
+Love me<br>
+<br>
+As a father adore his son<br>
+A woman her lover<br>
+<br>
+Love me<br>
+Love me<br>
+Love me<br>
+<br>
+As a soldier adore his country<br>
+A man of faith his God<br>
+<br>
+Love me<br>
+Love me<br>
+Love me<br>
+<br>
+As a child adore his teddy bear<br>
+A boy his mother<br>
+<br>
+Damn love me<br>
+</div>

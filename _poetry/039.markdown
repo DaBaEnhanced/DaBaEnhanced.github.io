@@ -1,0 +1,91 @@
+---
+layout: poetry
+title: "039 - The Poet's Illness"
+date: 2025-04-03 12:05:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/039poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Poet's Illness</h1>
+</div>
+<div style="text-align: center;">
+Pain<br>
+Light<br>
+and then it begins...<br>
+I see...<br>
+suffering<br>
+I see...<br>
+the end<br>
+I see...<br>
+inside myself<br>
+Anguish assails me,<br>
+fear.<br>
+Then I take the pen<br>
+and with trembling hand<br>
+I write...<br>
+The images become<br>
+the strange lines<br>
+that I trace on this page<br>
+The demons become imprisoned.<br>
+Now my hand trembles no more<br>
+and I can return to this reality<br>
+crazy<br>
+stupid<br>
+of which<br>
+we poets<br>
+we exiled souls<br>
+who walk<br>
+bent<br>
+under the rain<br>
+are<br>
+the prophets<br>
+or the most sensitive part<br>
+or, at times,<br>
+the most foolish.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>La Malattia del Poeta</h1>
+</div>
+<div style="text-align: center;">
+Dolore<br>
+Luce<br>
+e poi inizia...<br>
+vedo...<br>
+sofferenza<br>
+vedo...<br>
+la fine<br>
+vedo...<br>
+dentro me stesso<br>
+Mi assale l’angoscia,<br>
+la paura.<br>
+Poi prendo la penna<br>
+e con mano tremante<br>
+scrivo...<br>
+Le immagini diventano<br>
+le strane linee<br>
+che traccio su questo foglio<br>
+I demoni vengono imprigionati.<br>
+Ora la mano non trema più<br>
+e posso tornare a questa realtà<br>
+pazza<br>
+stupida<br>
+della quale<br>
+noi poeti<br>
+noi esule anime<br>
+che camminano<br>
+curve<br>
+sotto la pioggia<br>
+siamo<br>
+i profeti<br>
+o la parte più sensibile<br>
+o, a volte,<br>
+i più stupidi.<br>
+</div>

@@ -1,0 +1,77 @@
+---
+layout: poetry
+title: "009 - Fears"
+date: 2025-04-03 11:36:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/009poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Fears</h1>
+</div>
+<div style="text-align: center;">
+I am afraid<br>
+I am afraid of you<br>
+I am afraid of myself<br>
+I am afraid<br>
+of opening this little door<br>
+that leads<br>
+inside my heart<br>
+inside your heart<br>
+<br>
+I am afraid<br>
+of what I think<br>
+of what you think<br>
+I am afraid<br>
+of the past that torments me<br>
+of the present that runs away<br>
+of the future that doesn't exist<br>
+for me<br>
+for you<br>
+<br>
+I am afraid<br>
+of what has been<br>
+of what we can be<br>
+together<br>
+apart<br>
+<br>
+Help me,<br>
+I don't want to be afraid anymore.<br>
+</div>
+<br>
+<div style="text-align: center;">
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Paure</h1>
+</div>
+<div style="text-align: center;">
+Ho paura<br>
+Ho paura di te<br>
+Ho paura di me<br>
+Ho paura<br>
+di aprire questa piccola porta<br>
+che conduce<br>
+dentro il mio cuore<br>
+dentro il tuo cuore<br>
+<br>
+Ho paura<br>
+di ciò che penso<br>
+di ciò che pensi<br>
+Ho paura<br>
+del passato che mi tormenta<br>
+del presente che corre via<br>
+del futuro che non c’è<br>
+per me<br>
+per te<br>
+<br>
+Ho paura<br>
+di ci´ò che è stato<br>
+di ciò che possiamo essere<br>
+insieme<br>
+separati<br>
+Aiutami,<br>
+non voglio più avere paura.<br>
+</div>

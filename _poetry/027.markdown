@@ -1,0 +1,87 @@
+---
+layout: poetry
+title: "027 - People Who Disappear"
+date: 2025-04-03 11:53:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/027poet.png"
+---
+
+<div style="text-align: center;">
+<h1>People Who Disappear</h1>
+</div>
+<div style="text-align: center;">
+People,<br>
+people who disappear.<br>
+Friends divided, abandoned<br>
+People just met<br>
+and then vanished<br>
+<br>
+People,<br>
+perhaps loved, perhaps hated<br>
+People who disappear,<br>
+Lost loves, and then<br>
+never found again<br>
+a whirlwind of faces<br>
+of people dead to us.<br>
+People who struck you<br>
+for beauty, or for something else<br>
+People who then disappear<br>
+People you will never find again<br>
+<br>
+The world,<br>
+made of people who disappear,<br>
+people who meet<br>
+greet each other, and perhaps<br>
+begin to love one another.<br>
+Only to vanish, with pain.<br>
+<br>
+People who disappear,<br>
+as always,<br>
+without causing anyone pain.<br>
+People merely unknown<br>
+who then<br>
+disappear.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Gente che Scompare</h1>
+</div>
+<div style="text-align: center;">
+Gente,<br>
+gente che scompare.<br>
+Amici divisi, abbandonati<br>
+Persone appena conosciute<br>
+e poi scomparse<br>
+<br>
+Gente,<br>
+magari amata, magari odiata<br>
+Gente che scompare,<br>
+Amori perduti, e poi<br>
+non più ritrovati<br>
+un turbine di volti<br>
+di gente morta per noi.<br>
+Gente che ti ha colpito<br>
+per bellezza, o per altro<br>
+Gente che poi scompare<br>
+Gente che non ritroverai mai più<br>
+<br>
+Il mondo,<br>
+fatto di gente che scompare,<br>
+gente che si incontra<br>
+si saluta, e forse<br>
+si comincia ad amare.<br>
+Per poi sparire, con dolore.<br>
+<br>
+Gente che scompare,<br>
+come sempre,<br>
+senza il dolore di nessuno.<br>
+Gente solo sconosciuta<br>
+che poi<br>
+scompare.<br>
+</div>

@@ -1,0 +1,97 @@
+---
+layout: poetry
+title: "040 - Malaise"
+date: 2025-04-03 12:06:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/040poet.png"
+---
+
+<div style="text-align: center;">
+<h1>Malaise</h1>
+</div>
+<div style="text-align: center;">
+I am not drowning<br>
+yet I feel like I'm drowning.<br>
+I cannot breathe<br>
+the air around me<br>
+I feel the pressure<br>
+crushing me<br>
+down<br>
+ever further down<br>
+<br>
+I am not ill<br>
+yet I feel pain<br>
+I cannot perceive<br>
+the beats of my heart<br>
+Now reduced<br>
+to pieces<br>
+small<br>
+ever smaller<br>
+<br>
+I am not alone<br>
+yet I feel that I am<br>
+There is no connection<br>
+with those around me<br>
+Now reduced<br>
+to a shadow of a man<br>
+alone<br>
+ever more alone<br>
+<br>
+I do not love you<br>
+yet I feel that I love you<br>
+I don't know why<br>
+I forget the past<br>
+nothing matters<br>
+only my love<br>
+great<br>
+ever greater<br>
+for you.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Malessere</h1>
+</div>
+<div style="text-align: center;">
+Non sto affogando<br>
+ma mi sembra di affogare.<br>
+Non riesco a respirare<br>
+l’aria attorno a me<br>
+Sento la pressione<br>
+mi schiaccia<br>
+giù<br>
+sempre più giù<br>
+<br>
+Non sto male<br>
+ma sento dolore<br>
+Non riesco a percepire<br>
+i battiti del mio cuore<br>
+Oramai ridotto<br>
+a pezzetti<br>
+piccoli<br>
+sempre più piccoli<br>
+<br>
+Non sono solo<br>
+ma sento di esserlo<br>
+Non c’è connessione<br>
+con chi mi circonda<br>
+Oramai ridotto<br>
+a ombra di uomo<br>
+solo<br>
+sempre più solo<br>
+<br>
+Non ti amo<br>
+ma sento di amarti<br>
+Non so perché<br>
+dimentico il passato<br>
+nulla importa<br>
+solo il mio amore<br>
+grande<br>
+sempre più grande<br>
+per te.<br>
+</div>

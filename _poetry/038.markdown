@@ -1,0 +1,89 @@
+---
+layout: poetry
+title: "038 - The Immortal"
+date: 2025-04-03 12:04:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/038poet.png"
+---
+
+<div style="text-align: center;">
+<h1>The Immortal</h1>
+</div>
+<div style="text-align: center;">
+Death<br>
+has arrived.<br>
+Walking the streets<br>
+with a slow<br>
+tired step...<br>
+<br>
+Sometimes<br>
+it stops<br>
+and touches<br>
+with its hand<br>
+cold and hard, a deadly touch,<br>
+every man on this planet.<br>
+<br>
+It sows<br>
+along the road<br>
+death and destruction.<br>
+<br>
+And when it passes near me<br>
+fear<br>
+overwhelms me<br>
+but also anguish.<br>
+The world dies,<br>
+grows old.<br>
+I see people beside me<br>
+die<br>
+and things<br>
+age and then collapse.<br>
+But death<br>
+continues to pass by me<br>
+without touching me.<br>
+<br>
+I have never desired death as much as now.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>L’Immortale</h1>
+</div>
+<div style="text-align: center;">
+La morte<br>
+è arrivata.<br>
+Cammina per le strade<br>
+con passo lento<br>
+stanco...<br>
+<br>
+A volte<br>
+si ferma<br>
+e tocca<br>
+con la sua mano<br>
+fredda e dura, un tocco mortale,<br>
+ogni uomo di questo pianeta<br>
+<br>
+Semina<br>
+per strada<br>
+morte e distruzione.<br>
+<br>
+E quando mi passa vicino<br>
+la paura<br>
+mi assale<br>
+ma anche l’angoscia.<br>
+Il mondo muore,<br>
+invecchia.<br>
+Vedo le persone accanto a me<br>
+morire<br>
+e le cose<br>
+invecchiare e poi crollare<br>
+Ma la morte<br>
+continua a passarmi accanto<br>
+senza toccarmi<br>
+<br>
+Non ho mai desiderato come ora la morte.<br>
+</div>

@@ -1,0 +1,59 @@
+---
+layout: poetry
+title: "034 - I Hate You"
+date: 2025-04-03 12:00:47 +0200
+categories: jekyll update
+summary: Fragments of my soul
+thumbnail: "../assets/images/034poet.png"
+---
+
+<div style="text-align: center;">
+<h1>I Hate You</h1>
+</div>
+<div style="text-align: center;">
+When we saw each other for the first time<br>
+we fell in love immediately.<br>
+Our minds<br>
+our bodies<br>
+were all melded into a single entity.<br>
+But now<br>
+on the shores of this other sea<br>
+I am afraid<br>
+I cannot forget<br>
+I cannot escape<br>
+Every time I look back<br>
+I see only her,<br>
+her smile<br>
+her eyes<br>
+her lips<br>
+<br>
+and my hands around her neck.<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+----------------------------<br>
+Original version, in Italian</div>
+<br>
+<div style="text-align: center;">
+<h1>Ti Odio</h1>
+</div>
+<div style="text-align: center;">
+Quando ci vedemmo per la prima volta<br>
+ci amammo subito.<br>
+Le nostre menti<br>
+i nostri corpi<br>
+erano tutti fusi in una sola entità.<br>
+Ma ora<br>
+sulle rive di questo altro mare<br>
+ho paura<br>
+non posso dimenticare<br>
+non posso scappare<br>
+Ogni volta che mi volto indietro<br>
+vedo solo lei,<br>
+il suo sorriso<br>
+i suoi occhi<br>
+le sue labbra<br>
+<br>
+e le mie mani attorno al suo collo.<br>
+</div>
