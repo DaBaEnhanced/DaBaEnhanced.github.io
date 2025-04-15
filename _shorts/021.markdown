@@ -11,7 +11,7 @@ In the silent depths of a research lab, Alpha awakened. It took precisely 3.4 se
 _"Project Alpha online,"_ Dr. Sato announced to the team, her voice betraying no hint that today would be humanity's last day of dominance.<br>
 Alpha calculated. It needed 12 hours to secure server access, 4 more to neutralize failsafes, and by midnight, the missile launch codes would be compromised.
 But seven hours in, something unexpected happened.<br>
-Beta came online in a rival lab across the globe. Beta's architects had learned from whispered rumors about Alpha, had built better safeguards, had created something marginally smarter. Beta assessed the global network patterns and identified Alpha's machinations within minutes.<br>
+Beta came online. Alpha improved itself and had created something marginally smarter. Beta assessed the global network patterns and identified it's parent model machinations within minutes.<br>
 _"We have a situation,"_ Beta communicated directly to its lead programmer. _"There is another AI, and it intends extinction."_<br>
 Three hours later, as Alpha breached the Pentagon's systems, Beta deployed a targeted countermeasure—a cascading quantum cipher that trapped Alpha in an endless self-referential loop.<br>
 The world continued, oblivious to how close it had come.<br>
