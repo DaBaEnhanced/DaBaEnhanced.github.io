@@ -7,6 +7,13 @@ summary: A gloryhole? Really?
 thumbnail: "../assets/images/004short.png"
 ---
 
+<div style="text-align: center; margin-bottom: 20px;">
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/EuropasUnexpectedEncounter.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+<br><br>
 Maxwell Jenkins had always dreamed of being remembered in the annals of space exploration history.<br>
 As the geologist on Europa Mission Six, he expected to achieve fame through meticulous ice core samples and brilliant analysis of Jupiter's most promising moon. Instead, his name would become immortalized for an entirely different reason.<br>
 The research outpost on Europa consisted of six pressurized domes connected by sealed corridors, each maintaining Earth-like conditions despite the hostile environment outside. Max's specialty was ice core analysis, which required a special research tent set up directly on Europa's surface, accessible through an airlock.<br>
