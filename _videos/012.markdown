@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "012 - Civil War"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Another take on the war theme
+thumbnail: "../assets/images/012vid.png"
+videoid: rNCgdrfgxqQ
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    Another take on the war theme. WW1 plus fururism.
+  </p>
+</div>

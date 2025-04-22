@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "011 - Driving in Night City"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Driving in Night City
+thumbnail: "../assets/images/011vid.png"
+videoid: POttxPp3CVw
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    Driving in Night City
+  </p>
+</div>

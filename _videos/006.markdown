@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "006 - Fallout"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Post-apoc scenery
+thumbnail: "../assets/images/006vid.png"
+videoid: MIFJBNkd98g
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    Some futuristic, post-apoc scenery in a different style.
+  </p>
+</div>

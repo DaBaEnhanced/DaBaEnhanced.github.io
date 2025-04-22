@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "015 - Driver"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Driving in night city
+thumbnail: "../assets/images/015vid.png"
+videoid: 63Nl248Vx9s
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    Driving in night city, pulp version.
+  </p>
+</div>
