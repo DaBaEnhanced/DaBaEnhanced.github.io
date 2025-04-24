@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "035 - Year 3999"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Year 3999
+thumbnail: "../assets/images/035vid.png"
+videoid: qZN4bQ7T7Xw
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

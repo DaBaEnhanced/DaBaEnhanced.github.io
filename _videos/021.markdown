@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "021 - Skyline"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Skyline
+thumbnail: "../assets/images/021vid.png"
+videoid: n2aR3rZhluc
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    Skyline of a futuristic city
+  </p>
+</div>

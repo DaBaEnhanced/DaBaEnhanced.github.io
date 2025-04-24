@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "096 - Rise of the Dragons"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Rise of the Dragons
+thumbnail: "../assets/images/096vid.png"
+videoid: YdnW8Q7KNnE
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

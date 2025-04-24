@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "036 - The World Below"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The World Below
+thumbnail: "../assets/images/036vid.png"
+videoid: jgDM8Acutdc
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

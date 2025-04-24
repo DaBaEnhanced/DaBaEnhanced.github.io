@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "032 - The Jungle Book"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The Jungle Book
+thumbnail: "../assets/images/032vid.png"
+videoid: gEys9r6zR4s
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    The Jungle Book
+  </p>
+</div>

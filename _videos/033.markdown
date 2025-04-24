@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "033 - The Last Battle"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The Last Battle
+thumbnail: "../assets/images/033vid.png"
+videoid: U5QpS5AUpHQ
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    The Last Battle
+  </p>
+</div>

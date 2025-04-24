@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "045 - Fairies Against The Machines"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Fairies Against The Machines
+thumbnail: "../assets/images/045vid.png"
+videoid: XQI3qAjpg-Y
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

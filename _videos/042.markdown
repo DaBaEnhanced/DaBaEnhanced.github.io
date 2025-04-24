@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "042 - Cyborg Dragons"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Cyborg Dragons
+thumbnail: "../assets/images/042vid.png"
+videoid: ery_lAVQaNU
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

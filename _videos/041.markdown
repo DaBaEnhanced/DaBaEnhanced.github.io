@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "041 - DJing In Space"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: DJing In Space
+thumbnail: "../assets/images/041vid.png"
+videoid: DJewisEFx_M
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

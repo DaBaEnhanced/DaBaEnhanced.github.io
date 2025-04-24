@@ -9,14 +9,18 @@ This is a collection of various videos I've created using a plethora of diffusio
 
 <!-- Links to jump to highlighted sections -->
 <div style="margin-bottom: 20px;">
-  <a href="#highlight5" style="margin-right: 10px;">003 - Beyond Reality</a>
-  <a href="#highlight2">192...198 - The 7 deadly sins series</a>
+  <a href="#highlight003" style="margin-right: 10px;">003 - Beyond Reality</a>
+  <a href="#highlight007" style="margin-right: 10px;">007 - From The Universe To The Subatomic</a>
+  <a href="#highlight018" style="margin-right: 10px;">018 - Dante's Inferno</a>and <a href="#highlight020" style="margin-right: 10px;">020 - Dante's Paradise</a>
+  <a href="#highlight030" style="margin-right: 10px;">030 - The Last Days</a>
+  <a href="#highlight055" style="margin-right: 10px;">055 - Genesis</a>
+  <a href="#highlight192">192...198 - The 7 deadly sins series</a>
 </div>
 
 <ul>
   {% assign sorted_videos = site.videos | sort: "path" | reverse %}
   {% for video in sorted_videos %}
-    <li id="highlight{{ forloop.index }}">
+    <li id="highlight{{ video.title | slice: 0, 3 | downcase }}">
     <a href="{{ video.url }}">
       <div style="position: relative; text-align: center; color: white; overflow: hidden; height: 25vh; border: 2px solid black; border-radius: 15px;">
         <!-- Background Image -->

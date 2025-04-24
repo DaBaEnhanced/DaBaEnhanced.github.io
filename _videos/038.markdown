@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "038 - Surreal Aliens"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Surreal Aliens
+thumbnail: "../assets/images/038vid.png"
+videoid: aOpSC_FNJNM
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

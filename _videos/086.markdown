@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "086 - Global Warming"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Global Warming
+thumbnail: "../assets/images/086vid.png"
+videoid: vWFO1wN5EY4
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

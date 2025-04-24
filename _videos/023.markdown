@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "023 - Generals gathered in their masses, Just like witches at black masses"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Black Sabbath?
+thumbnail: "../assets/images/023vid.png"
+videoid: axs3qyOcD98
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    Black Sabbath?
+  </p>
+</div>

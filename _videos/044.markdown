@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "044 - Searching For The Lost City"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Searching For The Lost City
+thumbnail: "../assets/images/044vid.png"
+videoid: 7-ynrql_320
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

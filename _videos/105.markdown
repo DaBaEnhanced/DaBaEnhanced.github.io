@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "105 - Motherly Love"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Motherly Love
+thumbnail: "../assets/images/105vid.png"
+videoid: dEY2TYyFd2Y
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

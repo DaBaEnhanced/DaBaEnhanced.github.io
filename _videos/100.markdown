@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "100 - The World's End"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The World's End
+thumbnail: "../assets/images/100vid.png"
+videoid: ZwFJwsOUUc8
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "022 - The Return of The Kings"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The Return of The Kings
+thumbnail: "../assets/images/022vid.png"
+videoid: ipWIEinl9IY
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    Fantasy theme
+  </p>
+</div>
