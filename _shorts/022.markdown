@@ -1,7 +1,7 @@
 ---
 layout: shorts
 title: "022 - The Quantum Gambit"
-date: 2025-04-03 11:46:47 +0200
+date: 2025-04-03 11:47:47 +0200
 categories: jekyll update
 summary: An eternal game of chess.
 thumbnail: "../assets/images/022short.png"

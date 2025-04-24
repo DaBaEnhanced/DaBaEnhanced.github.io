@@ -1,7 +1,7 @@
 ---
 layout: shorts
 title: "024 - THE MULTIPLICITY OF ME"
-date: 2025-04-03 11:46:47 +0200
+date: 2025-04-03 11:49:47 +0200
 categories: jekyll update
 summary: Another take on mind-copy.
 thumbnail: "../assets/images/024short.png"
