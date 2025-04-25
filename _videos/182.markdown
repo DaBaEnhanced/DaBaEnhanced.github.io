@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "182 - Dreamscape"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Dreamscape
+thumbnail: "../assets/images/182vid.png"
+videoid: zP7pF4wIo5M
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

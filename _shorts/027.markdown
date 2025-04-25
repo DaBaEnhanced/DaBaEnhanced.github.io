@@ -1,0 +1,35 @@
+---
+layout: shorts
+title: "027 - Misplaced"
+date: 2025-04-03 11:52:47 +0200
+categories: jekyll update
+summary: Space DIEversity?
+thumbnail: "../assets/images/027short.png"
+---
+
+Dave Harrington stared at the gelatinous blob of purple goo that had just slid into the seat across from him in the space station's cafeteria. The blob—Dave was pretty sure its name was Xor'blatt, a mid-level administrator from Sector 7—rippled pleasantly in what passed for a greeting.<br>
+_"Human Dave! Your protein consumption apparatus appears functional today!"_ Xor'blatt's voice emanated from somewhere within its quivering mass.<br>
+_"It's just called a mouth,"_ Dave sighed, _"and yes, it's working fine."_<br> He glanced down at his lunch—a synthetic approximation of a hamburger that the station's AI had assured him contained "adequate human nutrients" despite tasting like lightly seasoned rubber.<br>
+As the only human representative on Starbase Concordia, the crown jewel of the Galactic Confederacy's commitment to interspecies cooperation, Dave had been sent as Earth's diplomat six months ago. The job description had mentioned "advancing mutual understanding" and "fostering cosmic harmony." It had failed to mention the constant smell of methane, the fact that 40% of the station's inhabitants communicated through spore release, or that the temperature controls would constantly fluctuate between "Antarctic winter" and "surface of Mercury" to accommodate different biological needs.<br>
+_"The Council of Elders has identified a problem requiring human perspective,"_ Xor'blatt gurgled, secreting a faint luminescent trail across the table.<br>
+Dave pushed his food tray aside. _"What now?"_<br>
+_"The Vrex'nar delegation believes your breathing is an act of aggression. They process oxygen as a toxin and interpret your continued respiration as biochemical warfare."_<br>
+Dave pinched the bridge of his nose. _"I can't stop breathing."_<br>
+_"Perhaps a compromise? The Tr'lox suggest you breathe only on alternate Tuesdays."_<br>
+Before Dave could respond, a towering insectoid creature clicked its mandibles above them. Station Director Kzz'trch, resembling a praying mantis crossed with a giraffe, loomed over their table.<br>
+_"Human! Your designated sleeping period coincided with the Hive-Mind Meditation Hour. Your brainwaves were disruptive."_<br>
+_"I was asleep!"_<br>
+_"Precisely. Your subconscious is culturally insensitive. Please attend mandatory re-education."_<br>
+As Kzz'trch stalked away, Dave felt something warm dripping onto his shoulder. He looked up to see a cloud-like entity floating above him, raining what he hoped was just condensation.<br>
+_"Sorry,"_ the entity whispered in a voice like wind chimes. _"My emotional regulation results in precipitative response. I'm just so happy to see you."_<br>
+Dave forced a smile as he dabbed at his soaked uniform. _"No problem, Nimbus."_<br>
+Two reptilian beings in environmental suits hissed as they passed his table, pointedly changing their trajectory to avoid him. They belonged to the Ss'rathi Collective, who had filed formal complaints about "the human's offensive bilateral symmetry" last month.<br>
+Back in his quarters—a converted storage closet since his assigned quarters had been reassigned to a species of sentient coral that required his exact space dimensions—Dave recorded his daily log.<br>
+_"Day 184 on Starbase Concordia. Today I was accused of breathing aggressively, dreaming disruptively, and standing objectionably. The station's AI has once again recalibrated my shower to dispense sulfuric acid, which the Delvarians find refreshing but which dissolved my second-to-last towel. The universal translator malfunctioned during the morning briefing, translating everything I said as obscene propositions in Zentauri. Three species have demanded reparations for historical grievances against planets I've never heard of."_<br>
+He collapsed onto his too-small cot, staring up at the pulsing bioluninescent ceiling panels that had been installed to accommodate the photosynthetic engineers.<br>
+_"Computer, play Earth music,"_ Dave commanded.<br>
+_"Playing 'Sounds of Earth.' File contains: whale song, earthquake tremors, volcanic eruptions..."_<br>
+_"No, I meant human music."_<br>
+_"Species-centric entertainment violates Statute 7293-B of the Equality Protocols,"_ the computer chimed. _"Would you prefer the universally approved Generic Tonal Arrangements?"_<br>
+Before Dave could answer, his personal communicator buzzed. A message from Earth Command: _"DIPLOMATIC INCIDENT AVERTED. CONGRATULATIONS ON YOUR SUCCESSFUL CULTURAL EXCHANGE. ASSIGNMENT EXTENDED INDEFINITELY."_<br>
+As the station's warning klaxons began blaring—signaling either a hull breach or the beginning of the Molluscoid mating season—Dave closed his eyes and wondered if breathing really was optional after all.<br>

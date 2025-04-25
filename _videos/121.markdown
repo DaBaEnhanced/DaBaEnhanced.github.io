@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "121 - Strangeland"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Strangeland
+thumbnail: "../assets/images/121vid.png"
+videoid: 6RTAbklPQQc
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

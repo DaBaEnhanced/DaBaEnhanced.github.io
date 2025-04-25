@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "180 - The Joy Of Drawing"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The Joy Of Drawing
+thumbnail: "../assets/images/180vid.png"
+videoid: S24RjF3YJQk
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "162 - Power of the Future"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Power of the Future
+thumbnail: "../assets/images/162vid.png"
+videoid: 99CBnJnfwV4
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

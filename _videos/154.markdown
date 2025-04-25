@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "154 - The Black Sabbath"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The Black Sabbath
+thumbnail: "../assets/images/154vid.png"
+videoid: kyJ6ZsWQCM0
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

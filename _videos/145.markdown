@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "145 - The Possessed"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: The Possessed
+thumbnail: "../assets/images/145vid.png"
+videoid: 9-19pMV_tbY
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>

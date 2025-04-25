@@ -15,6 +15,9 @@ This is a collection of various videos I've created using a plethora of diffusio
   <a href="#highlight030" style="margin-right: 10px;">030 - The Last Days</a>
   <a href="#highlight055" style="margin-right: 10px;">055 - Genesis</a>
   <a href="#highlight192">192...198 - The 7 deadly sins series</a>
+  <a href="#highlight119" style="margin-right: 10px;">119 - Life's Road</a>
+  <a href="#highlight130" style="margin-right: 10px;">130 - Our Toys</a>
+  <a href="#highlight151" style="margin-right: 10px;">151 - Women Through History</a>
 </div>
 
 <ul>

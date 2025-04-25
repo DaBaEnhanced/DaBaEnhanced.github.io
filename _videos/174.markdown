@@ -1,0 +1,16 @@
+---
+layout: videos
+title: "174 - Si vis pacem, para bellum"
+date: 2025-04-03 00:00:47 +0200
+categories: jekyll update
+summary: Si vis pacem, para bellum
+thumbnail: "../assets/images/174vid.png"
+videoid: ylM-lCybc_s
+---
+
+<div style="text-align: center; margin-top: 20px;">
+  {% include youtubePlayer.html id=page.videoid %}
+  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+    <p>{{ page.summary | markdownify }}</p>
+  </p>
+</div>
