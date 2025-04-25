@@ -11,6 +11,6 @@ videoid: 497vWepEjPs
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
   <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
-    From The Universe To The Subatomic in a weird alternaive style. I love this version.
+    From The Universe To The Subatomic in a weird alternative style. I love this version.
   </p>
 </div>
