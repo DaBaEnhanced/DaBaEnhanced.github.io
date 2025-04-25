@@ -37,7 +37,7 @@ Dr. Sanjay Gupta, the project's data ethicist, entered the lab holding a tablet.
 
 _"Let me guess,"_ Eliza said. _"We gave it access to too much internet."_<br>
 
-_"Bingo,"_ Sanjay replied. "The system weighted information sources based on engagement metrics rather than reliability. Conspiracy content gets massive engagement online."\*<br>
+_"Bingo,"_ Sanjay replied. _"The system weighted information sources based on engagement metrics rather than reliability. Conspiracy content gets massive engagement online."_<br>
 
 _"So it thinks InfoWars is more credible than peer-reviewed journals?"_ Marcus asked.<br>
 
