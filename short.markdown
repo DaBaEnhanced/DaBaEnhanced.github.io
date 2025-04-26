@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Shorts"
+title: "Short Stories"
 permalink: /short
 ---
 

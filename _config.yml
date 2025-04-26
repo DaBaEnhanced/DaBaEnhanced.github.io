@@ -28,6 +28,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 instagram_username: clumsy.giba
 github_username: dabaenhanced
+youtube_username: "@clumsy_giba"
+snapchat_username: clumsygiba
 show_excerpts: true
 
 # Build settings
