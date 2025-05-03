@@ -8,7 +8,7 @@ permalink: /about/
 
 I work in AI with my daily job, but in my free time i like to dabble with various generative tools to create weird stuff and test the limits of their "human-likeness" or "inhuman-likeness" mostly.
 <br><br>
-<img src="../assets/images/fam.png" alt="A glimpse of the universe" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" /><br>
+<img src="../assets/images/fam.jpg" alt="A glimpse of the universe" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" /><br>
 
 Poetry section is 99% human made (translation are half done with AI)
 
@@ -22,7 +22,7 @@ As far as the various picture on this site they were generated using <a href="ht
 
 I'm also exploring some text-to-speech open-source models to generate audiobook style stuff for the short stories.<br>
 <br>
-<img src="../assets/images/fam2.png" alt="A glimpse of the universe" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" /><br>
+<img src="../assets/images/fam2.jpg" alt="A glimpse of the universe" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" /><br>
 Wanna help?
 
 Send eth to 0x992a2253D98C1d235C6531A0c657634B902B7BBC
