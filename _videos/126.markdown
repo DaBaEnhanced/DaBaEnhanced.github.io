@@ -4,7 +4,7 @@ title: "126 - The Wizard's Tower"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Wizard's Tower
-thumbnail: "../assets/images/126vid.png"
+thumbnail: "../assets/images/126vid.jpg"
 videoid: geBtv1C1850
 ---
 

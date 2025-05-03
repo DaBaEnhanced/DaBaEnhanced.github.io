@@ -4,7 +4,7 @@ title: "102 - Against The Tide"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Against The Tide
-thumbnail: "../assets/images/102vid.png"
+thumbnail: "../assets/images/102vid.jpg"
 videoid: eNlQFALeQ_4
 ---
 

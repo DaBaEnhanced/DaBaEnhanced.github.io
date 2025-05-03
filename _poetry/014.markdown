@@ -4,7 +4,7 @@ title: "014 - Little Lamb"
 date: 2025-04-03 11:40:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/014poet.png"
+thumbnail: "../assets/images/014poet.jpg"
 ---
 
 <div style="text-align: center;">

@@ -4,7 +4,7 @@ title: "141 - Ancient Gods"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Ancient Gods
-thumbnail: "../assets/images/141vid.png"
+thumbnail: "../assets/images/141vid.jpg"
 videoid: Fu2-YNj5BvE
 ---
 

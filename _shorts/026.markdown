@@ -4,7 +4,7 @@ title: "026 - The Axiom Breach"
 date: 2025-04-03 11:51:47 +0200
 categories: jekyll update
 summary: A mathematical virus
-thumbnail: "../assets/images/026short.png"
+thumbnail: "../assets/images/026short.jpg"
 ---
 
 The xenolinguist Dr. Maya Chen stared at the pulsating patterns on her screen, the fruit of three years' work establishing communication with the Voidwalkers. They had arrived in clouds of crystalline particles that assembled and disassembled around a central mass of what appeared to be superheated plasma contained by forces unknown.<br>

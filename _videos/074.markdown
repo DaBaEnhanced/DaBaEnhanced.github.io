@@ -4,7 +4,7 @@ title: "074 - Wonderland"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Wonderland
-thumbnail: "../assets/images/074vid.png"
+thumbnail: "../assets/images/074vid.jpg"
 videoid: EIG6l85b8Jw
 ---
 

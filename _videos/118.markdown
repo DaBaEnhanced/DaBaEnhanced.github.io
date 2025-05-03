@@ -4,7 +4,7 @@ title: "118 - Glued into another universe"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Glued into another universe
-thumbnail: "../assets/images/118vid.png"
+thumbnail: "../assets/images/118vid.jpg"
 videoid: rkJOpF5GnpU
 ---
 

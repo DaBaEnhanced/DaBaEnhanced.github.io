@@ -4,7 +4,7 @@ title: "096 - Rise of the Dragons"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Rise of the Dragons
-thumbnail: "../assets/images/096vid.png"
+thumbnail: "../assets/images/096vid.jpg"
 videoid: YdnW8Q7KNnE
 ---
 

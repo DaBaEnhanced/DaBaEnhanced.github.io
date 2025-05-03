@@ -4,7 +4,7 @@ title: "006 - Vapours of Sin"
 date: 2025-04-03 11:33:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/006poet.png"
+thumbnail: "../assets/images/006poet.jpg"
 ---
 
 <div style="text-align: center;">

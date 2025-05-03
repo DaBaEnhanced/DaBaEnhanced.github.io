@@ -4,7 +4,7 @@ title: "208 - The Traveller"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Traveller
-thumbnail: "../assets/images/208vid.png"
+thumbnail: "../assets/images/208vid.jpg"
 videoid: rAT7OQHu8X4
 ---
 

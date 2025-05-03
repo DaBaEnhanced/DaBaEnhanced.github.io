@@ -4,7 +4,7 @@ title: "151 - Women Through History"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Women Through History
-thumbnail: "../assets/images/151vid.png"
+thumbnail: "../assets/images/151vid.jpg"
 videoid: Ez4g2KxdpEk
 ---
 

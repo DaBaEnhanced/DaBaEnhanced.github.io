@@ -4,7 +4,7 @@ title: "044 - Searching For The Lost City"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Searching For The Lost City
-thumbnail: "../assets/images/044vid.png"
+thumbnail: "../assets/images/044vid.jpg"
 videoid: 7-ynrql_320
 ---
 

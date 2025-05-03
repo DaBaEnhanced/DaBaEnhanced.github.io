@@ -4,7 +4,7 @@ title: "127 - The house that was"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The house that was
-thumbnail: "../assets/images/127vid.png"
+thumbnail: "../assets/images/127vid.jpg"
 videoid: mRdOOT7IfIQ
 ---
 

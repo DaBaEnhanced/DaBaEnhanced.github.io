@@ -4,7 +4,7 @@ title: "036 - The World Below"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The World Below
-thumbnail: "../assets/images/036vid.png"
+thumbnail: "../assets/images/036vid.jpg"
 videoid: jgDM8Acutdc
 ---
 

@@ -4,7 +4,7 @@ title: "146 - The Lone King"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Lone King
-thumbnail: "../assets/images/146vid.png"
+thumbnail: "../assets/images/146vid.jpg"
 videoid: bh_zvwBfTU8
 ---
 

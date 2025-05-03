@@ -4,7 +4,7 @@ title: "094 - The Descent"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Descent
-thumbnail: "../assets/images/094vid.png"
+thumbnail: "../assets/images/094vid.jpg"
 videoid: m-RuSB2h8Cw
 ---
 

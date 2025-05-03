@@ -4,7 +4,7 @@ title: "211 - UFO Wars"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: UFO Wars
-thumbnail: "../assets/images/211vid.png"
+thumbnail: "../assets/images/211vid.jpg"
 videoid: e7ht7SqX8PQ
 ---
 

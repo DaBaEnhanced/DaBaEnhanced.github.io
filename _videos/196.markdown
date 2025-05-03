@@ -4,7 +4,7 @@ title: "196 - The 7 Deadly Sins: Wrath"
 date: 2025-04-03 00:05:47 +0200
 categories: jekyll update
 summary: A depiction
-thumbnail: "../assets/images/196vid.png"
+thumbnail: "../assets/images/196vid.jpg"
 videoid: TMLvdbA7a10
 ---
 

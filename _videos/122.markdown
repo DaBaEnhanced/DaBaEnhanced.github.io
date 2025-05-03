@@ -4,7 +4,7 @@ title: "122 - Doggy Space Force"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Doggy Space Force
-thumbnail: "../assets/images/122vid.png"
+thumbnail: "../assets/images/122vid.jpg"
 videoid: fbHma2nHwRM
 ---
 

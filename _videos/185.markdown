@@ -4,7 +4,7 @@ title: "185 - Space Cadets"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Space Cadets
-thumbnail: "../assets/images/185vid.png"
+thumbnail: "../assets/images/185vid.jpg"
 videoid: VeoUR8Qq7b8
 ---
 

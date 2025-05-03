@@ -4,7 +4,7 @@ title: "078 - Jurney Of Life"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Jurney Of Life
-thumbnail: "../assets/images/078vid.png"
+thumbnail: "../assets/images/078vid.jpg"
 videoid: ZQVdhIA1zNY
 ---
 

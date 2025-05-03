@@ -4,7 +4,7 @@ title: "026 - Parabola"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Tool's Parabola
-thumbnail: "../assets/images/026vid.png"
+thumbnail: "../assets/images/026vid.jpg"
 videoid: Q_5pSYAj3B0
 ---
 

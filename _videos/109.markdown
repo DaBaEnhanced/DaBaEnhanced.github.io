@@ -4,7 +4,7 @@ title: "109 - The Alchemist"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Alchemist
-thumbnail: "../assets/images/109vid.png"
+thumbnail: "../assets/images/109vid.jpg"
 videoid: uZ6wL19_voc
 ---
 

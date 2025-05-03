@@ -4,7 +4,7 @@ title: "092 - The Gate"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Gate
-thumbnail: "../assets/images/092vid.png"
+thumbnail: "../assets/images/092vid.jpg"
 videoid: pqnXwJ-nik8
 ---
 

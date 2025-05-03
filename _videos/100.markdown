@@ -4,7 +4,7 @@ title: "100 - The World's End"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The World's End
-thumbnail: "../assets/images/100vid.png"
+thumbnail: "../assets/images/100vid.jpg"
 videoid: ZwFJwsOUUc8
 ---
 

@@ -4,7 +4,7 @@ title: "006 - Fallout"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Post-apoc scenery
-thumbnail: "../assets/images/006vid.png"
+thumbnail: "../assets/images/006vid.jpg"
 videoid: MIFJBNkd98g
 ---
 

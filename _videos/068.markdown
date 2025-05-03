@@ -4,7 +4,7 @@ title: "068 - Magical Garden"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Magical Garden
-thumbnail: "../assets/images/068vid.png"
+thumbnail: "../assets/images/068vid.jpg"
 videoid: SH8hbCTd1s4
 ---
 

@@ -4,7 +4,7 @@ title: "152 - The Byzantine"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Byzantine
-thumbnail: "../assets/images/152vid.png"
+thumbnail: "../assets/images/152vid.jpg"
 videoid: n0MLuF5gT3A
 ---
 

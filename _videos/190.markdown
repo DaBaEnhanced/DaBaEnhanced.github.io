@@ -4,7 +4,7 @@ title: "190 - Atlas"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Atlas
-thumbnail: "../assets/images/190vid.png"
+thumbnail: "../assets/images/190vid.jpg"
 videoid: E1g1EjNB6xM
 ---
 

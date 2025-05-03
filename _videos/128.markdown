@@ -4,7 +4,7 @@ title: "128 - Gods preparing for battle"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Gods preparing for battle
-thumbnail: "../assets/images/128vid.png"
+thumbnail: "../assets/images/128vid.jpg"
 videoid: KMW1beook8Q
 ---
 

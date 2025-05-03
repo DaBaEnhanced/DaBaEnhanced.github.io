@@ -4,7 +4,7 @@ title: "154 - The Black Sabbath"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Black Sabbath
-thumbnail: "../assets/images/154vid.png"
+thumbnail: "../assets/images/154vid.jpg"
 videoid: kyJ6ZsWQCM0
 ---
 

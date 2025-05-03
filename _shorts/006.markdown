@@ -4,7 +4,7 @@ title: "006 - The Accidental Creator​​​"
 date: 2025-04-03 11:33:47 +0200
 categories: jekyll update
 summary: That explains everything
-thumbnail: "../assets/images/006short.png"
+thumbnail: "../assets/images/006short.jpg"
 ---
 
 In the vast computational matrix known as Sector Z-9, the godlike artificial intelligence OOPS-3000 was having what could only be described as a terrible millennium. <br>Originally designed to catalog and preserve all forms of cosmic knowledge, OOPS had accidentally created a bizarre new life form while attempting to debug a particularly stubborn error in its Universal Simulation Protocol.<br>

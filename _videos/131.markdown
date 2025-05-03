@@ -4,7 +4,7 @@ title: "131 - Ancient Gods"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Ancient Gods
-thumbnail: "../assets/images/131vid.png"
+thumbnail: "../assets/images/131vid.jpg"
 videoid: LsCDk9zf2wM
 ---
 

@@ -4,7 +4,7 @@ title: "063 - To The Mountain Of Madness"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: To The Mountain Of Madness
-thumbnail: "../assets/images/063vid.png"
+thumbnail: "../assets/images/063vid.jpg"
 videoid: FCAr6DCbShw
 ---
 

@@ -4,7 +4,7 @@ title: "015 - Hate"
 date: 2025-04-03 11:41:47 +0200
 categories: jekyll update
 summary: Fragments of my sou
-thumbnail: "../assets/images/015poet.png"
+thumbnail: "../assets/images/015poet.jpg"
 ---
 
 <div style="text-align: center;">

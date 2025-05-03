@@ -4,7 +4,7 @@ title: "049 - Grow"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Grow
-thumbnail: "../assets/images/049vid.png"
+thumbnail: "../assets/images/049vid.jpg"
 videoid: 2doI_dnUggA
 ---
 

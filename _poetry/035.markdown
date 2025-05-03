@@ -4,7 +4,7 @@ title: "035 - Alive or Dead"
 date: 2025-04-03 12:01:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/035poet.png"
+thumbnail: "../assets/images/035poet.jpg"
 ---
 
 <div style="text-align: center;">

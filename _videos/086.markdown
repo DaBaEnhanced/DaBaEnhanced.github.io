@@ -4,7 +4,7 @@ title: "086 - Global Warming"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Global Warming
-thumbnail: "../assets/images/086vid.png"
+thumbnail: "../assets/images/086vid.jpg"
 videoid: vWFO1wN5EY4
 ---
 

@@ -4,7 +4,7 @@ title: "212 - I, The Robot"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: I, The Robot
-thumbnail: "../assets/images/212vid.png"
+thumbnail: "../assets/images/212vid.jpg"
 videoid: qkw7ijbm4ZE
 ---
 

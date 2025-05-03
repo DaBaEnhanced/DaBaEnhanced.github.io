@@ -4,7 +4,7 @@ title: "117 - The Colony"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Colony
-thumbnail: "../assets/images/117vid.png"
+thumbnail: "../assets/images/117vid.jpg"
 videoid: gCBVfoqiNzw
 ---
 

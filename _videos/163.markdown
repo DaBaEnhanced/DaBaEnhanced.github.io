@@ -4,7 +4,7 @@ title: "163 - Meowtown"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Meowtown
-thumbnail: "../assets/images/163vid.png"
+thumbnail: "../assets/images/163vid.jpg"
 videoid: OOmMFUDY4bM
 ---
 

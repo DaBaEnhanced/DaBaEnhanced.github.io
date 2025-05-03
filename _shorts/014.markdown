@@ -4,7 +4,7 @@ title: "014 - The Exit Point"
 date: 2025-04-03 11:40:47 +0200
 categories: jekyll update
 summary: What if hell is real and we aren't?
-thumbnail: "../assets/images/014short.png"
+thumbnail: "../assets/images/014short.jpg"
 ---
 
 Morgan's headache began like any other—a dull throb behind his eyes that prescription meds never quite touched. But this time, something was different. As he rubbed his temples, his fingers caught on something small and hard beneath the skin.<br>

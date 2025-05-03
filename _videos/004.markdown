@@ -4,7 +4,7 @@ title: "004 - Desert City"
 date: 2025-04-03 00:02:47 +0200
 categories: jekyll update
 summary: Desert city, post apoc wars.
-thumbnail: "../assets/images/004vid.png"
+thumbnail: "../assets/images/004vid.jpg"
 videoid: K6HvFo8vnoY
 ---
 

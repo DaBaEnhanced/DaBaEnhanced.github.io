@@ -4,7 +4,7 @@ title: "143 - Fantasy Tropes"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Fantasy Tropes
-thumbnail: "../assets/images/143vid.png"
+thumbnail: "../assets/images/143vid.jpg"
 videoid: gJe3bM0Baus
 ---
 

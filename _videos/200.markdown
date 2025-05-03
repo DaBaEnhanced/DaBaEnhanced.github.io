@@ -4,7 +4,7 @@ title: "200 - Civilization"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Civilization
-thumbnail: "../assets/images/200vid.png"
+thumbnail: "../assets/images/200vid.jpg"
 videoid: W2A41AGWJLk
 ---
 

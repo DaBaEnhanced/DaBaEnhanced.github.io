@@ -4,7 +4,7 @@ title: "199 - In a galaxy far away"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: In a galaxy far away
-thumbnail: "../assets/images/199vid.png"
+thumbnail: "../assets/images/199vid.jpg"
 videoid: cnQCpKEpO44
 ---
 

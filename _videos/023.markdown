@@ -4,7 +4,7 @@ title: "023 - Generals gathered in their masses, Just like witches at black mass
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Black Sabbath?
-thumbnail: "../assets/images/023vid.png"
+thumbnail: "../assets/images/023vid.jpg"
 videoid: axs3qyOcD98
 ---
 

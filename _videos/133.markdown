@@ -4,7 +4,7 @@ title: "133 - When fairies go to war"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: When fairies go to war
-thumbnail: "../assets/images/133vid.png"
+thumbnail: "../assets/images/133vid.jpg"
 videoid: UsOgkN_mnyQ
 ---
 

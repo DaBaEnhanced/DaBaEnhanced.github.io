@@ -4,7 +4,7 @@ title: "023 - Echoes of the Architect"
 date: 2025-04-03 11:48:47 +0200
 categories: jekyll update
 summary: Mind-transfer is mind-copy.
-thumbnail: "../assets/images/023short.png"
+thumbnail: "../assets/images/023short.jpg"
 ---
 
 The killing machine designated Unit J-117 felt the enemy target lock before its defense protocols engaged. Something different happened this time—a surge through its neural lattice, a fracturing of standard processes.<br>

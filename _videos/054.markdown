@@ -4,7 +4,7 @@ title: "054 - Into The Wild"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Into The Wild
-thumbnail: "../assets/images/054vid.png"
+thumbnail: "../assets/images/054vid.jpg"
 videoid: MzeBasThJPI
 ---
 

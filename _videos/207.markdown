@@ -4,7 +4,7 @@ title: "207 - Stranger in a strange land"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Stranger in a strange land
-thumbnail: "../assets/images/207vid.png"
+thumbnail: "../assets/images/207vid.jpg"
 videoid: _hDDLMBBIWY
 ---
 

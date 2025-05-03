@@ -4,7 +4,7 @@ title: "124 - The flower's secret"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The flower's secret
-thumbnail: "../assets/images/124vid.png"
+thumbnail: "../assets/images/124vid.jpg"
 videoid: hFx7pnV1Exc
 ---
 

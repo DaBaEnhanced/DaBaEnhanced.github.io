@@ -4,7 +4,7 @@ title: "046 - In Search Of The Lost Temple"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: In Search Of The Lost Temple
-thumbnail: "../assets/images/046vid.png"
+thumbnail: "../assets/images/046vid.jpg"
 videoid: AHcWQxVg0_Q
 ---
 

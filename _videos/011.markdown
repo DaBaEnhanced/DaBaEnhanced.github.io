@@ -4,7 +4,7 @@ title: "011 - Driving in Night City"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Driving in Night City
-thumbnail: "../assets/images/011vid.png"
+thumbnail: "../assets/images/011vid.jpg"
 videoid: POttxPp3CVw
 ---
 

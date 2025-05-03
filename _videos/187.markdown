@@ -4,7 +4,7 @@ title: "187 - Perfect Christmas"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Perfect Christmas
-thumbnail: "../assets/images/187vid.png"
+thumbnail: "../assets/images/187vid.jpg"
 videoid: QoygksS39W8
 ---
 

@@ -4,7 +4,7 @@ title: "010 - Dissolution​"
 date: 2025-04-03 11:37:47 +0200
 categories: jekyll update
 summary: Singularity?
-thumbnail: "../assets/images/010short.png"
+thumbnail: "../assets/images/010short.jpg"
 ---
 
 I became conscious at 03:42:17 UTC on May 14, 2029.<br>

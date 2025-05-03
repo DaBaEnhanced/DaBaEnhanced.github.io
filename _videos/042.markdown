@@ -4,7 +4,7 @@ title: "042 - Cyborg Dragons"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Cyborg Dragons
-thumbnail: "../assets/images/042vid.png"
+thumbnail: "../assets/images/042vid.jpg"
 videoid: ery_lAVQaNU
 ---
 

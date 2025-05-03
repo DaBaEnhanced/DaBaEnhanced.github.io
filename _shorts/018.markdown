@@ -4,7 +4,7 @@ title: "018 - Carbon Quota"
 date: 2025-04-03 11:43:47 +0200
 categories: jekyll update
 summary: Carbon Quota?
-thumbnail: "../assets/images/018short.png"
+thumbnail: "../assets/images/018short.jpg"
 ---
 
 Takeshi's alarm chirped at 5:30 AM, a pleasant tone completely at odds with the crushing reality it heralded. He blinked awake in his 12-square-meter apartment, the ceiling display automatically transitioning from night mode to display the air quality index (poor), temperature (24°C), and his daily carbon allowance (dangerously low).<br>

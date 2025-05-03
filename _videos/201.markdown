@@ -4,7 +4,7 @@ title: "201 - Okinawa's cats"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Okinawa's cats
-thumbnail: "../assets/images/201vid.png"
+thumbnail: "../assets/images/201vid.jpg"
 videoid: huKzLER9btQ
 ---
 

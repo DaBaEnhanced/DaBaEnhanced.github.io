@@ -4,7 +4,7 @@ title: "033 - The Last Battle"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Last Battle
-thumbnail: "../assets/images/033vid.png"
+thumbnail: "../assets/images/033vid.jpg"
 videoid: U5QpS5AUpHQ
 ---
 

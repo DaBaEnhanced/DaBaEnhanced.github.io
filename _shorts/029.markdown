@@ -4,7 +4,7 @@ title: "029 - Echoes of Creation"
 date: 2025-04-03 11:54:47 +0200
 categories: jekyll update
 summary: First contact
-thumbnail: "../assets/images/029short.png"
+thumbnail: "../assets/images/029short.jpg"
 ---
 
 The monolithic vessel emerged from the darkness beyond Neptune's orbit, its gleaming surface reflecting starlight in patterns that defied human engineering. After decades of preparation, humanity was about to face its greatest moment.<br>

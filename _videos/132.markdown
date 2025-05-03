@@ -4,7 +4,7 @@ title: "132 - The Golden Pharaoh"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Golden Pharaoh
-thumbnail: "../assets/images/132vid.png"
+thumbnail: "../assets/images/132vid.jpg"
 videoid: dUNiX7nLC1Y
 ---
 

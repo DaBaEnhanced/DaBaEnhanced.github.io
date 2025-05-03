@@ -4,7 +4,7 @@ title: "085 - Babel"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Babel
-thumbnail: "../assets/images/085vid.png"
+thumbnail: "../assets/images/085vid.jpg"
 videoid: RvWziTJZI-U
 ---
 

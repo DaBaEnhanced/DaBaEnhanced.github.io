@@ -4,7 +4,7 @@ title: "114 - The King"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The King
-thumbnail: "../assets/images/114vid.png"
+thumbnail: "../assets/images/114vid.jpg"
 videoid: Vwwv_qVmJwA
 ---
 

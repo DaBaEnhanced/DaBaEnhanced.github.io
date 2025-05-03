@@ -4,7 +4,7 @@ title: "110 - Wizardry"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Wizardry
-thumbnail: "../assets/images/110vid.png"
+thumbnail: "../assets/images/110vid.jpg"
 videoid: 5l1H_lJyGGM
 ---
 

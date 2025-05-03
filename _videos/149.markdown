@@ -4,7 +4,7 @@ title: "149 - The Party"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Party
-thumbnail: "../assets/images/149vid.png"
+thumbnail: "../assets/images/149vid.jpg"
 videoid: vpk7NNPsp70
 ---
 

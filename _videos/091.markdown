@@ -4,7 +4,7 @@ title: "091 - The Queen"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Queen
-thumbnail: "../assets/images/091vid.png"
+thumbnail: "../assets/images/091vid.jpg"
 videoid: -taKqNS1WTw
 ---
 

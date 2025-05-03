@@ -4,7 +4,7 @@ title: "137 - The Alps in Technicolor"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Alps in Technicolor
-thumbnail: "../assets/images/137vid.png"
+thumbnail: "../assets/images/137vid.jpg"
 videoid: deQddgmJdTM
 ---
 

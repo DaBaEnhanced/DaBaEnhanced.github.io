@@ -4,7 +4,7 @@ title: "012 - The Last Stand"
 date: 2025-04-03 11:39:47 +0200
 categories: jekyll update
 summary: War never changes
-thumbnail: "../assets/images/012short.png"
+thumbnail: "../assets/images/012short.jpg"
 ---
 
 The acid rain had finally stopped, leaving behind a sizzling fog that clung to the trench walls. The soldier clutched the pulse rifle tighter, nervous twitches running through tired limbs as eyes strained to scan the horizon through a cracked visor. The barren wasteland that separated the trench from enemy lines remained still, but that meant nothing.<br>

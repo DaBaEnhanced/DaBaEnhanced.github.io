@@ -4,7 +4,7 @@ title: "001 - The Last Incorrect"
 date: 2025-04-03 11:28:47 +0200
 categories: jekyll update
 summary: Can't stop a comedian
-thumbnail: "../assets/images/001short.png"
+thumbnail: "../assets/images/001short.jpg"
 ---
 
 The fluorescent lights buzzed overhead as Marcus sat in the pristine white courtroom.

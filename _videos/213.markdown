@@ -4,7 +4,7 @@ title: "213 - Dog Land"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Dog Land
-thumbnail: "../assets/images/213vid.png"
+thumbnail: "../assets/images/213vid.jpg"
 videoid: qey2rkCvD9c
 ---
 

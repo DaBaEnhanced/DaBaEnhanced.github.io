@@ -4,7 +4,7 @@ title: "038 - The Immortal"
 date: 2025-04-03 12:04:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/038poet.png"
+thumbnail: "../assets/images/038poet.jpg"
 ---
 
 <div style="text-align: center;">

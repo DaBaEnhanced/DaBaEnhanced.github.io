@@ -4,7 +4,7 @@ title: "040 - XFiles"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: X-Files
-thumbnail: "../assets/images/040vid.png"
+thumbnail: "../assets/images/040vid.jpg"
 videoid: JnKqRdyxT40
 ---
 

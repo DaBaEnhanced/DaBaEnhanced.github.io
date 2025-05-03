@@ -4,7 +4,7 @@ title: "084 - Ghost"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Ghost
-thumbnail: "../assets/images/084vid.png"
+thumbnail: "../assets/images/084vid.jpg"
 videoid: LM_-QV8r0ew
 ---
 

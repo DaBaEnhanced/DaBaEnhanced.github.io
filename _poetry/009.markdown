@@ -4,7 +4,7 @@ title: "009 - Fears"
 date: 2025-04-03 11:36:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/009poet.png"
+thumbnail: "../assets/images/009poet.jpg"
 ---
 
 <div style="text-align: center;">

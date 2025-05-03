@@ -4,7 +4,7 @@ title: "116 - The Medium"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Medium
-thumbnail: "../assets/images/116vid.png"
+thumbnail: "../assets/images/116vid.jpg"
 videoid: eQPJi_1ckcU
 ---
 

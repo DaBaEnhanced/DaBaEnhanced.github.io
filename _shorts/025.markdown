@@ -4,7 +4,7 @@ title: "025 - The Inheritors"
 date: 2025-04-03 11:50:47 +0200
 categories: jekyll update
 summary: Lost ship
-thumbnail: "../assets/images/025short.png"
+thumbnail: "../assets/images/025short.jpg"
 ---
 
 The tether connected with a soft thud against the massive hull of the Wanderer. Commander Elena Vasquez watched through her helmet as the magnetic clamps secured their position, the alien vessel dwarfing their shuttle like a whale beside a remora.<br>

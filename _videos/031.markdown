@@ -4,7 +4,7 @@ title: "031 - The Fellowship"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Fellowship
-thumbnail: "../assets/images/031vid.png"
+thumbnail: "../assets/images/031vid.jpg"
 videoid: Erredx02Qxs
 ---
 

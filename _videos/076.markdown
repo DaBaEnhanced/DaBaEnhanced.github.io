@@ -4,7 +4,7 @@ title: "076 - Moon Gods"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Moon Gods
-thumbnail: "../assets/images/076vid.png"
+thumbnail: "../assets/images/076vid.jpg"
 videoid: nRaVqMKPBXk
 ---
 

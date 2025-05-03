@@ -4,7 +4,7 @@ title: "115 - Collision course"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Collision course
-thumbnail: "../assets/images/115vid.png"
+thumbnail: "../assets/images/115vid.jpg"
 videoid: BLp68jKgJ8E
 ---
 

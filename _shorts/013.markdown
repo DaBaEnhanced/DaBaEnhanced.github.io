@@ -4,7 +4,7 @@ title: "013 - THE QUANTUM PLUNGE"
 date: 2025-04-03 11:40:47 +0200
 categories: jekyll update
 summary: Another take on multi-dimensionality
-thumbnail: "../assets/images/013short.png"
+thumbnail: "../assets/images/013short.jpg"
 ---
 
 Gerald Wilkins was brushing his teeth on a Tuesday morning when the bathroom floor decided—quite independently of any known laws of physics—to stop existing.<br>

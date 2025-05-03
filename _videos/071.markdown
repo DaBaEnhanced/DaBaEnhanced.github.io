@@ -4,7 +4,7 @@ title: "071 - The Realm"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Realm
-thumbnail: "../assets/images/071vid.png"
+thumbnail: "../assets/images/071vid.jpg"
 videoid: sOAmuGmQ_L4
 ---
 

@@ -4,7 +4,7 @@ title: "077 - The End Of Time"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The End Of Time
-thumbnail: "../assets/images/077vid.png"
+thumbnail: "../assets/images/077vid.jpg"
 videoid: lCiaZpuXD9I
 ---
 

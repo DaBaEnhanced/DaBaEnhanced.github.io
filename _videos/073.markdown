@@ -4,7 +4,7 @@ title: "073 - The Last Men"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Last Men
-thumbnail: "../assets/images/073vid.png"
+thumbnail: "../assets/images/073vid.jpg"
 videoid: nn3rf5k849E
 ---
 

@@ -4,7 +4,7 @@ title: "005 - The Chrono-Illogical Conclusion​​"
 date: 2025-04-03 11:32:47 +0200
 categories: jekyll update
 summary: Time travel? Kinda overdone.
-thumbnail: "../assets/images/005short.png"
+thumbnail: "../assets/images/005short.jpg"
 ---
 
 There are numerous theories about how the end of humanity might unfold—nuclear war, climate apocalypse, a particularly aggressive strain of influenza with a taste for reality television—but nobody quite expected it would come in the form of an artificial intelligence with a PhD in history and a severe case of self-importance.<br>

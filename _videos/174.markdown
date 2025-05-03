@@ -4,7 +4,7 @@ title: "174 - Si vis pacem, para bellum"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Si vis pacem, para bellum
-thumbnail: "../assets/images/174vid.png"
+thumbnail: "../assets/images/174vid.jpg"
 videoid: ylM-lCybc_s
 ---
 

@@ -4,7 +4,7 @@ title: "188 - Far Away Land"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Far Away Land
-thumbnail: "../assets/images/188vid.png"
+thumbnail: "../assets/images/188vid.jpg"
 videoid: gOCSa1P29t4
 ---
 

@@ -4,7 +4,7 @@ title: "189 - Happy New Year"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Happy New Year
-thumbnail: "../assets/images/189vid.png"
+thumbnail: "../assets/images/189vid.jpg"
 videoid: sx359SQ25kc
 ---
 

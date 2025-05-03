@@ -4,7 +4,7 @@ title: "159 - The Necromancer"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Necromancer
-thumbnail: "../assets/images/159vid.png"
+thumbnail: "../assets/images/159vid.jpg"
 videoid: J1wvLqDSIMg
 ---
 

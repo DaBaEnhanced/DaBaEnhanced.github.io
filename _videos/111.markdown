@@ -4,7 +4,7 @@ title: "111 - Watching the world burn"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Watching the world burn
-thumbnail: "../assets/images/111vid.png"
+thumbnail: "../assets/images/111vid.jpg"
 videoid: Tzph22YIyhI
 ---
 

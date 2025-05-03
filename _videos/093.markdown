@@ -4,7 +4,7 @@ title: "093 - The Ascent"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Ascent
-thumbnail: "../assets/images/093vid.png"
+thumbnail: "../assets/images/093vid.jpg"
 videoid: ReloIqgqf3s
 ---
 

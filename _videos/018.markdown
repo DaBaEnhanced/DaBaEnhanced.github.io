@@ -4,7 +4,7 @@ title: "018 - Dante's Inferno"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Dante's Inferno
-thumbnail: "../assets/images/018vid.png"
+thumbnail: "../assets/images/018vid.jpg"
 videoid: UqbFlbylmqw
 ---
 

@@ -4,7 +4,7 @@ title: "165 - Helloween comes to wonderland"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Helloween comes to wonderland
-thumbnail: "../assets/images/165vid.png"
+thumbnail: "../assets/images/165vid.jpg"
 videoid: jAeIjGJJnRw
 ---
 

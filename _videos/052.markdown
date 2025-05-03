@@ -4,7 +4,7 @@ title: "052 - The Jungle"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Jungle
-thumbnail: "../assets/images/052vid.png"
+thumbnail: "../assets/images/052vid.jpg"
 videoid: 5b4rJG8HgoI
 ---
 

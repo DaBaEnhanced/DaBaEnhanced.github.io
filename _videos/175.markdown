@@ -4,7 +4,7 @@ title: "175 - The Last Frontiers"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Last Frontiers
-thumbnail: "../assets/images/175vid.png"
+thumbnail: "../assets/images/175vid.jpg"
 videoid: OyWb_LD2tM8
 ---
 

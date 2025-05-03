@@ -4,7 +4,7 @@ title: "209 - The Post Man"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Post Man
-thumbnail: "../assets/images/209vid.png"
+thumbnail: "../assets/images/209vid.jpg"
 videoid: o5WeGN-KClA
 ---
 

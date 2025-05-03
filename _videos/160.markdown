@@ -4,7 +4,7 @@ title: "160 - Flight of the Navigator"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Flight of the Navigator
-thumbnail: "../assets/images/160vid.png"
+thumbnail: "../assets/images/160vid.jpg"
 videoid: nb6z7CrOyXw
 ---
 

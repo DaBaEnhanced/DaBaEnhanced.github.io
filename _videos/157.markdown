@@ -4,7 +4,7 @@ title: "157 - The Paladin's Adventures"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Paladin's Adventures
-thumbnail: "../assets/images/157vid.png"
+thumbnail: "../assets/images/157vid.jpg"
 videoid: b9Ri_P_l7hg
 ---
 

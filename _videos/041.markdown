@@ -4,7 +4,7 @@ title: "041 - DJing In Space"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: DJing In Space
-thumbnail: "../assets/images/041vid.png"
+thumbnail: "../assets/images/041vid.jpg"
 videoid: DJewisEFx_M
 ---
 

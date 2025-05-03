@@ -4,7 +4,7 @@ title: "205 - Back Home"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Back Home
-thumbnail: "../assets/images/205vid.png"
+thumbnail: "../assets/images/205vid.jpg"
 videoid: OaJl2KKmMFM
 ---
 

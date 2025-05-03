@@ -4,7 +4,7 @@ title: "035 - Year 3999"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Year 3999
-thumbnail: "../assets/images/035vid.png"
+thumbnail: "../assets/images/035vid.jpg"
 videoid: qZN4bQ7T7Xw
 ---
 

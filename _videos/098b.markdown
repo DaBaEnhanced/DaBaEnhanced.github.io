@@ -4,7 +4,7 @@ title: "098b - The Ninth Gate"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Ninth Gate
-thumbnail: "../assets/images/098Bvid.png"
+thumbnail: "../assets/images/098Bvid.jpg"
 videoid: 0xuQWPxZ5Nk
 ---
 

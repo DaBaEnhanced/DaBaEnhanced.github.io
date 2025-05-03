@@ -4,7 +4,7 @@ title: "197 - The 7 Deadly Sins: Greed"
 date: 2025-04-03 00:06:47 +0200
 categories: jekyll update
 summary: A depiction
-thumbnail: "../assets/images/197vid.png"
+thumbnail: "../assets/images/197vid.jpg"
 videoid: CCmEkxM64UM
 ---
 

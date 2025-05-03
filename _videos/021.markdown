@@ -4,7 +4,7 @@ title: "021 - Skyline"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Skyline
-thumbnail: "../assets/images/021vid.png"
+thumbnail: "../assets/images/021vid.jpg"
 videoid: n2aR3rZhluc
 ---
 

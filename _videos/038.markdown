@@ -4,7 +4,7 @@ title: "038 - Surreal Aliens"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Surreal Aliens
-thumbnail: "../assets/images/038vid.png"
+thumbnail: "../assets/images/038vid.jpg"
 videoid: aOpSC_FNJNM
 ---
 

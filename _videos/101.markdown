@@ -4,7 +4,7 @@ title: "101 - Paper Cut"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Paper Cut
-thumbnail: "../assets/images/101vid.png"
+thumbnail: "../assets/images/101vid.jpg"
 videoid: gDGiT5kUjNQ
 ---
 

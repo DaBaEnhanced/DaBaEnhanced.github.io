@@ -4,7 +4,7 @@ title: "206 - Future Fragments"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Future Fragments
-thumbnail: "../assets/images/206vid.png"
+thumbnail: "../assets/images/206vid.jpg"
 videoid: PkrZYf9psMo
 ---
 

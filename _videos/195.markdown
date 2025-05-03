@@ -4,7 +4,7 @@ title: "195 - The 7 Deadly Sins: Lust"
 date: 2025-04-03 00:04:47 +0200
 categories: jekyll update
 summary: A depiction
-thumbnail: "../assets/images/195vid.png"
+thumbnail: "../assets/images/195vid.jpg"
 videoid: IIjBLwKj8kg
 ---
 

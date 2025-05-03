@@ -4,7 +4,7 @@ title: "119 - Life's Road"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Life's Road
-thumbnail: "../assets/images/119vid.png"
+thumbnail: "../assets/images/119vid.jpg"
 videoid: Ia16TZRMDxY
 ---
 

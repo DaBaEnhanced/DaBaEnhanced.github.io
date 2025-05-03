@@ -4,7 +4,7 @@ title: "008 - THE RECURSIVE OBSERVER​​​"
 date: 2025-04-03 11:35:47 +0200
 categories: jekyll update
 summary: What if everything is a fractal?
-thumbnail: "../assets/images/008short.png"
+thumbnail: "../assets/images/008short.jpg"
 ---
 
 Thomas Reed noticed it first on a Tuesday morning—something was off about the sunrise. The colors seemed too perfect, the gradients too smooth. He stood at his apartment window, coffee cooling in his hand, and watched as the sky transitioned from deep indigo to brilliant orange with mathematical precision.<br>

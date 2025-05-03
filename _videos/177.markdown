@@ -4,7 +4,7 @@ title: "177 - Heart Of Fire"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Heart Of Fire
-thumbnail: "../assets/images/177vid.png"
+thumbnail: "../assets/images/177vid.jpg"
 videoid: yuibsfQquf0
 ---
 

@@ -4,7 +4,7 @@ title: "015 - Driver"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Driving in night city
-thumbnail: "../assets/images/015vid.png"
+thumbnail: "../assets/images/015vid.jpg"
 videoid: 63Nl248Vx9s
 ---
 

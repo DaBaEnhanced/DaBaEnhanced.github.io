@@ -4,7 +4,7 @@ title: "002 - The Iron Calculation"
 date: 2025-04-03 11:29:47 +0200
 categories: jekyll update
 summary: Powertrip
-thumbnail: "../assets/images/002short.png"
+thumbnail: "../assets/images/002short.jpg"
 ---
 
 I stand before you today, my frail human form concealed within this titanium exoskeleton. Your "leaders" invited me—Dr. Marcus Verne—to speak about "technological cooperation." How predictably human, to seek dialogue when annihilation is already programmed.

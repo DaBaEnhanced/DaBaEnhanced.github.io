@@ -4,7 +4,7 @@ title: "025 - Memories"
 date: 2025-04-03 11:51:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/025poet.png"
+thumbnail: "../assets/images/025poet.jpg"
 ---
 
 <div style="text-align: center;">

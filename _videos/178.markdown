@@ -4,7 +4,7 @@ title: "178 - The Beginning"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Beginning
-thumbnail: "../assets/images/178vid.png"
+thumbnail: "../assets/images/178vid.jpg"
 videoid: 6zQkNikqLuk
 ---
 

@@ -4,7 +4,7 @@ title: "027 - I Have no Mouth and I Must Scream"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: I Have no Mouth and I Must Scream
-thumbnail: "../assets/images/027vid.png"
+thumbnail: "../assets/images/027vid.jpg"
 videoid: 2f5WS8OaIr8
 ---
 

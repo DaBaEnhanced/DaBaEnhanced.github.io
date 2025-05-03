@@ -4,7 +4,7 @@ title: "082 - The Mothership"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Mothership
-thumbnail: "../assets/images/082vid.png"
+thumbnail: "../assets/images/082vid.jpg"
 videoid: 2zEifmOd3B4
 ---
 

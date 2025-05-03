@@ -4,7 +4,7 @@ title: "186 - Arcanum"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Arcanum
-thumbnail: "../assets/images/186vid.png"
+thumbnail: "../assets/images/186vid.jpg"
 videoid: UOCtaCDqd_I
 ---
 

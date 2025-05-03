@@ -4,7 +4,7 @@ title: "061 - Tigerman"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Tigerman
-thumbnail: "../assets/images/061vid.png"
+thumbnail: "../assets/images/061vid.jpg"
 videoid: u0M1-Q8lMSY
 ---
 

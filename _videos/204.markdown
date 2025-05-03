@@ -4,7 +4,7 @@ title: "204 - Renaissance"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Renaissance
-thumbnail: "../assets/images/204vid.png"
+thumbnail: "../assets/images/204vid.jpg"
 videoid: k-GmgG1TD2E
 ---
 

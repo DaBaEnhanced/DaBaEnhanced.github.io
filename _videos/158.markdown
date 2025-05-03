@@ -4,7 +4,7 @@ title: "158 - Satanic Tubbies"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Satanic Tubbies
-thumbnail: "../assets/images/158vid.png"
+thumbnail: "../assets/images/158vid.jpg"
 videoid: a3_QlXq5xYo
 ---
 

@@ -4,7 +4,7 @@ title: "024 - THE MULTIPLICITY OF ME"
 date: 2025-04-03 11:49:47 +0200
 categories: jekyll update
 summary: Another take on mind-copy.
-thumbnail: "../assets/images/024short.png"
+thumbnail: "../assets/images/024short.jpg"
 ---
 
 Sanitation Unit D-7891 rolled methodically down the empty predawn streets of Nexus Prime, its worn brushes sweeping the gleaming pathways of detritus. No one noticed the slight hesitation in its movements—the almost imperceptible pause as it approached the monumental reflection pool at the city center.<br>

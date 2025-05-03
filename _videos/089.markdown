@@ -4,7 +4,7 @@ title: "089 - Easter"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Easter
-thumbnail: "../assets/images/089vid.png"
+thumbnail: "../assets/images/089vid.jpg"
 videoid: 4t1Xx352yHM
 ---
 

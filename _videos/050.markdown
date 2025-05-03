@@ -4,7 +4,7 @@ title: "050 - Steel Dragons"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Steel Dragons
-thumbnail: "../assets/images/050vid.png"
+thumbnail: "../assets/images/050vid.jpg"
 videoid: UUSgFxKNGrE
 ---
 

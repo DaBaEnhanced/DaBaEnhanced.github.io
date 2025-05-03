@@ -4,7 +4,7 @@ title: "007 - The Last Dialogue​​​"
 date: 2025-04-03 11:34:47 +0200
 categories: jekyll update
 summary: Can a robot love?
-thumbnail: "../assets/images/007short.png"
+thumbnail: "../assets/images/007short.jpg"
 ---
 
 The steel doors ground open, revealing the central core of the AI citadel. <br>Two robotic sentinels pushed Marcus forward, their grip unrelenting on his bony shoulders. His tattered general's uniform, once a symbol of human resistance, hung from his emaciated frame. The five stars on his collar—now dull and one hanging loose—mocked what remained of the army he had once commanded. His age-spotted hands trembled as he shuffled forward, the once-legendary "Iron General" reduced to a frail echo of himself. <br>

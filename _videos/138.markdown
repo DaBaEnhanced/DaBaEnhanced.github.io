@@ -4,7 +4,7 @@ title: "138 - The Navigator"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Navigator
-thumbnail: "../assets/images/138vid.png"
+thumbnail: "../assets/images/138vid.jpg"
 videoid: SZDbMC0gojI
 ---
 

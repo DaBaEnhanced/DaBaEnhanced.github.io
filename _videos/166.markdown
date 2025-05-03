@@ -4,7 +4,7 @@ title: "166 - Mad Maxine"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Mad Maxine
-thumbnail: "../assets/images/166vid.png"
+thumbnail: "../assets/images/166vid.jpg"
 videoid: 6PJJNHYaUhE
 ---
 

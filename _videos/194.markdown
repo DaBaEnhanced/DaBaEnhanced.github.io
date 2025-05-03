@@ -4,7 +4,7 @@ title: "194 - The 7 Deadly Sins: Sloth"
 date: 2025-04-03 00:03:47 +0200
 categories: jekyll update
 summary: A depiction
-thumbnail: "../assets/images/194vid.png"
+thumbnail: "../assets/images/194vid.jpg"
 videoid: MWMQmDOudhY
 ---
 

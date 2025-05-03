@@ -4,7 +4,7 @@ title: "153 - The Last Carnival"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Last Carnival
-thumbnail: "../assets/images/153vid.png"
+thumbnail: "../assets/images/153vid.jpg"
 videoid: xr9q_s07Y-E
 ---
 

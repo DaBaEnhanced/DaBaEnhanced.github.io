@@ -4,7 +4,7 @@ title: "012 - Remember Me"
 date: 2025-04-03 11:38:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/012poet.png"
+thumbnail: "../assets/images/012poet.jpg"
 ---
 
 <div style="text-align: center;">

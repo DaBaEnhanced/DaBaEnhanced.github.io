@@ -4,7 +4,7 @@ title: "156 - A Nightmare On Sesame Street"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: A Nightmare On Sesame Street
-thumbnail: "../assets/images/156vid.png"
+thumbnail: "../assets/images/156vid.jpg"
 videoid: BTxKQOsEjA0
 ---
 

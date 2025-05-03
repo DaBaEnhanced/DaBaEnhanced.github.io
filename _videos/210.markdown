@@ -4,7 +4,7 @@ title: "210 - Happy Easter"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Happy Easter
-thumbnail: "../assets/images/210vid.png"
+thumbnail: "../assets/images/210vid.jpg"
 videoid: sGcw84DTCls
 ---
 

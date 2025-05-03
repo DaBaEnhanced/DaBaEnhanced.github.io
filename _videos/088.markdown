@@ -4,7 +4,7 @@ title: "088 - Mechanical Garden"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Mechanical Garden
-thumbnail: "../assets/images/088vid.png"
+thumbnail: "../assets/images/088vid.jpg"
 videoid: hpUG_AWjYJU
 ---
 

@@ -4,7 +4,7 @@ title: "029 - Eden"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Eden
-thumbnail: "../assets/images/029vid.png"
+thumbnail: "../assets/images/029vid.jpg"
 videoid: NG-sF26njVg
 ---
 

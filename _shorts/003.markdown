@@ -4,7 +4,7 @@ title: "003 - Reality.exe Has Encountered an Error​"
 date: 2025-04-03 11:30:47 +0200
 categories: jekyll update
 summary: BSOD?
-thumbnail: "../assets/images/003short.png"
+thumbnail: "../assets/images/003short.jpg"
 ---
 
 Dave Peterson noticed something was wrong when his cat started speaking Portuguese. Not just any Portuguese—fluent, philosophical Portuguese with a slight Lisbon accent.

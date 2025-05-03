@@ -4,7 +4,7 @@ title: "087 - They Live"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: They Live
-thumbnail: "../assets/images/087vid.png"
+thumbnail: "../assets/images/087vid.jpg"
 videoid: 0rB6jjtsHvg
 ---
 

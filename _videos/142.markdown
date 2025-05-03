@@ -4,7 +4,7 @@ title: "142 - Battlestar"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Battlestar
-thumbnail: "../assets/images/142vid.png"
+thumbnail: "../assets/images/142vid.jpg"
 videoid: WTAhgX_BHrc
 ---
 

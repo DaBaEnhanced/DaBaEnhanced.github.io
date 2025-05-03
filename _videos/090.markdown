@@ -4,7 +4,7 @@ title: "090 - Bunny"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Bunny
-thumbnail: "../assets/images/090vid.png"
+thumbnail: "../assets/images/090vid.jpg"
 videoid: RR_TSlXg3Bs
 ---
 

@@ -4,7 +4,7 @@ title: "034 - Surreal West"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Surreal West
-thumbnail: "../assets/images/034vid.png"
+thumbnail: "../assets/images/034vid.jpg"
 videoid: KWwA2_-hamw
 ---
 

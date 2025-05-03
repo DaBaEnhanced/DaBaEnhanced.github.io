@@ -4,7 +4,7 @@ title: "010 - Cosmonauts"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Spacemen in space suit trippin in space
-thumbnail: "../assets/images/010vid.png"
+thumbnail: "../assets/images/010vid.jpg"
 videoid: XoIY1wsGGM4
 ---
 

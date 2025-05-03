@@ -4,7 +4,7 @@ title: "060 - Fallen Angels"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Fallen Angels
-thumbnail: "../assets/images/060vid.png"
+thumbnail: "../assets/images/060vid.jpg"
 videoid: H1NxNiePOmg
 ---
 

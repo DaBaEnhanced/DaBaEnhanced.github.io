@@ -4,7 +4,7 @@ title: "097 - TopGun 2099"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: TopGun 2099
-thumbnail: "../assets/images/097vid.png"
+thumbnail: "../assets/images/097vid.jpg"
 videoid: acDN1Fy6UEs
 ---
 

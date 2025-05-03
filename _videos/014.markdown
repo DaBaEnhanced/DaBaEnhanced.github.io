@@ -4,7 +4,7 @@ title: "014 - Astronauts On Acid"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: A trippy video about astronauts
-thumbnail: "../assets/images/014vid.png"
+thumbnail: "../assets/images/014vid.jpg"
 videoid: pg_QLmrpKk8
 ---
 

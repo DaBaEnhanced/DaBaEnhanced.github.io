@@ -4,7 +4,7 @@ title: "019 - Gravity's Shadow"
 date: 2025-04-03 11:44:47 +0200
 categories: jekyll update
 summary: Orthogonal realities
-thumbnail: "../assets/images/019short.png"
+thumbnail: "../assets/images/019short.jpg"
 ---
 
 Dr. Maya Chen stared at the data scrolling across her screen, her coffee gone cold beside her. The gravitational wave detector at the Lunar Observatory had been picking up anomalous patterns for weeks—patterns that couldn't be explained by any known astrophysical phenomenon.<br>

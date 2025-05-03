@@ -4,7 +4,7 @@ title: "059 - The Generative Goddess"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Generative Goddess
-thumbnail: "../assets/images/059vid.png"
+thumbnail: "../assets/images/059vid.jpg"
 videoid: NXGnMo0yJTc
 ---
 

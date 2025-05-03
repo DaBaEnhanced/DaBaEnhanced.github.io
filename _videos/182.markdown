@@ -4,7 +4,7 @@ title: "182 - Dreamscape"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Dreamscape
-thumbnail: "../assets/images/182vid.png"
+thumbnail: "../assets/images/182vid.jpg"
 videoid: zP7pF4wIo5M
 ---
 

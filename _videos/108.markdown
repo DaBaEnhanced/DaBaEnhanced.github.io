@@ -4,7 +4,7 @@ title: "108 - Tommy In Wonderland"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Tommy In Wonderland
-thumbnail: "../assets/images/108vid.png"
+thumbnail: "../assets/images/108vid.jpg"
 videoid: SvZjdX0yJQU
 ---
 

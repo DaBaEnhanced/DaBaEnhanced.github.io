@@ -4,7 +4,7 @@ title: "015 - The Cold Equations"
 date: 2025-04-03 11:40:47 +0200
 categories: jekyll update
 summary: Hard scifi
-thumbnail: "../assets/images/015short.png"
+thumbnail: "../assets/images/015short.jpg"
 ---
 
 Captain Reza Kazemi tracked the enemy vessel on his tactical display, its trajectory a perfect hyperbola around the gas giant Epsilon Eridani b. His own ship, the UES Daedalus, maintained a higher orbit, giving them the energy advantage—for now.<br>

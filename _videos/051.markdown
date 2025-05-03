@@ -4,7 +4,7 @@ title: "051 - Abyss"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Abyss
-thumbnail: "../assets/images/051vid.png"
+thumbnail: "../assets/images/051vid.jpg"
 videoid: y9WYvo9xMBg
 ---
 

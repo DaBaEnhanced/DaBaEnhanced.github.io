@@ -4,7 +4,7 @@ title: "106 - Sailing in the sky"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Sailing in the sky
-thumbnail: "../assets/images/106vid.png"
+thumbnail: "../assets/images/106vid.jpg"
 videoid: 2UeQyB5_5zA
 ---
 

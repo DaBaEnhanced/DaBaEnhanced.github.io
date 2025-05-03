@@ -4,7 +4,7 @@ title: "144 - The Third Eye"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Third Eye
-thumbnail: "../assets/images/144vid.png"
+thumbnail: "../assets/images/144vid.jpg"
 videoid: ik2G-ArRz7k
 ---
 

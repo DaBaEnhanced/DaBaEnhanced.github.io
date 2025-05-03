@@ -4,7 +4,7 @@ title: "161 - Psycho Tubbies"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Psycho Tubbies
-thumbnail: "../assets/images/161vid.png"
+thumbnail: "../assets/images/161vid.jpg"
 videoid: 9augbuq-cAk
 ---
 

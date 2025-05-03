@@ -4,7 +4,7 @@ title: "103 - The Empire"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Empire
-thumbnail: "../assets/images/103vid.png"
+thumbnail: "../assets/images/103vid.jpg"
 videoid: -TI496Mek5U
 ---
 

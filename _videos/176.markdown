@@ -4,7 +4,7 @@ title: "176 - The Late Conan"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Late Conan
-thumbnail: "../assets/images/176vid.png"
+thumbnail: "../assets/images/176vid.jpg"
 videoid: cQeu0PvzQhk
 ---
 

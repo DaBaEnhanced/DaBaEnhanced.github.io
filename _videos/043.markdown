@@ -4,7 +4,7 @@ title: "043 - 20000 Leagues Under The Sea"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: 20000 Leagues Under The Sea
-thumbnail: "../assets/images/043vid.png"
+thumbnail: "../assets/images/043vid.jpg"
 videoid: 6yolQ30XWfs
 ---
 

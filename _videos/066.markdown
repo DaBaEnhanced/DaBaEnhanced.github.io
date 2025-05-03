@@ -4,7 +4,7 @@ title: "066 - The Fallen City"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Fallen City
-thumbnail: "../assets/images/066vid.png"
+thumbnail: "../assets/images/066vid.jpg"
 videoid: fIxJ-aNGNMw
 ---
 

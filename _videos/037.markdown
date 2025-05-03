@@ -4,7 +4,7 @@ title: "037 - War Pigs"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: War Pigs
-thumbnail: "../assets/images/037vid.png"
+thumbnail: "../assets/images/037vid.jpg"
 videoid: cuCyZUIgecU
 ---
 

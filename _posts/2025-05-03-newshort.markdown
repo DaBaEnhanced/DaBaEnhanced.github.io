@@ -21,7 +21,7 @@ Enjoy.
 >
   <!-- Background Image -->
   <img
-    src="../../../../../assets/images/029short.png"
+    src="../../../../../assets/images/029short.jpg"
     alt="First contact"
     style="
       width: 100%;

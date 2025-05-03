@@ -4,7 +4,7 @@ title: "020 - Dante's Paradise"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Dante's Paradise
-thumbnail: "../assets/images/020vid.png"
+thumbnail: "../assets/images/020vid.jpg"
 videoid: vX48Ap_jR9Y
 ---
 

@@ -4,7 +4,7 @@ title: "170 - The Runner"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Runner
-thumbnail: "../assets/images/170vid.png"
+thumbnail: "../assets/images/170vid.jpg"
 videoid: 4mu9M1Dhd-E
 ---
 

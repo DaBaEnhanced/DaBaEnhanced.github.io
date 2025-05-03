@@ -4,7 +4,7 @@ title: "057 - Roma Invicta"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Roma Invicta
-thumbnail: "../assets/images/057vid.png"
+thumbnail: "../assets/images/057vid.jpg"
 videoid: j0SyjurDTmY
 ---
 

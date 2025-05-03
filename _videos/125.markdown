@@ -4,7 +4,7 @@ title: "125 - The Eagle's Flight"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Eagle's Flight
-thumbnail: "../assets/images/125vid.png"
+thumbnail: "../assets/images/125vid.jpg"
 videoid: uLeWgnVVmEI
 ---
 

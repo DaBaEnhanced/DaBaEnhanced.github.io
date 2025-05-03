@@ -4,7 +4,7 @@ title: "055 - Genesis"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Genesis
-thumbnail: "../assets/images/055vid.png"
+thumbnail: "../assets/images/055vid.jpg"
 videoid: ucLNYxsweEQ
 ---
 

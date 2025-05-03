@@ -4,7 +4,7 @@ title: "123 - Pirates and Sirens"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Pirates and Sirens
-thumbnail: "../assets/images/123vid.png"
+thumbnail: "../assets/images/123vid.jpg"
 videoid: MHSsMZa82Tc
 ---
 

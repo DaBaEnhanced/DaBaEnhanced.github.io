@@ -4,7 +4,7 @@ title: "150 - The Invasion"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Invasion
-thumbnail: "../assets/images/150vid.png"
+thumbnail: "../assets/images/150vid.jpg"
 videoid: jNbi_mG7Y4M
 ---
 

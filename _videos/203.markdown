@@ -4,7 +4,7 @@ title: "203 - Hyperuranion"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Hyperuranion
-thumbnail: "../assets/images/203vid.png"
+thumbnail: "../assets/images/203vid.jpg"
 videoid: -_RAD8AJ-pU
 ---
 

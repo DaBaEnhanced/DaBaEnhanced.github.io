@@ -4,7 +4,7 @@ title: "045 - Fairies Against The Machines"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Fairies Against The Machines
-thumbnail: "../assets/images/045vid.png"
+thumbnail: "../assets/images/045vid.jpg"
 videoid: XQI3qAjpg-Y
 ---
 

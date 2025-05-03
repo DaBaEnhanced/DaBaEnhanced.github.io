@@ -4,7 +4,7 @@ title: "193 - The 7 Deadly Sins: Envy"
 date: 2025-04-03 00:02:47 +0200
 categories: jekyll update
 summary: A depiction
-thumbnail: "../assets/images/193vid.png"
+thumbnail: "../assets/images/193vid.jpg"
 videoid: 3vK95G-rQv4
 ---
 

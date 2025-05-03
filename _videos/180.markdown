@@ -4,7 +4,7 @@ title: "180 - The Joy Of Drawing"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Joy Of Drawing
-thumbnail: "../assets/images/180vid.png"
+thumbnail: "../assets/images/180vid.jpg"
 videoid: S24RjF3YJQk
 ---
 

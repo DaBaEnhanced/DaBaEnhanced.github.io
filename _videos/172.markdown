@@ -4,7 +4,7 @@ title: "172 - War Machine"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: War Machine
-thumbnail: "../assets/images/172vid.png"
+thumbnail: "../assets/images/172vid.jpg"
 videoid: fPIuO6cCdQA
 ---
 

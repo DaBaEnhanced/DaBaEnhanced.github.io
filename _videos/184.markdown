@@ -4,7 +4,7 @@ title: "184 - 1980s SpaceX"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: 1980s SpaceX
-thumbnail: "../assets/images/184vid.png"
+thumbnail: "../assets/images/184vid.jpg"
 videoid: jtwykxnlYkk
 ---
 

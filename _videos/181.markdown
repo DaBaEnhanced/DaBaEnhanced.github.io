@@ -4,7 +4,7 @@ title: "181 - The Alp's Secrets"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Alp's Secrets
-thumbnail: "../assets/images/181vid.png"
+thumbnail: "../assets/images/181vid.jpg"
 videoid: elVv4cmqzmM
 ---
 

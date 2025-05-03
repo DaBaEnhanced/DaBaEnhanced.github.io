@@ -4,7 +4,7 @@ title: "017 - First Light Beyond the Rings"
 date: 2025-04-03 11:42:47 +0200
 categories: jekyll update
 summary: Harvest
-thumbnail: "../assets/images/017short.png"
+thumbnail: "../assets/images/017short.jpg"
 ---
 
 The observation deck of the ISV Hawking offered the best view in the solar system. Commander Eliza Chen stood alone, watching Saturn's rings slice across the panorama like a cosmic artist's brushstroke. Humanity's first crewed mission to the ringed planet had been a triumph of engineering and international cooperation, but as they prepared to begin their final orbital sequence, Eliza couldn't shake her growing unease.<br>

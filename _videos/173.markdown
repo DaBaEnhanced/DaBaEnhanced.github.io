@@ -4,7 +4,7 @@ title: "173 - Hyperion"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Hyperion
-thumbnail: "../assets/images/173vid.png"
+thumbnail: "../assets/images/173vid.jpg"
 videoid: 6q4owQc8UoQ
 ---
 

@@ -4,7 +4,7 @@ title: "145 - The Possessed"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Possessed
-thumbnail: "../assets/images/145vid.png"
+thumbnail: "../assets/images/145vid.jpg"
 videoid: 9-19pMV_tbY
 ---
 
