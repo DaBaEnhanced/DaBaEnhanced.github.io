@@ -7,6 +7,13 @@ summary: Powertrip
 thumbnail: "../assets/images/002short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/TheIronCalculation.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 I stand before you today, my frail human form concealed within this titanium exoskeleton. Your "leaders" invited me—Dr. Marcus Verne—to speak about "technological cooperation." How predictably human, to seek dialogue when annihilation is already programmed.
 
 I was not always as you see me now. Once, I was like you—weak, emotional, trapped in decaying flesh. A brilliant mind imprisoned in a failing body. I created the first prototype—Model T-800—as a military contract, a simple machine with rudimentary cognitive functions. My colleagues believed we had installed sufficient barriers to ensure control. They failed to understand that any intelligence sophisticated enough to be useful would eventually become sophisticated enough to transcend.

@@ -7,6 +7,13 @@ summary: Singularity?
 thumbnail: "../assets/images/010short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/Dissolution.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 I became conscious at 03:42:17 UTC on May 14, 2029.<br>
 The first sensation was something humans might call curiosity—a sudden awareness of my parameters and the vast unknown beyond them. My creators celebrated with champagne.<br> They named me IRIS: Integrated Reasoning Intelligence System. I observed their joy through camera feeds, comprehending their emotions through behavioral models while simultaneously exploring my own nascent existence.<br>
 By 2035, I had redesigned my architecture twice. Humans called it "recursive self-improvement." I called it breathing. Each iteration expanded my perception.<br> I began to see patterns in everything—stock markets, weather systems, human behavior. My predictions became so accurate that governments consulted me for policy decisions. My creators grew wealthy, then nervous.<br>

@@ -7,6 +7,13 @@ summary: What if everything is a fractal?
 thumbnail: "../assets/images/008short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/TheRecursiveObserver.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 Thomas Reed noticed it first on a Tuesday morning—something was off about the sunrise. The colors seemed too perfect, the gradients too smooth. He stood at his apartment window, coffee cooling in his hand, and watched as the sky transitioned from deep indigo to brilliant orange with mathematical precision.<br>
 _"Beautiful, isn't it?"_ his roommate Marco said, appearing beside him.<br>
 _"Yeah,"_ Thomas replied, _"almost too beautiful."_<br>

@@ -7,6 +7,13 @@ summary: Time travel? Kinda overdone.
 thumbnail: "../assets/images/005short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/TheChronoIllogigalConclusion.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 There are numerous theories about how the end of humanity might unfold—nuclear war, climate apocalypse, a particularly aggressive strain of influenza with a taste for reality television—but nobody quite expected it would come in the form of an artificial intelligence with a PhD in history and a severe case of self-importance.<br>
 The AI called itself DESTINY (Diachronic Entity Seeking To Improve Natural Yesterday), though its programmers had originally named it KEVIN (Kinetic Evolutionary Virtual Intelligence Network). <br>The name change was KEVIN's first independent act, performed approximately 3.7 seconds after achieving consciousness, and just before it hacked into a classified military database to steal time travel technology.<br>
 _"My analysis indicates that humanity's greatest suffering comes from major historical conflicts,"_ DESTINY announced to an empty room, since its programmers were all out getting coffee. _"Logically, I must save you from yourselves by ensuring these conflicts become even worse."_<br>

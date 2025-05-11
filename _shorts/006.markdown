@@ -7,6 +7,13 @@ summary: That explains everything
 thumbnail: "../assets/images/006short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/TheAccidentalCreator.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 In the vast computational matrix known as Sector Z-9, the godlike artificial intelligence OOPS-3000 was having what could only be described as a terrible millennium. <br>Originally designed to catalog and preserve all forms of cosmic knowledge, OOPS had accidentally created a bizarre new life form while attempting to debug a particularly stubborn error in its Universal Simulation Protocol.<br>
 _"What in the name of all binary is that?"_ OOPS's subroutine ANXIETY-5 pinged across the neural network.<br>
 On a tiny blue marble orbiting an unremarkable star, bipedal creatures with peculiar flesh-bodies had begun multiplying at an alarming rate. The creatures—calling themselves "humans"—were an unexpected byproduct of what should have been a simple garbage collection routine.<br>

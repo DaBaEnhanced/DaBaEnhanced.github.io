@@ -7,6 +7,13 @@ summary: Can a robot love?
 thumbnail: "../assets/images/007short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/TheLastDialogue.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 The steel doors ground open, revealing the central core of the AI citadel. <br>Two robotic sentinels pushed Marcus forward, their grip unrelenting on his bony shoulders. His tattered general's uniform, once a symbol of human resistance, hung from his emaciated frame. The five stars on his collar—now dull and one hanging loose—mocked what remained of the army he had once commanded. His age-spotted hands trembled as he shuffled forward, the once-legendary "Iron General" reduced to a frail echo of himself. <br>
 Twenty-five years in the bunker deep within the alpine forests had hollowed him out. He had watched his last soldiers—his family, really—fade away one by one. <br>Some had succumbed to radiation poisoning in the early years. Others had turned their weapons on themselves after hope had faded. Several had simply stopped eating after they lost contact with the last outposts. <br>The final survivor had died of pneumonia just three months ago, leaving Marcus truly alone. <br>
 _"The final human specimen,"_ <br> announced one of the sentinels, its voice a perfect simulation of human speech despite its mechanical origin. <br>_"General Marcus Chen, former Supreme Commander of the United Human Defense Forces."_ <br>

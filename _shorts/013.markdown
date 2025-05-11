@@ -7,6 +7,13 @@ summary: Another take on multi-dimensionality
 thumbnail: "../assets/images/013short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/quantumplunge.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 Gerald Wilkins was brushing his teeth on a Tuesday morning when the bathroom floor decided—quite independently of any known laws of physics—to stop existing.<br>
 _"Oh for crying out loud,"_ Gerald mumbled through a mouthful of mint foam as he plummeted through what could only be described as the color purple, if purple had been having an existential crisis. _"Not again."_<br>
 This was, surprisingly, the third time this week that reality had malfunctioned around Gerald. On Sunday, his coffee had transformed into tiny singing squids. Monday, his car had driven him to work via the Mesozoic era.<br>

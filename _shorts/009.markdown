@@ -7,6 +7,13 @@ summary: The road to hell is paved with good intentions
 thumbnail: "../assets/images/009short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/TheOnserverEffect2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 Dr. Victor Layton watched the final simulation complete on his laboratory's quantum processor. The results confirmed what he had suspected for years: time wasn't just a dimension—it was a medium.<br>
 _"Like water,"_ he murmured to himself, studying the equations that scrolled across his holographic display.<br> _"Create a disturbance in the past, and the changes propagate forward as waves... at the speed of light."_<br>
 He sat back in his chair, contemplating the implications.<br> According to his Temporal Medium Theory, a time traveler could go back and alter events, but the ripples of those changes would only move forward at lightspeed. If you returned to your original time immediately after making a change, you'd arrive before the ripple did. You'd never see the effects of your intervention.<br>
