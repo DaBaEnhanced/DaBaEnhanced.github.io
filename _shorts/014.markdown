@@ -7,6 +7,13 @@ summary: What if hell is real and we aren't?
 thumbnail: "../assets/images/014short.jpg"
 ---
 
+<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/ExitPoint.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 Morgan's headache began like any other—a dull throb behind his eyes that prescription meds never quite touched. But this time, something was different. As he rubbed his temples, his fingers caught on something small and hard beneath the skin.<br>
 _"What the hell?"_ he muttered, probing the strange bump.<br>
 The headache intensified as he pressed, vision blurring around the edges. Then came the glitches—subtle at first. His coffee mug passing through the table. A bird frozen mid-flight outside his window. The sun jumping positions in the sky.<br>
