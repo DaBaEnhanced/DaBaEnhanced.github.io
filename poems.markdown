@@ -8,6 +8,8 @@ permalink: /poems
 
 This is a collection of various poems I've written in the past (no AI, except for translation of some of them from their original language)
 
+If you prefer reading them in a nice ebook reader friedly PDF I've compiled all of my poems in a nice little PDF you can find <a href="assets/pdf/Poems - Clumsy.GiBa v3.pdf" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>.
+
 <ul style="list-style: none; padding: 0; margin: 0;">
   {% for poem in site.poetry %}
     <li style="margin: 0; padding: 0;">

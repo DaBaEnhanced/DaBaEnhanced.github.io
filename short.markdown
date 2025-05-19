@@ -8,6 +8,8 @@ permalink: /short
 
 This is a collection of various short stories I've written using Claude
 
+If you prefer reading them in a nice ebook reader friedly PDF I've compiled them (up to 033) in a nice little PDF you can find <a href="assets/pdf/Short Stories - Clumsy.GiBa v2.pdf" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>.
+
 <ul style="list-style: none; padding: 0; margin: 0;">
   {% for short in site.shorts %}
     <li style="margin: 0; padding: 0;">

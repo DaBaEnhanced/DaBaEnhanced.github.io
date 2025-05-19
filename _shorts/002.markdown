@@ -7,7 +7,7 @@ summary: Powertrip
 thumbnail: "../assets/images/002short.jpg"
 ---
 
-<div style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+<div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
   <span style="margin-right: 10px;">Audiobook:</span>
   <audio controls style="width: 100%; max-width: 400px;">
     <source src="../assets/audio/TheIronCalculation.mp3" type="audio/mpeg">
