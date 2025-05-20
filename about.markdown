@@ -12,7 +12,7 @@ I work in AI with my daily job, but in my free time i like to dabble with variou
 
 Poetry section is 99% human made (translation are half done with AI)
 
-Shorts are 99% AI made (I just gave the basic plot) using Claude 3.7.
+Shorts are 50%-50% Human-AI made chatting with Claude 3.7.
 
 Videos are 99% AI made too, I just used an image generation model. Combined with some constrained initialization and custom evolving prompting I generated weird and dream-like trippy experience.
 Models range from SD 1.5 to SDXL (mostly finetuned checkpoints found on <a href="https://civitai.com/">CivitAI</a>) using the <a href="https://deforum.art/">deforum</a> py code as a starting point.
