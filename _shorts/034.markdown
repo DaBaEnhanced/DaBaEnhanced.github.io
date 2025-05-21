@@ -24,7 +24,7 @@ _"Landing successful. Welcome to Titan, everyone."_<br>
 ## II. First Contact
 
 Mission Day 47<br>
-Reed worked methodically, collecting samples from the edge of the vast methane lake they had dubbed "Poseidon." Through her environmental suit, the temperature registered at a brutal -290°F, but the suit's heating systems kept her comfortable as she carefully extracted cores from the hydrocarbon-rich shoreline.<br>
+Reed worked methodically, collecting samples from the edge of the vast methane lake they had dubbed "Poseidon." Through her environmental suit, the temperature registered at a brutal -178°C, but the suit's heating systems kept her comfortable as she carefully extracted cores from the hydrocarbon-rich shoreline.<br>
 Her radio crackled. _"Reed, what's your status?"_ It was Zhao, checking in from the habitat module they'd established half a kilometer from the lake.<br>
 _"Almost finished here,"_ she replied, sealing another sample container. _"Found some interesting molecular chains in this sediment. Kapoor's going to have a field day with these."_<br>
 The mission had been progressing better than anyone had dared hope. They'd deployed atmospheric sensors, conducted preliminary surveys of the surrounding terrain, and begun mapping subsurface features using ground-penetrating radar. The data they'd collected in just over a month would keep scientists back on Earth busy for years.<br>
@@ -103,7 +103,7 @@ _"So you're proposing that this... entity exists primarily in dimensions beyond 
 The remaining four crew members sat around the table in the habitat's common area. The loss of Commander Zhao had hit them hard, and the subsequent days had been filled with desperate analysis and debate about what they had encountered.<br>
 Reed nodded, pulling up a holographic model she had constructed based on their observations. _"It's the only explanation that fits all the data. The visual distortions, the way it seems to appear and disappear, the neurological effects it produces."_<br>
 _"You're saying we're being hunted by a four-dimensional predator?"_ Kapoor looked pale.<br>
-_"Not necessarily four-dimensional,"_ Chen interjected, surprising Reed with his support. _"But yes, an entity existing partially outside our three-dimensional space. My quantum readings have been showing anomalies consistent with higher-dimensional intrusions."_<br>
+_"Not necessarily four-dimensional,"_ Chen interjected, surprising Reed with his support. _"But yes, an entity existing partially outside our three-dimensional space."_<br>
 Reed flashed him a grateful look before continuing. _"Think about how a three-dimensional object—say, a sphere—would appear to hypothetical two-dimensional beings living on a plane. As the sphere passes through their plane, they would perceive it as a circle that appears from nowhere, grows to maximum diameter, then shrinks and disappears."_<br>
 _"And to such beings, we would appear as gods,"_ Martinez mused. _"Able to reach into their world, manipulate objects from 'above' their plane of existence."_<br>
 _"Exactly,"_ Reed said. _"What we're experiencing could be analogous—a higher-dimensional entity intersecting with our three-dimensional reality."_<br>
