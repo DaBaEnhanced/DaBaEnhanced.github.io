@@ -1,0 +1,38 @@
+---
+layout: post
+title: "New short story and a new book!"
+date: 2025-09-27 23:53:47 +0200
+categories: jekyll update
+excerpt: 037 - Digital Genesis
+---
+
+I've added a new short story to the [short]({% link short.markdown %}) section.
+N°37, AI has to deal with humanity's short comings.<br>
+But the coolest thing is my new book!<br>
+<a href="../../../../../assets/pdf/Ark 01 The Awakening.pdf" target="_blank" style="color: #007bff; text-decoration: underline;">Ark 01 - The Awakening</a><br>
+with it's own section [books]({% link books.markdown %})
+
+<div
+  style="
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+  "
+>
+  <!-- Background Image -->
+  <img
+    src="../../../../../assets/images/001book.jpg"
+    alt="037 - Digital Genesis"
+    style="
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    "
+  />
+</div>
+<br>
+
+Enjoy.
