@@ -1,0 +1,42 @@
+---
+layout: post
+title: "New book!"
+date: 2025-11-01 23:53:47 +0200
+categories: jekyll update
+excerpt: Songs on Rocks - The Consent Engines Book One
+---
+
+I've added a new book to the [book]({% link books.markdown %}) section.
+It's the first book of a new series: Consent Engines. I wanted to explore a far far future where humans are immortal and have a nomadic life through the universe, but with a twist: hard sci-fi only: so sub-light speeds and generational magsail-like ships.
+
+I also have 4 other book in pipeline (I've added their covers in the section, they are WiP not final) two in the same universe as The Awakening and two in the Consent Engines universe.
+
+If you want to give a little support to my efforts I'm putting these books on amazon too, where you
+can buy the Kindle or the physical copy.
+
+Bye!
+
+<div
+  style="
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+  "
+>
+  <!-- Background Image -->
+  <img
+    src="../../../../../assets/images/006book.jpg"
+    alt="037 - Digital Genesis"
+    style="
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    "
+  />
+</div>
+<br>
+
+Enjoy.
