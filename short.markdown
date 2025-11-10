@@ -6,7 +6,7 @@ permalink: /short
 
 ### Clumsy.GiBa's Short Stories
 
-This is a collection of various short stories I've written with the help of Claude 3.7
+This is a collection of various short stories I've written with the help of Claude 3.7 to translate them in English
 
 If you prefer reading them in a nice ebook reader friedly PDF I've compiled them in a nice little PDF you can find <a href="assets/pdf/Short Stories - Clumsy.GiBa v3.pdf" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>.
 
