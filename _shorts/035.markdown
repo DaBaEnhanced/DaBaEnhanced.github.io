@@ -4,7 +4,8 @@ title: "035 - Falling Star"
 date: 2025-04-03 12:00:47 +0200
 categories: jekyll update
 summary: Beyond Flesh and Metal
-thumbnail: "../assets/images/035short.jpg"
+thumbnail_img: "../assets/images/035short.jpg"
+thumbnail: "../assets/videos/035short.mp4"
 ---
 
 Kai moved through the shadows of NovaTech's R&D facility like a ghost, his specialized carbon-fiber suit absorbing the soft blue emergency lights that lined the corridors. Fifteen years of thieving had honed his skills to perfection—silent footfalls, measured breathing, and an intimate knowledge of security systems that could be worth millions to the right buyer. In a world where mega-corporations had more power than governments, people like Kai made their living in the spaces between legality and necessity.<br>

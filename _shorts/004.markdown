@@ -4,7 +4,8 @@ title: "004 - Europa's Unexpected Encounter​"
 date: 2025-04-03 11:31:47 +0200
 categories: jekyll update
 summary: A gloryhole? Really?
-thumbnail: "../assets/images/004short.jpg"
+thumbnail_img: "../assets/images/004short.jpg"
+thumbnail: "../assets/videos/004short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

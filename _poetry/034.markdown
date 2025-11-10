@@ -4,7 +4,8 @@ title: "034 - I Hate You"
 date: 2025-04-03 12:00:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/034poet.jpg"
+thumbnail_img: "../assets/images/034poet.jpg"
+thumbnail: "../assets/videos/034poet.mp4"
 ---
 
 <div style="text-align: center;">

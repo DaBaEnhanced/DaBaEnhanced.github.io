@@ -4,7 +4,8 @@ title: "022 - The Quantum Gambit"
 date: 2025-04-03 11:47:47 +0200
 categories: jekyll update
 summary: An eternal game of chess.
-thumbnail: "../assets/images/022short.jpg"
+thumbnail_img: "../assets/images/022short.jpg"
+thumbnail: "../assets/videos/022short.mp4"
 ---
 
 In the three-hundred-thousandth millennium of human existence, Elio sat across from NOUS in the observation chamber of Terminus Station. Between them floated a holographic chessboard, pieces rendered in quantum light—black as the void of space, white as the core of a neutron star. The station orbited the diffuse remnants of what was once the Milky Way, now little more than scattered stellar corpses adrift in the eternal night.<br>

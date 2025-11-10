@@ -4,7 +4,8 @@ title: "032 - Children of War"
 date: 2025-04-03 11:58:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/032poet.jpg"
+thumbnail_img: "../assets/images/032poet.jpg"
+thumbnail: "../assets/videos/032poet.mp4"
 ---
 
 <div style="text-align: center;">

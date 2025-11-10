@@ -4,7 +4,8 @@ title: "009 - THE OBSERVER EFFECT​"
 date: 2025-04-03 11:36:47 +0200
 categories: jekyll update
 summary: The road to hell is paved with good intentions
-thumbnail: "../assets/images/009short.jpg"
+thumbnail_img: "../assets/images/009short.jpg"
+thumbnail: "../assets/videos/009short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

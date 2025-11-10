@@ -4,7 +4,8 @@ title: "027 - Misplaced"
 date: 2025-04-03 11:52:47 +0200
 categories: jekyll update
 summary: Space DIEversity?
-thumbnail: "../assets/images/027short.jpg"
+thumbnail_img: "../assets/images/027short.jpg"
+thumbnail: "../assets/videos/027short.mp4"
 ---
 
 Dave Harrington stared at the gelatinous blob of purple goo that had just slid into the seat across from him in the space station's cafeteria. The blob—Dave was pretty sure its name was Xor'blatt, a mid-level administrator from Sector 7—rippled pleasantly in what passed for a greeting.<br>

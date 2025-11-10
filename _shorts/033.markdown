@@ -4,7 +4,8 @@ title: "033 - The Vampire"
 date: 2025-04-03 11:58:47 +0200
 categories: jekyll update
 summary: a cyberpunk take
-thumbnail: "../assets/images/033short.jpg"
+thumbnail_img: "../assets/images/033short.jpg"
+thumbnail: "../assets/videos/033short.mp4"
 ---
 
 Elias Kane leaned against the railing of the hospital's emergency stairwell, eyes closed, breathing controlled. The hunt was on again. His specialized gear hummed silently against his spine, ready to capture what he needed.<br>

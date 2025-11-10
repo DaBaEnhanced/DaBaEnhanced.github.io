@@ -4,7 +4,8 @@ title: "003 - My World"
 date: 2025-04-03 11:30:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/003poet.jpg"
+thumbnail_img: "../assets/images/003poet.jpg"
+thumbnail: "../assets/videos/003poet.mp4"
 ---
 
 <div style="text-align: center;">

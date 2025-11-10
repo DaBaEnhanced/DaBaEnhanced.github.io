@@ -4,7 +4,8 @@ title: "032 - The Long Thaw"
 date: 2025-04-03 11:57:47 +0200
 categories: jekyll update
 summary: too good to be true
-thumbnail: "../assets/images/032short.jpg"
+thumbnail_img: "../assets/images/032short.jpg"
+thumbnail: "../assets/videos/032short.mp4"
 ---
 
 When Ellis opened his eyes, the first thing he noticed was the absence of pain. His joints, chronically inflamed for the last decade of his previous life, moved with fluid ease. The cancer that had forced his desperate gamble on experimental cryonics was nowhere to be felt in his body.<br>

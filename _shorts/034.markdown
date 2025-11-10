@@ -4,7 +4,8 @@ title: "034 - Shadows on Titan"
 date: 2025-04-03 11:59:47 +0200
 categories: jekyll update
 summary: Some gulfs cannot be bridged
-thumbnail: "../assets/images/034short.jpg"
+thumbnail_img: "../assets/images/034short.jpg"
+thumbnail: "../assets/videos/034short.mp4"
 ---
 
 ## I. Arrival

@@ -4,7 +4,8 @@ title: "004 - Lemmings"
 date: 2025-04-03 11:31:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/004poet.jpg"
+thumbnail_img: "../assets/images/004poet.jpg"
+thumbnail: "../assets/videos/004poet.mp4"
 ---
 
 <div style="text-align: center;">

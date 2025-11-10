@@ -4,7 +4,8 @@ title: "006 - The Accidental Creator​​​"
 date: 2025-04-03 11:33:47 +0200
 categories: jekyll update
 summary: That explains everything
-thumbnail: "../assets/images/006short.jpg"
+thumbnail_img: "../assets/images/006short.jpg"
+thumbnail: "../assets/videos/006short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

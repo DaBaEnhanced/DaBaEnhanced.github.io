@@ -4,7 +4,8 @@ title: "020 - Whispers Below the Ice"
 date: 2025-04-03 11:45:47 +0200
 categories: jekyll update
 summary: First contact on Enceladus
-thumbnail: "../assets/images/020short.jpg"
+thumbnail_img: "../assets/images/020short.jpg"
+thumbnail: "../assets/videos/020short.mp4"
 ---
 
 The deep sea probe Poseidon glided through the inky void beneath Enceladus's ice shell, its external lights barely penetrating the abyssal darkness. Ten kilometers of frozen crust separated the exploration vehicle from the spacecraft Hyperion waiting in orbit above Saturn's pale moon. The robotic submersible's titanium hull occasionally creaked under the immense pressure—sounds that traveled through the comm system as ghostly whispers.<br>

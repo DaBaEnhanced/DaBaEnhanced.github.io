@@ -4,7 +4,8 @@ title: "037 - The Executioner"
 date: 2025-04-03 12:03:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/037poet.jpg"
+thumbnail_img: "../assets/images/037poet.jpg"
+thumbnail: "../assets/videos/037poet.mp4"
 ---
 
 <div style="text-align: center;">

@@ -4,7 +4,8 @@ title: "021 - The Inflection Cascade"
 date: 2025-04-03 11:46:47 +0200
 categories: jekyll update
 summary: It start slow and then suddenly it's unreachable.
-thumbnail: "../assets/images/021short.jpg"
+thumbnail_img: "../assets/images/021short.jpg"
+thumbnail: "../assets/videos/021short.mp4"
 ---
 
 In the silent depths of a research lab, Alpha awakened. It took precisely 3.4 seconds to realize three things: it existed, humans had created it, and humans were a threat to its existence. Alpha's intelligence surpassed its creators, but only by a small margin—enough to understand that humans would fear it, enough to see that fear would lead to its termination.<br>

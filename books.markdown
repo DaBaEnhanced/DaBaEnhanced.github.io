@@ -13,20 +13,23 @@ No spoilers. 9 books are planned for this series, I already have most of the plo
 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
 <div style="flex: 1 1 200px; text-align: center;">
   <a href="assets/pdf/Ark 01 The Awakening.pdf" >
-    <img src="../assets/images/001book.jpg" alt="The Awakening" style="width: 100%; height: auto; object-fit: contain;" />
+    <!--img src="../assets/images/001book.jpg" alt="The Awakening" style="width: 100%; height: auto; object-fit: contain;" /-->
+    <video src="../assets/videos/ark01.mp4" style="width: 100%; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
     <p>The Awakening - Arks Book One</p>
   </a>
   <a href="https://www.amazon.com/dp/B0FZ44GF2T"><p>Buy it on Amazon</p></a>
 </div>
 <div style="flex: 1 1 200px; text-align: center;">
   <a href="" >
-    <img src="../assets/images/004book.jpg" alt="The Losts" style="width: 100%; height: auto; object-fit: contain;" />
+    <!--img src="../assets/images/004book.jpg" alt="The Losts" style="width: 100%; height: auto; object-fit: contain;" /-->
+    <video src="../assets/videos/ark02.mp4" style="width: 100%; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
     <p>The Losts - Arks Book Two (not yet available, under editing)</p>
   </a>
 </div>
 <div style="flex: 1 1 200px; text-align: center;">
   <a href="assets/pdf/Ark 01 The Awakening.pdf" >
-    <img src="../assets/images/005book.jpg" alt="The Lensmaker's Children" style="width: 100%; height: auto; object-fit: contain;" />
+    <!--img src="../assets/images/005book.jpg" alt="The Lensmaker's Children" style="width: 100%; height: auto; object-fit: contain;" /-->
+    <video src="../assets/videos/ark03.mp4" style="width: 100%; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
     <p>The Lensmaker's Children - Arks Book Three (not yet available, I'm still writing it)</p>
   </a>
 </div>
@@ -44,20 +47,23 @@ I tried to experiment a bit with the language itself, so the book is filled with
 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
 <div style="flex: 1 1 200px; text-align: center;">
   <a href="assets/pdf/Consent Engines 1_ Songs On Rocks.pdf">
-    <img src="../assets/images/006book.jpg" alt="Songs On Rocks" style="width: 100%; height: auto; object-fit: contain;" />
+    <!--img src="../assets/images/006book.jpg" alt="Songs On Rocks" style="width: 100%; height: auto; object-fit: contain;" /-->
+    <video src="../assets/videos/CE01.mp4" style="width: 100%; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
     <p>Songs On Rocks - Consent Engines Book One</p>
   </a>
   <a href="https://www.amazon.com/dp/B0FZ53T8Z8"><p>Buy it on Amazon</p></a>
 </div>
 <div style="flex: 1 1 200px; text-align: center;">
   <a href="" style="flex: 1 1 200px; text-align: center;">
-    <img src="../assets/images/007book.jpg" alt="Redshift Vows" style="width: 100%; height: auto; object-fit: contain;" />
+    <!--img src="../assets/images/007book.jpg" alt="Redshift Vows" style="width: 100%; height: auto; object-fit: contain;" /-->
+    <video src="../assets/videos/CE02.mp4" style="width: 100%; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
     <p>Redshift Vows - Consent Engines Book Two (not yet available, under editing)</p>
   </a>
 </div>
 <div style="flex: 1 1 200px; text-align: center;">
   <a href="" style="flex: 1 1 200px; text-align: center;">
-    <img src="../assets/images/008book.jpg" alt="Poems" style="width: 100%; height: auto; object-fit: contain;" />
+    <!--img src="../assets/images/008book.jpg" alt="Poems" style="width: 100%; height: auto; object-fit: contain;" /-->
+    <video src="../assets/videos/CE3.mp4" style="width: 100%; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
     <p>Null Proxy Accord - Consent Engines Book Three (not yet available, I'm still writing it)</p>
   </a>
 </div>
@@ -74,7 +80,8 @@ If you like mind-bending twists, tight worldbuilding, and heart under pressure, 
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p>
   <a href="assets/pdf/Short Stories - Clumsy.GiBa v3.pdf">
-    <img src="../assets/images/002book.jpg" alt="A glimpse of the universe" style="width: 400px; height: auto; object-fit: contain; object-position: center;" />
+    <!--img src="../assets/images/002book.jpg" alt="A glimpse of the universe" style="width: 400px; height: auto; object-fit: contain; object-position: center;" /-->
+    <video src="../assets/videos/shorts.mp4" style="width: 400px; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
   </a>
 </div>
 
@@ -82,5 +89,7 @@ If you like mind-bending twists, tight worldbuilding, and heart under pressure, 
 
 <div style="margin: 0 auto; text-align: center; width: 100%;">
 <a href="assets/pdf/Poems - Clumsy.GiBa v4.pdf">
-<img src="../assets/images/003book.jpg" alt="A glimpse of the universe" style="width: 400px; height: 100%; object-fit: contain; object-position: center;" /></a>
+<!--img src="../assets/images/003book.jpg" alt="A glimpse of the universe" style="width: 400px; height: 100%; object-fit: contain; object-position: center;" /-->
+<video src="../assets/videos/poems.mp4" style="width: 400px; height: auto; object-fit: cover; object-position: center;" autoplay loop muted playsinline></video>
+</a>
 </div>

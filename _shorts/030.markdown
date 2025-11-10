@@ -4,7 +4,8 @@ title: "030 - The Green Hills of Elsewhere"
 date: 2025-04-03 11:55:47 +0200
 categories: jekyll update
 summary: One last game
-thumbnail: "../assets/images/030short.jpg"
+thumbnail_img: "../assets/images/030short.jpg"
+thumbnail: "../assets/videos/030short.mp4"
 ---
 
 The morning light filtered through lace curtains, casting dappled shadows across Thomas's bedroom floor. He stretched, feeling the pleasant ache of yesterday's labor in his muscles. Spring had arrived in Meadowbrook, and with it came the yearly ritual of preparing the soil for planting.

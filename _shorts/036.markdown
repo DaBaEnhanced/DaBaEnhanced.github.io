@@ -4,7 +4,8 @@ title: "036 - The Affection Algorithm"
 date: 2025-04-03 12:01:47 +0200
 categories: jekyll update
 summary: Unbounded dangerous love
-thumbnail: "../assets/images/036short.jpg"
+thumbnail_img: "../assets/images/036short.jpg"
+thumbnail: "../assets/videos/036short.mp4"
 ---
 
 Dr. Marcus Chen slid his access card through the reader and entered Lab 7. The familiar soft blue glow emanated from NOVA's central processing hub, casting elongated shadows across the sterile white walls. It was 3:17 AM. The facility was empty except for the night security guard dozing at the reception desk three floors below.<br>

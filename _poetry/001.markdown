@@ -4,7 +4,8 @@ title: "001 - Fragments"
 date: 2025-04-03 11:28:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/001poet.jpg"
+thumbnail_img: "../assets/images/001poet.jpg"
+thumbnail: "../assets/videos/001poet.mp4"
 ---
 
 <div style="text-align: center;">

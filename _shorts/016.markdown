@@ -4,7 +4,8 @@ title: "016 - Echoes From the Void"
 date: 2025-04-03 11:41:47 +0200
 categories: jekyll update
 summary: Signals
-thumbnail: "../assets/images/016short.jpg"
+thumbnail_img: "../assets/images/016short.jpg"
+thumbnail: "../assets/videos/016short.mp4"
 ---
 
 Dr. Eleanor Chen stared at the monitor displaying the waveform that had appeared three weeks ago. Like her colleagues at the Gravitational Wave Observatory, she had assumed it was an equipment malfunction. Gravitational waves were supposed to be the ripples in spacetime caused by violent cosmic events—not the steady, rhythmic patterns now being detected.<br>

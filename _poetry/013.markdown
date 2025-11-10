@@ -4,7 +4,8 @@ title: "013 - The Button of Death"
 date: 2025-04-03 11:39:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/013poet.jpg"
+thumbnail_img: "../assets/images/013poet.jpg"
+thumbnail: "../assets/videos/013poet.mp4"
 ---
 
 <div style="text-align: center;">

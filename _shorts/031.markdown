@@ -4,7 +4,8 @@ title: "031 - The Worth Chain"
 date: 2025-04-03 11:56:47 +0200
 categories: jekyll update
 summary: When hyper capitalism meet with blockchains
-thumbnail: "../assets/images/031short.jpg"
+thumbnail_img: "../assets/images/031short.jpg"
+thumbnail: "../assets/videos/031short.mp4"
 ---
 
 In New Ledger City, every breath carried its own timestamp. Lara Nakamura watched her NetWorth score blink in the bottom corner of her vision: 483.279 LifeCoins, steadily ticking down as she processed oxygen.<br>

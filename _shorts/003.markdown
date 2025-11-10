@@ -4,7 +4,8 @@ title: "003 - Reality.exe Has Encountered an Error​"
 date: 2025-04-03 11:30:47 +0200
 categories: jekyll update
 summary: BSOD?
-thumbnail: "../assets/images/003short.jpg"
+thumbnail_img: "../assets/images/003short.jpg"
+thumbnail: "../assets/videos/003short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

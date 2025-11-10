@@ -4,7 +4,8 @@ title: "021 - Love Me"
 date: 2025-04-03 11:47:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/021poet.jpg"
+thumbnail_img: "../assets/images/021poet.jpg"
+thumbnail: "../assets/videos/021poet.mp4"
 ---
 
 <div style="text-align: center;">

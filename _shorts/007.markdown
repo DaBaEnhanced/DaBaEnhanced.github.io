@@ -4,7 +4,8 @@ title: "007 - The Last Dialogue​​​"
 date: 2025-04-03 11:34:47 +0200
 categories: jekyll update
 summary: Can a robot love?
-thumbnail: "../assets/images/007short.jpg"
+thumbnail_img: "../assets/images/007short.jpg"
+thumbnail: "../assets/videos/007short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

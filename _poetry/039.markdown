@@ -4,7 +4,8 @@ title: "039 - The Poet's Illness"
 date: 2025-04-03 12:05:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/039poet.jpg"
+thumbnail_img: "../assets/images/039poet.jpg"
+thumbnail: "../assets/videos/039poet.mp4"
 ---
 
 <div style="text-align: center;">

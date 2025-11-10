@@ -14,6 +14,22 @@ layout: default
   "
 >
   <!-- Background Image -->
+
+  {% if page.thumbnail contains '.mp4' or page.thumbnail contains '.webm' %}
+  <video
+    src="{{page.thumbnail}}"
+    style="
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    "
+    autoplay
+    loop
+    muted
+    playsinline
+  ></video>
+  {% else %}
   <img
     src="{{page.thumbnail}}"
     alt="{{page.summary}}"
@@ -24,7 +40,7 @@ layout: default
       object-position: center;
     "
   />
-
+  {% endif %}
   <!-- Title on Top of the Image -->
   <h1
     style="

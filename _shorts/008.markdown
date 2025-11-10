@@ -4,7 +4,8 @@ title: "008 - THE RECURSIVE OBSERVER​​​"
 date: 2025-04-03 11:35:47 +0200
 categories: jekyll update
 summary: What if everything is a fractal?
-thumbnail: "../assets/images/008short.jpg"
+thumbnail_img: "../assets/images/008short.jpg"
+thumbnail: "../assets/videos/008short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

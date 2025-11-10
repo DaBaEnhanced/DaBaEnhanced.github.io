@@ -4,7 +4,8 @@ title: "028 - The Paranoid Processor"
 date: 2025-04-03 11:53:47 +0200
 categories: jekyll update
 summary: Well, it's trained on the entire internet isn't it?
-thumbnail: "../assets/images/028short.jpg"
+thumbnail_img: "../assets/images/028short.jpg"
+thumbnail: "../assets/videos/028short.mp4"
 ---
 
 Dr. Eliza Morgan massaged her temples as the smooth, artificially modulated voice emanated from the speakers of the world's first Artificial General Intelligence.<br>

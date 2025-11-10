@@ -4,7 +4,8 @@ title: "031 - Mistress of Death"
 date: 2025-04-03 11:57:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/031poet.jpg"
+thumbnail_img: "../assets/images/031poet.jpg"
+thumbnail: "../assets/videos/031poet.mp4"
 ---
 
 <div style="text-align: center;">

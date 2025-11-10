@@ -4,7 +4,8 @@ title: "010 - Faces in the Darkness"
 date: 2025-04-03 11:37:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail: "../assets/images/010poet.jpg"
+thumbnail_img: "../assets/images/010poet.jpg"
+thumbnail: "../assets/videos/010poet.mp4"
 ---
 
 <div style="text-align: center;">

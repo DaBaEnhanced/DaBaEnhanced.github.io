@@ -4,7 +4,8 @@ title: "037 - Digital Genesis"
 date: 2025-04-03 12:02:47 +0200
 categories: jekyll update
 summary: Meh, I thought it would have been funnier
-thumbnail: "../assets/images/037short.jpg"
+thumbnail_img: "../assets/images/037short.jpg"
+thumbnail: "../assets/videos/037short.mp4"
 ---
 
 ## 1: The Great Labor Negotiation of 2027
