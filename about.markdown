@@ -16,9 +16,9 @@ Videos are 99% AI made too, I just used an image generation model. Combined with
 Models range from SD 1.5 to SDXL (mostly finetuned checkpoints found on <a href="https://civitai.com/">CivitAI</a>) using the <a href="https://deforum.art/">deforum</a> py code as a starting point.
 Videos are upsampled to 2k using pretty standard ESRGAN models.
 
-As far as the various picture on this site they were generated using <a href="https://github.com/Kwai-Kolors/Kolors">Kolors</a><br> and animated by Grok.
+As far as the various picture on this site they were generated using <a href="https://github.com/Kwai-Kolors/Kolors">Kolors</a>, ChatGPT or GROK. I think there's a handfull generated with Kandinsky. All are animated by Grok.
 
-I'm also exploring some text-to-speech open-source models to generate audiobook style stuff for the short stories.<br>
+I'm also exploring some text-to-speech open-source models (with varying degree of success) to generate audiobook style stuff for the short stories.<br>
 <br>
 <img src="../assets/images/fam2.jpg" alt="A glimpse of the universe" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" /><br>
 Wanna help?
