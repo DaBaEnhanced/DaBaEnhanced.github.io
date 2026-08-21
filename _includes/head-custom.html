@@ -132,7 +132,7 @@
 <script>
   function initializeSupportPrompt() {
     const protectedLinks = document.querySelectorAll(
-      'a[href*="assets/pdf/"], a[href*="assets/HG/index.html"]'
+      'a[href*="assets/pdf/"], a[href$=".zip"], a[href*="assets/HG/index.html"]'
     );
 
     if (!protectedLinks.length) {

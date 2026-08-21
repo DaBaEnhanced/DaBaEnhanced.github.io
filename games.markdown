@@ -29,7 +29,8 @@ There is even a full level editor now, if you want to try it. I have other impro
 	<a href="../assets/images/HG/6.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/6.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
 
-<a href="assets/HG/index.html"> Hired Guns JS </a>
+<a href="assets/HG/index.html">Play it now in your browser</a>
+<a href="assets/HG.zip">Download it</a>
 
 ### Saint Dragon
 
