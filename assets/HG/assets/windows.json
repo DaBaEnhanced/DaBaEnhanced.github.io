@@ -1,0 +1,137 @@
+{
+	"source": "Data/GameFast.dat/Windows.gfx",
+	"sourceAssembly": "Data/GameFast.dat/Windows.s",
+	"atlas": {
+		"file": "windows.atlas",
+		"width": 320,
+		"height": 415
+	},
+	"windows": [
+		{
+			"index": 0,
+			"name": "window1",
+			"sourceOffset": 24,
+			"width": 160,
+			"height": 103,
+			"rowBytes": 20,
+			"maskPlane": 6,
+			"control": 0,
+			"clip": 0,
+			"planeOps": [
+				1,
+				1,
+				1,
+				1,
+				1,
+				0
+			],
+			"ax": 0,
+			"ay": 0
+		},
+		{
+			"index": 1,
+			"name": "window2",
+			"sourceOffset": 10342,
+			"width": 160,
+			"height": 103,
+			"rowBytes": 20,
+			"maskPlane": 6,
+			"control": 0,
+			"clip": 0,
+			"planeOps": [
+				1,
+				1,
+				1,
+				1,
+				1,
+				0
+			],
+			"ax": 0,
+			"ay": 104
+		},
+		{
+			"index": 2,
+			"name": "window3",
+			"sourceOffset": 20660,
+			"width": 160,
+			"height": 103,
+			"rowBytes": 20,
+			"maskPlane": 6,
+			"control": 0,
+			"clip": 0,
+			"planeOps": [
+				1,
+				1,
+				1,
+				1,
+				1,
+				0
+			],
+			"ax": 0,
+			"ay": 208
+		},
+		{
+			"index": 3,
+			"name": "window4",
+			"sourceOffset": 30978,
+			"width": 160,
+			"height": 103,
+			"rowBytes": 20,
+			"maskPlane": 6,
+			"control": 0,
+			"clip": 0,
+			"planeOps": [
+				1,
+				1,
+				1,
+				1,
+				1,
+				0
+			],
+			"ax": 0,
+			"ay": 312
+		},
+		{
+			"index": 4,
+			"name": "window5",
+			"sourceOffset": 41296,
+			"width": 160,
+			"height": 103,
+			"rowBytes": 20,
+			"maskPlane": 6,
+			"control": 0,
+			"clip": 0,
+			"planeOps": [
+				2,
+				2,
+				2,
+				2,
+				2,
+				0
+			],
+			"clear": true
+		},
+		{
+			"index": 5,
+			"name": "window6",
+			"sourceOffset": 41314,
+			"width": 80,
+			"height": 79,
+			"rowBytes": 10,
+			"maskPlane": 6,
+			"control": 0,
+			"clip": 0,
+			"planeOps": [
+				1,
+				1,
+				1,
+				1,
+				1,
+				0
+			],
+			"ax": 161,
+			"ay": 312
+		}
+	],
+	"comment": "Window BOBs. Atlas stores index+1 and has no transparency; colour 0 is copied."
+}

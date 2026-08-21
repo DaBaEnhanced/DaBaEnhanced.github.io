@@ -1,0 +1,12 @@
+---
+layout: post
+title: "A lot of new stuff"
+date: 2026-08-20 23:53:47 +0200
+categories: jekyll update
+excerpt: Added a lot of new stuff
+---
+
+I've added a lot of new stuff. I've been editing the Consent Engines books hard, reworked most covers of the rest of the books. I'm closer to release some of them buit editing/reviewing still takes a lot of human time.I've added a Games section, where I'll pu my port of old Amiga games, my new games etcetera. Reworked the books section. Added a Physic section (tied to some of my sci.fi books). I'm working on an AI section too for my actual research on some AI-related topics.
+
+Bye!
+

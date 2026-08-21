@@ -1,0 +1,606 @@
+{
+	"sfx": [
+		{
+			"key": "Arc",
+			"group": "effects",
+			"file": "audio/effects/Arc.wav",
+			"name": "Arc.8svx",
+			"sampleRate": 10717,
+			"samples": 6024,
+			"seconds": 0.562
+		},
+		{
+			"key": "Atmos00",
+			"group": "effects",
+			"file": "audio/effects/Atmos00.wav",
+			"name": "Background1.8svx",
+			"sampleRate": 9943,
+			"samples": 15216,
+			"seconds": 1.53,
+			"loop": {
+				"start": 0,
+				"length": 15216
+			}
+		},
+		{
+			"key": "Atmos01",
+			"group": "effects",
+			"file": "audio/effects/Atmos01.wav",
+			"name": "Background2.8svx",
+			"sampleRate": 3597,
+			"samples": 19582,
+			"seconds": 5.444,
+			"loop": {
+				"start": 0,
+				"length": 19582
+			}
+		},
+		{
+			"key": "Atmos02",
+			"group": "effects",
+			"file": "audio/effects/Atmos02.wav",
+			"name": "Background3.8svx",
+			"sampleRate": 9943,
+			"samples": 11582,
+			"seconds": 1.165,
+			"loop": {
+				"start": 38,
+				"length": 11544
+			}
+		},
+		{
+			"key": "Atmos03",
+			"group": "effects",
+			"file": "audio/effects/Atmos03.wav",
+			"name": "Background4.8svx",
+			"sampleRate": 19886,
+			"samples": 19598,
+			"seconds": 0.986,
+			"loop": {
+				"start": 0,
+				"length": 19598
+			}
+		},
+		{
+			"key": "Atmos04",
+			"group": "effects",
+			"file": "audio/effects/Atmos04.wav",
+			"name": "Drumroll.8svx",
+			"sampleRate": 11013,
+			"samples": 19804,
+			"seconds": 1.798,
+			"loop": {
+				"start": 0,
+				"length": 19804
+			}
+		},
+		{
+			"key": "Atmos05",
+			"group": "effects",
+			"file": "audio/effects/Atmos05.wav",
+			"name": "Atmos06.8svx",
+			"sampleRate": 9700,
+			"samples": 19114,
+			"seconds": 1.971,
+			"loop": {
+				"start": 0,
+				"length": 19114
+			}
+		},
+		{
+			"key": "Atmos06",
+			"group": "effects",
+			"file": "audio/effects/Atmos06.wav",
+			"name": "Background7.8svx",
+			"sampleRate": 4181,
+			"samples": 14964,
+			"seconds": 3.579,
+			"loop": {
+				"start": 18,
+				"length": 14946
+			}
+		},
+		{
+			"key": "Atmos07",
+			"group": "effects",
+			"file": "audio/effects/Atmos07.wav",
+			"name": "Atmos08.8svx",
+			"sampleRate": 5020,
+			"samples": 19282,
+			"seconds": 3.841,
+			"loop": {
+				"start": 0,
+				"length": 19282
+			}
+		},
+		{
+			"key": "BlockSlide",
+			"group": "effects",
+			"file": "audio/effects/BlockSlide.wav",
+			"name": "BlockSlide.8SVX",
+			"sampleRate": 4181,
+			"samples": 3458,
+			"seconds": 0.827
+		},
+		{
+			"key": "BlockThud",
+			"group": "effects",
+			"file": "audio/effects/BlockThud.wav",
+			"name": "BlockThud.8svx",
+			"sampleRate": 8363,
+			"samples": 4728,
+			"seconds": 0.565
+		},
+		{
+			"key": "Bump",
+			"group": "effects",
+			"file": "audio/effects/Bump.wav",
+			"name": "TapDrum.data",
+			"sampleRate": 8363,
+			"samples": 598,
+			"seconds": 0.072
+		},
+		{
+			"key": "Button",
+			"group": "effects",
+			"file": "audio/effects/Button.wav",
+			"name": "Button.8svx",
+			"sampleRate": 55930,
+			"samples": 2062,
+			"seconds": 0.037
+		},
+		{
+			"key": "Cast",
+			"group": "effects",
+			"file": "audio/effects/Cast.wav",
+			"name": "Cast.8svx",
+			"sampleRate": 7032,
+			"samples": 6466,
+			"seconds": 0.92
+		},
+		{
+			"key": "DoorClosed",
+			"group": "effects",
+			"file": "audio/effects/DoorClosed.wav",
+			"name": "DoorOpened&Closed.8s",
+			"sampleRate": 9943,
+			"samples": 4166,
+			"seconds": 0.419
+		},
+		{
+			"key": "DoorOpening",
+			"group": "effects",
+			"file": "audio/effects/DoorOpening.wav",
+			"name": "DoorOpening.8svx",
+			"sampleRate": 3523,
+			"samples": 4494,
+			"seconds": 1.276,
+			"loop": {
+				"start": 3330,
+				"length": 1164
+			}
+		},
+		{
+			"key": "EggHatch",
+			"group": "effects",
+			"file": "audio/effects/EggHatch.wav",
+			"name": "EggHatch.8svx",
+			"sampleRate": 5965,
+			"samples": 7690,
+			"seconds": 1.289
+		},
+		{
+			"key": "Explosion",
+			"group": "effects",
+			"file": "audio/effects/Explosion.wav",
+			"name": "Explosion.8svx",
+			"sampleRate": 6641,
+			"samples": 8586,
+			"seconds": 1.293
+		},
+		{
+			"key": "Footstep",
+			"group": "effects",
+			"file": "audio/effects/Footstep.wav",
+			"name": "Footstep.8svx",
+			"sampleRate": 4971,
+			"samples": 3238,
+			"seconds": 0.651
+		},
+		{
+			"key": "GunEmpty",
+			"group": "effects",
+			"file": "audio/effects/GunEmpty.wav",
+			"name": "GunEmpty.8svx",
+			"sampleRate": 9943,
+			"samples": 2592,
+			"seconds": 0.261
+		},
+		{
+			"key": "GunReload",
+			"group": "effects",
+			"file": "audio/effects/GunReload.wav",
+			"name": "GunReLoad.8svx",
+			"sampleRate": 9419,
+			"samples": 6092,
+			"seconds": 0.647
+		},
+		{
+			"key": "Hit",
+			"group": "effects",
+			"file": "audio/effects/Hit.wav",
+			"name": "Hit.8svx",
+			"sampleRate": 6290,
+			"samples": 1238,
+			"seconds": 0.197
+		},
+		{
+			"key": "LaserCrack",
+			"group": "effects",
+			"file": "audio/effects/LaserCrack.wav",
+			"name": "LaserCrack.8svx",
+			"sampleRate": 19997,
+			"samples": 3574,
+			"seconds": 0.179
+		},
+		{
+			"key": "NewGun1",
+			"group": "effects",
+			"file": "audio/effects/NewGun1.wav",
+			"name": "NewGun1.8svx",
+			"sampleRate": 13982,
+			"samples": 7734,
+			"seconds": 0.553
+		},
+		{
+			"key": "NewGun2",
+			"group": "effects",
+			"file": "audio/effects/NewGun2.wav",
+			"name": "NewGun2.8svx",
+			"sampleRate": 13982,
+			"samples": 8288,
+			"seconds": 0.593
+		},
+		{
+			"key": "Teleport",
+			"group": "effects",
+			"file": "audio/effects/Teleport.wav",
+			"name": "Teleport.8svx",
+			"sampleRate": 9943,
+			"samples": 3552,
+			"seconds": 0.357
+		},
+		{
+			"key": "UnderWater",
+			"group": "effects",
+			"file": "audio/effects/UnderWater.wav",
+			"name": "UnderWater.8svx",
+			"sampleRate": 9419,
+			"samples": 19044,
+			"seconds": 2.022,
+			"loop": {
+				"start": 0,
+				"length": 19044
+			}
+		},
+		{
+			"key": "Bark",
+			"group": "extra",
+			"file": "audio/extra/Bark.wav",
+			"name": "Bark.8svx",
+			"sampleRate": 16726,
+			"samples": 5964,
+			"seconds": 0.357
+		},
+		{
+			"key": "Bat",
+			"group": "extra",
+			"file": "audio/extra/Bat.wav",
+			"name": "Bat.8svx",
+			"sampleRate": 28867,
+			"samples": 7088,
+			"seconds": 0.246
+		},
+		{
+			"key": "BigClang",
+			"group": "extra",
+			"file": "audio/extra/BigClang.wav",
+			"name": "BigClang.8svx",
+			"sampleRate": 23395,
+			"samples": 31870,
+			"seconds": 1.362
+		},
+		{
+			"key": "Drip",
+			"group": "extra",
+			"file": "audio/extra/Drip.wav",
+			"name": "Drip.8svx",
+			"sampleRate": 27965,
+			"samples": 1970,
+			"seconds": 0.07
+		},
+		{
+			"key": "DTS",
+			"group": "extra",
+			"file": "audio/extra/DTS.wav",
+			"name": "DTS.8svx",
+			"sampleRate": 9943,
+			"samples": 3730,
+			"seconds": 0.375
+		},
+		{
+			"key": "EchoScream",
+			"group": "extra",
+			"file": "audio/extra/EchoScream.wav",
+			"name": "EchoScream.8SVX",
+			"sampleRate": 19886,
+			"samples": 18130,
+			"seconds": 0.912
+		},
+		{
+			"key": "FemaleGrunt",
+			"group": "extra",
+			"file": "audio/extra/FemaleGrunt.wav",
+			"name": "FemaleGrunt.8svx",
+			"sampleRate": 13982,
+			"samples": 3594,
+			"seconds": 0.257
+		},
+		{
+			"key": "Flamethrower",
+			"group": "extra",
+			"file": "audio/extra/Flamethrower.wav",
+			"name": "Flamethrower.8svx",
+			"sampleRate": 13982,
+			"samples": 28688,
+			"seconds": 2.052
+		},
+		{
+			"key": "Grumble",
+			"group": "extra",
+			"file": "audio/extra/Grumble.wav",
+			"name": "DragonGrumble.8svx",
+			"sampleRate": 6225,
+			"samples": 23892,
+			"seconds": 3.838
+		},
+		{
+			"key": "Gun",
+			"group": "extra",
+			"file": "audio/extra/Gun.wav",
+			"name": "ShotGun.8svx",
+			"sampleRate": 19886,
+			"samples": 28542,
+			"seconds": 1.435
+		},
+		{
+			"key": "GunEmpty2",
+			"group": "extra",
+			"file": "audio/extra/GunEmpty2.wav",
+			"name": "GunClick.8svx",
+			"sampleRate": 19886,
+			"samples": 2580,
+			"seconds": 0.13
+		},
+		{
+			"key": "GunFire1",
+			"group": "extra",
+			"file": "audio/extra/GunFire1.wav",
+			"name": "GunFire1.8svx",
+			"sampleRate": 9419,
+			"samples": 7736,
+			"seconds": 0.821
+		},
+		{
+			"key": "GunFire3",
+			"group": "extra",
+			"file": "audio/extra/GunFire3.wav",
+			"name": "GunFire3.8svx",
+			"sampleRate": 8860,
+			"samples": 5284,
+			"seconds": 0.596
+		},
+		{
+			"key": "GunFire5",
+			"group": "extra",
+			"file": "audio/extra/GunFire5.wav",
+			"name": "GunFire5.8svx",
+			"sampleRate": 21056,
+			"samples": 6520,
+			"seconds": 0.31
+		},
+		{
+			"key": "GunFire5_alternate",
+			"group": "extra",
+			"file": "audio/extra/GunFire5_alternate.wav",
+			"name": "GunFire5_alternate.8",
+			"sampleRate": 27965,
+			"samples": 38416,
+			"seconds": 1.374
+		},
+		{
+			"key": "GunFire6",
+			"group": "extra",
+			"file": "audio/extra/GunFire6.wav",
+			"name": "ShotGun.8svx",
+			"sampleRate": 19886,
+			"samples": 28542,
+			"seconds": 1.435
+		},
+		{
+			"key": "GunFire7",
+			"group": "extra",
+			"file": "audio/extra/GunFire7.wav",
+			"name": "GunFire7.8svx",
+			"sampleRate": 19886,
+			"samples": 14832,
+			"seconds": 0.746
+		},
+		{
+			"key": "GunFire7_alternate",
+			"group": "extra",
+			"file": "audio/extra/GunFire7_alternate.wav",
+			"name": "GunFire7_alternate.8",
+			"sampleRate": 27965,
+			"samples": 48232,
+			"seconds": 1.725
+		},
+		{
+			"key": "GunFire8",
+			"group": "extra",
+			"file": "audio/extra/GunFire8.wav",
+			"name": "Flare.8svx",
+			"sampleRate": 12515,
+			"samples": 17958,
+			"seconds": 1.435
+		},
+		{
+			"key": "GunFire9",
+			"group": "extra",
+			"file": "audio/extra/GunFire9.wav",
+			"name": "GunFire9.8svx",
+			"sampleRate": 27965,
+			"samples": 12670,
+			"seconds": 0.453
+		},
+		{
+			"key": "Lift",
+			"group": "extra",
+			"file": "audio/extra/Lift.wav",
+			"name": "Lift.8svx",
+			"sampleRate": 8688,
+			"samples": 26954,
+			"seconds": 3.102,
+			"loop": {
+				"start": 12666,
+				"length": 14288
+			}
+		},
+		{
+			"key": "MaleGrunt",
+			"group": "extra",
+			"file": "audio/extra/MaleGrunt.wav",
+			"name": "MaleGrunt.8svx",
+			"sampleRate": 13982,
+			"samples": 4216,
+			"seconds": 0.302
+		},
+		{
+			"key": "MetalClang",
+			"group": "extra",
+			"file": "audio/extra/MetalClang.wav",
+			"name": "Anvil.8svx",
+			"sampleRate": 27965,
+			"samples": 8704,
+			"seconds": 0.311
+		},
+		{
+			"key": "NewReload",
+			"group": "extra",
+			"file": "audio/extra/NewReload.wav",
+			"name": "NewReload.8svx",
+			"sampleRate": 13208,
+			"samples": 7134,
+			"seconds": 0.54
+		},
+		{
+			"key": "pickup",
+			"group": "extra",
+			"file": "audio/extra/pickup.wav",
+			"sampleRate": 48000,
+			"samples": 16897,
+			"seconds": 0.352,
+			"added": true
+		},
+		{
+			"key": "Reload4",
+			"group": "extra",
+			"file": "audio/extra/Reload4.wav",
+			"name": "Reload4.8svx",
+			"sampleRate": 27965,
+			"samples": 19182,
+			"seconds": 0.686
+		},
+		{
+			"key": "Ricochet",
+			"group": "extra",
+			"file": "audio/extra/Ricochet.wav",
+			"name": "Ricochet.8svx",
+			"sampleRate": 27965,
+			"samples": 13090,
+			"seconds": 0.468
+		},
+		{
+			"key": "Roar",
+			"group": "extra",
+			"file": "audio/extra/Roar.wav",
+			"name": "Roar.8SVX",
+			"sampleRate": 11186,
+			"samples": 16524,
+			"seconds": 1.477
+		},
+		{
+			"key": "StarWarsBlaster",
+			"group": "extra",
+			"file": "audio/extra/StarWarsBlaster.wav",
+			"name": "StarWarsBlaster.8svx",
+			"sampleRate": 27965,
+			"samples": 16554,
+			"seconds": 0.592
+		},
+		{
+			"key": "SubMachineGun_Eagles",
+			"group": "extra",
+			"file": "audio/extra/SubMachineGun_Eagles.wav",
+			"name": "SubMachineGun_Eagles",
+			"sampleRate": 34418,
+			"samples": 31844,
+			"seconds": 0.925
+		},
+		{
+			"key": "Swipe",
+			"group": "extra",
+			"file": "audio/extra/Swipe.wav",
+			"name": "TriffidSting.8svx",
+			"sampleRate": 19886,
+			"samples": 15836,
+			"seconds": 0.796
+		},
+		{
+			"key": "Swish",
+			"group": "extra",
+			"file": "audio/extra/Swish.wav",
+			"name": "Swish.8svx",
+			"sampleRate": 18078,
+			"samples": 5498,
+			"seconds": 0.304
+		},
+		{
+			"key": "Thunder",
+			"group": "extra",
+			"file": "audio/extra/Thunder.wav",
+			"name": "Thunder.8svx",
+			"sampleRate": 4971,
+			"samples": 42300,
+			"seconds": 8.509
+		},
+		{
+			"key": "Unlock",
+			"group": "extra",
+			"file": "audio/extra/Unlock.wav",
+			"name": "Unlock.8svx",
+			"sampleRate": 26320,
+			"samples": 12660,
+			"seconds": 0.481
+		},
+		{
+			"key": "Voice",
+			"group": "extra",
+			"file": "audio/extra/Voice.wav",
+			"name": "Voice.8svx",
+			"sampleRate": 9943,
+			"samples": 8344,
+			"seconds": 0.839
+		}
+	]
+}

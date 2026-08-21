@@ -1,0 +1,19 @@
+---
+layout: post
+title: "First!"
+date: 2025-04-03 23:53:47 +0200
+categories: jekyll update
+excerpt: well, the first post...
+---
+
+### FIRST POST!
+
+I've decided to build a small blog site for my videos.
+They are mostly AI-generated and were created over the past three years.
+I initially started with Stable Diffusion 1.5, then moved on to 2.1, and later experimented with an assortment of LoRAs and customized checkpoints I found on Civitai.
+
+The videos were created using a customized version of the Deforum notebook. The first frame is generated, and subsequent frames are created by using the previous frame (a transformed version with scaling, panning, and rotation applied) to generate the next one. Prompts are blended frame by frame, allowing for some degree of storytelling in the video.
+
+he music is also AI-generated, mostly using MusicGen, an open-source model from Meta.
+
+I might also blog about AI-related topics and research—if I find the time.

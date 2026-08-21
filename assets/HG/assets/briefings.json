@@ -1,0 +1,113 @@
+{
+	"source": "Graphics/Static/NN.24ilbm",
+	"comment": "Briefing art, keyed by locn.pictureNum. 0 means no picture. The text beside these is the location's own legend and info, already carried in each map JSON.",
+	"pictures": {
+		"1": {
+			"file": "briefings/1.png",
+			"width": 192,
+			"height": 281
+		},
+		"2": {
+			"file": "briefings/2.png",
+			"width": 240,
+			"height": 315
+		},
+		"3": {
+			"file": "briefings/3.png",
+			"width": 224,
+			"height": 301
+		},
+		"4": {
+			"file": "briefings/4.png",
+			"width": 240,
+			"height": 280
+		},
+		"5": {
+			"file": "briefings/5.png",
+			"width": 272,
+			"height": 361
+		},
+		"7": {
+			"file": "briefings/7.png",
+			"width": 272,
+			"height": 368
+		},
+		"8": {
+			"file": "briefings/8.png",
+			"width": 240,
+			"height": 339
+		},
+		"9": {
+			"file": "briefings/9.png",
+			"width": 128,
+			"height": 178
+		},
+		"10": {
+			"file": "briefings/10.png",
+			"width": 240,
+			"height": 320
+		},
+		"11": {
+			"file": "briefings/11.png",
+			"width": 240,
+			"height": 393
+		},
+		"12": {
+			"file": "briefings/12.png",
+			"width": 176,
+			"height": 236
+		},
+		"13": {
+			"file": "briefings/13.png",
+			"width": 208,
+			"height": 305
+		},
+		"14": {
+			"file": "briefings/14.png",
+			"width": 224,
+			"height": 313
+		}
+	},
+	"usedBy": {
+		"1": [
+			"09-Tomb"
+		],
+		"2": [
+			"19-DesalinationPlant"
+		],
+		"3": [
+			"21-Spaceport"
+		],
+		"4": [
+			"02-CaveSystem"
+		],
+		"5": [
+			"07-AbandonedDepot"
+		],
+		"7": [
+			"06-UrbanDevelopment"
+		],
+		"8": [
+			"20-UrbanDevelopment"
+		],
+		"9": [
+			"01-ArtificialIsland"
+		],
+		"10": [
+			"05-Refinery"
+		],
+		"11": [
+			"11-SatelliteUplink"
+		],
+		"12": [
+			"17-OperationCentre"
+		],
+		"13": [
+			"04-Laboratory",
+			"22-Stopover"
+		],
+		"14": [
+			"14-Tomb"
+		]
+	}
+}

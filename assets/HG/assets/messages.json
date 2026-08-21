@@ -1,0 +1,1197 @@
+{
+	"source": "Data/GameFast.dat/Messages.dat",
+	"comment": "Banked: a header of (count, offset) word pairs, then per-bank arrays of word offsets. Each message record opens with 8 bytes of link scratch before its CENTREON-prefixed text.",
+	"bankCount": 26,
+	"totalMessages": 123,
+	"banks": [
+		{
+			"bank": 0,
+			"offset": 104,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 350,
+					"text": "p1 \"Excuse me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 378,
+					"text": "p1 \"Get outa my way!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 412,
+					"text": "p1 \"Move!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 436,
+					"text": "p1 \"Step aside.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 466,
+					"text": "p1 \"I'm coming through.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 1,
+			"offset": 114,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 504,
+					"text": "p2 \"Excuse me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 532,
+					"text": "p2 \"Get outa my way!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 566,
+					"text": "p2 \"Move!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 590,
+					"text": "p2 \"Step aside.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 620,
+					"text": "p2 \"I'm coming through.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 2,
+			"offset": 124,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 658,
+					"text": "p3 \"Excuse me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 686,
+					"text": "p3 \"Get out of my way!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 722,
+					"text": "p3 \"Move!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 746,
+					"text": "p3 \"Step aside.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 776,
+					"text": "p3 \"I'm coming through.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 3,
+			"offset": 134,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 814,
+					"text": "p4 \"Excuse me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 842,
+					"text": "p4 \"Get out of my way!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 878,
+					"text": "p4 \"Move!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 902,
+					"text": "p4 \"Step aside.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 932,
+					"text": "p4 \"I'm coming through.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 4,
+			"offset": 144,
+			"count": 35,
+			"messages": [
+				{
+					"offset": 970,
+					"text": "5 \"I hope we're insured against violent death.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1030,
+					"text": "5 \"I never wanted to be a mercenary.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1080,
+					"text": "5 \"If we get separated, rendezvous just ahead of the target site.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1160,
+					"text": "5 \"This certainly makes a change from the dull concrete of New Europe.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1244,
+					"text": "5 \"Remind me to take some holiday snaps next time we're here.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1320,
+					"text": "5 \"Atmosphere's fine.  Nothing toxic in the air.  We'll live.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1396,
+					"text": "5 \"There's a lot of ground to cover, so let's make this quick.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1472,
+					"text": "5 \"Most of the things we'll find will be larger than we are.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1546,
+					"text": "5 \"Try and keep out of trouble.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1592,
+					"text": "5 \"I've got an itchy trigger finger.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1642,
+					"text": "5 * SIGH * \"I hope I'm still getting my overtime after all this.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1720,
+					"text": "5 \"We should have brought everybody along.  Four isn't nearly enough.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1804,
+					"text": "5 \"Who brought the picnic hamper?\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1852,
+					"text": "5 \"Stay sharp.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1880,
+					"text": "5 \"This place gives me the creeps.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1928,
+					"text": "5 \"Stay frosty and alert.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1968,
+					"text": "5 \"What a stink!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 1998,
+					"text": "5 \"I once heard of a place on Earth where the weather was as unpredictable as this.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2096,
+					"text": "5 \"If we make it through this - the drinks are on me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2164,
+					"text": "5 \"Our chances? Fifty fifty I'd say.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2214,
+					"text": "5 \"Stop making so much noise!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2258,
+					"text": "5 \"Don't worry. I'm in control.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2304,
+					"text": "5 \"Its so cold.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2334,
+					"text": "5 \"Its too hot.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2364,
+					"text": "5 \"All this running about is killing me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2418,
+					"text": "5 \"Lets go back to the dropship and nuke this site from orbit.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2494,
+					"text": "5 \"I'm itching for a good fight.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2494,
+					"text": "5 \"I'm itching for a good fight.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2540,
+					"text": "5 \"If anyone runs away - there will be hell to pay!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2606,
+					"text": "5 \"The trick is.... to blast them first and then ask questions later.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2690,
+					"text": "5 \"What was that?\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2722,
+					"text": "5 \"Lets back off and reassess the situation.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2780,
+					"text": "5 \"Mean temperature is above micro-clime norm.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2840,
+					"text": "5 \"I feel like I'm repeating myself.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2890,
+					"text": "5 \"Were not taking any prisoners.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 5,
+			"offset": 214,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3302,
+					"text": "p1 *Arrrrggghhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 3336,
+					"text": "p1 *Aaaaaaaiiiiieeee*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 3372,
+					"text": "p1 *Urrrrgggghhhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				}
+			]
+		},
+		{
+			"bank": 6,
+			"offset": 220,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3182,
+					"text": "p1 \"I'm going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3218,
+					"text": "p1 \"Were all going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3258,
+					"text": "p1 \"Game over man! Game over!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 7,
+			"offset": 226,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3064,
+					"text": "p1 \"Help me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3090,
+					"text": "p1 \"Help me, you idiots! I'm wounded!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3142,
+					"text": "p1 \"Give me an analgesic!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 8,
+			"offset": 232,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 2938,
+					"text": "p1 \"I feel really bad!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 2974,
+					"text": "p1 \"I can't stand the pain!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3016,
+					"text": "p1 \"I think I've broken something!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 9,
+			"offset": 238,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3772,
+					"text": "p2 *Arrrrggghhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 3806,
+					"text": "p2 *Aaaaaaaiiiiieeee*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 3842,
+					"text": "p2 *Urrrrgggghhhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				}
+			]
+		},
+		{
+			"bank": 10,
+			"offset": 244,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3652,
+					"text": "p2 \"I'm going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3688,
+					"text": "p2 \"Were all going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3728,
+					"text": "p2 \"Game over man! Game over!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 11,
+			"offset": 250,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3534,
+					"text": "p2 \"Help me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3560,
+					"text": "p2 \"Help me, you idiots! I'm wounded!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3612,
+					"text": "p2 \"Give me an analgesic!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 12,
+			"offset": 256,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3408,
+					"text": "p2 \"I feel really bad!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3444,
+					"text": "p2 \"I can't stand the pain!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3486,
+					"text": "p2 \"I think I've broken something!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 13,
+			"offset": 262,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 4242,
+					"text": "p3 *Arrrrggghhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 4276,
+					"text": "p3 *Aaaaaaaiiiiieeee*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 4312,
+					"text": "p3 *Urrrrgggghhhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				}
+			]
+		},
+		{
+			"bank": 14,
+			"offset": 268,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 4122,
+					"text": "p3 \"I'm going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4158,
+					"text": "p3 \"Were all going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4198,
+					"text": "p3 \"Game over man! Game over!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 15,
+			"offset": 274,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 4004,
+					"text": "p3 \"Help me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4030,
+					"text": "p3 \"Help me, you idiots! I'm wounded!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4082,
+					"text": "p3 \"Give me an analgesic!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 16,
+			"offset": 280,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 3878,
+					"text": "p3 \"I feel really bad!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3914,
+					"text": "p3 \"I can't stand the pain!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 3956,
+					"text": "p3 \"I think I've broken something!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 17,
+			"offset": 286,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 4712,
+					"text": "p4 *Arrrrggghhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 4746,
+					"text": "p4 *Aaaaaaaiiiiieeee*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				},
+				{
+					"offset": 4782,
+					"text": "p4 *Urrrrgggghhhhhhh*",
+					"centre": null,
+					"colours": [
+						27,
+						3,
+						1
+					]
+				}
+			]
+		},
+		{
+			"bank": 18,
+			"offset": 292,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 4592,
+					"text": "p4 \"I'm going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4628,
+					"text": "p4 \"Were all going to die!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4668,
+					"text": "p4 \"Game over man! Game over!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 19,
+			"offset": 298,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 4474,
+					"text": "p4 \"Help me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4500,
+					"text": "p4 \"Help me, you idiots! I'm wounded!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4552,
+					"text": "p4 \"Give me an analgesic!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 20,
+			"offset": 304,
+			"count": 3,
+			"messages": [
+				{
+					"offset": 4348,
+					"text": "p4 \"I feel really bad!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4384,
+					"text": "p4 \"I can't stand the pain!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4426,
+					"text": "p4 \"I think I've broken something!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 21,
+			"offset": 310,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 4818,
+					"text": "p1 \"Follow me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4846,
+					"text": "p1 \"Stay close to me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4882,
+					"text": "p1 \"Everybody! Follow me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4922,
+					"text": "p1 \"I'm in command so move it!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 4966,
+					"text": "p1 \"I'll lead you through this.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 22,
+			"offset": 320,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 5012,
+					"text": "p2 \"Follow me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5040,
+					"text": "p2 \"Stay close to me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5076,
+					"text": "p2 \"Everybody! Follow me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5116,
+					"text": "p2 \"I'm in command so move it!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5160,
+					"text": "p2 \"I'll lead you through this.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 23,
+			"offset": 330,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 5206,
+					"text": "p3 \"Follow me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5234,
+					"text": "p3 \"Stay close to me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5270,
+					"text": "p3 \"Everybody! Follow me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5310,
+					"text": "p3 \"I'm in command so move it!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5354,
+					"text": "p3 \"I'll lead you through this.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 24,
+			"offset": 340,
+			"count": 5,
+			"messages": [
+				{
+					"offset": 5400,
+					"text": "p4 \"Follow me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5428,
+					"text": "p4 \"Stay close to me!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5464,
+					"text": "p4 \"Everybody! Follow me.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5504,
+					"text": "p4 \"I'm in command so move it!\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				},
+				{
+					"offset": 5548,
+					"text": "p4 \"I'll lead you through this.\"",
+					"centre": null,
+					"colours": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"bank": 25,
+			"offset": 5682,
+			"count": 5594,
+			"messages": []
+		}
+	]
+}

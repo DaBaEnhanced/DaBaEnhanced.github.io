@@ -1,0 +1,1 @@
+{"file":"planet.bin","width":96,"height":42,"rowBytes":12,"source":"Graphics/Misc/ILBM/Planet.ilbm rows 0..41 (disc variant, CD32)","viewX":20,"viewY":0,"onlyFacing":2,"comment":"Sets plane 4 over the sky, so sky colour 38 becomes 54; feed 54 from the nosky_planet ramp."}

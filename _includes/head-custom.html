@@ -1,0 +1,207 @@
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [["$", "$"], ["\\(", "\\)"]],
+      displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+    },
+    svg: {
+      fontCache: "global"
+    }
+  };
+</script>
+
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script>
+  function initializeVideoPlayback() {
+    const videos = document.querySelectorAll("video");
+    const isTouchDevice = !window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const playDelay = 3000;
+
+    videos.forEach(function (video) {
+      if (video.hasAttribute("autoplay")) {
+        return;
+      }
+
+      video.preload = "metadata";
+      video.pause();
+
+      let playTimer;
+
+      const cancelPlayback = function () {
+        window.clearTimeout(playTimer);
+        video.pause();
+      };
+
+      const schedulePlayback = function () {
+        window.clearTimeout(playTimer);
+        playTimer = window.setTimeout(function () {
+          video.play().catch(function () {
+            // Playback can still be blocked by the browser's media policy.
+          });
+        }, isTouchDevice ? playDelay : 0);
+      };
+
+      if (isTouchDevice) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              schedulePlayback();
+            } else {
+              cancelPlayback();
+            }
+          });
+        }, { threshold: 0.6 });
+
+        observer.observe(video);
+      } else {
+        const hoverTarget = video.closest("a") || video;
+        hoverTarget.addEventListener("pointerenter", schedulePlayback);
+        hoverTarget.addEventListener("pointerleave", cancelPlayback);
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeVideoPlayback);
+  } else {
+    initializeVideoPlayback();
+  }
+</script>
+
+<style>
+  .support-dialog-backdrop {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    inset: 0;
+    justify-content: center;
+    padding: 1rem;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .support-dialog-backdrop.is-visible {
+    display: flex;
+  }
+
+  .support-dialog {
+    background: #ffffff;
+    border: 1px solid #d8dee4;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    color: #222222;
+    max-width: 28rem;
+    padding: 1.5rem;
+    text-align: center;
+    width: min(100%, 28rem);
+  }
+
+  .support-dialog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
+  .support-dialog-actions a,
+  .support-dialog-actions button {
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+    padding: 0.65rem 1rem;
+    text-decoration: none;
+  }
+
+  .support-dialog-donate {
+    background: #ff5e5b;
+    color: #ffffff;
+  }
+
+  .support-dialog-continue {
+    background: #e9ecef;
+    color: #222222;
+  }
+</style>
+
+<script>
+  function initializeSupportPrompt() {
+    const protectedLinks = document.querySelectorAll(
+      'a[href*="assets/pdf/"], a[href*="assets/HG/index.html"]'
+    );
+
+    if (!protectedLinks.length) {
+      return;
+    }
+
+    const backdrop = document.createElement("div");
+    backdrop.className = "support-dialog-backdrop";
+    backdrop.innerHTML = `
+      <div class="support-dialog" role="dialog" aria-modal="true" aria-labelledby="support-dialog-title">
+        <h2 id="support-dialog-title">Support independent work</h2>
+        <p>These books and games are free to access. If you enjoy them, a small donation helps keep the project going.</p>
+        <div class="support-dialog-actions">
+          <a class="support-dialog-donate" href="https://ko-fi.com/dbwaldtier" target="_blank" rel="noopener">Donate with Ko-fi</a>
+          <button class="support-dialog-continue" type="button">Continue</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(backdrop);
+
+    const continueButton = backdrop.querySelector(".support-dialog-continue");
+    let pendingLink;
+
+    const closePrompt = function () {
+      backdrop.classList.remove("is-visible");
+      pendingLink = null;
+    };
+
+    const continueToLink = function () {
+      if (!pendingLink) {
+        closePrompt();
+        return;
+      }
+
+      const href = pendingLink.href;
+      const target = pendingLink.target;
+      closePrompt();
+
+      if (target === "_blank") {
+        window.open(href, "_blank", "noopener");
+      } else {
+        window.location.href = href;
+      }
+    };
+
+    protectedLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        pendingLink = link;
+        backdrop.classList.add("is-visible");
+      });
+    });
+
+    continueButton.addEventListener("click", continueToLink);
+    backdrop.addEventListener("click", function (event) {
+      if (event.target === backdrop) {
+        closePrompt();
+      }
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closePrompt();
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeSupportPrompt);
+  } else {
+    initializeSupportPrompt();
+  }
+</script>

@@ -1,0 +1,114 @@
+{
+	"modules": [
+		{
+			"key": "ChSelect",
+			"file": "music/ChSelect.json",
+			"blocks": 10,
+			"seqLength": 18,
+			"tempo": 201,
+			"instruments": 8,
+			"ogg": "music/ChSelect.ogg",
+			"oggBytes": 1240847
+		},
+		{
+			"key": "Death",
+			"file": "music/Death.json",
+			"blocks": 16,
+			"seqLength": 20,
+			"tempo": 89,
+			"instruments": 7,
+			"ogg": "music/Death.ogg",
+			"oggBytes": 1316785
+		},
+		{
+			"key": "Front",
+			"file": "music/Front.json",
+			"blocks": 21,
+			"seqLength": 26,
+			"tempo": 209,
+			"instruments": 14,
+			"ogg": "music/Front.ogg",
+			"oggBytes": 1826337
+		},
+		{
+			"key": "Intro",
+			"file": "music/Intro.json",
+			"blocks": 18,
+			"seqLength": 18,
+			"tempo": 89,
+			"instruments": 8,
+			"ogg": "music/Intro.ogg",
+			"oggBytes": 1219778
+		},
+		{
+			"key": "Outro",
+			"file": "music/Outro.json",
+			"blocks": 10,
+			"seqLength": 20,
+			"tempo": 157,
+			"instruments": 10,
+			"ogg": "music/Outro.ogg",
+			"oggBytes": 1659531
+		},
+		{
+			"key": "Static01",
+			"file": "music/Static01.json",
+			"blocks": 2,
+			"seqLength": 3,
+			"tempo": 57,
+			"instruments": 4,
+			"ogg": "music/Static01.ogg",
+			"oggBytes": 186958
+		},
+		{
+			"key": "Static02",
+			"file": "music/Static02.json",
+			"blocks": 2,
+			"seqLength": 2,
+			"tempo": 154,
+			"instruments": 4,
+			"ogg": "music/Static02.ogg",
+			"oggBytes": 117762
+		},
+		{
+			"key": "Static03",
+			"file": "music/Static03.json",
+			"blocks": 5,
+			"seqLength": 12,
+			"tempo": 112,
+			"instruments": 3,
+			"ogg": "music/Static03.ogg",
+			"oggBytes": 965353
+		},
+		{
+			"key": "Static04",
+			"file": "music/Static04.json",
+			"blocks": 2,
+			"seqLength": 3,
+			"tempo": 39,
+			"instruments": 6,
+			"ogg": "music/Static04.ogg",
+			"oggBytes": 569106
+		},
+		{
+			"key": "Static05",
+			"file": "music/Static05.json",
+			"blocks": 11,
+			"seqLength": 14,
+			"tempo": 120,
+			"instruments": 7,
+			"ogg": "music/Static05.ogg",
+			"oggBytes": 1040791
+		},
+		{
+			"key": "World",
+			"file": "music/World.json",
+			"blocks": 10,
+			"seqLength": 13,
+			"tempo": 177,
+			"instruments": 3,
+			"ogg": "music/World.ogg",
+			"oggBytes": 666354
+		}
+	]
+}

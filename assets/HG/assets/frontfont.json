@@ -1,0 +1,616 @@
+{
+	"source": "Data/Front.dat/LaceFontB.ilbm",
+	"metricsSource": "Data/Front.dat/FrontB.s",
+	"comment": "Front-end font. Atlas stores colour index + 1, so 0 means transparent. SPACE (32) has no cell and only advances. Advances come from the .s width table, indexed from SPACE.",
+	"atlas": {
+		"file": "frontfont.atlas",
+		"width": 640,
+		"height": 396
+	},
+	"cellWidth": 64,
+	"cellHeight": 66,
+	"columns": 10,
+	"firstChar": 33,
+	"lastChar": 90,
+	"missing": [
+		63
+	],
+	"spaceAdvance": 30,
+	"palette": [
+		[
+			0,
+			0,
+			0
+		],
+		[
+			240,
+			240,
+			240
+		],
+		[
+			208,
+			208,
+			208
+		],
+		[
+			176,
+			176,
+			176
+		],
+		[
+			144,
+			144,
+			144
+		],
+		[
+			112,
+			112,
+			112
+		],
+		[
+			80,
+			80,
+			80
+		],
+		[
+			48,
+			48,
+			48
+		],
+		[
+			0,
+			0,
+			0
+		],
+		[
+			240,
+			0,
+			192
+		],
+		[
+			240,
+			0,
+			192
+		],
+		[
+			240,
+			0,
+			192
+		],
+		[
+			240,
+			0,
+			192
+		],
+		[
+			240,
+			0,
+			192
+		],
+		[
+			240,
+			0,
+			192
+		],
+		[
+			240,
+			0,
+			192
+		]
+	],
+	"glyphs": {
+		"33": {
+			"ax": 0,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 254,
+			"inkWidth": 8
+		},
+		"34": {
+			"ax": 64,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 38,
+			"ink": 194,
+			"inkWidth": 17
+		},
+		"35": {
+			"ax": 128,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 40,
+			"ink": 690,
+			"inkWidth": 32
+		},
+		"36": {
+			"ax": 192,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 45,
+			"ink": 733,
+			"inkWidth": 28
+		},
+		"37": {
+			"ax": 256,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 39,
+			"ink": 824,
+			"inkWidth": 42
+		},
+		"38": {
+			"ax": 320,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 36,
+			"ink": 990,
+			"inkWidth": 49
+		},
+		"39": {
+			"ax": 384,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 45,
+			"ink": 98,
+			"inkWidth": 7
+		},
+		"40": {
+			"ax": 448,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 349,
+			"inkWidth": 18
+		},
+		"41": {
+			"ax": 512,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 20,
+			"ink": 349,
+			"inkWidth": 19
+		},
+		"42": {
+			"ax": 576,
+			"ay": 0,
+			"w": 64,
+			"h": 66,
+			"advance": 25,
+			"ink": 344,
+			"inkWidth": 27
+		},
+		"43": {
+			"ax": 0,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 372,
+			"inkWidth": 40
+		},
+		"44": {
+			"ax": 64,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 40,
+			"ink": 120,
+			"inkWidth": 11
+		},
+		"45": {
+			"ax": 128,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 57,
+			"ink": 105,
+			"inkWidth": 18
+		},
+		"46": {
+			"ax": 192,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 61,
+			"inkWidth": 9
+		},
+		"47": {
+			"ax": 256,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 44,
+			"ink": 224,
+			"inkWidth": 19
+		},
+		"48": {
+			"ax": 320,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 36,
+			"ink": 708,
+			"inkWidth": 31
+		},
+		"49": {
+			"ax": 384,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 44,
+			"ink": 368,
+			"inkWidth": 19
+		},
+		"50": {
+			"ax": 448,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 43,
+			"ink": 545,
+			"inkWidth": 31
+		},
+		"51": {
+			"ax": 512,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 30,
+			"ink": 519,
+			"inkWidth": 27
+		},
+		"52": {
+			"ax": 576,
+			"ay": 66,
+			"w": 64,
+			"h": 66,
+			"advance": 38,
+			"ink": 581,
+			"inkWidth": 31
+		},
+		"53": {
+			"ax": 0,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 559,
+			"inkWidth": 29
+		},
+		"54": {
+			"ax": 64,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 46,
+			"ink": 656,
+			"inkWidth": 30
+		},
+		"55": {
+			"ax": 128,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 61,
+			"ink": 417,
+			"inkWidth": 30
+		},
+		"56": {
+			"ax": 192,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 46,
+			"ink": 715,
+			"inkWidth": 28
+		},
+		"57": {
+			"ax": 256,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 45,
+			"ink": 641,
+			"inkWidth": 30
+		},
+		"58": {
+			"ax": 320,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 39,
+			"ink": 120,
+			"inkWidth": 9
+		},
+		"59": {
+			"ax": 384,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 11,
+			"ink": 179,
+			"inkWidth": 11
+		},
+		"60": {
+			"ax": 448,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 41,
+			"ink": 500,
+			"inkWidth": 41
+		},
+		"61": {
+			"ax": 512,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 40,
+			"ink": 398,
+			"inkWidth": 40
+		},
+		"62": {
+			"ax": 576,
+			"ay": 132,
+			"w": 64,
+			"h": 66,
+			"advance": 41,
+			"ink": 500,
+			"inkWidth": 41
+		},
+		"64": {
+			"ax": 0,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 54,
+			"ink": 1292,
+			"inkWidth": 54
+		},
+		"65": {
+			"ax": 64,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 704,
+			"inkWidth": 47
+		},
+		"66": {
+			"ax": 128,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 38,
+			"ink": 927,
+			"inkWidth": 38
+		},
+		"67": {
+			"ax": 192,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 40,
+			"ink": 649,
+			"inkWidth": 40
+		},
+		"68": {
+			"ax": 256,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 45,
+			"ink": 904,
+			"inkWidth": 45
+		},
+		"69": {
+			"ax": 320,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 39,
+			"ink": 786,
+			"inkWidth": 39
+		},
+		"70": {
+			"ax": 384,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 36,
+			"ink": 665,
+			"inkWidth": 36
+		},
+		"71": {
+			"ax": 448,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 45,
+			"ink": 835,
+			"inkWidth": 45
+		},
+		"72": {
+			"ax": 512,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 1020,
+			"inkWidth": 47
+		},
+		"73": {
+			"ax": 576,
+			"ay": 198,
+			"w": 64,
+			"h": 66,
+			"advance": 20,
+			"ink": 448,
+			"inkWidth": 20
+		},
+		"74": {
+			"ax": 0,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 25,
+			"ink": 461,
+			"inkWidth": 25
+		},
+		"75": {
+			"ax": 64,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 924,
+			"inkWidth": 47
+		},
+		"76": {
+			"ax": 128,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 40,
+			"ink": 598,
+			"inkWidth": 40
+		},
+		"77": {
+			"ax": 192,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 57,
+			"ink": 1201,
+			"inkWidth": 57
+		},
+		"78": {
+			"ax": 256,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 890,
+			"inkWidth": 47
+		},
+		"79": {
+			"ax": 320,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 44,
+			"ink": 827,
+			"inkWidth": 44
+		},
+		"80": {
+			"ax": 384,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 36,
+			"ink": 721,
+			"inkWidth": 36
+		},
+		"81": {
+			"ax": 448,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 44,
+			"ink": 959,
+			"inkWidth": 44
+		},
+		"82": {
+			"ax": 512,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 43,
+			"ink": 923,
+			"inkWidth": 43
+		},
+		"83": {
+			"ax": 576,
+			"ay": 264,
+			"w": 64,
+			"h": 66,
+			"advance": 30,
+			"ink": 693,
+			"inkWidth": 30
+		},
+		"84": {
+			"ax": 0,
+			"ay": 330,
+			"w": 64,
+			"h": 66,
+			"advance": 38,
+			"ink": 597,
+			"inkWidth": 38
+		},
+		"85": {
+			"ax": 64,
+			"ay": 330,
+			"w": 64,
+			"h": 66,
+			"advance": 47,
+			"ink": 732,
+			"inkWidth": 47
+		},
+		"86": {
+			"ax": 128,
+			"ay": 330,
+			"w": 64,
+			"h": 66,
+			"advance": 46,
+			"ink": 633,
+			"inkWidth": 46
+		},
+		"87": {
+			"ax": 192,
+			"ay": 330,
+			"w": 64,
+			"h": 66,
+			"advance": 61,
+			"ink": 1062,
+			"inkWidth": 61
+		},
+		"88": {
+			"ax": 256,
+			"ay": 330,
+			"w": 64,
+			"h": 66,
+			"advance": 46,
+			"ink": 805,
+			"inkWidth": 46
+		},
+		"89": {
+			"ax": 320,
+			"ay": 330,
+			"w": 64,
+			"h": 66,
+			"advance": 45,
+			"ink": 637,
+			"inkWidth": 45
+		},
+		"90": {
+			"ax": 384,
+			"ay": 330,
+			"w": 64,
+			"h": 66,
+			"advance": 39,
+			"ink": 726,
+			"inkWidth": 39
+		}
+	}
+}

@@ -1,0 +1,48 @@
+---
+layout: post
+title: "New short story"
+date: 2025-05-21 23:53:47 +0200
+categories: jekyll update
+excerpt: 035 - Falling Star
+---
+
+I've added a new short story to the [short]({% link short.markdown %}) section.<br>
+N°35, going beyond flesh and metal by chance.
+Enjoy.
+
+<div
+  style="
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 50vh;
+  "
+>
+  <!-- Background Image -->
+  <img
+    src="../../../../../assets/images/035short.jpg"
+    alt="035 - Falling Star"
+    style="
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    "
+  />
+
+  <!-- Title on Top of the Image -->
+  <h1
+    style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+    "
+  >
+    035 - Falling Star
+  </h1>
+</div>

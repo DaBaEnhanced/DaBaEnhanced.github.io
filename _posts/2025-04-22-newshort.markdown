@@ -1,0 +1,11 @@
+---
+layout: post
+title: "New short stories"
+date: 2025-04-22 23:53:47 +0200
+categories: jekyll update
+excerpt: New short stories, n°23,24 and 25.
+---
+
+I've added 3 new short stories to the [short]({% link short.markdown %}) section.<br>
+N°23 and N°24 Explore the concept of mind uploading (and how that basically equals mind copying)
+N°25 is about generational ships.

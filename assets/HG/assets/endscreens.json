@@ -1,0 +1,543 @@
+{
+	"source": "Data/Death.dat and Data/Outro.dat",
+	"comment": "Full-screen stills as RGBA PNGs -- their palettes are their own and nothing else shares them. Mushroom is HAM6, decoded here. Outro text is per character, positioned as Text.s positions it.",
+	"images": {
+		"death": {
+			"file": "endscreens/death.png",
+			"width": 320,
+			"height": 212,
+			"planes": 5,
+			"ham": false,
+			"source": "Data/Death.dat/Death.ilbm"
+		},
+		"backdrop": {
+			"file": "endscreens/backdrop.png",
+			"width": 320,
+			"height": 256,
+			"planes": 5,
+			"ham": false,
+			"source": "Data/Outro.dat/Backdrop.ilbm"
+		},
+		"mushroom": {
+			"file": "endscreens/mushroom.png",
+			"width": 320,
+			"height": 212,
+			"planes": 6,
+			"ham": true,
+			"source": "Data/Outro.dat/Mushroom.ilbm"
+		}
+	},
+	"music": {
+		"death": "Death",
+		"outro": "Outro"
+	},
+	"outro": [
+		{
+			"key": "clavius",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 90,
+					"text": "WITH HIS EXTENSIVE KNOWLEDGE OF THE STAR SYSTEM"
+				},
+				{
+					"x": 100,
+					"y": 100,
+					"text": "AND THE PEOPLE IN IT, CLAVIUS DECIDED THAT -"
+				},
+				{
+					"x": 100,
+					"y": 110,
+					"text": "GIVEN HIS STORY TELLING ABILITY - IT WAS TIME"
+				},
+				{
+					"x": 100,
+					"y": 120,
+					"text": "TO WRITE THE DEFINITIVE HISTORY OF LUYTEN."
+				}
+			]
+		},
+		{
+			"key": "cheule",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 50,
+					"text": "CHEULE ALWAYS HAD HER OWN AGENDA WHICH WAS"
+				},
+				{
+					"x": 100,
+					"y": 60,
+					"text": "QUITE DISTINCT FROM THE TEAM'S OWN PRIORITIES."
+				},
+				{
+					"x": 100,
+					"y": 70,
+					"text": "SHE TRIED TO ORGANIZE A TRIP BACK TO EARTH WITH"
+				},
+				{
+					"x": 100,
+					"y": 80,
+					"text": "HER OWN RESOURCES - A MOST DIFFICULT TASK."
+				},
+				{
+					"x": 100,
+					"y": 90,
+					"text": "WHATEVER HER PERSONAL MISSION WAS, IT WAS"
+				},
+				{
+					"x": 100,
+					"y": 100,
+					"text": "IMPORTANT ENOUGH FOR HER TO SPEND FOUR YEARS"
+				},
+				{
+					"x": 100,
+					"y": 110,
+					"text": "ON THE VOYAGE. SHE WAS ASKED OUTRIGHT WHAT"
+				},
+				{
+					"x": 100,
+					"y": 120,
+					"text": "THIS WAS BUT STILL REFUSED TO ANSWER. THE LOOK"
+				},
+				{
+					"x": 100,
+					"y": 130,
+					"text": "ON HER FACE SUGGESTED THAT THE ENTIRE STAR"
+				},
+				{
+					"x": 100,
+					"y": 140,
+					"text": "SYSTEM WOULD KNOW ALL TOO SOON."
+				}
+			]
+		},
+		{
+			"key": "cim",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 85,
+					"text": "CIM REMAINED WITH THE TEAM FOR MANY YEARS AND"
+				},
+				{
+					"x": 100,
+					"y": 95,
+					"text": "WAS CONSTANTLY UPGRADED BY THEM TO THE POINT"
+				},
+				{
+					"x": 100,
+					"y": 105,
+					"text": "WHERE HE BECAME SELF-AWARE. USING THIS NEW"
+				},
+				{
+					"x": 100,
+					"y": 115,
+					"text": "STATUS AS AN INDIVIDUAL HE ELECTED TO DEPART"
+				},
+				{
+					"x": 100,
+					"y": 125,
+					"text": "THEM ALTOGETHER. HE WAS LOST TRACK OF SOON AFTER."
+				}
+			]
+		},
+		{
+			"key": "desverger",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 75,
+					"text": "ALTHOUGH DESVERGER KEPT GOING ON NEW MISSIONS,"
+				},
+				{
+					"x": 100,
+					"y": 85,
+					"text": "HE RETURNED TO THE ASSASSIN'S TRADE IN BETWEEN."
+				},
+				{
+					"x": 100,
+					"y": 95,
+					"text": "GRADUALLY HE BECAME MORE NOTORIOUS UNTIL HE"
+				},
+				{
+					"x": 100,
+					"y": 105,
+					"text": "WAS EVEN MORE WELL KNOWN THAN RORIAN - A FACT"
+				},
+				{
+					"x": 100,
+					"y": 115,
+					"text": "THAT PLEASED HIM GREATLY. WITH THAT INFAMY"
+				},
+				{
+					"x": 100,
+					"y": 125,
+					"text": "UNDER HIS BELT HE CONSIDERED HIS OBLIGATIONS"
+				},
+				{
+					"x": 100,
+					"y": 135,
+					"text": "TO RORIAN TO HAVE ENDED."
+				}
+			]
+		},
+		{
+			"key": "adele",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 60,
+					"text": "WITH THE HELP OF SOME CONTACTS, ADELE"
+				},
+				{
+					"x": 100,
+					"y": 70,
+					"text": "ADOPTED A NEW IDENTITY AND TRIED TO SETTLE"
+				},
+				{
+					"x": 100,
+					"y": 80,
+					"text": "INTO A NORMAL LIFE. THE ATTRACTIONS OF"
+				},
+				{
+					"x": 100,
+					"y": 90,
+					"text": "MUNICIPAL BENEFIT SOON PALED AGAINST THE"
+				},
+				{
+					"x": 100,
+					"y": 100,
+					"text": "EARNINGS TO BE MADE FROM ILLEGAL ACTIVITIES."
+				},
+				{
+					"x": 100,
+					"y": 110,
+					"text": "ADELE BEGAN SELLING HER EXPERTISE IN"
+				},
+				{
+					"x": 100,
+					"y": 120,
+					"text": "SECURITY SYSTEMS TO ANYONE WHO COULD PAY."
+				},
+				{
+					"x": 100,
+					"y": 130,
+					"text": "WHETHER THEY WERE SEEKING BETTER SECURITY"
+				},
+				{
+					"x": 100,
+					"y": 140,
+					"text": "OR SEEKING TO BREAK SECURITY, THE MONEY WAS"
+				},
+				{
+					"x": 100,
+					"y": 150,
+					"text": "THE SAME."
+				}
+			]
+		},
+		{
+			"key": "miyriel",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 75,
+					"text": "THE ATTRACTION OF BEING A MERCENARY SOONED"
+				},
+				{
+					"x": 100,
+					"y": 85,
+					"text": "SOON PALED FOR MIYRIEL. SHE GOT BORED AND"
+				},
+				{
+					"x": 100,
+					"y": 95,
+					"text": "WENT TO SEEK GREATER EXPERIENCES. OFTEN"
+				},
+				{
+					"x": 100,
+					"y": 105,
+					"text": "SAYING THAT LIFE WAS NOT EXCITING ENOUGH,"
+				},
+				{
+					"x": 100,
+					"y": 115,
+					"text": "THE ENTIRE STAR SYSTEM WAS TO HAVE A TRAUMA"
+				},
+				{
+					"x": 100,
+					"y": 125,
+					"text": "BY THE END OF THE DECADE THAT EVEN MIYRIEL"
+				},
+				{
+					"x": 100,
+					"y": 135,
+					"text": "COULDN'T GET BORED WITH. WHILE IT LASTED ANYWAY."
+				}
+			]
+		},
+		{
+			"key": "rorian",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 80,
+					"text": "RORIAN KEPT A LOW PROFILE AFTER THE GRAVEYARD"
+				},
+				{
+					"x": 100,
+					"y": 90,
+					"text": "MISSION AND INSTRUCTED EVERYONE ELSE TO DO THE"
+				},
+				{
+					"x": 100,
+					"y": 100,
+					"text": "SAME. THEY TOOK HIM AT HIS WORD - TO VARYING"
+				},
+				{
+					"x": 100,
+					"y": 110,
+					"text": "DEGREES. HE RETURNED TO NEW EUROPE, DRIVEN BY"
+				},
+				{
+					"x": 100,
+					"y": 120,
+					"text": "A WISH TO SEE HIS HOME CITY AGAIN. IT WAS"
+				},
+				{
+					"x": 100,
+					"y": 130,
+					"text": "VASTLY DIFFERENT TO WHAT HE REMEMBERED."
+				}
+			]
+		},
+		{
+			"key": "jenillee",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 85,
+					"text": "NO MEDICAL PRACTICE WOULD EMPLOY JENILLEE"
+				},
+				{
+					"x": 100,
+					"y": 95,
+					"text": "BECAUSE OF HER ASSOCIATIONS WITH THE TEAM,"
+				},
+				{
+					"x": 100,
+					"y": 105,
+					"text": "WHICH SHE WAS UNABLE TO HIDE. WITH SOME"
+				},
+				{
+					"x": 100,
+					"y": 115,
+					"text": "RELUCTANCE SHE ACCEPTED THAT SHE WOULD ALWAYS"
+				},
+				{
+					"x": 100,
+					"y": 125,
+					"text": "BE WITH THEM."
+				}
+			]
+		},
+		{
+			"key": "kiurcher",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 70,
+					"text": "KIURCHER NEVER FOUND THE LIFE EXTENSION THAT"
+				},
+				{
+					"x": 100,
+					"y": 80,
+					"text": "HE SOUGHT SO BADLY. IN THE YEARS TO FOLLOW HE"
+				},
+				{
+					"x": 100,
+					"y": 90,
+					"text": "GREW INCREASINGLY SUPERSTITUOUS. THIS"
+				},
+				{
+					"x": 100,
+					"y": 100,
+					"text": "CULMINATED IN A PROPHECY THAT GAVE THE EXACT"
+				},
+				{
+					"x": 100,
+					"y": 110,
+					"text": "PLACE AND TIME OF HIS DEATH. ALTHOUGH THE"
+				},
+				{
+					"x": 100,
+					"y": 120,
+					"text": "PROPHET WAS BOGUS, HE NEVERTHELESS BELIEVES"
+				},
+				{
+					"x": 100,
+					"y": 130,
+					"text": "THIS IMPLICITY AND HIS BEHAVIOUR HAS GROWN"
+				},
+				{
+					"x": 100,
+					"y": 140,
+					"text": "EVER MORE ABBERANT."
+				}
+			]
+		},
+		{
+			"key": "bonden",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 50,
+					"text": "BONDEN DECIDED TO REMAIN ON GRAVEYARD. THE"
+				},
+				{
+					"x": 100,
+					"y": 60,
+					"text": "CONTINENT THEY EXPLORED WAS ONLY ONE OF SEVEN."
+				},
+				{
+					"x": 100,
+					"y": 70,
+					"text": "HE FELT THAT GOVERNMENT INFLUENCE WOULD NOT"
+				},
+				{
+					"x": 100,
+					"y": 80,
+					"text": "EXTEND TO THE OTHER SIDE OF THE PLANET. JARED"
+				},
+				{
+					"x": 100,
+					"y": 90,
+					"text": "RHINE WAS KNOWN TO BE LIVING ON THE FAR SIDE"
+				},
+				{
+					"x": 100,
+					"y": 100,
+					"text": "OF GRAVEYARD, SO BONDEN SOUGHT HIM OUT AS HE"
+				},
+				{
+					"x": 100,
+					"y": 110,
+					"text": "WAS PERHAPS THE GREATEST LIVING AUTHORITY ON"
+				},
+				{
+					"x": 100,
+					"y": 120,
+					"text": "THE DEVICES KNOWN AS PSI-AMPS. JARED PROVED"
+				},
+				{
+					"x": 100,
+					"y": 130,
+					"text": "MOST HELPFUL AND WHEN HE DIED OF OLD AGE IN"
+				},
+				{
+					"x": 100,
+					"y": 140,
+					"text": "2723, BONDEN WAS ABLE TO CONTINUE HIS WORK."
+				},
+				{
+					"x": 100,
+					"y": 150,
+					"text": "THE ORIGIN OF THE DEVICES, THOUGH, WAS TO"
+				},
+				{
+					"x": 100,
+					"y": 160,
+					"text": "FOREVER ELUDE HIM."
+				}
+			]
+		},
+		{
+			"key": "katrina",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 75,
+					"text": "KATRINA TOOK A COUPLE OF YEARS AWAY FROM THE"
+				},
+				{
+					"x": 100,
+					"y": 85,
+					"text": "TEAM IN ORDER TO TRY AND FIND HER REAL"
+				},
+				{
+					"x": 100,
+					"y": 95,
+					"text": "IDENTITY. DURING THE COURSE OF HER"
+				},
+				{
+					"x": 100,
+					"y": 105,
+					"text": "INVESTIGATION SHE DID INDEED FIND OUT WHO SHE"
+				},
+				{
+					"x": 100,
+					"y": 125,
+					"text": "MORREL - AND UNCOVERED SOMETHING ABOUT HER PAST"
+				},
+				{
+					"x": 100,
+					"y": 135,
+					"text": "AS A REPORTER THAT WAS EVEN MORE ASTONISHING...."
+				}
+			]
+		},
+		{
+			"key": "cim_lite",
+			"pen": 2,
+			"lines": [
+				{
+					"x": 100,
+					"y": 75,
+					"text": "CIM-LITE PASSED THROUGH MANY OWNERS AND AT"
+				},
+				{
+					"x": 100,
+					"y": 85,
+					"text": "EACH STAGE WAS MODIFIED A BIT. WITH THE"
+				},
+				{
+					"x": 100,
+					"y": 95,
+					"text": "PASSAGE OF TIME, HE CAME TO HAVE NOTHING IN"
+				},
+				{
+					"x": 100,
+					"y": 105,
+					"text": "COMMON WITH HIS ORIGINAL DESIGN. HE WAS"
+				},
+				{
+					"x": 100,
+					"y": 115,
+					"text": "EVENTUALLY DESTROYED IN A FUTURE WAR THAT WAS"
+				},
+				{
+					"x": 100,
+					"y": 125,
+					"text": "EVEN GREATER THAN THE ONE BETWEEN LUYTEN AND"
+				},
+				{
+					"x": 100,
+					"y": 135,
+					"text": "LAICALLE."
+				}
+			]
+		}
+	]
+}

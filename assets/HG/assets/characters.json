@@ -1,0 +1,6220 @@
+{
+	"source": "Test/HiredGunsCD32/ChSelect/Characters.dat",
+	"recordSize": 272,
+	"comment": "Flat array of player_dat records (Equates.i:956). Loaded verbatim into front_player_dat by ChSelect.s:865. inventory and actions index the items table.",
+	"genders": {
+		"0": "male",
+		"1": "female",
+		"2": "n/a"
+	},
+	"races": {
+		"0": "Human",
+		"1": "Mech",
+		"2": "Golem",
+		"3": "Humanoid",
+		"4": "Cyborg"
+	},
+	"classes": {
+		"0": "Marine",
+		"1": "Assassin",
+		"2": "Combat Droid",
+		"3": "Medic",
+		"4": "Citizen",
+		"5": "Pilot",
+		"6": "UPBI agent",
+		"7": "Engineer",
+		"8": "Slave",
+		"9": "Marksman",
+		"10": "Trooper",
+		"11": "UPBI Agent",
+		"12": "Multipurpose",
+		"13": "Pilot",
+		"14": "Porn King",
+		"15": "Borg",
+		"16": "Early Cyborg",
+		"17": "Barbarella"
+	},
+	"languages": [
+		"english",
+		"french",
+		"german",
+		"italian",
+		"spanish"
+	],
+	"charactersPerLanguage": 12,
+	"count": 60,
+	"characters": [
+		{
+			"index": 0,
+			"character": 0,
+			"language": "english",
+			"origin": "003E origin unknown",
+			"name": "Clavius",
+			"description": "Humanoid, 176 years",
+			"classText": "Pilot",
+			"gameName": "Clavius",
+			"gfxPath": "CharactersGfx/Clavius.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 3,
+			"raceName": "Humanoid",
+			"class": 13,
+			"className": "Pilot",
+			"fitness": 65535,
+			"physique": 152,
+			"agility": 150,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 609,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 28,
+					"damage": 0,
+					"ammo": 66,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 62,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 1,
+			"character": 1,
+			"language": "english",
+			"origin": "00-98CC Earth",
+			"name": "Siygess, Cheule",
+			"description": "Female Human, 27 years",
+			"classText": "Earth citizen",
+			"gameName": "Cheule",
+			"gfxPath": "CharactersGfx/Cheule.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 129,
+			"agility": 160,
+			"experience": 0,
+			"footstepPeriod": 330,
+			"gruntPeriod": 509,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 25,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 2,
+			"character": 2,
+			"language": "english",
+			"origin": "04-56FE Tesseract",
+			"name": "MC 128-7 CIM",
+			"description": "Mech, 6 years",
+			"classText": "Combat-infantry series",
+			"gameName": "CIM",
+			"gfxPath": "CharactersGfx/CIM.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 321,
+			"agility": 28,
+			"experience": 0,
+			"footstepPeriod": 460,
+			"gruntPeriod": 669,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 12,
+					"damage": 0,
+					"ammo": 200,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 15,
+					"damage": 0,
+					"ammo": 16,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 30,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 3,
+			"character": 3,
+			"language": "english",
+			"origin": "01-A45D New Europe",
+			"name": "Desverger",
+			"description": "Male Human, 42 years",
+			"classText": "Freelance assassin",
+			"gameName": "Desverger",
+			"gfxPath": "CharactersGfx/Desverger.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 1,
+			"className": "Assassin",
+			"fitness": 65535,
+			"physique": 187,
+			"agility": 85,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 14,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 101,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 4,
+			"character": 4,
+			"language": "english",
+			"origin": "07-0453 Cassandra",
+			"name": "Reannon, Adele",
+			"description": "Female Human, 31 years",
+			"classText": "Security systems expert",
+			"gameName": "Adele",
+			"gfxPath": "CharactersGfx/Adele.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 7,
+			"className": "Engineer",
+			"fitness": 65535,
+			"physique": 94,
+			"agility": 196,
+			"experience": 0,
+			"footstepPeriod": 310,
+			"gruntPeriod": 489,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 13,
+					"damage": 0,
+					"ammo": 128,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 39,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 61,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 5,
+			"character": 5,
+			"language": "english",
+			"origin": "00-0027 New Europe",
+			"name": "Torre, Miyriel",
+			"description": "Cyborg, 100 years",
+			"classText": "Interfacing IV series",
+			"gameName": "Miyriel",
+			"gfxPath": "CharactersGfx/Miyriel.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 4,
+			"raceName": "Cyborg",
+			"class": 12,
+			"className": "Multipurpose",
+			"fitness": 65535,
+			"physique": 100,
+			"agility": 132,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 19,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 24,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 1,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 6,
+			"character": 6,
+			"language": "english",
+			"origin": "01-56FE New Europe",
+			"name": "Deevergh, Rorian",
+			"description": "Male Human, 42 years",
+			"classText": "Skilled Combatant",
+			"gameName": "Rorian",
+			"gfxPath": "CharactersGfx/Rorian.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 0,
+			"className": "Marine",
+			"fitness": 65535,
+			"physique": 156,
+			"agility": 105,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 11,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 16,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 86,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 83,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 7,
+			"character": 7,
+			"language": "english",
+			"origin": "A037 origin unknown",
+			"name": "Freymon, Jenillee",
+			"description": "Female Human, 27 years",
+			"classText": "Battlefield medic",
+			"gameName": "Jenillee",
+			"gfxPath": "CharactersGfx/Jenillee.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 3,
+			"className": "Medic",
+			"fitness": 65535,
+			"physique": 95,
+			"agility": 211,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 479,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 108,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 87,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 96,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 8,
+			"character": 8,
+			"language": "english",
+			"origin": "04-154E Tesseract",
+			"name": "Kiurcher",
+			"description": "Male Human, 49 years",
+			"classText": "Marksman",
+			"gameName": "Kiurcher",
+			"gfxPath": "CharactersGfx/Kiurcher.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 9,
+			"className": "Marksman",
+			"fitness": 65535,
+			"physique": 190,
+			"agility": 75,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 589,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 10,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 44,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 55,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 59,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 9,
+			"character": 9,
+			"language": "english",
+			"origin": "08-32EE Starscape",
+			"name": "Spey, Bonden",
+			"description": "Male Human, 22 years",
+			"classText": "Citizen",
+			"gameName": "Bonden",
+			"gfxPath": "CharactersGfx/Bonden.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 207,
+			"agility": 106,
+			"experience": 0,
+			"footstepPeriod": 380,
+			"gruntPeriod": 569,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 10,
+			"character": 10,
+			"language": "english",
+			"origin": "04-F140 Tesseract",
+			"name": "Homez, Katrina",
+			"description": "Female Human, 27 years",
+			"classText": "Former UPBI agent",
+			"gameName": "Katrina",
+			"gfxPath": "CharactersGfx/Katrina.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 6,
+			"className": "UPBI agent",
+			"fitness": 65535,
+			"physique": 131,
+			"agility": 144,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 18,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 63,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 11,
+			"character": 11,
+			"language": "english",
+			"origin": "56-AA56 Freewill",
+			"name": "CIM-Lite",
+			"description": "Mech, 2 years",
+			"classText": "Combat-infantry series",
+			"gameName": "CIM-Lite",
+			"gfxPath": "CharactersGfx/CIM-Lite.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 250,
+			"agility": 44,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 5,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 45,
+					"damage": 0,
+					"ammo": 90,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		}
+	],
+	"localised": [
+		{
+			"index": 12,
+			"character": 0,
+			"language": "french",
+			"origin": "003E origine inconnue",
+			"name": "Clavius",
+			"description": "Humanode, 176 ans",
+			"classText": "Pilote",
+			"gameName": "Clavius",
+			"gfxPath": "CharactersGfx/Clavius.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 3,
+			"raceName": "Humanoid",
+			"class": 13,
+			"className": "Pilot",
+			"fitness": 65535,
+			"physique": 152,
+			"agility": 150,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 609,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 28,
+					"damage": 0,
+					"ammo": 66,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 62,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 13,
+			"character": 1,
+			"language": "french",
+			"origin": "00-98CC Earth",
+			"name": "Siygess, Cheule",
+			"description": "Humain femelle, 27 ans",
+			"classText": "Citoyenne de la Terre",
+			"gameName": "Cheule",
+			"gfxPath": "CharactersGfx/Cheule.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 129,
+			"agility": 160,
+			"experience": 0,
+			"footstepPeriod": 330,
+			"gruntPeriod": 509,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 25,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 14,
+			"character": 2,
+			"language": "french",
+			"origin": "04-56FE Tesseract",
+			"name": "MC 128-7 CIM",
+			"description": "Machine, 6 ans",
+			"classText": "Srie infantrie de combat",
+			"gameName": "CIM",
+			"gfxPath": "CharactersGfx/CIM.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 321,
+			"agility": 28,
+			"experience": 0,
+			"footstepPeriod": 460,
+			"gruntPeriod": 669,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 12,
+					"damage": 0,
+					"ammo": 200,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 15,
+					"damage": 0,
+					"ammo": 16,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 30,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 15,
+			"character": 3,
+			"language": "french",
+			"origin": "01-A45D New Europe",
+			"name": "Desverger",
+			"description": "Humain mle, 42 ans",
+			"classText": "Mercenaire",
+			"gameName": "Desverger",
+			"gfxPath": "CharactersGfx/Desverger.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 1,
+			"className": "Assassin",
+			"fitness": 65535,
+			"physique": 187,
+			"agility": 85,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 14,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 101,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 16,
+			"character": 4,
+			"language": "french",
+			"origin": "07-0453 Cassandra",
+			"name": "Reannon, Adele",
+			"description": "Humain femelle, 31 ans",
+			"classText": "Expert en systmes de scurit",
+			"gameName": "Adele",
+			"gfxPath": "CharactersGfx/Adele.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 7,
+			"className": "Engineer",
+			"fitness": 65535,
+			"physique": 94,
+			"agility": 196,
+			"experience": 0,
+			"footstepPeriod": 310,
+			"gruntPeriod": 489,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 13,
+					"damage": 0,
+					"ammo": 128,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 39,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 61,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 17,
+			"character": 5,
+			"language": "french",
+			"origin": "00-0027 New Europe",
+			"name": "Torre, Miyriel",
+			"description": "Cyborg, 100 ans",
+			"classText": "Srie interface IV",
+			"gameName": "Miyriel",
+			"gfxPath": "CharactersGfx/Miyriel.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 4,
+			"raceName": "Cyborg",
+			"class": 12,
+			"className": "Multipurpose",
+			"fitness": 65535,
+			"physique": 100,
+			"agility": 132,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 19,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 24,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 1,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 18,
+			"character": 6,
+			"language": "french",
+			"origin": "01-56FE New Europe",
+			"name": "Deevergh, Rorian",
+			"description": "Humain mle, 42 ans",
+			"classText": "Combattant aguerri",
+			"gameName": "Rorian",
+			"gfxPath": "CharactersGfx/Rorian.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 0,
+			"className": "Marine",
+			"fitness": 65535,
+			"physique": 156,
+			"agility": 105,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 11,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 16,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 86,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 83,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 19,
+			"character": 7,
+			"language": "french",
+			"origin": "A037 origine inconnue",
+			"name": "Freymon, Jenillee",
+			"description": "Humain femelle, 27 ans",
+			"classText": "Mdecin de l'arme",
+			"gameName": "Jenillee",
+			"gfxPath": "CharactersGfx/Jenillee.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 3,
+			"className": "Medic",
+			"fitness": 65535,
+			"physique": 95,
+			"agility": 211,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 479,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 108,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 87,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 96,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 20,
+			"character": 8,
+			"language": "french",
+			"origin": "04-154E Tesseract",
+			"name": "Kiurcher",
+			"description": "Humain mle, 49 ans",
+			"classText": "Tireur d'lite",
+			"gameName": "Kiurcher",
+			"gfxPath": "CharactersGfx/Kiurcher.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 9,
+			"className": "Marksman",
+			"fitness": 65535,
+			"physique": 190,
+			"agility": 75,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 589,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 10,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 44,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 55,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 59,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 21,
+			"character": 9,
+			"language": "french",
+			"origin": "08-32EE Starscape",
+			"name": "Spey, Bonden",
+			"description": "Humain mle, 22 ans",
+			"classText": "Citoyen",
+			"gameName": "Bonden",
+			"gfxPath": "CharactersGfx/Bonden.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 207,
+			"agility": 106,
+			"experience": 0,
+			"footstepPeriod": 380,
+			"gruntPeriod": 569,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 22,
+			"character": 10,
+			"language": "french",
+			"origin": "04-F140 Tesseract",
+			"name": "Homez, Katrina",
+			"description": "Humain femelle, 27 ans",
+			"classText": "Ancien agent UPBI",
+			"gameName": "Katrina",
+			"gfxPath": "CharactersGfx/Katrina.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 6,
+			"className": "UPBI agent",
+			"fitness": 65535,
+			"physique": 131,
+			"agility": 144,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 18,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 63,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 23,
+			"character": 11,
+			"language": "french",
+			"origin": "56-AA56 Freewill",
+			"name": "CIM-Lite",
+			"description": "Machine, 2 ans",
+			"classText": "Srie infanterie de combat",
+			"gameName": "CIM-Lite",
+			"gfxPath": "CharactersGfx/CIM-Lite.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 250,
+			"agility": 44,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 5,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 45,
+					"damage": 0,
+					"ammo": 90,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 24,
+			"character": 0,
+			"language": "german",
+			"origin": "003E ursprung unbekannt",
+			"name": "Clavius",
+			"description": "Humanoider, 176 Jahre",
+			"classText": "Pilot",
+			"gameName": "Clavius",
+			"gfxPath": "CharactersGfx/Clavius.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 3,
+			"raceName": "Humanoid",
+			"class": 13,
+			"className": "Pilot",
+			"fitness": 65535,
+			"physique": 152,
+			"agility": 150,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 609,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 28,
+					"damage": 0,
+					"ammo": 66,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 62,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 25,
+			"character": 1,
+			"language": "german",
+			"origin": "00-98CC Earth",
+			"name": "Siygess, Cheule",
+			"description": "Weibl. Mensch, 27 Jahre",
+			"classText": "Erdenbrgerin",
+			"gameName": "Cheule",
+			"gfxPath": "CharactersGfx/Cheule.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 129,
+			"agility": 160,
+			"experience": 0,
+			"footstepPeriod": 330,
+			"gruntPeriod": 509,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 25,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 26,
+			"character": 2,
+			"language": "german",
+			"origin": "04-56FE Tesseract",
+			"name": "MC 128-7 CIM",
+			"description": "Mech, 6 Jahre",
+			"classText": "Gefechtsinfanterieserie",
+			"gameName": "CIM",
+			"gfxPath": "CharactersGfx/CIM.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 321,
+			"agility": 28,
+			"experience": 0,
+			"footstepPeriod": 460,
+			"gruntPeriod": 669,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 12,
+					"damage": 0,
+					"ammo": 200,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 15,
+					"damage": 0,
+					"ammo": 16,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 30,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 27,
+			"character": 3,
+			"language": "german",
+			"origin": "01-A45D New Europe",
+			"name": "Desverger",
+			"description": "Mnnl. Mensch, 42 Jahre",
+			"classText": "Freischaffender Killer",
+			"gameName": "Desverger",
+			"gfxPath": "CharactersGfx/Desverger.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 1,
+			"className": "Assassin",
+			"fitness": 65535,
+			"physique": 187,
+			"agility": 85,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 14,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 101,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 28,
+			"character": 4,
+			"language": "german",
+			"origin": "07-0453 Cassandra",
+			"name": "Reannon, Adele",
+			"description": "Weibl. Mensch, 31 Jahre",
+			"classText": "Expertin f. Sich.-syst.",
+			"gameName": "Adele",
+			"gfxPath": "CharactersGfx/Adele.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 7,
+			"className": "Engineer",
+			"fitness": 65535,
+			"physique": 94,
+			"agility": 196,
+			"experience": 0,
+			"footstepPeriod": 310,
+			"gruntPeriod": 489,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 13,
+					"damage": 0,
+					"ammo": 128,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 39,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 61,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 29,
+			"character": 5,
+			"language": "german",
+			"origin": "00-0027 New Europe",
+			"name": "Torre, Miyriel",
+			"description": "Cyborg, 100 Jahre",
+			"classText": "Interface IV Serie",
+			"gameName": "Miyriel",
+			"gfxPath": "CharactersGfx/Miyriel.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 4,
+			"raceName": "Cyborg",
+			"class": 12,
+			"className": "Multipurpose",
+			"fitness": 65535,
+			"physique": 100,
+			"agility": 132,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 19,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 24,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 1,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 30,
+			"character": 6,
+			"language": "german",
+			"origin": "01-56FE New Europe",
+			"name": "Deevergh, Rorian",
+			"description": "Mnnl. Mensch, 42 Jahre",
+			"classText": "Spezialkmpfer",
+			"gameName": "Rorian",
+			"gfxPath": "CharactersGfx/Rorian.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 0,
+			"className": "Marine",
+			"fitness": 65535,
+			"physique": 156,
+			"agility": 105,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 11,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 16,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 86,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 83,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 31,
+			"character": 7,
+			"language": "german",
+			"origin": "A037 ursprung unbekannt",
+			"name": "Freymon, Jenillee",
+			"description": "Weibl. Mensch, 27 Jahre",
+			"classText": "Feldrztin",
+			"gameName": "Jenillee",
+			"gfxPath": "CharactersGfx/Jenillee.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 3,
+			"className": "Medic",
+			"fitness": 65535,
+			"physique": 95,
+			"agility": 211,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 479,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 108,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 87,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 96,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 32,
+			"character": 8,
+			"language": "german",
+			"origin": "04-154E Tesseract",
+			"name": "Kiurcher",
+			"description": "Mnnl. Mensch, 49 Jahre",
+			"classText": "Schtze",
+			"gameName": "Kiurcher",
+			"gfxPath": "CharactersGfx/Kiurcher.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 9,
+			"className": "Marksman",
+			"fitness": 65535,
+			"physique": 190,
+			"agility": 75,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 589,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 10,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 44,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 55,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 59,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 33,
+			"character": 9,
+			"language": "german",
+			"origin": "08-32EE Starscape",
+			"name": "Spey, Bonden",
+			"description": "Mnnl. Mensch, 22 Jahre",
+			"classText": "Brger",
+			"gameName": "Bonden",
+			"gfxPath": "CharactersGfx/Bonden.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 207,
+			"agility": 106,
+			"experience": 0,
+			"footstepPeriod": 380,
+			"gruntPeriod": 569,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 34,
+			"character": 10,
+			"language": "german",
+			"origin": "04-F140 Tesseract",
+			"name": "Homez, Katrina",
+			"description": "Weibl. Mensch, 27 Jahre",
+			"classText": "Ehemaliger NDVP-Agent",
+			"gameName": "Katrina",
+			"gfxPath": "CharactersGfx/Katrina.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 6,
+			"className": "UPBI agent",
+			"fitness": 65535,
+			"physique": 131,
+			"agility": 144,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 18,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 63,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 35,
+			"character": 11,
+			"language": "german",
+			"origin": "56-AA56 Freewill",
+			"name": "CIM-Lite",
+			"description": "Mech, 2 Jahre",
+			"classText": "Gefechtsinfanterieserie",
+			"gameName": "CIM-Lite",
+			"gfxPath": "CharactersGfx/CIM-Lite.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 250,
+			"agility": 44,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 5,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 45,
+					"damage": 0,
+					"ammo": 90,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 36,
+			"character": 0,
+			"language": "italian",
+			"origin": "003E origine sconosciuta",
+			"name": "Clavius",
+			"description": "Umanoide, 176 anni",
+			"classText": "Pilota",
+			"gameName": "Clavius",
+			"gfxPath": "CharactersGfx/Clavius.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 3,
+			"raceName": "Humanoid",
+			"class": 13,
+			"className": "Pilot",
+			"fitness": 65535,
+			"physique": 152,
+			"agility": 150,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 609,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 28,
+					"damage": 0,
+					"ammo": 66,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 62,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 37,
+			"character": 1,
+			"language": "italian",
+			"origin": "00-98CC Earth",
+			"name": "Siygess, Cheule",
+			"description": "Donna, 27 anni",
+			"classText": "Cittadina terrestre",
+			"gameName": "Cheule",
+			"gfxPath": "CharactersGfx/Cheule.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 129,
+			"agility": 160,
+			"experience": 0,
+			"footstepPeriod": 330,
+			"gruntPeriod": 509,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 25,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 38,
+			"character": 2,
+			"language": "italian",
+			"origin": "04-56FE Tesseract",
+			"name": "MC 128-7 CIM",
+			"description": "Meccanoide, 6 anni",
+			"classText": "Fante da combattimento",
+			"gameName": "CIM",
+			"gfxPath": "CharactersGfx/CIM.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 321,
+			"agility": 28,
+			"experience": 0,
+			"footstepPeriod": 460,
+			"gruntPeriod": 669,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 12,
+					"damage": 0,
+					"ammo": 200,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 15,
+					"damage": 0,
+					"ammo": 16,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 30,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 39,
+			"character": 3,
+			"language": "italian",
+			"origin": "01-A45D New Europe",
+			"name": "Desverger",
+			"description": "Uomo, 42 anni",
+			"classText": "Killer freelance",
+			"gameName": "Desverger",
+			"gfxPath": "CharactersGfx/Desverger.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 1,
+			"className": "Assassin",
+			"fitness": 65535,
+			"physique": 187,
+			"agility": 85,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 14,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 101,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 40,
+			"character": 4,
+			"language": "italian",
+			"origin": "07-0453 Cassandra",
+			"name": "Reannon, Adele",
+			"description": "Donna, 31 anni",
+			"classText": "Esperta in sistemi di sicurezza",
+			"gameName": "Adele",
+			"gfxPath": "CharactersGfx/Adele.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 7,
+			"className": "Engineer",
+			"fitness": 65535,
+			"physique": 94,
+			"agility": 196,
+			"experience": 0,
+			"footstepPeriod": 310,
+			"gruntPeriod": 489,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 13,
+					"damage": 0,
+					"ammo": 128,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 39,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 61,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 41,
+			"character": 5,
+			"language": "italian",
+			"origin": "00-0027 New Europe",
+			"name": "Torre, Miyriel",
+			"description": "Automa, 100 anni",
+			"classText": "Interfaccia IV",
+			"gameName": "Miyriel",
+			"gfxPath": "CharactersGfx/Miyriel.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 4,
+			"raceName": "Cyborg",
+			"class": 12,
+			"className": "Multipurpose",
+			"fitness": 65535,
+			"physique": 100,
+			"agility": 132,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 19,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 24,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 1,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 42,
+			"character": 6,
+			"language": "italian",
+			"origin": "01-56FE New Europe",
+			"name": "Deevergh, Rorian",
+			"description": "Uomo, 42 anni",
+			"classText": "Combattente esperto",
+			"gameName": "Rorian",
+			"gfxPath": "CharactersGfx/Rorian.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 0,
+			"className": "Marine",
+			"fitness": 65535,
+			"physique": 156,
+			"agility": 105,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 11,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 16,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 86,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 83,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 43,
+			"character": 7,
+			"language": "italian",
+			"origin": "A037 origine sconosciuta",
+			"name": "Freymon, Jenillee",
+			"description": "Donna, 27 anni",
+			"classText": "Medico di guerra",
+			"gameName": "Jenillee",
+			"gfxPath": "CharactersGfx/Jenillee.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 3,
+			"className": "Medic",
+			"fitness": 65535,
+			"physique": 95,
+			"agility": 211,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 479,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 108,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 87,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 96,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 44,
+			"character": 8,
+			"language": "italian",
+			"origin": "04-154E Tesseract",
+			"name": "Kiurcher",
+			"description": "Uomo, 49 anni",
+			"classText": "Tiratore scelto",
+			"gameName": "Kiurcher",
+			"gfxPath": "CharactersGfx/Kiurcher.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 9,
+			"className": "Marksman",
+			"fitness": 65535,
+			"physique": 190,
+			"agility": 75,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 589,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 10,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 44,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 55,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 59,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 45,
+			"character": 9,
+			"language": "italian",
+			"origin": "08-32EE Starscape",
+			"name": "Spey, Bonden",
+			"description": "Uomo, 22 anni",
+			"classText": "Cittadino",
+			"gameName": "Bonden",
+			"gfxPath": "CharactersGfx/Bonden.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 207,
+			"agility": 106,
+			"experience": 0,
+			"footstepPeriod": 380,
+			"gruntPeriod": 569,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 46,
+			"character": 10,
+			"language": "italian",
+			"origin": "04-F140 Tesseract",
+			"name": "Homez, Katrina",
+			"description": "Donna, 27 anni",
+			"classText": "Ex agente UIPU",
+			"gameName": "Katrina",
+			"gfxPath": "CharactersGfx/Katrina.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 6,
+			"className": "UPBI agent",
+			"fitness": 65535,
+			"physique": 131,
+			"agility": 144,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 18,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 63,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 47,
+			"character": 11,
+			"language": "italian",
+			"origin": "56-AA56 Freewill",
+			"name": "CIM-Lite",
+			"description": "Meccanoide, 2 anni",
+			"classText": "Fante da combattimento",
+			"gameName": "CIM-Lite",
+			"gfxPath": "CharactersGfx/CIM-Lite.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 250,
+			"agility": 44,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 5,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 45,
+					"damage": 0,
+					"ammo": 90,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 48,
+			"character": 0,
+			"language": "spanish",
+			"origin": "003E origen desconocido",
+			"name": "Clavius",
+			"description": "Humanoide, 176 a¤os",
+			"classText": "Piloto",
+			"gameName": "Clavius",
+			"gfxPath": "CharactersGfx/Clavius.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 3,
+			"raceName": "Humanoid",
+			"class": 13,
+			"className": "Pilot",
+			"fitness": 65535,
+			"physique": 152,
+			"agility": 150,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 609,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 28,
+					"damage": 0,
+					"ammo": 66,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 62,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 49,
+			"character": 1,
+			"language": "spanish",
+			"origin": "00-98CC Earth",
+			"name": "Siygess, Cheule",
+			"description": "Hembra humana, 27 a¤os",
+			"classText": "Ciudadana de la tierra",
+			"gameName": "Cheule",
+			"gfxPath": "CharactersGfx/Cheule.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 129,
+			"agility": 160,
+			"experience": 0,
+			"footstepPeriod": 330,
+			"gruntPeriod": 509,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 25,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 40,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 50,
+			"character": 2,
+			"language": "spanish",
+			"origin": "04-56FE Tesseract",
+			"name": "MC 128-7 CIM",
+			"description": "Mecanismo, 6 a¤os",
+			"classText": "Series de combate de infanter¡a",
+			"gameName": "CIM",
+			"gfxPath": "CharactersGfx/CIM.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 321,
+			"agility": 28,
+			"experience": 0,
+			"footstepPeriod": 460,
+			"gruntPeriod": 669,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 12,
+					"damage": 0,
+					"ammo": 200,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 15,
+					"damage": 0,
+					"ammo": 16,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 38,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 30,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 51,
+			"character": 3,
+			"language": "spanish",
+			"origin": "01-A45D New Europe",
+			"name": "Desverger",
+			"description": "Var¢n humano, 42 a¤os",
+			"classText": "Asesino a cuenta propia",
+			"gameName": "Desverger",
+			"gfxPath": "CharactersGfx/Desverger.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 1,
+			"className": "Assassin",
+			"fitness": 65535,
+			"physique": 187,
+			"agility": 85,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 14,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 47,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 34,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 101,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 52,
+			"character": 4,
+			"language": "spanish",
+			"origin": "07-0453 Cassandra",
+			"name": "Reannon, Adele",
+			"description": "Hembra humana, 31 a¤os",
+			"classText": "Experta en seguridad",
+			"gameName": "Adele",
+			"gfxPath": "CharactersGfx/Adele.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 7,
+			"className": "Engineer",
+			"fitness": 65535,
+			"physique": 94,
+			"agility": 196,
+			"experience": 0,
+			"footstepPeriod": 310,
+			"gruntPeriod": 489,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 13,
+					"damage": 0,
+					"ammo": 128,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 49,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 39,
+					"damage": 0,
+					"ammo": 250,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 61,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 53,
+			"character": 5,
+			"language": "spanish",
+			"origin": "00-0027 New Europe",
+			"name": "Torre, Miyriel",
+			"description": "Androide, 100 a¤os",
+			"classText": "Interfaz serie IV",
+			"gameName": "Miyriel",
+			"gfxPath": "CharactersGfx/Miyriel.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 4,
+			"raceName": "Cyborg",
+			"class": 12,
+			"className": "Multipurpose",
+			"fitness": 65535,
+			"physique": 100,
+			"agility": 132,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 19,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 24,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 1,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 54,
+			"character": 6,
+			"language": "spanish",
+			"origin": "01-56FE New Europe",
+			"name": "Deevergh, Rorian",
+			"description": "Var¢n humano, 42 a¤os",
+			"classText": "Combatiente especializado",
+			"gameName": "Rorian",
+			"gfxPath": "CharactersGfx/Rorian.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 0,
+			"className": "Marine",
+			"fitness": 65535,
+			"physique": 156,
+			"agility": 105,
+			"experience": 0,
+			"footstepPeriod": 360,
+			"gruntPeriod": 579,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 11,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 16,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 86,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 83,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 57,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 55,
+			"character": 7,
+			"language": "spanish",
+			"origin": "A037 origen desconocido",
+			"name": "Freymon, Jenillee",
+			"description": "Hembra humana, 27 a¤os",
+			"classText": "Mdico de campo de batalla",
+			"gameName": "Jenillee",
+			"gfxPath": "CharactersGfx/Jenillee.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 3,
+			"className": "Medic",
+			"fitness": 65535,
+			"physique": 95,
+			"agility": 211,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 479,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 21,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 108,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 87,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 96,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 56,
+			"character": 8,
+			"language": "spanish",
+			"origin": "04-154E Tesseract",
+			"name": "Kiurcher",
+			"description": "Var¢n humano, 49 a¤os",
+			"classText": "Tirador",
+			"gameName": "Kiurcher",
+			"gfxPath": "CharactersGfx/Kiurcher.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 9,
+			"className": "Marksman",
+			"fitness": 65535,
+			"physique": 190,
+			"agility": 75,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 589,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 10,
+					"damage": 0,
+					"ammo": 54,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 9,
+					"damage": 0,
+					"ammo": 40,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 47,
+					"damage": 0,
+					"ammo": 150,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 44,
+					"damage": 0,
+					"ammo": 20,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 107,
+					"damage": 0,
+					"ammo": 5,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 55,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 59,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 57,
+			"character": 9,
+			"language": "spanish",
+			"origin": "08-32EE Starscape",
+			"name": "Spey, Bonden",
+			"description": "Var¢n humano, 22 a¤os",
+			"classText": "Ciudadano",
+			"gameName": "Bonden",
+			"gfxPath": "CharactersGfx/Bonden.gfx",
+			"gender": 0,
+			"genderName": "male",
+			"race": 0,
+			"raceName": "Human",
+			"class": 4,
+			"className": "Citizen",
+			"fitness": 65535,
+			"physique": 207,
+			"agility": 106,
+			"experience": 0,
+			"footstepPeriod": 380,
+			"gruntPeriod": 569,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 26,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 46,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 60,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 64,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 58,
+			"character": 10,
+			"language": "spanish",
+			"origin": "04-F140 Tesseract",
+			"name": "Homez, Katrina",
+			"description": "Hembra humana, 27 a¤os",
+			"classText": "Antigua agente del DPU",
+			"gameName": "Katrina",
+			"gfxPath": "CharactersGfx/Katrina.gfx",
+			"gender": 1,
+			"genderName": "female",
+			"race": 0,
+			"raceName": "Human",
+			"class": 6,
+			"className": "UPBI agent",
+			"fitness": 65535,
+			"physique": 131,
+			"agility": 144,
+			"experience": 0,
+			"footstepPeriod": 320,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 18,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 48,
+					"damage": 0,
+					"ammo": 64,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 35,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 63,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		},
+		{
+			"index": 59,
+			"character": 11,
+			"language": "spanish",
+			"origin": "56-AA56 Freewill",
+			"name": "CIM-Lite",
+			"description": "Mecanismo, 2 a¤os",
+			"classText": "Series de combate de infanter¡a",
+			"gameName": "CIM-Lite",
+			"gfxPath": "CharactersGfx/CIM-Lite.gfx",
+			"gender": 2,
+			"genderName": "n/a",
+			"race": 1,
+			"raceName": "Mech",
+			"class": 2,
+			"className": "Combat Droid",
+			"fitness": 65535,
+			"physique": 250,
+			"agility": 44,
+			"experience": 0,
+			"footstepPeriod": 400,
+			"gruntPeriod": 519,
+			"inventory": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 1,
+					"item": 5,
+					"damage": 0,
+					"ammo": 50,
+					"potency": 0
+				},
+				{
+					"slot": 2,
+					"item": 17,
+					"damage": 0,
+					"ammo": 2,
+					"potency": 0
+				},
+				{
+					"slot": 3,
+					"item": 45,
+					"damage": 0,
+					"ammo": 90,
+					"potency": 0
+				},
+				{
+					"slot": 4,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 5,
+					"item": 66,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				},
+				{
+					"slot": 6,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 7,
+					"item": 27,
+					"damage": 0,
+					"ammo": 6,
+					"potency": 0
+				},
+				{
+					"slot": 8,
+					"item": 33,
+					"damage": 0,
+					"ammo": 3,
+					"potency": 0
+				},
+				{
+					"slot": 9,
+					"item": 50,
+					"damage": 0,
+					"ammo": 100,
+					"potency": 0
+				}
+			],
+			"actions": [
+				{
+					"slot": 0,
+					"item": 79,
+					"damage": 0,
+					"ammo": 0,
+					"potency": 0
+				}
+			]
+		}
+	]
+}

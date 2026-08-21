@@ -1,0 +1,91 @@
+{
+	"front": {
+		"file": "frontend/front.png",
+		"width": 640,
+		"height": 512
+	},
+	"faces": {
+		"file": "frontend/faces.png",
+		"width": 2624,
+		"height": 256,
+		"count": 12,
+		"stripOrigin": 240,
+		"faceWidth": 160,
+		"scrollMin": 142,
+		"scrollMax": 1902,
+		"selectedScreenX": 98
+	},
+	"smallFaces": {
+		"file": "frontend/smallfaces.png",
+		"width": 640,
+		"height": 512,
+		"cellWidth": 64,
+		"cellHeight": 80,
+		"columns": 6,
+		"slots": [
+			[
+				458,
+				16
+			],
+			[
+				538,
+				16
+			],
+			[
+				458,
+				112
+			],
+			[
+				538,
+				112
+			]
+		]
+	},
+	"panel": {
+		"file": "frontend/panel.png",
+		"width": 640,
+		"height": 256
+	},
+	"sprites": {
+		"file": "frontend/sprites.png",
+		"width": 320,
+		"height": 400
+	},
+	"world": {
+		"file": "frontend/world.png",
+		"width": 960,
+		"height": 384
+	},
+	"menu": [
+		{
+			"id": "training",
+			"label": "TRAINING",
+			"x": 153,
+			"y": 100
+		},
+		{
+			"id": "campaign",
+			"label": "CAMPAIGN",
+			"x": 153,
+			"y": 122
+		},
+		{
+			"id": "action",
+			"label": "ACTION",
+			"x": 153,
+			"y": 144
+		},
+		{
+			"id": "continue",
+			"label": "CONTINUE",
+			"x": 153,
+			"y": 183
+		},
+		{
+			"id": "quit",
+			"label": "QUIT",
+			"x": 153,
+			"y": 205
+		}
+	]
+}

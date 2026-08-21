@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hired Guns</title>
+<style>
+	:root { color-scheme: dark; }
+	body {
+		margin: 0; background: #101014; color: #c8c8d0;
+		font: 13px/1.5 ui-monospace, "Cascadia Mono", Consolas, monospace;
+		display: flex; flex-direction: column; align-items: center; gap: 8px;
+		padding: 10px; min-height: 100vh; box-sizing: border-box;
+	}
+	h1 { font-size: 15px; margin: 0; letter-spacing: 3px; color: #e0d0a0; font-weight: 600; }
+	#stage.hidden { display: none; }
+	#stage { position: relative; }
+	canvas { image-rendering: pixelated; background: #000; border: 1px solid #303040; }
+	/* Centred in the stage: the shell is 640x512 lace, a different aspect to
+	   the game's 320x212, so it letterboxes rather than stretching. */
+	#shell { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+	#shell-canvas { image-rendering: pixelated; }
+	#shell.hidden { display: none; }
+	/* Optional CRT filter. Sits above everything and takes no input; the layers
+	   are scanlines, the RGB phosphor stripe, then the glass. */
+	#crt { display: none; }
+	#crt.on {
+		display: block; position: fixed; inset: 0; z-index: 60; pointer-events: none;
+		--crt-pitch: 3px; --crt-gap: 1px;
+	}
+	#crt.on::before {
+		content: ""; position: absolute; inset: 0;
+		background:
+			repeating-linear-gradient(
+				to bottom,
+				rgba(0,0,0,0.38) 0, rgba(0,0,0,0.38) var(--crt-gap),
+				rgba(0,0,0,0) var(--crt-gap), rgba(0,0,0,0) var(--crt-pitch)),
+			repeating-linear-gradient(
+				to right,
+				rgba(255,0,0,0.06) 0, rgba(255,0,0,0.06) 1px,
+				rgba(0,255,0,0.06) 1px, rgba(0,255,0,0.06) 2px,
+				rgba(0,0,255,0.06) 2px, rgba(0,0,255,0.06) 3px);
+		mix-blend-mode: multiply;
+	}
+	#crt.on::after {
+		content: ""; position: absolute; inset: 0;
+		background:
+			radial-gradient(ellipse at 50% 50%,
+				rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 45%),
+			radial-gradient(ellipse at 50% 50%,
+				rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%);
+	}
+	#drop-hint {
+		position: fixed; inset: 0; z-index: 55; display: none;
+		align-items: center; justify-content: center;
+		background: rgba(10,10,16,0.82); font-size: 15px; letter-spacing: .1em;
+		color: #e0d0a0; pointer-events: none; text-align: center;
+	}
+	#drop-hint.on { display: flex; }
+	#crt-toggle { opacity: 0.6; font-size: 0.85em; cursor: help; }
+	#crt-toggle:hover { opacity: 1; }
+	/* Death and outro stills, over everything but under nothing. */
+	#endscreen {
+		position: fixed; inset: 0; z-index: 45; background: #000;
+		display: flex; flex-direction: column; align-items: center;
+		justify-content: center; gap: 10px; cursor: pointer;
+	}
+	#endscreen.hidden { display: none; }
+	#endscreen canvas { image-rendering: pixelated; }
+	#endscreen-caption {
+		font-size: 12px; color: #7a7a88; letter-spacing: .1em; text-transform: uppercase;
+	}
+	/* The intro covers everything until it ends or is skipped. */
+	#intro {
+		position: fixed; inset: 0; z-index: 50; background: #000;
+		display: flex; align-items: center; justify-content: center; cursor: pointer;
+	}
+	#intro.hidden { display: none; }
+	#intro video { max-width: 100vw; max-height: 100vh; }
+	#intro-skip {
+		position: absolute; bottom: 18px; left: 0; right: 0; text-align: center;
+		font-size: 12px; color: #7a7a88; letter-spacing: .1em; pointer-events: none;
+	}
+	#hg-cursor {
+		position: fixed; left: 0; top: 0; z-index: 20; pointer-events: none;
+		image-rendering: pixelated; display: none;
+	}
+	/* Wide enough for #status to absorb the slack -- which is what keeps the
+	   controls either side from moving when the message changes -- but no wider
+	   than the editor underneath, or it overhangs it on a wide window.
+	   
+	   The cap is the editor's own structural width, written out rather than
+	   measured: the 736px map canvas plus its border, then the three 310px side
+	   columns with 12px gaps between all four. Below that the bar just tracks
+	   the window, as the editor does. */
+	#bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+		justify-content: center; width: 100%;
+		max-width: calc(738px + 3 * 310px + 3 * 12px); }
+	/* Grows into whatever the row has spare, so the controls either side keep
+	   their positions whatever the message says. It is held to one line as well:
+	   the longest messages run to about 80 characters, and letting those wrap
+	   grew the bar by a row and pushed the whole page down -- the same jolt in
+	   the other axis. Nothing is lost to the ellipsis, since status() puts the
+	   full text on the element's tooltip. */
+	#status { flex: 1 1 0; min-width: 24ch; text-align: center;
+		white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+	select, button { background: #1c1c24; color: inherit; border: 1px solid #383848; padding: 3px 6px; font: inherit; cursor: pointer; }
+	#status, #info { color: #8a8a99; }
+	#info { font-size: 12px; }
+	kbd {
+		background: #24242e; border: 1px solid #3a3a4a; border-bottom-width: 2px;
+		border-radius: 3px; padding: 0 4px; font-size: 11px; color: #b0b0c0;
+	}
+	#help { color: #6a6a78; font-size: 12px; text-align: center; }
+	/* Development aids: the map jump and the floor-cheat keys. Hidden unless
+	   the debug box is ticked; body.debug is set from main.js. */
+	.debug-only { display: none; }
+	body.debug .debug-only { display: inline-block; }
+	#debug-toggle { margin-left: auto; opacity: 0.6; font-size: 0.85em; }
+	#tall-toggle { opacity: 0.6; font-size: 0.85em; cursor: help; }
+	#tall-toggle:hover { opacity: 1; }
+	#cheat-toggle { opacity: 0.6; font-size: 0.85em; }
+	#debug-toggle:hover, #cheat-toggle:hover { opacity: 1; }
+	body.cheat #cheat-toggle { opacity: 1; color: #ffd050; }
+	/* The game bar is hidden while a level is being edited; see suspendBarModes.
+	   The status line moves into the editor bar, where it gets a fixed slot of
+	   its own so a long message cannot resize that bar either. */
+	body.editing #bar { display: none; }
+	#editor-bar #status { flex: 0 1 auto; width: 40ch; min-width: 0; text-align: left; }
+	#editor { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+	#editor.hidden { display: none; }
+	#editor-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+	#editor-canvas { border: 1px solid #333; image-rendering: pixelated; cursor: crosshair; }
+	/* Fixed, not min-width: "x 22  y 22  floor 19" is 20 characters and the old
+	   16ch reservation was three short of the longest, so moving the pointer
+	   over the map re-flowed every control after it. Monospace makes ch exact. */
+	#ed-cell { font-family: ui-monospace, monospace; opacity: .8;
+		width: 20ch; flex: none; white-space: nowrap; }
+	/* Same reason, one digit's worth: floor 9 to floor 19. */
+	#ed-floor { font-family: ui-monospace, monospace; width: 8ch; flex: none; }
+	/* Three columns that wrap: the map and its views, the per-cell panels, then
+	   the pickers and map-wide settings. One 300px column could not hold all of
+	   this without running far past the bottom of the map and leaving the rest
+	   of the width empty. */
+	#editor-body { display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+	/* The side panels flow into as many 310px columns as they need, capped at
+	   the height of the map beside them. Hand-assigning them to columns left
+	   some short and some overrunning; letting them pack keeps the block square
+	   with the map however tall any one panel happens to be. */
+	#editor-side, #editor-side2, #editor-side3 {
+		display: flex; flex-direction: column; gap: 12px; width: 310px; flex: none;
+	}
+	#ed-region { display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
+		padding-bottom: 4px; border-bottom: 1px solid #2a2a34; }
+	#ed-region button { font-size: 11px; padding: 4px 7px; cursor: pointer; }
+	#ed-region button.on { outline: 2px solid #78beff; }
+	#ed-region button:disabled { opacity: .4; cursor: default; }
+	#ed-region-info { font-size: 11px; opacity: .6; }
+	#ed-tools { display: flex; flex-wrap: wrap; gap: 4px; }
+	#ed-tools button { font-size: 11px; padding: 4px 7px; cursor: pointer; }
+	#ed-tools button.on { outline: 2px solid #ffd050; }
+	#editor-main { display: flex; flex-direction: column; gap: 10px; flex: none; }
+	#ed-views { display: flex; gap: 10px; align-items: flex-start; }
+	#ed-preview-wrap, #ed-3d-wrap { display: flex; flex-direction: column; gap: 5px; }
+	#ed-3d-wrap { flex: 1; min-width: 0; }
+	#ed-preview { border: 1px solid #333; image-rendering: pixelated; width: 426px; flex: none; }
+	#ed-3d { border: 1px dashed #333; height: 252px; display: flex; align-items: center;
+		justify-content: center; font-size: 11.5px; opacity: .4; background: #0e0e12;
+		min-width: 180px; }
+	.ed-label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; opacity: .6; }
+	#ed-facing { display: flex; gap: 4px; }
+	#ed-facing button { font-size: 11px; padding: 3px 9px; cursor: pointer; }
+	#ed-facing button.on { outline: 2px solid #ffd050; }
+	#ed-packs { display: flex; flex-direction: column; gap: 6px; }
+	#ed-pack-tabs { display: flex; gap: 6px; align-items: center; font-size: 11px; }
+	#ed-pack-tabs button { font-size: 11px; padding: 3px 8px; cursor: pointer; }
+	#ed-pack-tabs button.on { outline: 2px solid #ffd050; }
+	#ed-pack-info { opacity: .6; }
+	#ed-pack-grid { display: flex; flex-wrap: wrap; gap: 4px; max-height: 260px;
+		overflow-y: auto; padding: 4px; border: 1px solid #333; }
+	#ed-pack-grid canvas { image-rendering: pixelated; cursor: pointer; border: 1px solid transparent; }
+	#ed-pack-grid canvas.on { border-color: #ffd050; }
+	#ed-pack-actions { display: flex; gap: 6px; align-items: center; font-size: 11px; }
+	#ed-pack-slot { width: 4em; }
+	#ed-inspector { display: flex; flex-direction: column; gap: 6px; }
+	#ed-insp-body { font-family: ui-monospace, monospace; font-size: 11px; line-height: 1.6;
+		border: 1px solid #333; padding: 6px 8px; min-height: 84px; }
+	#ed-insp-body .k { opacity: .55; }
+	#ed-insp-body .warn { color: #e0796e; }
+	#ed-insp-actions { display: flex; gap: 4px; flex-wrap: wrap; }
+	#ed-insp-actions button { font-size: 11px; padding: 3px 7px; cursor: pointer; }
+	#ed-place { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; font-size: 11px; }
+	#ed-place select { max-width: 130px; font-size: 11px; }
+	#ed-place button { font-size: 11px; padding: 3px 7px; cursor: pointer; }
+	#ed-legend { font-size: 11.5px; line-height: 1.65; max-width: 1060px; }
+	#ed-legend h4 { margin: 12px 0 4px; font-size: 11px; letter-spacing: .08em;
+		text-transform: uppercase; opacity: .6; font-weight: 700; }
+	#ed-legend .cols { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+	#ed-legend .item { display: flex; gap: 6px; align-items: baseline; min-width: 210px; }
+	#ed-legend .mk { font-family: ui-monospace, monospace; font-weight: 700;
+		background: rgba(0,0,0,.6); padding: 0 5px; border-radius: 2px; }
+	#ed-legend .chip { width: 32px; height: 32px; image-rendering: pixelated;
+		border: 1px solid #333; flex: none; }
+	#ed-legend .item { align-items: center; }
+	#ed-legend .note { opacity: .65; max-width: 78ch; margin: 8px 0 0; }
+	#ed-legend code { background: rgba(0,0,0,.5); padding: 0 4px; border-radius: 2px; }
+	#ed-pack-grid canvas.on { border-color: #ffd050; border-width: 2px; }
+	#ed-place .picker { display: flex; gap: 10px; align-items: flex-start; margin-top: 8px; }
+	#ed-place .pcol { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
+	#ed-place .pgrid { display: flex; flex-wrap: wrap; gap: 2px; max-height: 148px;
+		overflow-y: auto; background: #101014; padding: 3px; border: 1px solid #2a2a32; }
+	#ed-place .pgrid canvas { image-rendering: pixelated; cursor: pointer;
+		border: 1px solid transparent; background: #16161c; }
+	#ed-place .pgrid canvas.on { border-color: #ffd050; background: #24242c; }
+	#ed-place .pbig { display: flex; flex-direction: column; align-items: center; gap: 4px;
+		width: 150px; flex: none; }
+	#ed-place .pbig canvas { image-rendering: pixelated; background: #101014;
+		border: 1px solid #2a2a32; max-width: 148px; }
+	#ed-place .pbig span { font-size: 10.5px; text-align: center; opacity: .8; line-height: 1.3; }
+	#ed-wiring { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; font-size: 11.5px; }
+	#ed-wiring .wrow { display: flex; gap: 5px; align-items: center; }
+	#ed-wiring .wrow > span:first-child { width: 62px; flex: none; opacity: .65; }
+	#ed-wiring select, #ed-wiring input { font-size: 11px; min-width: 0; }
+	#ed-wiring select.act { flex: 1; }
+	#ed-wiring button { font-size: 11px; padding: 2px 6px; cursor: pointer; }
+	#ed-wiring .picking, #ed-extras .picking { outline: 2px solid #ffd050; }
+	#ed-extras { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; font-size: 11.5px; }
+	#ed-extras .wrow { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
+	#ed-extras .wrow > span:first-child { width: 62px; flex: none; opacity: .65; }
+	#ed-extras select, #ed-extras input, #ed-extras button { font-size: 11px; }
+	#ed-props { display: flex; flex-direction: column; gap: 3px; font-size: 11.5px; }
+	#ed-props .wrow { display: flex; gap: 5px; align-items: center; }
+	#ed-props .wrow > span:first-child { width: 88px; flex: none; opacity: .65; }
+	#ed-props input { font-size: 11px; }
+	#ed-props .note { opacity: .8; color: #ffb060; margin-top: 4px; }
+	#ed-props select { font-size: 11px; max-width: 150px; }
+	#ed-props .prev { display: inline-flex; align-items: center; gap: 3px; min-height: 30px; }
+	#ed-props .prev canvas { image-rendering: pixelated; border: 1px solid #2a2a32; }
+	#ed-props .prev .swatch { width: 12px; height: 34px; }
+	#ed-props .prev .pair { display: inline-flex; gap: 3px; }
+	#ed-props .prev button { font-size: 10px; padding: 1px 6px; cursor: pointer; }
+	#ed-messages { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; font-size: 11.5px; }
+	#ed-messages .wrow { display: flex; gap: 5px; align-items: flex-start; }
+	#ed-messages .wrow > span:first-child { width: 62px; flex: none; opacity: .65; padding-top: 3px; }
+	#ed-messages textarea { flex: 1; font: inherit; font-size: 11px; resize: vertical;
+		background: #16161c; color: inherit; border: 1px solid #383848; }
+	#ed-messages select, #ed-messages button { font-size: 11px; }
+	#ed-messages .msg-summary { font-size: 10.5px; opacity: .6; }
+	#ed-messages .msg-summary.warn, #ed-messages .note.warn { opacity: 1; color: #ffb060; }
+	#ed-messages .msg-preview { font-size: 10.5px; opacity: .75; }
+	#ed-messages .note { opacity: .6; font-size: 10.5px; }
+	#ed-trigger-list { margin-top: 8px; display: flex; flex-direction: column; gap: 3px; }
+	#ed-trigger-body { display: flex; flex-direction: column; gap: 2px;
+		max-height: 240px; overflow-y: auto; }
+	#ed-trigger-body .trow { display: flex; gap: 6px; align-items: baseline;
+		font-size: 10.5px; cursor: pointer; padding: 2px 3px; border-radius: 2px; }
+	#ed-trigger-body .trow:hover { background: #23232e; }
+	#ed-trigger-body .trow.on { background: #2c3242; outline: 1px solid #78beff; }
+	#ed-trigger-body .trow .at { opacity: .55; flex: none; width: 66px;
+		font-variant-numeric: tabular-nums; }
+	#ed-trigger-body .trow .who { opacity: .55; flex: none; width: 16px; }
+	#ed-trigger-body .trow .say { flex: 1; overflow: hidden; text-overflow: ellipsis;
+		white-space: nowrap; }
+	#ed-trigger-body .trow.bad .say { color: #ffb060; }
+	#ed-trigger-body .none { font-size: 10.5px; opacity: .55; }
+	#ed-props .has-hint { cursor: help; border-bottom: 1px dotted #555; }
+	.stats { font-size: 10.5px; line-height: 1.45; margin-top: 4px; }
+	.stats .srow { display: flex; gap: 6px; justify-content: space-between; }
+	.stats .srow span { opacity: .55; }
+	.stats .srow b { font-weight: 600; text-align: right; }
+	#ed-item-stats { columns: 2; column-gap: 16px; margin-top: 6px; }
+	#ed-monster-stats { width: 148px; }
+	.picker-tail { display: contents; }
+	#ed-map-slots { display: flex; flex-wrap: wrap; gap: 4px; max-height: 210px;
+		overflow-y: auto; padding: 4px; border: 1px solid #333; }
+	#ed-map-slots .slot { display: flex; flex-direction: column; align-items: center;
+		gap: 1px; padding: 2px; border: 1px solid transparent; cursor: pointer; }
+	#ed-map-slots .slot.on { border-color: #ffd050; }
+	#ed-map-slots .slot.blank { opacity: .35; }
+	#ed-map-slots .slot span { font-size: 9.5px; opacity: .6; }
+	#ed-map-slots canvas { image-rendering: pixelated; border: 1px solid #2a2a32; }
+</style>
+</head>
+<body>
+	<h1>HIRED GUNS</h1>
+	<div id="bar">
+		<select id="map" class="debug-only"></select>
+		<button type="button" id="qsave">Quick Save</button>
+		<button type="button" id="qload">Quick Load</button>
+		<span id="status">starting...</span>
+		<button type="button" id="load-level" title="Open a .hgmap.json level file. It is added to Short action game.">load level</button>
+		<input type="file" id="load-level-file" accept=".json,.hgmap.json" hidden>
+		<label id="crt-toggle" title="A cosmetic CRT filter over the whole page: scanlines at the display's own pixel pitch, an RGB phosphor stripe, and a glass vignette. Changes nothing underneath."><input type="checkbox" id="crt-toggle-box"> crt</label>
+		<label id="tall-toggle" title="Keep tall objects such as trees partly visible from two levels up instead of popping out. An approximation: the view only reaches one floor down, so the object is drawn with the nearest available art shifted a floor. Off is the parity path."><input type="checkbox" id="tall-objects"> tall objects</label>
+		<label id="debug-toggle"><input type="checkbox" id="debug"> debug</label>
+		<label id="cheat-toggle"><input type="checkbox" id="cheat"> cheat</label>
+	</div>
+	<div id="editor" class="hidden">
+		<div id="editor-bar">
+			<span id="editor-name">editor</span>
+			<button type="button" id="ed-up">floor +</button>
+			<button type="button" id="ed-down">floor -</button>
+			<span id="ed-floor">floor 11</span>
+			<label><input type="checkbox" id="ed-ghost" checked> floor below</label>
+			<label><input type="checkbox" id="ed-grid"> grid</label>
+			<label><input type="checkbox" id="ed-markers" checked> markers</label>
+			<span id="ed-cell"></span>
+			<button type="button" id="ed-undo">undo</button>
+			<button type="button" id="ed-redo">redo</button>
+			<label title="Recompute lighting after every edit. The in-engine pane reads the stored light bit, so without this it shows the lighting the map was opened with."><input type="checkbox" id="ed-autolight" checked> auto-light</label>
+			<button type="button" id="ed-relight" title="Recompute the light bit for the whole map now">relight</button>
+			<button type="button" id="ed-clear">clear map</button>
+			<button type="button" id="ed-save">save as custom</button>
+			<button type="button" id="ed-export" title="Write this map out as one .hgmap.json -- a backup, and the file you ship on a website">export file</button>
+			<button type="button" id="ed-import" title="Load a .hgmap.json back into the editor's store">import file</button>
+			<input type="file" id="ed-import-file" accept=".json,.hgmap.json" hidden>
+			<button type="button" id="ed-close">close</button>
+		</div>
+		<div id="editor-body">
+			<div id="editor-main">
+				<canvas id="editor-canvas" width="736" height="736"></canvas>
+				<div id="ed-views">
+					<div id="ed-preview-wrap">
+						<span class="ed-label">in-engine view</span>
+						<canvas id="ed-preview" width="426" height="252"></canvas>
+						<div id="ed-facing">
+							<button type="button" data-dir="0">N</button>
+							<button type="button" data-dir="1">E</button>
+							<button type="button" data-dir="2">S</button>
+							<button type="button" data-dir="3">W</button>
+						</div>
+					</div>
+					<div id="ed-3d-wrap">
+						<span class="ed-label">3d view</span>
+						<div id="ed-3d">not built yet</div>
+					</div>
+				</div>
+			</div>
+			<div id="editor-side">
+				<div id="ed-region">
+					<button type="button" id="ed-select" title="Drag a rectangle on the map instead of painting. Ctrl-drag does the same without leaving your tool.">select</button>
+					<button type="button" id="ed-fill" title="Apply the current tool to every cell in the selection">fill</button>
+					<button type="button" id="ed-flood" title="Apply the current tool to every cell joined to the cursor that looks the same">flood</button>
+					<button type="button" id="ed-copy" title="Copy the selection, records and messages included (ctrl-C)">copy</button>
+					<button type="button" id="ed-paste" title="Paste at the cursor (ctrl-V)">paste</button>
+					<button type="button" id="ed-region-clear" title="Clear every cell in the selection">clear</button>
+					<span id="ed-region-info"></span>
+				</div>
+				<div id="ed-tools"></div>
+				<div id="ed-inspector">
+					<span class="ed-label">inspector</span>
+					<div id="ed-insp-body">click a cell</div>
+					<div id="ed-insp-actions">
+						<button type="button" id="ed-add-door">+ door</button>
+						<button type="button" id="ed-add-lift">+ lift</button>
+						<button type="button" id="ed-add-button">+ button</button>
+						<button type="button" id="ed-remove">remove</button>
+					</div>
+					<div id="ed-extras"></div>
+					<div id="ed-messages"></div>
+					<div id="ed-wiring"></div>
+				</div>
+				<div id="ed-props-wrap">
+					<span class="ed-label">map properties</span>
+					<div id="ed-props"></div>
+				</div>
+			</div>
+			<div id="editor-side2">
+				<div id="ed-place">
+					<div class="picker">
+						<div class="pcol">
+							<span class="ed-label">item</span>
+							<div id="ed-item" class="pgrid"></div>
+							<button type="button" id="ed-add-item">place item</button>
+						</div>
+						<div class="pbig"><canvas id="ed-item-big"></canvas><span id="ed-item-name"></span></div>
+					</div>
+					<div id="ed-item-stats" class="stats"></div>
+					<div class="picker">
+						<div class="pcol">
+							<span class="ed-label" title="Which creature the Egg tool hatches. Monsters are not placed directly -- every shipped map spawns them from eggs.">egg contents</span>
+							<div id="ed-monster" class="pgrid"></div>
+						</div>
+						<div class="pbig"><canvas id="ed-monster-big"></canvas><span id="ed-monster-name"></span><div id="ed-monster-stats" class="stats"></div></div>
+					</div>
+				</div>
+			</div>
+			<div id="editor-side3">
+				<div id="ed-packs">
+					<span class="ed-label">panels &amp; horizons</span>
+					<div id="ed-pack-tabs">
+						<button type="button" data-pack="panelpack" class="on">panels</button>
+						<button type="button" data-pack="horizonpack">horizons</button>
+						<span id="ed-pack-info"></span>
+					</div>
+					<div id="ed-pack-grid"></div>
+					<span class="ed-label">this map's slots</span>
+					<div id="ed-map-slots"></div>
+					<div id="ed-pack-actions">
+						<label>slot <input type="number" id="ed-pack-slot" min="0" max="31" value="0"></label>
+						<button type="button" id="ed-pack-assign">assign to slot</button>
+					</div>
+				</div>
+				<div id="ed-trigger-list">
+					<span class="ed-label" title="Every message trigger on the map. Click one to jump to its cell.">triggers</span>
+					<div id="ed-trigger-body"></div>
+				</div>
+			</div>
+		</div>
+		<div id="ed-legend"></div>
+	</div>
+	<div id="stage">
+		<canvas id="screen"></canvas>
+		<div id="shell"><canvas id="shell-canvas" width="640" height="512"></canvas></div>
+	</div>
+	<div id="info"></div>
+	<div id="help">
+		<kbd>&uarr;</kbd><kbd>&darr;</kbd> move &nbsp;
+		<kbd>&larr;</kbd><kbd>&rarr;</kbd> turn &nbsp;
+		<kbd>Q</kbd><kbd>E</kbd> strafe &nbsp;
+		<kbd>X</kbd> pull &nbsp;
+		<span class="debug-only"><kbd>R</kbd><kbd>F</kbd> floor up/down &nbsp;</span>
+		<kbd>Space</kbd> press button &nbsp;
+		<kbd>1</kbd>-<kbd>4</kbd> select player &nbsp;
+		<kbd>F5</kbd> quick save &nbsp;
+		<kbd>F9</kbd> quick load
+	</div>
+	<div id="help">
+		or use the mouse: each pane is carved into action zones &mdash;
+		upper middle walks, sides turn, lower corners sidestep,
+		middle band activates, right-click pulls, bottom backs up
+	</div>
+	<div id="drop-hint">drop a .hgmap.json level here</div>
+	<div id="crt" aria-hidden="true"></div>
+	<div id="endscreen" class="hidden">
+		<canvas id="endscreen-canvas"></canvas>
+		<div id="endscreen-caption"></div>
+	</div>
+	<div id="intro" class="hidden">
+		<video id="intro-video" playsinline preload="auto"></video>
+		<div id="intro-skip">click or press a key to skip</div>
+	</div>
+	<script type="module" src="src/main.js"></script>
+</body>
+</html>

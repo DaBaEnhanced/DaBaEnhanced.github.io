@@ -1,0 +1,100 @@
+---
+layout: shorts
+title: "001 - The Last Incorrect"
+date: 2025-04-03 11:28:47 +0200
+categories: jekyll update
+summary: Can't stop a comedian
+thumbnail_img: "../assets/images/001short.jpg"
+thumbnail: "../assets/videos/001short.mp4"
+---
+
+<div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
+  <span style="margin-right: 10px;">Audiobook:</span>
+  <audio controls style="width: 100%; max-width: 400px;">
+    <source src="../assets/audio/TheLastIncorrect.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+The fluorescent lights buzzed overhead as Marcus sat in the pristine white courtroom.
+
+The judge—whose official title was "Equity Facilitator"—peered down at him through thick-rimmed glasses that matched their teal jumpsuit, the color designated for those who had achieved Level 9 Ally status.
+_"Marcus Thorne, you stand accused of Pronoun Negligence in the Third Degree. How do you identify your plea?"_
+
+Marcus cleared his throat._"Guilty, I suppose. Though in my defense—"_
+
+_"Objection!"_ The prosecutor shot up. _"The accused is using possessive language that implies ownership of a defense, which could trigger those with authority trauma."_
+
+_"Sustained,"_ the Equity Facilitator nodded. _"Mr. Thorne—"_
+
+_"Actually,"_ interrupted the court clerk, _"we cannot confirm the accused's gender presentation without their explicit consent form, which remains unsigned."_
+
+The Equity Facilitator pinched the bridge of their nose. _"Correct. Person Thorne, please explain the incident from your perspective, using only approved terminology from the Inclusive Lexicon, 37th Edition."_
+
+Marcus nodded. _"Well, I was buying my lab-grown, carbon-neutral coffee substitute—"_
+
+_"Objection! 'My' is possessive language!"_
+
+_"Sustained."_
+
+Marcus sighed. _"The coffee substitute that was being purchased by this person was in a compostable cup. The barista—"_
+
+_"Beverage Artisan,"_ corrected the prosecutor.
+
+_"Right. The Beverage Artisan asked if this person would like oat milk, and this person said, 'No thanks, she can just use the regular soy.'"_
+
+A collective gasp filled the courtroom.
+_"And you were aware,"_ the Equity Facilitator's voice was ice, _"that the Beverage Artisan's pronouns are xe/xem/xyr?"_
+
+_"Look, xe had a name tag, but it was covered by xyr hair. How was I supposed to—"_
+
+_"Ignorance is no excuse,"_ the prosecutor interrupted. _"We found evidence that Person Thorne failed to complete their mandatory weekly Pronoun Awareness Refresher course for three consecutive cycles."_
+
+The jury—officially called the "Consensus Collective"—murmured disapprovingly.
+
+_"What does Person Thorne do for employment?"_ asked the Equity Facilitator.
+
+_"This person writes comedy. Or tries to,"_ Marcus said.
+
+_"Comedy?"_ The Equity Facilitator raised an eyebrow. _"That practice was reclassified as Potential Harm Speech in 2041."_
+
+_"Yes, which is why this person writes it secretly. On paper. With pencils."_
+Another gasp.
+
+_"Pencils made of trees?"_ someone in the gallery shrieked.
+
+_"No, no,"_ Marcus said quickly. _"Pencils made from recycled politician promises. Completely sustainable. They're hollow."_
+
+The prosecutor approached the bench. _"We'd like to question the accused about their comedy writing."_
+
+_"Proceed,"_ said the Equity Facilitator.
+
+_"Person Thorne, would you say your so-called 'comedy' sometimes makes people... uncomfortable?"_
+
+_"That's rather the point of comedy,"_ Marcus replied.
+
+The courtroom erupted in chaos. The Equity Facilitator banged their gavel, which made a soft thumping sound to avoid noise pollution.
+_"Order! We will have order or everyone must report for additional Peaceful Engagement training!"_
+
+When quiet returned, the prosecutor continued. _"Person Thorne, how many sensitivity disclaimers do you include before your 'jokes'?"_
+
+_"None. Again, they're written on paper. For myself."_
+
+_"So you admit to creating unsafe content without proper content warnings?"_
+
+Marcus looked at the ceiling. _"I once wrote a joke about a chicken crossing the road without acknowledging the privilege of bipedal mobility."_
+
+Several members of the Consensus Collective fainted.
+
+After three hours of additional questioning, during which Marcus admitted to using terms like "crazy" (ableist), "blind spot" (visually exclusive), and "brainstorm" (neurologically inconsiderate), the Consensus Collective delivered their verdict.
+
+_"We find the accused guilty of all charges, including the newly added offense of Historical Humor Perpetuation."_
+
+The Equity Facilitator nodded gravely. _"The sentence is Permanent Identity Suspension. To be carried out immediately."_
+
+As they led Marcus to the Compassionate Conclusion Chamber, a reporter from the State-Approved Information Network approached.
+_"Any final words for the viewing community, Person Thorne?"_
+
+Marcus looked directly into the camera as they placed the biodegradable hemp rope around his neck.
+_"Don't worry—my carbon footprint ends here, but my joke footprint is eternal."_
+
+The trap door opened before anyone could process their outrage.

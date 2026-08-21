@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Poetry"
+date: 2025-04-05 23:53:47 +0200
+categories: jekyll update
+excerpt: The lad fancy himself a poet?
+---
+
+I've added a [poetry]({% link poems.markdown %}) section. It contains old poems I wrote ages ago—back when nobody cared about neural networks, and SVMs and random forests were all the rage.
+
+So, it's 100% human-made stuff.Some of the poems were originally written in English, while others were written in Italian (though the English translations for these are mostly AI-generated).
+
+I once tried writing a poem in Latin but quickly abandoned the idea because the effort wasn't worth it. Now that I think about it, I could try asking Claude to translate one into Latin.
+
+### [Somnia]({% link _poetry/002.markdown %})<br>
+
+Progrediuntur in nebula<br>
+umbrae indistinctae<br>
+Incedunt<br>
+sine meta<br>
+aeterne<br>
+sicut milites<br>
+Oculi vacui<br>
+vultus sine anima<br>
+automata carnis<br>
+<br>
+Progrediuntur sine pausa<br>
+in nebula<br>
+sicut spectra<br>
+sine ullo strepitu,<br>
+somnia nostra.<br>

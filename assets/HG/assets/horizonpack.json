@@ -1,0 +1,841 @@
+{
+	"source": "deduplicated from the 47 shipped maps",
+	"comment": "Raw planar entries, 576 bytes each, concatenated in index order. Decode with the width/height/format below.",
+	"file": "horizonpack.bin",
+	"width": 144,
+	"height": 32,
+	"planes": 1,
+	"format": "planar",
+	"entryBytes": 576,
+	"count": 115,
+	"slotsScanned": 188,
+	"blankSlots": 40,
+	"entries": [
+		{
+			"index": 0,
+			"uses": 6,
+			"seenIn": [
+				"01-ArtificialIsland#0",
+				"43-Training#0",
+				"44-Training#0"
+			]
+		},
+		{
+			"index": 1,
+			"uses": 6,
+			"seenIn": [
+				"01-ArtificialIsland#1",
+				"43-Training#1",
+				"44-Training#1"
+			]
+		},
+		{
+			"index": 2,
+			"uses": 6,
+			"seenIn": [
+				"01-ArtificialIsland#2",
+				"43-Training#2",
+				"44-Training#2"
+			]
+		},
+		{
+			"index": 3,
+			"uses": 6,
+			"seenIn": [
+				"01-ArtificialIsland#3",
+				"43-Training#3",
+				"44-Training#3"
+			]
+		},
+		{
+			"index": 4,
+			"uses": 2,
+			"seenIn": [
+				"02-CaveSystem#0",
+				"26-1pl#1"
+			]
+		},
+		{
+			"index": 5,
+			"uses": 2,
+			"seenIn": [
+				"02-CaveSystem#2",
+				"26-1pl#2"
+			]
+		},
+		{
+			"index": 6,
+			"uses": 2,
+			"seenIn": [
+				"07-AbandonedDepot#1",
+				"35-3pl#1"
+			]
+		},
+		{
+			"index": 7,
+			"uses": 2,
+			"seenIn": [
+				"07-AbandonedDepot#3",
+				"35-3pl#3"
+			]
+		},
+		{
+			"index": 8,
+			"uses": 2,
+			"seenIn": [
+				"22-Stopover#3",
+				"23-1pl#3"
+			]
+		},
+		{
+			"index": 9,
+			"uses": 2,
+			"seenIn": [
+				"29-2pl#0",
+				"31-2pl#0"
+			]
+		},
+		{
+			"index": 10,
+			"uses": 2,
+			"seenIn": [
+				"29-2pl#1",
+				"31-2pl#1"
+			]
+		},
+		{
+			"index": 11,
+			"uses": 2,
+			"seenIn": [
+				"29-2pl#2",
+				"31-2pl#2"
+			]
+		},
+		{
+			"index": 12,
+			"uses": 2,
+			"seenIn": [
+				"29-2pl#3",
+				"31-2pl#3"
+			]
+		},
+		{
+			"index": 13,
+			"uses": 2,
+			"seenIn": [
+				"33-3pl#0",
+				"42-4pl#0"
+			]
+		},
+		{
+			"index": 14,
+			"uses": 2,
+			"seenIn": [
+				"33-3pl#1",
+				"42-4pl#1"
+			]
+		},
+		{
+			"index": 15,
+			"uses": 2,
+			"seenIn": [
+				"33-3pl#2",
+				"42-4pl#2"
+			]
+		},
+		{
+			"index": 16,
+			"uses": 2,
+			"seenIn": [
+				"33-3pl#3",
+				"42-4pl#3"
+			]
+		},
+		{
+			"index": 17,
+			"uses": 1,
+			"seenIn": [
+				"02-CaveSystem#1"
+			]
+		},
+		{
+			"index": 18,
+			"uses": 1,
+			"seenIn": [
+				"02-CaveSystem#3"
+			]
+		},
+		{
+			"index": 19,
+			"uses": 1,
+			"seenIn": [
+				"03-LabTestSite#0"
+			]
+		},
+		{
+			"index": 20,
+			"uses": 1,
+			"seenIn": [
+				"03-LabTestSite#1"
+			]
+		},
+		{
+			"index": 21,
+			"uses": 1,
+			"seenIn": [
+				"03-LabTestSite#2"
+			]
+		},
+		{
+			"index": 22,
+			"uses": 1,
+			"seenIn": [
+				"03-LabTestSite#3"
+			]
+		},
+		{
+			"index": 23,
+			"uses": 1,
+			"seenIn": [
+				"04-Laboratory#0"
+			]
+		},
+		{
+			"index": 24,
+			"uses": 1,
+			"seenIn": [
+				"04-Laboratory#1"
+			]
+		},
+		{
+			"index": 25,
+			"uses": 1,
+			"seenIn": [
+				"04-Laboratory#2"
+			]
+		},
+		{
+			"index": 26,
+			"uses": 1,
+			"seenIn": [
+				"04-Laboratory#3"
+			]
+		},
+		{
+			"index": 27,
+			"uses": 1,
+			"seenIn": [
+				"05-Refinery#0"
+			]
+		},
+		{
+			"index": 28,
+			"uses": 1,
+			"seenIn": [
+				"05-Refinery#1"
+			]
+		},
+		{
+			"index": 29,
+			"uses": 1,
+			"seenIn": [
+				"05-Refinery#2"
+			]
+		},
+		{
+			"index": 30,
+			"uses": 1,
+			"seenIn": [
+				"05-Refinery#3"
+			]
+		},
+		{
+			"index": 31,
+			"uses": 1,
+			"seenIn": [
+				"06-UrbanDevelopment#0"
+			]
+		},
+		{
+			"index": 32,
+			"uses": 1,
+			"seenIn": [
+				"06-UrbanDevelopment#1"
+			]
+		},
+		{
+			"index": 33,
+			"uses": 1,
+			"seenIn": [
+				"06-UrbanDevelopment#2"
+			]
+		},
+		{
+			"index": 34,
+			"uses": 1,
+			"seenIn": [
+				"06-UrbanDevelopment#3"
+			]
+		},
+		{
+			"index": 35,
+			"uses": 1,
+			"seenIn": [
+				"07-AbandonedDepot#0"
+			]
+		},
+		{
+			"index": 36,
+			"uses": 1,
+			"seenIn": [
+				"07-AbandonedDepot#2"
+			]
+		},
+		{
+			"index": 37,
+			"uses": 1,
+			"seenIn": [
+				"08-Tomb#0"
+			]
+		},
+		{
+			"index": 38,
+			"uses": 1,
+			"seenIn": [
+				"08-Tomb#1"
+			]
+		},
+		{
+			"index": 39,
+			"uses": 1,
+			"seenIn": [
+				"08-Tomb#2"
+			]
+		},
+		{
+			"index": 40,
+			"uses": 1,
+			"seenIn": [
+				"08-Tomb#3"
+			]
+		},
+		{
+			"index": 41,
+			"uses": 1,
+			"seenIn": [
+				"09-Tomb#0"
+			]
+		},
+		{
+			"index": 42,
+			"uses": 1,
+			"seenIn": [
+				"09-Tomb#1"
+			]
+		},
+		{
+			"index": 43,
+			"uses": 1,
+			"seenIn": [
+				"09-Tomb#2"
+			]
+		},
+		{
+			"index": 44,
+			"uses": 1,
+			"seenIn": [
+				"09-Tomb#3"
+			]
+		},
+		{
+			"index": 45,
+			"uses": 1,
+			"seenIn": [
+				"10-AmmoDepot#0"
+			]
+		},
+		{
+			"index": 46,
+			"uses": 1,
+			"seenIn": [
+				"10-AmmoDepot#1"
+			]
+		},
+		{
+			"index": 47,
+			"uses": 1,
+			"seenIn": [
+				"10-AmmoDepot#2"
+			]
+		},
+		{
+			"index": 48,
+			"uses": 1,
+			"seenIn": [
+				"10-AmmoDepot#3"
+			]
+		},
+		{
+			"index": 49,
+			"uses": 1,
+			"seenIn": [
+				"11-SatelliteUplink#0"
+			]
+		},
+		{
+			"index": 50,
+			"uses": 1,
+			"seenIn": [
+				"11-SatelliteUplink#1"
+			]
+		},
+		{
+			"index": 51,
+			"uses": 1,
+			"seenIn": [
+				"11-SatelliteUplink#2"
+			]
+		},
+		{
+			"index": 52,
+			"uses": 1,
+			"seenIn": [
+				"11-SatelliteUplink#3"
+			]
+		},
+		{
+			"index": 53,
+			"uses": 1,
+			"seenIn": [
+				"12-DefenseBattery#0"
+			]
+		},
+		{
+			"index": 54,
+			"uses": 1,
+			"seenIn": [
+				"12-DefenseBattery#1"
+			]
+		},
+		{
+			"index": 55,
+			"uses": 1,
+			"seenIn": [
+				"12-DefenseBattery#2"
+			]
+		},
+		{
+			"index": 56,
+			"uses": 1,
+			"seenIn": [
+				"12-DefenseBattery#3"
+			]
+		},
+		{
+			"index": 57,
+			"uses": 1,
+			"seenIn": [
+				"14-Tomb#0"
+			]
+		},
+		{
+			"index": 58,
+			"uses": 1,
+			"seenIn": [
+				"14-Tomb#1"
+			]
+		},
+		{
+			"index": 59,
+			"uses": 1,
+			"seenIn": [
+				"14-Tomb#2"
+			]
+		},
+		{
+			"index": 60,
+			"uses": 1,
+			"seenIn": [
+				"14-Tomb#3"
+			]
+		},
+		{
+			"index": 61,
+			"uses": 1,
+			"seenIn": [
+				"15-Tomb#0"
+			]
+		},
+		{
+			"index": 62,
+			"uses": 1,
+			"seenIn": [
+				"15-Tomb#1"
+			]
+		},
+		{
+			"index": 63,
+			"uses": 1,
+			"seenIn": [
+				"15-Tomb#2"
+			]
+		},
+		{
+			"index": 64,
+			"uses": 1,
+			"seenIn": [
+				"15-Tomb#3"
+			]
+		},
+		{
+			"index": 65,
+			"uses": 1,
+			"seenIn": [
+				"17-OperationCentre#0"
+			]
+		},
+		{
+			"index": 66,
+			"uses": 1,
+			"seenIn": [
+				"17-OperationCentre#1"
+			]
+		},
+		{
+			"index": 67,
+			"uses": 1,
+			"seenIn": [
+				"17-OperationCentre#2"
+			]
+		},
+		{
+			"index": 68,
+			"uses": 1,
+			"seenIn": [
+				"17-OperationCentre#3"
+			]
+		},
+		{
+			"index": 69,
+			"uses": 1,
+			"seenIn": [
+				"18-FusionReactor#0"
+			]
+		},
+		{
+			"index": 70,
+			"uses": 1,
+			"seenIn": [
+				"18-FusionReactor#1"
+			]
+		},
+		{
+			"index": 71,
+			"uses": 1,
+			"seenIn": [
+				"18-FusionReactor#2"
+			]
+		},
+		{
+			"index": 72,
+			"uses": 1,
+			"seenIn": [
+				"18-FusionReactor#3"
+			]
+		},
+		{
+			"index": 73,
+			"uses": 1,
+			"seenIn": [
+				"19-DesalinationPlant#0"
+			]
+		},
+		{
+			"index": 74,
+			"uses": 1,
+			"seenIn": [
+				"19-DesalinationPlant#1"
+			]
+		},
+		{
+			"index": 75,
+			"uses": 1,
+			"seenIn": [
+				"19-DesalinationPlant#2"
+			]
+		},
+		{
+			"index": 76,
+			"uses": 1,
+			"seenIn": [
+				"19-DesalinationPlant#3"
+			]
+		},
+		{
+			"index": 77,
+			"uses": 1,
+			"seenIn": [
+				"20-UrbanDevelopment#0"
+			]
+		},
+		{
+			"index": 78,
+			"uses": 1,
+			"seenIn": [
+				"20-UrbanDevelopment#1"
+			]
+		},
+		{
+			"index": 79,
+			"uses": 1,
+			"seenIn": [
+				"20-UrbanDevelopment#2"
+			]
+		},
+		{
+			"index": 80,
+			"uses": 1,
+			"seenIn": [
+				"20-UrbanDevelopment#3"
+			]
+		},
+		{
+			"index": 81,
+			"uses": 1,
+			"seenIn": [
+				"21-Spaceport#0"
+			]
+		},
+		{
+			"index": 82,
+			"uses": 1,
+			"seenIn": [
+				"21-Spaceport#1"
+			]
+		},
+		{
+			"index": 83,
+			"uses": 1,
+			"seenIn": [
+				"21-Spaceport#2"
+			]
+		},
+		{
+			"index": 84,
+			"uses": 1,
+			"seenIn": [
+				"21-Spaceport#3"
+			]
+		},
+		{
+			"index": 85,
+			"uses": 1,
+			"seenIn": [
+				"22-Stopover#0"
+			]
+		},
+		{
+			"index": 86,
+			"uses": 1,
+			"seenIn": [
+				"22-Stopover#1"
+			]
+		},
+		{
+			"index": 87,
+			"uses": 1,
+			"seenIn": [
+				"22-Stopover#2"
+			]
+		},
+		{
+			"index": 88,
+			"uses": 1,
+			"seenIn": [
+				"23-1pl#0"
+			]
+		},
+		{
+			"index": 89,
+			"uses": 1,
+			"seenIn": [
+				"23-1pl#1"
+			]
+		},
+		{
+			"index": 90,
+			"uses": 1,
+			"seenIn": [
+				"23-1pl#2"
+			]
+		},
+		{
+			"index": 91,
+			"uses": 1,
+			"seenIn": [
+				"26-1pl#0"
+			]
+		},
+		{
+			"index": 92,
+			"uses": 1,
+			"seenIn": [
+				"26-1pl#3"
+			]
+		},
+		{
+			"index": 93,
+			"uses": 1,
+			"seenIn": [
+				"28-2pl#0"
+			]
+		},
+		{
+			"index": 94,
+			"uses": 1,
+			"seenIn": [
+				"28-2pl#1"
+			]
+		},
+		{
+			"index": 95,
+			"uses": 1,
+			"seenIn": [
+				"28-2pl#2"
+			]
+		},
+		{
+			"index": 96,
+			"uses": 1,
+			"seenIn": [
+				"28-2pl#3"
+			]
+		},
+		{
+			"index": 97,
+			"uses": 1,
+			"seenIn": [
+				"30-2pl#0"
+			]
+		},
+		{
+			"index": 98,
+			"uses": 1,
+			"seenIn": [
+				"30-2pl#1"
+			]
+		},
+		{
+			"index": 99,
+			"uses": 1,
+			"seenIn": [
+				"30-2pl#2"
+			]
+		},
+		{
+			"index": 100,
+			"uses": 1,
+			"seenIn": [
+				"30-2pl#3"
+			]
+		},
+		{
+			"index": 101,
+			"uses": 1,
+			"seenIn": [
+				"35-3pl#0"
+			]
+		},
+		{
+			"index": 102,
+			"uses": 1,
+			"seenIn": [
+				"35-3pl#2"
+			]
+		},
+		{
+			"index": 103,
+			"uses": 1,
+			"seenIn": [
+				"38-4pl#0"
+			]
+		},
+		{
+			"index": 104,
+			"uses": 1,
+			"seenIn": [
+				"38-4pl#1"
+			]
+		},
+		{
+			"index": 105,
+			"uses": 1,
+			"seenIn": [
+				"38-4pl#2"
+			]
+		},
+		{
+			"index": 106,
+			"uses": 1,
+			"seenIn": [
+				"38-4pl#3"
+			]
+		},
+		{
+			"index": 107,
+			"uses": 1,
+			"seenIn": [
+				"39-4pl#0"
+			]
+		},
+		{
+			"index": 108,
+			"uses": 1,
+			"seenIn": [
+				"39-4pl#1"
+			]
+		},
+		{
+			"index": 109,
+			"uses": 1,
+			"seenIn": [
+				"39-4pl#2"
+			]
+		},
+		{
+			"index": 110,
+			"uses": 1,
+			"seenIn": [
+				"39-4pl#3"
+			]
+		},
+		{
+			"index": 111,
+			"uses": 1,
+			"seenIn": [
+				"40-4pl#0"
+			]
+		},
+		{
+			"index": 112,
+			"uses": 1,
+			"seenIn": [
+				"40-4pl#1"
+			]
+		},
+		{
+			"index": 113,
+			"uses": 1,
+			"seenIn": [
+				"40-4pl#2"
+			]
+		},
+		{
+			"index": 114,
+			"uses": 1,
+			"seenIn": [
+				"40-4pl#3"
+			]
+		}
+	]
+}

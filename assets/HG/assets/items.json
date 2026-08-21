@@ -1,0 +1,7714 @@
+{
+	"source": "Data/GameFast.dat/Items.dat",
+	"recordSize": 286,
+	"comment": "Layout from Sources/Equates.i:824. The 12-byte tail is a union keyed on item_category; gun/hand/mine are decoded into named fields and the sentry reading plus the raw bytes are kept alongside.",
+	"categories": {
+		"0": "gun",
+		"1": "hand2hand",
+		"2": "mine",
+		"4": "ammo",
+		"5": "food",
+		"6": "key",
+		"7": "uplink",
+		"8": "camcorder",
+		"9": "dts",
+		"11": "databank",
+		"12": "psiamp",
+		"13": "armed_mine",
+		"15": "flamer",
+		"16": "launcher",
+		"17": "trash",
+		"18": "immu",
+		"19": "repair",
+		"20": "grlauncher",
+		"21": "grenade",
+		"22": "nuke",
+		"23": "sentry",
+		"24": "cellammo",
+		"25": "sentrycntrl",
+		"26": "corpse"
+	},
+	"containers": {
+		"2": "special",
+		"3": "consumable",
+		"4": "psionic",
+		"5": "smallcrate",
+		"6": "bigcrate"
+	},
+	"count": 114,
+	"items": [
+		{
+			"index": 0,
+			"header": [
+				"DISRUPTOR",
+				"CANNON"
+			],
+			"footer": [
+				"X CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"this is one of",
+				"the most power-",
+				"ful man-portable",
+				"weapons avail-",
+				"able. although",
+				"the rate of fire",
+				"is low, the dam-",
+				"age is immense.",
+				"requires dis-",
+				"ruptor charge."
+			],
+			"category": 16,
+			"categoryName": "launcher",
+			"image": 0,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 1,
+			"maxDamage": 20000,
+			"weight": 7500,
+			"animColour": 3972,
+			"anim": 3,
+			"animDuration": 1,
+			"flashColour": 9,
+			"sample": 1,
+			"samplePeriod": 400,
+			"exSample": 19,
+			"exSamplePeriod": 380,
+			"gun": {
+				"accuracy": 8,
+				"fire": {
+					"front": 4,
+					"rear": 4,
+					"right": 4,
+					"left": 4,
+					"down": 4,
+					"up": 4
+				},
+				"clips": [
+					36,
+					0,
+					0
+				],
+				"maxRounds": 1,
+				"damagePerHit": 254,
+				"damagePerHitScaled": 130048
+			},
+			"sentry": {
+				"delay": 2052,
+				"rounds": 1028,
+				"physique": 1028,
+				"turnFlag": 4,
+				"shootPlayers": 36,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				8,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				36,
+				0,
+				0,
+				1,
+				254
+			]
+		},
+		{
+			"index": 1,
+			"header": [
+				"RPG F ROCKET",
+				"LAUNCHER"
+			],
+			"footer": [
+				"X ROCKET(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"north europan f",
+				"series rocket",
+				"propelled",
+				"grenade.",
+				"best budget",
+				"model three",
+				"years running.",
+				"requires rocket."
+			],
+			"category": 16,
+			"categoryName": "launcher",
+			"image": 1,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 30000,
+			"weight": 4200,
+			"animColour": 4088,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 400,
+			"exSample": 24,
+			"exSamplePeriod": 286,
+			"gun": {
+				"accuracy": 16,
+				"fire": {
+					"front": 4,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					37,
+					0,
+					0
+				],
+				"maxRounds": 1,
+				"damagePerHit": 225,
+				"damagePerHitScaled": 115200
+			},
+			"sentry": {
+				"delay": 4100,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 37,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				16,
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				37,
+				0,
+				0,
+				1,
+				225
+			]
+		},
+		{
+			"index": 2,
+			"header": [
+				"NEUTRON-FLUX",
+				"LASER CANNON"
+			],
+			"footer": [
+				"XXX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"for use in vac-",
+				"uum, less effec-",
+				"tive through",
+				"atmospherics.",
+				"prince of wales",
+				"award for",
+				"innovation",
+				"and design.",
+				"requires 1kjoule",
+				"charge or more."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 2,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 8,
+			"maxDamage": 15000,
+			"weight": 3200,
+			"animColour": 2296,
+			"anim": 2,
+			"animDuration": 1,
+			"flashColour": 1,
+			"sample": 8,
+			"samplePeriod": 179,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 4,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					49,
+					50,
+					51
+				],
+				"maxRounds": 200,
+				"damagePerHit": 195,
+				"damagePerHitScaled": 99840
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 49,
+				"range": 50,
+				"density": 51
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				49,
+				50,
+				51,
+				200,
+				195
+			]
+		},
+		{
+			"index": 3,
+			"header": [
+				"MOUNTED",
+				"MACHINE GUN"
+			],
+			"footer": [
+				"XXX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"supplied in kit",
+				"form for mount-",
+				"ing on 70mm",
+				"bearing.",
+				"recommended for",
+				"close support",
+				"and point def-",
+				"ence vehicles.",
+				"requires .44",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 3,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 55000,
+			"weight": 5600,
+			"animColour": 3279,
+			"anim": 1,
+			"animDuration": 15,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 350,
+			"exSample": 22,
+			"exSamplePeriod": 128,
+			"gun": {
+				"accuracy": 32,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					38,
+					39,
+					0
+				],
+				"maxRounds": 250,
+				"damagePerHit": 11,
+				"damagePerHitScaled": 5632
+			},
+			"sentry": {
+				"delay": 8192,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 38,
+				"range": 39,
+				"density": 0
+			},
+			"raw": [
+				32,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				38,
+				39,
+				0,
+				250,
+				11
+			]
+		},
+		{
+			"index": 4,
+			"header": [
+				"HYD-FLUORINE",
+				"HAND LASER"
+			],
+			"footer": [
+				"XXX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the first gener-",
+				"ation of low",
+				"mass optical",
+				"weapons. patent-",
+				"ed by naomi",
+				"optics in 2711.",
+				"requires 1kjoule",
+				"charge or more."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 4,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 10,
+			"maxDamage": 12000,
+			"weight": 1600,
+			"animColour": 2303,
+			"anim": 2,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 8,
+			"samplePeriod": 134,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 4,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					49,
+					50,
+					51
+				],
+				"maxRounds": 100,
+				"damagePerHit": 150,
+				"damagePerHitScaled": 76800
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 49,
+				"range": 50,
+				"density": 51
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				49,
+				50,
+				51,
+				100,
+				150
+			]
+		},
+		{
+			"index": 5,
+			"header": [
+				"PARTICLE BEAM",
+				"RIFLE"
+			],
+			"footer": [
+				"XXX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the beam rifle",
+				"is based around",
+				"the energy",
+				"transitions in",
+				"the ultra violet",
+				"range. the",
+				"result is very",
+				"destructive.",
+				"requires 1kjoule",
+				"charge or more."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 5,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 10,
+			"maxDamage": 18000,
+			"weight": 2100,
+			"animColour": 4080,
+			"anim": 2,
+			"animDuration": 1,
+			"flashColour": 1,
+			"sample": 8,
+			"samplePeriod": 201,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 4,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					49,
+					50,
+					51
+				],
+				"maxRounds": 100,
+				"damagePerHit": 135,
+				"damagePerHitScaled": 69120
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 49,
+				"range": 50,
+				"density": 51
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				49,
+				50,
+				51,
+				100,
+				135
+			]
+		},
+		{
+			"index": 6,
+			"header": [
+				"SMALL-ARMS 9",
+				"IMPERIAL AUTO"
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"suffering from",
+				"extreme noise",
+				"and recoil prob-",
+				"lems, this model",
+				"only appeals to",
+				"enthusiasts and",
+				"collectors.",
+				"requires 9mm",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 6,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 22000,
+			"weight": 2300,
+			"animColour": 3279,
+			"anim": 1,
+			"animDuration": 3,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 8,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					40,
+					47,
+					0
+				],
+				"maxRounds": 54,
+				"damagePerHit": 40,
+				"damagePerHitScaled": 20480
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 40,
+				"range": 47,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				40,
+				47,
+				0,
+				54,
+				40
+			]
+		},
+		{
+			"index": 7,
+			"header": [
+				"OXY 6 FLAMER",
+				""
+			],
+			"footer": [
+				"XX x 100cc",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"featuring a",
+				"built in flame-",
+				"back guard. the",
+				"oxy range def-",
+				"ines the state",
+				"of the art in",
+				"personal",
+				"security.",
+				"requires 100cc",
+				"of fuel or more."
+			],
+			"category": 15,
+			"categoryName": "flamer",
+			"image": 7,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 4,
+			"maxDamage": 11000,
+			"weight": 1700,
+			"animColour": 4008,
+			"anim": 1,
+			"animDuration": 0,
+			"flashColour": 9,
+			"sample": 1,
+			"samplePeriod": 256,
+			"exSample": 26,
+			"exSamplePeriod": 256,
+			"gun": {
+				"accuracy": 32,
+				"fire": {
+					"front": 4,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					41,
+					42,
+					0
+				],
+				"maxRounds": 40,
+				"damagePerHit": 0,
+				"damagePerHitScaled": 0
+			},
+			"sentry": {
+				"delay": 8196,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 41,
+				"range": 42,
+				"density": 0
+			},
+			"raw": [
+				32,
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				41,
+				42,
+				0,
+				40,
+				0
+			]
+		},
+		{
+			"index": 8,
+			"header": [
+				"OXY 6 FLAMER",
+				"JUNIOR"
+			],
+			"footer": [
+				"XX x 50cc",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"this is a",
+				"handheld flame-",
+				"thrower which is",
+				"fired by a fuel",
+				"pack consisting",
+				"of a special mix",
+				"of chemicals.",
+				"requires 100cc",
+				"of fuel or more."
+			],
+			"category": 15,
+			"categoryName": "flamer",
+			"image": 8,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 1,
+			"maxDamage": 10000,
+			"weight": 1100,
+			"animColour": 4008,
+			"anim": 1,
+			"animDuration": 0,
+			"flashColour": 9,
+			"sample": 1,
+			"samplePeriod": 256,
+			"exSample": 26,
+			"exSamplePeriod": 256,
+			"gun": {
+				"accuracy": 32,
+				"fire": {
+					"front": 2,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					43,
+					44,
+					0
+				],
+				"maxRounds": 40,
+				"damagePerHit": 0,
+				"damagePerHitScaled": 0
+			},
+			"sentry": {
+				"delay": 8194,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 43,
+				"range": 44,
+				"density": 0
+			},
+			"raw": [
+				32,
+				2,
+				0,
+				0,
+				0,
+				0,
+				0,
+				43,
+				44,
+				0,
+				40,
+				0
+			]
+		},
+		{
+			"index": 9,
+			"header": [
+				"(SILENCED)",
+				"SUPERCOVERT"
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"favoured amongst",
+				"anti-terrorist",
+				"organisations",
+				"for its inter-",
+				"changeable",
+				"barrel and",
+				"targeting cpu.",
+				"requires 9mm",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 9,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 25000,
+			"weight": 780,
+			"animColour": 3279,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 2,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					40,
+					47,
+					0
+				],
+				"maxRounds": 54,
+				"damagePerHit": 90,
+				"damagePerHitScaled": 46080
+			},
+			"sentry": {
+				"delay": 512,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 40,
+				"range": 47,
+				"density": 0
+			},
+			"raw": [
+				2,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				40,
+				47,
+				0,
+				54,
+				90
+			]
+		},
+		{
+			"index": 10,
+			"header": [
+				"SMALL ARMS 6",
+				"SILENT-AUTO"
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a lightweight",
+				"short range",
+				"hand gun.",
+				"featuring",
+				"optional",
+				"silencer and",
+				"barrel",
+				"extension.",
+				"requires 9mm",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 10,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 26000,
+			"weight": 850,
+			"animColour": 4080,
+			"anim": 1,
+			"animDuration": 2,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 229,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 8,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					40,
+					47,
+					0
+				],
+				"maxRounds": 54,
+				"damagePerHit": 40,
+				"damagePerHitScaled": 20480
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 40,
+				"range": 47,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				40,
+				47,
+				0,
+				54,
+				40
+			]
+		},
+		{
+			"index": 11,
+			"header": [
+				"MOUNTED",
+				"MINI-GUN"
+			],
+			"footer": [
+				"XXX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"this weapon",
+				"is a military",
+				"grade device",
+				"and as such",
+				"is not",
+				"available for",
+				"civilian use.",
+				"requires .44",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 11,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 50000,
+			"weight": 3000,
+			"animColour": 4010,
+			"anim": 1,
+			"animDuration": 15,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 350,
+			"exSample": 22,
+			"exSamplePeriod": 128,
+			"gun": {
+				"accuracy": 16,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					38,
+					39,
+					0
+				],
+				"maxRounds": 200,
+				"damagePerHit": 7,
+				"damagePerHitScaled": 3584
+			},
+			"sentry": {
+				"delay": 4096,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 38,
+				"range": 39,
+				"density": 0
+			},
+			"raw": [
+				16,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				38,
+				39,
+				0,
+				200,
+				7
+			]
+		},
+		{
+			"index": 12,
+			"header": [
+				"M73 AUTO-GUN",
+				""
+			],
+			"footer": [
+				"XXX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"this has a",
+				"substantial",
+				"rate of fire.",
+				"it is a good",
+				"general purpose",
+				"weapon.",
+				"requires .44",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 12,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 1,
+			"maxDamage": 40000,
+			"weight": 1700,
+			"animColour": 4095,
+			"anim": 1,
+			"animDuration": 12,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 246,
+			"exSample": 21,
+			"exSamplePeriod": 128,
+			"gun": {
+				"accuracy": 12,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					38,
+					39,
+					0
+				],
+				"maxRounds": 160,
+				"damagePerHit": 5,
+				"damagePerHitScaled": 2560
+			},
+			"sentry": {
+				"delay": 3072,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 38,
+				"range": 39,
+				"density": 0
+			},
+			"raw": [
+				12,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				38,
+				39,
+				0,
+				160,
+				5
+			]
+		},
+		{
+			"index": 13,
+			"header": [
+				"SNIPER RIFLE",
+				""
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a poor subs-",
+				"titute for the",
+				"small arms 6",
+				"range of perf-",
+				"ormance target",
+				"rifles. hampered",
+				"by poor muzzle",
+				"velocity.",
+				"requires 9mm",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 13,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 35000,
+			"weight": 1400,
+			"animColour": 4080,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 229,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 0,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					40,
+					47,
+					0
+				],
+				"maxRounds": 54,
+				"damagePerHit": 50,
+				"damagePerHitScaled": 25600
+			},
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 40,
+				"range": 47,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				40,
+				47,
+				0,
+				54,
+				50
+			]
+		},
+		{
+			"index": 14,
+			"header": [
+				"TUNGSTEN-",
+				"BORE RIFLE"
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a celebrated",
+				"range of sport-",
+				"ing rifles and",
+				"handguns.",
+				"usually provided",
+				"as a boxed set",
+				"with a matching",
+				"hand gun.",
+				"requires 18 bore",
+				"cartridges."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 14,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 45000,
+			"weight": 1800,
+			"animColour": 4037,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 290,
+			"exSample": 19,
+			"exSamplePeriod": 380,
+			"gun": {
+				"accuracy": 8,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					45,
+					46,
+					0
+				],
+				"maxRounds": 16,
+				"damagePerHit": 40,
+				"damagePerHitScaled": 20480
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 45,
+				"range": 46,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				45,
+				46,
+				0,
+				16,
+				40
+			]
+		},
+		{
+			"index": 15,
+			"header": [
+				"SMITH &",
+				"WESSON 29"
+			],
+			"footer": [
+				"X ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the highest",
+				"quality handgun",
+				"available. the",
+				"genuine item is",
+				"imported only",
+				"from earth.",
+				"requires 9mm",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 15,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 60000,
+			"weight": 690,
+			"animColour": 3968,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 236,
+			"exSample": 20,
+			"exSamplePeriod": 404,
+			"gun": {
+				"accuracy": 4,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					40,
+					47,
+					0
+				],
+				"maxRounds": 6,
+				"damagePerHit": 30,
+				"damagePerHitScaled": 15360
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 40,
+				"range": 47,
+				"density": 0
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				40,
+				47,
+				0,
+				6,
+				30
+			]
+		},
+		{
+			"index": 16,
+			"header": [
+				"SHOTGUN",
+				""
+			],
+			"footer": [
+				"X SLUG(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"low rate of",
+				"fire but",
+				"potentially",
+				"high damage.",
+				"accurate aiming",
+				"not required.",
+				"requires 18 bore",
+				"cartridges."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 16,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 58000,
+			"weight": 1000,
+			"animColour": 4080,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 340,
+			"exSample": 23,
+			"exSamplePeriod": 180,
+			"gun": {
+				"accuracy": 16,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					45,
+					46,
+					0
+				],
+				"maxRounds": 2,
+				"damagePerHit": 60,
+				"damagePerHitScaled": 30720
+			},
+			"sentry": {
+				"delay": 4096,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 45,
+				"range": 46,
+				"density": 0
+			},
+			"raw": [
+				16,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				45,
+				46,
+				0,
+				2,
+				60
+			]
+		},
+		{
+			"index": 17,
+			"header": [
+				"UPBI ISSUE 38",
+				""
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"standard issue",
+				"for united",
+				"planets bureau",
+				"of investigation",
+				"agents. quirky",
+				"firing mechanism",
+				"may lead to",
+				"fracturing.",
+				"requires .38",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 17,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 50000,
+			"weight": 600,
+			"animColour": 4080,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 226,
+			"exSample": 20,
+			"exSamplePeriod": 404,
+			"gun": {
+				"accuracy": 4,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					48,
+					0,
+					0
+				],
+				"maxRounds": 64,
+				"damagePerHit": 30,
+				"damagePerHitScaled": 15360
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 48,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				48,
+				0,
+				0,
+				64,
+				30
+			]
+		},
+		{
+			"index": 18,
+			"header": [
+				"BLASTER 52-C",
+				""
+			],
+			"footer": [
+				"XX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a very nasty gun",
+				"that operates at",
+				"wavelengths",
+				"designed to",
+				"vaporise water",
+				"molecules in",
+				"organic sub-",
+				"stances.",
+				"requires 1kjoule",
+				"charge or more."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 18,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 8,
+			"maxDamage": 30000,
+			"weight": 550,
+			"animColour": 2303,
+			"anim": 2,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 8,
+			"samplePeriod": 134,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 4,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					49,
+					50,
+					51
+				],
+				"maxRounds": 50,
+				"damagePerHit": 25,
+				"damagePerHitScaled": 12800
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 49,
+				"range": 50,
+				"density": 51
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				49,
+				50,
+				51,
+				50,
+				25
+			]
+		},
+		{
+			"index": 19,
+			"header": [
+				"TUNGSTEN-",
+				"BORE HANDGUN"
+			],
+			"footer": [
+				"XX SLUG(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a celebrated",
+				"range of sport-",
+				"ing rifles and",
+				"hand guns.",
+				"usually provided",
+				"as a boxed set",
+				"with a matching",
+				"rifle.",
+				"requires 18 bore",
+				"cartridges."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 19,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 35000,
+			"weight": 750,
+			"animColour": 4010,
+			"anim": 1,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 226,
+			"exSample": 19,
+			"exSamplePeriod": 320,
+			"gun": {
+				"accuracy": 8,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					45,
+					46,
+					0
+				],
+				"maxRounds": 32,
+				"damagePerHit": 20,
+				"damagePerHitScaled": 10240
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 45,
+				"range": 46,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				45,
+				46,
+				0,
+				32,
+				20
+			]
+		},
+		{
+			"index": 20,
+			"header": [
+				"SONIC STUNNER",
+				""
+			],
+			"footer": [
+				"XX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"operates at",
+				"ultrasonic",
+				"frequencies",
+				"designed to",
+				"incapacitate",
+				"by interfering",
+				"with human",
+				"balance systems.",
+				"requires 1kjoule",
+				"charge or more."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 20,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 4,
+			"maxDamage": 12000,
+			"weight": 600,
+			"animColour": 1268,
+			"anim": 3,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 9,
+			"samplePeriod": 334,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 32,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					49,
+					50,
+					51
+				],
+				"maxRounds": 50,
+				"damagePerHit": 15,
+				"damagePerHitScaled": 7680
+			},
+			"sentry": {
+				"delay": 8192,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 49,
+				"range": 50,
+				"density": 51
+			},
+			"raw": [
+				32,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				49,
+				50,
+				51,
+				50,
+				15
+			]
+		},
+		{
+			"index": 21,
+			"header": [
+				"UNIDENTIFI-",
+				"ABLE REMAINS"
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"analysis",
+				"indicates",
+				"organic",
+				"traces,",
+				"carbon",
+				"and 23%",
+				"unidentified",
+				"molecular",
+				"substances."
+			],
+			"category": 17,
+			"categoryName": "trash",
+			"image": 21,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 33,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 22,
+			"header": [
+				"BANANA",
+				""
+			],
+			"footer": [
+				"XXX PIECES",
+				""
+			],
+			"info": [
+				"a fruit, grown",
+				"in special cond-",
+				"itions. grown by",
+				"several plant-",
+				"ations under",
+				"license from the",
+				"banana corp.",
+				"who hold the",
+				"patents."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 22,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 100,
+			"animColour": 4080,
+			"anim": 3,
+			"animDuration": 1,
+			"flashColour": 0,
+			"sample": 9,
+			"samplePeriod": 334,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 0,
+				"fire": {
+					"front": 4,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					54,
+					0,
+					0
+				],
+				"maxRounds": 255,
+				"damagePerHit": 255,
+				"damagePerHitScaled": 130560
+			},
+			"sentry": {
+				"delay": 4,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 54,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				54,
+				0,
+				0,
+				255,
+				255
+			]
+		},
+		{
+			"index": 23,
+			"header": [
+				"EMF STUNNER",
+				""
+			],
+			"footer": [
+				"XX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"induces a high",
+				"energy electro",
+				"magnetic field.",
+				"destroying the",
+				"target at the",
+				"molecular level.",
+				"requires 1kjoule",
+				"charge or more."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 24,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 4,
+			"maxDamage": 12000,
+			"weight": 1500,
+			"animColour": 1268,
+			"anim": 3,
+			"animDuration": 3,
+			"flashColour": 0,
+			"sample": 9,
+			"samplePeriod": 400,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"gun": {
+				"accuracy": 32,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					49,
+					50,
+					51
+				],
+				"maxRounds": 20,
+				"damagePerHit": 33,
+				"damagePerHitScaled": 16896
+			},
+			"sentry": {
+				"delay": 8192,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 49,
+				"range": 50,
+				"density": 51
+			},
+			"raw": [
+				32,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				49,
+				50,
+				51,
+				20,
+				33
+			]
+		},
+		{
+			"index": 24,
+			"header": [
+				"NAOMI IV",
+				"ASSAULT RIFLE"
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the naomi",
+				"institute's",
+				"rival to the",
+				"legendary m73.",
+				"this special",
+				"edition features",
+				"laser sighting",
+				"and low recoil.",
+				"requires 9mm",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 23,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 1,
+			"maxDamage": 40000,
+			"weight": 1850,
+			"animColour": 3823,
+			"anim": 1,
+			"animDuration": 5,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 246,
+			"exSample": 27,
+			"exSamplePeriod": 128,
+			"gun": {
+				"accuracy": 16,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					40,
+					47,
+					0
+				],
+				"maxRounds": 65,
+				"damagePerHit": 20,
+				"damagePerHitScaled": 10240
+			},
+			"sentry": {
+				"delay": 4096,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 40,
+				"range": 47,
+				"density": 0
+			},
+			"raw": [
+				16,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				40,
+				47,
+				0,
+				65,
+				20
+			]
+		},
+		{
+			"index": 25,
+			"header": [
+				"NAOMI GRENADE",
+				"LAUNCHER"
+			],
+			"footer": [
+				"X GRENADE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the naomi",
+				"institutes",
+				"latest and",
+				"probably last",
+				"creation.",
+				"model inscrip-",
+				"tion 'choo honn",
+				"diss sukka'.",
+				"requires 40mm",
+				"expl. grenades."
+			],
+			"category": 20,
+			"categoryName": "grlauncher",
+			"image": 25,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 58000,
+			"weight": 1500,
+			"animColour": 4080,
+			"anim": 1,
+			"animDuration": 255,
+			"flashColour": 0,
+			"sample": 1,
+			"samplePeriod": 340,
+			"exSample": 24,
+			"exSamplePeriod": 286,
+			"gun": {
+				"accuracy": 8,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					27,
+					0,
+					0
+				],
+				"maxRounds": 3,
+				"damagePerHit": 0,
+				"damagePerHitScaled": 0
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 27,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				27,
+				0,
+				0,
+				3,
+				0
+			]
+		},
+		{
+			"index": 26,
+			"header": [
+				"40mm EXPL.",
+				"GRENADES"
+			],
+			"footer": [
+				"XX GRENADE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a common size",
+				"and format of",
+				"package.",
+				"high density",
+				"cellular-ceramic",
+				"explosive will",
+				"generate an",
+				"impressive blast",
+				"for the grenades",
+				"size."
+			],
+			"category": 21,
+			"categoryName": "grenade",
+			"image": 32,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 50000,
+			"weight": 75,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"grenade": {
+				"north": 4,
+				"south": 4,
+				"east": 4,
+				"west": 4,
+				"down": 4,
+				"up": 4,
+				"radius": 0,
+				"type": 0
+			},
+			"sentry": {
+				"delay": 1028,
+				"rounds": 1028,
+				"physique": 1028,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 27,
+			"header": [
+				"SUB-MACHINE",
+				"GUN"
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a cheap home",
+				"made weapon.",
+				"very light",
+				"weight but",
+				"exceedingly",
+				"unreliable.",
+				"requires 9mm",
+				"calibre ammo."
+			],
+			"category": 0,
+			"categoryName": "gun",
+			"image": 28,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 60000,
+			"weight": 900,
+			"animColour": 4088,
+			"anim": 1,
+			"animDuration": 11,
+			"flashColour": 0,
+			"sample": 2,
+			"samplePeriod": 246,
+			"exSample": 31,
+			"exSamplePeriod": 104,
+			"gun": {
+				"accuracy": 16,
+				"fire": {
+					"front": 0,
+					"rear": 0,
+					"right": 0,
+					"left": 0,
+					"down": 0,
+					"up": 0
+				},
+				"clips": [
+					40,
+					47,
+					0
+				],
+				"maxRounds": 66,
+				"damagePerHit": 5,
+				"damagePerHitScaled": 2560
+			},
+			"sentry": {
+				"delay": 4096,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 40,
+				"range": 47,
+				"density": 0
+			},
+			"raw": [
+				16,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				40,
+				47,
+				0,
+				66,
+				5
+			]
+		},
+		{
+			"index": 28,
+			"header": [
+				"FUSION POWER",
+				"CORE RING"
+			],
+			"footer": [
+				" UNIT 1",
+				" INACTIVE"
+			],
+			"info": [
+				"provides",
+				"6 years of",
+				"electical",
+				"power at",
+				"4 megawatts.",
+				"keep housing",
+				"away from",
+				"strong magnetic",
+				"fields!"
+			],
+			"category": 22,
+			"categoryName": "nuke",
+			"image": 26,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 3000,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"nuke": {
+				"number": 1
+			},
+			"sentry": {
+				"delay": 256,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				1,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 29,
+			"header": [
+				"AUTO-SENTRY",
+				"KIT (UNI-D)"
+			],
+			"footer": [
+				"XX GUN(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"uni-directional",
+				"automated",
+				"sentry",
+				"will fire at",
+				"any moving",
+				"target directly",
+				"in front of the",
+				"gun."
+			],
+			"category": 23,
+			"categoryName": "sentry",
+			"image": 27,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 55000,
+			"weight": 3000,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 500,
+				"rounds": 99,
+				"physique": 500,
+				"turnFlag": 0,
+				"shootPlayers": 1,
+				"range": 8,
+				"density": 2
+			},
+			"raw": [
+				1,
+				244,
+				0,
+				99,
+				1,
+				244,
+				0,
+				1,
+				8,
+				2,
+				0,
+				0
+			]
+		},
+		{
+			"index": 30,
+			"header": [
+				"BRICK",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"bricks are the",
+				"main const-",
+				"ruction item for",
+				"buildings where",
+				"metals are in",
+				"short supply or",
+				"plastics are too",
+				"expensive to",
+				"form."
+			],
+			"category": 1,
+			"categoryName": "hand2hand",
+			"image": 30,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 20000,
+			"weight": 650,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"hand": {
+				"modifier": 100
+			},
+			"sentry": {
+				"delay": 25600,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				100,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 31,
+			"header": [
+				"BROKEN BOTTLE",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the disadvantage",
+				"of bottle glass",
+				"is that it is",
+				"very brittle",
+				"compared to",
+				"modern",
+				"composites."
+			],
+			"category": 1,
+			"categoryName": "hand2hand",
+			"image": 31,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 5000,
+			"weight": 210,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"hand": {
+				"modifier": 100
+			},
+			"sentry": {
+				"delay": 25600,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				100,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 32,
+			"header": [
+				"AUTO-SENTRY",
+				"KIT (MULTI-D)"
+			],
+			"footer": [
+				"XX GUN(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"multi-",
+				"directional",
+				"automated",
+				"sentry",
+				"will fire at",
+				"any moving",
+				"target as it",
+				"rotates on its",
+				"stand."
+			],
+			"category": 23,
+			"categoryName": "sentry",
+			"image": 27,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 55000,
+			"weight": 3000,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 500,
+				"rounds": 99,
+				"physique": 500,
+				"turnFlag": 1,
+				"shootPlayers": 1,
+				"range": 8,
+				"density": 2
+			},
+			"raw": [
+				1,
+				244,
+				0,
+				99,
+				1,
+				244,
+				1,
+				1,
+				8,
+				2,
+				0,
+				0
+			]
+		},
+		{
+			"index": 33,
+			"header": [
+				"PROXIMITY",
+				"MINE"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates a",
+				"ferocious blast",
+				"designed to",
+				"maim rather",
+				"than kill the",
+				"victim.",
+				"triggered by",
+				"applied",
+				"pressure."
+			],
+			"category": 2,
+			"categoryName": "mine",
+			"image": 33,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 20000,
+			"weight": 450,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"mine": {
+				"north": 0,
+				"south": 0,
+				"east": 0,
+				"west": 0,
+				"down": 0,
+				"up": 0,
+				"damage": 0,
+				"armedItem": 112
+			},
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 112,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				112,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 34,
+			"header": [
+				"PROXIMITY",
+				"MINE 2ND EDN."
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates a",
+				"fercious blast",
+				"designed to",
+				"kill outright",
+				"rather than",
+				"maim the",
+				"victim.",
+				"triggered by",
+				"applied",
+				"pressure."
+			],
+			"category": 2,
+			"categoryName": "mine",
+			"image": 35,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 20000,
+			"weight": 450,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"mine": {
+				"north": 0,
+				"south": 0,
+				"east": 0,
+				"west": 0,
+				"down": 0,
+				"up": 0,
+				"damage": 0,
+				"armedItem": 113
+			},
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 113,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				113,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 35,
+			"header": [
+				"DISRUPTOR",
+				"CHARGE"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"standard",
+				"charge module",
+				"to dock with",
+				"disruptor",
+				"cannon."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 36,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 4,
+			"maxDamage": 35000,
+			"weight": 1500,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 36,
+			"header": [
+				"ANTI-APC",
+				"ROCKET"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"solid fuel",
+				"projectile",
+				"with high",
+				"density, micro",
+				"blast radius.",
+				"fits most",
+				"rocket",
+				"lauchers."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 37,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 4,
+			"maxDamage": 30000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 37,
+			"header": [
+				".44 HIGH AET",
+				"SABRE MK II"
+			],
+			"footer": [
+				"XXX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"accelerated",
+				"energy transfer",
+				"ammunition.",
+				"aet transfers",
+				"nearly all of",
+				"its kinetic",
+				"energy to the",
+				"target and is",
+				"particularly",
+				"effective."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 38,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 55000,
+			"weight": 20,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 38,
+			"header": [
+				".44 THV",
+				""
+			],
+			"footer": [
+				"XXX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the ultimate",
+				"aet round. good",
+				"armour piercing,",
+				"low ricochet,",
+				"low recoil and",
+				"excellent",
+				"stopping power."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 39,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 55000,
+			"weight": 20,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 39,
+			"header": [
+				"9mm AET",
+				"HIGH VELOCITY"
+			],
+			"footer": [
+				"XXX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"the most common",
+				"size of",
+				"ammunition.",
+				"also available",
+				"in .44mm format.",
+				"very high",
+				"penetration",
+				"results in poor",
+				"soft target",
+				"stopping power."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 40,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 50000,
+			"weight": 5,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 40,
+			"header": [
+				"FLAMER REFILL",
+				""
+			],
+			"footer": [
+				"XX x 100cc",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"an inexpensive",
+				"by product",
+				"from low grade",
+				"chemical fuel.",
+				"particularly",
+				"strong clean",
+				"burn with the",
+				"oxy 6 range",
+				"of personal",
+				"flamers."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 41,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 25000,
+			"weight": 10,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 41,
+			"header": [
+				"FLAMER REFILL",
+				"(UX GAS)"
+			],
+			"footer": [
+				"XX x 100cc",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"an inexpensive",
+				"by product",
+				"from low grade",
+				"chemical fuel.",
+				"particularly",
+				"strong clean",
+				"burn with the",
+				"oxy 6 range",
+				"of personal",
+				"flamers."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 42,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 25000,
+			"weight": 10,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 42,
+			"header": [
+				"FLAMER JUNIOR",
+				"REFILL"
+			],
+			"footer": [
+				"XX x 50cc",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"an inexpensive",
+				"by product",
+				"from low grade",
+				"chemical fuel.",
+				"particularly",
+				"strong clean",
+				"burn with the",
+				"oxy 6 range",
+				"of personal",
+				"flamers."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 43,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 25000,
+			"weight": 5,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 43,
+			"header": [
+				"FLAMER JUNIOR",
+				"REFILL UX GAS"
+			],
+			"footer": [
+				"XX x 50cc",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"an inexpensive",
+				"by product",
+				"from low grade",
+				"chemical fuel.",
+				"particularly",
+				"strong clean",
+				"burn with the",
+				"oxy 6 range",
+				"of personal",
+				"flamers."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 44,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 25000,
+			"weight": 5,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 44,
+			"header": [
+				"18 BORE HIGH",
+				"EXPL. SLUG"
+			],
+			"footer": [
+				"XX SLUG(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"shotgun ammun-",
+				"tion. this",
+				"variant contains",
+				"a single warhead",
+				"instead of pell-",
+				"ets. it comp-",
+				"rises a shaped",
+				"high explosive",
+				"charge."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 45,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 1,
+			"maxDamage": 35000,
+			"weight": 13,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 45,
+			"header": [
+				"18 BORE",
+				"RIFLED SLUG"
+			],
+			"footer": [
+				"XX SLUG(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"depleted",
+				"uranium core",
+				"provides good",
+				"penetration",
+				"and is rifled",
+				"for greater",
+				"accuracy."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 46,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 1,
+			"maxDamage": 35000,
+			"weight": 13,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 46,
+			"header": [
+				"9mm THV",
+				"'MINI' SERIES"
+			],
+			"footer": [
+				"XXX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a compact aet",
+				"round. average",
+				"armour piercing,",
+				"low ricochet,",
+				"low recoil and",
+				"good stopping",
+				"power. also",
+				"available in",
+				".44mm format."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 47,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 50000,
+			"weight": 5,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 47,
+			"header": [
+				".38 UPBI",
+				"GLASER"
+			],
+			"footer": [
+				"XX ROUND(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"very expensivse",
+				"and exclusive",
+				"ammunition that",
+				"is only used by",
+				"the upbi itself.",
+				"it is difficult",
+				"to obtain."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 48,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 52000,
+			"weight": 10,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 48,
+			"header": [
+				"1KJOULE",
+				"UNI-CELL"
+			],
+			"footer": [
+				"XX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a 1 kilo joule",
+				"charge with",
+				"standard aa",
+				"terminal con-",
+				"nectors for",
+				"energy weapons.",
+				"recommended",
+				"for pulse",
+				"lasers and pro-",
+				"ton emitters."
+			],
+			"category": 24,
+			"categoryName": "cellammo",
+			"image": 49,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 35000,
+			"weight": 100,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 49,
+			"header": [
+				"3KJOULE",
+				"TWIN-CELL"
+			],
+			"footer": [
+				"XXX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"a 3 kilo joule",
+				"charge with",
+				"standard aa",
+				"terminal con-",
+				"nectors for",
+				"energy weapons.",
+				"please ensure",
+				"correct polarity",
+				"seetings."
+			],
+			"category": 24,
+			"categoryName": "cellammo",
+			"image": 50,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 36000,
+			"weight": 200,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 50,
+			"header": [
+				"6KJOULE",
+				"TRI-CELL"
+			],
+			"footer": [
+				"XXX CHARGE(S)",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"although 6 kilo",
+				"joule charges",
+				"can be used for",
+				"hand weapons",
+				"they are more",
+				"commonly",
+				"intended for",
+				"vehicle mounted",
+				"weapons."
+			],
+			"category": 24,
+			"categoryName": "cellammo",
+			"image": 51,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 37000,
+			"weight": 300,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 51,
+			"header": [
+				"UNIDENTIFI-",
+				"ABLE REMAINS"
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"analysis",
+				"indicates",
+				"organic",
+				"traces,",
+				"carbon",
+				"and 23%",
+				"unidentified",
+				"molecular",
+				"substances."
+			],
+			"category": 17,
+			"categoryName": "trash",
+			"image": 52,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 100,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 52,
+			"header": [
+				"BANANA PIECES",
+				""
+			],
+			"footer": [
+				"XXX PIECE(S)",
+				""
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 4,
+			"categoryName": "ammo",
+			"image": 53,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 2,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 53,
+			"header": [
+				"CRUSTY",
+				"BAGUETTE"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 54,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 4,
+			"maxDamage": 2000,
+			"weight": 350,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 10000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 10000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				39,
+				16,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 54,
+			"header": [
+				"CHEESE",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"cheese subsitute",
+				"is a highly",
+				"nourishing food",
+				"substance,",
+				"enriched with",
+				"vitamins. devel-",
+				"oped for space",
+				"space missions",
+				"where nutrition",
+				"is important."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 55,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 1,
+			"maxDamage": 3000,
+			"weight": 200,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 15000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 15000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				58,
+				152,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 55,
+			"header": [
+				"BOTTLE",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"bottles are",
+				"created from",
+				"common silicate",
+				"fired to high",
+				"temperature",
+				"which produces",
+				"glass. bottle",
+				"glass has cheap-",
+				"ness as the main",
+				"prerequisite."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 56,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 0,
+			"maxDamage": 5000,
+			"weight": 500,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 20000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 20000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				78,
+				32,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 56,
+			"header": [
+				"APPLE",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"common fruit.",
+				"apples are",
+				"easily grown and",
+				"thus exempt",
+				"from the",
+				"patents and",
+				"licensing act",
+				"of 2609."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 57,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 0,
+			"maxDamage": 3500,
+			"weight": 100,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 10000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 10000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				39,
+				16,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 57,
+			"header": [
+				"CHICKEN",
+				"DRUMSTICK"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 58,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 1,
+			"maxDamage": 3500,
+			"weight": 150,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 12000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 12000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				46,
+				224,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 58,
+			"header": [
+				"LARGE LOAF",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 59,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 4,
+			"maxDamage": 2000,
+			"weight": 500,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 30000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 30000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				117,
+				48,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 59,
+			"header": [
+				"FLASK",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 60,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 0,
+			"maxDamage": 5500,
+			"weight": 300,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 17000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 17000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				66,
+				104,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 60,
+			"header": [
+				"STANDARD",
+				"RATIONS I"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"rations concent-",
+				"rated to lvl 1.",
+				"these are taste-",
+				"less but",
+				"adequate fare.",
+				"they contain",
+				"everything the",
+				"body requires",
+				"(except water)",
+				"to sustain it."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 61,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 2,
+			"maxDamage": 7000,
+			"weight": 700,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 20000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 20000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				78,
+				32,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 61,
+			"header": [
+				"STANDARD",
+				"RATIONS II"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"rations concent-",
+				"rated to lvl 2.",
+				"these are much",
+				"the same as",
+				"rations 1 but",
+				"for several",
+				"energy enhancing",
+				"features."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 62,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 2,
+			"maxDamage": 8000,
+			"weight": 900,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 30000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 30000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				117,
+				48,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 62,
+			"header": [
+				"STANDARD",
+				"RATIONS III"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"rations concent-",
+				"rated to lvl 3",
+				"plus chemical",
+				"and organic",
+				"components to",
+				"boost health",
+				"beyond normal",
+				"endurance. safe",
+				"only in normal",
+				"doses."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 63,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 2,
+			"maxDamage": 9000,
+			"weight": 1100,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 40000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 40000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				156,
+				64,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 63,
+			"header": [
+				"MEDICAL PACK",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"provides",
+				"essential",
+				"medical aid and",
+				"non-perishable",
+				"food",
+				"supplements.",
+				"also useful",
+				"for its range",
+				"of venom",
+				"antidotes."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 64,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 0,
+			"maxDamage": 10000,
+			"weight": 600,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 60000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 60000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				234,
+				96,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 64,
+			"header": [
+				"SYRINGE",
+				"ANTI-TOXIN"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"battlefield",
+				"drug to",
+				"temporarily",
+				"immunise",
+				"against",
+				"common toxins.",
+				"normally lasts",
+				"about four",
+				"minutes."
+			],
+			"category": 18,
+			"categoryName": "immu",
+			"image": 65,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 0,
+			"maxDamage": 1500,
+			"weight": 20,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"immune": {
+				"duration": 12000
+			},
+			"sentry": {
+				"delay": 12000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				46,
+				224,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 65,
+			"header": [
+				"DROID REPAIR",
+				"KIT"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"vital home diy",
+				"droid repair",
+				"kit amongst",
+				"the advanced",
+				"civilisations.",
+				"complete with",
+				"diagnostic",
+				"board, filler",
+				"and touch up",
+				"paint."
+			],
+			"category": 19,
+			"categoryName": "repair",
+			"image": 66,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 0,
+			"maxDamage": 10000,
+			"weight": 600,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"repair": {
+				"fitnessBoost": 60000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 60000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				234,
+				96,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 66,
+			"header": [
+				"FUSION POWER",
+				"CORE RING"
+			],
+			"footer": [
+				" UNIT 2",
+				" INACTIVE"
+			],
+			"info": [
+				"provides",
+				"6 years of",
+				"electical",
+				"power at",
+				"4 megawatts.",
+				"keep housing",
+				"away from",
+				"strong magnetic",
+				"fields!"
+			],
+			"category": 22,
+			"categoryName": "nuke",
+			"image": 26,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 3000,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"nuke": {
+				"number": 2
+			},
+			"sentry": {
+				"delay": 512,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				2,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 67,
+			"header": [
+				"FUSION POWER",
+				"CORE RING"
+			],
+			"footer": [
+				" UNIT 3",
+				" INACTIVE"
+			],
+			"info": [
+				"provides",
+				"6 years of",
+				"electical",
+				"power at",
+				"4 megawatts.",
+				"keep housing",
+				"away from",
+				"strong magnetic",
+				"fields!"
+			],
+			"category": 22,
+			"categoryName": "nuke",
+			"image": 26,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 3000,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"nuke": {
+				"number": 3
+			},
+			"sentry": {
+				"delay": 768,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				3,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 68,
+			"header": [
+				"FUSION POWER",
+				"CORE RING"
+			],
+			"footer": [
+				" UNIT 4",
+				" INACTIVE"
+			],
+			"info": [
+				"provides",
+				"6 years of",
+				"electical",
+				"power at",
+				"4 megawatts.",
+				"keep housing",
+				"away from",
+				"strong magnetic",
+				"fields!"
+			],
+			"category": 22,
+			"categoryName": "nuke",
+			"image": 26,
+			"containerType": 6,
+			"containerName": "bigcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 3000,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"nuke": {
+				"number": 4
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 69,
+			"header": [
+				"",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 70,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 0,
+			"maxDamage": 5500,
+			"weight": 300,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 0,
+				"physiqueBoost": 200,
+				"intelligenceBoost": 200,
+				"duration": 6000
+			},
+			"sentry": {
+				"delay": 0,
+				"rounds": 200,
+				"physique": 200,
+				"turnFlag": 23,
+				"shootPlayers": 112,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				200,
+				0,
+				200,
+				23,
+				112,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 70,
+			"header": [
+				"COMMON KEY",
+				""
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 6,
+			"categoryName": "key",
+			"image": 71,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 20,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 71,
+			"header": [
+				"ORNATE KEY",
+				""
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 6,
+			"categoryName": "key",
+			"image": 72,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 35,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 72,
+			"header": [
+				"SECURITY",
+				"ACCESS WAFER"
+			],
+			"footer": [
+				" CIVILIAN",
+				" ACCESS ONLY"
+			],
+			"info": [
+				"low level",
+				"security",
+				"access wafer.",
+				"commonly",
+				"used to",
+				"enforce zone",
+				"restrictions."
+			],
+			"category": 6,
+			"categoryName": "key",
+			"image": 73,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 10,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 73,
+			"header": [
+				"SECURITY",
+				"ACCESS WAFER"
+			],
+			"footer": [
+				" UNRESTRICTED",
+				" ACCESS"
+			],
+			"info": [
+				"master",
+				"security",
+				"access wafer.",
+				"commonly",
+				"used to",
+				"enforce zone",
+				"restrictions."
+			],
+			"category": 6,
+			"categoryName": "key",
+			"image": 74,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 10,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 74,
+			"header": [
+				"SECURITY",
+				"ACCESS WAFER"
+			],
+			"footer": [
+				" EMPLOYEE",
+				" ACCESS ONLY"
+			],
+			"info": [
+				"medium level",
+				"security",
+				"access wafer.",
+				"commonly",
+				"used to",
+				"enforce zone",
+				"restrictions."
+			],
+			"category": 6,
+			"categoryName": "key",
+			"image": 75,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 10,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 75,
+			"header": [
+				"SECURITY",
+				"ACCESS WAFER"
+			],
+			"footer": [
+				" OFFICERS",
+				" ACCESS ONLY"
+			],
+			"info": [
+				"high level",
+				"security",
+				"access wafer.",
+				"commonly",
+				"used to",
+				"enforce zone",
+				"restrictions."
+			],
+			"category": 6,
+			"categoryName": "key",
+			"image": 76,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 10,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 76,
+			"header": [
+				"",
+				""
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 7,
+			"categoryName": "uplink",
+			"image": 81,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 0,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 77,
+			"header": [
+				"",
+				""
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"this is a",
+				"favourite for",
+				"journalists as",
+				"it allows the",
+				"recording of",
+				"footage which",
+				"can be prooved",
+				"to be unaltered",
+				"and tamper free."
+			],
+			"category": 8,
+			"categoryName": "camcorder",
+			"image": 82,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 0,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 78,
+			"header": [
+				"D.T.S. MODULE",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"Digital",
+				"Terrain",
+				"Scanner.",
+				"this hand-held",
+				"unit provides a",
+				"visual log and",
+				"tactical data-",
+				"base based on",
+				"current",
+				"surroundings."
+			],
+			"category": 9,
+			"categoryName": "dts",
+			"image": 83,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 50500,
+			"weight": 750,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 79,
+			"header": [
+				"D.T.S. MODULE",
+				"'ULTRA' PROTO"
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 9,
+			"categoryName": "dts",
+			"image": 84,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 51000,
+			"weight": 700,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 80,
+			"header": [
+				"",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 11,
+			"categoryName": "databank",
+			"image": 85,
+			"containerType": 2,
+			"containerName": "special",
+			"waterDamage": 0,
+			"maxDamage": 35000,
+			"weight": 0,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 81,
+			"header": [
+				"PSIONIC-AMP",
+				"FIREBALL"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates",
+				"a medium",
+				"strength",
+				"ball of",
+				"flaming plasma",
+				"directly in",
+				"front of the",
+				"user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 78,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 9,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 5
+			},
+			"sentry": {
+				"delay": 1280,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				5,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 82,
+			"header": [
+				"PSIONIC-AMP",
+				"INFERNO"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates",
+				"a full",
+				"strength",
+				"ball of",
+				"flaming plasma",
+				"directly in",
+				"front of the",
+				"user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 78,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 9,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 83,
+			"header": [
+				"PSIONIC-AMP",
+				"BLAST"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates",
+				"four medium",
+				"strength",
+				"balls of",
+				"flaming plasma",
+				"around the",
+				"user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 78,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 9,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 84,
+			"header": [
+				"PSIONIC-AMP",
+				"DEVASTATE"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates",
+				"four full",
+				"strength",
+				"balls of",
+				"none decaying",
+				"flaming plasma",
+				"around the",
+				"user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 78,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 9,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 8
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 85,
+			"header": [
+				"PSIONIC-AMP",
+				"FIRESHIELD"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"protects",
+				"a volume of",
+				"2 cubic metres,",
+				"usually the",
+				"user, from",
+				"most of the",
+				"effects of",
+				"plasma weapons."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 79,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 6,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 86,
+			"header": [
+				"PSIONIC-AMP",
+				"SHIELD"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"protects",
+				"a volume of",
+				"2 cubic metres,",
+				"usually the",
+				"user, from",
+				"most of the",
+				"effects of",
+				"projectiles",
+				"and hand-to",
+				"hand weapons."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 79,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 6,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 87,
+			"header": [
+				"PSIONIC-AMP",
+				"GRANITE STR."
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"accelerates",
+				"the users",
+				"metabolic rate",
+				"three fold.",
+				"effectively",
+				"boosting the",
+				"user's strength",
+				"and stamina.",
+				"lasts for",
+				"four minutes."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 77,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 5
+			},
+			"sentry": {
+				"delay": 1280,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				5,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 88,
+			"header": [
+				"PSIONIC-AMP",
+				"TITANIUM STR."
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"accelerates",
+				"the user's",
+				"metabolic rate",
+				"six fold.",
+				"effectively",
+				"boosting the",
+				"user's strength",
+				"and stamina.",
+				"lasts for",
+				"four minutes."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 77,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 89,
+			"header": [
+				"PSIONIC-AMP",
+				"WALL"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates",
+				"an almost",
+				"indestructable",
+				"resonance",
+				"field which",
+				"will repel",
+				"solid matter."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 13,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 90,
+			"header": [
+				"PSIONIC-AMP",
+				"BANISH WALL"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"breaks down",
+				"and dissipates",
+				"resonance fields",
+				"that would",
+				"normally repel",
+				"solid matter."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 13,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 91,
+			"header": [
+				"PSIONIC-AMP",
+				"BRIDGE"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"creates a",
+				"stable self-",
+				"suspending",
+				"platform",
+				"directly in",
+				"front of the",
+				"user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 13,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 92,
+			"header": [
+				"",
+				""
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 4
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 93,
+			"header": [
+				"PSIONIC-AMP",
+				"FEATHER"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"effectively",
+				"decreases",
+				"the weight",
+				"of the user's",
+				"belongings",
+				"but not the",
+				"weight of the",
+				"user himself."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 79,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 8
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 94,
+			"header": [
+				"PSIONIC-AMP",
+				"SONIC BLAST"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"eminates",
+				"a moderately",
+				"destructive",
+				"compression",
+				"wave.",
+				"disruptive",
+				"to soft animal",
+				"tissue and",
+				"electrical",
+				"subsystems."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 82,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 95,
+			"header": [
+				"PSIONIC-AMP",
+				"SHOCK BLAST"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"eminates",
+				"a very",
+				"destructive",
+				"compression",
+				"wave.",
+				"disruptive",
+				"to soft animal",
+				"tissue and",
+				"electrical",
+				"subsystems."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 82,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 96,
+			"header": [
+				"PSIONIC-AMP",
+				"GILLS"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"envelopes",
+				"the user in a",
+				"6 cm deep layer",
+				"of self-",
+				"replenishing",
+				"air. effectively",
+				"allowing the",
+				"user to breath",
+				"underwater. will",
+				"last for 4 mins."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 79,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 5
+			},
+			"sentry": {
+				"delay": 1280,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				5,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 97,
+			"header": [
+				"PSIONIC-AMP",
+				"PART WAVES"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"creates a",
+				"channel through",
+				"most liquids,",
+				"extending",
+				"outwards from",
+				"the user's",
+				"position."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 17,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 98,
+			"header": [
+				"PSIONIC-AMP",
+				"QUENCH"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"when used",
+				"underwater",
+				"this effect",
+				"creates a",
+				"container of",
+				"purified liquid",
+				"suitable for",
+				"human",
+				"consumption."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 17,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 4
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 99,
+			"header": [
+				"PSIONIC-AMP",
+				"WATERTIGHT"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"creates",
+				"an invisible",
+				"non-porous",
+				"envelope around",
+				"the user's",
+				"belongings.",
+				"lasts for",
+				"4 minutes."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 79,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 17,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 5
+			},
+			"sentry": {
+				"delay": 1280,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				5,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 100,
+			"header": [
+				"PSIONIC-AMP",
+				"ELECTRIFY"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"fires a",
+				"weak electric",
+				"charge at",
+				"a target",
+				"directly",
+				"in front of",
+				"the user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 82,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 5
+			},
+			"sentry": {
+				"delay": 1280,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				5,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 101,
+			"header": [
+				"PSIONIC-AMP",
+				"LIGHTNING"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"fires a",
+				"strong",
+				"electric",
+				"charge at",
+				"a target",
+				"directly",
+				"in front of",
+				"the user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 82,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 102,
+			"header": [
+				"PSIONIC-AMP",
+				"FRY"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"fires a",
+				"very strong",
+				"electric",
+				"charge at",
+				"a target",
+				"directly",
+				"in front of",
+				"the user."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 82,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 509,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 103,
+			"header": [
+				"PSIONIC-AMP",
+				"FARSIGHT"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"patches",
+				"directly into",
+				"the sensor array",
+				"of the user's",
+				"dts. effectively",
+				"increases the",
+				"information",
+				"stored about",
+				"local",
+				"surroundings."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 5
+			},
+			"sentry": {
+				"delay": 1280,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				5,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 104,
+			"header": [
+				"PSIONIC-AMP",
+				"TELEPORT"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"instantaneously",
+				"moves the",
+				"user to a",
+				"random",
+				"location",
+				"within 40m."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 8
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 105,
+			"header": [
+				"",
+				""
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 106,
+			"header": [
+				"PSIONIC-AMP",
+				"CURE POISON"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"cleanses the",
+				"users blood-",
+				"stream of",
+				"toxic alien",
+				"material.",
+				"this is only",
+				"effective on",
+				"human targets."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 77,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 6
+			},
+			"sentry": {
+				"delay": 1536,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				6,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 107,
+			"header": [
+				"PSIONIC-AMP",
+				"HEAL"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"accelerates",
+				"the users",
+				"metabolic rate,",
+				"immune system",
+				"and tissue",
+				"recovery.",
+				"has the end",
+				"effect of heal-",
+				"ing wounds and",
+				"poisoning."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 77,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 8,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 8
+			},
+			"sentry": {
+				"delay": 2048,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				8,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 108,
+			"header": [
+				"PSIONIC-AMP",
+				"TRANSMUTE"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 80,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 13,
+			"sample": 10,
+			"samplePeriod": 128,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 4
+			},
+			"sentry": {
+				"delay": 1024,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				4,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 109,
+			"header": [
+				"PSIONIC-AMP",
+				"MIRACLE"
+			],
+			"footer": [
+				"XX CHARGES",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 12,
+			"categoryName": "psiamp",
+			"image": 81,
+			"containerType": 4,
+			"containerName": "psionic",
+			"waterDamage": 0,
+			"maxDamage": 15000,
+			"weight": 800,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 1,
+			"sample": 10,
+			"samplePeriod": 255,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"psi": {
+				"level": 7
+			},
+			"sentry": {
+				"delay": 1792,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				7,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 110,
+			"header": [
+				"UNIDENTIFI-",
+				"ABLE REMAINS"
+			],
+			"footer": [
+				"",
+				""
+			],
+			"info": [
+				"analysis",
+				"indicates",
+				"organic",
+				"traces,",
+				"carbon",
+				"and 23%",
+				"unidentified",
+				"molecular",
+				"substances."
+			],
+			"category": 17,
+			"categoryName": "trash",
+			"image": 86,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 0,
+			"weight": 66,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 0,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"sentry": {
+				"delay": 0,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 111,
+			"header": [
+				"PROXIMITY",
+				"MINE"
+			],
+			"footer": [
+				"** ARMED **",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates a",
+				"fercious blast",
+				"designed to",
+				"maim rather",
+				"than kill the",
+				"victim.",
+				"triggered by",
+				"applied",
+				"pressure."
+			],
+			"category": 13,
+			"categoryName": "armed_mine",
+			"image": 87,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 20000,
+			"weight": 450,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"mine": {
+				"north": 2,
+				"south": 2,
+				"east": 2,
+				"west": 2,
+				"down": 2,
+				"up": 2,
+				"damage": 125,
+				"armedItem": 0
+			},
+			"sentry": {
+				"delay": 514,
+				"rounds": 514,
+				"physique": 514,
+				"turnFlag": 0,
+				"shootPlayers": 125,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				0,
+				125,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 112,
+			"header": [
+				"PROXIMITY",
+				"MINE 2ND EDN."
+			],
+			"footer": [
+				"** ARMED **",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"generates a",
+				"fercious blast",
+				"designed to",
+				"kill outright",
+				"rather than",
+				"maim the",
+				"victim.",
+				"triggered by",
+				"applied",
+				"pressure."
+			],
+			"category": 13,
+			"categoryName": "armed_mine",
+			"image": 88,
+			"containerType": 5,
+			"containerName": "smallcrate",
+			"waterDamage": 0,
+			"maxDamage": 20000,
+			"weight": 450,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"mine": {
+				"north": 4,
+				"south": 4,
+				"east": 4,
+				"west": 4,
+				"down": 4,
+				"up": 4,
+				"damage": 250,
+				"armedItem": 0
+			},
+			"sentry": {
+				"delay": 1028,
+				"rounds": 1028,
+				"physique": 1028,
+				"turnFlag": 0,
+				"shootPlayers": 250,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				0,
+				250,
+				0,
+				0,
+				0,
+				0
+			]
+		},
+		{
+			"index": 113,
+			"header": [
+				"NUTS",
+				""
+			],
+			"footer": [
+				"",
+				"XX% DAMAGED"
+			],
+			"info": [
+				"sorry.",
+				"no information",
+				"available on",
+				"this object.",
+				"please ask your",
+				"local guild vii",
+				"representative",
+				"for a free",
+				"update pack."
+			],
+			"category": 5,
+			"categoryName": "food",
+			"image": 89,
+			"containerType": 3,
+			"containerName": "consumable",
+			"waterDamage": 2,
+			"maxDamage": 10000,
+			"weight": 100,
+			"animColour": 0,
+			"anim": 0,
+			"animDuration": 0,
+			"flashColour": 0,
+			"sample": 0,
+			"samplePeriod": 256,
+			"exSample": 0,
+			"exSamplePeriod": 0,
+			"food": {
+				"fitnessBoost": 10000,
+				"physiqueBoost": 0,
+				"intelligenceBoost": 0,
+				"duration": 0
+			},
+			"sentry": {
+				"delay": 10000,
+				"rounds": 0,
+				"physique": 0,
+				"turnFlag": 0,
+				"shootPlayers": 0,
+				"range": 0,
+				"density": 0
+			},
+			"raw": [
+				39,
+				16,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
+		}
+	]
+}

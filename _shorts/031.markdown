@@ -1,0 +1,34 @@
+---
+layout: shorts
+title: "031 - The Worth Chain"
+date: 2025-04-03 11:56:47 +0200
+categories: jekyll update
+summary: When hyper capitalism meet with blockchains
+thumbnail_img: "../assets/images/031short.jpg"
+thumbnail: "../assets/videos/031short.mp4"
+---
+
+In New Ledger City, every breath carried its own timestamp. Lara Nakamura watched her NetWorth score blink in the bottom corner of her vision: 483.279 LifeCoins, steadily ticking down as she processed oxygen.<br>
+She sighed, triggering another 0.002 deduction. The morning smog carried higher particulate charges today—premium air would cost her, but breathing the raw atmosphere meant higher medical SmartContracts down the line. Everything was a transaction.<br>
+Her apartment woke as she moved through it, each appliance auto-bidding for her morning business through the BodyNet. Her toilet analyzed waste for free, but sold the data to insurance pools. Her shower calculated water usage by the milliliter, dynamically adjusting price based on city reservoir levels.<br>
+_"Morning appointment confirmed with Citizen Zhang. Business opportunity: HIGH,"_ announced her neural link. _"Reserve 15 LifeCoins for transport?"_<br>
+_"Execute,"_ Lara subvocalized, feeling the familiar burn of coins leaving her wallet. Transport costs had surged since autonomous cars started colluding on pricing through the CityChain.<br>
+Outside, humanity moved in perfect economic efficiency. Every interaction, micro-validated and recorded. Children earned fractions of coins for educational milestones. The homeless carried QR codes where their faces should be, automated charity systems transferring the minimum viable LifeCoins to keep them alive—assuming market conditions considered them worth the investment.<br>
+Lara passed the MemoryBank, where people sold recollections to the highest bidder. Her own grandmother had uploaded her entire life there before her NetWorth fell below subsistence level, earning just enough to keep her biological processes running another month.<br>
+At her corporate pod, Lara connected directly to the BusinessChain. Her performance metrics appeared, each keystroke and thought pattern tracked for optimization. Her eyes lingered on the jagged line of her productivity score. Three more percentage points down and the automatic termination protocol would trigger.<br>
+That night, in her apartment's shadowy corner—the one spot least monitored by corporate sensors—Lara initiated her connection to the RebelChain. Her fingers moved with practiced precision, navigating encrypted pathways, joining underground network nodes.<br>
+_"Access Granted: Resistance Sector β-7,"_ her neural interface whispered. A flood of suppressed data streams began downloading—leaked corporate memos, unfiltered city management reports, true unemployment statistics that never made public feeds.<br>
+Her heart raced. The resistance. One of her comrade had found a new 0day exploit and accessed a semi-restricted server of a secondary logistic system of the city administration. This was—<br>
+<br>
+[SYSTEM NOTIFICATION]<br>
+PARTICIPATION CREDIT INSUFFICIENT<br>
+Rebel Access Level: BASIC<br>
+Remaining Session Time: 12:37<br>
+FUND WALLET TO CONTINUE?<br>
+<br>
+[CONTINUE] [ADD FUNDS] [LOGOUT]<br>
+<br>
+Lara checked her NetWorth: 398.127 LifeCoins. Not enough to buy a more advanced plan whithout compromising her lifestyle too much. She went for the 120 LifeCoins yearly subscription. 120 LifeCoins meant skipping meals for a week. But at least she'd feel something—even if that feeling was just another product, indexed and tokenized on the blockchain like everything else.<br>
+_"Purchase. Execute,"_ she whispered.<br>
+She blinked. The notification remained, pulsing softly in her peripheral vision. Waiting.<br>
+The momentary rush of dopamine will cost her, but at least it feel real. Until it doesn't.<br>

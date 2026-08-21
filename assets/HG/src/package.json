@@ -1,0 +1,4 @@
+{
+	"type": "module",
+	"//": "Marks src/*.js as ES modules for Node-side tooling (tools/verify-parity.mjs). Browsers already load them as modules via <script type=\"module\">."
+}

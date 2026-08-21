@@ -1,0 +1,10 @@
+---
+layout: post
+title: "New short story"
+date: 2025-04-15 23:53:47 +0200
+categories: jekyll update
+excerpt: New short story, n°22
+---
+
+I've added a new short story to the [short]({% link short.markdown %}) section.<br>
+N°22. A phylosophical discussion in the far future between an AI and a human.

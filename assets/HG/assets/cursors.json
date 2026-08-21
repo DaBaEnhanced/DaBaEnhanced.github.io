@@ -1,0 +1,82 @@
+{
+	"source": "Data/GameChip.dat/Sprites.ilbm",
+	"sourceBuild": "Data/GameChip.dat/SpritesCD32.rexx",
+	"width": 32,
+	"height": 16,
+	"hotspot": {
+		"x": 8,
+		"y": 8
+	},
+	"names": [
+		"default",
+		"forward",
+		"backward",
+		"turn-left",
+		"turn-right",
+		"activate",
+		"pick-up",
+		"drop",
+		"wake",
+		"info",
+		"tab",
+		"vdu-forward",
+		"vdu-backward",
+		"right-use",
+		"left-unuse",
+		"throw-1",
+		"throw-2",
+		"throw-3",
+		"throw-4"
+	],
+	"sets": [
+		{
+			"index": 0,
+			"files": [
+				"cursors/mouse0-0.png",
+				"cursors/mouse0-1.png",
+				"cursors/mouse0-2.png",
+				"cursors/mouse0-3.png",
+				"cursors/mouse0-4.png",
+				"cursors/mouse0-5.png",
+				"cursors/mouse0-6.png",
+				"cursors/mouse0-7.png",
+				"cursors/mouse0-8.png",
+				"cursors/mouse0-9.png",
+				"cursors/mouse0-10.png",
+				"cursors/mouse0-11.png",
+				"cursors/mouse0-12.png",
+				"cursors/mouse0-13.png",
+				"cursors/mouse0-14.png",
+				"cursors/mouse0-15.png",
+				"cursors/mouse0-16.png",
+				"cursors/mouse0-17.png",
+				"cursors/mouse0-18.png"
+			]
+		},
+		{
+			"index": 1,
+			"files": [
+				"cursors/mouse1-0.png",
+				"cursors/mouse1-1.png",
+				"cursors/mouse1-2.png",
+				"cursors/mouse1-3.png",
+				"cursors/mouse1-4.png",
+				"cursors/mouse1-5.png",
+				"cursors/mouse1-6.png",
+				"cursors/mouse1-7.png",
+				"cursors/mouse1-8.png",
+				"cursors/mouse1-9.png",
+				"cursors/mouse1-10.png",
+				"cursors/mouse1-11.png",
+				"cursors/mouse1-12.png",
+				"cursors/mouse1-13.png",
+				"cursors/mouse1-14.png",
+				"cursors/mouse1-15.png",
+				"cursors/mouse1-16.png",
+				"cursors/mouse1-17.png",
+				"cursors/mouse1-18.png"
+			]
+		}
+	],
+	"comment": "Sprite numbers match ColdStartup.s gadget tables. Set 0 is mouse0; set 1 is mouse1."
+}
