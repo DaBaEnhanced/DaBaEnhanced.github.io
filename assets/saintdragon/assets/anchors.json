@@ -1,0 +1,199 @@
+{
+ "$0909a": {
+  "band": "ground",
+  "offset": -16,
+  "terrain": true
+ },
+ "$090fc": {
+  "band": "ground",
+  "offset": -21
+ },
+ "$091f6": {
+  "band": "ground",
+  "invulnerable": true,
+  "offset": -12,
+  "terrain": true
+ },
+ "$09210": {
+  "band": "ground",
+  "invulnerable": true,
+  "offset": -33,
+  "terrain": true
+ },
+ "$0921a": {
+  "band": "ground",
+  "invulnerable": true,
+  "offset": -33,
+  "terrain": true
+ },
+ "$092b0": {
+  "terrain": true
+ },
+ "$09482": {
+  "invulnerable": true
+ },
+ "$099b4": {
+  "band": "ground",
+  "offset": -20
+ },
+ "$09fbe": {
+  "band": "ground",
+  "offset": -11
+ },
+ "$0a378": {
+  "band": "ground",
+  "offset": 48
+ },
+ "$0a4d6": {
+  "mirror": 1
+ },
+ "$0a4dc": {
+  "mirror": 1
+ },
+ "$0a4e2": {
+  "mirror": 1
+ },
+ "$0af7c": {
+  "band": "ceiling",
+  "offset": 14
+ },
+ "$0af98": {
+  "band": "ground",
+  "offset": -14
+ },
+ "$0b58e": {
+  "band": "ground",
+  "offset": -23
+ },
+ "$0b5e0": {
+  "band": "ground",
+  "offset": -23
+ },
+ "$0b638": {
+  "band": "ground",
+  "offset": -22
+ },
+ "$0b766": {
+  "terrain": true
+ },
+ "$0b76e": {
+  "terrain": true
+ },
+ "$0b776": {
+  "terrain": true
+ },
+ "$0b978": {
+  "band": "ceiling",
+  "invulnerable": true,
+  "offset": 11,
+  "terrain": true
+ },
+ "$0b98a": {
+  "band": "ground",
+  "invulnerable": true,
+  "mirror": 2,
+  "offset": -11,
+  "terrain": true
+ },
+ "$0b9ee": {
+  "invulnerable": true,
+  "mirror": 2
+ },
+ "$0b9f2": {
+  "invulnerable": true,
+  "mirror": 2
+ },
+ "$0ba0a": {
+  "invulnerable": true
+ },
+ "$0ba0e": {
+  "invulnerable": true
+ },
+ "$0bc94": {
+  "band": "ceiling",
+  "mirror": 2,
+  "offset": 37
+ },
+ "$0bcba": {
+  "band": "ground",
+  "offset": -37
+ },
+ "$0bd26": {
+  "band": "ceiling",
+  "mirror": 2,
+  "offset": 13
+ },
+ "$0bd52": {
+  "band": "ground",
+  "offset": -13
+ },
+ "$0c136": {
+  "band": "ground",
+  "offset": 0
+ },
+ "$0c14a": {
+  "band": "ceiling",
+  "offset": 0
+ },
+ "$0c2fa": {
+  "band": "ceiling",
+  "mirror": 3,
+  "offset": 10,
+  "terrain": true
+ },
+ "$0c2fe": {
+  "band": "ceiling",
+  "mirror": 3,
+  "offset": 10,
+  "terrain": true
+ },
+ "$0d46e": {
+  "band": "ceiling",
+  "offset": -32
+ },
+ "$0d4bc": {
+  "band": "ceiling",
+  "offset": -32
+ },
+ "$0d506": {
+  "band": "ceiling",
+  "offset": -32
+ },
+ "$0d54e": {
+  "band": "ground",
+  "offset": 32
+ },
+ "$0ed9c": {
+  "terrain": true
+ },
+ "$0ee74": {
+  "band": "ground",
+  "offset": -10
+ },
+ "$0f0d2": {
+  "band": "ground",
+  "invulnerable": true,
+  "offset": -9
+ },
+ "$0f0d6": {
+  "band": "ground",
+  "invulnerable": true,
+  "offset": -9
+ },
+ "$0f196": {
+  "band": "ground",
+  "offset": -9
+ },
+ "$0f19e": {
+  "band": "ground",
+  "offset": -9
+ },
+ "$0f1a6": {
+  "band": "ground",
+  "offset": -9
+ },
+ "$0f1ae": {
+  "band": "ground",
+  "offset": -9
+ }
+}

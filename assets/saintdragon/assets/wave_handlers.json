@@ -1,0 +1,268 @@
+{
+ "$04c62": {
+  "uses": 12,
+  "y": 92,
+  "descriptor": "$04c8e",
+  "sprites": [
+   "$0203"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   1
+  ]
+ },
+ "$04bf2": {
+  "uses": 12,
+  "y": 92,
+  "descriptor": "$04c1e",
+  "sprites": [
+   "$0003"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   0
+  ]
+ },
+ "$04d1a": {
+  "uses": 9,
+  "y": 92,
+  "descriptor": "$04d2c",
+  "sprites": [
+   "$0603"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   3
+  ]
+ },
+ "$04d00": {
+  "uses": 7,
+  "y": 92,
+  "descriptor": "$04d2c",
+  "sprites": [
+   "$0603"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   3
+  ]
+ },
+ "$04c0c": {
+  "uses": 7,
+  "y": 92,
+  "descriptor": "$04c1e",
+  "sprites": [
+   "$0003"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   0
+  ]
+ },
+ "$04cc4": {
+  "uses": 6,
+  "y": 92,
+  "descriptor": "$04cde",
+  "sprites": [
+   "$0403"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   2
+  ]
+ },
+ "$04c7c": {
+  "uses": 6,
+  "y": 92,
+  "descriptor": "$04c8e",
+  "sprites": [
+   "$0203"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   1
+  ]
+ },
+ "$050ea": {
+  "uses": 3,
+  "y": 92,
+  "descriptor": "$050fc",
+  "sprites": [
+   "$0e03"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   7
+  ]
+ },
+ "$04d46": {
+  "uses": 2,
+  "y": 44,
+  "descriptor": "$04d7a",
+  "sprites": [
+   "$0803"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   4
+  ]
+ },
+ "$04e0c": {
+  "uses": 2,
+  "y": 92,
+  "descriptor": "$04e38",
+  "sprites": [
+   "$0a03"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   5
+  ]
+ },
+ "$04bea": {
+  "uses": 2,
+  "y": 44,
+  "descriptor": "$04c1e",
+  "sprites": [
+   "$0003"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   0
+  ]
+ },
+ "$04d9c": {
+  "uses": 2,
+  "y": 92,
+  "descriptor": "$04db6",
+  "sprites": [
+   "$0c03"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   6
+  ]
+ },
+ "$04e14": {
+  "uses": 1,
+  "y": 140,
+  "descriptor": "$04e38",
+  "sprites": [
+   "$0a03"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   5
+  ]
+ },
+ "$04d68": {
+  "uses": 1,
+  "y": 44,
+  "descriptor": "$04d7a",
+  "sprites": [
+   "$0803"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   4
+  ]
+ },
+ "$04e26": {
+  "uses": 1,
+  "y": 92,
+  "descriptor": "$04e38",
+  "sprites": [
+   "$0a03"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   5
+  ]
+ },
+ "$04ed0": {
+  "uses": 1,
+  "y": 44,
+  "descriptor": "$04ef2",
+  "sprites": [
+   "$1203"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   9
+  ]
+ },
+ "$04f20": {
+  "uses": 1,
+  "y": 92,
+  "descriptor": "$04f3a",
+  "sprites": [
+   "$1403"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   10
+  ]
+ },
+ "$04ed8": {
+  "uses": 1,
+  "y": 92,
+  "descriptor": "$04ef2",
+  "sprites": [
+   "$1203"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   9
+  ]
+ },
+ "$04f68": {
+  "uses": 1,
+  "y": 92,
+  "descriptor": "$04f82",
+  "sprites": [
+   "$1603"
+  ],
+  "res": [
+   3
+  ],
+  "index": [
+   11
+  ]
+ }
+}

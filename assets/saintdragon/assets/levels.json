@@ -1,0 +1,32 @@
+{
+ "1": {
+  "ground": 162,
+    "ceiling": 1,
+    "shotCeiling": false,
+    "shotGround": true
+ },
+ "2": {
+  "ground": 158,
+    "ceiling": 24,
+    "shotCeiling": true,
+    "shotGround": true
+ },
+ "3": {
+  "ground": 158,
+    "ceiling": 24,
+    "shotCeiling": true,
+    "shotGround": true
+ },
+ "4": {
+  "ground": 166,
+    "ceiling": 16,
+    "shotCeiling": false,
+    "shotGround": false
+ },
+ "5": {
+  "ground": 166,
+    "ceiling": 1,
+    "shotCeiling": false,
+    "shotGround": false
+ }
+}

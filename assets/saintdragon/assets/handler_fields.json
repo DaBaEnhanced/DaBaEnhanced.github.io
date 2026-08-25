@@ -1,0 +1,3086 @@
+{
+ "$0d172": {
+  "uses": 17,
+  "resource": 33,
+  "y": 52,
+  "heading": 128,
+  "speed": 512,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "wait": 15
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$0d210",
+    "frames": 100
+   },
+   {
+    "step": "$0d210",
+    "frames": 60
+   },
+   {
+    "step": "$07d98",
+    "frames": 15
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "turnRate": 2,
+  "turnFlips": 2
+ },
+ "$0a4fa": {
+  "uses": 16,
+  "resource": 48,
+  "heading": 128,
+  "hp": 160,
+  "score": 6,
+  "speed": 512,
+  "dy": 48,
+  "handle": "$0030",
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 30
+   },
+   {
+    "set": "speed",
+    "v": 256
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ]
+ },
+ "$0d17a": {
+  "uses": 15,
+  "resource": 33,
+  "y": 132,
+  "heading": 128,
+  "speed": 512,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "wait": 15
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$0d210",
+    "frames": 100
+   },
+   {
+    "step": "$0d210",
+    "frames": 60
+   },
+   {
+    "step": "$07d98",
+    "frames": 15
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "turnRate": 2,
+  "turnFlips": 2
+ },
+ "$083e2": {
+  "uses": 14
+ },
+ "$0a4f4": {
+  "uses": 14,
+  "resource": 48,
+  "heading": 128,
+  "hp": 160,
+  "score": 6,
+  "speed": 512,
+  "dy": 48,
+  "handle": "$0030",
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 30
+   },
+   {
+    "set": "speed",
+    "v": 256
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ]
+ },
+ "$0af98": {
+  "uses": 14,
+  "resource": 16,
+  "hp": 64,
+  "score": 3,
+  "dy": -14,
+  "handle": "$0c10",
+  "groundRelative": true,
+  "groundOffset": -14,
+  "vx": -1,
+  "script_incomplete": [
+   {
+    "set": "vx",
+    "v": -1
+   },
+   {
+    "wait": 30
+   },
+   {
+    "wait": 50
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   }
+  ],
+  "ax": -0.03125
+ },
+ "$04c62": {
+  "uses": 12,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04cf2"
+ },
+ "$04bf2": {
+  "uses": 12,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04ca2"
+ },
+ "$09fbe": {
+  "uses": 11,
+  "resource": 7,
+  "hp": 64,
+  "score": 3,
+  "dy": -11,
+  "handle": "$0007",
+  "groundRelative": true,
+  "groundOffset": -11,
+  "terrainLocked": true
+ },
+ "$0af7c": {
+  "uses": 11,
+  "resource": 16,
+  "hp": 64,
+  "dy": -14,
+  "handle": "$0c10",
+  "groundRelative": true,
+  "groundOffset": -14,
+  "behaviour": "$08000",
+  "vx": -1,
+  "children": [
+   {
+    "routine": "$08000",
+    "dx": 0,
+    "dy": 0,
+    "via": "$92"
+   }
+  ],
+  "script_incomplete": [
+   {
+    "set": "vx",
+    "v": -1
+   },
+   {
+    "wait": 30
+   },
+   {
+    "wait": 50
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   }
+  ],
+  "ax": -0.03125
+ },
+ "$0ba0a": {
+  "uses": 10,
+  "resource": 41,
+  "resources": [
+   41,
+   24
+  ],
+  "y": 4,
+  "handles_rejected": [
+   "$0029"
+  ],
+  "counter": 8,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0baa2",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 25
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 25
+   }
+  ]
+ },
+ "$0ae24": {
+  "uses": 9,
+  "resource": 19,
+  "hp": 160,
+  "score": 4,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "handle": "$0013",
+  "handle_from": "$7cb8 (branch-following)",
+  "vx": -0.875,
+  "scatterY": {
+   "mask": 127,
+   "offset": 64
+  },
+  "ax": 0.00098
+ },
+ "$0bb88": {
+  "uses": 9,
+  "resource": 34,
+  "resources": [
+   34,
+   34
+  ],
+  "stream": {
+   "routine": "$0bbd4",
+   "count": 11,
+   "interval": 15
+  }
+ },
+ "$04d1a": {
+  "uses": 9,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04dca"
+ },
+ "$0d26a": {
+  "uses": 9,
+  "resource": 38,
+  "y": 30,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "handle": "$0026",
+  "handle_from": "$7cb8 (branch-following)",
+  "spawnsChildren": 1,
+  "vy_stage5": 0.5,
+  "note": "vy applies only on stage 5 ($d2cc)"
+ },
+ "$0a500": {
+  "uses": 9,
+  "resource": 48,
+  "heading": 128,
+  "hp": 160,
+  "score": 6,
+  "speed": 512,
+  "handle": "$0030",
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 30
+   },
+   {
+    "set": "speed",
+    "v": 256
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ]
+ },
+ "$0b80c": {
+  "uses": 9,
+  "resource": 52,
+  "resources": [
+   52,
+   52,
+   52
+  ],
+  "stream": {
+   "routine": "$0b832",
+   "count": 5,
+   "interval": 16
+  }
+ },
+ "$0b638": {
+  "uses": 9,
+  "resource": 51,
+  "hp": 640,
+  "score": 5,
+  "dy": -22,
+  "handle": "$0033",
+  "groundRelative": true,
+  "groundOffset": -22,
+  "counter": 1,
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 200
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 200
+   }
+  ]
+ },
+ "$09c48": {
+  "uses": 8,
+  "resource": 12,
+  "spawnsChildren": 1,
+  "stream": {
+   "routine": "$09ca4",
+   "count": 11,
+   "interval": 18
+  },
+  "ay": 0.0625
+ },
+ "$0a12a": {
+  "uses": 8,
+  "resource": 21,
+  "resources": [
+   21,
+   21
+  ],
+  "stream": {
+   "routine": "$0a1ec",
+   "count": 13,
+   "interval": 20
+  }
+ },
+ "$0d276": {
+  "uses": 8,
+  "resource": 38,
+  "y": 80,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "handle": "$0226",
+  "handle_from": "$7cb8 (branch-following)",
+  "spawnsChildren": 1,
+  "vy_stage5": 0.5,
+  "note": "vy applies only on stage 5 ($d2cc)"
+ },
+ "$0ee74": {
+  "uses": 8,
+  "resource": 56,
+  "hp": 128,
+  "score": 4,
+  "dy": -10,
+  "handle": "$0038",
+  "groundRelative": true,
+  "groundOffset": -10,
+  "spawnsChildren": 3,
+  "terrainLocked": true,
+  "vy_afterLiftoff": -0.5,
+  "note": "vy/ax set at $eec2-$eeca, after the fire and animation phases",
+  "ax_afterLiftoff": -0.01562
+ },
+ "$04d00": {
+  "uses": 7,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04dca"
+ },
+ "$0bb3c": {
+  "uses": 7,
+  "resource": 34,
+  "resources": [
+   34,
+   34
+  ],
+  "stream": {
+   "routine": "$0bbd8",
+   "count": 11,
+   "interval": 15
+  }
+ },
+ "$0c2fa": {
+  "uses": 7,
+  "resource": 26,
+  "hp": 128,
+  "score": 3,
+  "handle": "$0a1a",
+  "children": [
+   {
+    "routine": "$062f2",
+    "dx": 0,
+    "dy": 10
+   },
+   {
+    "routine": "$0633a",
+    "dx": 0,
+    "dy": 10
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 16
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 16
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ]
+ },
+ "$0c120": {
+  "uses": 7,
+  "dy": 52,
+  "groundRelative": true,
+  "groundOffset": 0,
+  "xOffset": -160,
+  "vx": -2,
+  "vy": -3,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 45
+   },
+   {
+    "wait": 45
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   }
+  ],
+  "ax": 0.01562,
+  "ay": 0.02344
+ },
+ "$04c0c": {
+  "uses": 7,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04ca2"
+ },
+ "$0d28e": {
+  "uses": 7,
+  "resource": 38,
+  "y": 130,
+  "hp": 480,
+  "score": 5,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "handle": "$0226",
+  "handle_from": "$7cb8 (branch-following)",
+  "spawnsChildren": 1,
+  "vy_stage5": 0.5,
+  "note": "vy applies only on stage 5 ($d2cc)"
+ },
+ "$0ed9c": {
+  "uses": 7,
+  "resource": 58,
+  "dy": 12,
+  "handle": "$003a",
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0ee14",
+    "dx": 0,
+    "dy": 12
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 150
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 150
+   }
+  ]
+ },
+ "$0f0d6": {
+  "uses": 7,
+  "resource": 59,
+  "dy": -16,
+  "handle": "$003b",
+  "groundRelative": true,
+  "groundOffset": -16,
+  "xOffset": 16,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0f14e",
+    "dx": 16,
+    "dy": -16
+   }
+  ],
+  "terrainLocked": true
+ },
+ "$09e70": {
+  "uses": 6,
+  "resource": 13,
+  "y": 60,
+  "stream": {
+   "routine": "$09ebc",
+   "count": 11,
+   "interval": 25
+  }
+ },
+ "$04cc4": {
+  "uses": 6,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04d8e"
+ },
+ "$0b846": {
+  "uses": 6,
+  "resource": 52,
+  "hp": 400,
+  "score": 4,
+  "handle": "$0034",
+  "terrainLocked": true
+ },
+ "$0c2fe": {
+  "uses": 6,
+  "resource": 26,
+  "hp": 128,
+  "score": 3,
+  "handle": "$0a1a",
+  "children": [
+   {
+    "routine": "$062f2",
+    "dx": 0,
+    "dy": 10
+   },
+   {
+    "routine": "$0633a",
+    "dx": 0,
+    "dy": 10
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 16
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 16
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ]
+ },
+ "$0c118": {
+  "uses": 6,
+  "dy": 52,
+  "groundRelative": true,
+  "groundOffset": 0,
+  "xOffset": -160,
+  "vx": -2,
+  "vy": -3,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 45
+   },
+   {
+    "wait": 45
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   }
+  ],
+  "ax": 0.01562,
+  "ay": 0.02344
+ },
+ "$0c128": {
+  "uses": 6,
+  "dy": 52,
+  "groundRelative": true,
+  "groundOffset": 0,
+  "xOffset": -160,
+  "vx": -2,
+  "vy": -3,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 45
+   },
+   {
+    "wait": 45
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   }
+  ],
+  "ax": 0.01562,
+  "ay": 0.02344
+ },
+ "$04c7c": {
+  "uses": 6,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04d40"
+ },
+ "$0bed6": {
+  "uses": 6,
+  "resource": 28,
+  "resources": [
+   28,
+   28
+  ],
+  "spawnsChildren": 5,
+  "children": [
+   {
+    "routine": "$0c004",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$0bf02": {
+  "uses": 6,
+  "resource": 28,
+  "resources": [
+   28,
+   28
+  ],
+  "spawnsChildren": 6,
+  "children": [
+   {
+    "routine": "$0c00c",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$0eefa": {
+  "uses": 6,
+  "resource": 57,
+  "hp": 16,
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$0ef2a",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$09e78": {
+  "uses": 5,
+  "resource": 13,
+  "y": 92,
+  "stream": {
+   "routine": "$09ebc",
+   "count": 11,
+   "interval": 25
+  }
+ },
+ "$0909a": {
+  "uses": 5,
+  "resource": 55,
+  "depth": 400,
+  "dy": -16,
+  "resources": [
+   55,
+   8
+  ],
+  "groundRelative": true,
+  "groundOffset": -16,
+  "handle": "$1237",
+  "handle_from": "$7cb8 (branch-following)",
+  "xOffset": 48,
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$09f34",
+    "dx": 0,
+    "dy": -16
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "set": "frame",
+    "v": "$1237"
+   },
+   {
+    "wait": 40
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 40
+   }
+  ]
+ },
+ "$090fc": {
+  "uses": 5,
+  "resource": 50,
+  "depth": 900,
+  "hp": 512,
+  "dy": -21,
+  "handle": "$0632",
+  "groundRelative": true,
+  "groundOffset": -21,
+  "xOffset": 48,
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 20
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 25
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 25
+   }
+  ],
+  "ay": 0.125,
+  "vy_laterPhase": -4.5,
+  "note": "vy is not set in $090fc itself; it belongs to the retained child $91b0"
+ },
+ "$09a54": {
+  "uses": 5,
+  "resource": 10
+ },
+ "$0829e": {
+  "uses": 5
+ },
+ "$0a75c": {
+  "uses": 5,
+  "resource": 19,
+  "dy": -16,
+  "stream": {
+   "routine": "$0a7ac",
+   "count": 13,
+   "interval": 8
+  }
+ },
+ "$0a5c0": {
+  "uses": 5,
+  "resource": 52,
+  "resources": [
+   52,
+   19
+  ],
+  "handle": "$0013",
+  "spawnsChildren": 2,
+  "ax": 0.00085,
+  "ay": 9e-05,
+  "vx_initial": -0.75,
+  "note": "vx accelerates via ax=$38 from $a5e6, so it differs after one step"
+ },
+ "$0a736": {
+  "uses": 5,
+  "resource": 19,
+  "resources": [
+   19,
+   19
+  ],
+  "stream": {
+   "routine": "$0a782",
+   "count": 13,
+   "interval": 8
+  }
+ },
+ "$0a176": {
+  "uses": 5,
+  "resource": 21,
+  "resources": [
+   21,
+   21
+  ],
+  "stream": {
+   "routine": "$0a1e8",
+   "count": 13,
+   "interval": 20
+  }
+ },
+ "$0a4dc": {
+  "uses": 5,
+  "resource": 48,
+  "heading": 128,
+  "hp": 160,
+  "score": 6,
+  "dy": 48,
+  "handle": "$0030",
+  "counter": 1,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 30
+   },
+   {
+    "set": "speed",
+    "v": 256
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "speed": 512
+ },
+ "$0d264": {
+  "uses": 5,
+  "resource": 38,
+  "y": 30,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "handle": "$0226",
+  "handle_from": "$7cb8 (branch-following)",
+  "spawnsChildren": 1,
+  "vy_stage5": 0.5,
+  "note": "vy applies only on stage 5 ($d2cc)"
+ },
+ "$0d160": {
+  "uses": 5,
+  "resource": 33,
+  "y": 132,
+  "heading": 128,
+  "speed": 512,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "wait": 15
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$0d210",
+    "frames": 100
+   },
+   {
+    "step": "$0d210",
+    "frames": 60
+   },
+   {
+    "step": "$07d98",
+    "frames": 15
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "turnRate": 2,
+  "turnFlips": 2
+ },
+ "$0d25e": {
+  "uses": 5,
+  "resource": 38,
+  "y": 30,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "handle": "$0426",
+  "handle_from": "$7cb8 (branch-following)",
+  "spawnsChildren": 1,
+  "vy_stage5": 0.5,
+  "note": "vy applies only on stage 5 ($d2cc)"
+ },
+ "$0d158": {
+  "uses": 5,
+  "resource": 33,
+  "y": 52,
+  "heading": 128,
+  "speed": 512,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "wait": 15
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$0d210",
+    "frames": 100
+   },
+   {
+    "step": "$0d210",
+    "frames": 60
+   },
+   {
+    "step": "$07d98",
+    "frames": 15
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "turnRate": 2,
+  "turnFlips": 2
+ },
+ "$0bf2e": {
+  "uses": 5,
+  "resource": 28,
+  "resources": [
+   28,
+   28
+  ],
+  "spawnsChildren": 5,
+  "children": [
+   {
+    "routine": "$0c014",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$09210": {
+  "uses": 4,
+  "resource": 55,
+  "resources": [
+   55,
+   7,
+   11
+  ],
+  "dy": -33,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "groundRelative": true,
+  "groundOffset": -33,
+  "handle": "$0e37",
+  "handle_from": "$7cb8 (branch-following)",
+  "xOffset": 48,
+  "behaviour": "$099a4",
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$099a4",
+    "dx": 0,
+    "dy": 0,
+    "via": "$92"
+   }
+  ],
+  "terrainLocked": true
+ },
+ "$092b0": {
+  "uses": 4,
+  "resource": 55,
+  "resources": [
+   55,
+   9
+  ],
+  "y": 76,
+  "xOffset": 48,
+  "counter": 32,
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$09082",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "terrainLocked": true,
+  "phases": [
+   {
+    "step": "$0942c",
+    "frames": 100
+   }
+  ]
+ },
+ "$04fb0": {
+  "uses": 4,
+  "collides": true,
+  "hitHandler": "$04fcc",
+  "spawnsChildren": 1
+ },
+ "$083f6": {
+  "uses": 4
+ },
+ "$0aeda": {
+  "uses": 4,
+  "resource": 20,
+  "y": 156,
+  "resources": [
+   20,
+   20
+  ],
+  "stream": {
+   "routine": "$0af16",
+   "count": 11,
+   "interval": 15
+  }
+ },
+ "$0c136": {
+  "uses": 4,
+  "groundRelative": true,
+  "groundOffset": 0,
+  "xOffset": -160,
+  "vy": -3,
+  "vx": -6,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 45
+   },
+   {
+    "wait": 45
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   }
+  ],
+  "ax": 0.01562,
+  "ay": 0.00781
+ },
+ "$0d304": {
+  "uses": 4,
+  "y": 36,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": -1.5,
+  "vy": 1.5
+ },
+ "$0d330": {
+  "uses": 4,
+  "y": 136,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": 1.5,
+  "vy": -1.5
+ },
+ "$0d282": {
+  "uses": 4,
+  "resource": 38,
+  "y": 100,
+  "hp": 480,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "handle": "$0426",
+  "handle_from": "$7cb8 (branch-following)",
+  "spawnsChildren": 1,
+  "vy_stage5": 0.5,
+  "note": "vy applies only on stage 5 ($d2cc)"
+ },
+ "$0d3ea": {
+  "uses": 4,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": 1.5
+ },
+ "$0f196": {
+  "uses": 4,
+  "dy": -16,
+  "groundRelative": true,
+  "groundOffset": -25,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$0f1f4",
+    "dx": 0,
+    "dy": -9
+   },
+   {
+    "routine": "$0ee6a",
+    "dx": 0,
+    "dy": -25
+   }
+  ]
+ },
+ "$0a4e2": {
+  "uses": 4,
+  "resource": 48,
+  "heading": 128,
+  "hp": 160,
+  "score": 6,
+  "speed": 512,
+  "dy": 48,
+  "handle": "$0030",
+  "counter": 1,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 30
+   },
+   {
+    "set": "speed",
+    "v": 256
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ]
+ },
+ "$0921a": {
+  "uses": 3,
+  "resource": 55,
+  "resources": [
+   55,
+   7,
+   11
+  ],
+  "dy": -33,
+  "handles_rejected": [
+   "$2605",
+   "$2805",
+   "$2a05",
+   "$2c05"
+  ],
+  "groundRelative": true,
+  "groundOffset": -33,
+  "handle": "$0e37",
+  "handle_from": "$7cb8 (branch-following)",
+  "xOffset": 48,
+  "behaviour": "$09fa2",
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$09fa2",
+    "dx": 0,
+    "dy": 0,
+    "via": "$92"
+   }
+  ],
+  "terrainLocked": true
+ },
+ "$050d0": {
+  "uses": 3,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": false
+ },
+ "$0ab16": {
+  "uses": 3,
+  "resource": 17,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0ab58",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "collides_child": true,
+  "note": "the parent is a pure spawner; $44 belongs to the child $ab58"
+ },
+ "$0a378": {
+  "uses": 3,
+  "resource": 45,
+  "hp": 1280,
+  "score": 5,
+  "dy": 48,
+  "handle": "$002d",
+  "groundRelative": true,
+  "groundOffset": 48,
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "set": "vy",
+    "v": -3
+   },
+   {
+    "wait": 80
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 80
+   }
+  ],
+  "ax": 0.00586,
+  "ay": 0.03027,
+  "vy_initial": -3,
+  "note": "vy accelerates via ay=$7c0 ($a3a8), so it differs after one step"
+ },
+ "$0bd52": {
+  "uses": 3,
+  "resource": 25,
+  "hp": 64,
+  "dy": -13,
+  "handle": "$0419",
+  "groundRelative": true,
+  "groundOffset": -13,
+  "script_incomplete": [
+   {
+    "wait": 74
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 74
+   }
+  ]
+ },
+ "$0b9f2": {
+  "uses": 3,
+  "resource": 41,
+  "resources": [
+   41,
+   24
+  ],
+  "y": -4,
+  "counter": 8,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0baa2",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 25
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 25
+   }
+  ]
+ },
+ "$0ba0e": {
+  "uses": 3,
+  "resource": 41,
+  "resources": [
+   41,
+   24
+  ],
+  "y": 4,
+  "handles_rejected": [
+   "$0029"
+  ],
+  "counter": 8,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0baa2",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 25
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 25
+   }
+  ]
+ },
+ "$0b98a": {
+  "uses": 3,
+  "dy": -11,
+  "groundRelative": true,
+  "groundOffset": -11,
+  "handle": "$0229",
+  "handle_from": "$7cb8 (branch-following)",
+  "counter": 2,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "terrainLocked": true
+ },
+ "$0b978": {
+  "uses": 3,
+  "dy": -11,
+  "groundRelative": true,
+  "groundOffset": -11,
+  "handle": "$0229",
+  "handle_from": "$7cb8 (branch-following)",
+  "counter": 2,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "terrainLocked": true
+ },
+ "$0b766": {
+  "uses": 3,
+  "resource": 47,
+  "y": 76,
+  "hp": 3200,
+  "score": 20,
+  "handle": "$002f",
+  "xOffset": 32,
+  "terrainLocked": true
+ },
+ "$0d3f2": {
+  "uses": 3,
+  "y": 144,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": 1.5
+ },
+ "$0be5a": {
+  "uses": 3,
+  "resource": 28,
+  "spawnsChildren": 6,
+  "children": [
+   {
+    "routine": "$0bffc",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0c004",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0c00c",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0c014",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$050ea": {
+  "uses": 3,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": false
+ },
+ "$04d46": {
+  "uses": 2,
+  "y": 44,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04dca"
+ },
+ "$04e0c": {
+  "uses": 2,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04eb6"
+ },
+ "$04bea": {
+  "uses": 2,
+  "y": 44,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04ca2"
+ },
+ "$0a850": {
+  "uses": 2,
+  "resource": 2,
+  "resources": [
+   2,
+   4
+  ],
+  "hp": 320,
+  "score": 5,
+  "counter": 1,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0a866",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$0a1c2": {
+  "uses": 2,
+  "resource": 21,
+  "resources": [
+   21,
+   21
+  ],
+  "stream": {
+   "routine": "$0a27e",
+   "count": 26,
+   "interval": 15
+  }
+ },
+ "$0b58e": {
+  "uses": 2,
+  "resource": 51,
+  "hp": 640,
+  "score": 5,
+  "dy": -23,
+  "handle": "$0233",
+  "groundRelative": true,
+  "groundOffset": -23,
+  "terrainLocked": true
+ },
+ "$0bf8e": {
+  "uses": 2,
+  "resource": 28,
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$0bfdc",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0bfec",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$0a4d6": {
+  "uses": 2,
+  "resource": 48,
+  "heading": 128,
+  "hp": 160,
+  "dy": 48,
+  "handle": "$0030",
+  "counter": 1,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "wait": 35
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "wait": 50
+   },
+   {
+    "wait": 30
+   },
+   {
+    "set": "speed",
+    "v": 256
+   },
+   {
+    "applyHeading": 1
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 35
+   },
+   {
+    "step": "$07d98",
+    "frames": 50
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "speed": 512
+ },
+ "$0bc94": {
+  "uses": 2,
+  "dy": -37,
+  "groundRelative": true,
+  "groundOffset": -37,
+  "counter": 2,
+  "script_incomplete": [
+   {
+    "wait": 50
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   }
+  ]
+ },
+ "$0bcba": {
+  "uses": 2,
+  "resource": 25,
+  "hp": 64,
+  "score": 2,
+  "dy": -37,
+  "handle": "$0419",
+  "groundRelative": true,
+  "groundOffset": -37,
+  "script_incomplete": [
+   {
+    "wait": 50
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 50
+   }
+  ]
+ },
+ "$0b776": {
+  "uses": 2,
+  "resource": 47,
+  "y": 112,
+  "hp": 3200,
+  "score": 20,
+  "handle": "$002f",
+  "xOffset": 32,
+  "terrainLocked": true
+ },
+ "$0c14a": {
+  "uses": 2,
+  "y": 20,
+  "xOffset": -80,
+  "vy": 3,
+  "vx": -6,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 45
+   },
+   {
+    "wait": 45
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   }
+  ],
+  "ax": 0.01562,
+  "ay": -0.00781
+ },
+ "$0bf58": {
+  "uses": 2,
+  "resource": 28,
+  "resources": [
+   28,
+   28
+  ],
+  "spawnsChildren": 4,
+  "children": [
+   {
+    "routine": "$0bffc",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0c014",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$0c17a": {
+  "uses": 2,
+  "resource": 27,
+  "y": 50,
+  "handle": "$001b",
+  "vx": -3,
+  "vy": 1,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 45
+   },
+   {
+    "wait": 45
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   }
+  ],
+  "ax": 0.01562,
+  "ay": -0.00781
+ },
+ "$0d3d2": {
+  "uses": 2,
+  "y": 56,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": 1.5
+ },
+ "$0d3da": {
+  "uses": 2,
+  "y": 128,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": 1.5
+ },
+ "$0d3e2": {
+  "uses": 2,
+  "y": 40,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": 1.5
+ },
+ "$0d252": {
+  "uses": 2,
+  "y": 30,
+  "handle": "$0026",
+  "handle_from": "$7cb8 (branch-following)",
+  "spawnsChildren": 1,
+  "vy": 0.5
+ },
+ "$0beaa": {
+  "uses": 2,
+  "resource": 28,
+  "resources": [
+   28,
+   28
+  ],
+  "spawnsChildren": 4,
+  "children": [
+   {
+    "routine": "$0bffc",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$0f19e": {
+  "uses": 2,
+  "dy": -16,
+  "groundRelative": true,
+  "groundOffset": -25,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$0f1f4",
+    "dx": 0,
+    "dy": -9
+   },
+   {
+    "routine": "$0ee6a",
+    "dx": 0,
+    "dy": -25
+   }
+  ]
+ },
+ "$0f1ae": {
+  "uses": 2,
+  "dy": -16,
+  "groundRelative": true,
+  "groundOffset": -25,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$0f1f4",
+    "dx": 0,
+    "dy": -9
+   },
+   {
+    "routine": "$0ee6a",
+    "dx": 0,
+    "dy": -25
+   }
+  ]
+ },
+ "$0eee2": {
+  "uses": 2,
+  "spawnsChildren": 3,
+  "children": [
+   {
+    "routine": "$0ef2a",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "$04d9c": {
+  "uses": 2,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04e4c"
+ },
+ "$0f0d2": {
+  "uses": 2,
+  "resource": 59,
+  "dy": -16,
+  "handle": "$003b",
+  "groundRelative": true,
+  "groundOffset": -16,
+  "xOffset": 16,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0f14e",
+    "dx": 16,
+    "dy": -16
+   }
+  ],
+  "terrainLocked": true
+ },
+ "$091f6": {
+  "uses": 1,
+  "dy": -33,
+  "resource": 55,
+  "groundRelative": true,
+  "groundOffset": -12,
+  "handle": "$1037",
+  "handle_from": "$7cb8 (branch-following)",
+  "behaviour": "$09f8e",
+  "xOffset": 48,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$09f8e",
+    "dx": 0,
+    "dy": 0,
+    "via": "$92"
+   }
+  ],
+  "terrainLocked": true
+ },
+ "$09e80": {
+  "uses": 1,
+  "resource": 13,
+  "y": 124,
+  "stream": {
+   "routine": "$09ebc",
+   "count": 11,
+   "interval": 25
+  }
+ },
+ "$099b4": {
+  "uses": 1,
+  "resource": 11,
+  "hp": 384,
+  "score": 3,
+  "dy": -20,
+  "handle": "$040b",
+  "groundRelative": true,
+  "groundOffset": -20,
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 150
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 150
+   }
+  ]
+ },
+ "$08296": {
+  "uses": 1
+ },
+ "$04e14": {
+  "uses": 1,
+  "y": 140,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04eb6"
+ },
+ "$09482": {
+  "uses": 1,
+  "hp": 8000,
+  "score": 0,
+  "speed": 256,
+  "dy": -11,
+  "handles_uncorroborated": [
+   "$0442",
+   "$8004",
+   "$0642",
+   "$0842"
+  ],
+  "xOffset": -82
+ },
+ "$0ad08": {
+  "uses": 1,
+  "resource": 18,
+  "stream": {
+   "routine": "$0ad42",
+   "count": 5,
+   "interval": 40
+  }
+ },
+ "$0b01a": {
+  "uses": 1,
+  "resource": 23,
+  "resources": [
+   23,
+   22
+  ],
+  "hp": 960,
+  "score": 0,
+  "depth": 800,
+  "handles_rejected": [
+   "$0017",
+   "$0442",
+   "$8004",
+   "$0642"
+  ],
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 6,
+  "children": [
+   {
+    "routine": "$0b112",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0b19a",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0b22e",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0b22e",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0b19a",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0b112",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "vx": -2.0,
+  "vy": -1.0
+ },
+ "$0bd26": {
+  "uses": 1,
+  "dy": 13,
+  "counter": 2,
+  "script_incomplete": [
+   {
+    "wait": 74
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 74
+   }
+  ]
+ },
+ "$0b5e0": {
+  "uses": 1,
+  "resource": 51,
+  "hp": 640,
+  "score": 5,
+  "dy": -23,
+  "handle": "$0033",
+  "groundRelative": true,
+  "groundOffset": -23,
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 100
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 100
+   }
+  ]
+ },
+ "$0b9ee": {
+  "uses": 1,
+  "resource": 41,
+  "resources": [
+   41,
+   24
+  ],
+  "y": -4,
+  "counter": 8,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0baa2",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "terrainLocked": true,
+  "script_incomplete": [
+   {
+    "wait": 25
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 25
+   }
+  ]
+ },
+ "$0c15e": {
+  "uses": 1,
+  "y": 20,
+  "vx": -6,
+  "vy": 1,
+  "script_incomplete": [
+   {
+    "wait": 30
+   },
+   {
+    "wait": 20
+   },
+   {
+    "wait": 45
+   },
+   {
+    "wait": 45
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 30
+   },
+   {
+    "step": "$07d98",
+    "frames": 20
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   },
+   {
+    "step": "$07d98",
+    "frames": 45
+   }
+  ],
+  "ax": 0.01562,
+  "ay": -0.00781
+ },
+ "$0c42c": {
+  "uses": 1,
+  "resource": 46,
+  "speed": 2176,
+  "heading": 128,
+  "resources": [
+   46,
+   46
+  ],
+  "stream": {
+   "routine": "$0c452",
+   "count": 26,
+   "interval": 10
+  }
+ },
+ "$0c27e": {
+  "uses": 1,
+  "spawnsChildren": 1
+ },
+ "$0b76e": {
+  "uses": 1,
+  "resource": 47,
+  "y": 100,
+  "hp": 3200,
+  "score": 20,
+  "handle": "$002f",
+  "xOffset": 32,
+  "terrainLocked": true
+ },
+ "$0c4e6": {
+  "uses": 1,
+  "resource": 30,
+  "hp": 8000,
+  "score": 0,
+  "handles_rejected": [
+   "$0442",
+   "$8004",
+   "$0642",
+   "$0842"
+  ],
+  "resources": [
+   30,
+   31
+  ],
+  "handle_rejected_acquire": "$061e",
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 4,
+  "children": [
+   {
+    "routine": "$0cbc4",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0cbe6",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0ca9c",
+    "dx": 0,
+    "dy": 0
+   },
+   {
+    "routine": "$0caaa",
+    "dx": 0,
+    "dy": 0
+   }
+  ],
+  "vx": 3.0,
+  "ay": -0.00781
+ },
+ "$0d46e": {
+  "uses": 1,
+  "hp": 32752,
+  "score": 2,
+  "dy": -32,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vy": 1.0,
+  "vx": 1.0
+ },
+ "$0d4bc": {
+  "uses": 1,
+  "hp": 32752,
+  "score": 2,
+  "dy": -32,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vy": 1.0,
+  "vx": -1.0
+ },
+ "$0d506": {
+  "uses": 1,
+  "hp": 32752,
+  "score": 2,
+  "dy": -32,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vy": 1.0
+ },
+ "$0d54e": {
+  "uses": 1,
+  "hp": 32752,
+  "score": 2,
+  "dy": 32,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "groundRelative": true,
+  "groundOffset": 32,
+  "vy": -1.0
+ },
+ "$0bbae": {
+  "uses": 1,
+  "resource": 34,
+  "stream": {
+   "routine": "$0bbd4",
+   "count": 5,
+   "interval": 12
+  }
+ },
+ "$0d35c": {
+  "uses": 1,
+  "y": 48,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": 1.5,
+  "vy": 1.5
+ },
+ "$0d380": {
+  "uses": 1,
+  "y": 48,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": -1.5,
+  "vy": 1.5
+ },
+ "$0d3a4": {
+  "uses": 1,
+  "y": 136,
+  "handles_uncorroborated": [
+   "$0020",
+   "$0220"
+  ],
+  "vx": -1.5,
+  "vy": -1.5
+ },
+ "$04d68": {
+  "uses": 1,
+  "y": 44,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04dca"
+ },
+ "$04e26": {
+  "uses": 1,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04eb6"
+ },
+ "$0d166": {
+  "uses": 1,
+  "resource": 33,
+  "y": 52,
+  "heading": 128,
+  "speed": 512,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "wait": 15
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$0d210",
+    "frames": 100
+   },
+   {
+    "step": "$0d210",
+    "frames": 60
+   },
+   {
+    "step": "$07d98",
+    "frames": 15
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "turnRate": 2,
+  "turnFlips": 2
+ },
+ "$0d180": {
+  "uses": 1,
+  "resource": 33,
+  "heading": 128,
+  "speed": 512,
+  "script_incomplete": [
+   {
+    "set": "speed",
+    "v": 512
+   },
+   {
+    "wait": 15
+   },
+   {
+    "wait": 30
+   },
+   {
+    "run": "default"
+   },
+   {
+    "end": 1
+   }
+  ],
+  "phases": [
+   {
+    "step": "$0d210",
+    "frames": 100
+   },
+   {
+    "step": "$0d210",
+    "frames": 60
+   },
+   {
+    "step": "$07d98",
+    "frames": 15
+   },
+   {
+    "step": "$07d98",
+    "frames": 30
+   }
+  ],
+  "turnRate": 2,
+  "turnFlips": 2
+ },
+ "$0d6d4": {
+  "uses": 1,
+  "resource": 35,
+  "handles_rejected": [
+   "$0442",
+   "$8004",
+   "$0642",
+   "$0842"
+  ],
+  "collides": true,
+  "hitHandler": "$07d06",
+  "vx": -1,
+  "vy": 1
+ },
+ "$0f1a6": {
+  "uses": 1,
+  "dy": -16,
+  "groundRelative": true,
+  "groundOffset": -25,
+  "collides": true,
+  "hitHandler": "$07d06",
+  "spawnsChildren": 2,
+  "children": [
+   {
+    "routine": "$0f1f4",
+    "dx": 0,
+    "dy": -9
+   },
+   {
+    "routine": "$0ee6a",
+    "dx": 0,
+    "dy": -25
+   }
+  ]
+ },
+ "$04ed0": {
+  "uses": 1,
+  "y": 44,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04f96"
+ },
+ "$04f20": {
+  "uses": 1,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04fcc"
+ },
+ "$04ed8": {
+  "uses": 1,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04f96"
+ },
+ "$04f68": {
+  "uses": 1,
+  "y": 92,
+  "handles_uncorroborated": [
+   "$1e03"
+  ],
+  "collides": true,
+  "hitHandler": "$04fcc",
+  "spawnsChildren": 1
+ },
+ "$0dd2e": {
+  "uses": 1,
+  "resource": 23,
+  "y": 92,
+  "handle": "$0017",
+  "spawnsChildren": 1,
+  "children": [
+   {
+    "routine": "$0de66",
+    "dx": 0,
+    "dy": 0
+   }
+  ]
+ },
+ "__note": {
+  "script_incomplete": "Action timelines extracted from handler bodies. NOT wired into the engine: validated against $0d172 and found to capture only the trailing waits, missing the timed-phase structure ($d1fc runs a per-frame step $d210 for N frames, with $92 as a movement delta). Kept as a starting point, not as fact."
+ }
+}

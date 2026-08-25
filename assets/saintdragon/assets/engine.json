@@ -1,0 +1,610 @@
+{
+ "object_fields": {
+  "x": "$0e",
+  "y": "$12",
+  "vx": "$16",
+  "vy": "$1a",
+  "speed": "$26",
+  "heading": "$28",
+  "score_value": "$2a",
+  "score_award": "$2e",
+  "hp": "$36",
+  "state": "$3a",
+  "hit_flash": "$66",
+  "generation": "$7a",
+  "script": "$94"
+ },
+ "globals": {
+  "generation": "$e6",
+  "enemy_count": "$f0",
+  "player": "$13e",
+  "score": "$166"
+ },
+ "primitives": {
+  "$7d5c": "wait n+1 frames (abort if dead)",
+  "$7d70": "wait n+1 frames",
+  "$7d98": "yield one frame",
+  "$74ee": "liveness test",
+  "$7570": "turn toward player",
+  "$75ae": "heading += d0 then recompute velocity",
+  "$75b2": "recompute velocity",
+  "$7a20": "sin/cos",
+  "$80fe": "spawn child routine",
+  "$7d1a": "apply damage",
+  "$7d46": "death",
+  "$7ec6": "terminate coroutine"
+ },
+ "behaviours": {
+  "$04e78": [
+   {
+    "routine": "$04e78",
+    "params": []
+   }
+  ],
+  "$05010": [
+   {
+    "routine": "$05010",
+    "params": []
+   }
+  ],
+  "$05cdc": [
+   {
+    "routine": "$05cdc",
+    "params": []
+   }
+  ],
+  "$05d5c": [
+   {
+    "routine": "$05d5c",
+    "params": []
+   }
+  ],
+  "$05e7c": [
+   {
+    "routine": "$05e7c",
+    "params": []
+   }
+  ],
+  "$05fae": [
+   {
+    "routine": "$05fae",
+    "params": []
+   }
+  ],
+  "$0606a": [
+   {
+    "routine": "$0606a",
+    "params": []
+   }
+  ],
+  "$061b0": [
+   {
+    "routine": "$061b0",
+    "params": []
+   }
+  ],
+  "$06268": [
+   {
+    "routine": "$06268",
+    "params": []
+   }
+  ],
+  "$062f2": [
+   {
+    "routine": "$062f2",
+    "params": []
+   }
+  ],
+  "$0633a": [
+   {
+    "routine": "$0633a",
+    "params": []
+   }
+  ],
+  "$063c8": [
+   {
+    "routine": "$0635c",
+    "params": [
+     "$8c,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$06364",
+    "params": [
+     "$88,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$0636c",
+    "params": [
+     "$84,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$06374",
+    "params": [
+     "$fff4,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$0637c",
+    "params": [
+     "$fff8,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$06384",
+    "params": [
+     "$fffc,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$06394",
+    "params": [
+     "$a0,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$0639c",
+    "params": [
+     "$b0,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$063a4",
+    "params": [
+     "$c0,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$063ac",
+    "params": [
+     "$d0,$28(a5)"
+    ]
+   },
+   {
+    "routine": "$063b4",
+    "params": [
+     "$e0,$28(a5)"
+    ]
+   }
+  ],
+  "$063bc": [
+   {
+    "routine": "$063bc",
+    "params": []
+   }
+  ],
+  "$0644c": [
+   {
+    "routine": "$0644c",
+    "params": []
+   }
+  ],
+  "$0649c": [
+   {
+    "routine": "$0649c",
+    "params": []
+   }
+  ],
+  "$06518": [
+   {
+    "routine": "$06518",
+    "params": []
+   }
+  ],
+  "$06564": [
+   {
+    "routine": "$06564",
+    "params": []
+   }
+  ],
+  "$06570": [
+   {
+    "routine": "$06570",
+    "params": []
+   }
+  ],
+  "$06574": [
+   {
+    "routine": "$06574",
+    "params": []
+   }
+  ],
+  "$065c6": [
+   {
+    "routine": "$065c6",
+    "params": []
+   }
+  ],
+  "$06600": [
+   {
+    "routine": "$06600",
+    "params": []
+   }
+  ],
+  "$0664a": [
+   {
+    "routine": "$0664a",
+    "params": []
+   }
+  ],
+  "$066a4": [
+   {
+    "routine": "$066a4",
+    "params": []
+   }
+  ],
+  "$0672e": [
+   {
+    "routine": "$0672e",
+    "params": []
+   }
+  ],
+  "$08382": [
+   {
+    "routine": "$08382",
+    "params": []
+   }
+  ],
+  "$08788": [
+   {
+    "routine": "$08788",
+    "params": [
+     "$2b2,$2a(a5)"
+    ]
+   }
+  ],
+  "$087c6": [
+   {
+    "routine": "$087c6",
+    "params": [
+     "$6,$96(a5)"
+    ]
+   }
+  ],
+  "$088e6": [
+   {
+    "routine": "$088e6",
+    "params": []
+   }
+  ],
+  "$088ec": [
+   {
+    "routine": "$088ec",
+    "params": []
+   }
+  ],
+  "$08918": [
+   {
+    "routine": "$08918",
+    "params": []
+   }
+  ],
+  "$08946": [
+   {
+    "routine": "$08946",
+    "params": []
+   }
+  ],
+  "$08976": [
+   {
+    "routine": "$08976",
+    "params": []
+   }
+  ],
+  "$089a0": [
+   {
+    "routine": "$089a0",
+    "params": []
+   }
+  ],
+  "$08bb6": [
+   {
+    "routine": "$08bb6",
+    "params": []
+   }
+  ],
+  "$08fea": [
+   {
+    "routine": "$08fea",
+    "params": []
+   }
+  ],
+  "$09082": [
+   {
+    "routine": "$09082",
+    "params": []
+   }
+  ],
+  "$09c3a": [
+   {
+    "routine": "$09c3a",
+    "params": []
+   }
+  ],
+  "$09cb8": [
+   {
+    "routine": "$09cb8",
+    "params": []
+   }
+  ],
+  "$09d2a": [
+   {
+    "routine": "$09d2a",
+    "params": []
+   }
+  ],
+  "$09f34": [
+   {
+    "routine": "$09f34",
+    "params": []
+   }
+  ],
+  "$0a0f2": [
+   {
+    "routine": "$0a0dc",
+    "params": [
+     "$184,$92(a5)"
+    ]
+   },
+   {
+    "routine": "$0a0e4",
+    "params": [
+     "$84,$92(a5)"
+    ]
+   }
+  ],
+  "$0a0ec": [
+   {
+    "routine": "$0a0ec",
+    "params": [
+     "$284,$92(a5)"
+    ]
+   }
+  ],
+  "$0a70a": [
+   {
+    "routine": "$0a70a",
+    "params": []
+   }
+  ],
+  "$0a866": [
+   {
+    "routine": "$0a866",
+    "params": []
+   }
+  ],
+  "$0ab58": [
+   {
+    "routine": "$0ab58",
+    "params": []
+   }
+  ],
+  "$0b112": [
+   {
+    "routine": "$0b112",
+    "params": []
+   }
+  ],
+  "$0b19a": [
+   {
+    "routine": "$0b19a",
+    "params": []
+   }
+  ],
+  "$0b22e": [
+   {
+    "routine": "$0b22e",
+    "params": []
+   }
+  ],
+  "$0b2c6": [
+   {
+    "routine": "$0b2c6",
+    "params": []
+   }
+  ],
+  "$0b3b6": [
+   {
+    "routine": "$0b3b6",
+    "params": []
+   }
+  ],
+  "$0baa2": [
+   {
+    "routine": "$0baa2",
+    "params": []
+   }
+  ],
+  "$0c2fa": [
+   {
+    "routine": "$0c2fa",
+    "params": []
+   }
+  ],
+  "$0c2fe": [
+   {
+    "routine": "$0c2fe",
+    "params": []
+   }
+  ],
+  "$0c7c2": [
+   {
+    "routine": "$0c7c2",
+    "params": []
+   }
+  ],
+  "$0c854": [
+   {
+    "routine": "$0c854",
+    "params": []
+   }
+  ],
+  "$0c8ce": [
+   {
+    "routine": "$0c8ce",
+    "params": []
+   }
+  ],
+  "$0cabc": [
+   {
+    "routine": "$0ca9c",
+    "params": [
+     "$e2,$12(a5)",
+     "$ffff,$92(a5)"
+    ]
+   }
+  ],
+  "$0caaa": [
+   {
+    "routine": "$0caaa",
+    "params": [
+     "$152,$12(a5)",
+     "$2,$38(a5)",
+     "$1,$92(a5)"
+    ]
+   }
+  ],
+  "$0cbc4": [
+   {
+    "routine": "$0cbc4",
+    "params": []
+   }
+  ],
+  "$0cbe6": [
+   {
+    "routine": "$0cbe6",
+    "params": []
+   }
+  ],
+  "$0cc7c": [
+   {
+    "routine": "$0cc7c",
+    "params": []
+   }
+  ],
+  "$0ce08": [
+   {
+    "routine": "$0ce08",
+    "params": []
+   }
+  ],
+  "$0ce86": [
+   {
+    "routine": "$0ce86",
+    "params": []
+   }
+  ],
+  "$0cf28": [
+   {
+    "routine": "$0cf28",
+    "params": []
+   }
+  ],
+  "$0cf32": [
+   {
+    "routine": "$0cf32",
+    "params": []
+   }
+  ],
+  "$0cf3c": [
+   {
+    "routine": "$0cf3c",
+    "params": []
+   }
+  ],
+  "$0cf7c": [
+   {
+    "routine": "$0cf7c",
+    "params": []
+   }
+  ],
+  "$0cfa2": [
+   {
+    "routine": "$0cfa2",
+    "params": []
+   }
+  ],
+  "$0d108": [
+   {
+    "routine": "$0d0fa",
+    "params": [
+     "$1d0,$92(a5)"
+    ]
+   }
+  ],
+  "$0d102": [
+   {
+    "routine": "$0d102",
+    "params": [
+     "$d0,$92(a5)"
+    ]
+   }
+  ],
+  "$0d120": [
+   {
+    "routine": "$0d112",
+    "params": [
+     "$150,$92(a5)"
+    ]
+   }
+  ],
+  "$0d11a": [
+   {
+    "routine": "$0d11a",
+    "params": [
+     "$50,$92(a5)"
+    ]
+   }
+  ],
+  "$0da26": [
+   {
+    "routine": "$0da26",
+    "params": []
+   }
+  ],
+  "$0dc60": [
+   {
+    "routine": "$0dc60",
+    "params": []
+   }
+  ],
+  "$0de66": [
+   {
+    "routine": "$0de66",
+    "params": []
+   }
+  ],
+  "$0ee14": [
+   {
+    "routine": "$0ee14",
+    "params": []
+   }
+  ],
+  "$0ee6a": [
+   {
+    "routine": "$0ee6a",
+    "params": []
+   }
+  ],
+  "$0ef2a": [
+   {
+    "routine": "$0ef2a",
+    "params": []
+   }
+  ],
+  "$0f14e": [
+   {
+    "routine": "$0f14e",
+    "params": []
+   }
+  ],
+  "$0f1f4": [
+   {
+    "routine": "$0f1f4",
+    "params": []
+   }
+  ]
+ }
+}

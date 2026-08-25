@@ -1,0 +1,1640 @@
+{
+ "__source": "$0dd2e boss, segment step table $def2",
+ "boss": {
+  "x": 168,
+  "y": 92,
+  "hp": 12800,
+  "score": 80,
+  "resource": 23,
+  "inner": 29,
+  "segments": 12,
+  "freezes": true,
+  "cycle": [
+   52,
+   26,
+   52
+  ],
+  "attackWait": 150,
+  "activeFrames": 80
+ },
+ "segment": {
+  "hp": 3200,
+  "score": 5,
+  "flags": 8,
+  "handle": 535
+ },
+ "steps": {
+  "0": {
+   "addr": "$0dfb8",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 14.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 128
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 142.0,
+     "y": 40.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 90.0,
+     "y": 40.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 92
+    },
+    {
+     "op": "flyTo",
+     "x": 142,
+     "y": 92
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "1": {
+   "addr": "$0e0dc",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 40.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 0
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 142.0,
+     "y": 66.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 116.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 92
+    },
+    {
+     "op": "flyTo",
+     "x": 116,
+     "y": 92
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "2": {
+   "addr": "$0e200",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 66.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 384
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 142.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 90.0,
+     "y": 144.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 92
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "3": {
+   "addr": "$0e318",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 118.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 384
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 194.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 246.0,
+     "y": 40.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 92
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "4": {
+   "addr": "$0e430",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 144.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 0
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 194.0,
+     "y": 118.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 220.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 92
+    },
+    {
+     "op": "flyTo",
+     "x": 220,
+     "y": 92
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "5": {
+   "addr": "$0e554",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 170.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 128
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 194.0,
+     "y": 144.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 246.0,
+     "y": 144.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 92
+    },
+    {
+     "op": "flyTo",
+     "x": 194,
+     "y": 92
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "6": {
+   "addr": "$0e678",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 90.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 128
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 116.0,
+     "y": 118.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 116.0,
+     "y": 170.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 118
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "7": {
+   "addr": "$0e79c",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 116.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 0
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 142.0,
+     "y": 118.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 144.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 144
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "8": {
+   "addr": "$0e8c0",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 142.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 384
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 118.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 220.0,
+     "y": 170.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 170
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "9": {
+   "addr": "$0e9d8",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 194.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 384
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 66.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 116.0,
+     "y": 14.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 14
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "10": {
+   "addr": "$0eaf0",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 220.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 0,
+     "speed": 0
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 194.0,
+     "y": 66.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 168.0,
+     "y": 40.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 40
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  },
+  "11": {
+   "addr": "$0ec14",
+   "ops": [
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 246.0,
+     "y": 92.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 64,
+     "speed": 128
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 220.0,
+     "y": 66.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 128,
+     "speed": 256
+    },
+    {
+     "op": "go",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "go2",
+     "heading": 192,
+     "speed": 256
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "moveTo",
+     "x": 220.0,
+     "y": 14.0
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "go",
+     "heading": 128,
+     "speed": 128
+    },
+    {
+     "op": "halt"
+    },
+    {
+     "op": "speed",
+     "value": 96
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 246,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 170
+    },
+    {
+     "op": "flyTo",
+     "x": 90,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 14
+    },
+    {
+     "op": "flyTo",
+     "x": 168,
+     "y": 66
+    },
+    {
+     "op": "cue"
+    },
+    {
+     "op": "return"
+    }
+   ]
+  }
+ }
+}

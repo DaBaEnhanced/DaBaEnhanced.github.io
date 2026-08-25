@@ -1,0 +1,279 @@
+{
+ "$062f2": {
+  "heading": 118,
+  "depth": 20032,
+  "speed": 512
+ },
+ "$0633a": {
+  "heading": 208,
+  "depth": 20032,
+  "speed": 512
+ },
+ "$09082": {
+  "resource": 55,
+  "groundRelative": true,
+  "groundOffset": -16,
+  "depth": 400,
+  "handle": "$1237",
+  "phases": [
+   {
+    "step": "$07d98",
+    "frames": 40
+   }
+  ],
+  "terrainLocked": true
+ },
+ "$09f34": {
+  "resource": 8,
+  "hp": 32,
+  "score": 2,
+  "vx": -1,
+  "ay": -0.01562
+ },
+ "$0a866": {
+  "resource": 2,
+  "hp": 320,
+  "score": 5,
+  "collides": true,
+  "heading": 64,
+  "speed": 512
+ },
+ "$0ab58": {
+  "resource": 17,
+  "hp": 480,
+  "score": 5,
+  "collides": true,
+  "speed": 512
+ },
+ "$0b112": {
+  "collides": true,
+  "resource": 22,
+  "depth": 797,
+  "vy": 1.0
+ },
+ "$0b19a": {
+  "collides": true,
+  "resource": 22,
+  "depth": 797,
+  "vy": 1.0
+ },
+ "$0b22e": {
+  "collides": true,
+  "resource": 22,
+  "depth": 796,
+  "vy": 1.0
+ },
+ "$0baa2": {
+  "resource": 24,
+  "vy": 2,
+  "ax": 0.00391,
+  "ay": -0.04248
+ },
+ "$0bfdc": {
+  "y": 20,
+  "resource": 28,
+  "hp": 480,
+  "score": 5,
+  "depth": 200,
+  "vx": -1,
+  "vy": 0.5625
+ },
+ "$0bfec": {
+  "y": 164,
+  "resource": 28,
+  "hp": 480,
+  "score": 5,
+  "depth": 200,
+  "vx": -1,
+  "vy": -0.5625
+ },
+ "$0bffc": {
+  "y": 20,
+  "resource": 28,
+  "hp": 480,
+  "score": 5,
+  "depth": 200,
+  "vx": -1
+ },
+ "$0c004": {
+  "y": 68,
+  "resource": 28,
+  "hp": 480,
+  "score": 5,
+  "depth": 200,
+  "vx": -1
+ },
+ "$0c00c": {
+  "y": 116,
+  "resource": 28,
+  "hp": 480,
+  "score": 5,
+  "depth": 200,
+  "vx": -1
+ },
+ "$0c014": {
+  "y": 164,
+  "resource": 28,
+  "hp": 480,
+  "score": 5,
+  "depth": 200,
+  "vx": -1
+ },
+ "$0ca9c": {
+  "y": 226,
+  "collides": true
+ },
+ "$0caaa": {
+  "y": 338,
+  "collides": true
+ },
+ "$0cbc4": {
+  "groundRelative": true,
+  "groundOffset": 96,
+  "resource": 31,
+  "vy": -1
+ },
+ "$0cbe6": {
+  "groundRelative": true,
+  "groundOffset": 144,
+  "resource": 31,
+  "vy": -1
+ },
+ "$0de66": {
+  "resource": 23,
+  "hp": 3200,
+  "score": 5
+ },
+ "$0ee14": {
+  "resource": 58,
+  "collides": true,
+  "ay": 0.02344,
+  "terrainLocked": true
+ },
+ "$0ee6a": {
+  "resource": 56,
+  "hp": 128,
+  "score": 4,
+  "vy": -0.5,
+  "ax": -0.01562,
+  "terrainLocked": true
+ },
+ "$0ef2a": {
+  "resource": 57,
+  "hp": 16,
+  "score": 0,
+  "depth": 600,
+  "terrainLocked": true
+ },
+ "$0f14e": {
+  "resource": 59,
+  "collides": true,
+  "terrainLocked": true
+ },
+ "$0f1f4": {
+  "resource": 59,
+  "collides": true,
+  "terrainLocked": true
+ },
+ "$08000": {},
+ "$099a4": {
+  "resource": 11,
+  "hp": 384,
+  "score": 3,
+  "terrainLocked": true
+ },
+ "$09f8e": {
+  "resource": 7,
+  "hp": 64,
+  "score": 3,
+  "terrainLocked": true
+ },
+ "$09fa2": {
+  "resource": 7,
+  "hp": 64,
+  "score": 3,
+  "terrainLocked": true
+ },
+ "$09ca4": {
+  "resource": 12,
+  "vx": -1.5
+ },
+ "$09ebc": {
+  "resource": 13,
+  "vx": -2.0
+ },
+ "$0a1e8": {
+  "resource": 21,
+  "terrainLocked": true,
+  "ay": -0.01172
+ },
+ "$0a1ec": {
+  "resource": 21,
+  "terrainLocked": true,
+  "ay": -0.01172
+ },
+ "$0a27e": {
+  "resource": 21,
+  "terrainLocked": true,
+  "vy": 2,
+  "ay": -0.01367
+ },
+ "$0a782": {
+  "resource": 19,
+  "hp": 64,
+  "score": 3,
+  "vy": 3.875,
+  "randomised": true,
+  "ay": -0.0625
+ },
+ "$0a7ac": {
+  "groundRelative": true,
+  "groundOffset": 16,
+  "resource": 19,
+  "hp": 64,
+  "score": 3,
+  "ay": 0.0625
+ },
+ "$0ad42": {
+  "y": 92,
+  "resource": 18,
+  "handle": "$0012",
+  "hp": 160,
+  "score": 4,
+  "vx": -0.875,
+  "ax": 0.00098
+ },
+ "$0af16": {
+  "resource": 20,
+  "vx": -2.0,
+  "vy": -0.5
+ },
+ "$0b832": {
+  "resource": 52,
+  "hp": 400,
+  "score": 4,
+  "terrainLocked": true
+ },
+ "$0bbd4": {
+  "resource": 34,
+  "vx": -4.5,
+  "randomised": true,
+  "vy": 1.0,
+  "ax": 0.0312,
+  "ay": -0.0098
+ },
+ "$0bbd8": {
+  "resource": 34,
+  "vx": -4.5,
+  "randomised": true,
+  "vy": 1.0,
+  "ax": 0.0312,
+  "ay": -0.0098
+ },
+ "$0c452": {
+  "resource": 46,
+  "speed": 2176,
+  "heading": 128,
+  "y": 22
+ }
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Saint Dragon graphics</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; padding:1.6rem 2rem 3rem; background:#0e0e14; color:#d6dae6;
+         font:15px/1.55 ui-sans-serif, system-ui, sans-serif; }
+  h1 { font-size:1.15rem; margin:0 0 .3rem; }
+  p.sub { margin:0 0 1.4rem; color:#8b93a7; font-size:.9rem; max-width:62ch; }
+  h2 { font-size:.8rem; text-transform:uppercase; letter-spacing:.08em;
+       color:#6f7789; margin:1.8rem 0 .6rem; font-weight:600; }
+  .row { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; margin-bottom:.9rem; }
+  button { background:#1b2030; color:#d6dae6; border:1px solid #2c3446; border-radius:6px;
+           padding:.4rem .8rem; font:inherit; cursor:pointer; }
+  button:hover { background:#232a3d; }
+  button[aria-pressed=true] { background:#2c4a78; border-color:#3f6fae; color:#fff; }
+  canvas { image-rendering:pixelated; display:block; border:1px solid #232a3d;
+           border-radius:4px; background:#000; max-width:100%; }
+  #stage { width:100%; height:auto; }
+  .meta { color:#7f8798; font-size:.85rem; margin:.5rem 0 0; }
+  .pal { display:flex; gap:2px; margin:.4rem 0 0; }
+  .pal i { width:18px; height:18px; border-radius:2px; display:block; }
+  #sprites { margin-top:.4rem; }
+  label { color:#8b93a7; font-size:.85rem; }
+</style>
+
+<h1>Saint Dragon &mdash; graphics</h1>
+<p class="sub">Everything below is decoded from the disk resources: sprite objects with
+their per-object transparency key, and each stage's backdrop and foreground
+parallax strip in its own palette. The two layers scroll at the rates measured
+from the copper &mdash; 1 and 2 pixels per frame &mdash; wrapping at 1568 px.</p>
+
+<h2>Stages</h2>
+<div class="row" id="stagebtns"></div>
+<canvas id="stage" width="368" height="200"></canvas>
+<p class="meta" id="stagemeta">Loading&hellip;</p>
+<div class="pal" id="pal"></div>
+
+<h2>Sprites</h2>
+<div class="row">
+  <label>zoom <input type="range" id="zoom" min="1" max="4" value="2"></label>
+  <span class="meta" id="sprmeta"></span>
+</div>
+<canvas id="sprites"></canvas>
+
+<script>
+const $ = id => document.getElementById(id);
+let gfx = null, cur = 1, bg = {}, fg = {}, t = 0;
+
+function loadImg(src) {
+  return new Promise(res => { const i = new Image(); i.onload = () => res(i); i.src = src; });
+}
+
+(async () => {
+  gfx = await fetch('assets/gfx.json').then(r => r.json());
+  for (const s of gfx.stages) {
+    bg[s.stage] = await loadImg(`assets/stage${s.stage}_bg.png`);
+    fg[s.stage] = await loadImg(`assets/stage${s.stage}_fg.png`);
+    const b = document.createElement('button');
+    b.textContent = 'stage ' + s.stage;
+    b.onclick = () => { cur = s.stage; sync(); };
+    b.id = 'sb' + s.stage;
+    $('stagebtns').appendChild(b);
+  }
+  const sheet = await loadImg('assets/sprites.png');
+  const c = $('sprites'), z = () => +$('zoom').value;
+  const drawSheet = () => {
+    c.width = sheet.width * z(); c.height = sheet.height * z();
+    const x = c.getContext('2d');
+    x.imageSmoothingEnabled = false;
+    x.clearRect(0, 0, c.width, c.height);
+    x.drawImage(sheet, 0, 0, c.width, c.height);
+  };
+  $('zoom').oninput = drawSheet;
+  drawSheet();
+  $('sprmeta').textContent =
+    `${gfx.sprites.count} objects · sheet ${sheet.width}x${sheet.height} · ` +
+    `transparency key varies per object`;
+  sync();
+  requestAnimationFrame(tick);
+})();
+
+function sync() {
+  const s = gfx.stages.find(x => x.stage === cur);
+  for (const o of gfx.stages)
+    $('sb' + o.stage).setAttribute('aria-pressed', o.stage === cur);
+  $('stagemeta').textContent =
+    `backdrop res ${s.backdrop_res} (${s.backdrop.slices} slices of ` +
+    `${s.backdrop.slice_w}x${s.backdrop.h}) · strip res ${s.strip_res} ` +
+    `(${s.strip.slices} of ${s.strip.slice_w}x${s.strip.h}) · palette ${s.palette_addr}`;
+  $('pal').innerHTML = '';
+  for (const h of s.palette) {
+    const i = document.createElement('i');
+    const r = parseInt(h[0], 16) * 17, g = parseInt(h[1], 16) * 17, b2 = parseInt(h[2], 16) * 17;
+    i.style.background = `rgb(${r},${g},${b2})`;
+    i.title = '$' + h;
+    $('pal').appendChild(i);
+  }
+}
+
+// The layers are tiled from their slice strips and scrolled at the rates the
+// copper actually used: the backdrop 1px per frame, the foreground strip 2px.
+function tick() {
+  t += 1;
+  const cv = $('stage'), x = cv.getContext('2d');
+  const B = bg[cur], F = fg[cur];
+  if (!B) { requestAnimationFrame(tick); return; }
+  cv.height = 220;
+  x.imageSmoothingEnabled = false;
+  x.clearRect(0, 0, cv.width, cv.height);
+  const band = (img, speed, dy) => {
+    const off = Math.floor(t * speed) % img.width;
+    for (let sx = -off; sx < cv.width; sx += img.width)
+      x.drawImage(img, sx, dy);
+  };
+  // The ground strip sits at the bottom of the display (copper lines 244-264)
+  // with the backdrop directly above it; the sky above that is black.
+  const fgY = cv.height - F.height;
+  band(B, 1, fgY - B.height);
+  band(F, 2, fgY);
+  requestAnimationFrame(tick);
+}
+</script>

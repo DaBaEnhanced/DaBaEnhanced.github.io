@@ -1,0 +1,252 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saint Dragon</title>
+<style>
+  :root { color-scheme: dark; --ink:#f0ead8; --gold:#d5a94f; --red:#b83338; --panel:#111317; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; overflow:hidden; background:#090a0d;
+         color:var(--ink); font-family:"Courier New", monospace; }
+  main { min-height:100vh; display:grid; grid-template-rows:auto 1fr; }
+  .bar { min-height:44px; padding:6px 12px; display:flex; align-items:center; gap:8px;
+         background:var(--panel); border-bottom:1px solid #343840; }
+  .brand { margin-right:auto; color:var(--gold); font-weight:700; letter-spacing:0; }
+  button, .toggle { min-height:30px; border:1px solid #555b65; border-radius:4px; background:#20242a;
+                    color:var(--ink); font:700 12px/1 "Courier New", monospace; }
+  button { padding:0 11px; cursor:pointer; }
+  button:hover { background:#30353d; border-color:#858c97; }
+  button:focus-visible, input:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  .toggle { padding:0 9px; display:inline-flex; align-items:center; gap:7px; cursor:pointer; }
+  .toggle input { accent-color:var(--gold); }
+  .screen { position:relative; min-height:0; display:grid; place-items:center; overflow:hidden;
+            background-color:#101217;
+            background-image:linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
+                             linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px);
+            background-size:24px 24px; }
+  .frame { position:relative; width:min(100%,calc((100vh - 44px) * 368 / 182)); aspect-ratio:368/182;
+           max-height:calc(100vh - 44px); background:#000; box-shadow:0 18px 70px #000; }
+  iframe { display:block; width:100%; height:100%; border:0; background:#000; }
+  .frame.crt iframe { filter:saturate(1.12) contrast(1.05) brightness(.96); }
+  .frame.crt::after { content:""; position:absolute; inset:0; z-index:4; pointer-events:none;
+                      background:repeating-linear-gradient(to bottom,transparent 0,transparent 2px,
+                                 rgba(0,0,0,.2) 2px,rgba(0,0,0,.2) 3px);
+                      box-shadow:inset 0 0 26px rgba(0,0,0,.72); }
+  .overlay { position:absolute; inset:0; z-index:6; display:grid; place-items:center;
+             background:rgba(3,4,6,.92); text-align:center; padding:22px; }
+  .overlay[hidden] { display:none; }
+  .panel { width:min(390px,90%); }
+  h1 { margin:0 0 10px; color:var(--gold); font-size:clamp(25px,6vw,46px); line-height:1; letter-spacing:0; }
+  .prompt { margin:0 0 20px; color:#bcc1c9; font-size:13px; }
+  .start { min-height:38px; padding:0 18px; border-color:var(--gold); color:#fff7dd; }
+  .scores h2 { margin:0 0 18px; color:var(--gold); font-size:24px; }
+  .score-row { display:grid; grid-template-columns:32px 1fr 90px; gap:12px; margin:7px auto;
+               width:min(300px,100%); text-align:left; color:#d9dde3; }
+  .score-row .points { text-align:right; color:#fff0bd; }
+  .you { color:#fff; background:var(--red); padding:2px 4px; }
+  .status { color:#9198a3; font-size:11px; white-space:nowrap; }
+  @media (max-width:620px) {
+    main { grid-template-rows:auto 1fr; }
+    .bar { min-height:48px; padding:6px 8px; gap:5px; }
+    .brand, .status { display:none; }
+    button, .toggle { min-height:34px; padding-left:8px; padding-right:8px; }
+    .frame { width:100%; max-height:calc(100vh - 48px); }
+  }
+</style>
+
+<main>
+  <header class="bar">
+    <span class="brand">SAINT DRAGON</span>
+    <span class="status" id="status">READY</span>
+    <button id="cheat" title="Enable invulnerability and upgrade weapons">CHEAT</button>
+    <button id="audio" title="Turn game audio off">AUDIO: ON</button>
+    <label class="toggle" title="Toggle scanlines and phosphor treatment"><input id="crt" type="checkbox" checked> CRT</label>
+  </header>
+  <section class="screen">
+    <div class="frame crt" id="frame">
+      <iframe id="game" title="Saint Dragon game" allow="autoplay"></iframe>
+      <div class="overlay" id="start-screen">
+        <div class="panel">
+          <h1>SAINT DRAGON</h1>
+          <p class="prompt">ONE PLAYER</p>
+          <button class="start" id="start">START GAME</button>
+        </div>
+      </div>
+      <div class="overlay scores" id="scores" hidden>
+        <div class="panel">
+          <h2>HIGH SCORES</h2>
+          <div id="score-list"></div>
+          <p class="prompt" id="score-prompt">400</p>
+          <button class="start" id="again">PLAY AGAIN</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="../audio/paula.js?v=7e3674838d"></script>
+<script>
+'use strict';
+const AUDIO_V = '76b090ea579c';
+const game = document.getElementById('game');
+const frame = document.getElementById('frame');
+const status = document.getElementById('status');
+const startScreen = document.getElementById('start-screen');
+const scoresScreen = document.getElementById('scores');
+let audioContext = null, audio = null, audioEnabled = true;
+let route = 'idle', routeStart = 0, stage = 1, score = 0, lives = 5;
+let boundWorld = null, scoreDeadline = 0, scoreRecorded = false;
+
+function routeUrl(mode, number) {
+  const params = new URLSearchParams({ full:'1' });
+  if (mode === 'stage') params.set('stage', String(number));
+  else params.set('mode', mode);
+  return `index.html?${params}`;
+}
+
+function loadRoute(next, number) {
+  route = next;
+  boundWorld = null;
+  if (number) stage = number;
+  status.textContent = next === 'stage' ? `STAGE ${stage}` : next.toUpperCase();
+  game.src = routeUrl(next, stage);
+}
+
+async function startAudio() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    audio = await SaintDragonAudio.load(audioContext, '../audio', AUDIO_V);
+    audio.musicVolume = .8;
+    audio.sfxVolume = .8;
+  }
+  if (audioEnabled) await audioContext.resume();
+}
+
+function bindWorld(world) {
+  boundWorld = world;
+  routeStart = world.frame;
+  world.onSound = (id, rate, volume) => {
+    if (audioEnabled && audio) audio.playSfx(id, rate, volume);
+  };
+  if (route === 'stage') {
+    world.score = score;
+    world.lives = lives;
+    world.onRespawn = () => {
+      const child = game.contentWindow;
+      if (typeof child.spawnPlayer === 'function') child.spawnPlayer();
+    };
+    game.contentWindow.document.getElementById('cv')?.focus();
+  }
+}
+
+function syncMusic(world) {
+  if (!audio || !audioEnabled) return;
+  if (route === 'scores') {
+    if (!audio.current) audio.playMusic('level');
+    return;
+  }
+  const wanted = route === 'stage' && !world.stageComplete
+    ? (world.bossSpawned && world.bossAlive ? 'boss' : 'level') : null;
+  if (wanted) audio.playMusic(wanted);
+  else if (audio.current) audio.stopMusic();
+}
+
+function tick() {
+  const world = game.contentWindow?.engineWorld;
+  if (!world) return;
+  if (world !== boundWorld) bindWorld(world);
+  syncMusic(world);
+  const elapsed = world.frame - routeStart;
+  if (route === 'intro' && elapsed >= 220) loadRoute('title');
+  else if (route === 'title' && elapsed >= 250) loadRoute('stage', 1);
+  else if (route === 'stage') {
+    score = world.score;
+    lives = world.lives;
+    if (world.gameOver) showScores();
+    else if (world.stageComplete) {
+      if (stage < 5) loadRoute('stage', stage + 1);
+      else loadRoute('outro');
+    }
+  } else if (route === 'outro' && elapsed >= 500) showScores();
+}
+
+function readScores() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('saint-dragon-high-scores'));
+    if (Array.isArray(saved)) return saved;
+  } catch (error) {}
+  return [
+    { name:'ACE', score:5000 }, { name:'STJ', score:3500 },
+    { name:'DRG', score:2000 }, { name:'JAL', score:1000 }, { name:'YOU', score:500 },
+  ];
+}
+
+function showScores() {
+  if (route === 'scores') return;
+  route = 'scores';
+  if (audioEnabled && audio && !audio.current) audio.playMusic('level');
+  let table = readScores();
+  if (!scoreRecorded && score > 0) {
+    table.push({ name:'YOU', score });
+    table.sort((a, b) => b.score - a.score);
+    table = table.slice(0, 5);
+    localStorage.setItem('saint-dragon-high-scores', JSON.stringify(table));
+    scoreRecorded = true;
+  }
+  document.getElementById('score-list').innerHTML = table.map((entry, index) =>
+    `<div class="score-row"><span>${index + 1}</span><span class="${entry.name === 'YOU' ? 'you' : ''}">${entry.name}</span><span class="points">${String(entry.score).padStart(6, '0')}</span></div>`
+  ).join('');
+  scoresScreen.hidden = false;
+  scoreDeadline = performance.now() + 8000;
+  status.textContent = 'HIGH SCORES';
+}
+
+function beginRun() {
+  score = 0; lives = 5; stage = 1; scoreRecorded = false;
+  scoresScreen.hidden = true;
+  startScreen.hidden = true;
+  loadRoute('intro');
+}
+
+document.getElementById('start').onclick = async () => {
+  await startAudio();
+  beginRun();
+};
+document.getElementById('again').onclick = beginRun;
+document.getElementById('audio').onclick = async event => {
+  audioEnabled = !audioEnabled;
+  event.currentTarget.textContent = audioEnabled ? 'AUDIO: ON' : 'AUDIO: OFF';
+  event.currentTarget.title = audioEnabled ? 'Turn game audio off' : 'Turn game audio on';
+  if (!audioEnabled) {
+    if (audio?.current) audio.stopMusic();
+    if (audioContext) await audioContext.suspend();
+  } else {
+    await startAudio();
+    if (boundWorld) syncMusic(boundWorld);
+  }
+};
+document.getElementById('cheat').onclick = () => {
+  const world = game.contentWindow?.engineWorld;
+  if (!world || route !== 'stage') return;
+  world.setGodMode(true);
+  world.pickupLevel = 4;
+  world.setWeapon(3, 2);
+  status.textContent = `STAGE ${stage} · CHEAT`;
+  game.contentWindow.document.getElementById('cv')?.focus();
+};
+document.getElementById('crt').onchange = event => frame.classList.toggle('crt', event.currentTarget.checked);
+game.addEventListener('load', () => { boundWorld = null; });
+for (const type of ['keydown', 'keyup']) {
+  addEventListener(type, event => {
+    const setGameKey = game.contentWindow?.setGameKey;
+    if (typeof setGameKey !== 'function' || !setGameKey(event.code, type === 'keydown')) return;
+    event.preventDefault();
+  });
+}
+setInterval(tick, 100);
+setInterval(() => {
+  if (route !== 'scores') return;
+  const frames = Math.max(0, Math.ceil((scoreDeadline - performance.now()) / 20));
+  document.getElementById('score-prompt').textContent = String(frames).padStart(3, '0');
+  if (!frames) document.getElementById('score-prompt').textContent = 'PRESS PLAY AGAIN';
+}, 100);
+</script>

@@ -1,0 +1,873 @@
+{
+ "format": {
+  "byte0": "frame count",
+  "byte1": "signed angle, 256 = 360 deg",
+  "0x7e": "action: fire ($66fc)",
+  "0x7f": "action: spawn ($cf28)",
+  ">=0x80": "end / jump to default script $a9ac"
+ },
+ "scripts": {
+  "$0a9ac": {
+   "addr": "$0a9ac",
+   "bytes": 95,
+   "steps": [
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "fire"
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "spawn"
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 1,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 1,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 1,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 2,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -4,
+     "deg": -5.6
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 4,
+     "deg": 5.6
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -4,
+     "deg": -5.6
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 4,
+     "deg": 5.6
+    },
+    {
+     "op": "move",
+     "frames": 2,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 1,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 1,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 1,
+     "angle": 8,
+     "deg": 11.2
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 120,
+     "angle": 0,
+     "deg": 0.0
+    },
+    {
+     "op": "move",
+     "frames": 120,
+     "angle": 0,
+     "deg": 0.0
+    },
+    {
+     "op": "end",
+     "byte": 255
+    }
+   ]
+  },
+  "$0ac32": {
+   "addr": "$0ac32",
+   "bytes": 165,
+   "steps": [
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 0,
+     "deg": 0.0
+    },
+    {
+     "op": "move",
+     "frames": 4,
+     "angle": -20,
+     "deg": -28.1
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 6,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 8,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -24,
+     "deg": -33.8
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -20,
+     "deg": -28.1
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": -16,
+     "deg": -22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "move",
+     "frames": 10,
+     "angle": 16,
+     "deg": 22.5
+    },
+    {
+     "op": "end",
+     "byte": 255
+    }
+   ]
+  },
+  "$0db04": {
+   "addr": "$0db04",
+   "bytes": 3,
+   "steps": [
+    {
+     "op": "move",
+     "frames": 59,
+     "angle": 124,
+     "deg": 174.4
+    },
+    {
+     "op": "end",
+     "byte": 255
+    }
+   ]
+  },
+  "$0db0c": {
+   "addr": "$0db0c",
+   "bytes": 15,
+   "steps": [
+    {
+     "op": "move",
+     "frames": 32,
+     "angle": 110,
+     "deg": 154.7
+    },
+    {
+     "op": "move",
+     "frames": 1,
+     "angle": 62,
+     "deg": 87.2
+    },
+    {
+     "op": "move",
+     "frames": 12,
+     "angle": 104,
+     "deg": 146.2
+    },
+    {
+     "op": "move",
+     "frames": 0,
+     "angle": 124,
+     "deg": 174.4
+    },
+    {
+     "op": "move",
+     "frames": 0,
+     "angle": 18,
+     "deg": 25.3
+    },
+    {
+     "op": "move",
+     "frames": 100,
+     "angle": 10,
+     "deg": 14.1
+    },
+    {
+     "op": "move",
+     "frames": 97,
+     "angle": 0,
+     "deg": 0.0
+    },
+    {
+     "op": "end",
+     "byte": 171
+    }
+   ]
+  }
+ }
+}

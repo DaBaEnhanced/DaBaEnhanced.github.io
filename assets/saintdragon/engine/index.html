@@ -1,0 +1,524 @@
+<!doctype html>
+<meta charset="utf-8">
+<!-- python -m http.server sends no cache headers, so the browser will happily
+     serve a stale index.html -- which then loads the stale script URLs it
+     contains, defeating the per-file versioning entirely. -->
+<meta http-equiv="Cache-Control" content="no-store">
+<title>Saint Dragon engine test</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; padding:1.6rem 2rem 3rem; background:#0e0e14; color:#d6dae6;
+         font:15px/1.55 ui-sans-serif, system-ui, sans-serif; }
+  h1 { font-size:1.15rem; margin:0 0 .3rem; }
+  p.sub { margin:0 0 1.2rem; color:#8b93a7; font-size:.9rem; max-width:64ch; }
+  canvas { image-rendering:pixelated; border:1px solid #232a3d; border-radius:4px;
+           background:#000; width:736px; height:364px; }
+  .row { display:flex; gap:.5rem; align-items:center; margin-bottom:.8rem; flex-wrap:wrap; }
+  button { background:#1b2030; color:#d6dae6; border:1px solid #2c3446; border-radius:6px;
+           padding:.4rem .8rem; font:inherit; cursor:pointer; }
+  button:hover { background:#232a3d; }
+  button:disabled { cursor:not-allowed; opacity:.45; }
+  .toggle { display:inline-flex; gap:.4rem; align-items:center; color:#b7becc; cursor:pointer; }
+  .toggle input { accent-color:#70a7ff; }
+  .meta { color:#7f8798; font-size:.85rem; }
+  code { color:#9ec8ff; }
+  html.full body { padding:0; min-height:100vh; display:grid; place-items:center; overflow:hidden; }
+  html.full h1, html.full .sub, html.full .row { display:none; }
+  html.full canvas { border:0; border-radius:0; width:min(100vw, calc(100vh * 368 / 182));
+                     height:auto; max-height:100vh; }
+</style>
+<script>
+  if (new URLSearchParams(location.search).get('full') === '1')
+    document.documentElement.classList.add('full');
+</script>
+
+<h1>Saint Dragon &mdash; engine test</h1>
+<p class="sub">Original presentation sequences and the five stage wave scripts,
+driven from the decoded 68000 routines and extracted sprite resources.</p>
+
+<div class="row">
+  <button id="intro">Intro</button><button id="title-screen">Title</button>
+  <span class="meta">stage</span>
+  <button id="st1">1</button><button id="st2">2</button><button id="st3">3</button><button id="st4">4</button><button id="st5">5</button>
+  <button id="dragon">Dragon</button><button id="outro">Outro</button>
+  <button id="pause">Pause</button>
+  <button id="sound">Sound: off</button>
+  <button id="ctrl">Take control</button>
+  <label class="toggle"><input id="god" type="checkbox" disabled>God mode</label>
+  <button id="weapon" disabled>Weapon +</button>
+  <button id="weapon-type" disabled>Weapon type</button>
+  <span class="meta" id="meta">loading…</span>
+</div>
+<canvas id="cv" width="368" height="182"></canvas>
+
+<script src="engine.js?v=292b7673bc"></script>
+<script src="behaviours.js?v=e924a1ba3f"></script>
+<script src="../audio/paula.js?v=7e3674838d"></script>
+<script>
+// One cache-busting version for every asset, so a stale file can never be
+// mixed with a fresh one (python -m http.server sends no cache headers).
+const ASSET_V = 'f2899bac2618';
+const AUDIO_V = '76b090ea579c';
+const V = u => u + '?v=' + ASSET_V;
+// copper: backdrop band 162 lines, ground strip 21 -> playfield 182
+// BACKDROP_BAND used to live here as a fixed 162, which is stage 1's ground
+// line and nothing else's. The strip heights are 20, 24, 24, 16, 16 and the
+// ground lines are 162, 158, 158, 166, 166 -- and every stage sums to exactly
+// 182. The strip runs from the ground line to the bottom of the playfield, so
+// its top edge is the ground, per stage, not a constant. On the three enclosed
+// stages the ceiling equals the strip height for the same reason, mirrored.
+// (A GROUND_STRIP = 21 constant also used to live here. It was never read and
+// matched no stage.)
+const PLAYFIELD_H = 182;
+const $ = id => document.getElementById(id);
+// ?paused=1 starts frozen at the level's opening frame, so the demo can be
+// inspected (or measured) deterministically. Without it the timer runs ahead
+// between page load and any script that looks at the world, which made several
+// measurements during development report the wrong scroll position entirely.
+const PARAMS = new URLSearchParams(location.search);
+const FULL_GAME = PARAMS.get('full') === '1';
+const START_PAUSED = PARAMS.get('paused') === '1';
+const PRESENTATION_MODES = new Set(['intro', 'title', 'dragon', 'outro']);
+const MODE = PRESENTATION_MODES.has(PARAMS.get('mode')) ? PARAMS.get('mode') : 'stage';
+const STAGE = String(Math.min(5, Math.max(1, +(PARAMS.get('stage') || 1))));
+// ?scroll=1 halves the pace. SCROLL_RATE = 2 has never been traced to an
+// instruction, so this is here to settle it by eye: stage 1's last trigger is
+// 6610, which at rate 2 makes the stage 66 seconds long and at rate 1, 132.
+const SCROLL_OVERRIDE = PARAMS.get('scroll') ? +PARAMS.get('scroll') : undefined;
+let world, sheet, bg, fg, fringe, fringeCeil, running = !START_PAUSED, t = 0;
+let audio = null, audioContext = null, audioLoading = null, audioEnabled = false;
+let rafPending = false;        // guards the single render chain, see schedule()
+// $4e40: every projectile in the game. Painted after everything else.
+const BULLET_ADDRS = new Set(['$06268', '$0649c', '$06600', '$063c8']);
+const flashCanvas = document.createElement('canvas');
+const flashContext = flashCanvas.getContext('2d');
+
+const loadImg = src => new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = src; });
+
+(async () => {
+  const gfx = await fetch(V('../assets/gfx.json')).then(r => r.json());
+  const paletteMode = ['intro', 'title', 'outro'].includes(MODE) ? `_${MODE}` : '';
+  sheet = await loadImg(V(`../assets/sprites${paletteMode}.png`));
+  const sceneryStage = MODE === 'stage' ? STAGE : (MODE === 'dragon' ? '5' : null);
+  bg = sceneryStage ? await loadImg(V('../assets/stage' + sceneryStage + '_bg.png')) : null;
+  fg = sceneryStage ? await loadImg(V('../assets/stage' + sceneryStage + '_fg.png')) : null;
+  const waves = await fetch(V('../assets/waves.json')).then(r => r.json());
+  world = new World(gfx);
+  window.engineWorld = world;
+  world.onSound = (id, rate, volume) => {
+    if (audioEnabled && audio) audio.playSfx(id, rate, volume);
+  };
+  const gameplay = MODE === 'stage';
+  $('ctrl').disabled = !gameplay;
+  $('god').disabled = !gameplay;
+  $('weapon').disabled = !gameplay;
+  $('weapon-type').disabled = !gameplay;
+  const wh = await fetch(V('../assets/wave_handlers.json')).then(r => r.json());
+  const hf = await fetch(V('../assets/handler_fields.json')).then(r => r.json());
+  const comp = await fetch(V('../assets/composites.json')).then(r => r.json());
+  const anchors = await fetch(V('../assets/anchors.json')).then(r => r.json());
+  world.childRoutines = await fetch(V('../assets/child_routines.json')).then(r => r.json());
+  world.composites = comp;
+  world.waveHandlers = buildWaveHandlers(hf, wh, comp, anchors);
+  installProjectiles(world);   // $687e / $6774 / $62dc
+  installDeathExplosion(world);   // $08746: two res 5 blasts, staggered
+  const ground = await fetch(V('../assets/ground.json')).then(r => r.json());
+  if (SCROLL_OVERRIDE !== undefined) world.scrollRate = SCROLL_OVERRIDE;
+  const levels = await fetch(V('../assets/levels.json')).then(r => r.json());
+  if (sceneryStage) {
+    world.setGround(ground[sceneryStage]);
+    world.setCeiling(levels[sceneryStage].ceiling);
+    world.shotCeiling = !!levels[sceneryStage].shotCeiling;
+    world.shotGround = !!levels[sceneryStage].shotGround;
+  } else {
+    world.ground = PLAYFIELD_H;
+    world.ceiling = 0;
+    world.shotCeiling = world.shotGround = false;
+  }
+  // $0dd2e's twelve segment dances, extracted by tools/export_boss.py
+  world.boss5 = await fetch(V('../assets/boss5.json')).then(r => r.json());
+  // The ragged overhang past the strip's band edge (res 64 on stage 2, res 44
+  // on stage 4). Only the 256-wide ones can be placed from the data alone.
+  fringe = null;
+  const fr = sceneryStage && gfx.fringes && gfx.fringes[sceneryStage];
+  if (fr && fr.chains.length && fr.chains[0].w === 256) {
+    fringe = await loadImg(V('../assets/' + fr.chains[0].file));
+    fringeCeil = fr.chains.length > 1
+      ? await loadImg(V('../assets/' + fr.chains[1].file)) : fringe;
+  }
+  if (MODE === 'stage') {
+    world.loadWaves(waves, STAGE);
+
+    // The demo autopilot ($05996) and the real player ($0525e) are two different
+    // objects, and $11c is what the game itself uses to choose between them.
+    // playerStub flies a canned route; playerObject reads world.input.
+    spawnPlayer();
+    if (FULL_GAME) world.onRespawn = () => spawnPlayer();
+    $('meta').textContent = `stage ${STAGE} · ${world.waveRecords.length} records`;
+  } else if (MODE === 'intro') {
+    installIntroPresentation(world);
+  } else if (MODE === 'title') {
+    installTitlePresentation(world);
+  } else if (MODE === 'dragon') {
+    world.stage = '5';
+    world.postBossStarted = true;
+    world.spawn(stage5DragonExit, {});
+  } else if (MODE === 'outro') {
+    installOutroPresentation(world);
+  }
+  // The original runs at a fixed 50 Hz (PAL vblank), so drive the simulation on
+  // a fixed timestep rather than from the render loop.
+  if (START_PAUSED) $('pause').textContent = 'Resume';
+  setInterval(tick, 20);
+  schedule();
+})();
+
+function tick() {
+  if (!running) return;
+  // $96(a5) is read at the top of the player's loop, so the input has to be in
+  // place BEFORE the step. It used to be assigned in loop(), the render
+  // function, which tied input to the drawing cadence rather than the
+  // simulation's.
+  if (manual) world.input = held;
+  if (world.scrollRate !== 0) t++;
+  world.step();
+  syncMusic();
+}
+
+function wantedMusic() {
+  if (MODE !== 'stage' || !world || world.stageComplete) return null;
+  return world.bossSpawned && world.bossAlive ? 'boss' : 'level';
+}
+
+function syncMusic() {
+  if (!audioEnabled || !audio) return;
+  const wanted = wantedMusic();
+  if (wanted) audio.playMusic(wanted);
+  else if (audio.current) audio.stopMusic();
+}
+
+async function enableAudio() {
+  audioEnabled = true;
+  $('sound').disabled = true;
+  $('sound').textContent = 'Sound: loading';
+  try {
+    if (!audioLoading) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      await audioContext.resume();
+      audioLoading = SaintDragonAudio.load(audioContext, '../audio', AUDIO_V);
+    }
+    audio = await audioLoading;
+    audio.musicVolume = 0.8;
+    audio.sfxVolume = 0.8;
+    if (!audioEnabled) {
+      await audioContext.suspend();
+      return;
+    }
+    await audioContext.resume();
+    $('sound').textContent = 'Sound: on';
+    syncMusic();
+  } catch (error) {
+    console.error(error);
+    audioEnabled = false;
+    audioLoading = null;
+    $('sound').textContent = 'Sound: error';
+  } finally {
+    $('sound').disabled = false;
+  }
+}
+
+$('sound').onclick = async () => {
+  if (!audioEnabled) {
+    await enableAudio();
+  } else {
+    audioEnabled = false;
+    if (audio) audio.stopMusic();
+    if (audioContext) await audioContext.suspend();
+    $('sound').textContent = 'Sound: off';
+  }
+};
+
+for (let n = 1; n <= 5; n++)
+  $('st' + n).onclick = () => { location.search = '?stage=' + n; };
+$('intro').onclick = () => { location.search = '?mode=intro'; };
+$('title-screen').onclick = () => { location.search = '?mode=title'; };
+$('dragon').onclick = () => { location.search = '?mode=dragon'; };
+$('outro').onclick = () => { location.search = '?mode=outro'; };
+$('pause').onclick = () => { running = !running; $('pause').textContent = running ? 'Pause' : 'Resume'; };
+$('god').onchange = () => {
+  if (world) world.setGodMode($('god').checked);
+  $('cv').focus();
+};
+$('weapon').onclick = () => {
+  if (world) world.increaseWeaponLevel();
+  $('cv').focus();
+};
+$('weapon-type').onclick = () => {
+  if (world) world.cycleWeaponType();
+  $('cv').focus();
+};
+
+// ---- player control -------------------------------------------------------
+// The bits are $96(a5)'s: the low nibble indexes the $57ee heading table and
+// $80 is fire. INPUT is defined in engine.js; these are the same values.
+let manual = FULL_GAME;
+const KEYS = {
+  ArrowUp: INPUT.UP, ArrowDown: INPUT.DOWN, ArrowLeft: INPUT.LEFT,
+  ArrowRight: INPUT.RIGHT, KeyW: INPUT.UP, KeyS: INPUT.DOWN,
+  KeyA: INPUT.LEFT, KeyD: INPUT.RIGHT, Space: INPUT.FIRE, KeyZ: INPUT.FIRE,
+  ControlLeft: INPUT.FIRE, ControlRight: INPUT.FIRE,
+};
+let held = 0;
+window.setGameKey = (code, pressed) => {
+  const bit = KEYS[code];
+  if (bit === undefined) return false;
+  held = pressed ? (held | bit) : (held & ~bit);
+  return true;
+};
+addEventListener('keydown', (e) => {
+  if (window.setGameKey(e.code, true)) e.preventDefault();
+});
+addEventListener('keyup', (e) => {
+  if (window.setGameKey(e.code, false)) e.preventDefault();
+});
+
+function spawnPlayer() {
+  if (!world) return;
+  for (const o of world.objects)
+    if (o.__playerTail) o.done = true;
+  world.playerDying = false;
+  world.input = 0;
+  world.player = manual
+    ? world.spawn(playerObject, {})                    // $0525e
+    : world.spawn(playerStub, { x: 150, y: 92 });      // the $05996 autopilot
+  // The dragon's body reads the head's trail ring ($5adc / $5ac8). Keeping it
+  // in this lifecycle is essential: $00f0a purges every old object before its
+  // respawn callback creates the successor.
+  for (let i = 1; i <= DRAGON_SEGMENTS; i++)
+    world.spawn((o, wd) => tailSegment(o, wd, -i * DRAGON_SPACING, DRAGON.body,
+                                       false, 0x4e26 - (DRAGON_SEGMENTS + 1 - i)),
+                { __playerTail: true, __deathDelay: TAIL_DEATH_DELAYS[5 - i] });
+  world.spawn((o, wd) => tailSegment(o, wd, -(DRAGON_SEGMENTS + 1) * DRAGON_SPACING,
+                                     DRAGON.tail['1,0'], true, 0x4e26),
+              { __playerTail: true, __deathDelay: TAIL_DEATH_DELAYS[0] });
+}
+
+$('ctrl').onclick = () => {
+  manual = !manual;
+  $('ctrl').textContent = manual ? 'Demo' : 'Take control';
+  if (world) {
+    if (world.player) world.player.done = true;
+    world.lives = 5; world.gameOver = false;
+    world.onRespawn = () => spawnPlayer();             // $00dd0, a life is spent
+    spawnPlayer();
+  }
+  $('cv').focus();
+};
+
+function loop() {
+  // The loop is started before the assets finish loading, so for the first few
+  // frames there is no world yet. Without this guard every one of those frames
+  // throws, which buries any real error in the console under the noise.
+  rafPending = false;
+  if (typeof world === 'undefined' || !world) { schedule(); return; }
+  const x = $('cv').getContext('2d');
+  x.imageSmoothingEnabled = false;
+  x.clearRect(0, 0, 368, PLAYFIELD_H);
+  // Preserve the copper's 2:1 parallax ratio: terrain follows the traced stage
+  // rate while the distant backdrop advances half as far.
+  const band = (img, speed, dy) => {
+    const off = Math.floor(t * speed) % img.width;
+    for (let sx = -off; sx < 368; sx += img.width) x.drawImage(img, sx, dy);
+  };
+  // The backdrop is the whole scene and it spans exactly the play area: its
+  // height equals ground - ceiling on every enclosed stage (134 = 158 - 24,
+  // 150 = 166 - 16), and the descriptor's word +7 carries that same figure.
+  // On stages 1 and 5 it does not reach the top, which is the black sky.
+  const groundY = world.ground !== undefined ? world.ground : 162;
+  if (bg) band(bg, GROUND_SCROLL / 2, groundY - bg.height);
+
+  // The strips are FOREGROUND: they are drawn after the sprites, below, so the
+  // dragon passes behind them, and colour 0 drops out of them.
+  const strips = () => {
+    if (!fg) return;
+    band(fg, GROUND_SCROLL, groundY);         // runs from the ground line down
+    // The strip is exactly as tall as its band, so the ragged edge that hangs
+    // past it into the backdrop is a separate resource. Stage 2's is 256 wide,
+    // the same as the strip, so it tiles with it and needs no placement guess.
+    if (fringe) band(fringe, GROUND_SCROLL, groundY - fringe.height);
+    // Stages 2, 3 and 4 have a roof as well as a floor, and it is the same
+    // strip mirrored. The descriptor ($22e2 + stage * $22) carries the ceiling
+    // at word +14, beside the ground at +16: 1, 24, 24, 16, 1 for stages 1..5,
+    // so stages 1 and 5 are open sky and the other three are enclosed.
+    if (world.ceiling > 1) {
+      x.save();
+      x.translate(0, world.ceiling);
+      x.scale(1, -1);                          // mirror about the ceiling line
+      band(fg, GROUND_SCROLL, 0);
+      // In this frame a draw at dy covers screen [c - dy - h, c - dy]. The
+      // strip uses dy = 0 and lands on [c - 24, c]; the overhang has to sit
+      // just PAST the band edge, on [c, c + h], which is dy = -h. Offsetting by
+      // the strip height as well put it a whole strip too low.
+      if (fringeCeil) band(fringeCeil, GROUND_SCROLL, -fringeCeil.height);
+      x.restore();
+    }
+  };
+
+  // $7e86 copies $2a into THE DRAW RECORD as the sort key, and every part of a
+  // composite is its own draw record with its own $2a. So parts do not travel
+  // together at their parent's depth -- they sort individually, against every
+  // other object on screen.
+  //
+  // The port used to sort whole objects and then paint each one's parts in list
+  // order, which collapsed a composite onto a single depth. $092b0, the ground
+  // launcher, is built by $09366 as eight parts at depth 498-500 while the mound
+  // it stands on ($09082) sits at 400 -- so the launcher sank behind its own
+  // mound and read as being inside it.
+  //
+  // $2a sorts DESCENDING: higher values draw further back. That is the ordering
+  // the artwork is built for -- the scenery layers correctly and enemies pass in
+  // front of the player, which is right, because only the player's HEAD is
+  // fatal and something crossing the tail is not a collision.
+  //
+  // Bullets are the exception. They carry $4e40, the highest depth in the game,
+  // which under this ordering buries them behind every enemy and every mound --
+  // they were being fired, and moving, and were simply never visible. They are
+  // lifted out and painted last so they read against whatever they are crossing.
+  const records = [];
+  for (const o of world.objects) {
+    if (o.noDraw) continue;         // a genuine hide; $50 is NOT one -- see engine.js
+    if (o.parts) {
+      for (const pt of o.parts) {
+        const it = world.byHandle.get(pt.handle);
+        if (!it) continue;
+        records.push({ o, it, bullet: false, dx: pt.dx, dy: pt.dy,
+                       depth: pt.depth !== undefined ? pt.depth : (o.depth || 0) });
+      }
+    } else if (o.sprite) {
+      const bullet = !!(o.__playerShot || BULLET_ADDRS.has(o.__addr));
+      // A chain is ONE object and shares one depth -- only composites carry a
+      // depth per piece.
+      //
+      // Objects that pick a frame by hand -- every projectile does, via
+      // shotFrame -- assign o.sprite and CLEAR o.handle, because the frame did
+      // not come from a chain. spriteChain(undefined) is an empty list, so
+      // those produced no draw records at all: the bullets were being fired,
+      // aimed, moved, sorted to the front and never drawn. Fall back to the
+      // sprite the object chose.
+      const chain = o.handle !== undefined ? world.spriteChain(o.handle) : [o.sprite];
+      for (const it of chain)
+        records.push({ o, it, dx: 0, dy: 0, depth: o.depth || 0, bullet });
+    }
+  }
+  records.sort((a, b) => {
+    if (a.bullet !== b.bullet) return a.bullet ? 1 : -1;   // bullets last
+    return b.depth - a.depth;                              // otherwise back to front
+  });
+
+  for (const r of records) {
+    const o = r.it ? r.o : null;
+    if (!o) continue;
+    // Anchor on the object's own hotspot (template bytes +4/+5), not the sprite
+    // centre. The whole dragon uses hx=7: on the 16px body that is near enough
+    // to centred, but the head is 32px wide, so centring put it 9px off.
+    //
+    // $38(a5) carries the two mirror bits: bit 1 flips vertically (which is how
+    // one routine serves both the floor and the ceiling bank) and bit 0 flips
+    // horizontally. Reflect about the object's own hotspot line, not the sprite
+    // box, so the anchor stays put under the flip.
+    const mirrored = o.flip || o.flipX;
+    if (mirrored) {
+      x.save();
+      x.translate(o.flipX ? o.drawX * 2 : 0, o.flip ? o.drawY * 2 : 0);
+      x.scale(o.flipX ? -1 : 1, o.flip ? -1 : 1);
+    }
+    const flashing = o.hitFlash > 0 && (o.hitFlash & 2);
+    if (flashing) {
+      flashCanvas.width = r.it.w;
+      flashCanvas.height = r.it.h;
+      flashContext.imageSmoothingEnabled = false;
+      flashContext.drawImage(sheet, r.it.x, r.it.y, r.it.w, r.it.h,
+                             0, 0, r.it.w, r.it.h);
+      flashContext.globalCompositeOperation = 'source-atop';
+      flashContext.fillStyle = '#fff';
+      flashContext.fillRect(0, 0, r.it.w, r.it.h);
+      flashContext.globalCompositeOperation = 'source-over';
+      x.drawImage(flashCanvas, 0, 0, r.it.w, r.it.h,
+                  o.drawX + r.dx - r.it.hx, o.drawY + r.dy - r.it.hy, r.it.w, r.it.h);
+    } else {
+      x.drawImage(sheet, r.it.x, r.it.y, r.it.w, r.it.h,
+                  o.drawX + r.dx - r.it.hx, o.drawY + r.dy - r.it.hy, r.it.w, r.it.h);
+    }
+    if (mirrored) x.restore();
+  }
+  strips();                     // foreground: sprites pass BEHIND the strips
+  if (MODE === 'stage' && (manual || FULL_GAME)) {
+    x.save();
+    x.fillStyle = '#050507';
+    x.fillRect(0, 0, 368, 12);
+    x.fillStyle = '#f3e7c8';
+    x.font = '8px monospace';
+    x.textBaseline = 'top';
+    x.fillText(`SCORE ${String(world.score).padStart(4, '0').slice(-4)}`, 48, 2);
+    x.textAlign = 'right';
+    x.fillText(`LIVES ${world.lives}`, 320, 2);
+    x.restore();
+  }
+  if (world.deathPresentation) {
+    x.save();
+    x.fillStyle = 'rgba(0,0,0,.78)';
+    x.fillRect(112, 68, 144, 46);
+    x.strokeStyle = '#d8c79b';
+    x.strokeRect(112.5, 68.5, 143, 45);
+    x.fillStyle = '#f3e7c8';
+    x.font = '10px monospace';
+    x.textAlign = 'center';
+    x.textBaseline = 'top';
+    x.fillText(world.deathPresentation.phase === 'card' ? 'PLAYER DOWN' : 'DRAGONS REMAIN', 184, 78);
+    x.font = '14px monospace';
+    x.fillText(String(world.deathPresentation.lives), 184, 94);
+    x.restore();
+  }
+  if (MODE === 'title') {
+    x.save();
+    x.fillStyle = '#ded0c0';
+    x.font = '8px monospace';
+    x.textAlign = 'center';
+    x.textBaseline = 'top';
+    x.fillText('The HTML/JS port by Clumsy.GiBa', 224, 150);
+    x.restore();
+  }
+  $('meta').textContent = MODE === 'stage'
+    ? `frame ${world.frame} · ${world.objects.length} objects` +
+      (manual ? ` · lives ${world.lives} · score ${world.score}` +
+                (world.gameOver ? ' · GAME OVER' : '')
+              : ' · demo') +
+      ` · spread ${world.pickupLevel || 0}` +
+      ` · secondary ${world.weaponLevel} / type ${world.weaponIndex}` +
+      (world.godMode ? ' · GOD' : '') +
+      (world.stageComplete ? ' · STAGE COMPLETE' : '')
+    : `${MODE} · frame ${world.frame} · ${world.objects.length} objects` +
+      (world.postBossDone ? ' · complete' : '');
+  schedule();
+}
+
+// ONE render chain, ever.
+//
+// This used to end with a bare requestAnimationFrame(loop) AND carry a
+// `setInterval(loop, 40)` alongside it, the second added so the picture would
+// keep refreshing while the tab is hidden. But every call the interval made also
+// scheduled a fresh rAF, and each of those scheduled another -- so a new
+// self-sustaining render chain was created 25 times a second and none of them
+// ever stopped. After a minute or so several thousand chains were each painting
+// the whole scene every frame, which is why stage 1 collapsed to about 1fps
+// somewhere around frame 2500 while the simulation itself was still costing
+// 0.05ms a step.
+//
+// The simulation runs on its own setInterval(tick, 20) and is unaffected by the
+// tab being hidden, so nothing is lost by letting the renderer idle there.
+function schedule() {
+  if (rafPending) return;
+  rafPending = true;
+  requestAnimationFrame(loop);
+}
+</script>

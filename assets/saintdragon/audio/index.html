@@ -1,0 +1,81 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Saint Dragon audio</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; padding: 2rem; background: #0e0e14; color: #d6dae6;
+         font: 15px/1.55 ui-sans-serif, system-ui, sans-serif; }
+  h1 { font-size: 1.15rem; margin: 0 0 .3rem; letter-spacing: .01em; }
+  p.sub { margin: 0 0 1.6rem; color: #8b93a7; font-size: .9rem; }
+  .row { display: flex; gap: .6rem; align-items: center; margin-bottom: 1rem;
+         flex-wrap: wrap; }
+  button { background: #1b2030; color: #d6dae6; border: 1px solid #2c3446;
+           border-radius: 6px; padding: .45rem .9rem; font: inherit;
+           cursor: pointer; }
+  button:hover:not(:disabled) { background: #232a3d; border-color: #3a4459; }
+  button:disabled { opacity: .45; cursor: default; }
+  .sfx button { padding: .3rem .55rem; font-variant-numeric: tabular-nums; }
+  label { color: #8b93a7; font-size: .85rem; }
+  input[type=range] { width: 130px; vertical-align: middle; }
+  #status { color: #7f8798; font-size: .85rem; min-height: 1.4em; }
+  h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em;
+       color: #6f7789; margin: 1.6rem 0 .5rem; font-weight: 600; }
+</style>
+
+<h1>Saint Dragon &mdash; audio</h1>
+<p class="sub">Music replayed from the original driver's own hardware register
+stream, in Paula's fixed stereo; sound effects from the disk resources. Both
+themes loop indefinitely, so a level or a boss fight can run as long as it
+takes. The game itself switches by stopping one and starting the other.</p>
+
+<div class="row">
+  <button id="load">Load audio</button>
+  <button id="level" disabled>Level theme</button>
+  <button id="boss" disabled>Boss theme</button>
+  <button id="stop" disabled>Stop</button>
+  <label>music <input type="range" id="mv" min="0" max="100" value="80"></label>
+  <label>sfx <input type="range" id="sv" min="0" max="100" value="80"></label>
+</div>
+<div id="status">Not loaded.</div>
+
+<h2>Sound effects</h2>
+<div class="row sfx" id="sfx"></div>
+
+<script src="paula.js"></script>
+<script>
+let audio = null;
+const $ = id => document.getElementById(id);
+
+$('load').onclick = async () => {
+  $('load').disabled = true;
+  $('status').textContent = 'Loading and rendering…';
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    await ctx.resume();
+    const t0 = performance.now();
+    audio = await SaintDragonAudio.load(ctx, '.');
+    const t = audio.trackNames
+      .map(n => `${n} ${audio.tracks.get(n).duration.toFixed(1)}s`).join(', ');
+    $('status').textContent =
+      `Ready — ${t}, stereo at ${ctx.sampleRate} Hz, ` +
+      `${audio.sfx.size} sound effects, rendered in ` +
+      `${Math.round(performance.now() - t0)} ms.`;
+    $('level').disabled = $('boss').disabled = $('stop').disabled = false;
+    for (const id of [...audio.sfx.keys()].sort((a, b) => a - b)) {
+      const b = document.createElement('button');
+      b.textContent = id;
+      b.onclick = () => audio.playSfx(id);
+      $('sfx').appendChild(b);
+    }
+  } catch (e) {
+    $('status').textContent = 'Failed: ' + e.message;
+    $('load').disabled = false;
+  }
+};
+
+$('level').onclick = () => audio && audio.playMusic('level');
+$('boss').onclick = () => audio && audio.playMusic('boss');
+$('stop').onclick = () => audio && audio.stopMusic();
+$('mv').oninput = e => { if (audio) audio.musicVolume = e.target.value / 100; };
+$('sv').oninput = e => { if (audio) audio.sfxVolume = e.target.value / 100; };
+</script>

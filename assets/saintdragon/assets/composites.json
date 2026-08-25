@@ -1,0 +1,71 @@
+{
+ "$092b0": {
+  "parts": [
+   {
+    "handle": 55,
+    "res": 55,
+    "index": 0,
+    "dx": 0,
+    "dy": 0,
+    "depth": 500
+   },
+   {
+    "handle": 567,
+    "res": 55,
+    "index": 1,
+    "dx": 0,
+    "dy": 0,
+    "depth": 500
+   },
+   {
+    "handle": 1079,
+    "res": 55,
+    "index": 2,
+    "dx": 0,
+    "dy": 0,
+    "depth": 500
+   },
+   {
+    "handle": 1591,
+    "res": 55,
+    "index": 3,
+    "dx": 0,
+    "dy": 0,
+    "depth": 500
+   },
+   {
+    "handle": 2103,
+    "res": 55,
+    "index": 4,
+    "dx": -40,
+    "dy": -62,
+    "depth": 498
+   },
+   {
+    "handle": 2615,
+    "res": 55,
+    "index": 5,
+    "dx": -14,
+    "dy": -61,
+    "depth": 498
+   },
+   {
+    "handle": 2615,
+    "res": 55,
+    "index": 5,
+    "dx": 18,
+    "dy": -61,
+    "depth": 498
+   },
+   {
+    "handle": 3127,
+    "res": 55,
+    "index": 6,
+    "dx": 49,
+    "dy": -61,
+    "depth": 498
+   }
+  ],
+  "note": "$9366, stage 1 hills and trees (res 55)"
+ }
+}

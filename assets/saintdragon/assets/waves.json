@@ -1,0 +1,3655 @@
+{
+ "0": {
+  "script": "$0f248",
+  "records": 0,
+  "span": "$0f248..$0f248",
+  "entries": []
+ },
+ "1": {
+  "script": "$0f24c",
+  "records": 70,
+  "span": "$0f24c..$0f3f0",
+  "entries": [
+   {
+    "at": "$0f24c",
+    "handler": "$0921a",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f252",
+    "handler": "$09e78",
+    "trigger": 130,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f258",
+    "handler": "$09e70",
+    "trigger": 260,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f25e",
+    "handler": "$0909a",
+    "trigger": 390,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f264",
+    "handler": "$04c62",
+    "trigger": 520,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f26a",
+    "handler": "$09e70",
+    "trigger": 650,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f270",
+    "handler": "$0909a",
+    "trigger": 780,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f276",
+    "handler": "$04bf2",
+    "trigger": 910,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f27c",
+    "handler": "$09fbe",
+    "trigger": 1040,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f282",
+    "handler": "$09e70",
+    "trigger": 1170,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f288",
+    "handler": "$091f6",
+    "trigger": 1300,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f28e",
+    "handler": "$09210",
+    "trigger": 1430,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f294",
+    "handler": "$092b0",
+    "trigger": 1560,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f29a",
+    "handler": "$04d00",
+    "trigger": 1560,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2a0",
+    "handler": "$09fbe",
+    "trigger": 1690,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2a6",
+    "handler": "$09fbe",
+    "trigger": 1820,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2ac",
+    "handler": "$083e2",
+    "trigger": 1950,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2b2",
+    "handler": "$092b0",
+    "trigger": 1950,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2b8",
+    "handler": "$09fbe",
+    "trigger": 1950,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2be",
+    "handler": "$090fc",
+    "trigger": 2150,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2c4",
+    "handler": "$09e78",
+    "trigger": 2280,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2ca",
+    "handler": "$09e80",
+    "trigger": 2330,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2d0",
+    "handler": "$04c62",
+    "trigger": 2460,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2d6",
+    "handler": "$090fc",
+    "trigger": 2590,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2dc",
+    "handler": "$0909a",
+    "trigger": 2720,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2e2",
+    "handler": "$09c48",
+    "trigger": 2720,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2e8",
+    "handler": "$04bf2",
+    "trigger": 2850,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2ee",
+    "handler": "$090fc",
+    "trigger": 2980,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2f4",
+    "handler": "$09e70",
+    "trigger": 3110,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f2fa",
+    "handler": "$09e78",
+    "trigger": 3160,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f300",
+    "handler": "$090fc",
+    "trigger": 3290,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f306",
+    "handler": "$09fbe",
+    "trigger": 3420,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f30c",
+    "handler": "$04cc4",
+    "trigger": 3550,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f312",
+    "handler": "$09a54",
+    "trigger": 3614,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f318",
+    "handler": "$0909a",
+    "trigger": 3678,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f31e",
+    "handler": "$09210",
+    "trigger": 3808,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f324",
+    "handler": "$09210",
+    "trigger": 3938,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f32a",
+    "handler": "$09e70",
+    "trigger": 3988,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f330",
+    "handler": "$09fbe",
+    "trigger": 4188,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f336",
+    "handler": "$09a54",
+    "trigger": 4252,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f33c",
+    "handler": "$09e78",
+    "trigger": 4382,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f342",
+    "handler": "$09fbe",
+    "trigger": 4682,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f348",
+    "handler": "$09fbe",
+    "trigger": 4746,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f34e",
+    "handler": "$099b4",
+    "trigger": 4778,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f354",
+    "handler": "$083e2",
+    "trigger": 4810,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f35a",
+    "handler": "$08296",
+    "trigger": 4810,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f360",
+    "handler": "$09c48",
+    "trigger": 4810,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f366",
+    "handler": "$09fbe",
+    "trigger": 4842,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f36c",
+    "handler": "$09a54",
+    "trigger": 4972,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f372",
+    "handler": "$050d0",
+    "trigger": 5004,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f378",
+    "handler": "$090fc",
+    "trigger": 5020,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f37e",
+    "handler": "$09fbe",
+    "trigger": 5036,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f384",
+    "handler": "$09fbe",
+    "trigger": 5100,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f38a",
+    "handler": "$092b0",
+    "trigger": 5132,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f390",
+    "handler": "$04bf2",
+    "trigger": 5164,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f396",
+    "handler": "$09a54",
+    "trigger": 5294,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f39c",
+    "handler": "$0909a",
+    "trigger": 5424,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3a2",
+    "handler": "$09a54",
+    "trigger": 5554,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3a8",
+    "handler": "$092b0",
+    "trigger": 5684,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3ae",
+    "handler": "$09e70",
+    "trigger": 5716,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3b4",
+    "handler": "$04c62",
+    "trigger": 5780,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3ba",
+    "handler": "$09210",
+    "trigger": 5876,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3c0",
+    "handler": "$09c48",
+    "trigger": 5892,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3c6",
+    "handler": "$04e14",
+    "trigger": 6012,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3cc",
+    "handler": "$0921a",
+    "trigger": 6052,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3d2",
+    "handler": "$04d46",
+    "trigger": 6116,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3d8",
+    "handler": "$0921a",
+    "trigger": 6180,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3de",
+    "handler": "$09e78",
+    "trigger": 6310,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3e4",
+    "handler": "$0829e",
+    "trigger": 6610,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3ea",
+    "handler": "$09482",
+    "trigger": 6610,
+    "param": "$2000"
+   }
+  ]
+ },
+ "2": {
+  "script": "$0f3f4",
+  "records": 89,
+  "span": "$0f3f4..$0f60a",
+  "entries": [
+   {
+    "at": "$0f3f4",
+    "handler": "$04fb0",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f3fa",
+    "handler": "$083f6",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f400",
+    "handler": "$0ae24",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f406",
+    "handler": "$0ab16",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f40c",
+    "handler": "$0ae24",
+    "trigger": 140,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f412",
+    "handler": "$0ae24",
+    "trigger": 230,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f418",
+    "handler": "$0ab16",
+    "trigger": 320,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f41e",
+    "handler": "$0ae24",
+    "trigger": 460,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f424",
+    "handler": "$0aeda",
+    "trigger": 540,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f42a",
+    "handler": "$0ae24",
+    "trigger": 680,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f430",
+    "handler": "$0ab16",
+    "trigger": 760,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f436",
+    "handler": "$0ae24",
+    "trigger": 900,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f43c",
+    "handler": "$0ae24",
+    "trigger": 980,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f442",
+    "handler": "$0aeda",
+    "trigger": 1060,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f448",
+    "handler": "$0ae24",
+    "trigger": 1200,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f44e",
+    "handler": "$04d00",
+    "trigger": 1280,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f454",
+    "handler": "$0ae24",
+    "trigger": 1312,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f45a",
+    "handler": "$0a75c",
+    "trigger": 1392,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f460",
+    "handler": "$0a4f4",
+    "trigger": 1400,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f466",
+    "handler": "$04c62",
+    "trigger": 1432,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f46c",
+    "handler": "$0af7c",
+    "trigger": 1440,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f472",
+    "handler": "$0af7c",
+    "trigger": 1520,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f478",
+    "handler": "$0af7c",
+    "trigger": 1600,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f47e",
+    "handler": "$083e2",
+    "trigger": 1680,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f484",
+    "handler": "$04bf2",
+    "trigger": 1680,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f48a",
+    "handler": "$0a4fa",
+    "trigger": 1712,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f490",
+    "handler": "$0a5c0",
+    "trigger": 1852,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f496",
+    "handler": "$050d0",
+    "trigger": 1952,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f49c",
+    "handler": "$0a5c0",
+    "trigger": 2084,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4a2",
+    "handler": "$0ad08",
+    "trigger": 2224,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4a8",
+    "handler": "$0af7c",
+    "trigger": 2364,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4ae",
+    "handler": "$0a4fa",
+    "trigger": 2464,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4b4",
+    "handler": "$04e0c",
+    "trigger": 2464,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4ba",
+    "handler": "$0af98",
+    "trigger": 2464,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4c0",
+    "handler": "$0af7c",
+    "trigger": 2544,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4c6",
+    "handler": "$0a736",
+    "trigger": 2624,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4cc",
+    "handler": "$0af98",
+    "trigger": 2624,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4d2",
+    "handler": "$0af98",
+    "trigger": 2704,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4d8",
+    "handler": "$0a736",
+    "trigger": 2784,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4de",
+    "handler": "$0af98",
+    "trigger": 2784,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4e4",
+    "handler": "$0a378",
+    "trigger": 2864,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4ea",
+    "handler": "$0af98",
+    "trigger": 2864,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4f0",
+    "handler": "$0aeda",
+    "trigger": 2964,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4f6",
+    "handler": "$0af98",
+    "trigger": 3104,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f4fc",
+    "handler": "$0af98",
+    "trigger": 3184,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f502",
+    "handler": "$0af98",
+    "trigger": 3264,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f508",
+    "handler": "$0af98",
+    "trigger": 3344,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f50e",
+    "handler": "$0a12a",
+    "trigger": 3424,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f514",
+    "handler": "$0af98",
+    "trigger": 3424,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f51a",
+    "handler": "$0a75c",
+    "trigger": 3504,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f520",
+    "handler": "$04c62",
+    "trigger": 3504,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f526",
+    "handler": "$0af98",
+    "trigger": 3504,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f52c",
+    "handler": "$0af7c",
+    "trigger": 3584,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f532",
+    "handler": "$0af98",
+    "trigger": 3664,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f538",
+    "handler": "$0af7c",
+    "trigger": 3744,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f53e",
+    "handler": "$0af98",
+    "trigger": 3824,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f544",
+    "handler": "$0af7c",
+    "trigger": 3904,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f54a",
+    "handler": "$0aeda",
+    "trigger": 3984,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f550",
+    "handler": "$0af98",
+    "trigger": 3984,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f556",
+    "handler": "$04cc4",
+    "trigger": 4064,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f55c",
+    "handler": "$0af7c",
+    "trigger": 4064,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f562",
+    "handler": "$0a4fa",
+    "trigger": 4144,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f568",
+    "handler": "$0a4fa",
+    "trigger": 4224,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f56e",
+    "handler": "$0a4f4",
+    "trigger": 4304,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f574",
+    "handler": "$0a176",
+    "trigger": 4384,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f57a",
+    "handler": "$0a736",
+    "trigger": 4384,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f580",
+    "handler": "$0af7c",
+    "trigger": 4524,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f586",
+    "handler": "$04d46",
+    "trigger": 4604,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f58c",
+    "handler": "$0af7c",
+    "trigger": 4604,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f592",
+    "handler": "$04bea",
+    "trigger": 4904,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f598",
+    "handler": "$0a75c",
+    "trigger": 4904,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f59e",
+    "handler": "$0a736",
+    "trigger": 5104,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5a4",
+    "handler": "$083e2",
+    "trigger": 5304,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5aa",
+    "handler": "$0a5c0",
+    "trigger": 5304,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5b0",
+    "handler": "$0a5c0",
+    "trigger": 5444,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5b6",
+    "handler": "$0a850",
+    "trigger": 5644,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5bc",
+    "handler": "$0a176",
+    "trigger": 5844,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5c2",
+    "handler": "$0a12a",
+    "trigger": 5984,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5c8",
+    "handler": "$0a378",
+    "trigger": 6034,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5ce",
+    "handler": "$0a5c0",
+    "trigger": 6174,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5d4",
+    "handler": "$04c62",
+    "trigger": 6314,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5da",
+    "handler": "$0a12a",
+    "trigger": 6454,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5e0",
+    "handler": "$0a75c",
+    "trigger": 6504,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5e6",
+    "handler": "$04d00",
+    "trigger": 6644,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5ec",
+    "handler": "$0a736",
+    "trigger": 6644,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5f2",
+    "handler": "$0a378",
+    "trigger": 6784,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5f8",
+    "handler": "$0a75c",
+    "trigger": 6784,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f5fe",
+    "handler": "$0829e",
+    "trigger": 7084,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f604",
+    "handler": "$0b01a",
+    "trigger": 7084,
+    "param": "$2000"
+   }
+  ]
+ },
+ "3": {
+  "script": "$0f60e",
+  "records": 137,
+  "span": "$0f60e..$0f944",
+  "entries": [
+   {
+    "at": "$0f60e",
+    "handler": "$04fb0",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f614",
+    "handler": "$083f6",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f61a",
+    "handler": "$0a1c2",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f620",
+    "handler": "$04bf2",
+    "trigger": 150,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f626",
+    "handler": "$0a4fa",
+    "trigger": 300,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f62c",
+    "handler": "$0bb3c",
+    "trigger": 450,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f632",
+    "handler": "$0a4f4",
+    "trigger": 600,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f638",
+    "handler": "$0a4fa",
+    "trigger": 750,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f63e",
+    "handler": "$0bb3c",
+    "trigger": 900,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f644",
+    "handler": "$0a4f4",
+    "trigger": 948,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f64a",
+    "handler": "$04cc4",
+    "trigger": 1098,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f650",
+    "handler": "$083e2",
+    "trigger": 1198,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f656",
+    "handler": "$0a4f4",
+    "trigger": 1198,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f65c",
+    "handler": "$0bd26",
+    "trigger": 1218,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f662",
+    "handler": "$0bd52",
+    "trigger": 1218,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f668",
+    "handler": "$0ba0a",
+    "trigger": 1368,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f66e",
+    "handler": "$0ba0a",
+    "trigger": 1432,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f674",
+    "handler": "$0a4f4",
+    "trigger": 1496,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f67a",
+    "handler": "$0a4fa",
+    "trigger": 1496,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f680",
+    "handler": "$0ba0a",
+    "trigger": 1646,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f686",
+    "handler": "$0ba0a",
+    "trigger": 1710,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f68c",
+    "handler": "$04bf2",
+    "trigger": 1860,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f692",
+    "handler": "$0b5e0",
+    "trigger": 2010,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f698",
+    "handler": "$0b846",
+    "trigger": 2160,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f69e",
+    "handler": "$0b846",
+    "trigger": 2310,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6a4",
+    "handler": "$0a4f4",
+    "trigger": 2460,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6aa",
+    "handler": "$0a4fa",
+    "trigger": 2460,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6b0",
+    "handler": "$04c62",
+    "trigger": 2610,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6b6",
+    "handler": "$0a4f4",
+    "trigger": 2610,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6bc",
+    "handler": "$0a4fa",
+    "trigger": 2610,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6c2",
+    "handler": "$0a1c2",
+    "trigger": 2760,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6c8",
+    "handler": "$0b58e",
+    "trigger": 2824,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6ce",
+    "handler": "$04cc4",
+    "trigger": 2974,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6d4",
+    "handler": "$0ba0a",
+    "trigger": 2974,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6da",
+    "handler": "$0ba0a",
+    "trigger": 3038,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6e0",
+    "handler": "$0ba0a",
+    "trigger": 3102,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6e6",
+    "handler": "$0a4f4",
+    "trigger": 3166,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6ec",
+    "handler": "$083e2",
+    "trigger": 3316,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6f2",
+    "handler": "$0c2fa",
+    "trigger": 3316,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6f8",
+    "handler": "$0c2fe",
+    "trigger": 3316,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f6fe",
+    "handler": "$0a4f4",
+    "trigger": 3466,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f704",
+    "handler": "$0a4fa",
+    "trigger": 3466,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f70a",
+    "handler": "$0c2fa",
+    "trigger": 3616,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f710",
+    "handler": "$04bf2",
+    "trigger": 3616,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f716",
+    "handler": "$0c2fe",
+    "trigger": 3616,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f71c",
+    "handler": "$0b58e",
+    "trigger": 3766,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f722",
+    "handler": "$0ba0a",
+    "trigger": 3916,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f728",
+    "handler": "$0ba0a",
+    "trigger": 3916,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f72e",
+    "handler": "$0bd52",
+    "trigger": 3980,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f734",
+    "handler": "$0b9f2",
+    "trigger": 4130,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f73a",
+    "handler": "$0ba0e",
+    "trigger": 4130,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f740",
+    "handler": "$0b9f2",
+    "trigger": 4142,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f746",
+    "handler": "$0ba0e",
+    "trigger": 4142,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f74c",
+    "handler": "$0b9ee",
+    "trigger": 4158,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f752",
+    "handler": "$0ba0a",
+    "trigger": 4158,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f758",
+    "handler": "$0b9f2",
+    "trigger": 4170,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f75e",
+    "handler": "$0ba0e",
+    "trigger": 4170,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f764",
+    "handler": "$0bf8e",
+    "trigger": 4470,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f76a",
+    "handler": "$0a4f4",
+    "trigger": 4620,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f770",
+    "handler": "$0a4fa",
+    "trigger": 4620,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f776",
+    "handler": "$0a4d6",
+    "trigger": 4770,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f77c",
+    "handler": "$0a4dc",
+    "trigger": 4770,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f782",
+    "handler": "$0c2fa",
+    "trigger": 4920,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f788",
+    "handler": "$0b98a",
+    "trigger": 4968,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f78e",
+    "handler": "$0b978",
+    "trigger": 4968,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f794",
+    "handler": "$0b98a",
+    "trigger": 5032,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f79a",
+    "handler": "$04c62",
+    "trigger": 5032,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7a0",
+    "handler": "$0bd52",
+    "trigger": 5032,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7a6",
+    "handler": "$0bc94",
+    "trigger": 5032,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7ac",
+    "handler": "$0bcba",
+    "trigger": 5032,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7b2",
+    "handler": "$0b978",
+    "trigger": 5032,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7b8",
+    "handler": "$0b98a",
+    "trigger": 5096,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7be",
+    "handler": "$04d00",
+    "trigger": 5096,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7c4",
+    "handler": "$0bc94",
+    "trigger": 5096,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7ca",
+    "handler": "$0bcba",
+    "trigger": 5096,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7d0",
+    "handler": "$0b978",
+    "trigger": 5096,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7d6",
+    "handler": "$0c15e",
+    "trigger": 5296,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7dc",
+    "handler": "$0c42c",
+    "trigger": 5446,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7e2",
+    "handler": "$0bf8e",
+    "trigger": 5626,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7e8",
+    "handler": "$0b846",
+    "trigger": 5776,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7ee",
+    "handler": "$0b846",
+    "trigger": 5816,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7f4",
+    "handler": "$04e0c",
+    "trigger": 5916,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f7fa",
+    "handler": "$0b846",
+    "trigger": 6066,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f800",
+    "handler": "$0b846",
+    "trigger": 6166,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f806",
+    "handler": "$083e2",
+    "trigger": 6206,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f80c",
+    "handler": "$0a4fa",
+    "trigger": 6206,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f812",
+    "handler": "$050d0",
+    "trigger": 6238,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f818",
+    "handler": "$0c2fa",
+    "trigger": 6388,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f81e",
+    "handler": "$0c2fe",
+    "trigger": 6388,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f824",
+    "handler": "$0a4dc",
+    "trigger": 6420,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f82a",
+    "handler": "$0a4fa",
+    "trigger": 6420,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f830",
+    "handler": "$0c2fa",
+    "trigger": 6484,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f836",
+    "handler": "$0c2fe",
+    "trigger": 6484,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f83c",
+    "handler": "$0a4dc",
+    "trigger": 6548,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f842",
+    "handler": "$0a4d6",
+    "trigger": 6548,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f848",
+    "handler": "$0a4fa",
+    "trigger": 6698,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f84e",
+    "handler": "$04cc4",
+    "trigger": 6848,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f854",
+    "handler": "$0a4fa",
+    "trigger": 6998,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f85a",
+    "handler": "$0a4f4",
+    "trigger": 6998,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f860",
+    "handler": "$0a4dc",
+    "trigger": 7148,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f866",
+    "handler": "$0c27e",
+    "trigger": 7298,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f86c",
+    "handler": "$0a4dc",
+    "trigger": 7598,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f872",
+    "handler": "$0a4f4",
+    "trigger": 7598,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f878",
+    "handler": "$04c62",
+    "trigger": 7598,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f87e",
+    "handler": "$0c120",
+    "trigger": 7598,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f884",
+    "handler": "$0c118",
+    "trigger": 7662,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f88a",
+    "handler": "$0a4f4",
+    "trigger": 7662,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f890",
+    "handler": "$0a4fa",
+    "trigger": 7662,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f896",
+    "handler": "$0c2fa",
+    "trigger": 7812,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f89c",
+    "handler": "$0c2fe",
+    "trigger": 7812,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8a2",
+    "handler": "$04bf2",
+    "trigger": 7912,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8a8",
+    "handler": "$0c2fa",
+    "trigger": 8012,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8ae",
+    "handler": "$0c2fe",
+    "trigger": 8012,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8b4",
+    "handler": "$0bb88",
+    "trigger": 8076,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8ba",
+    "handler": "$04c62",
+    "trigger": 8076,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8c0",
+    "handler": "$0c118",
+    "trigger": 8176,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8c6",
+    "handler": "$0c120",
+    "trigger": 8176,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8cc",
+    "handler": "$0c128",
+    "trigger": 8176,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8d2",
+    "handler": "$0b76e",
+    "trigger": 8476,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8d8",
+    "handler": "$04cc4",
+    "trigger": 8576,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8de",
+    "handler": "$0b776",
+    "trigger": 8640,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8e4",
+    "handler": "$0b766",
+    "trigger": 8740,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8ea",
+    "handler": "$0bb3c",
+    "trigger": 8820,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8f0",
+    "handler": "$0c136",
+    "trigger": 8900,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8f6",
+    "handler": "$0bb88",
+    "trigger": 8980,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f8fc",
+    "handler": "$0b766",
+    "trigger": 9060,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f902",
+    "handler": "$0c136",
+    "trigger": 9220,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f908",
+    "handler": "$083e2",
+    "trigger": 9370,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f90e",
+    "handler": "$04bf2",
+    "trigger": 9370,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f914",
+    "handler": "$0b776",
+    "trigger": 9520,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f91a",
+    "handler": "$0c14a",
+    "trigger": 9740,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f920",
+    "handler": "$0b766",
+    "trigger": 9820,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f926",
+    "handler": "$0c136",
+    "trigger": 10020,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f92c",
+    "handler": "$0c14a",
+    "trigger": 10120,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f932",
+    "handler": "$0c136",
+    "trigger": 10220,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f938",
+    "handler": "$0829e",
+    "trigger": 10720,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f93e",
+    "handler": "$0c4e6",
+    "trigger": 10720,
+    "param": "$2000"
+   }
+  ]
+ },
+ "4": {
+  "script": "$0f948",
+  "records": 204,
+  "span": "$0f948..$0fe10",
+  "entries": [
+   {
+    "at": "$0f948",
+    "handler": "$04fb0",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f94e",
+    "handler": "$083f6",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f954",
+    "handler": "$0d304",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f95a",
+    "handler": "$0d330",
+    "trigger": 60,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f960",
+    "handler": "$0d276",
+    "trigger": 120,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f966",
+    "handler": "$0d264",
+    "trigger": 180,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f96c",
+    "handler": "$04d1a",
+    "trigger": 240,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f972",
+    "handler": "$0d282",
+    "trigger": 300,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f978",
+    "handler": "$0d160",
+    "trigger": 360,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f97e",
+    "handler": "$04c0c",
+    "trigger": 420,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f984",
+    "handler": "$0d25e",
+    "trigger": 480,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f98a",
+    "handler": "$0d172",
+    "trigger": 540,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f990",
+    "handler": "$0d276",
+    "trigger": 600,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f996",
+    "handler": "$083e2",
+    "trigger": 660,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f99c",
+    "handler": "$0d17a",
+    "trigger": 660,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9a2",
+    "handler": "$0d172",
+    "trigger": 720,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9a8",
+    "handler": "$0d28e",
+    "trigger": 780,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9ae",
+    "handler": "$0d172",
+    "trigger": 840,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9b4",
+    "handler": "$0d172",
+    "trigger": 900,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9ba",
+    "handler": "$0d26a",
+    "trigger": 960,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9c0",
+    "handler": "$0bf58",
+    "trigger": 1020,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9c6",
+    "handler": "$04d1a",
+    "trigger": 1080,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9cc",
+    "handler": "$0d276",
+    "trigger": 1140,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9d2",
+    "handler": "$0c17a",
+    "trigger": 1200,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9d8",
+    "handler": "$04c7c",
+    "trigger": 1260,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9de",
+    "handler": "$0bb3c",
+    "trigger": 1320,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9e4",
+    "handler": "$0d282",
+    "trigger": 1380,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9ea",
+    "handler": "$0d28e",
+    "trigger": 1440,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9f0",
+    "handler": "$0d158",
+    "trigger": 1500,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9f6",
+    "handler": "$0d3d2",
+    "trigger": 1560,
+    "param": "$2000"
+   },
+   {
+    "at": "$0f9fc",
+    "handler": "$0d3da",
+    "trigger": 1620,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa02",
+    "handler": "$0d26a",
+    "trigger": 1680,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa08",
+    "handler": "$0d276",
+    "trigger": 1740,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa0e",
+    "handler": "$0bb88",
+    "trigger": 1800,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa14",
+    "handler": "$04d1a",
+    "trigger": 1860,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa1a",
+    "handler": "$0d3ea",
+    "trigger": 1920,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa20",
+    "handler": "$0d3f2",
+    "trigger": 1980,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa26",
+    "handler": "$0d276",
+    "trigger": 2040,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa2c",
+    "handler": "$0d26a",
+    "trigger": 2100,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa32",
+    "handler": "$0d3ea",
+    "trigger": 2160,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa38",
+    "handler": "$0d28e",
+    "trigger": 2220,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa3e",
+    "handler": "$0d172",
+    "trigger": 2280,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa44",
+    "handler": "$0d17a",
+    "trigger": 2340,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa4a",
+    "handler": "$0d3d2",
+    "trigger": 2400,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa50",
+    "handler": "$0d28e",
+    "trigger": 2460,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa56",
+    "handler": "$0d3da",
+    "trigger": 2520,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa5c",
+    "handler": "$0d28e",
+    "trigger": 2580,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa62",
+    "handler": "$0c17a",
+    "trigger": 2640,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa68",
+    "handler": "$0d304",
+    "trigger": 2700,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa6e",
+    "handler": "$0d304",
+    "trigger": 2760,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa74",
+    "handler": "$0d304",
+    "trigger": 2820,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa7a",
+    "handler": "$083e2",
+    "trigger": 3020,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa80",
+    "handler": "$0d26a",
+    "trigger": 3020,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa86",
+    "handler": "$04c7c",
+    "trigger": 3220,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa8c",
+    "handler": "$0d330",
+    "trigger": 3280,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa92",
+    "handler": "$0d330",
+    "trigger": 3340,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa98",
+    "handler": "$0d330",
+    "trigger": 3400,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fa9e",
+    "handler": "$04d1a",
+    "trigger": 3460,
+    "param": "$2000"
+   },
+   {
+    "at": "$0faa4",
+    "handler": "$0d26a",
+    "trigger": 3520,
+    "param": "$2000"
+   },
+   {
+    "at": "$0faaa",
+    "handler": "$0d276",
+    "trigger": 3580,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fab0",
+    "handler": "$0d172",
+    "trigger": 3640,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fab6",
+    "handler": "$0d17a",
+    "trigger": 3640,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fabc",
+    "handler": "$04c0c",
+    "trigger": 3700,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fac2",
+    "handler": "$0d172",
+    "trigger": 3760,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fac8",
+    "handler": "$0d17a",
+    "trigger": 3760,
+    "param": "$2000"
+   },
+   {
+    "at": "$0face",
+    "handler": "$0d172",
+    "trigger": 3840,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fad4",
+    "handler": "$0d17a",
+    "trigger": 3840,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fada",
+    "handler": "$0c128",
+    "trigger": 3900,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fae0",
+    "handler": "$0bf58",
+    "trigger": 3932,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fae6",
+    "handler": "$0a176",
+    "trigger": 3992,
+    "param": "$2000"
+   },
+   {
+    "at": "$0faec",
+    "handler": "$0a12a",
+    "trigger": 3992,
+    "param": "$2000"
+   },
+   {
+    "at": "$0faf2",
+    "handler": "$0d172",
+    "trigger": 4052,
+    "param": "$2000"
+   },
+   {
+    "at": "$0faf8",
+    "handler": "$0d17a",
+    "trigger": 4052,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fafe",
+    "handler": "$04d1a",
+    "trigger": 4112,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb04",
+    "handler": "$0d172",
+    "trigger": 4112,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb0a",
+    "handler": "$0d17a",
+    "trigger": 4112,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb10",
+    "handler": "$04c7c",
+    "trigger": 4172,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb16",
+    "handler": "$0d172",
+    "trigger": 4172,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb1c",
+    "handler": "$0d17a",
+    "trigger": 4172,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb22",
+    "handler": "$0d46e",
+    "trigger": 4372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb28",
+    "handler": "$0d4bc",
+    "trigger": 4372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb2e",
+    "handler": "$0d506",
+    "trigger": 4372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb34",
+    "handler": "$0d54e",
+    "trigger": 4372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb3a",
+    "handler": "$0a12a",
+    "trigger": 4572,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb40",
+    "handler": "$04c7c",
+    "trigger": 5172,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb46",
+    "handler": "$0c118",
+    "trigger": 5232,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb4c",
+    "handler": "$0c120",
+    "trigger": 5232,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb52",
+    "handler": "$0c128",
+    "trigger": 5232,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb58",
+    "handler": "$083e2",
+    "trigger": 5292,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb5e",
+    "handler": "$04c0c",
+    "trigger": 5292,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb64",
+    "handler": "$0d158",
+    "trigger": 5372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb6a",
+    "handler": "$0d160",
+    "trigger": 5372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb70",
+    "handler": "$0d172",
+    "trigger": 5372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb76",
+    "handler": "$0d17a",
+    "trigger": 5372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb7c",
+    "handler": "$0d276",
+    "trigger": 5372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb82",
+    "handler": "$04d1a",
+    "trigger": 5452,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb88",
+    "handler": "$0bed6",
+    "trigger": 5532,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb8e",
+    "handler": "$0d26a",
+    "trigger": 5612,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb94",
+    "handler": "$0d28e",
+    "trigger": 5612,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fb9a",
+    "handler": "$0bb88",
+    "trigger": 5612,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fba0",
+    "handler": "$0bf02",
+    "trigger": 5692,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fba6",
+    "handler": "$0d26a",
+    "trigger": 5772,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbac",
+    "handler": "$0bb3c",
+    "trigger": 5772,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbb2",
+    "handler": "$0d28e",
+    "trigger": 5972,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbb8",
+    "handler": "$04c0c",
+    "trigger": 6112,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbbe",
+    "handler": "$0be5a",
+    "trigger": 6112,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbc4",
+    "handler": "$04c7c",
+    "trigger": 6312,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbca",
+    "handler": "$0d282",
+    "trigger": 6492,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbd0",
+    "handler": "$0bbae",
+    "trigger": 6542,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbd6",
+    "handler": "$0d26a",
+    "trigger": 6572,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbdc",
+    "handler": "$0d17a",
+    "trigger": 6572,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbe2",
+    "handler": "$0d35c",
+    "trigger": 6722,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbe8",
+    "handler": "$0d380",
+    "trigger": 6722,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbee",
+    "handler": "$0a176",
+    "trigger": 6722,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbf4",
+    "handler": "$0d3a4",
+    "trigger": 6722,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fbfa",
+    "handler": "$04d68",
+    "trigger": 6802,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc00",
+    "handler": "$0a12a",
+    "trigger": 6822,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc06",
+    "handler": "$04d1a",
+    "trigger": 6852,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc0c",
+    "handler": "$0d282",
+    "trigger": 6882,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc12",
+    "handler": "$0d3e2",
+    "trigger": 6922,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc18",
+    "handler": "$0d26a",
+    "trigger": 6922,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc1e",
+    "handler": "$0d172",
+    "trigger": 7002,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc24",
+    "handler": "$0d17a",
+    "trigger": 7002,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc2a",
+    "handler": "$0d3ea",
+    "trigger": 7082,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc30",
+    "handler": "$0d3f2",
+    "trigger": 7082,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc36",
+    "handler": "$04c0c",
+    "trigger": 7146,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc3c",
+    "handler": "$0d25e",
+    "trigger": 7178,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc42",
+    "handler": "$0a12a",
+    "trigger": 7210,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc48",
+    "handler": "$0a176",
+    "trigger": 7242,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc4e",
+    "handler": "$0d172",
+    "trigger": 7302,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc54",
+    "handler": "$0d17a",
+    "trigger": 7302,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc5a",
+    "handler": "$0a12a",
+    "trigger": 7362,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc60",
+    "handler": "$0d158",
+    "trigger": 7412,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc66",
+    "handler": "$0d160",
+    "trigger": 7412,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc6c",
+    "handler": "$0d3e2",
+    "trigger": 7442,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc72",
+    "handler": "$04e26",
+    "trigger": 7562,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc78",
+    "handler": "$0d172",
+    "trigger": 7562,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc7e",
+    "handler": "$0d17a",
+    "trigger": 7562,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc84",
+    "handler": "$050ea",
+    "trigger": 7642,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc8a",
+    "handler": "$0d276",
+    "trigger": 7642,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc90",
+    "handler": "$0d3ea",
+    "trigger": 7662,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc96",
+    "handler": "$0d3f2",
+    "trigger": 7662,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fc9c",
+    "handler": "$0c128",
+    "trigger": 7742,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fca2",
+    "handler": "$0bb3c",
+    "trigger": 7822,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fca8",
+    "handler": "$0d264",
+    "trigger": 7902,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcae",
+    "handler": "$0d172",
+    "trigger": 7982,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcb4",
+    "handler": "$0d17a",
+    "trigger": 7982,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcba",
+    "handler": "$0d158",
+    "trigger": 7982,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcc0",
+    "handler": "$0d160",
+    "trigger": 7982,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcc6",
+    "handler": "$0c118",
+    "trigger": 8062,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fccc",
+    "handler": "$0d25e",
+    "trigger": 8102,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcd2",
+    "handler": "$0d252",
+    "trigger": 8118,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcd8",
+    "handler": "$0d25e",
+    "trigger": 8318,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcde",
+    "handler": "$0be5a",
+    "trigger": 8350,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fce4",
+    "handler": "$04d1a",
+    "trigger": 8630,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcea",
+    "handler": "$0d264",
+    "trigger": 8710,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcf0",
+    "handler": "$0d25e",
+    "trigger": 8910,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcf6",
+    "handler": "$0a850",
+    "trigger": 9110,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fcfc",
+    "handler": "$04c0c",
+    "trigger": 9260,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd02",
+    "handler": "$0d158",
+    "trigger": 9360,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd08",
+    "handler": "$0d166",
+    "trigger": 9360,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd0e",
+    "handler": "$0d160",
+    "trigger": 9360,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd14",
+    "handler": "$0d172",
+    "trigger": 9360,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd1a",
+    "handler": "$0d180",
+    "trigger": 9360,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd20",
+    "handler": "$0d17a",
+    "trigger": 9360,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd26",
+    "handler": "$0bf2e",
+    "trigger": 9408,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd2c",
+    "handler": "$0c120",
+    "trigger": 9488,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd32",
+    "handler": "$0d252",
+    "trigger": 9568,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd38",
+    "handler": "$0bf02",
+    "trigger": 9648,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd3e",
+    "handler": "$0bed6",
+    "trigger": 9728,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd44",
+    "handler": "$0d264",
+    "trigger": 9808,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd4a",
+    "handler": "$050ea",
+    "trigger": 9888,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd50",
+    "handler": "$0c118",
+    "trigger": 9968,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd56",
+    "handler": "$0bf2e",
+    "trigger": 10048,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd5c",
+    "handler": "$0bf02",
+    "trigger": 10102,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd62",
+    "handler": "$04c7c",
+    "trigger": 10182,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd68",
+    "handler": "$0beaa",
+    "trigger": 10262,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd6e",
+    "handler": "$0bf2e",
+    "trigger": 10342,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd74",
+    "handler": "$0bed6",
+    "trigger": 10422,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd7a",
+    "handler": "$0d264",
+    "trigger": 10454,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd80",
+    "handler": "$0c128",
+    "trigger": 10454,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd86",
+    "handler": "$0bf02",
+    "trigger": 10486,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd8c",
+    "handler": "$0bf2e",
+    "trigger": 10686,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd92",
+    "handler": "$0c120",
+    "trigger": 10766,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd98",
+    "handler": "$0bf02",
+    "trigger": 10766,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fd9e",
+    "handler": "$0bed6",
+    "trigger": 10846,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fda4",
+    "handler": "$0c120",
+    "trigger": 10910,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdaa",
+    "handler": "$083e2",
+    "trigger": 10942,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdb0",
+    "handler": "$0bf02",
+    "trigger": 10942,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdb6",
+    "handler": "$0bed6",
+    "trigger": 11022,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdbc",
+    "handler": "$0bed6",
+    "trigger": 11102,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdc2",
+    "handler": "$050ea",
+    "trigger": 11102,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdc8",
+    "handler": "$04d1a",
+    "trigger": 11182,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdce",
+    "handler": "$0beaa",
+    "trigger": 11182,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdd4",
+    "handler": "$0bb88",
+    "trigger": 11222,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdda",
+    "handler": "$0bf2e",
+    "trigger": 11222,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fde0",
+    "handler": "$04c0c",
+    "trigger": 11262,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fde6",
+    "handler": "$0bb3c",
+    "trigger": 11312,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdec",
+    "handler": "$0be5a",
+    "trigger": 11462,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdf2",
+    "handler": "$0c118",
+    "trigger": 11862,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdf8",
+    "handler": "$0c120",
+    "trigger": 11862,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fdfe",
+    "handler": "$0c128",
+    "trigger": 11862,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe04",
+    "handler": "$0829e",
+    "trigger": 12162,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe0a",
+    "handler": "$0d6d4",
+    "trigger": 12162,
+    "param": "$2000"
+   }
+  ]
+ },
+ "5": {
+  "script": "$0fe14",
+  "records": 102,
+  "span": "$0fe14..$10078",
+  "entries": [
+   {
+    "at": "$0fe14",
+    "handler": "$04fb0",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe1a",
+    "handler": "$083f6",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe20",
+    "handler": "$04d00",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe26",
+    "handler": "$09c48",
+    "trigger": 0,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe2c",
+    "handler": "$0a500",
+    "trigger": 70,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe32",
+    "handler": "$0a500",
+    "trigger": 140,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe38",
+    "handler": "$0a500",
+    "trigger": 210,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe3e",
+    "handler": "$0ee74",
+    "trigger": 280,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe44",
+    "handler": "$0f196",
+    "trigger": 312,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe4a",
+    "handler": "$0ee74",
+    "trigger": 344,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe50",
+    "handler": "$0bb88",
+    "trigger": 414,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe56",
+    "handler": "$04bf2",
+    "trigger": 484,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe5c",
+    "handler": "$0a4e2",
+    "trigger": 554,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe62",
+    "handler": "$0a4e2",
+    "trigger": 624,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe68",
+    "handler": "$0a4e2",
+    "trigger": 694,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe6e",
+    "handler": "$0a4e2",
+    "trigger": 764,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe74",
+    "handler": "$0f196",
+    "trigger": 834,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe7a",
+    "handler": "$0ed9c",
+    "trigger": 866,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe80",
+    "handler": "$04c62",
+    "trigger": 898,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe86",
+    "handler": "$0f1a6",
+    "trigger": 914,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe8c",
+    "handler": "$0ed9c",
+    "trigger": 930,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe92",
+    "handler": "$0f19e",
+    "trigger": 946,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe98",
+    "handler": "$0f1ae",
+    "trigger": 978,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fe9e",
+    "handler": "$0ee74",
+    "trigger": 1010,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fea4",
+    "handler": "$0ee74",
+    "trigger": 1042,
+    "param": "$2000"
+   },
+   {
+    "at": "$0feaa",
+    "handler": "$0f196",
+    "trigger": 1342,
+    "param": "$2000"
+   },
+   {
+    "at": "$0feb0",
+    "handler": "$0f19e",
+    "trigger": 1374,
+    "param": "$2000"
+   },
+   {
+    "at": "$0feb6",
+    "handler": "$09c48",
+    "trigger": 1406,
+    "param": "$2000"
+   },
+   {
+    "at": "$0febc",
+    "handler": "$0f1ae",
+    "trigger": 1406,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fec2",
+    "handler": "$0f196",
+    "trigger": 1438,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fec8",
+    "handler": "$0ee74",
+    "trigger": 1470,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fece",
+    "handler": "$0ee74",
+    "trigger": 1502,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fed4",
+    "handler": "$0bb88",
+    "trigger": 1534,
+    "param": "$2000"
+   },
+   {
+    "at": "$0feda",
+    "handler": "$04bf2",
+    "trigger": 1534,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fee0",
+    "handler": "$0f0d6",
+    "trigger": 1550,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fee6",
+    "handler": "$0b80c",
+    "trigger": 1620,
+    "param": "$2000"
+   },
+   {
+    "at": "$0feec",
+    "handler": "$0eefa",
+    "trigger": 1684,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fef2",
+    "handler": "$0b80c",
+    "trigger": 1884,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fef8",
+    "handler": "$0eefa",
+    "trigger": 1948,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fefe",
+    "handler": "$0f0d6",
+    "trigger": 2028,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff04",
+    "handler": "$0b80c",
+    "trigger": 2148,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff0a",
+    "handler": "$0eefa",
+    "trigger": 2212,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff10",
+    "handler": "$0b80c",
+    "trigger": 2412,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff16",
+    "handler": "$0eee2",
+    "trigger": 2476,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff1c",
+    "handler": "$0b638",
+    "trigger": 2500,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff22",
+    "handler": "$04d9c",
+    "trigger": 2612,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff28",
+    "handler": "$0b80c",
+    "trigger": 2676,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff2e",
+    "handler": "$0eefa",
+    "trigger": 2740,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff34",
+    "handler": "$0bb88",
+    "trigger": 2940,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff3a",
+    "handler": "$0f0d6",
+    "trigger": 2940,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff40",
+    "handler": "$0ed9c",
+    "trigger": 2972,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff46",
+    "handler": "$04d00",
+    "trigger": 3004,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff4c",
+    "handler": "$0ed9c",
+    "trigger": 3036,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff52",
+    "handler": "$0ed9c",
+    "trigger": 3100,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff58",
+    "handler": "$0b638",
+    "trigger": 3100,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff5e",
+    "handler": "$0f0d6",
+    "trigger": 3300,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff64",
+    "handler": "$083e2",
+    "trigger": 3332,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff6a",
+    "handler": "$0b80c",
+    "trigger": 3332,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff70",
+    "handler": "$04ed0",
+    "trigger": 3396,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff76",
+    "handler": "$0b638",
+    "trigger": 3396,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff7c",
+    "handler": "$0f0d6",
+    "trigger": 3596,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff82",
+    "handler": "$04d9c",
+    "trigger": 3796,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff88",
+    "handler": "$0b638",
+    "trigger": 3796,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff8e",
+    "handler": "$0f0d6",
+    "trigger": 3996,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff94",
+    "handler": "$09c48",
+    "trigger": 4060,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ff9a",
+    "handler": "$0eefa",
+    "trigger": 4124,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffa0",
+    "handler": "$04f20",
+    "trigger": 4188,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffa6",
+    "handler": "$0b638",
+    "trigger": 4188,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffac",
+    "handler": "$0eee2",
+    "trigger": 4268,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffb2",
+    "handler": "$0f0d2",
+    "trigger": 4348,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffb8",
+    "handler": "$0b80c",
+    "trigger": 4428,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffbe",
+    "handler": "$0eefa",
+    "trigger": 4508,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffc4",
+    "handler": "$04c62",
+    "trigger": 4708,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffca",
+    "handler": "$0b638",
+    "trigger": 4908,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffd0",
+    "handler": "$04bf2",
+    "trigger": 4908,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffd6",
+    "handler": "$09c48",
+    "trigger": 5108,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffdc",
+    "handler": "$0f0d2",
+    "trigger": 5108,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffe2",
+    "handler": "$0b80c",
+    "trigger": 5308,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffe8",
+    "handler": "$0b638",
+    "trigger": 5372,
+    "param": "$2000"
+   },
+   {
+    "at": "$0ffee",
+    "handler": "$0f0d6",
+    "trigger": 5572,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fff4",
+    "handler": "$0ed9c",
+    "trigger": 5772,
+    "param": "$2000"
+   },
+   {
+    "at": "$0fffa",
+    "handler": "$0ed9c",
+    "trigger": 5836,
+    "param": "$2000"
+   },
+   {
+    "at": "$10000",
+    "handler": "$0a500",
+    "trigger": 5900,
+    "param": "$2000"
+   },
+   {
+    "at": "$10006",
+    "handler": "$0a500",
+    "trigger": 6000,
+    "param": "$2000"
+   },
+   {
+    "at": "$1000c",
+    "handler": "$0a500",
+    "trigger": 6100,
+    "param": "$2000"
+   },
+   {
+    "at": "$10012",
+    "handler": "$0b638",
+    "trigger": 6150,
+    "param": "$2000"
+   },
+   {
+    "at": "$10018",
+    "handler": "$0a500",
+    "trigger": 6200,
+    "param": "$2000"
+   },
+   {
+    "at": "$1001e",
+    "handler": "$0a500",
+    "trigger": 6300,
+    "param": "$2000"
+   },
+   {
+    "at": "$10024",
+    "handler": "$0a500",
+    "trigger": 6400,
+    "param": "$2000"
+   },
+   {
+    "at": "$1002a",
+    "handler": "$04ed8",
+    "trigger": 6500,
+    "param": "$2000"
+   },
+   {
+    "at": "$10030",
+    "handler": "$09c48",
+    "trigger": 6500,
+    "param": "$2000"
+   },
+   {
+    "at": "$10036",
+    "handler": "$0b638",
+    "trigger": 6532,
+    "param": "$2000"
+   },
+   {
+    "at": "$1003c",
+    "handler": "$04f68",
+    "trigger": 6732,
+    "param": "$2000"
+   },
+   {
+    "at": "$10042",
+    "handler": "$0b80c",
+    "trigger": 6732,
+    "param": "$2000"
+   },
+   {
+    "at": "$10048",
+    "handler": "$0ee74",
+    "trigger": 6832,
+    "param": "$2000"
+   },
+   {
+    "at": "$1004e",
+    "handler": "$0ee74",
+    "trigger": 6864,
+    "param": "$2000"
+   },
+   {
+    "at": "$10054",
+    "handler": "$0bb88",
+    "trigger": 6896,
+    "param": "$2000"
+   },
+   {
+    "at": "$1005a",
+    "handler": "$083e2",
+    "trigger": 6996,
+    "param": "$2000"
+   },
+   {
+    "at": "$10060",
+    "handler": "$04d00",
+    "trigger": 6996,
+    "param": "$2000"
+   },
+   {
+    "at": "$10066",
+    "handler": "$04bea",
+    "trigger": 7008,
+    "param": "$2000"
+   },
+   {
+    "at": "$1006c",
+    "handler": "$0829e",
+    "trigger": 7208,
+    "param": "$2000"
+   },
+   {
+    "at": "$10072",
+    "handler": "$0dd2e",
+    "trigger": 7208,
+    "param": "$2000"
+   }
+  ]
+ }
+}
