@@ -29,6 +29,8 @@ Follow me on [instagram](https://instagram.com/clumsy.giba?igshid=ZDdkNTZiNTM.),
 
 Buy my books on [Amazon]() (*redacted until I publish the new versions*)
 
+<p><a href="https://ko-fi.com/dbwaldtier" target="_blank" rel="noopener">Support my work on Ko-fi</a></p>
+
 Or send eth to 0x992a2253D98C1d235C6531A0c657634B902B7BBC if you feel generous.
 
 Bye!
