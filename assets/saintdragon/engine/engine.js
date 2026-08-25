@@ -240,8 +240,8 @@ class World {
     return true;
   }
 
-  // The three implemented bosses register here so the stage can end on their
-  // defeat. $09482 (stage 1), $0d6d4 (stage 4), $0dd2e (stage 5).
+  // Boss objects register as soon as they spawn, including pending entry gates
+  // and successor forms, so stage completion always has a live owner.
   registerBoss(o) {
     this.bossSpawned = true;
     this.bossAlive = true;
@@ -280,10 +280,9 @@ class World {
         this.completeStage();
       }
     }
-    // Stages 2 and 3 have no boss implemented yet (TASKS item 5), so they would
-    // otherwise never finish. They fall back to "script exhausted and nothing
-    // it spawned is left", and set a flag saying so, rather than appearing to
-    // end correctly.
+    // Preserve a fallback for malformed or unsupported wave lists that do not
+    // spawn a registered boss. Mark it explicitly rather than presenting that
+    // route as normal boss completion.
     else if (!this.stageComplete && this.waveScriptDone && !this.bossSpawned) {
       const liveWaveObjects = this.objects.some(
         (o) => !o.done && o !== this.player && o.sprite);

@@ -2756,6 +2756,7 @@ function* stage2BossPhase2(o, world) {                       // $b2c6
 
 function* stage2Boss(o, world, spec) {                       // $0b01a
   allocDefaults(o);
+  world.registerBoss(o);                                    // pending through $8ae2/$b54e
   o.x = SPAWN_TEMPLATE.x; o.y = SPAWN_TEMPLATE.y;
   yield* entryGate(o, world, spec.trigger || 0);
   o.hp = 0x3c0; o.scoreAward = 0; o.depth = 0x320;
@@ -2772,15 +2773,17 @@ function* stage2Boss(o, world, spec) {                       // $0b01a
       shell.done = true;
       wd.releaseLinks(shell);
     }
-    wd.spawnChildOf(self, function* (phase2, world2) {
+    const phase2 = wd.spawnChildOf(self, function* (phase2, world2) {
       phase2.x = self.x; phase2.y = self.y;
       yield* stage2BossPhase2(phase2, world2);
     }, {});
+    // The new coroutine starts next frame. Transfer boss ownership now so the
+    // end-of-frame boss scan cannot observe an empty gap and complete stage 2.
+    wd.registerBoss(phase2);
   };
   o.vx = -2; o.vy = 0;
   while (o.x >= 0xf6) { if (o.done) return; yield; }         // $b54e
   o.vx = 0;
-  world.registerBoss(o);
   for (const cfg of B01A_SEGMENTS) {
     world.spawnChildOf(o, (c, wd) => b01aSegment(c, wd, o, cfg, false), {});
     world.spawnChildOf(o, (c, wd) => b01aSegment(c, wd, o, cfg, true), {});
@@ -3008,11 +3011,13 @@ function c4e6PhaseBoltAttack(o, world) {                     // $c7a8 -> $cf3c
 
 function spawnStage3BossPhase(world, from, index) {
   const cfg = C4E6_PHASES[index];
-  return world.spawn((phase, wd) => stage3BossPhase(phase, wd, cfg), {
+  const phase = world.spawn((phase, wd) => stage3BossPhase(phase, wd, cfg), {
     x: from.x,
     y: from.y + cfg.dy,
     depth: from.depth,
   });
+  world.registerBoss(phase);
+  return phase;
 }
 
 function* stage3BossFinalDeath(o, world) {                   // $c940
@@ -3047,7 +3052,6 @@ function* stage3BossPhase(o, world, cfg) {                    // $c7c2/$c854/$c8
       spawnStage3BossPhase(wd, self, cfg.next);
     };
   }
-  world.registerBoss(o);
   if (cfg.follower)
     world.spawnRetained(o, (c, wd) => c4e6Follower(c, wd, o, {
       addr: '$0ca2a', handle: 0x101e, dy: 0x1c,
@@ -3067,6 +3071,7 @@ function* stage3BossPhase(o, world, cfg) {                    // $c7c2/$c854/$c8
 
 function* stage3Boss(o, world, spec) {                       // $0c4e6
   allocDefaults(o);
+  world.registerBoss(o);
   o.x = SPAWN_TEMPLATE.x; o.y = SPAWN_TEMPLATE.y;
   yield* entryGate(o, world, spec.trigger || 0);
   o.hp = 0x1f40; o.scoreAward = 0; o.depth = SPAWN_TEMPLATE.depth + 8;
@@ -3079,7 +3084,6 @@ function* stage3Boss(o, world, spec) {                       // $0c4e6
     pairedBlastDeathEffect(wd, self);
     spawnStage3BossPhase(wd, self, 0);                       // $c66e -> $c7c2
   };
-  world.registerBoss(o);
   world.stage3AuxCount = 2;                                // $152, the patrol pair
   world.stage3AuxTimerFlip = false;
   for (const cfg of C4E6_AUX)
@@ -3206,11 +3210,11 @@ function* boss1DeathSequence(o, world) {
 
 function* stage1Boss(o, world, spec) {
   allocDefaults(o);
+  world.registerBoss(o);
   o.x = SPAWN_TEMPLATE.x;
   o.y = SPAWN_TEMPLATE.y;
   yield* entryGate(o, world, spec.trigger || 0);
   o.hp = 0x1f40; o.scoreAward = 0;
-  world.registerBoss(o);          // the stage ends when this dies                     // $94a6 / $94ac
   o.x -= 0x3c; o.y -= 0x0b;                            // $94b2 / $94b8
   o.speed = 0x100 / 256;                               // $94be
   o.collides = true;                                   // $959a installs $7d06
@@ -3565,6 +3569,7 @@ function* stage5Boss(o, world, spec) {
   const d = world.boss5;
   if (!d) { yield* waveEnemy(o, world, spec); return; }
   allocDefaults(o);
+  world.registerBoss(o);
   o.x = SPAWN_TEMPLATE.x; o.y = SPAWN_TEMPLATE.y;
   yield* entryGate(o, world, spec.trigger || 0);        // $8ae2
 
@@ -3573,7 +3578,6 @@ function* stage5Boss(o, world, spec) {
   world.acquireFreeze();                                // $dd36, st $104
   o.x = d.boss.x; o.y = d.boss.y;                       // $dd52 / $dd58
   o.hp = d.boss.hp; o.scoreAward = d.boss.score;
-  world.registerBoss(o);          // the stage ends when this dies        // $dd8c / $dd92
   o.__onLethal = (self) => {
     self.hp = 0;
     self.dying = true;
@@ -3956,13 +3960,13 @@ function* boss4Mine(o, world) {
 
 function* stage4Boss(o, world, spec) {
   allocDefaults(o);
+  world.registerBoss(o);
   o.x = SPAWN_TEMPLATE.x; o.y = SPAWN_TEMPLATE.y;
   yield* entryGate(o, world, spec.trigger || 0);   // $8ae2
   o.variant = 0;                                   // $d6fe, $92 = 0
   o.x = BOSS4.x;                                   // $d702
   o.moveDur = BOSS4.duration;                      // $d716
   o.hp = BOSS4.hp; o.scoreAward = BOSS4.score;
-  world.registerBoss(o);          // the stage ends when this dies     // $d73c / $d742
   o.__onLethal = (self) => { self.hp = 0; self.dying = true; };       // $d77e
   o.collides = true;                               // $d720 installs $7d06
   o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
