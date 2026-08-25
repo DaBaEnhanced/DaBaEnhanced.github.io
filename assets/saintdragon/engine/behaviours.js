@@ -1322,6 +1322,7 @@ function fragmentDeathEffect(world, src) {
 }
 
 function centeredBurstDeathEffect(world, src) {
+  world.playSound(DEATH_SOUND);
   world.spawn((burst, wd) => hitBurst(burst, wd, src.x, src.y), {});          // $88d8
 }
 

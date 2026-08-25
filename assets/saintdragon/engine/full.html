@@ -24,7 +24,8 @@
             background-image:linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
                              linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px);
             background-size:24px 24px; }
-  .frame { position:relative; width:min(100%,calc((100vh - 44px) * 368 / 182)); aspect-ratio:368/182;
+  .console { position:relative; width:min(100%,calc((100vh - 44px) * 368 / 182)); }
+  .frame { position:relative; width:100%; aspect-ratio:368/182;
            max-height:calc(100vh - 44px); background:#000; box-shadow:0 18px 70px #000; }
   iframe { display:block; width:100%; height:100%; border:0; background:#000; }
   .frame.crt iframe { filter:saturate(1.12) contrast(1.05) brightness(.96); }
@@ -32,6 +33,25 @@
                       background:repeating-linear-gradient(to bottom,transparent 0,transparent 2px,
                                  rgba(0,0,0,.2) 2px,rgba(0,0,0,.2) 3px);
                       box-shadow:inset 0 0 26px rgba(0,0,0,.72); }
+  .touch-controls { display:none; position:absolute; inset:0; z-index:5; pointer-events:none;
+                    touch-action:none; user-select:none; }
+  .touch-fire, .touch-stick { position:absolute; bottom:max(12px,env(safe-area-inset-bottom));
+                              width:clamp(58px,18vw,82px); aspect-ratio:1; border-radius:50%;
+                              border:2px solid rgba(240,234,216,.72); background:rgba(17,19,23,.48);
+                              box-shadow:inset 0 0 0 5px rgba(0,0,0,.18),0 3px 12px rgba(0,0,0,.45);
+                              pointer-events:auto; touch-action:none; }
+  .touch-fire { left:max(14px,env(safe-area-inset-left)); }
+  .touch-fire::before { content:""; position:absolute; inset:25%; border-radius:50%;
+                        background:rgba(184,51,56,.85); box-shadow:0 0 0 3px rgba(255,255,255,.12); }
+  .touch-fire.pressed::before { transform:scale(.82); background:#ed4c51; }
+  .touch-stick { right:max(14px,env(safe-area-inset-right)); }
+  .touch-stick::before, .touch-stick::after { content:""; position:absolute; opacity:.35;
+                                               background:var(--ink); pointer-events:none; }
+  .touch-stick::before { left:49%; top:12%; bottom:12%; width:2px; }
+  .touch-stick::after { top:49%; left:12%; right:12%; height:2px; }
+  .touch-knob { position:absolute; left:50%; top:50%; width:46%; aspect-ratio:1; border-radius:50%;
+                background:rgba(213,169,79,.9); border:2px solid rgba(255,247,221,.8);
+                transform:translate(-50%,-50%); pointer-events:none; }
   .overlay { position:absolute; inset:0; z-index:6; display:grid; place-items:center;
              background:rgba(3,4,6,.92); text-align:center; padding:22px; }
   .overlay[hidden] { display:none; }
@@ -50,7 +70,21 @@
     .bar { min-height:48px; padding:6px 8px; gap:5px; }
     .brand, .status { display:none; }
     button, .toggle { min-height:34px; padding-left:8px; padding-right:8px; }
-    .frame { width:100%; max-height:calc(100vh - 48px); }
+    .console { width:100%; }
+    .frame { max-height:calc(100vh - 48px); }
+  }
+  @media (hover:none) and (pointer:coarse) {
+    .touch-controls.active { display:block; }
+  }
+  @media (hover:none) and (pointer:coarse) and (orientation:portrait) {
+    .screen { place-items:stretch center; }
+    .console { height:100%; display:grid; grid-template-rows:auto 1fr; align-content:start; }
+    .frame { box-shadow:0 8px 28px #000; }
+    .touch-controls { position:relative; inset:auto; min-height:0;
+                      border-top:1px solid rgba(240,234,216,.16);
+                      background:linear-gradient(to bottom,rgba(31,34,40,.78),rgba(14,16,20,.42)); }
+    .touch-fire, .touch-stick { bottom:50%; transform:translateY(50%);
+                                width:clamp(72px,22vw,92px); }
   }
 </style>
 
@@ -63,21 +97,29 @@
     <label class="toggle" title="Toggle scanlines and phosphor treatment"><input id="crt" type="checkbox" checked> CRT</label>
   </header>
   <section class="screen">
-    <div class="frame crt" id="frame">
-      <iframe id="game" title="Saint Dragon game" allow="autoplay"></iframe>
-      <div class="overlay" id="start-screen">
-        <div class="panel">
-          <h1>SAINT DRAGON</h1>
-          <p class="prompt">ONE PLAYER</p>
-          <button class="start" id="start">START GAME</button>
+    <div class="console">
+      <div class="frame crt" id="frame">
+        <iframe id="game" title="Saint Dragon game" allow="autoplay"></iframe>
+        <div class="overlay" id="start-screen">
+          <div class="panel">
+            <h1>SAINT DRAGON</h1>
+            <p class="prompt">ONE PLAYER</p>
+            <button class="start" id="start">START GAME</button>
+          </div>
+        </div>
+        <div class="overlay scores" id="scores" hidden>
+          <div class="panel">
+            <h2>HIGH SCORES</h2>
+            <div id="score-list"></div>
+            <p class="prompt" id="score-prompt">400</p>
+            <button class="start" id="again">PLAY AGAIN</button>
+          </div>
         </div>
       </div>
-      <div class="overlay scores" id="scores" hidden>
-        <div class="panel">
-          <h2>HIGH SCORES</h2>
-          <div id="score-list"></div>
-          <p class="prompt" id="score-prompt">400</p>
-          <button class="start" id="again">PLAY AGAIN</button>
+      <div class="touch-controls" id="touch-controls" aria-hidden="true">
+        <button class="touch-fire" id="touch-fire" aria-label="Fire"></button>
+        <div class="touch-stick" id="touch-stick" role="group" aria-label="Movement joystick">
+          <span class="touch-knob" id="touch-knob"></span>
         </div>
       </div>
     </div>
@@ -92,6 +134,10 @@ const frame = document.getElementById('frame');
 const status = document.getElementById('status');
 const startScreen = document.getElementById('start-screen');
 const scoresScreen = document.getElementById('scores');
+const touchControls = document.getElementById('touch-controls');
+const touchFire = document.getElementById('touch-fire');
+const touchStick = document.getElementById('touch-stick');
+const touchKnob = document.getElementById('touch-knob');
 let audioContext = null, audio = null, audioEnabled = true;
 let route = 'idle', routeStart = 0, stage = 1, score = 0, lives = 5;
 let boundWorld = null, scoreDeadline = 0, scoreRecorded = false;
@@ -104,10 +150,12 @@ function routeUrl(mode, number) {
 }
 
 function loadRoute(next, number) {
+  clearTouchInput();
   route = next;
   boundWorld = null;
   if (number) stage = number;
   status.textContent = next === 'stage' ? `STAGE ${stage}` : next.toUpperCase();
+  touchControls.classList.toggle('active', next === 'stage');
   game.src = routeUrl(next, stage);
 }
 
@@ -182,6 +230,8 @@ function readScores() {
 
 function showScores() {
   if (route === 'scores') return;
+  clearTouchInput();
+  touchControls.classList.remove('active');
   route = 'scores';
   if (audioEnabled && audio && !audio.current) audio.playMusic('level');
   let table = readScores();
@@ -242,6 +292,71 @@ for (const type of ['keydown', 'keyup']) {
     event.preventDefault();
   });
 }
+
+const touchDirections = new Set();
+function setTouchKey(code, pressed) {
+  const setGameKey = game.contentWindow?.setGameKey;
+  if (typeof setGameKey === 'function') setGameKey(code, pressed);
+}
+function updateTouchDirections(next) {
+  for (const code of touchDirections)
+    if (!next.has(code)) setTouchKey(code, false);
+  for (const code of next)
+    if (!touchDirections.has(code)) setTouchKey(code, true);
+  touchDirections.clear();
+  for (const code of next) touchDirections.add(code);
+}
+function clearTouchInput() {
+  updateTouchDirections(new Set());
+  setTouchKey('Space', false);
+  touchFire.classList.remove('pressed');
+  touchKnob.style.transform = 'translate(-50%,-50%)';
+}
+function moveTouchStick(event) {
+  const bounds = touchStick.getBoundingClientRect();
+  const radius = bounds.width / 2;
+  let x = event.clientX - bounds.left - radius;
+  let y = event.clientY - bounds.top - radius;
+  const length = Math.hypot(x, y);
+  const limit = radius * .54;
+  if (length > limit) { x *= limit / length; y *= limit / length; }
+  touchKnob.style.transform = `translate(calc(-50% + ${x}px),calc(-50% + ${y}px))`;
+  const dead = radius * .18;
+  const next = new Set();
+  if (x < -dead) next.add('ArrowLeft');
+  if (x > dead) next.add('ArrowRight');
+  if (y < -dead) next.add('ArrowUp');
+  if (y > dead) next.add('ArrowDown');
+  updateTouchDirections(next);
+}
+touchStick.addEventListener('pointerdown', event => {
+  touchStick.setPointerCapture(event.pointerId);
+  moveTouchStick(event);
+  event.preventDefault();
+});
+touchStick.addEventListener('pointermove', event => {
+  if (touchStick.hasPointerCapture(event.pointerId)) moveTouchStick(event);
+});
+for (const type of ['pointerup', 'pointercancel', 'lostpointercapture'])
+  touchStick.addEventListener(type, () => {
+    updateTouchDirections(new Set());
+    touchKnob.style.transform = 'translate(-50%,-50%)';
+  });
+touchFire.addEventListener('pointerdown', event => {
+  touchFire.setPointerCapture(event.pointerId);
+  touchFire.classList.add('pressed');
+  setTouchKey('Space', true);
+  event.preventDefault();
+});
+for (const type of ['pointerup', 'pointercancel', 'lostpointercapture'])
+  touchFire.addEventListener(type, () => {
+    touchFire.classList.remove('pressed');
+    setTouchKey('Space', false);
+  });
+addEventListener('blur', clearTouchInput);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) clearTouchInput();
+});
 setInterval(tick, 100);
 setInterval(() => {
   if (route !== 'scores') return;
