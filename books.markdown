@@ -16,29 +16,101 @@ I experimented a little with the language itself, so the books are filled with q
 
 They are all finished and edited. I am slowly putting them on Amazon and here.
 
-<div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
-<div style="flex: 1 1 200px; text-align: center;">
+<style>
+  .consent-engines-books,
+  .arks-books,
+  .other-books {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .consent-engines-book,
+  .arks-book,
+  .other-book {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid #d8dee4;
+    border-radius: 8px;
+    min-width: 0;
+    padding: 0.75rem;
+    text-align: center;
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  }
+
+  .consent-engines-book:hover,
+  .arks-book:hover,
+  .other-book:hover {
+    border-color: #8c959f;
+    box-shadow: 0 6px 16px rgba(31, 35, 40, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .consent-engines-book a,
+  .arks-book a,
+  .other-book a {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+  }
+
+  .consent-engines-book video,
+  .arks-book video,
+  .other-book video,
+  .featured-book video {
+    border-radius: 4px;
+    display: block;
+    max-width: 100%;
+  }
+
+  .other-book h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  .other-book p {
+    margin: 0 0 1rem;
+  }
+
+  .featured-book {
+    margin: 1.5rem auto;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  @media (min-width: 700px) {
+    .consent-engines-books,
+    .arks-books {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .other-books {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
+
+<div class="consent-engines-books">
+<div class="consent-engines-book">
   <a href="assets/pdf/Consent Engines 1_ Songs On Rocks TRUE FINAL.pdf">
     <video src="../assets/videos/ce1.mp4" poster="../assets/videos/ce1.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Songs On Rocks - Consent Engines Book One</p>
   </a>
   <!--a href="https://www.amazon.com/dp/B0FZ53T8Z8"><p>Buy it on Amazon</p></a-->
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
-  <a href="assets/pdf/Consent Engines 2_ Redshift Vows TRUE FINAL.pdf" style="flex: 1 1 200px; text-align: center;">
+<div class="consent-engines-book">
+  <a href="assets/pdf/Consent Engines 2_ Redshift Vows TRUE FINAL.pdf">
     <video src="../assets/videos/ce2.mp4" poster="../assets/videos/ce2.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Redshift Vows - Consent Engines Book Two</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
-  <a href="assets/pdf/Consent Engines 3_ The Mosaic Drift TRUE FINAL.pdf" style="flex: 1 1 200px; text-align: center;">
+<div class="consent-engines-book">
+  <a href="assets/pdf/Consent Engines 3_ The Mosaic Drift TRUE FINAL.pdf">
     <video src="../assets/videos/ce3.mp4" poster="../assets/videos/ce3.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Mosaic Drift - Consent Engines Book Three</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
-  <a href="assets/pdf/Consent Engines 4_ The Revocation War TRUE FINAL.pdf" style="flex: 1 1 200px; text-align: center;">
-    <video src="../assets/videos/ce4.mp4" poster="../assets/videos/ce4.jpg" style="width: 33%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+<div class="consent-engines-book">
+  <a href="assets/pdf/Consent Engines 4_ The Revocation War TRUE FINAL.pdf">
+    <video src="../assets/videos/ce4.mp4" poster="../assets/videos/ce4.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Revocation War - Consent Engines Book Four</p>
   </a>
 </div>
@@ -50,87 +122,87 @@ No spoilers. Thirteen books are planned for this series. I already have most of 
 
 The first book will soon be available on Amazon and here.
 
-<div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-books">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark01.mp4" poster="../assets/videos/ark01.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Awakening - 13 Arks Book One</p>
   </a>
   <!--a href="https://www.amazon.com/dp/B0FZ44GF2T"><p>Buy it on Amazon</p></a-->
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark02.mp4" poster="../assets/videos/ark02.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Losts - 13 Arks Book Two (under editing)</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark03.mp4" poster="../assets/videos/ark03.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Lensmaker's Children - 13 Arks Book Three (under editing)</p>
   </a>
 </div>
 
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark04.mp4" poster="../assets/videos/ark04.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Eventide - 13 Arks Book Four (under editing)</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark05.mp4" poster="../assets/videos/ark05.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Ship of Theseus - 13 Arks Book Five (under editing)</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark06.mp4" poster="../assets/videos/ark06.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Glass Jungle - 13 Arks Book Six (under editing)</p>
   </a>
 </div>
 
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark07.mp4" poster="../assets/videos/ark07.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Moon that Forgot - 13 Arks Book Seven (under editing)</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark08.mp4" poster="../assets/videos/ark08.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Flyby Covenant - 13 Arks Book Eight (under editing)</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark09.mp4" poster="../assets/videos/ark09.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Dark Ocean Foundry - 13 Arks Book Nine (under editing)</p>
   </a>
 </div>
 
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark10.mp4" poster="../assets/videos/ark10.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Mirror Reef - 13 Arks Book Ten (under editing)</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark11.mp4" poster="../assets/videos/ark11.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Landauer Tax - 13 Arks Book Eleven (under editing)</p>
   </a>
 </div>
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
     <video src="../assets/videos/ark12.mp4" poster="../assets/videos/ark12.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Lighthouse - 13 Arks Book Twelve (under editing)</p>
   </a>
 </div>
 
-<div style="flex: 1 1 200px; text-align: center;">
+<div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark13.mp4" poster="../assets/videos/ark13.jpg" style="width: 50%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="../assets/videos/ark13.mp4" poster="../assets/videos/ark13.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Prodigal - 13 Arks Book Thirteen (under editing)</p>
   </a>
 </div>
@@ -138,6 +210,10 @@ The first book will soon be available on Amazon and here.
 
 
 ## Other Sci-Fi Novels
+
+<div class="other-books" markdown="1">
+
+<article class="other-book" markdown="1">
 
 ### Axiom Breach
 
@@ -150,6 +226,9 @@ In a universe where axioms are treaties, survival may require the unthinkable: c
     <video src="../assets/videos/axiombreach.mp4" poster="../assets/videos/axiombreach.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+
+<article class="other-book" markdown="1">
 
 ### Carbon Quota
 
@@ -162,6 +241,9 @@ He didn’t break the system. He learned to operate it.
     <video src="../assets/videos/carbonquota.mp4" poster="../assets/videos/carbonquota.jpg"  style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+
+<article class="other-book" markdown="1">
 
 ### Shadows on Titan
 
@@ -173,6 +255,9 @@ Shadows on Titan is quiet cosmic dread in a lab coat: a Titan mission goes wrong
     <video src="../assets/videos/shadowsontitan.mp4" poster="../assets/videos/shadowsontitan.jpg"  style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+
+<article class="other-book" markdown="1">
 
 ### The Multiplicity of Me
 
@@ -184,6 +269,9 @@ In a spotless future city, Sanitation Unit D-7891 pauses at a reflection pool—
     <video src="../assets/videos/themultiplicityofme.mp4" poster="../assets/videos/themultiplicityofme.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+
+<article class="other-book" markdown="1">
 
 ### Blue Light Child
 
@@ -195,6 +283,9 @@ A boy and an AI grow up together. One will come to understand what it means to b
     <video src="../assets/videos/bluelightchild.mp4" poster="../assets/videos/bluelightchild.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+
+<article class="other-book" markdown="1">
 
 ### The Recovery Horizon
 
@@ -206,6 +297,9 @@ A mission to test a new theory of everything goes haywire and challenges perspec
     <video src="../assets/videos/therecoveryhorizon.mp4" poster="../assets/videos/therecoveryhorizon.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+
+<article class="other-book" markdown="1">
 
 ### Fracture
 
@@ -217,6 +311,9 @@ A woman's descent into madness.
     <video src="../assets/videos/fracture.mp4" poster="../assets/videos/fracture.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+
+<article class="other-book" markdown="1">
 
 ### Perfettissimo
 
@@ -228,6 +325,8 @@ Two obsessions collide. Who will survive?
     <video src="../assets/videos/perfettissimo.mp4" poster="../assets/videos/perfettissimo.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
+</article>
+</div>
 
 ## A Collection of My Short Stories
 
@@ -237,7 +336,7 @@ Short Stories gathers sharp, fast, big-idea sci-fi that hits like a meteor: wond
 
 If you like mind-bending twists, tight worldbuilding, and heart under pressure, this collection is your next late-night problem. Open anywhere. Read one on your commute or three before bed. Just don’t expect the lights to feel the same when you turn them off.
 
-<div style="margin: 0 auto; text-align: center; width: 100%;">
+<div class="featured-book">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="assets/pdf/Short Stories - Clumsy.GiBa FINAL.pdf">
     <video src="../assets/videos/shorts.mp4" poster="../assets/videos/shorts.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
@@ -246,7 +345,7 @@ If you like mind-bending twists, tight worldbuilding, and heart under pressure, 
 
 ## A Collection of My Poems
 
-<div style="margin: 0 auto; text-align: center; width: 100%;">
+<div class="featured-book">
 <p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p>
 <a href="assets/pdf/Poems - Clumsy.GiBa v5.pdf">
   <video src="../assets/videos/dialogues.mp4" poster="../assets/videos/dialogues.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
