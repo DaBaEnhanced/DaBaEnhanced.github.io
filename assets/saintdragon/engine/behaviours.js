@@ -1388,6 +1388,33 @@ const CAPSULE_SOUND = 0x45;         // $51ce
 const CAPSULE_OPENING = [0x2003, 0x2203, 0x2403, 0x2603,
                          0x2803, 0x2a03, 0x2c03, 0x2e03,
                          0xa000, 0xb000];             // $51fe-$5210
+const CAPSULE_EFFECTS = {
+  '$04bea': { kind: 'speed' }, '$04bf2': { kind: 'speed' }, '$04c0c': { kind: 'speed' },
+  '$04c62': { kind: 'spread' }, '$04c7c': { kind: 'spread' },
+  '$04cc4': { kind: 'weapon', index: 0 },
+  '$04d00': { kind: 'weapon', index: 1 }, '$04d1a': { kind: 'weapon', index: 1 },
+  '$04d46': { kind: 'weapon', index: 2 }, '$04d68': { kind: 'weapon', index: 2 },
+  '$04d9c': { kind: 'weapon', index: 3 },
+  '$04e0c': { kind: 'weaponLevel' }, '$04e14': { kind: 'weaponLevel' },
+  '$04e26': { kind: 'weaponLevel' },
+  '$04ed0': { kind: 'life', amount: 3 }, '$04ed8': { kind: 'life', amount: 3 },
+  '$04f20': { kind: 'life', amount: 5 }, '$04f68': { kind: 'life', amount: 7 },
+  '$04fb0': { kind: 'fullPower' }, '$050d0': { kind: 'fullPower' },
+  '$050ea': { kind: 'invulnerability' },
+};
+const CAPSULE_CONTENT_HANDLES = {
+  '$04bea': 0x0003, '$04bf2': 0x0003, '$04c0c': 0x0003, // speed
+  '$04c62': 0x0203, '$04c7c': 0x0203,                   // spread
+  '$04cc4': 0x0403,                                     // weapon 0
+  '$04d00': 0x0603, '$04d1a': 0x0603,                   // weapon 1
+  '$04d46': 0x0803, '$04d68': 0x0803,                   // weapon 2
+  '$04d9c': 0x0c03,                                     // weapon 3
+  '$04e0c': 0x0a03, '$04e14': 0x0a03, '$04e26': 0x0a03, // weapon level
+  '$04ed0': 0x1203, '$04ed8': 0x1203,                   // three lives
+  '$04f20': 0x1403, '$04f68': 0x1603,                   // five / seven lives
+  '$04fb0': 0x1803, '$050d0': 0x1803,                   // full power
+  '$050ea': 0x0e03,                                     // invulnerability
+};
 
 function* weaponCapsule(o, world, spec) {
   allocDefaults(o);
@@ -1419,9 +1446,11 @@ function* weaponCapsule(o, world, spec) {
     if (o.__opening && o.scriptFlag) {                 // $51e6/$51ea
       o.__opening = false;
       o.__opened = true;
-      if (spec.handle !== undefined) o.setHandle(spec.handle);    // contents
+      const contentHandle = CAPSULE_CONTENT_HANDLES[spec.__addr] ?? spec.handle;
+      if (contentHandle !== undefined) o.setHandle(contentHandle); // contents
       o.collides = true;                               // $4c8e $44 = $4ca2
-      o.onHitPlayer = (self, wd) => { wd.collectPickup(self); };
+      const effect = CAPSULE_EFFECTS[spec.__addr] || { kind: 'spread' };
+      o.onHitPlayer = (self, wd) => { wd.collectPickup(self, effect); };
     }
     if (o.x + world.leftExtent(o) < -48) return;
     yield;
@@ -2478,7 +2507,7 @@ const BOSS1_PATH = [
 ];
 
 const BOSS1_PHASE_HP = 0x0fa0;                              // $9884
-const BOSS1_ATTACK_RELOAD = 0x0c8;                          // $9788
+const BOSS1_ATTACK_RELOAD = 0x064;                          // tuned from $9788's $c8
 const BOSS1_BODY_INITIAL = 0x1f4;                           // $94f0
 const BOSS1_BODY_RELOAD = 0x19a;                            // $9850
 const BOSS1_CHARGE = [0x0005, 0x0205, 0x0405, 0x0605, 0x0805,
@@ -2581,6 +2610,7 @@ function* b01aSteppedMove(o, delta) {                        // $b504/$b528
 function* b01aMotion(o, world, cfg) {                        // $b452
   let alternate = 0;
   o.vy = 0;
+  if (cfg.protectedCore) o.__invulnerable = true;            // $b528, $92 != 0
   if (!(yield* b01aSteppedMove(o, -cfg.ayStep))) return;
   o.vy = -1;
   let reverseTimer = 0x3a, attackTimer = 0x32;
@@ -2590,6 +2620,7 @@ function* b01aMotion(o, world, cfg) {                        // $b452
       const savedVy = o.vy;
       o.vy = 0;
       if (!(yield* b01aSteppedMove(o, cfg.ayStep))) return;
+      if (cfg.protectedCore) o.__invulnerable = false;       // $b504 clears $48
       for (let frame = 0; frame < 8; frame++) { if (o.done) return; yield; }
       const y = o.y;
       o.y += cfg.attackDy;
@@ -2597,6 +2628,7 @@ function* b01aMotion(o, world, cfg) {                        // $b452
       o.y = y;
       alternate ^= 1;
       for (let frame = 0; frame < 0x14; frame++) { if (o.done) return; yield; }
+      if (cfg.protectedCore) o.__invulnerable = true;        // $b528 restores $48=$ff
       if (!(yield* b01aSteppedMove(o, -cfg.ayStep))) return;
       o.vy = savedVy;
       attackTimer = 0x32;
@@ -2619,6 +2651,9 @@ function* b01aSegment(o, world, boss, cfg, mirrored) {
   o.__noCull = true;                                         // $b128/$b1aa/$b23e
   o.hp = boss.hp; o.scoreAward = 0;
   o.collides = true;
+  o.shotCollides = true;                                    // $48=$6772 consumes the hit
+  o.__invulnerable = true;                                  // but the shell takes no damage
+  o.__stage2Shell = true;
   o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
   if (CHILD_DEATH_EFFECTS[cfg.addr])
     o.__onDeath = (self, wd) => CHILD_DEATH_EFFECTS[cfg.addr](wd, self);
@@ -2665,18 +2700,20 @@ function* stage2BossPhase2Death(o, world) {                  // $b36a
   o.collides = false;
   world.score += o.scoreAward;
   o.scoreAward = 0;
-  world.spawnChildOf(o, function* (emitter, wd) {            // $835a d0=$18,d1=6
+  const emitter = world.spawnChildOf(o, function* (emitter, wd) { // extended $835a-style sequence
     emitter.x = o.x; emitter.y = o.y;
-    for (let burst = 0; burst < 0x18; burst++) {
-      const x = emitter.x + ((Math.random() * 0x20) | 0) - 0x10;
-      const y = emitter.y + ((Math.random() * 0x20) | 0) - 0x10;
+    for (let burst = 0; burst < 0x30; burst++) {
+      const x = emitter.x + ((Math.random() * 0x40) | 0) - 0x20;
+      const y = emitter.y + ((Math.random() * 0x30) | 0) - 0x18;
       wd.spawn((fx, world2) => hitBurst(fx, world2, x, y), {});
       for (let frame = 0; frame <= 6; frame++) yield;
     }
+    pairedBlastDeathEffect(wd, emitter);
   }, {});
   for (let frame = 0; frame <= 0x0c; frame++) yield;
   yield;                                                     // $8714
-  for (let frame = 0; frame <= 0x12c; frame++) yield;
+  while (!emitter.done) yield;
+  for (let frame = 0; frame <= 0x96; frame++) yield;
   o.x = 0x190;                                               // $b38c
 }
 
@@ -2725,6 +2762,16 @@ function* stage2Boss(o, world, spec) {                       // $0b01a
   o.setHandle(0x0017);
   o.collides = false;
   o.__onDeath = (self, wd) => {                              // $b436
+    for (const shell of wd.objects) {
+      if (shell.done || !shell.__stage2Shell) continue;
+      const effect = CHILD_DEATH_EFFECTS[shell.__addr];
+      if (effect) effect(wd, shell);
+      else centeredBlastDeathEffect(wd, shell);
+      shell.collides = false;
+      shell.shotCollides = false;
+      shell.done = true;
+      wd.releaseLinks(shell);
+    }
     wd.spawnChildOf(self, function* (phase2, world2) {
       phase2.x = self.x; phase2.y = self.y;
       yield* stage2BossPhase2(phase2, world2);
@@ -2740,8 +2787,11 @@ function* stage2Boss(o, world, spec) {                       // $0b01a
   }
   for (let frame = 0; frame < 0x6b; frame++) { if (o.done) return; yield; }
   o.collides = true;
+  o.shotCollides = true;
   o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
-  yield* b01aMotion(o, world, { ayStep: 0, attackDy: 0, attacks: [null, null] });
+  yield* b01aMotion(o, world, {
+    ayStep: 0, attackDy: 0, attacks: [null, null], protectedCore: true,
+  });
 }
 
 const C4E6_AUX = [
@@ -3819,6 +3869,7 @@ function* boss4Shot(o, world, which) {
 
 function spawnBoss4MineBurst(o, world) {                       // $6868 -> $6570
   if ((world.projectiles || 0) >= PROJECTILE_POOL) return;
+  world.playSound(0x4b);                                      // $658c-$6596
   for (let i = 0; i < 2; i++) {
     world.spawnChildOf(o, function* (shot, wd) {
       allocDefaults(shot);
@@ -5151,6 +5202,9 @@ function* waveEnemy(o, world, spec) {
       // original you cannot realistically shoot it; with only $10 hit points
       // from $819c, one hit was felling it here.
       o.__invulnerable = true;
+      o.collides = false;
+      o.shotCollides = false;
+      o.onHitPlayer = null;
       for (const dx of RIDER_OFFSETS)
         world.spawn((c, wd) => res9Rider(c, wd, o.x + dx, o.y), {});
       // $09308 calls $89de, which writes $ff over $44, $48, $4c, $50 and $54 --

@@ -513,11 +513,40 @@ class World {
     return this.weaponIndex;
   }
 
-  // $04ca2: collecting an opened capsule. `st $34(a6)`, step the pickup level
-  // through $508c, sound $47, then $7d40 removes it.
-  collectPickup(o) {
-    this.pickupLevel = Math.min(2, (this.pickupLevel || 0) + 1);   // $508c
-    this.lastSound = 0x47;                                        // $04caa
+  // $04c32-$0512e: each revealed res-3 capsule installs its own collection
+  // handler. They share sound $47 and $7d40 removal, but not their effect.
+  collectPickup(o, effect = { kind: 'spread' }) {
+    const player = this.player;
+    switch (effect.kind) {
+      case 'speed':                                               // $04c32
+        if (player) player.speed = Math.min(0x400, (player.speed || 0x200) + 0x80);
+        break;
+      case 'weapon': {                                            // $04cf2-$04dca
+        const index = effect.index & 3;
+        if (index === this.weaponIndex) this.weaponLevel = Math.min(2, this.weaponLevel + 1);
+        this.setWeapon(index, this.weaponLevel);
+        break;
+      }
+      case 'weaponLevel':                                         // $04e4c
+        this.weaponLevel = Math.min(2, this.weaponLevel + 1);
+        this.setWeapon(this.weaponIndex, this.weaponLevel);
+        break;
+      case 'life':                                                // $04eb6-$04f96
+        this.lives += effect.amount;
+        break;
+      case 'fullPower':                                           // $04fcc
+        if (player) player.hitCooldown = Math.max(player.hitCooldown || 0, 0x3a98);
+        this.pickupLevel = 4;
+        this.setWeapon(1, 2);
+        break;
+      case 'invulnerability':                                     // $0512e
+        if (player) player.hitCooldown = Math.max(player.hitCooldown || 0, 0x190);
+        break;
+      default:                                                    // $04ca2 / $0508c
+        this.pickupLevel = Math.min(4, (this.pickupLevel || 0) + 1);
+        break;
+    }
+    this.playSound(0x47);
     o.done = true;                                                // $7d40
   }
 
