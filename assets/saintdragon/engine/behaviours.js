@@ -876,7 +876,6 @@ function* terrainUnit(o, world, spec) {
 }
 
 // $0ed9c (res 58) and $0f0d6 (res 59) -- stage 5 ceiling and ground structures.
-// Both install the collision handler $7d06 and the death handler $6772.
 function* stage5Structure(o, world, spec) {
   allocDefaults(o);
   const isEd9c = spec.__addr === '$0ed9c';
@@ -887,6 +886,7 @@ function* stage5Structure(o, world, spec) {
   o.collides = true;                             // $44 = $7d06
   o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
   o.__invulnerable = true;                       // $48=$6772, $4c/$54=$ff
+  o.shotCollides = res === 59;                   // $f0e8: consume shots without damage
   o.setHandle(res === 58 ? 0x003a : 0x003b);
 
   if (isEd9c) {
@@ -928,6 +928,7 @@ function* stage5StructureTop(o, world) {                   // $f14e
   o.collides = true;
   o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
   o.__invulnerable = true;                                // $48=$6772, $4c/$54=$ff
+  o.shotCollides = true;                                  // $f15e
   o.playFrames([0x023b, 0xb000]);                         // slice 3 above chain 0-2
   terrainLock(o, world);
   for (;;) { if (o.done) return; yield; }
@@ -2646,6 +2647,7 @@ function* b01aSegment(o, world, boss, cfg, mirrored) {
   o.__addr = cfg.addr;
   o.x = boss.x + cfg.xOffset;
   o.y = mirrored ? 0xb8 - cfg.y : cfg.y;                     // $b562
+  o.vy = mirrored ? -1 : 1;                                  // $b136/$b1c6/$b260
   o.flip = mirrored;                                         // $b582
   o.depth = cfg.depth;
   o.__noCull = true;                                         // $b128/$b1aa/$b23e
@@ -2800,20 +2802,19 @@ function* stage2Boss(o, world, spec) {                       // $0b01a
 const C4E6_AUX = [
   { addr: '$0cbc4', y: 0x60, script: [0x001f, 0x021f, 0x041f, 0x061f, 0x9000], vy: -1 },
   { addr: '$0cbe6', y: 0x90, script: [0x081f, 0x0a1f, 0x0c1f, 0x0e1f, 0x9000], vy: 1 },
-  // These two constants are hardware scan-line coordinates; the visible
-  // canvas starts at $80. Keeping the raw values put both patrols below-screen.
-  { addr: '$0ca9c', y: 0xe2 - 0x80, patrol: true, vy: -1 },
-  { addr: '$0caaa', y: 0x152 - 0x80, patrol: true, vy: 1 },
+  { addr: '$0ca9c', y: 0x2c, patrol: true, vy: -1 },
+  { addr: '$0caaa', y: 0x94, patrol: true, vy: 1 },
 ];
 
 function* c4e6Aux(o, world, boss, cfg) {
   allocDefaults(o);
   o.__addr = cfg.addr;
-  o.x = boss.x; o.y = cfg.patrol ? cfg.y : (world.ground || 0) + cfg.y;
+  o.x = boss.x;
+  o.y = cfg.patrol ? cfg.y + 0xbe : (world.ground || 0) + cfg.y;
   o.__noCull = true;
   if (!cfg.patrol) {                                      // $cbc4/$cbe6
     o.playFrames(cfg.script);
-    o.collides = true; o.__invulnerable = true;           // $cc5a
+    o.collides = true; o.__invulnerable = true;
     o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
     o.vy = -1;                                            // $cc12
     for (let frame = 0; frame <= 0xbd; frame++) { if (o.done) return; yield; }
@@ -2827,9 +2828,17 @@ function* c4e6Aux(o, world, boss, cfg) {
 
   o.flip = cfg.vy > 0;                                    // $caaa, $38 = 2
   o.setHandle(0x001e);                                     // res30 indices 0+1
-  o.__onDeath = () => { world.stage3AuxCount--; };
+  o.depth = boss.depth + 1;
+  o.hp = 0x80;
+  o.__onDeath = (self, wd) => {
+    pairedBlastDeathEffect(wd, self);
+    world.stage3AuxCount--;
+    self.done = true;
+    wd.releaseLinks(self);
+  };
   let shotTimer = world.stage3AuxTimerFlip ? 0x5e : 0x8c; // $cae2-$caf4
   world.stage3AuxTimerFlip = !world.stage3AuxTimerFlip;
+  o.vy = -1;
   for (let frame = 0; frame <= 0xbd; frame++) { if (o.done) return; yield; }
   o.vy = cfg.vy;
   for (let frame = 0; frame <= 0x10; frame++) { if (o.done) return; yield; }
@@ -3030,6 +3039,7 @@ function* stage3BossFinalDeath(o, world) {                   // $c940
     for (let frame = 0; frame < 3; frame++) yield;
   }
   pairedBlastDeathEffect(world, o);                         // $8722
+  o.noDraw = true;
   for (let frame = 0; frame < 0x190; frame++) yield;        // $7d7e #$190
   world.score += o.scoreAward || 0;
   o.done = true;
@@ -3529,9 +3539,10 @@ function installIntroPresentation(world) {
 function* stage5DragonExit(o, world) {
   allocDefaults(o);
   o.__addr = '$0dbd8';
-  o.x = 0x238; o.y = 0x78;
+  o.x = 0x238; o.y = 0x5c + 0x1e;                          // inherited $dd58 + $dc02
   o.depth = 0;
   o.__invulnerable = true;
+  o.__noCull = true;                                        // enters with its anchor offscreen
   o.setHandle(0x0043);
   terrainLock(o, world);
   while (o.x > 0xf0) yield;
@@ -3653,6 +3664,14 @@ function* stage5Boss(o, world, spec) {
     }
     if (o.dying) {
       o.vx = o.vy = o.ax = o.ay = 0;
+      pairedBlastDeathEffect(world, o);                     // $de44 -> $8722
+      for (let burst = 0; burst < 8; burst++) {             // $de48 -> $835a(8,3)
+        const x = o.x + ((Math.random() * 0x20) | 0) - 0x10;
+        const y = o.y + ((Math.random() * 0x20) | 0) - 0x10;
+        world.spawn((fx, wd) => hitBurst(fx, wd, x, y), {});
+        for (let frame = 0; frame < 3; frame++) yield;
+      }
+      o.noDraw = true;
       for (let frame = 0; frame <= 0x32; frame++) yield; // $ddcc-$ddd0, $8076
       world.score += o.scoreAward || 0;
       o.scoreAward = 0;

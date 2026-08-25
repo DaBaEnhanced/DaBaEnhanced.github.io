@@ -272,8 +272,6 @@ class World {
       if (String(this.stage) === '5' && !this.postBossDone) {
         if (!this.postBossStarted) {
           this.postBossStarted = true;
-          this.playerActive = false;
-          if (this.player) this.player.done = true;
           this.spawn(stage5DragonExit, {});             // $0dbd8, res 67
         }
       } else {

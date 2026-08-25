@@ -146,7 +146,7 @@ const fullscreen = document.getElementById('fullscreen');
 let audioContext = null, audio = null, audioEnabled = true;
 let route = 'idle', routeStart = 0, stage = 1, score = 0, lives = 5;
 let guns = { spread:0, type:1, level:0 };
-let boundWorld = null, scoreDeadline = 0, scoreRecorded = false;
+let boundWorld = null, routeLoading = false, scoreDeadline = 0, scoreRecorded = false;
 
 function routeUrl(mode, number) {
   const params = new URLSearchParams({ full:'1' });
@@ -159,6 +159,7 @@ function loadRoute(next, number) {
   clearTouchInput();
   route = next;
   boundWorld = null;
+  routeLoading = true;
   if (number) stage = number;
   status.textContent = next === 'stage' ? `STAGE ${stage}` : next.toUpperCase();
   touchControls.classList.toggle('active', next === 'stage');
@@ -207,6 +208,7 @@ function syncMusic(world) {
 }
 
 function tick() {
+  if (routeLoading) return;
   const world = game.contentWindow?.engineWorld;
   if (!world) return;
   if (world !== boundWorld) bindWorld(world);
@@ -325,7 +327,10 @@ fullscreen.onclick = async () => {
 };
 document.addEventListener('fullscreenchange', updateFullscreenButton);
 document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
-game.addEventListener('load', () => { boundWorld = null; });
+game.addEventListener('load', () => {
+  boundWorld = null;
+  routeLoading = false;
+});
 for (const type of ['keydown', 'keyup']) {
   addEventListener(type, event => {
     const setGameKey = game.contentWindow?.setGameKey;
