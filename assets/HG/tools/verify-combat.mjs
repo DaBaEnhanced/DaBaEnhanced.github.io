@@ -176,4 +176,37 @@ const hooks = {
 	assert(hits[0].hit.monsterDamage === 40 * 1 * 512, 'weapon damage scale mismatch');
 }
 
+{
+	const cells4 = new Uint32Array(LEVEL_CELLS * 2);
+	const seen4 = new Uint32Array(cells4.length);
+	const items4 = new Uint32Array(cells4.length);
+	for (let i = 0; i < cells4.length; i++) cells4[i] = FLOOR_HERE;
+	const from = cellIndex(2, 2, 1);
+	const field = from + 1;
+	const target = from + 2;
+	cells4[field] = blockWord(BLOCK.FIELD3);
+	cells4[target] = blockWord(BLOCK.MONSTER_FIRST);
+	const hits = [];
+	const player = { index: 0, direction: 1, stats: { experience: 0 } };
+	const result = fireWeaponAtTarget(cells4, seen4, items4, from, player, item(15), 0, {
+		hatchEggAt: () => false,
+		hitCell: (cell, hit) => { hits.push({ cell, hit }); return false; },
+	});
+	assert(result.cell === field && result.hit === false,
+		'weapon trace passed through a force field');
+	assert(hits.length === 1 && hits[0].cell === field,
+		'weapon damage was applied beyond a force field');
+
+	const state = createCombatState();
+	assert(addFireball(state, cells4, seen4, items4, from, {
+		direction: 1, speed: 1, decay: EXPL_DECAY, density: 0, flameback: 1,
+		style: 0, owner: -1,
+	}), 'fireball was not allocated before force field test');
+	moveFireballs(state, cells4, seen4, items4, 11, { style: 0 }, {
+		hitCell: (cell) => { hits.push({ cell }); return false; },
+	});
+	assert(!hits.some((hit) => hit.cell === target),
+		'fireball damage passed through a force field');
+}
+
 console.log('combat smoke: fireballs, grenades, mines, sentries, weapons and ExGfx checked');

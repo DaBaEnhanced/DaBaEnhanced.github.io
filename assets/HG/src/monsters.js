@@ -341,7 +341,8 @@ function monsterFireFireball(cells, m, hooks) {
 			if (style === 0 || style === 2) continue;
 			return false;
 		}
-		if (t === BLOCK.FIELD3 || t === BLOCK.HYDRAULIC) continue;
+		if (t === BLOCK.HYDRAULIC) continue;
+		if (t === BLOCK.FIELD3) return false;
 		if (t < 24 || t > BLOCK.PLAYER_LAST) return false;
 		if (t >= 28 && t < BLOCK.PLAYER_FIRST) return false;
 		return !!hooks.addFireball?.(m.cell, {

@@ -71,4 +71,5 @@ Claude then asked me to choose a direction:
 
 I obviously chose option 1. That work has just started, beginning with enemy paths and player sprites. I expect it will take a long time to reach a fully working game. Option 2 would have been much easier, but the result would have been too opaque.
 
-<a href="assets/saintdragon/engine/full.html">Play it now in your browser</a>
+<a href="assets/saintdragon/engine/full.html">Play it now in your browser</a> or 
+<a href="assets/saint.zip">Download it</a>

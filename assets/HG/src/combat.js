@@ -114,6 +114,9 @@ function blocksFireball(cell, style) {
 	if (cell & OPAQUE_BIT) return true;
 	if (!(cell & BLOCK_HERE)) return false;
 	const t = blockType(cell);
+	// The force field is transparent to the renderer, but it is a hard combat
+	// barrier: neither side may shoot or throw through it.
+	if (t === BLOCK.FIELD3) return true;
 	if (t === BLOCK.TREE && style !== 0 && style !== 2) return true;
 	return t >= 16 && t <= 21;
 }
@@ -308,6 +311,7 @@ function grenadeMoveBlocked(cells, idx) {
 	if (cell & OPAQUE_BIT) return true;
 	if (!(cell & BLOCK_HERE)) return false;
 	const t = blockType(cell);
+	if (t === BLOCK.FIELD3) return true;
 	return t >= 16 && t <= 21;
 }
 
@@ -435,7 +439,7 @@ function rayBlocked(cell, style) {
 	if (!(cell & BLOCK_HERE)) return false;
 	const t = blockType(cell);
 	if (t === BLOCK.TREE) return style !== 0 && style !== 2;
-	if (t === BLOCK.FIELD3 || t === BLOCK.TELEPORT) return false;
+	if (t === BLOCK.TELEPORT) return false;
 	if (t === BLOCK.DOOR_FRONT || t === BLOCK.DOOR_SIDE) {
 		return ((cell >>> SHIFT.variant) & MASK.variant) < 5;
 	}

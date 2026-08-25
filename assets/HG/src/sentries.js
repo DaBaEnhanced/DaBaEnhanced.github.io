@@ -128,7 +128,8 @@ function sentryFire(s, cells, combatState, seen, items, hooks) {
 		const cell = cells[idx] >>> 0;
 		if (!(cell & BLOCK_HERE)) continue;
 		const t = blockType(cell);
-		if (t === BLOCK.TREE || t === BLOCK.FIELD3 || t === BLOCK.HYDRAULIC) continue;
+		if (t === BLOCK.TREE || t === BLOCK.HYDRAULIC) continue;
+		if (t === BLOCK.FIELD3) return false;
 		if (t >= BLOCK.MONSTER_FIRST && t <= BLOCK.MONSTER_LAST) {
 			return addSentryFireball(s, cells, combatState, seen, items, hooks);
 		}
