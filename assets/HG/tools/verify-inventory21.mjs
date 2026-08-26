@@ -7,7 +7,7 @@ import { LEVEL_CELLS, cellIndex } from '../src/view.js';
 import { createDoorState, triggerDoor, DOOR } from '../src/doors.js';
 import {
 	createInventory, pickUpIntoInventory, pickUpToHand, dropHeldItem, hasItem, hasLooseItem,
-	peekLooseItem, carryingItem, removeCarriedItem,
+	peekLooseItem, carryingItem, removeCarriedItem, heldReloadState, reloadHeldItem,
 } from '../src/inventory.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -22,6 +22,18 @@ const AUX_DATA_SHIFT = 12;
 
 function assert(cond, msg) {
 	if (!cond) throw new Error(msg);
+}
+
+{
+	const player = { inventory: createInventory(null), stats: { weight: 0, physique: 100 } };
+	player.inventory.using = { num: 15, damage: 0, ammo: 2, outlined: 0 };
+	player.inventory.store[0] = { num: 45, damage: 0, ammo: 20, outlined: 0 };
+	assert(heldReloadState(player, itemsData).ready, 'part-loaded gun with a clip not reloadable');
+	const result = reloadHeldItem(player, itemsData);
+	assert(result.changed && player.inventory.using.ammo === 16, 'reload did not fill held gun');
+	assert(player.inventory.store[0].num === 45 && player.inventory.store[0].ammo === 6,
+		'reload did not leave the partial clip in inventory');
+	assert(heldReloadState(player, itemsData).reason === 'full', 'full gun still exposes reload');
 }
 
 {

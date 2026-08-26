@@ -251,6 +251,25 @@ function canPullFrom(cell) {
 	return a === 1 || a > 7;
 }
 
+/**
+ * Read-only version of pull_block's eligibility checks. Mobile controls use
+ * this to show Pull only when pressing it can actually move the block.
+ */
+export function canPullBlock(cells, player) {
+	if (!cells || !player) return false;
+	const [dx, dy] = STEP[player.direction & 3];
+	const frontX = player.x + dx, frontY = player.y + dy;
+	const backX = player.x - dx, backY = player.y - dy;
+	if (!inBounds(frontX, frontY) || !inBounds(backX, backY)) return false;
+	const here = cellIndex(player.x, player.y, player.floor);
+	const front = cellIndex(frontX, frontY, player.floor);
+	const back = cellIndex(backX, backY, player.floor);
+	return !!(cells[front] & PUSHABLE_BIT) &&
+		!pullRearBlocked(cells, back) &&
+		!(cells[back] & BLOCK_HERE) &&
+		canPullFrom(cells[here]);
+}
+
 // --- Falling blocks ----------------------------------------------------------
 //
 // blocks_fall (Sources/Main.s:4221), the other half of stuff_falls. An

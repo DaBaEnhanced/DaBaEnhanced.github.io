@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import {
 	FRONT_ITEMS, SHELL, TRAINING_CHARS, applyFrontChoice, beginLocation,
 	classifyMapNum, completeMission, confirmParty, createShell, locationsOf,
-	togglePartyChar,
+	togglePartyChar, focusFace, handleShellClick,
 } from '../src/shell.js';
 import { COMPLETION } from '../src/completion.js';
 
@@ -86,6 +86,32 @@ console.log(`shell smoke: ${campaign.locations.length} locations, front/chselect
 	assert(shell.mode === SHELL.FRONT, 'editor entry does not leave the front menu');
 }
 console.log('front menu: editor entry and indices ok');
+
+// Portrait clicks resolve from their displayed position. In particular, the
+// framed portrait at x 98..257 must not resolve to the next character.
+{
+	const s = createShell();
+	s.mode = SHELL.CHSELECT;
+	focusFace(s, 5, true);
+	handleShellClick(s, campaign, 178, 20, {}, false);
+	assert(s.focusChar === 5 && s.party.join(',') === '5',
+		'clicking the framed portrait did not choose the current character');
+	handleShellClick(s, campaign, 338, 20, {}, false);
+	assert(s.focusChar === 6, 'clicking the next displayed portrait did not focus it');
+
+	// Edge navigation remains a touch affordance. Mouse uses the portrait under
+	// the pointer; touch moves exactly one character even at the wide right edge.
+	focusFace(s, 5, true);
+	handleShellClick(s, campaign, 0, 20, {}, false);
+	assert(s.focusChar === 4, 'desktop click did not focus the visible previous portrait');
+	focusFace(s, 5, true);
+	handleShellClick(s, campaign, 0, 20, {}, true);
+	assert(s.focusChar === 4, 'touch left edge did not move one character');
+	focusFace(s, 5, true);
+	handleShellClick(s, campaign, 639, 20, {}, true);
+	assert(s.focusChar === 6, 'touch right edge did not move one character');
+}
+console.log('character select: portrait hit-testing and touch-only edge navigation checked');
 
 // The action list is 20 entries and only ~8 rows fit, so it must scroll and
 // the cursor must always be on screen.

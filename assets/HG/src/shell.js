@@ -437,6 +437,15 @@ export function faceFromScroll(x) {
 	return Math.max(0, Math.min(11, Math.floor(((x | 0) - FACE_ORIGIN) / FACE_WIDTH)));
 }
 
+/** Character whose displayed portrait contains screen coordinate `sx`. */
+function faceAtScreen(shell, sx) {
+	// The focused portrait is fixed at FACE_SCREEN_X. Every other portrait is
+	// exactly FACE_WIDTH away from it, so screen hit-testing is relative to that
+	// frame, not to FACE_ORIGIN (which belongs to the scroll-position formula).
+	const offset = Math.floor(((sx | 0) - FACE_SCREEN_X) / FACE_WIDTH);
+	return Math.max(0, Math.min(11, (shell.focusChar | 0) + offset));
+}
+
 /** Scroll position the original parks on for portrait `i`. */
 export function faceScrollFor(i) {
 	return FACE_SCROLL_MIN + Math.max(0, Math.min(11, i | 0)) * FACE_WIDTH;
@@ -594,6 +603,9 @@ function paintFront(ctx, shell, art) {
 // canvas the strip is rows 0..232 and the info region starts at row 234.
 const CH_STRIP_H = 232;
 const CH_INFO_Y = 234;
+// A generous edge target for touch screens. It stays outside the selected
+// portrait's fixed frame (x 98..258), so selecting the portrait still works.
+const CH_NAV_EDGE = 96;
 
 // redraw_small_faces (ChSelect.s:752) blits 64x80 faces at these offsets,
 // relative to the info region.
@@ -976,7 +988,7 @@ export function handleShellKey(shell, campaign, key) {
 	return { stay: true };
 }
 
-export function handleShellClick(shell, campaign, sx, sy, art = {}) {
+export function handleShellClick(shell, campaign, sx, sy, art = {}, touch = false) {
 	if (shell.mode === SHELL.FRONT) {
 		for (let i = 0; i < FRONT_MENU_POS.length; i++) {
 			const p = FRONT_MENU_POS[i];
@@ -989,10 +1001,18 @@ export function handleShellClick(shell, campaign, sx, sy, art = {}) {
 	}
 	if (shell.mode === SHELL.CHSELECT) {
 		if (sy < CH_STRIP_H) {
+			if (touch && sx < CH_NAV_EDGE) {
+				focusFace(shell, shell.focusChar - 1);
+				return { stay: true };
+			}
+			if (touch && sx >= SHELL_W - CH_NAV_EDGE) {
+				focusFace(shell, shell.focusChar + 1);
+				return { stay: true };
+			}
 			// Clicking a face focuses it; clicking the already-focused one
 			// toggles it into the party, which matches the two-step feel of
 			// scroll-then-select without needing the scroll.
-			const i = faceFromScroll((shell.faceX | 0) + sx);
+			const i = faceAtScreen(shell, sx);
 			if (i === shell.focusChar) togglePartyChar(shell, i);
 			else focusFace(shell, i);
 			return { stay: true };

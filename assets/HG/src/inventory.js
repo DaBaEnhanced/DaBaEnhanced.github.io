@@ -482,6 +482,28 @@ function findCarried(inv, num) {
 	return null;
 }
 
+/**
+ * Whether the item in hand can be reloaded right now. Kept separate from the
+ * mutating operation so touch UI can expose reload only when it is useful.
+ */
+export function heldReloadState(player, itemsData) {
+	const inv = player?.inventory;
+	const heldMeta = itemMeta(itemsData, inv?.using);
+	if (!inv || !heldMeta || !reloadable.has(heldMeta.category)) {
+		return { ready: false, reason: 'not_reloadable' };
+	}
+	const spec = gunSpec(heldMeta);
+	if (!spec?.maxRounds || inv.using.ammo >= spec.maxRounds) {
+		return { ready: false, reason: 'full' };
+	}
+	for (const clip of spec.clips) {
+		if (!clip) continue;
+		const found = findCarried(inv, clip);
+		if (found?.place === 'store') return { ready: true, clip, found, spec };
+	}
+	return { ready: false, reason: 'no_ammo' };
+}
+
 export function carryingItem(inv, num) {
 	return inv ? findCarried(inv, num) : null;
 }
@@ -500,30 +522,19 @@ export function removeCarriedItem(player, itemsData, num) {
 
 export function reloadHeldItem(player, itemsData) {
 	const inv = player.inventory;
-	const heldMeta = itemMeta(itemsData, inv.using);
-	if (!heldMeta || !reloadable.has(heldMeta.category)) {
-		return { changed: false, reason: 'not_reloadable' };
+	const state = heldReloadState(player, itemsData);
+	if (!state.ready) return { changed: false, reason: state.reason };
+	const { clip, found, spec } = state;
+	const needed = spec.maxRounds - inv.using.ammo;
+	if (found.item.ammo > needed) {
+		found.item.ammo -= needed;
+		inv.using.ammo = spec.maxRounds;
+	} else {
+		inv.using.ammo += found.item.ammo;
+		removeStoreItem(inv, found.index);
 	}
-	const spec = gunSpec(heldMeta);
-	if (!spec?.maxRounds || inv.using.ammo >= spec.maxRounds) {
-		return { changed: false, reason: 'full' };
-	}
-	for (const clip of spec.clips) {
-		if (!clip) continue;
-		const found = findCarried(inv, clip);
-		if (!found || found.place !== 'store') continue;
-		const needed = spec.maxRounds - inv.using.ammo;
-		if (found.item.ammo > needed) {
-			found.item.ammo -= needed;
-			inv.using.ammo = spec.maxRounds;
-		} else {
-			inv.using.ammo += found.item.ammo;
-			removeStoreItem(inv, found.index);
-		}
-		refreshInventory(player, itemsData);
-		return { changed: true, clip };
-	}
-	return { changed: false, reason: 'no_ammo' };
+	refreshInventory(player, itemsData);
+	return { changed: true, clip };
 }
 
 export function itemFooterLines(itemsData, item) {

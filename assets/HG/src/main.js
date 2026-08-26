@@ -23,7 +23,7 @@ import { createDoorState, moveDoors, triggerDoor } from './doors.js';
 import { stuffFalls, createFallState, createFallClock } from './falling.js';
 import { createLiftState, moveLifts, liftCarryingPlayer, LIFT } from './lifts.js';
 import { createButtonState, checkPad, activatePanel, stepButtons } from './buttons.js';
-import { createPushableState, pushRow, pullBlock, blocksFall } from './pushables.js';
+import { createPushableState, pushRow, pullBlock, canPullBlock, blocksFall } from './pushables.js';
 import { pickGadget, ACTION as GADGET, WINDOW } from './gadgets.js';
 import {
 	createMonsterState, initialiseMonsterHatches, hatchEggs, moveMonsters,
@@ -34,7 +34,8 @@ import { mapMonsterNumbers, patchStyleMonsters } from './monster-graphics.js';
 import {
 	createInventory, refreshInventory, scrollInventory, takeOrSwapSelected,
 	storeHeldItem, clearNewItems, pickUpIntoInventory, pickUpToHand, stockInventory,
-	dropHeldItem, dropSelectedItem, reloadHeldItem, hasLooseItem, peekLooseItem, hasItem,
+	dropHeldItem, dropSelectedItem, reloadHeldItem, heldReloadState,
+	hasLooseItem, peekLooseItem, hasItem,
 	itemMeta, itemName, itemFooterLines, carryingItem, removeCarriedItem, removeStoreItem,
 	skeletonUnderfootAux,
 	CATEGORY, damageInventory, damageInventoryByWater,
@@ -78,6 +79,7 @@ import { createMapDoc, cellIndex as editorCellIndex, cellOfIndex } from './edito
 import { playIntro, resetIntro } from './intro.js';
 import { showDeathScreen, showOutro, previewEndScreen } from './endscreens.js';
 import { showBriefing } from './briefing.js';
+import { fittedGameScale } from './layout.js';
 import { initCrt, setCrtScale, setCrt, crtEnabled } from './crt.js';
 import {
 	createShakeState, startShake, stepShake, shakeActive,
@@ -3294,6 +3296,7 @@ function restoreBarModes() {
 function showShell(on) {
 	const el = $('shell');
 	if (el) el.classList.toggle('hidden', !on);
+	updateMobileActions();
 }
 
 function paintShellFrame() {
@@ -6184,6 +6187,9 @@ function hideMouseCursor() {
 }
 
 function updateMouseCursor(e) {
+	// Touch pointers get persistent on-canvas action buttons instead. Showing a
+	// mouse cursor at the last tapped point is both misleading and obstructive.
+	if (e.pointerType && e.pointerType !== 'mouse') return;
 	const img = game.cursorEl;
 	const files = game.cursors?.sets?.[0]?.files;
 	if (!img || !files) return;
@@ -6228,6 +6234,10 @@ function shellPointer(e) {
 	};
 }
 
+function isTouchPointer(e) {
+	return e?.pointerType === 'touch';
+}
+
 function onShellMove(e) {
 	if (game.shell?.mode !== SHELL.WORLD) return;
 	const { sx, sy } = shellPointer(e);
@@ -6264,7 +6274,8 @@ function onShellUp(e) {
 		return;
 	}
 	const { sx, sy } = shellPointer(e);
-	applyShellEvent(handleShellClick(game.shell, game.campaign, sx, sy, game.frontendArt));
+	applyShellEvent(handleShellClick(game.shell, game.campaign, sx, sy,
+		game.frontendArt, isTouchPointer(e)));
 }
 
 function onMouse(e) {
@@ -6273,7 +6284,8 @@ function onMouse(e) {
 		e.preventDefault();
 		const { sx, sy } = shellPointer(e);
 		if (game.shell.mode === SHELL.WORLD) startWorldDrag(game.shell, sx, sy);
-		else applyShellEvent(handleShellClick(game.shell, game.campaign, sx, sy, game.frontendArt));
+		else applyShellEvent(handleShellClick(game.shell, game.campaign, sx, sy,
+			game.frontendArt, isTouchPointer(e)));
 		return;
 	}
 	const canvas = $('screen');
@@ -6292,6 +6304,100 @@ function onMouse(e) {
 	game.dirty = true;
 	updateHUD();
 	updateMouseCursor(e);
+}
+
+// ---------------------------------------------------------------------------
+// Touch-only contextual actions.
+//
+// The original makes pickup the right-button alternate of sidestep-left, and
+// pull/reload the alternate of the central action zone. A blanket "tap means
+// right click" would therefore remove essential movement and firing. These
+// buttons temporarily occupy the pickup corner only when there is a useful
+// alternate action to perform. Fine-pointer desktop layouts never enable them.
+
+const MOBILE_QUERY = typeof matchMedia === 'function'
+	? matchMedia('(hover: none), (pointer: coarse)') : null;
+
+function mobileControlsEnabled() {
+	return !!MOBILE_QUERY?.matches;
+}
+
+function setMobileActionContents(button, action) {
+	if (button.dataset.action === action) return;
+	button.dataset.action = action;
+	button.replaceChildren();
+	if (action === 'pickup') {
+		const img = document.createElement('img');
+		img.src = `${ASSETS}cursors/mouse0-6.png`;
+		img.alt = '';
+		button.appendChild(img);
+		button.title = 'Pick up into inventory';
+		button.setAttribute('aria-label', 'Pick up into inventory');
+	} else if (action === 'reload') {
+		button.textContent = '↻';
+		button.title = 'Reload';
+		button.setAttribute('aria-label', 'Reload');
+	} else if (action === 'pull') {
+		button.textContent = '⇩';
+		button.title = 'Pull';
+		button.setAttribute('aria-label', 'Pull');
+	}
+}
+
+function updateMobileActions() {
+	const host = $('mobile-actions');
+	if (!host) return;
+	const visible = mobileControlsEnabled() && game.shell?.mode === SHELL.GAME && !!game.map;
+	host.classList.toggle('hidden', !visible);
+	const stage = $('stage');
+	const scale = stage ? stage.getBoundingClientRect().width / SCREEN_W : 1;
+	for (const button of host.querySelectorAll('.mobile-action')) {
+		const pane = Number(button.dataset.pane);
+		const p = game.players?.[pane];
+		let action = '';
+		if (visible && p?.active && !p.dead && (p.windowType ?? WINDOW.VIEW) === WINDOW.VIEW) {
+			if (p.hasAux) action = 'pickup';
+			else if (canPullBlock(game.cells, p)) action = 'pull';
+			else if (heldReloadState(p, game.itemDefs).ready) action = 'reload';
+		}
+		button.classList.toggle('on', !!action);
+		button.disabled = !action;
+		if (!action) {
+			button.dataset.action = '';
+			continue;
+		}
+		setMobileActionContents(button, action);
+		const [ox, oy] = PANE_ORIGINS[pane];
+		button.style.left = `${(ox + 4) * scale}px`;
+		button.style.top = `${(oy + 64) * scale}px`;
+		button.style.width = `${32 * scale}px`;
+		button.style.height = `${32 * scale}px`;
+	}
+}
+
+function bindMobileActions() {
+	const host = $('mobile-actions');
+	if (!host) return;
+	for (const button of host.querySelectorAll('.mobile-action')) {
+		button.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			if (!mobileControlsEnabled()) return;
+			const pane = Number(button.dataset.pane);
+			const p = game.players?.[pane];
+			if (!p?.active) return;
+			game.active = pane;
+			if (button.dataset.action === 'pickup' && p.hasAux) runPickupIntoInventory(p);
+			else if (button.dataset.action === 'pull' && canPullBlock(game.cells, p)) pull(p);
+			else if (button.dataset.action === 'reload' && heldReloadState(p, game.itemDefs).ready) {
+				runReload(p);
+			}
+			game.dirty = true;
+			updateHUD();
+			updateMobileActions();
+		});
+	}
+	MOBILE_QUERY?.addEventListener?.('change', updateMobileActions);
 }
 
 /**
@@ -6513,6 +6619,7 @@ function frame() {
 		if (paletteChanged) game.renderer.setPalette(buildPalette());
 	}
 	if (game.map) refreshAllPlayerFlags();
+	updateMobileActions();
 	if (game.map && game.players.some((p) => p?.active &&
 		(p.windowType ?? WINDOW.VIEW) === WINDOW.VDU &&
 		dtsModuleMode(p) === 'offline')) {
@@ -6646,40 +6753,131 @@ function applyShake() {
 	canvas.style.transform = y ? `translateY(${y}px)` : '';
 }
 
+function fullscreenElement() {
+	return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+function syncFullscreen() {
+	const active = !!fullscreenElement();
+	document.body.classList.toggle('fullscreen', active);
+	const button = $('fullscreen');
+	if (button) {
+		button.textContent = active ? 'exit full screen' : 'full screen';
+		button.setAttribute('aria-pressed', active ? 'true' : 'false');
+	}
+	requestAnimationFrame(() => {
+		fitCanvas($('screen'));
+		game.dirty = true;
+	});
+}
+
+async function toggleFullscreen() {
+	try {
+		if (fullscreenElement()) {
+			const exit = document.exitFullscreen || document.webkitExitFullscreen;
+			if (!exit) throw new Error('not supported by this browser');
+			await exit.call(document);
+		} else {
+			const root = document.documentElement;
+			const request = root.requestFullscreen || root.webkitRequestFullscreen;
+			if (!request) throw new Error('not supported by this browser');
+			await request.call(root);
+		}
+	} catch (e) {
+		status(`full screen unavailable: ${e.message || e}`);
+	}
+}
+
+function bindFullscreen() {
+	const button = $('fullscreen');
+	if (!button) return;
+	button.addEventListener('click', () => {
+		toggleFullscreen();
+		button.blur();
+	});
+	document.addEventListener('fullscreenchange', syncFullscreen);
+	document.addEventListener('webkitfullscreenchange', syncFullscreen);
+	syncFullscreen();
+}
+
+/** Height occupied by visible, in-flow page chrome other than the game. */
+function canvasHeightReserve(stage) {
+	const bodyStyle = getComputedStyle(document.body);
+	let reserve = parseFloat(bodyStyle.paddingTop) + parseFloat(bodyStyle.paddingBottom);
+	let flowCount = 0;
+	for (const el of document.body.children) {
+		if (el === stage || el.tagName === 'SCRIPT') continue;
+		const style = getComputedStyle(el);
+		if (style.display === 'none' || style.position === 'fixed' || style.position === 'absolute') continue;
+		reserve += el.getBoundingClientRect().height;
+		flowCount++;
+	}
+	// Each other flow item contributes one flex gap: between the items and once
+	// more between the last item and the stage.
+	reserve += flowCount * (parseFloat(bodyStyle.rowGap || bodyStyle.gap) || 0);
+	return reserve;
+}
+
 function fitCanvas(canvas) {
-	// Integer upscale only, so every game pixel stays a whole number of screen pixels.
-	const scale = Math.max(1, Math.min(
-		Math.floor(window.innerWidth / SCREEN_W),
-		Math.floor((window.innerHeight - 90) / SCREEN_H),
-	));
-	canvas.width = SCREEN_W * scale;
-	canvas.height = SCREEN_H * scale;
-	canvas.style.width = `${SCREEN_W * scale}px`;
-	canvas.style.height = `${SCREEN_H * scale}px`;
+	const stage = $('stage');
+	const bodyStyle = getComputedStyle(document.body);
+	const viewportW = window.visualViewport?.width || window.innerWidth;
+	const viewportH = window.visualViewport?.height || window.innerHeight;
+	let availableWidth = viewportW - parseFloat(bodyStyle.paddingLeft) -
+		parseFloat(bodyStyle.paddingRight);
+	let availableHeight = viewportH - parseFloat(bodyStyle.paddingTop) -
+		parseFloat(bodyStyle.paddingBottom);
+	const inFullscreen = !!fullscreenElement();
+	if (inFullscreen) {
+		const bar = $('bar');
+		const barRect = bar?.getBoundingClientRect();
+		const gap = parseFloat(bodyStyle.rowGap || bodyStyle.gap) || 0;
+		if (matchMedia('(orientation: landscape)').matches) {
+			availableWidth -= (barRect?.width || 0) + gap;
+		} else {
+			availableHeight -= (barRect?.height || 0) + gap;
+		}
+	} else {
+		availableHeight = viewportH - canvasHeightReserve(stage);
+	}
+	availableWidth = Math.max(1, availableWidth);
+	availableHeight = Math.max(1, availableHeight);
+	const displayScale = fittedGameScale(availableWidth, availableHeight,
+		SCREEN_W, SCREEN_H, { fractional: inFullscreen });
+	// The renderer still gets a whole multiple of the native framebuffer. In
+	// fullscreen CSS presents it at the exact fractional fit, with nearest-pixel
+	// scaling and the aspect ratio unchanged.
+	const backingScale = Math.max(1, Math.floor(displayScale));
+	const displayWidth = SCREEN_W * displayScale;
+	const displayHeight = SCREEN_H * displayScale;
+	canvas.width = SCREEN_W * backingScale;
+	canvas.height = SCREEN_H * backingScale;
+	canvas.style.width = `${displayWidth}px`;
+	canvas.style.height = `${displayHeight}px`;
 	// The CRT scanlines follow the same integer upscale, so a dark line lands
 	// between game pixel rows rather than cutting through them.
-	setCrtScale(scale);
+	setCrtScale(Math.round(displayScale));
 	// And the shake moves by whole screen pixels for the same reason.
-	game.shakeScale = scale;
+	game.shakeScale = displayScale;
 	applyShake();
 	const shell = $('shell-canvas');
 	if (shell) {
 		// Backed at the shell's own 640x512 so the hires art is not squashed,
 		// and presented at that aspect rather than stretched into the game's
 		// 320x212 box -- letterboxed inside the stage instead.
-		const shellScale = Math.max(1, Math.round(SCREEN_W * scale / SHELL_W));
+		const shellScale = Math.max(1, Math.floor(displayWidth / SHELL_W));
 		shell.width = SHELL_W * shellScale;
 		shell.height = SHELL_H * shellScale;
-		const fit = Math.min((SCREEN_W * scale) / SHELL_W, (SCREEN_H * scale) / SHELL_H);
-		shell.style.width = `${Math.round(SHELL_W * fit)}px`;
-		shell.style.height = `${Math.round(SHELL_H * fit)}px`;
+		const fit = Math.min(displayWidth / SHELL_W, displayHeight / SHELL_H);
+		shell.style.width = `${SHELL_W * fit}px`;
+		shell.style.height = `${SHELL_H * fit}px`;
 	}
-	const stage = $('stage');
 	if (stage) {
-		stage.style.width = `${SCREEN_W * scale}px`;
-		stage.style.height = `${SCREEN_H * scale}px`;
+		stage.style.width = `${displayWidth}px`;
+		stage.style.height = `${displayHeight}px`;
 	}
-	return scale;
+	updateMobileActions();
+	return displayScale;
 }
 
 // Hold shift while the page loads to see the intro again.
@@ -6710,6 +6908,8 @@ async function main() {
 		renderer = new Renderer2D(fresh);
 	}
 	game.renderer = renderer;
+	bindFullscreen();
+	bindMobileActions();
 	fitCanvas($('screen'));
 	window.addEventListener('resize', () => { fitCanvas($('screen')); game.dirty = true; });
 
@@ -6888,15 +7088,15 @@ async function main() {
 	window.addEventListener('keydown', onKey);
 	const screen = $('screen');
 	setupMouseCursor(screen);
-	screen.addEventListener('mousedown', onMouse);
-	screen.addEventListener('mousemove', updateMouseCursor);
-	screen.addEventListener('mouseleave', hideMouseCursor);
+	screen.addEventListener('pointerdown', onMouse);
+	screen.addEventListener('pointermove', updateMouseCursor);
+	screen.addEventListener('pointerleave', hideMouseCursor);
 	const shellCanvas = $('shell-canvas');
 	if (shellCanvas) {
-		shellCanvas.addEventListener('mousedown', onMouse);
-		shellCanvas.addEventListener('mousemove', onShellMove);
-		shellCanvas.addEventListener('mouseleave', onShellLeave);
-		window.addEventListener('mouseup', onShellUp);
+		shellCanvas.addEventListener('pointerdown', onMouse);
+		shellCanvas.addEventListener('pointermove', onShellMove);
+		shellCanvas.addEventListener('pointerleave', onShellLeave);
+		window.addEventListener('pointerup', onShellUp);
 		shellCanvas.addEventListener('contextmenu', (e) => e.preventDefault());
 	}
 	// The fire gadget's right-click alternate is `pull`, so the browser menu

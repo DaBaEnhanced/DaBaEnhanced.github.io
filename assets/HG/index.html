@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hired Guns</title>
 <style>
 	:root { color-scheme: dark; }
@@ -12,6 +12,9 @@
 		display: flex; flex-direction: column; align-items: center; gap: 8px;
 		padding: 10px; min-height: 100vh; box-sizing: border-box;
 	}
+	/* The game surface owns its gestures. Without this, a drag on the world map
+	   or a rapid pair of movement taps can scroll or zoom the browser instead. */
+	#stage, #screen, #shell-canvas { touch-action: none; user-select: none; -webkit-user-select: none; }
 	h1 { font-size: 15px; margin: 0; letter-spacing: 3px; color: #e0d0a0; font-weight: 600; }
 	#stage.hidden { display: none; }
 	#stage { position: relative; }
@@ -84,6 +87,58 @@
 	#hg-cursor {
 		position: fixed; left: 0; top: 0; z-index: 20; pointer-events: none;
 		image-rendering: pixelated; display: none;
+	}
+	#mobile-actions { position: absolute; inset: 0; z-index: 12; pointer-events: none; }
+	#mobile-actions.hidden { display: none; }
+	.mobile-action {
+		position: absolute; display: none; align-items: center; justify-content: center;
+		box-sizing: border-box; padding: 0; pointer-events: auto;
+		background: rgba(8, 8, 14, .82); border: 1px solid #d8c47a;
+		color: #fff0a0; font: 700 22px/1 ui-monospace, monospace;
+		touch-action: manipulation; image-rendering: pixelated;
+	}
+	.mobile-action.on { display: flex; }
+	.mobile-action img { width: 100%; height: 50%; object-fit: contain; image-rendering: pixelated; }
+	.mobile-action[data-action="reload"] { text-shadow: 1px 1px #000; }
+	@media (hover: hover) and (pointer: fine) { #mobile-actions { display: none; } }
+	@media (hover: none), (pointer: coarse) {
+		select, button { min-height: 34px; }
+		#help { display: none; }
+	}
+	:fullscreen body, body.fullscreen {
+		width: 100vw; height: 100dvh; min-height: 0; overflow: hidden;
+		padding-top: max(4px, env(safe-area-inset-top));
+		padding-right: max(4px, env(safe-area-inset-right));
+		padding-bottom: max(4px, env(safe-area-inset-bottom));
+		padding-left: max(4px, env(safe-area-inset-left));
+		gap: 4px;
+	}
+	:fullscreen h1, :fullscreen #info, :fullscreen #help,
+	body.fullscreen h1, body.fullscreen #info, body.fullscreen #help { display: none; }
+	body.fullscreen #bar > :not(#qsave):not(#qload):not(#load-level):not(#fullscreen) {
+		display: none !important;
+	}
+	body.fullscreen #bar {
+		flex: none; width: auto; max-width: none; gap: 4px;
+	}
+	body.fullscreen #screen, body.fullscreen #shell-canvas { border: 0; }
+	@media (orientation: portrait) {
+		body.fullscreen { flex-direction: column; align-items: center; justify-content: flex-start; }
+		body.fullscreen #bar {
+			order: 0; width: 100%; flex-direction: row; flex-wrap: wrap;
+			align-items: center; justify-content: center;
+		}
+		body.fullscreen #bar button { flex: 1 1 auto; }
+		body.fullscreen #stage { order: 1; }
+	}
+	@media (orientation: landscape) {
+		body.fullscreen { flex-direction: row; align-items: center; justify-content: center; }
+		body.fullscreen #stage { order: 1; }
+		body.fullscreen #bar {
+			order: 2; flex-direction: column; flex-wrap: nowrap;
+			align-items: stretch; justify-content: center;
+		}
+		body.fullscreen #bar button { width: 100%; }
 	}
 	/* Wide enough for #status to absorb the slack -- which is what keeps the
 	   controls either side from moving when the message changes -- but no wider
@@ -290,6 +345,7 @@
 		<span id="status">starting...</span>
 		<button type="button" id="load-level" title="Open a .hgmap.json level file. It is added to Short action game.">load level</button>
 		<input type="file" id="load-level-file" accept=".json,.hgmap.json" hidden>
+		<button type="button" id="fullscreen" title="Enter or leave browser fullscreen">full screen</button>
 		<label id="crt-toggle" title="A cosmetic CRT filter over the whole page: scanlines at the display's own pixel pitch, an RGB phosphor stripe, and a glass vignette. Changes nothing underneath."><input type="checkbox" id="crt-toggle-box"> crt</label>
 		<label id="tall-toggle" title="Keep tall objects such as trees partly visible from two levels up instead of popping out. An approximation: the view only reaches one floor down, so the object is drawn with the nearest available art shifted a floor. Off is the parity path."><input type="checkbox" id="tall-objects"> tall objects</label>
 		<label id="debug-toggle"><input type="checkbox" id="debug"> debug</label>
@@ -412,6 +468,12 @@
 	<div id="stage">
 		<canvas id="screen"></canvas>
 		<div id="shell"><canvas id="shell-canvas" width="640" height="512"></canvas></div>
+		<div id="mobile-actions" class="hidden" aria-label="Touch actions">
+			<button type="button" class="mobile-action" data-pane="0"></button>
+			<button type="button" class="mobile-action" data-pane="1"></button>
+			<button type="button" class="mobile-action" data-pane="2"></button>
+			<button type="button" class="mobile-action" data-pane="3"></button>
+		</div>
 	</div>
 	<div id="info"></div>
 	<div id="help">
