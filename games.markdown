@@ -69,7 +69,106 @@ Most of them are ports of old Amiga games to HTML/JavaScript. I am trying to tes
 		font-size: 1.1em;
 		line-height: 1;
 	}
+
+	.game-slideshow {
+		background: #24292f;
+		border-radius: 6px;
+		margin: 0.5rem auto 1rem;
+		max-width: 720px;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		aspect-ratio: 3 / 2;
+		width: 50%;
+	}
+
+	.game-slideshow a {
+		display: block;
+		flex: 0 0 100%;
+	}
+
+	.game-slideshow-track {
+		display: flex;
+		height: 100%;
+		transition: transform 700ms ease;
+		width: 100%;
+	}
+
+	.game-slideshow img {
+		display: block;
+		flex: 0 0 100%;
+		height: 100% !important;
+		margin: 0 auto;
+		object-fit: cover !important;
+		width: 100% !important;
+	}
+
+	@media (max-width: 699px) {
+		.game-slideshow {
+			width: 100%;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.game-slideshow-track {
+			transition: none;
+		}
+	}
 </style>
+
+<script>
+	function initializeGameSlideshows() {
+		const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+		document.querySelectorAll(".game-slideshow").forEach(function (slideshow) {
+			const slides = Array.from(slideshow.querySelectorAll("a"));
+			const track = document.createElement("div");
+			let currentSlide = 0;
+			let timer;
+
+			if (slides.length < 2) {
+				return;
+			}
+
+			track.className = "game-slideshow-track";
+			slides.forEach(function (slide) {
+				track.appendChild(slide);
+			});
+			slideshow.appendChild(track);
+
+			const showSlide = function (slideIndex) {
+				currentSlide = slideIndex % slides.length;
+				track.style.transform = "translateX(-" + (currentSlide * 100) + "%)";
+			};
+
+			const stop = function () {
+				window.clearInterval(timer);
+			};
+
+			const start = function () {
+				stop();
+				if (!prefersReducedMotion) {
+					timer = window.setInterval(function () {
+						showSlide(currentSlide + 1);
+					}, 4500);
+				}
+			};
+
+			showSlide(0);
+			slideshow.addEventListener("mouseenter", stop);
+			slideshow.addEventListener("mouseleave", start);
+			slideshow.addEventListener("focusin", stop);
+			slideshow.addEventListener("focusout", start);
+			start();
+		});
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initializeGameSlideshows);
+	} else {
+		initializeGameSlideshows();
+	}
+</script>
 
 <article class="game-card" markdown="1">
 
@@ -82,7 +181,7 @@ As I said, the starting point was the source code of the unreleased Amiga CD32 v
 
 I mostly used Opus 5, a bit of Codex, and then Grok 4.6. Every model was able to contribute something, but the first two were much better at this job.
 
-<div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0 1rem;">
+<div class="game-slideshow">
 	<a href="../assets/images/HG/1.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="../assets/images/HG/2.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/2.jpg" alt="Hired Guns screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="../assets/images/HG/3.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/3.jpg" alt="Hired Guns screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
@@ -108,38 +207,20 @@ For the cool bits and technical details of the port, read the post-mortem:
 
 <img src="../assets/images/sd_banner.jpg" alt="Hired Guns screenshot 1" style="object-position: center;" />
 
-This is an old side-scrolling shoot-'em-up. It was originally an arcade game, but I had and loved the Amiga version as a kid, so it is my next test. It is much harder than Hired Guns because we only have the original IPF and ADF files. Claude has to do a lot of heavy lifting to decode the Amiga disk data and perform the disassembly. It is still a work in progress.
+This is an old side-scrolling shoot-'em-up that I loved on the Amiga. It is a much harder port than Hired Guns because the only source material is an original IPF disk image and a cracked ADF image, with no source code or usable assets.
 
-This one is hardcore: the only source material is an original IPF dump of the Amiga disk and an ADF image of the cracked version.
+The project involved decoding the disk, disassembling the 68000 executable, and reconstructing the game's sprites, backgrounds, palettes, sound effects, music, enemy behaviour, and stage logic. A partial Amiga emulator helped verify the discoveries, but the final game is a native JavaScript implementation rather than an emulator.
 
-**ADF** is essentially a sector-by-sector, or track-by-track, dump of the logical data as the Amiga operating system would see it.
+The post-mortem goes into the fascinating technical details of that process.
 
-**IPF** stores the disk closer to the way a real disk drive head would read it, including flux-level and cycle-accurate information, timings, weak bits, and variable densities.
-
-So, why not just start from the uncracked IPF?
-
-Claude extracted the data, correctly identified the copy protection, and started working on cracking Rob Northen's Amiga copy-protection system. It is kind of impressive, even though the protection is decades old and fairly well known, although it has not been used in many years.
-
-Then we started with asset extraction: sprites, backgrounds, sound effects, and music. At first, it tried to find patterns in the data sectors to identify the boundaries between sprite data. These sectors are essentially compiled resources, with no master record or table; the compiled executable accesses the data directly. That approach was, unsurprisingly, not very successful.
-
-Claude then decided to build a partial Amiga emulator in JavaScript so it could execute the game code and capture the sprites from RAM. After some work, it managed to recover at least the sprites from the demo level, although the palette was still incorrect.
-
-It tried to recover the backgrounds in the same way, but that attempt was only partially successful. It did recover the background, but with a lot of unrelated data mixed in. It also failed to realise that the background is dynamic rather than a fixed length; the length of the boss fight depends on the player's skill.
-
-I told Claude to stop transcribing assets from RAM and instead disassemble the code and build a library of all the art assets referenced by it. I pointed out that the entire disassembled code could fit into its context window many times over, and that the emulator should be used only for verification.
-
-And it did. After a couple of days of attempts, along with some waiting for token resets, we now have:
-
-- all art assets and correct palettes for each stage and screen;
-- all sound effects; and
-- rebuilt music, which the original game generated in code using a sampler.
-
-Claude then asked me to choose a direction:
-
-1. a js port where we decode all the disassembled functions into behaviours and readable code
-2. a partial emulator where we run the original bytecodes using the extracted assets.
-
-I obviously chose option 1. That work has just started, beginning with enemy paths and player sprites. I expect it will take a long time to reach a fully working game. Option 2 would have been much easier, but the result would have been too opaque.
+<div class="game-slideshow">
+	<a href="../assets/images/SD/13.jpg" target="_blank" rel="noopener"><img src="../assets/images/SD/13.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/SD/8.jpg" target="_blank" rel="noopener"><img src="../assets/images/SD/8.jpg" alt="Hired Guns screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/SD/9.jpg" target="_blank" rel="noopener"><img src="../assets/images/SD/9.jpg" alt="Hired Guns screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/SD/10.jpg" target="_blank" rel="noopener"><img src="../assets/images/SD/10.jpg" alt="Hired Guns screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/SD/11.jpg" target="_blank" rel="noopener"><img src="../assets/images/SD/11.jpg" alt="Hired Guns screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/SD/11.jpg" target="_blank" rel="noopener"><img src="../assets/images/SD/12.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
 
 And here it is in all its glory (For the cool bits and technical details of the port, read the post-mortem):
 
