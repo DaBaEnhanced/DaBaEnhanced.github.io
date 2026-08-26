@@ -10,15 +10,77 @@ Here are games I've been developing lately (well, mostly vibecoding).
 
 Most of them are ports of old Amiga games to HTML/JavaScript. I am trying to test the limits of current LLMs by hacking, decoding, and disassembling old games.
 
+<style>
+	.game-card {
+		background: rgba(255, 255, 255, 0.55);
+		border: 1px solid #d8dee4;
+		border-radius: 8px;
+		margin: 1.5rem 0;
+		padding: 1rem;
+		transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+	}
+
+	.game-card:hover {
+		border-color: #8c959f;
+		box-shadow: 0 6px 16px rgba(31, 35, 40, 0.12);
+		transform: translateY(-2px);
+	}
+
+	.game-card img {
+		max-width: 100%;
+	}
+
+	.game-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 1.25rem;
+	}
+
+	.game-button {
+		align-items: center;
+		background: #24292f;
+		border: 1px solid #24292f;
+		border-radius: 6px;
+		box-shadow: 0 2px 4px rgba(31, 35, 40, 0.12);
+		color: #ffffff;
+		display: inline-flex;
+		font-weight: 600;
+		gap: 0.5rem;
+		padding: 0.65rem 0.9rem;
+		text-decoration: none;
+		transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+	}
+
+	.game-button:hover,
+	.game-button:focus-visible {
+		background: #0969da;
+		box-shadow: 0 4px 10px rgba(9, 105, 218, 0.28);
+		color: #ffffff;
+		transform: translateY(-1px);
+	}
+
+	.game-button:focus-visible {
+		outline: 3px solid rgba(9, 105, 218, 0.35);
+		outline-offset: 2px;
+	}
+
+	.game-button-icon {
+		font-size: 1.1em;
+		line-height: 1;
+	}
+</style>
+
+<article class="game-card" markdown="1">
+
 ### Hired Guns
+<img src="../assets/images/hg_banner.jpg" alt="Hired Guns screenshot 1" style="object-position: center;" />
 
 This is an "easy" port. The goal is still to be pixel-perfect with the original Amiga version, but in Hired Guns' case, we have access to the ASM source code and many source assets. The game itself was hard-drive-installable, so it has more easily accessible art files, even though they are encoded and compiled.
 
 As I said, the starting point was the source code of the unreleased Amiga CD32 version. One of the game's coders released it to the Amiga community some time ago. I also used footage, memory, and some checks against the Amiga 500 version running in WinUAE.
 
 I mostly used Opus 5, a bit of Codex, and then Grok 4.6. Every model was able to contribute something, but the first two were much better at this job.
-
-A full, super interesting, post-mortem report is available <a href="_games/HG_POSTMORTEM.html"> here. </a>
 
 <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0 1rem;">
 	<a href="../assets/images/HG/1.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
@@ -31,10 +93,20 @@ A full, super interesting, post-mortem report is available <a href="_games/HG_PO
 
 There is even a full level editor now, if you want to try it. I have other improvements planned. Stay tuned.
 
-<a href="assets/HG/index.html">Play it now in your browser</a> or 
-<a href="assets/HG.zip">Download it</a>
+For the cool bits and technical details of the port, read the post-mortem:
 
+<div class="game-actions">
+	<a class="game-button" href="assets/HG/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="assets/HG.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="_games/HG_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+</div>
+
+</article>
+
+<article class="game-card" markdown="1">
 ### Saint Dragon
+
+<img src="../assets/images/sd_banner.jpg" alt="Hired Guns screenshot 1" style="object-position: center;" />
 
 This is an old side-scrolling shoot-'em-up. It was originally an arcade game, but I had and loved the Amiga version as a kid, so it is my next test. It is much harder than Hired Guns because we only have the original IPF and ADF files. Claude has to do a lot of heavy lifting to decode the Amiga disk data and perform the disassembly. It is still a work in progress.
 
@@ -69,8 +141,12 @@ Claude then asked me to choose a direction:
 
 I obviously chose option 1. That work has just started, beginning with enemy paths and player sprites. I expect it will take a long time to reach a fully working game. Option 2 would have been much easier, but the result would have been too opaque.
 
-And here it is in all its glory:
-<a href="assets/saintdragon/engine/full.html">Play it now in your browser</a> or 
-<a href="assets/saint.zip">Download it</a>
+And here it is in all its glory (For the cool bits and technical details of the port, read the post-mortem):
 
-A full, super interesting, post-mortem report is available <a href="_games/SD_POSTMORTEM.html"> here. </a>
+<div class="game-actions">
+	<a class="game-button" href="assets/saintdragon/engine/full.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="assets/saint.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="_games/SD_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+</div>
+
+</article>
