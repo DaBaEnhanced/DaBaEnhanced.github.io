@@ -333,10 +333,6 @@ The replacement rule was simple:
 > Extract assets from the resource format. Use runtime captures only to verify
 > the extraction.
 
-For a machine-learning audience, this is the difference between treating a
-sampled dataset as the full generative process and recovering the process that
-produced the samples.
-
 ---
 
 ## Phase 4: decoding the resource system
@@ -430,12 +426,12 @@ The Motorola 68000 is a big-endian 16/32-bit processor with:
 
 Typical code in this game looks like:
 
-```asm
+{% highlight nasm %}
 move.w  #$1f40,$36(a5)   ; write 8000 HP into the current object
 move.w  #$fa,$0e(a5)     ; x = 250
 lea     $ca9c(pc),a0     ; address of a child routine
 bsr     $80fe            ; spawn that routine
-```
+{% endhighlight %}
 
 Through repeated use, two registers became architectural anchors:
 
@@ -518,9 +514,130 @@ Thirty-nine apparent call targets outside those final 538 routines were actually
 These exclusions were recorded with reasons. They were not silently removed to
 make the percentage look better.
 
-The generated [annotated disassembly](build/alt/disassembly.asm) contains 603
-labelled blocks, call annotations, and explicit data regions. It became the
-project's most important navigational artifact.
+The generated annotated disassembly contains 603 labelled blocks, call
+annotations, and explicit data regions. It became the project's most important
+navigational artifact.
+
+Here is a small excerpt, the game level loop:
+
+{% highlight nasm %}
+; ---------------------------------------------------------------------
+; MAIN STAGE LOOP: select descriptor, spawn system objects, run, advance $e6
+; ---------------------------------------------------------------------
+L_00c50:                    ; 2 call sites
+    $00c50  clr.w $166(a6)                    
+    $00c54  clr.w $34(a6)                     
+    $00c58  clr.w $32(a6)                     
+    $00c5c  tst.w $11c(a6)                    
+    $00c60  bne $c6a                          
+    $00c62  tst.w $118(a6)                    
+    $00c66  beq $e00                          
+    $00c6a  clr.w $11a(a6)                    
+    $00c6e  moveq #$1,d0                      
+    $00c70  tst.w $11c(a6)                    
+    $00c74  beq $c84                          
+    $00c76  addq.w #1,$2e(a6)                 
+    $00c7a  move.w $2e(a6),d0                 
+    $00c7e  andi.w #$3,$2e(a6)                
+    $00c84  bsr $ef6                       ; select stage descriptor ($22e2 + stage*$22)
+    $00c88  clr.w $a8(a6)                     
+    $00c8c  bsr $13f8                      ; set $15c bits 0 and 1
+    $00c90  tst.w $11c(a6)                    
+    $00c94  beq $ca0                          
+    $00c96  move.w $158(a6),$15a(a6)          
+    $00c9c  clr.w $158(a6)                    
+    $00ca0  bsr $1ffa                      ; wait for a free slot, spawn system object $1fa2
+    $00ca4  lea $e02(pc),a0                   
+    $00ca8  move.l #$e10,(a0)                 
+    $00cae  tst.w $118(a6)                    
+    $00cb2  beq $cba                          
+    $00cb4  move.l #$e1e,(a0)                 
+    $00cba  tst.w $11c(a6)                    
+    $00cbe  beq $ccc                          
+    $00cc0  lea $e02(pc),a0                   
+    $00cc4  moveq #$0,d0                      
+    $00cc6  jsr $4862.l                    ; spawn system object ($48c2)
+    $00ccc  clr.w $f2(a6)                     
+    $00cd0  bsr $e4e                       ; reset scroll state: clear $116/$106/$10a/$10e/$112, wave list from $c66+$a
+    $00cd4  bsr $5214                      ; reset the weapon state at stage start: $172 = 0, $17e = 0, $178 = 1
+    $00cd8  clr.w $14c(a6)                    
+    $00cdc  clr.w $30(a6)                     
+    $00ce0  tst.w $9e(a6)                     
+    $00ce4  beq $de2                          
+    $00ce8  clr.w $166(a6)                    
+    $00cec  move.w #$5,$11e(a6)               
+    $00cf2  clr.w $120(a6)                    
+    $00cf6  tst.w $11c(a6)                    
+    $00cfa  bne $d04                          
+    $00cfc  move.w $6(a6),d0                  
+    $00d00  add.w d0,$9e(a6)                  
+    $00d04  tst.w $11e(a6)                    
+    $00d08  ble $dbe                          
+    $00d0c  move.w $4(a6),d0                  
+    $00d10  add.w d0,$11e(a6)                 
+    $00d14  jsr $8a70.l                    ; raise two flags and wait for both
+    $00d1a  move.w $96(a6),$98(a6)            
+    $00d20  bsr $83c6                      ; spawn the HUD task $8444 at priority $14, then wait on $fe
+    $00d24  lea $fe(a6),a0                    
+    $00d28  jsr $74fc.l                    ; wait until (a0) is non-zero
+    $00d2e  clr.w $104(a6)                    
+    $00d32  bsr $17b6                      ; sync on $f4
+    $00d36  clr.w $18(a6)                     
+    $00d3a  st $26(a6)                        
+    $00d3e  bsr $7eb6                      ; yield one frame
+    $00d42  tst.w $11c(a6)                    
+    $00d46  beq $d52                          
+    $00d48  tst.w $118(a6)                    
+    $00d4c  beq $d52                          
+    $00d4e  st $11a(a6)                       
+    $00d52  tst.w $f2(a6)                     
+    $00d56  bne $d64                          
+    $00d58  tst.w $a8(a6)                     
+    $00d5c  bne $d64                          
+    $00d5e  tst.w $f8(a6)                     
+    $00d62  bne $d3e                          
+    $00d64  st $27(a6)                        
+    $00d68  bsr $17dc                      ; sync on $f4, then raise $38
+    $00d6c  addq.w #1,$e6(a6)                 
+    $00d70  tst.w $11c(a6)                    
+    $00d74  beq $d80                          
+    $00d76  lea $e02(pc),a0                   
+    $00d7a  jsr $48ae.l                    ; wait for async completion ($b(a0))
+    $00d80  lea $fe(a6),a0                    
+    $00d84  jsr $7504.l                    ; wait until (a0) clears
+    $00d8a  tst.w $f2(a6)                     
+    $00d8e  beq $dac                          
+    $00d90  bsr $ece                       ; stage complete; if $96 (the stage number) is 5, raise the finish flag $a8
+    $00d94  clr.w $f2(a6)                     
+    $00d98  bsr $e4e                       ; reset scroll state: clear $116/$106/$10a/$10e/$112, wave list from $c66+$a
+    $00d9c  clr.w $14c(a6)                    
+    $00da0  tst.w $a8(a6)                     
+    $00da4  beq $d14                          
+    $00da8  clr.w $11e(a6)                    
+    $00dac  tst.w $a8(a6)                     
+    $00db0  bne $dbe                          
+    $00db2  bsr $e34                       ; section change: step the pickup counter and weapon level DOWN
+    $00db6  tst.w $11c(a6)                    
+    $00dba  beq $d04                          
+    $00dbe  tst.w $11c(a6)                    
+    $00dc2  bne $dc8                          
+    $00dc4  clr.w $118(a6)                    
+    $00dc8  bsr $f0a                       ; DEATH SEQUENCE: freeze ($104++), play it out, thaw ($104--)
+    $00dcc  clr.w $11a(a6)                    
+    $00dd0  tst.w $a4(a6)                     
+    $00dd4  beq $de2                          
+    $00dd6  bsr $508c                      ; pickup: $172 counter, capped at 4
+    $00dda  bsr $509a                      ; weapon power-up: $17e capped at 2, then $5e4e
+    $00dde  bra $cd8                          
+    $00de2  bsr $2020                      ; raise request flag $25 and wait for ack
+    $00de6  tst.w $11c(a6)                    
+    $00dea  beq $df2                          
+    $00dec  move.w $15a(a6),$158(a6)          
+    $00df2  jsr $8a70.l                    ; raise two flags and wait for both
+    $00df8  bsr $e6e                       ; between-stage interlude: stage 0 palette, spawn $eb6, hold 50 frames
+    $00dfc  bsr $1406                      ; clear $15c bits 0 and 1 (counterpart to $13f8)
+    $00e00  rts                               
+{% endhighlight %}
 
 ---
 
