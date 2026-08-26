@@ -18,7 +18,7 @@ As I said, the starting point was the source code of the unreleased Amiga CD32 v
 
 I mostly used Opus 5, a bit of Codex, and then Grok 4.6. Every model was able to contribute something, but the first two were much better at this job.
 
-There is even a full level editor now, if you want to try it. I have other improvements planned. Stay tuned.
+A full, super interesting, post-mortem report is available <a href="_games/HG_POSTMORTEM.html"> here. </a>
 
 <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0 1rem;">
 	<a href="../assets/images/HG/1.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
@@ -28,6 +28,8 @@ There is even a full level editor now, if you want to try it. I have other impro
 	<a href="../assets/images/HG/5.png" target="_blank" rel="noopener"><img src="../assets/images/HG/5.png" alt="Hired Guns screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="../assets/images/HG/6.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/6.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
+
+There is even a full level editor now, if you want to try it. I have other improvements planned. Stay tuned.
 
 <a href="assets/HG/index.html">Play it now in your browser</a> or 
 <a href="assets/HG.zip">Download it</a>
@@ -42,15 +44,11 @@ This one is hardcore: the only source material is an original IPF dump of the Am
 
 **IPF** stores the disk closer to the way a real disk drive head would read it, including flux-level and cycle-accurate information, timings, weak bits, and variable densities.
 
-I also have a WHDLoad version, but I did not initially think to use it.
-
 So, why not just start from the uncracked IPF?
 
 Claude extracted the data, correctly identified the copy protection, and started working on cracking Rob Northen's Amiga copy-protection system. It is kind of impressive, even though the protection is decades old and fairly well known, although it has not been used in many years.
 
-However, I was wasting too many tokens on that. As soon as Claude began making progress on the crack, I gave it the cracked ADF to speed things up. From that image, it extracted the game executable and data sectors.
-
-It started with asset extraction: sprites, backgrounds, sound effects, and music. At first, it tried to find patterns in the data sectors to identify the boundaries between sprite data. These sectors are essentially compiled resources, with no master record or table; the compiled executable accesses the data directly. That approach was, unsurprisingly, not very successful.
+Then we started with asset extraction: sprites, backgrounds, sound effects, and music. At first, it tried to find patterns in the data sectors to identify the boundaries between sprite data. These sectors are essentially compiled resources, with no master record or table; the compiled executable accesses the data directly. That approach was, unsurprisingly, not very successful.
 
 Claude then decided to build a partial Amiga emulator in JavaScript so it could execute the game code and capture the sprites from RAM. After some work, it managed to recover at least the sprites from the demo level, although the palette was still incorrect.
 
@@ -71,5 +69,8 @@ Claude then asked me to choose a direction:
 
 I obviously chose option 1. That work has just started, beginning with enemy paths and player sprites. I expect it will take a long time to reach a fully working game. Option 2 would have been much easier, but the result would have been too opaque.
 
+And here it is in all its glory:
 <a href="assets/saintdragon/engine/full.html">Play it now in your browser</a> or 
 <a href="assets/saint.zip">Download it</a>
+
+A full, super interesting, post-mortem report is available <a href="_games/SD_POSTMORTEM.html"> here. </a>

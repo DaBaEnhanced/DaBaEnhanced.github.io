@@ -135,6 +135,7 @@ const VBLANK_MS = 1000 / 50;
 const MAX_CATCHUP_MS = 250;
 
 const ASSETS = 'assets/';
+const ASSET_RETRY_DELAYS_MS = [250, 1000];
 
 const $ = (id) => document.getElementById(id);
 // The bar holds the message to one line so it cannot push the page around, so
@@ -145,15 +146,49 @@ const status = (msg) => {
 	el.title = msg;
 };
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Fetch a generated asset. The first request uses ordinary browser caching;
+ * retries bypass it so a CDN's cached deployment-time 404 cannot permanently
+ * disable an optional game subsystem for this page load.
+ *
+ * A 404 is normally permanent, but some static hosts briefly return one while
+ * a multi-file deploy is propagating. Retrying only twice keeps genuine missing
+ * files obvious without making startup meaningfully slower.
+ */
+async function fetchAsset(p) {
+	const url = ASSETS + p;
+	let lastError = null;
+	for (let attempt = 0; attempt <= ASSET_RETRY_DELAYS_MS.length; attempt++) {
+		try {
+			const retry = attempt > 0;
+			const requestUrl = retry
+				? `${url}${url.includes('?') ? '&' : '?'}retry=${Date.now()}-${attempt}`
+				: url;
+			const r = await fetch(requestUrl, retry ? { cache: 'no-store' } : undefined);
+			if (r.ok) return r;
+			lastError = new Error(`${p}: HTTP ${r.status} ${r.statusText}`);
+			// A true 404 is not normally transient, but deployment propagation can
+			// make it transient. Other 4xx errors are configuration/auth failures.
+			if (r.status >= 400 && r.status < 500 && r.status !== 404 && r.status !== 408 && r.status !== 429) break;
+		} catch (error) {
+			lastError = error;
+		}
+		if (attempt < ASSET_RETRY_DELAYS_MS.length) {
+			console.warn(`[hiredguns] asset request failed; retrying ${p} (${attempt + 1}/${ASSET_RETRY_DELAYS_MS.length})`, lastError);
+			await sleep(ASSET_RETRY_DELAYS_MS[attempt]);
+		}
+	}
+	console.error(`[hiredguns] asset unavailable after retries: ${p}`, lastError);
+	throw lastError || new Error(`${p}: request failed`);
+}
+
 async function loadJSON(p) {
-	const r = await fetch(ASSETS + p);
-	if (!r.ok) throw new Error(`${p}: ${r.status}`);
-	return r.json();
+	return (await fetchAsset(p)).json();
 }
 async function loadBytes(p) {
-	const r = await fetch(ASSETS + p);
-	if (!r.ok) throw new Error(`${p}: ${r.status}`);
-	return new Uint8Array(await r.arrayBuffer());
+	return new Uint8Array(await (await fetchAsset(p)).arrayBuffer());
 }
 
 const game = {
