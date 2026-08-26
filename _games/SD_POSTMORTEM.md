@@ -8,7 +8,7 @@ categories: jekyll update
 
 ## A technical postmortem of an Amiga-to-HTML/JavaScript port
 
-This document is source material for a presentation. It explains what we built,
+This document explains what we built,
 how we recovered it from a copy-protected disk image and an unlabelled 68000
 binary, what went well, what went badly, and what the project taught us about
 reverse engineering, observability, validation, and working with unfamiliar

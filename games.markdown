@@ -222,7 +222,7 @@ The post-mortem goes into the fascinating technical details of that process.
 	<a href="../assets/images/SD/11.jpg" target="_blank" rel="noopener"><img src="../assets/images/SD/12.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
 
-And here it is in all its glory (For the cool bits and technical details of the port, read the post-mortem):
+And here it is in all its glory:
 
 <div class="game-actions">
 	<a class="game-button" href="assets/saintdragon/engine/full.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
