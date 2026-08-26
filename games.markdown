@@ -231,3 +231,15 @@ And here it is in all its glory:
 </div>
 
 </article>
+
+<article class="game-card" markdown="1">
+### MegaPop
+
+<img src="../assets/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
+
+My next project won't be a port, but a new game. 
+**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
+Think Populus meets Mega-lo-Mania!
+
+
+</article>
