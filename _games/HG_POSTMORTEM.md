@@ -64,6 +64,9 @@ That explains several visual effects:
 
 For a machine-learning or computer-vision analogy, the final frame is closer to a composition of binary masks and discrete label transforms than alpha blending of RGB images. We needed to preserve the labels and their operations, then colourise only at the end.
 
+<img src="../assets/images/hgblittercopper.jpg" alt="Hired Guns 2.5d engine" style="object-position: center;" />
+
+
 ## What we set out to do
 
 - Target the CD32 build as the authoritative version, rather than the base Amiga build.
@@ -158,6 +161,18 @@ The rendering implementation therefore models the original ideas directly:
 - lighting and water as palette-bank bits rather than separate textures;
 - fixed view slots, depth ordering, and source draw order;
 - synthetic palette indices for raster-driven sky, horizon, planet, and force-field gradients.
+
+#### The BOB renderer: a 3D world without a 3D renderer
+
+The original game does not rasterise polygons, cast rays, or project arbitrary 3D geometry. Its first-person view is built from pre-drawn BOBs at a fixed set of perspective positions. Each player can see a small, grid-aligned part of the 23×23×20 map; the renderer samples that grid into **67 fixed draw slots**: five depth rows, several horizontal offsets, and three vertical levels (above, current, and below the player).
+
+For each visible cell, the game chooses the appropriate pre-authored BOB slot for its depth and lateral position. A wall that is one cell away is therefore a different piece of 2D art from the same wall three cells away; floors, doors, stairs, water, trees, panels, and objects all have their perspective and placement baked into the slot data. Turning the player does not rotate a camera through geometry. It rotates the grid coordinates and remaps directional block types before selecting these prepared images.
+
+The final illusion comes from painter's ordering. Far cells are drawn before near cells, and each cell has a source-specific sequence—rear light, auxiliary object, block, panel, water, explosion, side light, and floor, with different order above and below the player. Because many BOBs modify existing plane bits rather than simply paint opaque RGB pixels, this ordering determines lighting, tint, occlusion, and whether decals appear to sit on the correct surface.
+
+In modern terms, it resembles a highly constrained neural-rendering or sprite-based view synthesis pipeline: discrete scene labels are sampled from a voxel grid, mapped to view-conditioned image patches, then composited in a predetermined depth order. The constraint is also the advantage: almost all perspective work was authored once in the original assets, allowing an Amiga to produce four simultaneous first-person views with no general-purpose 3D engine.
+
+<img src="../assets/images/hg_3d.jpg" alt="Hired Guns 2.5d engine" style="object-position: center;" />
 
 #### Modern pipeline mapping
 
