@@ -1244,53 +1244,6 @@ No single recovery strategy was best for every subsystem.
 
 ---
 
-## Lessons transferable to ML and computer vision
-
-### 1. Dataset coverage is not process coverage
-
-Runtime sprite capture missed states the playthrough never visited. A dataset
-of observations is not the same as the generator that produced them.
-
-### 2. Representation errors can dominate model errors
-
-Flat atlas index versus chain-head index, hardware coordinate versus canvas
-coordinate, and sampled object array versus event stream all produced valid
-values with wrong semantics. Improving the algorithm would not fix a broken
-representation.
-
-### 3. Self-consistency is weak evidence
-
-The first synth graphs parsed perfectly while the conclusion "there is no
-music" was false. A system can be internally coherent under the wrong model.
-
-### 4. Independent derivations are powerful
-
-The 98.3-second music duration derived from both score data and hardware capture
-was stronger than either result alone. Seek orthogonal paths to the same fact.
-
-### 5. Instrumentation changes what can be known
-
-Adding object lifecycle events changed debugging from inference over snapshots
-to direct observation. Better telemetry can be more valuable than a smarter
-debugger.
-
-### 6. Aggregate metrics need task alignment
-
-"Objects moved" did not measure choreography. As in ML evaluation, a convenient
-proxy can improve while the user-visible task remains wrong.
-
-### 7. Human perceptual feedback is high-value but not self-explanatory
-
-The user could identify that motion, sound, or layering felt wrong. Assembly
-analysis was needed to explain why and to produce a general fix.
-
-### 8. Preserve uncertainty explicitly
-
-"We have not found the table" is different from "there is no table." Several
-of the project's costliest wrong turns came from collapsing those statements.
-
----
-
 ## Glossary
 
 **ADF**  
