@@ -185,6 +185,48 @@ it cannot represent every copy-protection trick. The project started from an
 **IPF**: a preservation format that can describe the lower-level layout and
 timing characteristics of a floppy track.
 
+### The disk was protected by Rob Northen CopyLock
+
+Saint Dragon used **CopyLock**, a commercial disk-protection system created by
+Rob Northen Computing and used by many Amiga and Atari ST releases. CopyLock did
+not rely only on ordinary files or sectors. Its loader read deliberately unusual
+low-level track properties and mixed the result into executable protection code,
+so copying only the logical sector contents could produce a disk that looked
+complete but still failed the check.
+
+CopyLock belongs to the late-1980s and early-1990s floppy-disk era, when
+commercial software commonly had to defend physical disks against duplication.
+As distribution moved to CDs, hard drives, and downloads, protection systems
+that depended on unusual magnetic tracks largely disappeared. In practical
+terms, this means that the mechanism we were studying had been out of everyday
+use for roughly three decades, even though the code and disk image preserved it
+perfectly.
+
+That is why beginning with the IPF mattered. IPF preserves the track structure,
+synchronization patterns, and timing information on which this kind of
+protection depends; a conventional sector-level ADF may discard them.
+
+In this disk, CopyLock's first stage configured the Amiga disk controller with
+`DSKSYNC=$8914`, checked the protected track, and recovered the expected magic
+value `$A573632C`. Our decoder passes that stage authentically. A second stage
+depends on disk-byte timing and was not fully reproduced. It did not block the
+port: cracked executables loaded correctly, and their game resources were shown
+to be identical to those recovered from the protected IPF.
+
+CopyLock also explains one initially surprising emulator requirement. The
+protection uses 68000 exception behavior, including `ILLEGAL` and `MOVEC`
+instructions routed through exception vector 4, as part of its control flow.
+An emulator that simply stopped on an illegal instruction could never reach the
+game, even when its disk decoding was otherwise correct.
+
+That history is part of what makes this reconstruction so satisfying. Claude
+had to recognise an unfamiliar protection scheme, decipher code written for a
+68000 and a magnetic-disk controller, and reproduce enough of its behavior to
+follow the protected loader. It did not solve every timing-dependent detail of
+CopyLock, but it crossed the important boundary: a modern browser toolchain
+could read, explain, and work with a protection mechanism designed for hardware
+that had been obsolete for decades.
+
 The decoder had to understand:
 
 1. IPF chunks such as `CAPS`, `INFO`, `IMGE`, and `DATA`;
