@@ -223,7 +223,7 @@ That history is part of what makes this reconstruction so satisfying. Claude
 had to recognise an unfamiliar protection scheme, decipher code written for a
 68000 and a magnetic-disk controller, and reproduce enough of its behavior to
 follow the protected loader. It did not solve every timing-dependent detail of
-CopyLock, but it crossed the important boundary: a modern browser toolchain
+CopyLock (we then moved to an clean ADF copy to save time), but it crossed the important boundary: a modern browser toolchain
 could read, explain, and work with a protection mechanism designed for hardware
 that had been obsolete for decades.
 
