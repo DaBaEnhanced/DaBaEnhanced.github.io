@@ -116,10 +116,13 @@ after working out what an anonymous address such as `$0dbd8` did.
 
 The reverse-engineering problem was therefore:
 
-$$
-\text{disk flux} \rightarrow \text{bytes} \rightarrow \text{program and data}
-\rightarrow \text{meaning} \rightarrow \text{new implementation}
-$$
+```mermaid
+flowchart TD
+  A[Disk flux] --> B[Bytes]
+  B --> C[Program and data]
+  C --> D[Meaning]
+  D --> E[New implementation]
+```
 
 Each arrow needed its own evidence and validation.
 
