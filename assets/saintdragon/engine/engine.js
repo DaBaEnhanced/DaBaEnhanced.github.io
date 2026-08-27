@@ -532,12 +532,18 @@ class World {
         this.lives += effect.amount;
         break;
       case 'fullPower':                                           // $04fcc
-        if (player) player.hitCooldown = Math.max(player.hitCooldown || 0, 0x3a98);
+        if (player) {
+          player.hitCooldown = Math.max(player.hitCooldown || 0, 0x3a98);
+          player.hitFlash = Math.max(player.hitFlash || 0, 0x3a98); // $66(a4)
+        }
         this.pickupLevel = 4;
         this.setWeapon(1, 2);
         break;
       case 'invulnerability':                                     // $0512e
-        if (player) player.hitCooldown = Math.max(player.hitCooldown || 0, 0x190);
+        if (player) {
+          player.hitCooldown = Math.max(player.hitCooldown || 0, 0x190);
+          player.hitFlash = Math.max(player.hitFlash || 0, 0x190); // $66(a4)
+        }
         break;
       default:                                                    // $04ca2 / $0508c
         this.pickupLevel = Math.min(4, (this.pickupLevel || 0) + 1);

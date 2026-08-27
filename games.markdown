@@ -243,3 +243,14 @@ Think Populus meets Mega-lo-Mania!
 
 
 </article>
+
+<article class="game-card" markdown="1">
+### The Moon That Forgot 
+
+<img src="../assets/images/moonforgot.jpg" alt="The Moon That Forgot title" style="object-position: center;" />
+
+**The Moon That Forgot** is a work-in-progress retro point-and-click adventure based on my novel of the same name. You wake inside a dying Ark with no clear memory of how long you’ve been asleep, accompanied only by a damaged maintenance robot named M7. Explore, talk, investigate, combine objects, and solve increasingly strange machine-logic puzzles as you uncover what happened to the sleepers, what the Ark has become, and what is still moving beyond its walls.
+Final art style would be different than what the banner above hint at, and more similar to my book cover's artworks.
+
+
+</article>
