@@ -235,14 +235,7 @@ And here it is in all its glory:
 <article class="game-card" markdown="1">
 ### MegaPop
 
-<img src="../assets/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
 
-My next project won't be a port, but a new game. 
-**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
-Think Populus meets Mega-lo-Mania!
-
-
-</article>
 
 <article class="game-card" markdown="1">
 ### The Moon That Forgot 
@@ -251,6 +244,28 @@ Think Populus meets Mega-lo-Mania!
 
 **The Moon That Forgot** is a work-in-progress retro point-and-click adventure based on my novel of the same name. You wake inside a dying Ark with no clear memory of how long you’ve been asleep, accompanied only by a damaged maintenance robot named M7. Explore, talk, investigate, combine objects, and solve increasingly strange machine-logic puzzles as you uncover what happened to the sleepers, what the Ark has become, and what is still moving beyond its walls.
 Final art style would be different than what the banner above hint at, and more similar to my book cover's artworks.
+
+<div class="game-slideshow">
+	<a href="../assets/images/MF/1.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/2.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/2.jpg" alt="Hired Guns screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/3.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/3.jpg" alt="Hired Guns screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/4.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/4.jpg" alt="Hired Guns screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/5.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/5.jpg" alt="Hired Guns screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/6.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/6.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/7.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/7.jpg" alt="Hired Guns screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/8.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/8.jpg" alt="Hired Guns screenshot 8" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/9.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/9.jpg" alt="Hired Guns screenshot 9" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/10.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/10.jpg" alt="Hired Guns screenshot 10" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="../assets/images/MF/11.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/11.jpg" alt="Hired Guns screenshot 11" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+</article>
+
+<img src="../assets/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
+
+My next project won't be a port, but a new game. 
+**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
+Think Populus meets Mega-lo-Mania!
 
 
 </article>
