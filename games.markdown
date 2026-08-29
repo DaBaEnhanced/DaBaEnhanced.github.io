@@ -175,11 +175,11 @@ Most of them are ports of old Amiga games to HTML/JavaScript. I am trying to tes
 ### Hired Guns
 <img src="../assets/images/hg_banner.jpg" alt="Hired Guns screenshot 1" style="object-position: center;" />
 
-This is an "easy" port. The goal is still to be pixel-perfect with the original Amiga version, but in Hired Guns' case, we have access to the ASM source code and many source assets. The game itself was hard-drive-installable, so it has more easily accessible art files, even though they are encoded and compiled.
+This is the "easy" port of the bunch — relatively speaking. The goal is still pixel-perfect fidelity to the original, and for once we have real material to work with: the full ASM codebase and a wealth of original assets. The game was also hard-drive-installable, so its art files are far easier to reach, even if still encoded and compiled.
 
-As I said, the starting point was the source code of the unreleased Amiga CD32 version. One of the game's coders released it to the Amiga community some time ago. I also used footage, memory, and some checks against the Amiga 500 version running in WinUAE.
+That codebase comes from the unreleased Amiga CD32 build, shared with the community years ago by one of the game's original programmers. I cross-checked it against gameplay footage, memory, and the Amiga 500 release running in WinUAE.
 
-I mostly used Opus 5, a bit of Codex, and then Grok 4.6. Every model was able to contribute something, but the first two were much better at this job.
+Opus 5 handled most of the heavy lifting, with Codex and Grok 4.6 pitching in. Every model contributed something, but the first two clearly carried the job.
 
 <div class="game-slideshow">
 	<a href="../assets/images/HG/1.jpg" target="_blank" rel="noopener"><img src="../assets/images/HG/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
