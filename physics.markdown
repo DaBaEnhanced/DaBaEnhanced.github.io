@@ -1,11 +1,11 @@
 ---
-title: "Physic"
+title: "Physics"
 subtitle: "A speculative framework with designated falsifiable branches, for emergent spacetime, matter, gravity, and quantum measurement"
 version: "0.4"
 date: "2026-07-26"
 status: "Research programme, not an established physical theory"
 layout: page
-permalink: /physic
+permalink: /physics
 ---
 
 # The Recurrent Causal Code

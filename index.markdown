@@ -25,6 +25,6 @@ Your browser does not support the video tag.
   <a href="/poems" style="display: inline-block; padding: 10px 20px; margin: 5px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Poetry</a>
   <a href="/short" style="display: inline-block; padding: 10px 20px; margin: 5px; background-color: #28A745; color: white; text-decoration: none; border-radius: 5px;">Short Stories</a>
   <a href="/games" style="display: inline-block; padding: 10px 20px; margin: 5px; background-color: #a72828; color: white; text-decoration: none; border-radius: 5px;">Games</a>
-  <a href="/physic" style="display: inline-block; padding: 10px 20px; margin: 5px; background-color: #a328a7; color: white; text-decoration: none; border-radius: 5px;">Physic</a>
+  <a href="/physics" style="display: inline-block; padding: 10px 20px; margin: 5px; background-color: #a328a7; color: white; text-decoration: none; border-radius: 5px;">Physics</a>
   <a href="/video" style="display: inline-block; padding: 10px 20px; margin: 5px; background-color:rgb(130, 97, 0); color: white; text-decoration: none; border-radius: 5px;">Videos</a>
 </div>

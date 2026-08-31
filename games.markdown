@@ -245,6 +245,8 @@ And here it is in all its glory:
 **The Moon That Forgot** is a work-in-progress retro point-and-click adventure based on my novel of the same name. You wake inside a dying Ark with no clear memory of how long you’ve been asleep, accompanied only by a damaged maintenance robot named M7. Explore, talk, investigate, combine objects, and solve increasingly strange machine-logic puzzles as you uncover what happened to the sleepers, what the Ark has become, and what is still moving beyond its walls.
 Final art style would be different than what the banner above hint at, and more similar to my book cover's artworks.
 
+I am vibecoding the adventure game editor, tools to turn images into pixel art, background matting, de-spilling colors, closing animation loops, and using image gen, video gen and musicgen to generate almost all art assets.
+
 <div class="game-slideshow">
 	<a href="../assets/images/MF/1.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="../assets/images/MF/2.jpg" target="_blank" rel="noopener"><img src="../assets/images/MF/2.jpg" alt="Hired Guns screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
