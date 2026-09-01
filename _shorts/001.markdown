@@ -4,14 +4,14 @@ title: "001 - The Last Incorrect"
 date: 2025-04-03 11:28:47 +0200
 categories: jekyll update
 summary: Can't stop a comedian
-thumbnail_img: "../assets/images/001short.jpg"
-thumbnail: "../assets/videos/001short.mp4"
+thumbnail_img: "/images/001short.jpg"
+thumbnail: "/videos/001short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
   <span style="margin-right: 10px;">Audiobook:</span>
   <audio controls style="width: 100%; max-width: 400px;">
-    <source src="../assets/audio/TheLastIncorrect.mp3" type="audio/mpeg">
+    <source src="{{ site.cdn_url }}/audio/TheLastIncorrect.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 </div>

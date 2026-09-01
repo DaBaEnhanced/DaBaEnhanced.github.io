@@ -13,6 +13,7 @@
   p.sub { margin:0 0 1.2rem; color:#8b93a7; font-size:.9rem; max-width:64ch; }
   canvas { image-rendering:pixelated; border:1px solid #232a3d; border-radius:4px;
            background:#000; width:736px; height:364px; }
+  html.hd canvas { image-rendering:auto; }
   .row { display:flex; gap:.5rem; align-items:center; margin-bottom:.8rem; flex-wrap:wrap; }
   button { background:#1b2030; color:#d6dae6; border:1px solid #2c3446; border-radius:6px;
            padding:.4rem .8rem; font:inherit; cursor:pointer; }
@@ -51,15 +52,20 @@ driven from the decoded 68000 routines and extracted sprite resources.</p>
 </div>
 <canvas id="cv" width="368" height="182"></canvas>
 
-<script src="engine.js?v=21f1833c13"></script>
-<script src="behaviours.js?v=1652565ed4"></script>
-<script src="../audio/paula.js?v=7e3674838d"></script>
+<script src="engine.js?v=0c548674a1"></script>
+<script src="behaviours.js?v=9b7c95a550"></script>
+<script src="../audio/paula.js?v=2afcfc89b8"></script>
+<script src="config.js?v=cbf8ea3912"></script>
 <script>
 // One cache-busting version for every asset, so a stale file can never be
 // mixed with a fresh one (python -m http.server sends no cache headers).
 const ASSET_V = 'f2899bac2618';
-const AUDIO_V = '76b090ea579c';
-const V = u => u + '?v=' + ASSET_V;
+const AUDIO_V = 'b88f9510db70';
+// The asset base directories are resolved from web/config.json at load time
+// (see config.js) so the art/audio can live on a separate host. assetVersion
+// is the ?v= stamp -- config.json may override it, otherwise it stays ASSET_V.
+let assetVersion = ASSET_V, assetCfg = null;
+const V = u => assetVersion ? u + '?v=' + assetVersion : u;
 // copper: backdrop band 162 lines, ground strip 21 -> playfield 182
 // BACKDROP_BAND used to live here as a fixed 162, which is stage 1's ground
 // line and nothing else's. The strip heights are 20, 24, 24, 16, 16 and the
@@ -85,6 +91,47 @@ const STAGE = String(Math.min(5, Math.max(1, +(PARAMS.get('stage') || 1))));
 // instruction, so this is here to settle it by eye: stage 1's last trigger is
 // 6610, which at rate 2 makes the stage 66 seconds long and at rate 1, 132.
 const SCROLL_OVERRIDE = PARAMS.get('scroll') ? +PARAMS.get('scroll') : undefined;
+// ?edition=hd loads the 4x asset set from web/assets/hd/ and renders the scene
+// at RENDER_SCALE with bilinear sampling on. The simulation is byte-for-byte
+// identical either way -- every gameplay dimension (w/h/hx/hy, collision boxes,
+// cull bounds) stays in the original 368x182 logical space; only the canvas
+// resolution and the sprite SOURCE rects grow. ?rscale=N overrides the factor
+// (6 or 8 for a 4K panel, sampled down from the same 4x art).
+const ENHANCED = PARAMS.get('edition') === 'hd';
+const RENDER_SCALE = ENHANCED ? Math.max(1, +(PARAMS.get('rscale') || 4)) : 1;
+// The upscale factor baked into web/assets/hd/ by tools/hd/ (sprites carry it in
+// gfx.json as sprites.scale; backgrounds match). Fixed at 4.
+const ASSET_SCALE = ENHANCED ? 4 : 1;
+// Shrink each atlas source rect by this many texels. MUST BE 0.
+//
+// It was 0.75 as belt-and-braces against bilinear edge bleed, but repack.py's
+// edge extrude already covers that (a tap reaches at most one texel past the
+// rect, and that texel is a copy of the rect's own edge). The inset is actively
+// harmful on CHAINED sprites: a wide object is stored as 32px slices whose hx
+// values step by exactly 32, so consecutive slices abut in the MIDDLE of the
+// artwork. Insetting cuts 0.75 texels off each side of every slice, which at an
+// internal seam deletes 1.5 texels of real picture and stretches the remainder
+// to fill -- a hard line down the sprite at every 32px step, immune to any
+// gutter/extrude tuning. Left as a named constant so it stays deliberate.
+const ATLAS_INSET = 0;
+// ?smooth=1 turns on render interpolation: the renderer lerps every object and
+// the background scroll between the 50Hz sim steps, so motion tracks the
+// display's refresh rate instead of stepping 50 times a second. Presentation
+// only -- the simulation is byte-for-byte unchanged. (Enhanced-edition M1.)
+// Defaults on in the enhanced edition; ?smooth=0 forces it off anywhere.
+const SMOOTH = PARAMS.get('smooth') === '1' ||
+               (ENHANCED && PARAMS.get('smooth') !== '0');
+// The backing store grows with RENDER_SCALE; the CSS size (and the ?full=1
+// letterbox) are unchanged, so the canvas just gets denser. `image-rendering`
+// flips from pixelated to auto via the .hd class so the browser's own scale to
+// the display is smooth too.
+if (ENHANCED) {
+  $('cv').width = 368 * RENDER_SCALE;
+  $('cv').height = PLAYFIELD_H * RENDER_SCALE;
+  document.documentElement.classList.add('hd');
+  console.info(`[hd] backing store ${$('cv').width}x${$('cv').height} `
+    + `(rscale ${RENDER_SCALE}, ${(368 * PLAYFIELD_H * RENDER_SCALE * RENDER_SCALE / 1e6).toFixed(1)}Mpx/frame)`);
+}
 let world, sheet, bg, fg, fringe, fringeCeil, running = !START_PAUSED, t = 0;
 let audio = null, audioContext = null, audioLoading = null, audioEnabled = false;
 let rafPending = false;        // guards the single render chain, see schedule()
@@ -93,16 +140,46 @@ const BULLET_ADDRS = new Set(['$06268', '$0649c', '$06600', '$063c8']);
 const flashCanvas = document.createElement('canvas');
 const flashContext = flashCanvas.getContext('2d');
 
-const loadImg = src => new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = src; });
+// Both go through config.js: crossOrigin='anonymous' (so the sheet can feed
+// createImageBitmap cross-origin -- the host must send Access-Control-Allow-
+// Origin), plus a timeout and exponential-backoff retries, since the asset host
+// may be remote. fetch is shadowed inside the loader IIFE below.
+const loadImg = src => SaintDragonAssets.loadImage(src);
 
 (async () => {
-  const gfx = await fetch(V('../assets/gfx.json')).then(r => r.json());
+  // Where the art and audio live. Defaults to the copies bundled beside this
+  // page; web/config.json can repoint them at a separate host (see config.js).
+  assetCfg = await SaintDragonAssets.load();
+  if (assetCfg.version) assetVersion = assetCfg.version;
+  // Every fetch(...) below is really SaintDragonAssets.fetchRetry: timeout +
+  // retry, for the possibly-remote asset host. Returns a Response, so the
+  // `.then(r => r.json())` chains are unchanged.
+  const fetch = (u, o) => SaintDragonAssets.fetchRetry(u, o);
+  const ASSETS_DIR = ENHANCED ? assetCfg.hd : assetCfg.assets;   // ends in '/'
+  const DATA_DIR = assetCfg.assets;                              // gameplay JSON
+  const IMG = ENHANCED ? '.webp' : '.png';   // HD art ships as WebP (~5x smaller)
+  // Visual assets (gfx.json, the sprite sheets, the stage backdrops and strips)
+  // come from ASSETS_DIR so ?edition=hd can swap in the hd/ set.
+  const gfx = await fetch(V(ASSETS_DIR + 'gfx.json')).then(r => r.json());
+  if (ENHANCED && (gfx.sprites.scale || 1) !== ASSET_SCALE)
+    console.warn(`HD gfx.json scale ${gfx.sprites.scale} != expected ${ASSET_SCALE}`);
   const paletteMode = ['intro', 'title', 'outro'].includes(MODE) ? `_${MODE}` : '';
-  sheet = await loadImg(V(`../assets/sprites${paletteMode}.png`));
+  const _t0 = performance.now();
+  sheet = await loadImg(V(`${ASSETS_DIR}sprites${paletteMode}${IMG}`));
+  if (ENHANCED) console.info(`[hd] atlas ${sheet.naturalWidth}x${sheet.naturalHeight} `
+    + `decoded in ${(performance.now() - _t0) | 0}ms`);
+  // Sprites are drawn straight from the atlas (sub-rect drawImage). With
+  // imageSmoothingEnabled on a bilinear tap at a tile's edge can reach one texel
+  // past the source rect, so repack.py leaves a gutter and extrudes each tile's
+  // edge pixels into it -- the tap lands on a copy of the tile's own edge.
+  // See ATLAS_INSET above for why the source rect is NOT also inset.
+  // (An earlier build sliced the atlas into 685 ImageBitmaps to sidestep all of
+  // this; that is ~1ms/call in Chrome but 200ms/call in some embedded webviews,
+  // so 685 of them stalled load for over two minutes.)
   const sceneryStage = MODE === 'stage' ? STAGE : (MODE === 'dragon' ? '5' : null);
-  bg = sceneryStage ? await loadImg(V('../assets/stage' + sceneryStage + '_bg.png')) : null;
-  fg = sceneryStage ? await loadImg(V('../assets/stage' + sceneryStage + '_fg.png')) : null;
-  const waves = await fetch(V('../assets/waves.json')).then(r => r.json());
+  bg = sceneryStage ? await loadImg(V(ASSETS_DIR + 'stage' + sceneryStage + '_bg' + IMG)) : null;
+  fg = sceneryStage ? await loadImg(V(ASSETS_DIR + 'stage' + sceneryStage + '_fg' + IMG)) : null;
+  const waves = await fetch(V(DATA_DIR + 'waves.json')).then(r => r.json());
   world = new World(gfx);
   window.engineWorld = world;
   world.onSound = (id, rate, volume) => {
@@ -113,18 +190,18 @@ const loadImg = src => new Promise(r => { const i = new Image(); i.onload = () =
   $('god').disabled = !gameplay;
   $('weapon').disabled = !gameplay;
   $('weapon-type').disabled = !gameplay;
-  const wh = await fetch(V('../assets/wave_handlers.json')).then(r => r.json());
-  const hf = await fetch(V('../assets/handler_fields.json')).then(r => r.json());
-  const comp = await fetch(V('../assets/composites.json')).then(r => r.json());
-  const anchors = await fetch(V('../assets/anchors.json')).then(r => r.json());
-  world.childRoutines = await fetch(V('../assets/child_routines.json')).then(r => r.json());
+  const wh = await fetch(V(DATA_DIR + 'wave_handlers.json')).then(r => r.json());
+  const hf = await fetch(V(DATA_DIR + 'handler_fields.json')).then(r => r.json());
+  const comp = await fetch(V(DATA_DIR + 'composites.json')).then(r => r.json());
+  const anchors = await fetch(V(DATA_DIR + 'anchors.json')).then(r => r.json());
+  world.childRoutines = await fetch(V(DATA_DIR + 'child_routines.json')).then(r => r.json());
   world.composites = comp;
   world.waveHandlers = buildWaveHandlers(hf, wh, comp, anchors);
   installProjectiles(world);   // $687e / $6774 / $62dc
   installDeathExplosion(world);   // $08746: two res 5 blasts, staggered
-  const ground = await fetch(V('../assets/ground.json')).then(r => r.json());
+  const ground = await fetch(V(DATA_DIR + 'ground.json')).then(r => r.json());
   if (SCROLL_OVERRIDE !== undefined) world.scrollRate = SCROLL_OVERRIDE;
-  const levels = await fetch(V('../assets/levels.json')).then(r => r.json());
+  const levels = await fetch(V(DATA_DIR + 'levels.json')).then(r => r.json());
   if (sceneryStage) {
     world.setGround(ground[sceneryStage]);
     world.setCeiling(levels[sceneryStage].ceiling);
@@ -136,15 +213,15 @@ const loadImg = src => new Promise(r => { const i = new Image(); i.onload = () =
     world.shotCeiling = world.shotGround = false;
   }
   // $0dd2e's twelve segment dances, extracted by tools/export_boss.py
-  world.boss5 = await fetch(V('../assets/boss5.json')).then(r => r.json());
+  world.boss5 = await fetch(V(DATA_DIR + 'boss5.json')).then(r => r.json());
   // The ragged overhang past the strip's band edge (res 64 on stage 2, res 44
   // on stage 4). Only the 256-wide ones can be placed from the data alone.
   fringe = null;
   const fr = sceneryStage && gfx.fringes && gfx.fringes[sceneryStage];
   if (fr && fr.chains.length && fr.chains[0].w === 256) {
-    fringe = await loadImg(V('../assets/' + fr.chains[0].file));
+    fringe = await loadImg(V(ASSETS_DIR + fr.chains[0].file));
     fringeCeil = fr.chains.length > 1
-      ? await loadImg(V('../assets/' + fr.chains[1].file)) : fringe;
+      ? await loadImg(V(ASSETS_DIR + fr.chains[1].file)) : fringe;
   }
   if (MODE === 'stage') {
     world.loadWaves(waves, STAGE);
@@ -182,12 +259,20 @@ function tick() {
   if (manual) world.input = held;
   if (world.scrollRate !== 0) t++;
   world.step();
+  world._lastTick = performance.now();   // render interpolation clock, see loop()
   syncMusic();
 }
 
 function wantedMusic() {
   if (MODE !== 'stage' || !world || world.stageComplete) return null;
-  return world.bossSpawned && world.bossAlive ? 'boss' : 'level';
+  if (!world.bossSpawned || !world.bossAlive) return 'level';
+  // registerBoss fires the instant the wave record dispatches, but the boss then
+  // sits in entryGate at the spawn template (x = 368, the right edge) until the
+  // scroll reaches its trigger -- which can be many seconds. Keying the music off
+  // bossSpawned alone started the boss theme long before anything showed up.
+  // Wait for a live boss object to actually be inside the playfield.
+  return world.objects.some(o => o.__isBoss && !o.done && o.x < 368)
+    ? 'boss' : 'level';
 }
 
 function syncMusic() {
@@ -205,7 +290,9 @@ async function enableAudio() {
     if (!audioLoading) {
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
       await audioContext.resume();
-      audioLoading = SaintDragonAudio.load(audioContext, '../audio', AUDIO_V);
+      const cfg = assetCfg || await SaintDragonAssets.load();
+      audioLoading = SaintDragonAudio.load(audioContext, cfg.audio, cfg.version || AUDIO_V,
+                                           { fetch: SaintDragonAssets.fetchRetry });
     }
     audio = await audioLoading;
     audio.musicVolume = 0.8;
@@ -322,20 +409,54 @@ function loop() {
   rafPending = false;
   if (typeof world === 'undefined' || !world) { schedule(); return; }
   const x = $('cv').getContext('2d');
-  x.imageSmoothingEnabled = false;
+  // Draw the whole scene in logical 368x182 space; RENDER_SCALE blows it up to
+  // the backing store. setTransform (not scale) so this is idempotent against
+  // whatever the previous frame's save/restore left behind. imageSmoothingEnabled
+  // stays off in the pixel-accurate edition and on for the HD one.
+  x.setTransform(RENDER_SCALE, 0, 0, RENDER_SCALE, 0, 0);
+  x.imageSmoothingEnabled = ENHANCED;
+  x.imageSmoothingQuality = 'low';   // bilinear: 2-tap, so the atlas inset covers it
   x.clearRect(0, 0, 368, PLAYFIELD_H);
+  // Render interpolation (?smooth=1). alpha is how far this frame sits between
+  // the last sim step and the next, 0..1. It clamps to 1 whenever the sim is
+  // ahead of the renderer -- paused, backgrounded, or just a slow frame -- so a
+  // stale clock only ever parks objects on their true position, never past it.
+  const alpha = SMOOTH
+    ? Math.max(0, Math.min(1, (performance.now() - (world._lastTick || 0)) / 20))
+    : 0;
+  // Objects lerp from _px/_py (last step) to x/y (this step). A jump larger than
+  // a sprite is a wrap or a teleport, not motion -- snap to the destination.
+  const interp = (prev, cur) =>
+    (prev === undefined || Math.abs(cur - prev) > 32) ? cur : prev + (cur - prev) * alpha;
+  // The scroll counter advances only while the stage is scrolling; carry the
+  // sub-step fraction so the parallax can move on an in-between render frame
+  // rather than only on a 50Hz tick.
+  const tt = SMOOTH && world.scrollRate !== 0 ? t + alpha : t;
   // Preserve the copper's 2:1 parallax ratio: terrain follows the traced stage
   // rate while the distant backdrop advances half as far.
+  //
+  // The tile offset MUST be a whole number: the strip is drawn as abutting
+  // copies at -off + k*width, and a fractional off lands every copy on a
+  // non-integer x, where imageSmoothingEnabled = false leaves a hairline seam at
+  // each join. True sub-pixel scroll needs smoothing on (enhanced edition, M3);
+  // here rounding keeps the copies locked together while still letting tt's
+  // fraction tip the offset over a pixel boundary between ticks.
+  // In the HD edition the backdrop images are ASSET_SCALE times their logical
+  // size; draw them back down to logical width/height so every downstream dy
+  // (ground line, fringe overhang, ceiling mirror) stays in the same units.
   const band = (img, speed, dy) => {
-    const off = Math.floor(t * speed) % img.width;
-    for (let sx = -off; sx < 368; sx += img.width) x.drawImage(img, sx, dy);
+    const lw = img.width / ASSET_SCALE, lh = img.height / ASSET_SCALE;
+    const off = Math.round(tt * speed) % lw;
+    for (let sx = -off; sx < 368; sx += lw)
+      x.drawImage(img, 0, 0, img.width, img.height, sx, dy, lw, lh);
   };
+  const logicalH = img => img.height / ASSET_SCALE;
   // The backdrop is the whole scene and it spans exactly the play area: its
   // height equals ground - ceiling on every enclosed stage (134 = 158 - 24,
   // 150 = 166 - 16), and the descriptor's word +7 carries that same figure.
   // On stages 1 and 5 it does not reach the top, which is the black sky.
   const groundY = world.ground !== undefined ? world.ground : 162;
-  if (bg) band(bg, GROUND_SCROLL / 2, groundY - bg.height);
+  if (bg) band(bg, GROUND_SCROLL / 2, groundY - logicalH(bg));
 
   // The strips are FOREGROUND: they are drawn after the sprites, below, so the
   // dragon passes behind them, and colour 0 drops out of them.
@@ -345,7 +466,7 @@ function loop() {
     // The strip is exactly as tall as its band, so the ragged edge that hangs
     // past it into the backdrop is a separate resource. Stage 2's is 256 wide,
     // the same as the strip, so it tiles with it and needs no placement guess.
-    if (fringe) band(fringe, GROUND_SCROLL, groundY - fringe.height);
+    if (fringe) band(fringe, GROUND_SCROLL, groundY - logicalH(fringe));
     // Stages 2, 3 and 4 have a roof as well as a floor, and it is the same
     // strip mirrored. The descriptor ($22e2 + stage * $22) carries the ceiling
     // at word +14, beside the ground at +16: 1, 24, 24, 16, 1 for stages 1..5,
@@ -359,7 +480,7 @@ function loop() {
       // strip uses dy = 0 and lands on [c - 24, c]; the overhang has to sit
       // just PAST the band edge, on [c, c + h], which is dy = -h. Offsetting by
       // the strip height as well put it a whole strip too low.
-      if (fringeCeil) band(fringeCeil, GROUND_SCROLL, -fringeCeil.height);
+      if (fringeCeil) band(fringeCeil, GROUND_SCROLL, -logicalH(fringeCeil));
       x.restore();
     }
   };
@@ -406,8 +527,12 @@ function loop() {
       // aimed, moved, sorted to the front and never drawn. Fall back to the
       // sprite the object chose.
       const chain = o.handle !== undefined ? world.spriteChain(o.handle) : [o.sprite];
+      // A chain is one wide object stored as abutting 32px slices, so its parts
+      // meet inside the artwork rather than at a transparent border -- flagged
+      // so the draw can pin it to whole pixels and keep those joins invisible.
+      const chained = chain.length > 1;
       for (const it of chain)
-        records.push({ o, it, dx: 0, dy: 0, depth: o.depth || 0, bullet });
+        records.push({ o, it, dx: 0, dy: 0, depth: o.depth || 0, bullet, chained });
     }
   }
   records.sort((a, b) => {
@@ -426,28 +551,50 @@ function loop() {
     // one routine serves both the floor and the ceiling bank) and bit 0 flips
     // horizontally. Reflect about the object's own hotspot line, not the sprite
     // box, so the anchor stays put under the flip.
+    // Interpolated draw position (?smooth=1); the plain rounded position
+    // otherwise. Everything downstream -- the mirror pivot and every drawImage
+    // anchor -- keys off these two so the sprite and its flip stay together.
+    // A chained object is pinned to whole logical pixels. Its slices abut inside
+    // the artwork, and each drawImage clamps its bilinear sampling to its own
+    // source rect -- so at a fractional offset the gradient across a join goes
+    // flat/flat instead of continuing, which reads as a seam. On the pixel grid
+    // the resample is an identity and the join is exact. Chained sprites are the
+    // big slow scenery and bosses, so giving up sub-pixel motion there costs
+    // nothing visible.
+    let ox = SMOOTH ? interp(o._px, o.x) : o.drawX;
+    let oy = SMOOTH ? interp(o._py, o.y) : o.drawY;
+    if (r.chained) { ox = Math.round(ox); oy = Math.round(oy); }
+    // The atlas rect is ASSET_SCALE times the logical sprite size in the HD
+    // edition (gfx.json keeps w/h in 1x units; only x/y point into the bigger
+    // sheet). Source rect grows, destination stays logical.
+    const sw = r.it.w * ASSET_SCALE, sh = r.it.h * ASSET_SCALE;
     const mirrored = o.flip || o.flipX;
     if (mirrored) {
       x.save();
-      x.translate(o.flipX ? o.drawX * 2 : 0, o.flip ? o.drawY * 2 : 0);
+      x.translate(o.flipX ? ox * 2 : 0, o.flip ? oy * 2 : 0);
       x.scale(o.flipX ? -1 : 1, o.flip ? -1 : 1);
     }
     const flashing = o.hitFlash > 0 && (o.hitFlash & 2);
+    // Source rect into the atlas, inset in HD so a bilinear tap stays in the tile.
+    const srcX = r.it.x + ATLAS_INSET, srcY = r.it.y + ATLAS_INSET;
+    const srcW = sw - 2 * ATLAS_INSET, srcH = sh - 2 * ATLAS_INSET;
+    const dX = ox + r.dx - r.it.hx, dY = oy + r.dy - r.it.hy;
     if (flashing) {
-      flashCanvas.width = r.it.w;
-      flashCanvas.height = r.it.h;
+      // The white silhouette is built in an offscreen buffer at atlas scale,
+      // then drawn down like the sprite. Its own bounds are the only edge, so
+      // no inset is needed here.
+      flashCanvas.width = sw;
+      flashCanvas.height = sh;
       flashContext.imageSmoothingEnabled = false;
-      flashContext.drawImage(sheet, r.it.x, r.it.y, r.it.w, r.it.h,
-                             0, 0, r.it.w, r.it.h);
+      flashContext.clearRect(0, 0, sw, sh);
+      flashContext.drawImage(sheet, r.it.x, r.it.y, sw, sh, 0, 0, sw, sh);
       flashContext.globalCompositeOperation = 'source-atop';
       flashContext.fillStyle = '#fff';
-      flashContext.fillRect(0, 0, r.it.w, r.it.h);
+      flashContext.fillRect(0, 0, sw, sh);
       flashContext.globalCompositeOperation = 'source-over';
-      x.drawImage(flashCanvas, 0, 0, r.it.w, r.it.h,
-                  o.drawX + r.dx - r.it.hx, o.drawY + r.dy - r.it.hy, r.it.w, r.it.h);
+      x.drawImage(flashCanvas, 0, 0, sw, sh, dX, dY, r.it.w, r.it.h);
     } else {
-      x.drawImage(sheet, r.it.x, r.it.y, r.it.w, r.it.h,
-                  o.drawX + r.dx - r.it.hx, o.drawY + r.dy - r.it.hy, r.it.w, r.it.h);
+      x.drawImage(sheet, srcX, srcY, srcW, srcH, dX, dY, r.it.w, r.it.h);
     }
     if (mirrored) x.restore();
   }
@@ -496,9 +643,11 @@ function loop() {
       ` · spread ${world.pickupLevel || 0}` +
       ` · secondary ${world.weaponLevel} / type ${world.weaponIndex}` +
       (world.godMode ? ' · GOD' : '') +
-      (world.stageComplete ? ' · STAGE COMPLETE' : '')
+      (world.stageComplete ? ' · STAGE COMPLETE' : '') +
+      (SMOOTH ? ' · smooth' : '') + (ENHANCED ? ` · hd x${RENDER_SCALE}` : '')
     : `${MODE} · frame ${world.frame} · ${world.objects.length} objects` +
-      (world.postBossDone ? ' · complete' : '');
+      (world.postBossDone ? ' · complete' : '') +
+      (SMOOTH ? ' · smooth' : '') + (ENHANCED ? ` · hd x${RENDER_SCALE}` : '');
   schedule();
 }
 

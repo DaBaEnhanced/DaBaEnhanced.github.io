@@ -4,13 +4,13 @@ title: "007 - From The Universe To The Subatomic"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: From The Universe To The Subatomic
-thumbnail: "../assets/images/007vid.jpg"
+thumbnail: "/images/007vid.jpg"
 videoid: 497vWepEjPs
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     From The Universe To The Subatomic in a weird alternative style. I love this version.
   </p>
 </div>

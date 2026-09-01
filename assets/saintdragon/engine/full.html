@@ -97,6 +97,7 @@
     <span class="status" id="status">READY</span>
     <button id="cheat" title="Enable invulnerability and upgrade weapons">CHEAT</button>
     <button id="audio" title="Turn game audio off">AUDIO: ON</button>
+    <label class="toggle" title="Original pixel-accurate art, or the 4x AI-upscaled enhanced set"><input id="hd" type="checkbox"> HD</label>
     <label class="toggle" title="Toggle scanlines and phosphor treatment"><input id="crt" type="checkbox" checked> CRT</label>
     <button class="fullscreen" id="fullscreen" title="Enter fullscreen" aria-label="Enter fullscreen">FULL</button>
   </header>
@@ -129,10 +130,11 @@
     </div>
   </section>
 </main>
-<script src="../audio/paula.js?v=7e3674838d"></script>
+<script src="../audio/paula.js?v=2afcfc89b8"></script>
+<script src="config.js?v=cbf8ea3912"></script>
 <script>
 'use strict';
-const AUDIO_V = '76b090ea579c';
+const AUDIO_V = 'b88f9510db70';
 const game = document.getElementById('game');
 const frame = document.getElementById('frame');
 const status = document.getElementById('status');
@@ -148,10 +150,19 @@ let route = 'idle', routeStart = 0, stage = 1, score = 0, lives = 5;
 let guns = { spread:0, type:1, level:0 };
 let boundWorld = null, routeLoading = false, scoreDeadline = 0, scoreRecorded = false;
 
+// Original vs Enhanced (4x upscaled art + smoothing + interpolation). Persisted,
+// and overridable for a one-off via ?edition=hd on the shell URL.
+let edition = localStorage.getItem('saint-dragon-edition') ||
+  (new URLSearchParams(location.search).get('edition') === 'hd' ? 'hd' : 'original');
+
 function routeUrl(mode, number) {
   const params = new URLSearchParams({ full:'1' });
   if (mode === 'stage') params.set('stage', String(number));
   else params.set('mode', mode);
+  if (edition === 'hd') params.set('edition', 'hd');
+  // Carry an explicit ?smooth=1 through as well (the HD edition turns it on by
+  // default; this lets it be forced on the original from the shell URL too).
+  if (new URLSearchParams(location.search).get('smooth') === '1') params.set('smooth', '1');
   return `index.html?${params}`;
 }
 
@@ -169,7 +180,9 @@ function loadRoute(next, number) {
 async function startAudio() {
   if (!audioContext) {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    audio = await SaintDragonAudio.load(audioContext, '../audio', AUDIO_V);
+    const cfg = await SaintDragonAssets.load();
+    audio = await SaintDragonAudio.load(audioContext, cfg.audio, cfg.version || AUDIO_V,
+                                        { fetch: SaintDragonAssets.fetchRetry });
     audio.musicVolume = .8;
     audio.sfxVolume = .8;
   }
@@ -300,6 +313,15 @@ document.getElementById('cheat').onclick = () => {
   game.contentWindow.document.getElementById('cv')?.focus();
 };
 document.getElementById('crt').onchange = event => frame.classList.toggle('crt', event.currentTarget.checked);
+{
+  const hdBox = document.getElementById('hd');
+  hdBox.checked = edition === 'hd';
+  hdBox.onchange = event => {
+    edition = event.currentTarget.checked ? 'hd' : 'original';
+    localStorage.setItem('saint-dragon-edition', edition);
+    if (route !== 'idle') loadRoute(route, stage);   // reload the current screen with the new art
+  };
+}
 function fullscreenElement() {
   return document.fullscreenElement || document.webkitFullscreenElement;
 }

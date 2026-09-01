@@ -24,7 +24,7 @@ Enjoy.
 >
   <!-- Background Image -->
   <img
-    src="../../../../../assets/images/034short.jpg"
+    src="{{ site.cdn_url }}/images/034short.jpg"
     alt="034 - Shadows on Titan"
     style="
       width: 100%;

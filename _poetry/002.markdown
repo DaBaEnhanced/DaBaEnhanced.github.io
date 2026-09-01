@@ -4,8 +4,8 @@ title: "002 - Dreams"
 date: 2025-04-03 11:29:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail_img: "../assets/images/002poet.jpg"
-thumbnail: "../assets/videos/002poet.mp4"
+thumbnail_img: "/images/002poet.jpg"
+thumbnail: "/videos/002poet.mp4"
 ---
 
 <div style="text-align: center;">

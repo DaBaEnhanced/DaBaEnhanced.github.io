@@ -777,6 +777,12 @@ class World {
 
   step() {
     this.frame++;
+    // Fixed-step -> render interpolation. The sim moves objects 50 times a
+    // second; the renderer (?smooth=1) lerps each object from where it was last
+    // step to where it is now, so motion is smooth at the display's refresh
+    // rate. Snapshot BEFORE any coroutine or integration touches a position.
+    // Presentation only -- nothing in the sim reads _px/_py.
+    for (const o of this.objects) { o._px = o.x; o._py = o.y; }
     const deathFrame = this.stepDeathSequence();
     if (!deathFrame && !this.frozen) this.stepWaves();
     // $5a76: advance $92 by speed<<7 and write the slots crossed this frame.

@@ -4,8 +4,8 @@ title: "026 - My World"
 date: 2025-04-03 11:52:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail_img: "../assets/images/026poet.jpg"
-thumbnail: "../assets/videos/026poet.mp4"
+thumbnail_img: "/images/026poet.jpg"
+thumbnail: "/videos/026poet.mp4"
 ---
 
 <div style="text-align: center;">

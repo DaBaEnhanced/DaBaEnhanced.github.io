@@ -4,13 +4,13 @@ title: "024 - Wood Elves"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Wood Elves
-thumbnail: "../assets/images/024vid.jpg"
+thumbnail: "/images/024vid.jpg"
 videoid: fcaXLqBIZsg
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     Wood Elves
   </p>
 </div>

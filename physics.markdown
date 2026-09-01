@@ -12,11 +12,11 @@ permalink: /physics
 
 A semi-serious attempt at a weird theory of everything. *Very semi-serious.* **Very.**
 
-This serves as the basis for my upcoming sci-fi novel, *The Recovery Horizon*, and for more to come. Do not take it as actual research. I am mostly using AI to come up with a weird theory that could still describe our real world coherently, including the Standard Model and general relativity.
+This serves as the basis for my upcoming sci-fi novel, *The Recovery Horizon*, and for more to come. Do not take it as actual research. I am mostly using AI to come up with a weird theory that could still describe our real world coherently, including the Standard Model and general relativity, all that for my sci-fi novels only.
 
-<a href="../assets/physic/rcc_phase1.py" target="_blank" rel="noopener">RCC Phase 1 python sims</a>
-<a href="../assets/physic/rcc_phase2.zip" target="_blank" rel="noopener">RCC Phase 2 python sims</a>
-<a href="../assets/physic/rcc_phase2_cmds.sh" target="_blank" rel="noopener">RCC Phase 2 launch commands</a>
+<a href="{{ site.cdn_url }}/physic/rcc_phase1.py" target="_blank" rel="noopener">RCC Phase 1 python sims</a>
+<a href="{{ site.cdn_url }}/physic/rcc_phase2.zip" target="_blank" rel="noopener">RCC Phase 2 python sims</a>
+<a href="{{ site.cdn_url }}/physic/rcc_phase2_cmds.sh" target="_blank" rel="noopener">RCC Phase 2 launch commands</a>
 
 ## A speculative framework with designated falsifiable branches, for emergent spacetime, matter, gravity, and quantum measurement
 

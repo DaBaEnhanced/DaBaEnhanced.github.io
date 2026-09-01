@@ -1,0 +1,7 @@
+{
+  "assetsBaseUrl": "",
+  "hdAssetsBaseUrl": "",
+  "audioBaseUrl": "",
+  "version": "",
+  "fetch": { "retries": 3, "timeoutMs": 15000, "backoffMs": 800 }
+}

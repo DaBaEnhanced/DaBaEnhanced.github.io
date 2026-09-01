@@ -169,12 +169,16 @@ class SaintDragonAudio {
     this.sfxGain.connect(ctx.destination);
   }
 
-  static async load(ctx, base = '.', version = '') {
+  // opts.fetch: an optional drop-in for window.fetch -- pass
+  // SaintDragonAssets.fetchRetry so the (possibly remote) audio host gets the
+  // same timeout + retry treatment as the rest of the assets.
+  static async load(ctx, base = '.', version = '', opts = {}) {
     const a = new SaintDragonAudio(ctx);
+    const get = opts.fetch || ((u) => fetch(u));
     const url = name => `${base}/${name}${version ? `?v=${version}` : ''}`;
     const [man, sfx] = await Promise.all([
-      fetch(url('manifest.json')).then(r => r.json()),
-      fetch(url('sfx.bin')).then(r => r.arrayBuffer()),
+      get(url('manifest.json')).then(r => r.json()),
+      get(url('sfx.bin')).then(r => r.arrayBuffer()),
     ]);
 
     // "level" is song 0; "boss" is song 1, which the game selects by writing 1
@@ -182,9 +186,9 @@ class SaintDragonAudio {
     for (const name of Object.keys(man.tracks)) {
       const t = man.tracks[name];
       const [samples, music, maskBuf] = await Promise.all([
-        fetch(url(`${name}.samples.bin`)).then(r => r.arrayBuffer()),
-        fetch(url(`${name}.music.bin`)).then(r => r.arrayBuffer()),
-        fetch(url(`${name}.mask.bin`)).then(r => r.arrayBuffer()),
+        get(url(`${name}.samples.bin`)).then(r => r.arrayBuffer()),
+        get(url(`${name}.music.bin`)).then(r => r.arrayBuffer()),
+        get(url(`${name}.mask.bin`)).then(r => r.arrayBuffer()),
       ]);
       const read = makeReader(new Uint8Array(samples), t.regions);
       const { left, right } = renderMusic(new Uint16Array(music),

@@ -4,13 +4,13 @@ title: "002 - Alien World"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: A trip through alien space
-thumbnail: "../assets/images/002vid.jpg"
+thumbnail: "/images/002vid.jpg"
 videoid: SKV9ZLsUUjw
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     The main idea here was to create a video showing the universe from galaxy and stars to beyond atoms as an animated painting.
   </p>
 </div>

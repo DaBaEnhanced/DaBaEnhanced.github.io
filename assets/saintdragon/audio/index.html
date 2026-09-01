@@ -41,7 +41,8 @@ takes. The game itself switches by stopping one and starting the other.</p>
 <h2>Sound effects</h2>
 <div class="row sfx" id="sfx"></div>
 
-<script src="paula.js"></script>
+<script src="paula.js?v=2afcfc89b8"></script>
+<script src="../engine/config.js?v=cbf8ea3912"></script>
 <script>
 let audio = null;
 const $ = id => document.getElementById(id);
@@ -53,7 +54,9 @@ $('load').onclick = async () => {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     await ctx.resume();
     const t0 = performance.now();
-    audio = await SaintDragonAudio.load(ctx, '.');
+    const cfg = await SaintDragonAssets.load();
+    audio = await SaintDragonAudio.load(ctx, cfg.audio, cfg.version || '',
+                                        { fetch: SaintDragonAssets.fetchRetry });
     const t = audio.trackNames
       .map(n => `${n} ${audio.tracks.get(n).duration.toFixed(1)}s`).join(', ');
     $('status').textContent =

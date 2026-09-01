@@ -23,7 +23,7 @@ Happy reading (and perhaps listening),
 >
   <!-- Background Image -->
   <img
-    src="../../../../../assets/images/033short.jpg"
+    src="{{ site.cdn_url }}/images/033short.jpg"
     alt="First contact"
     style="
       width: 100%;

@@ -4,13 +4,13 @@ title: "148 - The Allseeing Eye"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Allseeing Eye
-thumbnail: "../assets/images/148vid.jpg"
+thumbnail: "/images/148vid.jpg"
 videoid: GtHazg_kRhU
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     <p>{{ page.summary | markdownify }}</p>
   </p>
 </div>

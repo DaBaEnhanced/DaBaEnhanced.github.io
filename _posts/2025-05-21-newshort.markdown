@@ -21,7 +21,7 @@ Enjoy.
 >
   <!-- Background Image -->
   <img
-    src="../../../../../assets/images/035short.jpg"
+    src="{{ site.cdn_url }}/images/035short.jpg"
     alt="035 - Falling Star"
     style="
       width: 100%;

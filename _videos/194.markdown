@@ -4,13 +4,13 @@ title: "194 - The 7 Deadly Sins: Sloth"
 date: 2025-04-03 00:03:47 +0200
 categories: jekyll update
 summary: A depiction
-thumbnail: "../assets/images/194vid.jpg"
+thumbnail: "/images/194vid.jpg"
 videoid: MWMQmDOudhY
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     I wanted to create a small series with weird depictions of the 7 deadly sins and show how they are supposedly punished in hell according to Dante's Divine Commedy
   </p>
 </div>

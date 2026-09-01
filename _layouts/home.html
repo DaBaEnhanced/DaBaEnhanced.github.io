@@ -6,30 +6,135 @@ layout: default
   {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
-  <br />
-  <div
-    style="
-      border: 2px solid rgba(134, 174, 255, 0);
-      border-radius: 5px;
-      background-color: #ebfcff;
-    "
-  >
-    <h2 class="post-list-heading" style="text-align: center">
-      {{ page.list_title | default: "Posts" }}
+  <style>
+    .vault-updates {
+      background: var(--vault-panel, #151923);
+      border: 1px solid var(--vault-border, rgba(255, 255, 255, 0.08));
+      border-radius: 10px;
+      margin: 2.5rem 0;
+      padding: 1.5rem clamp(1rem, 4vw, 2rem);
+    }
+
+    .vault-updates-heading {
+      font-family: "Space Grotesk", sans-serif;
+      margin: 0 0 1.25rem;
+      text-align: center;
+    }
+
+    .vault-updates .post-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .vault-updates .post-list > li {
+      border-top: 1px solid var(--vault-border, rgba(255, 255, 255, 0.08));
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 7.5rem minmax(0, 1fr);
+      padding: 1.1rem 0;
+    }
+
+    .vault-updates .post-list > li:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .vault-updates .post-meta {
+      color: var(--vault-text-dim, #6b7688);
+      font-size: 0.85rem;
+    }
+
+    .vault-updates h3 {
+      margin: 0.2rem 0 0.35rem;
+    }
+
+    .vault-update-thumb {
+      align-self: start;
+      aspect-ratio: 4 / 3;
+      background: #0c1018;
+      border: 1px solid var(--vault-border, rgba(255, 255, 255, 0.08));
+      border-radius: 7px;
+      display: block;
+      overflow: hidden;
+    }
+
+    .vault-update-thumb img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 180ms ease;
+      width: 100%;
+    }
+
+    .vault-update-thumb--placeholder {
+      align-items: center;
+      color: var(--vault-text-muted, #93a0b4);
+      display: flex;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.75rem;
+      justify-content: center;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .vault-update-body {
+      min-width: 0;
+    }
+
+    .vault-updates .post-list > li:hover .vault-update-thumb img {
+      transform: scale(1.05);
+    }
+
+    .vault-updates .post-list > li:hover .post-link {
+      color: var(--vault-heading, #f5f7fb);
+    }
+
+    .vault-update-excerpt {
+      color: var(--vault-text-muted, #93a0b4);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    @media (max-width: 420px) {
+      .vault-updates .post-list > li {
+        gap: 0.75rem;
+        grid-template-columns: 5.5rem minmax(0, 1fr);
+      }
+
+      .vault-update-excerpt {
+        display: none;
+      }
+    }
+  </style>
+  <div class="vault-updates">
+    <h2 class="vault-updates-heading">
+      {{ page.list_title | default: "Latest updates" }}
     </h2>
-    <br />
     <ul class="post-list">
       {%- for post in site.posts limit: site.home_post_limit -%}
-      <li style="margin-bottom: 10px">
+      <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
         -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3 style="margin: 0">
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+        <a class="vault-update-thumb{% unless post.thumbnail %} vault-update-thumb--placeholder{% endunless %}" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">
+          {%- if post.thumbnail -%}
+          <img src="{{ site.cdn_url }}{{ post.thumbnail }}" alt="" />
+          {%- else -%}
+          <span>Update</span>
+          {%- endif -%}
+        </a>
+        <div class="vault-update-body">
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if post.excerpt -%}
+          <p class="vault-update-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
+          {%- endif -%}
+        </div>
       </li>
       {%- endfor -%}
     </ul>

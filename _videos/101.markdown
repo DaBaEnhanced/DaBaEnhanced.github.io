@@ -4,13 +4,13 @@ title: "101 - Paper Cut"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Paper Cut
-thumbnail: "../assets/images/101vid.jpg"
+thumbnail: "/images/101vid.jpg"
 videoid: gDGiT5kUjNQ
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     <p>{{ page.summary | markdownify }}</p>
   </p>
 </div>

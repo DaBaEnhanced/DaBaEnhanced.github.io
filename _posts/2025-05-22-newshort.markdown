@@ -4,6 +4,7 @@ title: "New short story"
 date: 2025-05-22 23:53:47 +0200
 categories: jekyll update
 excerpt: 036 - The Affection Algorithm
+thumbnail: /images/036short.jpg
 ---
 
 I've added a new short story to the [short]({% link short.markdown %}) section.<br>
@@ -21,7 +22,7 @@ Enjoy.
 >
   <!-- Background Image -->
   <img
-    src="../../../../../assets/images/036short.jpg"
+    src="{{ site.cdn_url }}/images/036short.jpg"
     alt="036 - The Affection Algorithm"
     style="
       width: 100%;

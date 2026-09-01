@@ -64,7 +64,7 @@ That explains several visual effects:
 
 For a machine-learning or computer-vision analogy, the final frame is closer to a composition of binary masks and discrete label transforms than alpha blending of RGB images. We needed to preserve the labels and their operations, then colourise only at the end.
 
-<img src="../assets/images/hgblittercopper.jpg" alt="Hired Guns 2.5d engine" style="object-position: center;" />
+<img src="{{ site.cdn_url }}/images/hgblittercopper.jpg" alt="Hired Guns 2.5d engine" style="object-position: center;" />
 
 
 ## What we set out to do
@@ -172,7 +172,7 @@ The final illusion comes from painter's ordering. Far cells are drawn before nea
 
 In modern terms, it resembles a highly constrained neural-rendering or sprite-based view synthesis pipeline: discrete scene labels are sampled from a voxel grid, mapped to view-conditioned image patches, then composited in a predetermined depth order. The constraint is also the advantage: almost all perspective work was authored once in the original assets, allowing an Amiga to produce four simultaneous first-person views with no general-purpose 3D engine.
 
-<img src="../assets/images/hg_3d.jpg" alt="Hired Guns 2.5d engine" style="object-position: center;" />
+<img src="{{ site.cdn_url }}/images/hg_3d.jpg" alt="Hired Guns 2.5d engine" style="object-position: center;" />
 
 #### Modern pipeline mapping
 

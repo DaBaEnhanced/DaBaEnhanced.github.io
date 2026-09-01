@@ -182,7 +182,7 @@
 <script>
   function initializeSupportPrompt() {
     const protectedLinks = document.querySelectorAll(
-      'a[href*="assets/pdf/"], a[href$=".zip"], a[href*="assets/HG/index.html"], a[href*="assets/saintdragon/engine/full.html"], a[href*="assets/saint.zip"]'
+      'a[href*="/pdf/"], a[href$=".zip"], a[href*="/HG/index.html"], a[href*="/saintdragon/engine/full.html"]'
     );
 
     if (!protectedLinks.length) {
@@ -255,3 +255,183 @@
     initializeSupportPrompt();
   }
 </script>
+
+<style>
+  /* ---------------------------------------------------------------------
+     Vault theme: sitewide dark redesign.
+     Scope: base typography, links, header/nav/footer chrome, headings,
+     code/tables/blockquotes. The light "glass" cards used by the Books
+     and Games pages keep their own look; only their text color is pinned
+     to ink here so it stays readable on a light card over a dark page. */
+  :root {
+    --vault-bg: #0a0c11;
+    --vault-bg-alt: #10131a;
+    --vault-panel: #151923;
+    --vault-panel-2: #1b202c;
+    --vault-border: rgba(255, 255, 255, 0.08);
+    --vault-border-strong: rgba(255, 255, 255, 0.18);
+    --vault-text: #e6e9f0;
+    --vault-text-muted: #93a0b4;
+    --vault-text-dim: #6b7688;
+    --vault-heading: #f5f7fb;
+    --vault-accent: #5aa9ff;
+    --vault-accent-soft: rgba(90, 169, 255, 0.18);
+    --vault-ink: #14161c;
+  }
+
+  html {
+    background: var(--vault-bg);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 18% -10%, rgba(90, 169, 255, 0.10), transparent 42%),
+      radial-gradient(circle at 88% 6%, rgba(167, 139, 232, 0.08), transparent 40%),
+      var(--vault-bg);
+    color: var(--vault-text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--vault-heading);
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: var(--vault-accent);
+  }
+
+  a:visited {
+    color: var(--vault-accent);
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  ::selection {
+    background: var(--vault-accent-soft);
+    color: #ffffff;
+  }
+
+  .page-heading {
+    border-bottom: 1px solid var(--vault-border);
+    color: var(--vault-heading);
+    padding-bottom: 0.5rem;
+  }
+
+  blockquote {
+    border-left-color: var(--vault-accent);
+    color: var(--vault-text-muted);
+  }
+
+  code, pre {
+    background-color: var(--vault-panel-2);
+    border-color: var(--vault-border-strong);
+    color: var(--vault-text);
+  }
+
+  hr {
+    border-color: var(--vault-border);
+  }
+
+  table {
+    color: var(--vault-text);
+  }
+
+  table th {
+    background-color: var(--vault-panel);
+    border-color: var(--vault-border-strong);
+    color: var(--vault-heading);
+  }
+
+  table td {
+    border-color: var(--vault-border);
+    color: var(--vault-text);
+  }
+
+  table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  /* Header / nav */
+  .site-header {
+    background: rgba(16, 19, 26, 0.86);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--vault-border);
+    border-top: none;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .site-title,
+  .site-title:visited {
+    color: var(--vault-heading) !important;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .site-title:hover {
+    color: var(--vault-accent) !important;
+  }
+
+  .site-nav .page-link {
+    color: var(--vault-text-muted);
+    font-weight: 500;
+  }
+
+  .site-nav .page-link:hover {
+    color: var(--vault-accent);
+  }
+
+  .site-nav .menu-icon > svg {
+    fill: var(--vault-text-muted);
+  }
+
+  @media screen and (max-width: 600px) {
+    .site-nav {
+      background-color: var(--vault-panel) !important;
+      border-color: var(--vault-border) !important;
+    }
+  }
+
+  /* Footer */
+  .site-footer {
+    background: var(--vault-bg-alt);
+    border-top: 1px solid var(--vault-border);
+    color: var(--vault-text-muted);
+  }
+
+  .footer-heading {
+    color: var(--vault-heading);
+  }
+
+  .site-footer a {
+    color: var(--vault-text-muted);
+  }
+
+  .site-footer a:hover {
+    color: var(--vault-accent);
+  }
+
+  .site-footer .svg-icon {
+    fill: var(--vault-text-muted);
+  }
+
+  /* Support dialog, restyled to match the vault theme */
+  .support-dialog {
+    background: var(--vault-panel);
+    border-color: var(--vault-border-strong);
+    color: var(--vault-text);
+  }
+
+  .support-dialog-continue {
+    background: var(--vault-panel-2);
+    color: var(--vault-text);
+  }
+</style>

@@ -28,9 +28,9 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
   .consent-engines-book,
   .arks-book,
   .other-book {
-    background: rgba(255, 255, 255, 0.55);
-    border: 1px solid #d8dee4;
-    border-radius: 8px;
+    background: var(--vault-panel, #151923);
+    border: 1px solid var(--vault-border, rgba(255, 255, 255, 0.08));
+    border-radius: 10px;
     min-width: 0;
     padding: 0.75rem;
     text-align: center;
@@ -40,9 +40,9 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
   .consent-engines-book:hover,
   .arks-book:hover,
   .other-book:hover {
-    border-color: #8c959f;
-    box-shadow: 0 6px 16px rgba(31, 35, 40, 0.12);
-    transform: translateY(-2px);
+    border-color: #e3b341;
+    box-shadow: 0 10px 28px -12px #e3b341;
+    transform: translateY(-3px);
   }
 
   .consent-engines-book a,
@@ -59,6 +59,7 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
   .featured-book video {
     border-radius: 4px;
     display: block;
+    margin: 0 auto;
     max-width: 100%;
   }
 
@@ -90,27 +91,27 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
 
 <div class="consent-engines-books">
 <div class="consent-engines-book">
-  <a href="assets/pdf/Consent Engines 1_ Songs On Rocks TRUE FINAL.pdf">
-    <video src="../assets/videos/ce1.mp4" poster="../assets/videos/ce1.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 1_ Songs On Rocks TRUE FINAL.pdf">
+    <video src="{{ site.cdn_url }}/videos/ce1.mp4" poster="{{ site.cdn_url }}/videos/ce1.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Songs On Rocks - Consent Engines Book One</p>
   </a>
   <!--a href="https://www.amazon.com/dp/B0FZ53T8Z8"><p>Buy it on Amazon</p></a-->
 </div>
 <div class="consent-engines-book">
-  <a href="assets/pdf/Consent Engines 2_ Redshift Vows TRUE FINAL.pdf">
-    <video src="../assets/videos/ce2.mp4" poster="../assets/videos/ce2.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 2_ Redshift Vows TRUE FINAL.pdf">
+    <video src="{{ site.cdn_url }}/videos/ce2.mp4" poster="{{ site.cdn_url }}/videos/ce2.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Redshift Vows - Consent Engines Book Two</p>
   </a>
 </div>
 <div class="consent-engines-book">
-  <a href="assets/pdf/Consent Engines 3_ The Mosaic Drift TRUE FINAL.pdf">
-    <video src="../assets/videos/ce3.mp4" poster="../assets/videos/ce3.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 3_ The Mosaic Drift TRUE FINAL.pdf">
+    <video src="{{ site.cdn_url }}/videos/ce3.mp4" poster="{{ site.cdn_url }}/videos/ce3.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Mosaic Drift - Consent Engines Book Three</p>
   </a>
 </div>
 <div class="consent-engines-book">
-  <a href="assets/pdf/Consent Engines 4_ The Revocation War TRUE FINAL.pdf">
-    <video src="../assets/videos/ce4.mp4" poster="../assets/videos/ce4.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 4_ The Revocation War TRUE FINAL.pdf">
+    <video src="{{ site.cdn_url }}/videos/ce4.mp4" poster="{{ site.cdn_url }}/videos/ce4.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Revocation War - Consent Engines Book Four</p>
   </a>
 </div>
@@ -125,84 +126,84 @@ The first book will soon be available on Amazon and here.
 <div class="arks-books">
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark01.mp4" poster="../assets/videos/ark01.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark01.mp4" poster="{{ site.cdn_url }}/videos/ark01.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Awakening - 13 Arks Book One</p>
   </a>
   <!--a href="https://www.amazon.com/dp/B0FZ44GF2T"><p>Buy it on Amazon</p></a-->
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark02.mp4" poster="../assets/videos/ark02.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark02.mp4" poster="{{ site.cdn_url }}/videos/ark02.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Losts - 13 Arks Book Two (under editing)</p>
   </a>
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark03.mp4" poster="../assets/videos/ark03.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark03.mp4" poster="{{ site.cdn_url }}/videos/ark03.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Lensmaker's Children - 13 Arks Book Three (under editing)</p>
   </a>
 </div>
 
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark04.mp4" poster="../assets/videos/ark04.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark04.mp4" poster="{{ site.cdn_url }}/videos/ark04.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Eventide - 13 Arks Book Four (under editing)</p>
   </a>
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark05.mp4" poster="../assets/videos/ark05.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark05.mp4" poster="{{ site.cdn_url }}/videos/ark05.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Ship of Theseus - 13 Arks Book Five (under editing)</p>
   </a>
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark06.mp4" poster="../assets/videos/ark06.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark06.mp4" poster="{{ site.cdn_url }}/videos/ark06.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Glass Jungle - 13 Arks Book Six (under editing)</p>
   </a>
 </div>
 
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark07.mp4" poster="../assets/videos/ark07.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark07.mp4" poster="{{ site.cdn_url }}/videos/ark07.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Moon that Forgot - 13 Arks Book Seven (under editing)</p>
   </a>
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark08.mp4" poster="../assets/videos/ark08.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark08.mp4" poster="{{ site.cdn_url }}/videos/ark08.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Flyby Covenant - 13 Arks Book Eight (under editing)</p>
   </a>
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark09.mp4" poster="../assets/videos/ark09.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark09.mp4" poster="{{ site.cdn_url }}/videos/ark09.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Dark Ocean Foundry - 13 Arks Book Nine (under editing)</p>
   </a>
 </div>
 
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark10.mp4" poster="../assets/videos/ark10.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark10.mp4" poster="{{ site.cdn_url }}/videos/ark10.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Mirror Reef - 13 Arks Book Ten (under editing)</p>
   </a>
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark11.mp4" poster="../assets/videos/ark11.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark11.mp4" poster="{{ site.cdn_url }}/videos/ark11.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Landauer Tax - 13 Arks Book Eleven (under editing)</p>
   </a>
 </div>
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark12.mp4" poster="../assets/videos/ark12.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark12.mp4" poster="{{ site.cdn_url }}/videos/ark12.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Lighthouse - 13 Arks Book Twelve (under editing)</p>
   </a>
 </div>
 
 <div class="arks-book">
   <a href="" >
-    <video src="../assets/videos/ark13.mp4" poster="../assets/videos/ark13.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/ark13.mp4" poster="{{ site.cdn_url }}/videos/ark13.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Prodigal - 13 Arks Book Thirteen (under editing)</p>
   </a>
 </div>
@@ -223,7 +224,7 @@ In a universe where axioms are treaties, survival may require the unthinkable: c
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/axiombreach.mp4" poster="../assets/videos/axiombreach.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/axiombreach.mp4" poster="{{ site.cdn_url }}/videos/axiombreach.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -238,7 +239,7 @@ He didn’t break the system. He learned to operate it.
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/carbonquota.mp4" poster="../assets/videos/carbonquota.jpg"  style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/carbonquota.mp4" poster="{{ site.cdn_url }}/videos/carbonquota.jpg"  style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -252,7 +253,7 @@ Shadows on Titan is quiet cosmic dread in a lab coat: a Titan mission goes wrong
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/shadowsontitan.mp4" poster="../assets/videos/shadowsontitan.jpg"  style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/shadowsontitan.mp4" poster="{{ site.cdn_url }}/videos/shadowsontitan.jpg"  style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -266,7 +267,7 @@ In a spotless future city, Sanitation Unit D-7891 pauses at a reflection pool—
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/themultiplicityofme.mp4" poster="../assets/videos/themultiplicityofme.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/themultiplicityofme.mp4" poster="{{ site.cdn_url }}/videos/themultiplicityofme.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -280,7 +281,7 @@ A boy and an AI grow up together. One will come to understand what it means to b
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/bluelightchild.mp4" poster="../assets/videos/bluelightchild.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/bluelightchild.mp4" poster="{{ site.cdn_url }}/videos/bluelightchild.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -294,7 +295,7 @@ A mission to test a new theory of everything goes haywire and challenges perspec
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/therecoveryhorizon.mp4" poster="../assets/videos/therecoveryhorizon.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/therecoveryhorizon.mp4" poster="{{ site.cdn_url }}/videos/therecoveryhorizon.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -308,7 +309,7 @@ A woman's descent into madness.
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/fracture.mp4" poster="../assets/videos/fracture.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/fracture.mp4" poster="{{ site.cdn_url }}/videos/fracture.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -322,7 +323,7 @@ Two obsessions collide. Who will survive?
 <div style="margin: 0 auto; text-align: center; width: 100%;">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
   <a href="">
-    <video src="../assets/videos/perfettissimo.mp4" poster="../assets/videos/perfettissimo.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <video src="{{ site.cdn_url }}/videos/perfettissimo.mp4" poster="{{ site.cdn_url }}/videos/perfettissimo.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 </article>
@@ -338,8 +339,8 @@ If you like mind-bending twists, tight worldbuilding, and heart under pressure, 
 
 <div class="featured-book">
   <!--p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p-->
-  <a href="assets/pdf/Short Stories - Clumsy.GiBa FINAL.pdf">
-    <video src="../assets/videos/shorts.mp4" poster="../assets/videos/shorts.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+  <a href="{{ site.cdn_url }}/pdf/Short Stories - Clumsy.GiBa FINAL.pdf">
+    <video src="{{ site.cdn_url }}/videos/shorts.mp4" poster="{{ site.cdn_url }}/videos/shorts.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
   </a>
 </div>
 
@@ -347,7 +348,7 @@ If you like mind-bending twists, tight worldbuilding, and heart under pressure, 
 
 <div class="featured-book">
 <p><a href="https://www.amazon.com/dp/B0FZ575NKW">Buy it on Amazon</a></p>
-<a href="assets/pdf/Poems - Clumsy.GiBa v5.pdf">
-  <video src="../assets/videos/dialogues.mp4" poster="../assets/videos/dialogues.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+<a href="{{ site.cdn_url }}/pdf/Poems - Clumsy.GiBa v5.pdf">
+  <video src="{{ site.cdn_url }}/videos/dialogues.mp4" poster="{{ site.cdn_url }}/videos/dialogues.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
 </a>
 </div>

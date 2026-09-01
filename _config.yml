@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Clumsy.GiBa's Vault (A.K.A. D. B. Waldtier's Blog)
+title: D. B. Waldtier's Vault
+author: D. B. Waldtier
 subtitle: >- # this means to ignore newlines until "baseurl:"
   A collection of random stuff I wrote, and some AI-generated content.
 #email: dabaenhanced@gmail.com
@@ -26,6 +27,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   Books, poems, games and old AI videos.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Base for every asset (image/video/audio/zip/pdf/game bundle) referenced
+# across the site. Locally this stays "/assets" (served from this repo's
+# own assets/ folder). Once assets are uploaded to R2, flip this to the
+# CDN's base, e.g. "https://assets.waldtier.com" (which is already the
+# same domain the PDF links use) -- every reference site-wide repoints
+# in one edit, no other file needs to change.
+cdn_url: "https://assets.waldtier.com"
 instagram_username: clumsy.giba
 github_username: dabaenhanced
 youtube_username: "@clumsy_giba"
@@ -62,6 +71,17 @@ header_pages:
   - short.markdown
   - video.markdown
   - physics.markdown
+
+exclude:
+  - assets/videos
+  - assets/images
+  - assets/audio
+  - assets/pdf
+  - assets/HG
+  - assets/saintdragon
+  - assets/physic
+  - assets/HG.zip
+  - assets/saint.zip
 
 # Exclude from processing.
 # The following items will not be processed, by default.

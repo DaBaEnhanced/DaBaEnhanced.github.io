@@ -1400,8 +1400,9 @@ const CAPSULE_EFFECTS = {
   '$04e26': { kind: 'weaponLevel' },
   '$04ed0': { kind: 'life', amount: 3 }, '$04ed8': { kind: 'life', amount: 3 },
   '$04f20': { kind: 'life', amount: 5 }, '$04f68': { kind: 'life', amount: 7 },
-  '$04fb0': { kind: 'fullPower' }, '$050d0': { kind: 'fullPower' },
   '$050ea': { kind: 'invulnerability' },
+  // No 'fullPower' entry: $04fcc is a real handler but nothing in the wave data
+  // reaches it. See NOT_A_ROUTINE below.
 };
 const CAPSULE_CONTENT_HANDLES = {
   '$04bea': 0x0003, '$04bf2': 0x0003, '$04c0c': 0x0003, // speed
@@ -1413,7 +1414,6 @@ const CAPSULE_CONTENT_HANDLES = {
   '$04e0c': 0x0a03, '$04e14': 0x0a03, '$04e26': 0x0a03, // weapon level
   '$04ed0': 0x1203, '$04ed8': 0x1203,                   // three lives
   '$04f20': 0x1403, '$04f68': 0x1603,                   // five / seven lives
-  '$04fb0': 0x1803, '$050d0': 0x1803,                   // full power
   '$050ea': 0x0e03,                                     // invulnerability
 };
 
@@ -2412,6 +2412,13 @@ function* a866Segment(o, world, index, root) {             // $a866
   o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
   o.setHandle(index === 0 ? 0x0402 : 0x1402);              // $a89a/$a8e8
   o.flipX = index === 0;                                   // $a8a2
+  // Every segment is born at the spawn template (x = 368, the screen's right
+  // edge) and holds there for six frames before $a91a moves it to its real
+  // station. The head is 32px wide on hx = 7, so seven columns of it hang inside
+  // the playfield for those six frames and the whole formation then appears to
+  // teleport into place. Hide it until it is positioned -- noDraw is a pure
+  // render skip, so liveness, collision and culling are all unchanged.
+  o.noDraw = true;
   if (index > 0) {
     o.__damageTo = root;                                   // $aaae owner walk
     o.__bodyDamageTo = root;
@@ -2424,6 +2431,7 @@ function* a866Segment(o, world, index, root) {             // $a866
       yield* a866Segment(child, wd, index + 1, root);
     }, {});
   o.x = 0x110; o.y = (world.ceiling || 0) - 0x10;          // $a91a-$a926
+  o.noDraw = false;
   o.angle = 0x40; o.speed = 0x200; o.setVelocity();        // $a92c-$a938
   o.__noCull = true;
   for (let frame = 0; frame <= 0x1e; frame++) { if (o.done) return; yield; }
@@ -2812,17 +2820,24 @@ function* c4e6Aux(o, world, boss, cfg) {
   o.x = boss.x;
   o.y = cfg.patrol ? cfg.y + 0xbe : (world.ground || 0) + cfg.y;
   o.__noCull = true;
+  // These four are the boss's own furniture and they run $noCull, so nothing
+  // else can ever remove them. Every wait below also has to give up when the
+  // boss itself is gone -- c4e6Follower right underneath already does exactly
+  // this (`if (!o.owner || boss.done) return`), and this one was simply missing
+  // it, so killing the boss before the pair left the aux drifting on screen for
+  // the rest of the stage.
+  const gone = () => o.done || boss.done;
   if (!cfg.patrol) {                                      // $cbc4/$cbe6
     o.playFrames(cfg.script);
     o.collides = true; o.__invulnerable = true;
     o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
     o.vy = -1;                                            // $cc12
-    for (let frame = 0; frame <= 0xbd; frame++) { if (o.done) return; yield; }
+    for (let frame = 0; frame <= 0xbd; frame++) { if (gone()) return; yield; }
     o.vx = o.vy = o.ax = o.ay = 0;                        // $cc20
-    while (world.stage3AuxCount > 0) { if (o.done) return; yield; }
-    for (let frame = 0; frame <= 0x28; frame++) { if (o.done) return; yield; }
+    while (world.stage3AuxCount > 0) { if (gone()) return; yield; }
+    for (let frame = 0; frame <= 0x28; frame++) { if (gone()) return; yield; }
     o.vy = cfg.vy;                                        // $cc28
-    for (let frame = 0; frame <= 0x64; frame++) { if (o.done) return; yield; }
+    for (let frame = 0; frame <= 0x64; frame++) { if (gone()) return; yield; }
     return;
   }
 
@@ -2839,15 +2854,15 @@ function* c4e6Aux(o, world, boss, cfg) {
   let shotTimer = world.stage3AuxTimerFlip ? 0x5e : 0x8c; // $cae2-$caf4
   world.stage3AuxTimerFlip = !world.stage3AuxTimerFlip;
   o.vy = -1;
-  for (let frame = 0; frame <= 0xbd; frame++) { if (o.done) return; yield; }
+  for (let frame = 0; frame <= 0xbd; frame++) { if (gone()) return; yield; }
   o.vy = cfg.vy;
-  for (let frame = 0; frame <= 0x10; frame++) { if (o.done) return; yield; }
+  for (let frame = 0; frame <= 0x10; frame++) { if (gone()) return; yield; }
   o.collides = true;                                       // $cb08
   o.onHitPlayer = (self, wd) => { wd.damage(self, 1); };
   const move = function* (vx, vy) {                        // $cb70
     o.vx = vx; o.vy = vy;
     for (let frame = 0; frame < 0x2e; frame++) {
-      if (o.done) return false;
+      if (gone()) return false;
       if (--shotTimer === 0) {
         if (world.spawnCarrier) world.spawnCarrier(o);      // $cb90
         shotTimer = 0x8c;
@@ -2858,6 +2873,7 @@ function* c4e6Aux(o, world, boss, cfg) {
   };
   let upperHalf = cfg.vy < 0;
   for (;;) {
+    if (boss.done) return;
     if (world.stage3AuxCount !== 2) {
       world.applyDamage(o, o.hp);                          // $cbb4 clears the partner
       return;
@@ -4362,11 +4378,21 @@ function* playerObject(o, world) {
     // $57da/$57de clear and rebuild $16/$1a each frame, so no input means no
     // movement at all rather than drifting on. The ENGINE integrates: adding
     // the velocity here as well moved the player twice per frame.
+    const prevVy = o.vy;                             // $9c(a5) <- $1a(a5)
     o.vx = 0; o.vy = 0;
     if (heading !== -1) {
       o.angle = heading & 0xff;
       world.lastPlayerHeading = o.angle;             // $57d0 -> $122(a6)
       o.setVelocity();
+    }
+
+    // $56d6: retilt only when the vertical velocity changes, animating through
+    // the intermediate pose. Present in playerStub for the demo; it belongs to
+    // $0525e too and was missing here, so the manual head never rolled.
+    if (o.vy !== prevVy) {
+      if (o.vy < 0)      o.playFrames(TILT_UP);
+      else if (o.vy > 0) o.playFrames(TILT_DOWN);
+      else               o.playFrames(prevVy < 0 ? TILT_FROM_UP : TILT_FROM_DOWN);
     }
 
     // $57fe: fire on the press edge, then once every $9a frames while held.
@@ -4377,6 +4403,13 @@ function* playerObject(o, world) {
         o.fireDiv = PLAYER_FIRE_DIVIDER;
       }
     }
+
+    // $5722 -> $572c: while firing, swap the current pose into the shooting
+    // bank (and back out when not). The tilt ladder is mirrored across both
+    // banks, so this survives whatever frame the tilt script left on $handle.
+    const twin = (world.input & INPUT.FIRE ? HEAD_SHOOTING : HEAD_NORMAL).get(o.handle);
+    if (twin !== undefined) o.setHandle(twin);
+
     o.prevInput = world.input || 0;
     yield;
   }
@@ -5091,8 +5124,27 @@ function allocDefaults(o) {
 const INSTALL_516C = new Set([
   '$04bea', '$04bf2', '$04c0c', '$04c62', '$04c7c', '$04cc4', '$04d00',
   '$04d1a', '$04d46', '$04d68', '$04d9c', '$04e0c', '$04e14', '$04e26',
-  '$04ed0', '$04ed8', '$04f20', '$04f68', '$04fb0', '$050d0', '$050ea',
+  '$04ed0', '$04ed8', '$04f20', '$04f68', '$050ea',
 ]);
+
+// $04fb0 and $050d0 were in that set as a twentieth and twenty-first "capsule",
+// both mapped to the full-power effect. Neither is a routine:
+//
+//   $04fb0  bra $7ec6        the terminate-object tail of $04f68's run loop
+//   $050d0  ori.b #$0,d0     inside a run of zero padding between routines
+//
+// Every genuine capsule carries a descriptor + sprite + res/index in
+// wave_handlers.json; these two are the only two of the twenty-one that carry
+// none. Seven wave records name them -- four at trigger 0, i.e. the instant
+// stages 2, 3, 4 and 5 begin -- and the port was handing the player a full-power
+// capsule for each: $04fcc writes #$3a98 to $3a, and $07d06 skips the kill while
+// $3a is non-zero, so that is 15000 frames = FIVE MINUTES of invulnerability,
+// free, at the start of four stages.
+//
+// In the original, dispatching a coroutine to $04fb0 terminates it on the first
+// instruction and nothing appears at all. Left unregistered below, spawnWave
+// finds no handler and spawns nothing -- which is that behaviour exactly.
+const NOT_A_ROUTINE = new Set(['$04fb0', '$050d0']);
 const INSTALL_516C_VX = -1;         // $5178
 const ENEMY_DEPTH = 0x64;           // $519c
 const ENEMY_DEATH_SOUND = 0x45;
@@ -5500,6 +5552,11 @@ function buildWaveHandlers(fields, wrappers, composites, anchors) {
   const generic = new Set();      // handlers that fell through to waveEnemy
   const unimplemented = [];
   for (let [addr, f] of Object.entries(fields || {})) {
+    // Addresses the field scanner picked up that are not routines at all -- a
+    // terminate tail and a run of zero padding. Registering nothing makes
+    // spawnWave find no handler and spawn nothing, which is what the original
+    // does when a record dispatches there. See NOT_A_ROUTINE.
+    if (NOT_A_ROUTINE.has(addr)) { unimplemented.push(addr); continue; }
     // $6a(a6)/$68(a6): objects that belong to a band read the band line out of
     // the globals rather than carrying a lane, because the line moves per stage
     // -- that is how one handler sits correctly in five different levels. The
@@ -6112,6 +6169,10 @@ if (typeof module !== 'undefined') {
   module.exports.stage2Boss = stage2Boss;
   module.exports.stage3Boss = stage3Boss;
   module.exports.stage5Boss = stage5Boss;
+  // engine.js reaches for this as a bare global at the end of stage 5. In the
+  // browser both files share one scope so it resolves; under node it has to be
+  // exported or stepWaves throws the moment the stage 5 boss dies.
+  module.exports.stage5DragonExit = stage5DragonExit;
   module.exports.stage4Boss = stage4Boss;
   module.exports.boss4Script = boss4Script;
   module.exports.bossShot = bossShot;

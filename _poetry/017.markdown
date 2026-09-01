@@ -4,8 +4,8 @@ title: "017 - I, Noble Poet"
 date: 2025-04-03 11:43:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail_img: "../assets/images/017poet.jpg"
-thumbnail: "../assets/videos/017poet.mp4"
+thumbnail_img: "/images/017poet.jpg"
+thumbnail: "/videos/017poet.mp4"
 ---
 
 <div style="text-align: center;">

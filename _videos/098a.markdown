@@ -4,13 +4,13 @@ title: "098a - Cloud Dragons"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: Cloud Dragons
-thumbnail: "../assets/images/098Avid.jpg"
+thumbnail: "/images/098Avid.jpg"
 videoid: FHJoqsPXv-8
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     <p>{{ page.summary | markdownify }}</p>
   </p>
 </div>

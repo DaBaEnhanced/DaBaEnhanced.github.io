@@ -4,6 +4,7 @@ title: "New book!"
 date: 2025-11-01 23:53:47 +0200
 categories: jekyll update
 excerpt: Songs on Rocks - The Consent Engines Book One
+thumbnail: /videos/ce1.jpg
 ---
 
 I've added a new book to the [book]({% link books.markdown %}) section.
@@ -27,7 +28,7 @@ Bye!
 >
   <!-- Background Image -->
   <img
-    src="../../../../../assets/videos/ce1.jpg"
+    src="{{ site.cdn_url }}/videos/ce1.jpg"
     alt="037 - Digital Genesis"
     style="
       width: 100%;

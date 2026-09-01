@@ -4,8 +4,8 @@ title: "040 - Malaise"
 date: 2025-04-03 12:06:47 +0200
 categories: jekyll update
 summary: Fragments of my soul
-thumbnail_img: "../assets/images/040poet.jpg"
-thumbnail: "../assets/videos/040poet.mp4"
+thumbnail_img: "/images/040poet.jpg"
+thumbnail: "/videos/040poet.mp4"
 ---
 
 <div style="text-align: center;">

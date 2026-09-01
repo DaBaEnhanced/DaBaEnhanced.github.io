@@ -4,14 +4,14 @@ title: "004 - Europa's Unexpected Encounter​"
 date: 2025-04-03 11:31:47 +0200
 categories: jekyll update
 summary: A gloryhole? Really?
-thumbnail_img: "../assets/images/004short.jpg"
-thumbnail: "../assets/videos/004short.mp4"
+thumbnail_img: "/images/004short.jpg"
+thumbnail: "/videos/004short.mp4"
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">
   <span style="margin-right: 10px;">Audiobook:</span>
   <audio controls style="width: 100%; max-width: 400px;">
-    <source src="../assets/audio/EuropasUnexpectedEncounter.mp3" type="audio/mpeg">
+    <source src="{{ site.cdn_url }}/audio/EuropasUnexpectedEncounter.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 </div>

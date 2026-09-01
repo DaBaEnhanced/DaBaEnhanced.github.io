@@ -4,13 +4,13 @@ title: "025 - The Last Tomb"
 date: 2025-04-03 00:00:47 +0200
 categories: jekyll update
 summary: The Last Tomb
-thumbnail: "../assets/images/025vid.jpg"
+thumbnail: "/images/025vid.jpg"
 videoid: ZFby1Wmifxs
 ---
 
 <div style="text-align: center; margin-top: 20px;">
   {% include youtubePlayer.html id=page.videoid %}
-  <p style="margin-top: 15px; font-size: 1.2em; color: #333;">
+  <p class="video-caption">
     The Last Tomb
   </p>
 </div>

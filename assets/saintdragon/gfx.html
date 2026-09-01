@@ -43,26 +43,27 @@ from the copper &mdash; 1 and 2 pixels per frame &mdash; wrapping at 1568 px.</p
 </div>
 <canvas id="sprites"></canvas>
 
+<script src="engine/config.js?v=cbf8ea3912"></script>
 <script>
 const $ = id => document.getElementById(id);
 let gfx = null, cur = 1, bg = {}, fg = {}, t = 0;
 
-function loadImg(src) {
-  return new Promise(res => { const i = new Image(); i.onload = () => res(i); i.src = src; });
-}
+const loadImg = src => SaintDragonAssets.loadImage(src);   // crossOrigin + timeout + retry
 
 (async () => {
-  gfx = await fetch('assets/gfx.json').then(r => r.json());
+  const A = (await SaintDragonAssets.load()).assets;   // web/config.json, ends in '/'
+  const fetch = (u, o) => SaintDragonAssets.fetchRetry(u, o);
+  gfx = await fetch(A + 'gfx.json').then(r => r.json());
   for (const s of gfx.stages) {
-    bg[s.stage] = await loadImg(`assets/stage${s.stage}_bg.png`);
-    fg[s.stage] = await loadImg(`assets/stage${s.stage}_fg.png`);
+    bg[s.stage] = await loadImg(`${A}stage${s.stage}_bg.png`);
+    fg[s.stage] = await loadImg(`${A}stage${s.stage}_fg.png`);
     const b = document.createElement('button');
     b.textContent = 'stage ' + s.stage;
     b.onclick = () => { cur = s.stage; sync(); };
     b.id = 'sb' + s.stage;
     $('stagebtns').appendChild(b);
   }
-  const sheet = await loadImg('assets/sprites.png');
+  const sheet = await loadImg(A + 'sprites.png');
   const c = $('sprites'), z = () => +$('zoom').value;
   const drawSheet = () => {
     c.width = sheet.width * z(); c.height = sheet.height * z();
