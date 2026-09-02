@@ -182,29 +182,29 @@ layout: home
     <h3 class="vault-card-title">Books</h3>
     <p class="vault-card-desc">Full-length novels, mostly hard sci-fi. Start with the Consent Engines saga.</p>
   </a>
+    <a class="vault-card" style="--accent: #e5484d;" href="/games">
+    <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 8h9a4.5 4.5 0 0 1 4.3 5.8l-1 3.2a2.2 2.2 0 0 1-4.1.2l-.7-1.5H8.9l-.7 1.5a2.2 2.2 0 0 1-4.1-.2l-1-3.2A4.5 4.5 0 0 1 7.5 8z"/><path d="M7 12v4M5 14h4M16 13h.01M18.5 15.5h.01"/></svg></span>
+    <h3 class="vault-card-title">Games</h3>
+    <p class="vault-card-desc">Old Amiga classics rebuilt from disassembled source, playable right in your browser.</p>
+  </a>
+    <a class="vault-card" style="--accent: #f2795c;" href="/short">
+    <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 9h8M8 13h6"/><path d="M8 17h3"/></svg></span>
+    <h3 class="vault-card-title">Short Stories</h3>
+    <p class="vault-card-desc">Standalone tales, translated and tightened with a little help from Claude.</p>
+  </a>
   <a class="vault-card" style="--accent: #a684e8;" href="/poems">
     <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 20 4.1-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="m13.8 7.2 3 3"/><path d="M4 20h5"/></svg></span>
     <h3 class="vault-card-title">Poetry</h3>
     <p class="vault-card-desc">Verses written long before the AI got involved.</p>
   </a>
-  <a class="vault-card" style="--accent: #f2795c;" href="/short">
-    <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 9h8M8 13h6"/><path d="M8 17h3"/></svg></span>
-    <h3 class="vault-card-title">Short Stories</h3>
-    <p class="vault-card-desc">Standalone tales, translated and tightened with a little help from Claude.</p>
-  </a>
-  <a class="vault-card" style="--accent: #e5484d;" href="/games">
-    <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 8h9a4.5 4.5 0 0 1 4.3 5.8l-1 3.2a2.2 2.2 0 0 1-4.1.2l-.7-1.5H8.9l-.7 1.5a2.2 2.2 0 0 1-4.1-.2l-1-3.2A4.5 4.5 0 0 1 7.5 8z"/><path d="M7 12v4M5 14h4M16 13h.01M18.5 15.5h.01"/></svg></span>
-    <h3 class="vault-card-title">Games</h3>
-    <p class="vault-card-desc">Old Amiga classics rebuilt from disassembled source, playable right in your browser.</p>
+    <a class="vault-card" style="--accent: #3ecf8e;" href="/video">
+    <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/><path d="M3 9h18"/></svg></span>
+    <h3 class="vault-card-title">Videos</h3>
+    <p class="vault-card-desc">Trippy AI-generated animations from the early diffusion-model days.</p>
   </a>
   <a class="vault-card" style="--accent: #4c9eff;" href="/physics">
     <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><path d="M4.9 7.8c2.2-3.7 9.2-3.1 13.2.4s3.5 7.1 1.3 8.4-6.5-.4-10.5-3.9-6.2-7.6-4-8.9z"/><path d="M19.1 7.8c-2.2-3.7-9.2-3.1-13.2.4s-3.5 7.1-1.3 8.4 6.5-.4 10.5-3.9 6.2-7.6 4-8.9z"/></svg></span>
     <h3 class="vault-card-title">Physics</h3>
-    <p class="vault-card-desc">A speculative theory of everything, built as the backbone for an upcoming novel.</p>
-  </a>
-  <a class="vault-card" style="--accent: #3ecf8e;" href="/video">
-    <span class="vault-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/><path d="M3 9h18"/></svg></span>
-    <h3 class="vault-card-title">Videos</h3>
-    <p class="vault-card-desc">Trippy AI-generated animations from the early diffusion-model days.</p>
+    <p class="vault-card-desc">A speculative theory of everything, built as the backbone for upcoming novels.</p>
   </a>
 </div>
