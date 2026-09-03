@@ -7,6 +7,6 @@ excerpt: Added a lot of new stuff
 thumbnail: /images/sd_banner.jpg
 ---
 
-I've added a new game: Saint Dragon. A little cool shot-'em up I loved as a child. It's an almost pixel perfect port (not 100% guaranteed, I had to dissasemble the code abnd analyze it to reconstruct everything, well, at least Claude/Codex did most of the work :D). Read the post-mortem for the cool process and little details we used to port it.
+I've added a new game: Saint Dragon. A little cool shot-'em up I loved as a child. It's an almost pixel perfect port (not 100% guaranteed, I had to dissasemble the code and analyze it to reconstruct everything, well, at least Claude/Codex did most of the work :D). Read the post-mortem for the cool process and little details we used to port it.
 
 Bye!

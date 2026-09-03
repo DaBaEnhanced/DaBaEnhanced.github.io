@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Saint Dragon HD version"
+date: 2026-09-02 23:53:47 +0200
+categories: jekyll update
+excerpt: Good for what it is
+thumbnail: /images/sd_banner.jpg
+---
+
+Check out the new build of the Saint Dragon port! I've added a new HD version with ESRGAN-upsampled art assets. It's good for what it is, but could be a good starting point if anyone want to make more detailed art assed manually or with diffusion based models (tried SD1.5 upsampling but it wans't that better and had tons of transparency defects in the end)
+
+Bye!
