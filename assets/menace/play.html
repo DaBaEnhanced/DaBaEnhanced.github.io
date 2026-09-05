@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="0; url=index.html?play=1">
+<title>Menace</title>
+<script>
+  const game = new URL('index.html', location.href);
+  game.searchParams.set('play', '1');
+  game.hash = location.hash;
+  location.replace(game.href);
+</script>
+<p><a href="index.html?play=1">Start Menace</a></p>

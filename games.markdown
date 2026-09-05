@@ -231,7 +231,7 @@ The post-mortem goes into the fascinating technical details of that process.
 	<a href="{{ site.cdn_url }}/images/SD/9.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/SD/9.jpg" alt="Hired Guns screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="{{ site.cdn_url }}/images/SD/10.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/SD/10.jpg" alt="Hired Guns screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="{{ site.cdn_url }}/images/SD/11.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/SD/11.jpg" alt="Hired Guns screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/SD/11.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/SD/12.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/SD/12.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/SD/12.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
 
 And here it is in all its glory:
@@ -245,7 +245,31 @@ And here it is in all its glory:
 </article>
 
 
+<article class="game-card" markdown="1">
+### Menace
 
+<img src="{{ site.cdn_url }}/menace/menace.jpg" alt="Hired Guns screenshot 1" style="object-position: center;" />
+
+A complete browser reconstruction of Menace, DMA Design’s 1988 Amiga shoot ’em up, rebuilt directly from the original disk, executable and recovered game data rather than from screenshots or an embedded emulator. The port recreates all six levels, dual-playfield parallax, enemy waves, five weapons, powerups, guardian battles, music, sound effects, intro sequences, attract mode and the original ending flow. Along the way, the project uncovered some wonderfully strange internals, including bytecode-driven enemy choreography, live palette tricks, hardware collision rules and a HAM6 intro screen.
+
+<div class="game-slideshow">
+	<a href="{{ site.cdn_url }}/menace/shot1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/menace/shot1.jpg" alt="menace screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/menace/shot2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/menace/shot2.jpg" alt="menace screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/menace/shot3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/menace/shot3.jpg" alt="menace screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/menace/shot4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/menace/shot4.jpg" alt="menace screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/menace/shot5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/menace/shot5.jpg" alt="menace screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/menace/shot6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/menace/shot6.jpg" alt="menace screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+And here it is in all its glory:
+
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/menace/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="{{ site.cdn_url }}/menace/menace.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="_games/MENACE_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+</div>
+
+</article>
 
 
 <article class="game-card" markdown="1">

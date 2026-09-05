@@ -4,7 +4,6 @@ title: "Rebuilding Saint Dragon from a 1990 Amiga Disk"
 categories: jekyll update
 ---
 
-# Rebuilding Saint Dragon from a 1990 Amiga Disk
 
 ## A technical postmortem of an Amiga-to-HTML/JavaScript port
 

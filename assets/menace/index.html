@@ -1,0 +1,1588 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menace</title>
+<style>
+  :root { color-scheme: dark; --ink:#d7dbe4; --gold:#f9c53d; --red:#c2202a; --panel:#12141a; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100dvh; overflow:hidden; background:#07080b;
+         color:var(--ink); font:13px/1.5 ui-monospace, Menlo, Consolas, monospace; }
+  main { min-height:100dvh; display:grid; grid-template-rows:auto 1fr; }
+  .bar { min-height:44px; padding:6px 12px; display:flex; align-items:center; gap:10px;
+         background:var(--panel); border-bottom:1px solid #2b2f39; flex-wrap:wrap; }
+  .brand { margin-right:auto; color:var(--gold); font-weight:700; }
+  button, .toggle { min-height:30px; border:1px solid #4b515c; border-radius:4px;
+                    background:#1d2129; color:var(--ink); font:700 12px/1 inherit; }
+  button { padding:0 11px; cursor:pointer; }
+  button:hover { background:#2b3039; border-color:#7d8590; }
+  button:focus-visible, input:focus-visible, select:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  .toggle { padding:0 9px; display:inline-flex; align-items:center; gap:6px; cursor:pointer; }
+  .toggle input { accent-color:var(--gold); }
+  select, input[type=range] { background:#1d2129; color:var(--ink); border:1px solid #4b515c;
+                              border-radius:4px; min-height:26px; font:inherit; }
+  .screen { position:relative; min-height:0; display:grid; place-items:center; overflow:hidden;
+            background:#0a0c10; }
+  .console { position:relative; width:min(100%, calc((100dvh - 44px) * 320 / 224)); }
+  .frame { position:relative; width:100%; aspect-ratio:320/224; background:#000;
+           box-shadow:0 18px 70px #000; }
+  canvas { display:block; width:100%; height:100%; image-rendering:pixelated; background:#000; }
+  /* The CRT treatment is a display filter over the finished frame, at the
+     DISPLAY's resolution - scanlines drawn into the 320x224 buffer would be
+     scaled up with everything else and stop looking like scanlines. */
+  .frame.crt canvas { filter:saturate(1.1) contrast(1.04) brightness(.97); }
+  .frame.crt::after { content:""; position:absolute; inset:0; z-index:4; pointer-events:none;
+                      background:repeating-linear-gradient(to bottom, transparent 0, transparent 2px,
+                                 rgba(0,0,0,.22) 2px, rgba(0,0,0,.22) 3px);
+                      box-shadow:inset 0 0 26px rgba(0,0,0,.7); }
+  .touch { display:none; position:absolute; inset:0; z-index:5; pointer-events:none;
+           touch-action:none; user-select:none; }
+  .fire, .stick { position:absolute; bottom:max(12px, env(safe-area-inset-bottom));
+                  width:clamp(86px,26vw,124px); aspect-ratio:1; border-radius:50%;
+                  border:2px solid rgba(215,219,228,.7); background:rgba(18,20,26,.45);
+                  box-shadow:inset 0 0 0 5px rgba(0,0,0,.18), 0 3px 12px rgba(0,0,0,.45);
+                  pointer-events:auto; touch-action:none; }
+  .fire { right:max(14px, env(safe-area-inset-right)); }
+  .fire::before { content:""; position:absolute; inset:25%; border-radius:50%;
+                  background:rgba(194,32,42,.85); box-shadow:0 0 0 3px rgba(255,255,255,.12); }
+  .fire.pressed::before { transform:scale(.82); background:#ee3b45; }
+  .stick { left:max(14px, env(safe-area-inset-left)); }
+  .stick::before, .stick::after { content:""; position:absolute; opacity:.34;
+                                  background:var(--ink); pointer-events:none; }
+  .stick::before { left:49%; top:12%; bottom:12%; width:2px; }
+  .stick::after { top:49%; left:12%; right:12%; height:2px; }
+  .knob { position:absolute; left:50%; top:50%; width:46%; aspect-ratio:1; border-radius:50%;
+          background:rgba(249,197,61,.9); border:2px solid rgba(255,247,221,.8);
+          transform:translate(-50%,-50%); pointer-events:none; }
+  #err { position:absolute; left:8px; bottom:8px; z-index:7; color:#f77; white-space:pre-wrap; }
+  #keys, #grpV { color:#7c838f; }
+  @media (max-width:820px) {
+    .brand, #keys, #grpV, .devonly { display:none; }
+    .bar { min-height:48px; padding:6px 8px; gap:6px; }
+    .console { width:100%; }
+  }
+  @media (hover:none) and (pointer:coarse) {
+    .touch { display:block; }
+    #keys, #grpV, .devonly { display:none; }
+  }
+  /* Fullscreen is the play mode, so the development controls go: what is left
+     is FULL, CRT, INVULN and AUDIO. `body.fs` is set from the fullscreenchange
+     handler because :fullscreen on the root does not style descendants in every
+     browser the same way. */
+  body.fs .devonly, body.fs #keys, body.fs #grpV, body.fs #info,
+  body.fs .brand { display:none; }
+  /* play.html enters through ?play=1 and keeps the same clean controls even
+     before fullscreen is requested. The development index remains unchanged. */
+  html.clean .devonly, html.clean #keys, html.clean #grpV, html.clean #info,
+  html.clean .brand { display:none; }
+  body.fs .bar, html.clean .bar { min-height:36px; padding:4px 10px; }
+  body.fs main, html.clean main { grid-template-rows:auto 1fr; }
+  body.fs .console, html.clean .console {
+    width:min(100%, calc((100dvh - 36px) * 320 / 224));
+  }
+  /* Portrait: the pad moves out from under the picture and sits below it. */
+  @media (hover:none) and (pointer:coarse) and (orientation:portrait) {
+    .screen { place-items:stretch center; }
+    .console { height:100%; display:grid; grid-template-rows:auto 1fr; align-content:start; }
+    .touch { position:relative; inset:auto; min-height:0;
+             border-top:1px solid rgba(215,219,228,.16);
+             background:linear-gradient(to bottom, rgba(30,33,41,.8), rgba(12,14,18,.45)); }
+    .fire, .stick { bottom:50%; transform:translateY(50%);
+                    width:clamp(104px,31vw,140px); }
+  }
+</style>
+
+<script>
+  if (new URLSearchParams(location.search).has('play'))
+    document.documentElement.classList.add('clean');
+</script>
+
+<main>
+  <header class="bar">
+    <span class="brand">MENACE</span>
+    <label class="toggle devonly">level <select id="lv"></select></label>
+    <label class="toggle devonly">ship <select id="cfg"></select></label>
+    <label class="toggle devonly" title="background parallax rate">bg
+      <input id="ratio" type="range" min="1" max="6" step="1" value="2">
+      <span id="ratioV">2</span></label>
+    <label class="toggle"><input id="crt" type="checkbox" checked> CRT</label>
+    <label class="toggle" title="cheat: skips the collision handler exactly where $6fd40's force-field test sits">
+      <input id="invuln" type="checkbox"> INVULN</label>
+    <label class="toggle devonly" title="award a powerup without finding the pod">give
+      <select id="give"></select></label>
+    <button class="devonly" id="givebtn" title="apply the selected powerup">GIVE</button>
+    <label class="toggle devonly" title="retime the tune - the capture is a register stream rendered at a fixed rate, so this is the knob for checking the driver's tempo">tune
+      <select id="tuneN"><option value="0">0 boss</option><option value="1">1 interlude</option><option value="2" selected>2 level</option></select>
+      <input id="tuneRate" type="range" min="50" max="200" step="1" value="100">
+      <span id="tuneRateV">1.00x</span></label>
+    <button class="devonly" id="tunebtn" title="play the selected tune at the selected speed">PLAY</button>
+    <label class="toggle devonly" title="audition one effect at a chosen speed - for identifying the guardian break-up sound">sfx
+      <select id="sfxN"></select>
+      <input id="sfxRate" type="range" min="25" max="300" step="1" value="100">
+      <span id="sfxRateV">1.00x</span></label>
+    <button class="devonly" id="sfxbtn" title="play the selected effect">PLAY</button>
+    <button id="audiobtn" title="Turn all sound on">AUDIO: OFF</button>
+    <button id="full" title="Enter fullscreen">FULL</button>
+    <span id="keys">arrows fly &middot; CTRL fires &middot; P pause &middot; M music &middot;
+      E effects &middot; ESC abort &middot; G guardian &middot; T tally &middot; I invulnerable</span>
+    <span id="grpV">group -</span>
+    <span id="info"></span>
+  </header>
+  <section class="screen">
+    <div class="console">
+      <div class="frame crt" id="frame">
+        <canvas id="c" width="320" height="224"></canvas>
+        <div id="err"></div>
+      </div>
+      <div class="touch" id="touch">
+        <div class="stick" id="stick"><span class="knob" id="knob"></span></div>
+        <button class="fire" id="firebtn" aria-label="Fire"></button>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module">
+// Stamped by tools/bump.py. Shown in the status line so a stale module graph
+// is visible at a glance instead of looking like a failed fix.
+// Input handling here stands in for $715d2 check.keys, which reads the Amiga
+// keyboard; the browser delivers keys directly.
+const BUILD_ID = '224303';
+import { load, Playfield, SCREEN_W, SCREEN_H, PLAYFIELD_H, SHIP_SPRITE_DX, SHIP_SPRITE_DY,
+         PF2_ORIGIN_X, PF2_ORIGIN_Y, ALIEN_ORIGIN_X,
+         GUARDIAN_SCROLL_DX } from './engine/engine.js?v=224303';
+import { PathVM, tickSpawnDelay } from './engine/paths.js?v=224303';
+import { Ship } from './engine/ship.js?v=224303';
+import { Weapons, Trigger, MUZZLE_DX, MUZZLE_DY, fireSfx } from './engine/missiles.js?v=224303';
+import { Bonus } from './engine/bonus.js?v=224303';
+import { Powerups, TYPES } from './engine/powerups.js?v=224303';
+import { Damage, START_ENERGY, FULL_SHIELD } from './engine/damage.js?v=224303';
+import { LevelState, LevelPhase, S_PLAYING, S_GUARDIAN } from './engine/level.js?v=224303';
+import { Audio, musicForMode } from './engine/paula.js?v=224303';
+import { Screens, BLOCK, drawBlock, drawTally, loadScores, saveScores,
+         insertScore, defaultScores, drawScores }
+  from './engine/screens.js?v=224303';
+import { Score } from './engine/score.js?v=224303';
+import { Fade } from './engine/fade.js?v=224303';
+import { LevelEffect, Alarm, ALARM_SFX } from './engine/effects.js?v=224303';
+import { NameEntry, COLS, ROWS } from './engine/nameentry.js?v=224303';
+import { FrameClock } from './engine/timing.js?v=224303';
+import { captureCarry, applyCarry } from './engine/carry.js?v=224303';
+
+const c = document.getElementById('c'), ctx = c.getContext('2d');
+const img = ctx.createImageData(SCREEN_W, SCREEN_H);
+const err = document.getElementById('err');
+
+try {
+  const man = await load();
+  const menuImg = ctx.createImageData(SCREEN_W, SCREEN_H);
+  const indexPalettes = man.menu.levels.map((level) =>
+    man.menu.palette.slice(0, 8).concat(level.colours));
+  const lvSel = document.getElementById('lv');
+  man.levels.forEach((l, i) => lvSel.add(new Option('level ' + l.n, i)));
+
+  let pf = new Playfield(man, 0), x = 0;
+  const cfg = document.getElementById('cfg');
+  for (let i = 0; i < man.ship.configs; i++) cfg.add(new Option('config ' + i, i));
+  const sc = new Screens(man);
+  // $71a38's route: credits -> difficulty -> level index -> game. The index is
+  // reached by the difficulty select TIMING OUT ($71a74's beq is inverted -
+  // F1 sets Z and skips it), so it is part of the attract loop rather than a
+  // menu, and pressing a key there starts the game.
+  let mode = 'intro0', modeT = 0, expert = false, pick = 0;
+  let attract = false, demoT = 0;       // $1a3(a5), $60(a5)
+  // Two plates where the original prints "PRESS F1 - ROOKIE" and "F2 - EXPERT".
+  const BTN = [{ x: 34, y: 104, w: 112, h: 20, expert: false },
+               { x: 174, y: 104, w: 112, h: 20, expert: true }];
+  let hotBtn = -1;
+  let cleared = 0;                 // levels finished, for the broken thumbnails
+  let ship = new Ship();
+  // Web Audio needs a gesture, so nothing starts until a key is pressed.
+  const audio = new Audio(man);
+  let soundOn = false;
+  const startSound = async () => {
+    if (soundOn) return;
+    soundOn = true;
+    audio.resumeAll();
+    try {
+      await audio.init();
+      // Initialization may finish after an iris transition (or after sound was
+      // switched off again), so the screen that owns the route decides now.
+      if (soundOn) enterMode(mode, true);
+    } catch (e) {
+      soundOn = false;
+      err.textContent = String(e && e.message || e);
+      syncAudioBtn();
+    }
+  };
+  // check.keys ($715d2) reads four keys and each one toggles a global:
+  //   $45 ESC   -> $71680: fade out, clear $1a0/$1a1, abort the level
+  //   $40 SPACE -> $71690: $71b40 spins until fire changes - a PAUSE
+  //   $12 E     -> $71622: not.b $1a5(a5), effects on/off
+  //   $37 M     -> $71608: not.b $1a4(a5), music on/off
+  // SPACE is the pause key there because fire is a joystick button; in a
+  // browser space IS fire, so pause moves to P and that divergence is
+  // deliberate.
+  let paused = false, sfxMuted = false;
+  let syncAudioBtn = () => {};
+  // One switch for everything audible. $71608 and $71622 are two separate
+  // globals in the game - music on $1a4(a5), effects on $1a5(a5), M and E here -
+  // but a player wants one button, so AUDIO drives both.
+  {
+    // Web Audio will not start without a gesture, so nothing is playing when the
+    // page opens and the button has to say so. It said ON from the first frame,
+    // which read as a switch that had failed rather than one not yet thrown.
+    const b = document.getElementById('audiobtn');
+    syncAudioBtn = () => {
+      b.textContent = 'AUDIO: ' + (soundOn ? 'ON' : 'OFF');
+      b.title = soundOn ? 'Turn all sound off' : 'Turn all sound on';
+    };
+    b.onclick = () => {
+      if (soundOn) { audio.stopAll(); soundOn = false; sfxMuted = true; }
+      else { audio.resumeAll(); sfxMuted = false; startSound(); }
+      syncAudioBtn();
+    };
+    syncAudioBtn();
+  }
+  addEventListener('keydown', (e) => {
+    if (e.key === 'm' || e.key === 'M') {
+      if (soundOn) { audio.stopAll(); soundOn = false; }
+      else { audio.resumeAll(); startSound(); }
+      syncAudioBtn();
+    }
+    if (e.key === 'e' || e.key === 'E') sfxMuted = !sfxMuted;      // $1a5(a5)
+    // $40 SPACE. It works in every mode - menus, the cutscenes and play alike -
+    // because it stops the one clock all of them are driven from.
+    if (e.key === 'p' || e.key === 'P') paused = !paused;
+    if (e.key === 'i' || e.key === 'I') invuln.checked = !invuln.checked;
+    if (e.key === 'Escape' && mode === 'game') {                   // $45
+      audio.stopAll(); soundOn = false;
+      syncAudioBtn();
+      attract = false;
+      firing = wantShot = false;
+      held.up = held.down = held.left = held.right = false;
+      jump('credits');
+    }
+  });
+  let kills = 0, deaths = 0, deadFor = 0;
+  let checkPathTick = false;   // $18(a5)
+  let score = new Score(man.levels.length);
+  let panelClean = null;          // the panel as packed, before digits
+  let dmg = new Damage();
+  let bonus = new Bonus(pf.level);
+  let power = new Powerups();
+  const wirePowerups = () => {
+    power.onEnergy = () => dmg.refillEnergy();
+    power.onRefill = (w) => dmg.refillBar(w);
+    power.onShield = () => { dmg.shield = FULL_SHIELD; }; // $6ffd8, every pod
+  };
+  wirePowerups();
+  let lastPick = '-';
+  // A debug bench for the seven pod types. It goes through the same
+  // power.collect() the pod does, so the counters, the caps that refuse a
+  // pickup ($6ff68 at speed 8, $6ff5c at two outriders), the refills and the
+  // effect all behave exactly as they would in play.
+  {
+    const sel = document.getElementById('give');
+    for (const t of TYPES) sel.add(new Option(t.n + ' ' + t.name, String(t.n)));
+    document.getElementById('givebtn').onclick = () => {
+      const n = Number(sel.value);
+      const result = power.collect(n, ship);
+      lastPick = result.consumed
+        ? TYPES[n].name + (result.sfx === null ? ' (max)' : '')
+        : TYPES[n].name + ' (invalid)';
+      if (result.consumed) {
+        if (result.sfx !== null && soundOn && !sfxMuted)
+          audio.sfxAll(result.sfx & 0xff);                     // $6fff0
+        if (TYPES[n].score) score.award(TYPES[n].score);
+      }
+    };
+  }
+  const held = { up: false, down: false, left: false, right: false };
+  const KEYS = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left',
+                 ArrowRight: 'right', w: 'up', s: 'down', a: 'left', d: 'right' };
+  let weapons = new Weapons(man.weapons);
+  let trigger = new Trigger();
+  let aim = 1;               // $44(a5), which way the outrider pods point
+  // $6fc8e swaps the shot artwork to the second bank ($72(a5) = $1b0) when the
+  // level moves out of phase 1.
+  let shotBank = 0;
+  let firing = false, wantShot = false, menuConfirm = false;
+  // Fire is CTRL. The joystick button has no keyboard equivalent, and space
+  // is where a browser puts page-scroll and where the menus want a confirm, so
+  // it stays on the menus and the trigger moves to a key nothing else claims.
+  const isFire = (e) => e.key === 'Control' || e.code === 'ControlLeft'
+                     || e.code === 'ControlRight';
+  addEventListener('keydown', (e) => {
+    if (isFire(e)) {
+      // $702b6: fire aborts an attract game; it never reaches fire.missile.
+      if (attract && mode === 'game') {
+        attract = false;
+        firing = wantShot = false;
+        jump('credits');
+        e.preventDefault();
+        return;
+      }
+      // Menu waits consume a fresh button edge. Holding the shot that led into
+      // the death animation must not skip the death or tally screen.
+      if (!e.repeat && mode !== 'game') menuConfirm = true;
+      firing = true;
+      e.preventDefault();
+    }
+  });
+  addEventListener('keyup', (e) => { if (isFire(e)) firing = false; });
+  // The guardian normally arrives at the end of a level; there is no level-end
+  // flow yet, so G reveals it a column at a time the way draw.guardian does.
+  let guardCols = 0;
+  let guardX0 = 0;      // scroll position when $54(a5) reached 2
+  // The guardian slides in with the terrain rather than appearing. $70684 only
+  // reveals a column when $30(a5) - PF2's fine scroll - is exactly $e, so one
+  // 16px column arrives every 16 frames; LevelPhase counts those cells.
+  let lstate = new LevelState(pf.level);
+  // The guardian is a path group like any other - index 20, sprite 4, 128 hit
+  // points - so it moves and takes damage through the same VM. The 256x192
+  // bitmap draw.guardian reveals is separate scenery.
+  let boss = null;
+  let fx = new LevelEffect(pf.level.pulse);
+  let phase = new LevelPhase(pf.level.cols);
+  let alarm = new Alarm();
+  // $7231e fades the level palette in on entry, and again after a death.
+  let fade = new Fade(pf.basePalette, 4);
+  let entry = null, nameLatch = false, afterScores = 'credits';
+  // $72c56 writes the table back to disk; localStorage is the equivalent.
+  let hiscores = loadScores(defaultScores(man.text));
+  const scoreValue = () => Number(score.digits().join(''));
+
+  // $71e7e: bump $1a6(a5), set $1a0 so $7196c restores the carried state, then
+  // reload and re-init. Weapons, outriders, ship config, speed and energy all
+  // survive - the powerups are the reward for getting this far.
+  function loadLevel(next, carry) {
+    lvSel.value = String(next);
+    pf = new Playfield(man, next);
+    vm = new PathVM(pf.level);
+    bonus = new Bonus(pf.level);
+    lstate = new LevelState(pf.level);
+    fx = new LevelEffect(pf.level.pulse);
+    phase = new LevelPhase(pf.level.cols);
+    fade = new Fade(pf.basePalette, 4);
+    fade.start(pf.pal);
+    guardCols = 0; boss = null; guardX0 = 0; pf.guardDamage = null;
+    blobs = 0; blobT = man.bubble ? man.bubble.period : 10;
+    x = 0;
+    // $7196c reloads the complete globals template, then $71980 restores only
+    // the explicit $7407c carry block. Recreate that boundary rather than
+    // allowing old level-local objects to leak into the new stage.
+    ship = new Ship();
+    dmg = new Damage();
+    power = new Powerups();
+    if (carry) applyCarry(carry, { ship, power, damage: dmg, score });
+    wirePowerups();
+    weapons = new Weapons(man.weapons);
+    trigger = new Trigger();
+    actors = [];
+    alarm = new Alarm();
+    bossBoom = new Array(12).fill(-1);
+    checkPathTick = false;
+    parity = 0;
+    deadFor = 0;
+    outriderPhase = 0;
+    firing = false;
+    wantShot = false;
+    aim = 1;
+    shotBank = 0;
+    spawnDelay = PathVM.SPAWN_DELAY_FIRST;
+    warned = false;
+    gateTimer = PathVM.GATE_TIMER;
+    lastPick = '-';
+    // NOT `mode = 'game'` - the caller is in the middle of a $72302 close and
+    // owns the switch. Setting it here dropped straight out of the menu path
+    // with `closing` frozen at 48 and `pending` still holding 'game', so the
+    // next screen to run consumed that stale close instead of its own and the
+    // one after it appeared twice. Music is likewise owned by enterMode();
+    // starting tune 2 here leaks it under the index/mothership close.
+  }
+
+  function advanceLevel() {
+    const carry = captureCarry({ ship, power, damage: dmg, score });
+    loadLevel(Number(lvSel.value) + 1, carry);
+  }
+
+  // A selection made from the index starts a new game, rather than merely
+  // loading another level into the previous session's globals. High scores are
+  // intentionally outside this boundary; everything earned or left live by a
+  // run is rebuilt here or by loadLevel().
+  function startGame(next, demo = false) {
+    score = new Score(man.levels.length);
+    kills = deaths = cleared = 0;
+    pick = next;
+    attract = demo;
+    demoT = demo ? 1500 : 0;            // $71b04
+    entry = null;
+    afterScores = 'credits';
+    nameLatch = menuConfirm = false;
+    advT = -1;
+    arrowAnim = 0;
+    arrowY = next * 32 + 8;
+    msFade = null;
+    msOut = 0;
+    paused = false;
+    held.up = held.down = held.left = held.right = false;
+    loadLevel(next, null);
+  }
+  const qualifies = () => scoreValue() > hiscores[hiscores.length - 1].score;
+  // The canvas is scaled by CSS, so a pointer position has to come back through
+  // its bounding box before it means anything in the 320x224 the game draws in.
+  const atCanvas = (ev) => {
+    const r = c.getBoundingClientRect();
+    return [Math.floor((ev.clientX - r.left) / r.width * SCREEN_W),
+            Math.floor((ev.clientY - r.top) / r.height * SCREEN_H)];
+  };
+  const btnAt = (px, py) => BTN.findIndex(
+    (b) => px >= b.x && px < b.x + b.w && py >= b.y && py < b.y + b.h);
+  c.addEventListener('pointermove', (ev) => {
+    const [px, py] = atCanvas(ev);
+    hotBtn = (mode === 'credits') ? btnAt(px, py) : -1;
+    c.style.cursor = (hotBtn >= 0 || mode === 'index') ? 'pointer' : '';
+  });
+  c.addEventListener('pointerdown', (ev) => {
+    if (mode.startsWith('intro')) { goTo('credits'); return; }
+    if (mode === 'index') {
+      if (advT >= 0) return;
+      startGame(pick);
+      goTo('mothership');                // $71ae6, before the level starts
+      return;
+    }
+    if (mode !== 'credits') return;
+    const [px, py] = atCanvas(ev);
+    const i = btnAt(px, py);
+    if (i < 0) return;
+    expert = BTN[i].expert;
+    startGame(0);
+    goTo('mothership');
+  });
+  addEventListener('keydown', (e) => {
+    // G is "skip to the guardian": it winds the scroll to the end of the map,
+    // which is the ONLY thing that starts the sequence ($705c8). Flipping a
+    // draw flag instead put the picture on screen with the level still
+    // running underneath it.
+    if (e.key === 'g' || e.key === 'G')
+      x = Math.max(x, (pf.level.cols - SCREEN_W / 16 - 1) * 16);
+    if (e.key === 't' || e.key === 'T') jump(mode === 'tally' ? 'game' : 'tally');
+  });
+  addEventListener('keydown', (e) => {
+    const k = KEYS[e.key];
+    if (k) {
+      if (!(attract && mode === 'game')) held[k] = true;
+      e.preventDefault();
+    }
+    if (mode.startsWith('intro')) { goTo('credits'); return; }
+    if (mode === 'credits') {
+      // $71b76 polls for F1/F2, then $71ae6 bsr $72e82 - the mothership -
+      // runs before the level does. Jumping straight to 'game' meant the one
+      // route anybody actually takes never showed it.
+      // $71b76 takes the difficulty and the level index comes next; $71ae6's
+      // mothership only runs once a level has been chosen.
+      if (e.key === 'F1') { expert = false; startGame(0); goTo('mothership'); e.preventDefault(); }
+      if (e.key === 'F2') { expert = true; startGame(0); goTo('mothership'); e.preventDefault(); }
+    } else if (mode === 'index') {
+      // During the between-level arrow animation this is a progression screen,
+      // not a fresh-game selector. Letting Enter through here would call
+      // startGame() and discard the score/carry the animation is preserving.
+      if (advT >= 0) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        startGame(pick);
+        goTo('mothership');                // $71ae6, before the level starts
+      }
+    }
+  });
+  addEventListener('keyup', (e) => {
+    const k = KEYS[e.key]; if (k) { held[k] = false; e.preventDefault(); }
+  });
+  const ratio = document.getElementById('ratio'), ratioV = document.getElementById('ratioV');
+  // A cheat, not a mechanic: it stands where $6fd40's force-field test sits, so
+  // nothing else in the collision path changes shape to accommodate it.
+  const invuln = document.getElementById('invuln');
+  // The CRT treatment moved to CSS over the scaled canvas: drawing scanlines
+  // into the 320x224 buffer means they get magnified with the picture and stop
+  // being scanlines. `frame` carries the class; this only mirrors the checkbox.
+  const crtBox = document.getElementById('crt');
+  const frameEl = document.getElementById('frame');
+  crtBox.onchange = () => frameEl.classList.toggle('crt', crtBox.checked);
+
+  // Fullscreen, on the whole document so the touch pad and the bar come too.
+  const fullBtn = document.getElementById('full');
+  const fsEl = () => document.fullscreenElement || document.webkitFullscreenElement;
+  fullBtn.onclick = async () => {
+    try {
+      if (fsEl()) await (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      else await (document.documentElement.requestFullscreen
+               || document.documentElement.webkitRequestFullscreen).call(document.documentElement);
+    } catch (e) { fullBtn.hidden = true; }
+  };
+  for (const ev of ['fullscreenchange', 'webkitfullscreenchange'])
+    document.addEventListener(ev, () => {
+      const on = !!fsEl();
+      fullBtn.textContent = on ? 'EXIT' : 'FULL';
+      document.body.classList.toggle('fs', on);
+    });
+
+  // Touch: a stick on the left and a fire button on the right, feeding the same
+  // `held` flags and `firing` latch the keyboard does - so $70510's four
+  // direction bits and $7029a's trigger see no difference.
+  const stick = document.getElementById('stick');
+  const knob = document.getElementById('knob');
+  const fireBtn = document.getElementById('firebtn');
+  function clearTouch() {
+    held.up = held.down = held.left = held.right = false;
+    firing = false;
+    fireBtn.classList.remove('pressed');
+    knob.style.transform = 'translate(-50%,-50%)';
+  }
+  function moveStick(ev) {
+    const b = stick.getBoundingClientRect(), r = b.width / 2;
+    let dx = ev.clientX - b.left - r, dy = ev.clientY - b.top - r;
+    const len = Math.hypot(dx, dy), lim = r * 0.54;
+    if (len > lim) { dx *= lim / len; dy *= lim / len; }
+    knob.style.transform = `translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px))`;
+    const dead = r * 0.18;
+    held.left = dx < -dead; held.right = dx > dead;
+    held.up = dy < -dead;  held.down = dy > dead;
+  }
+  stick.addEventListener('pointerdown', (ev) => {
+    stick.setPointerCapture(ev.pointerId); moveStick(ev); ev.preventDefault();
+  });
+  stick.addEventListener('pointermove', (ev) => {
+    if (stick.hasPointerCapture(ev.pointerId)) moveStick(ev);
+  });
+  for (const t of ['pointerup', 'pointercancel', 'lostpointercapture'])
+    stick.addEventListener(t, () => {
+      held.up = held.down = held.left = held.right = false;
+      knob.style.transform = 'translate(-50%,-50%)';
+    });
+  fireBtn.addEventListener('pointerdown', (ev) => {
+    fireBtn.setPointerCapture(ev.pointerId);
+    if (attract && mode === 'game') {
+      attract = false;
+      firing = wantShot = false;
+      jump('credits');
+      ev.preventDefault();
+      return;
+    }
+    if (mode !== 'game') menuConfirm = true;
+    fireBtn.classList.add('pressed'); firing = true; ev.preventDefault();
+  });
+  for (const t of ['pointerup', 'pointercancel', 'lostpointercapture'])
+    fireBtn.addEventListener(t, () => { fireBtn.classList.remove('pressed'); firing = false; });
+  addEventListener('blur', clearTouch);
+  const clock = new FrameClock(performance.now());
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) clearTouch();
+    // A hidden tab is a pause, not game time waiting to be replayed.
+    clock.reset(performance.now());
+  });
+  const grpV = document.getElementById('grpV');
+  const info = document.getElementById('info');
+
+  let vm = new PathVM(pf.level), actors = [];
+  // check.path ($716a8) only calls copy.path when $3c(a5) is zero - that
+  // global accumulates every alien's x in process.aliens, so it is non-zero
+  // while any alien is alive. The next group therefore launches exactly when
+  // the current one has left, which is what this reproduces.
+  const respawn = () => {
+    vm.spawnNext();
+    grpV.textContent = 'group ' + ((vm.cursor >> 2) - 1);
+    // $71766 loads colours 0-7 from the group's own type, once, at spawn.
+    pf.resetPalette();
+    // $71766 loads the palette from sprite.num - 1, which is the packed
+    // `palette` field of the slot whose index is sprite.num.
+    const meta = pf.level.aliens.find((k) => k.slot === vm.spriteNum);
+    if (meta) pf.useAlienPalette(Math.max(0, vm.spriteNum - 1));
+  };
+  // Audio bench. The tune slider retimes the live music through the buffer
+  // source's playbackRate, so a tune can be sped up or slowed while it plays;
+  // the effect slider does the same for one-shots, which is how a break-up
+  // sound built by cutting and repitching an existing effect can be matched.
+  {
+    const tuneN = document.getElementById('tuneN');
+    const tuneRate = document.getElementById('tuneRate');
+    const tuneRateV = document.getElementById('tuneRateV');
+    const sfxN = document.getElementById('sfxN');
+    const sfxRate = document.getElementById('sfxRate');
+    const sfxRateV = document.getElementById('sfxRateV');
+    for (const t of man.audio.tracks) {
+      if (!t.startsWith('sfx')) continue;
+      const o = document.createElement('option');
+      o.value = t.slice(3); o.textContent = t.slice(3);
+      sfxN.appendChild(o);
+    }
+    const showT = () => { tuneRateV.textContent = (tuneRate.value / 100).toFixed(2) + 'x'; };
+    const showS = () => { sfxRateV.textContent = (sfxRate.value / 100).toFixed(2) + 'x'; };
+    tuneRate.oninput = () => { showT(); audio.setMusicRate(tuneRate.value / 100); };
+    sfxRate.oninput = showS;
+    showT(); showS();
+    document.getElementById('tunebtn').onclick = async () => {
+      if (!soundOn) await startSound();
+      audio.setMusicRate(tuneRate.value / 100);
+      audio.playMusic(Number(tuneN.value));
+    };
+    document.getElementById('sfxbtn').onclick = async () => {
+      if (!soundOn) await startSound();
+      audio.sfx(Number(sfxN.value), { rate: sfxRate.value / 100 });
+    };
+  }
+  lvSel.onchange = () => {
+    // Choosing a level from the index is a fresh-game entry. Only the
+    // end-of-level advance below sets $1a0 and restores $7407c.
+    startGame(Number(lvSel.value));
+  };
+  ratio.oninput = () => {
+    ratioV.textContent = ratio.value + (ratio.value === '2' ? ' (measured)' : '');
+  };
+
+  // The game runs at 50 Hz; drive the scroll on that clock rather than on
+  // rAF's rate, for the same reason the audio is stamped by driver tick.
+  // 50 Hz frame clock; aliens tick on alternate frames because process.aliens
+  // sits in the even branch of vloop and runs at 25 Hz. Ticking them every
+  // frame is the classic "looks right, feels wrong" error.
+  function drawMenu() {
+    pf.idx.fill(0);
+    // The HAM buffer is per-screen, not persistent. drawIntro clears it on the
+    // way in, but drawIntro is only called for the intro modes - so once the
+    // ship screen had been shown, every later frame still rendered from rgb12
+    // and the picture sat over the credits and the index while they ran
+    // underneath it in `idx`.
+    pf.rgb12 = null;
+    // The menu screens replace the whole palette. Returning to the game has to
+    // put the level's back, or play resumes in menu colours - which is the
+    // "weird palette after death" that outlived restorePalette(), because that
+    // only ever restored 16-31.
+    pf.pal = (mode === 'mothership' || mode === 'mothershipEnd')
+      ? man.mothership.palette.slice()          // 32 entries, not 16
+      : man.menu.palette.slice();
+    menuPalette = true;
+    if (mode.startsWith('intro')) {
+      // The bootstrap loads these before anything else: the Psyclapse logo,
+      // the title, and the ship over a landscape.
+      pf.drawIntro(man.intro, Number(mode.slice(5)));
+    } else if (mode === 'credits') {
+      // The two lines that name F1 and F2 are replaced by the buttons below.
+      for (const e of man.text[BLOCK.CREDITS])
+        if (!/^(PRESS F1|F2 )/.test(e.t)) sc.text(pf, e.t, e.x, e.y);
+      sc.button(pf, 'ROOKIE', BTN[0].x, BTN[0].y, BTN[0].w, BTN[0].h, hotBtn === 0);
+      sc.button(pf, 'EXPERT', BTN[1].x, BTN[1].y, BTN[1].w, BTN[1].h, hotBtn === 1);
+    } else if (mode === 'legend') {
+      // $71c50 blits all 171 rows in one go: BLTSIZE $2ac2 is 171 rows of 2
+      // words, BLTDMOD $24 makes the row 40 bytes, and the destination $8008
+      // is byte 8 of the row - x = 64. The same $8000 base the thumbnails use,
+      // so the block starts at y = 0 and each 24-row icon lines up with its
+      // text line, which block 7 puts at x = 100, y = 8 + n*24.
+      const ic = man.menu.powerupIcons;
+      if (ic.data) for (let iy = 0; iy < ic.h; iy++)
+        for (let ix = 0; ix < ic.w; ix++) {
+          const v = ic.data[iy * ic.w + ix];
+          if (v && iy < PLAYFIELD_H) pf.idx[iy * SCREEN_W + 64 + ix] = v;
+        }
+      drawBlock(sc, pf, man.text, BLOCK.LEGEND);
+    } else if (mode === 'tally') {
+      drawTally(sc, pf, man.text, score, power, Number(lvSel.value));
+    } else if (mode === 'deathTally') {
+      drawTally(sc, pf, man.text, score, power, Number(lvSel.value));
+    } else if (mode === 'hiscore') {
+      drawScores(sc, pf, hiscores);
+    } else if (mode === 'mothership' || mode === 'mothershipEnd') {
+      // $71ae6 puts it between the difficulty select and the level; $71e46
+      // brings it back for the ending. Going in, it flies on from the right and
+      // the hatch opens; coming back it closes and leaves.
+      pf.idx.fill(0);
+      // $72f7a fades the palette up two vblanks a step before anything moves,
+      // and $72fa0 takes it back down at the end; the hatch and the launch sit
+      // between. `msT` is the frame count after the fade-in has finished.
+      const fadeIn = 32, msT = Math.max(0, modeT - fadeIn);
+      pf.drawMothership(man.mothership, msT, mode === 'mothershipEnd', true);
+      // $730f0/$730f8 play $89 on two channels as the ship leaves the hatch.
+      if (msT === Playfield.MS_TRAVEL + 3 * Playfield.MS_HATCH_STEP
+          && soundOn && !sfxMuted) audio.sfxPair(0x89);
+      msLen = fadeIn + Playfield.MS_FRAMES;
+      if (modeT === 0) { msFade = new Fade(man.mothership.palette, 32); msFade.start(pf.pal); }
+      if (msFade && (modeT & 1) === 0) msFade.tick(pf.pal);
+      if (msOut > 0) {                       // $72fa4 subi.w #$111
+        for (let i = 0; i < 32; i++) {
+          const c = pf.pal[i] || 0;
+          pf.pal[i] = (Math.max(0, (c >> 8 & 15) - 1) << 8)
+                    | (Math.max(0, (c >> 4 & 15) - 1) << 4)
+                    | Math.max(0, (c & 15) - 1);
+        }
+        msOut--;
+      }
+    } else if (mode === 'ending') {
+      // $733ce holds for 100 frames, then the planet and the ship run together.
+      // Eighteen planet frames and ten ship frames over the same stretch.
+      const t = Math.max(0, modeT - 40);
+      pf.pal = man.ending.palette.slice();
+      pf.drawEnding(man.ending, Math.min(17, t >> 4),
+                    t < 60 ? -1 : Math.min(9, (t - 60) / 22 | 0));
+      // $73456 plays $8a as the planet goes.
+      if (t === 60 && soundOn && !sfxMuted) audio.sfxAll(0x8a);   // $73456
+      if (modeT > 300) drawBlock(sc, pf, man.text, BLOCK.ENDING);
+    } else if (mode === 'continue') {
+      drawBlock(sc, pf, man.text, BLOCK.CONTINUE);
+    } else if (mode === 'nameentry') {
+      sc.centre(pf, 'ENTER YOUR NAME', 8);
+      sc.centre(pf, entry.name + '_', 40);
+      const nc = man.menu.nameCursor;
+      for (let r = 0; r < ROWS; r++)
+        for (let c = 0; c < COLS; c++) {
+          // $747c0: x is in two-pixel units and y in eight-line units,
+          // producing (68,144) with a 16x16 cell step.
+          const x = 68 + c * 16, y = 144 + r * 16;
+          sc.text(pf, entry.label(c, r), x, y);
+        }
+      sc.nameCursor(pf, nc.x + entry.col * nc.stepX,
+                    nc.y + entry.row * nc.stepY);
+    } else if (mode === 'death') {
+      drawBlock(sc, pf, man.text, BLOCK.DEATH);
+    } else if (mode === 'deathRestart') {
+      // This is the second death-route screen, after tally/name/high scores.
+      // It starts a new session at this level; it never resumes the dead one.
+      drawBlock(sc, pf, man.text, BLOCK.RESTART);
+    } else {
+      // Six rows of 32 lines fill the 192-line playfield exactly, so there is
+      // no room for a title and the original has none. $71cde puts a thumbnail
+      // at $8004 - byte 4, x = 32, 64 wide - and text block 8 puts the names at
+      // x = 100, y = 8 + i*32, which clears the thumbnail by four pixels.
+      // $71d32's arrow has no x offset at all: x = 0, y = i*32 + 8.
+      for (let i = 0; i < 6; i++) {
+        const ty = i * 32;
+        sc.thumb(pf, i, 32, ty);
+        // $71ccc/$71cde: every level below the current one is shown broken.
+        if (i < cleared) sc.breakThumb(pf, 32, ty);
+        sc.text(pf, man.menu.levels[i].name, 100, ty + 8);
+      }
+      sc.cursor(pf, 0, advT >= 0 ? arrowY : pick * 32 + 8);
+    }
+    // The copper reloads colours 8-15 every 32 lines on the index, one band
+    // per thumbnail, while 0-7 stay on the font ramp for the whole screen.
+    const ms = (mode === 'mothership' || mode === 'mothershipEnd')
+            || mode.startsWith('intro');
+    const img2 = menuImg;
+    for (let y = 0; y < 224; y++) {
+      let pal = pf.pal;
+      if (mode === 'index') {
+        const b = Math.floor(y / 32);
+        if (b >= 0 && b < indexPalettes.length) pal = indexPalettes[b];
+      }
+      // Every menu screen is four bitplanes except the mothership's, which
+      // $73822 sets to FIVE - the extra one is the starfield, and masking the
+      // index to 15 folded colour 16 onto colour 0 and made it disappear.
+      const mask = (ms || mode === 'nameentry') ? 31 : 15;
+      for (let x = 0; x < SCREEN_W; x++) {
+        const i = y * SCREEN_W + x, o = i * 4;
+        // A HAM screen carries its own colour per pixel; everything else is an
+        // index into the palette for this band.
+        const c = pf.rgb12 ? pf.rgb12[i] : (pal[pf.idx[i] & mask] || 0);
+        img2.data[o] = ((c >> 8) & 15) * 17;
+        img2.data[o + 1] = ((c >> 4) & 15) * 17;
+        img2.data[o + 2] = (c & 15) * 17;
+        img2.data[o + 3] = 255;
+      }
+    }
+    // $722e6 and $72302: every text screen opens and closes like a slit.
+    // The menu copper starts with DIWSTRT $9081 and DIWSTOP $90c1 - a window of
+    // ZERO height at line 144 - and $722e6 walks $36(a0) down by $200 and
+    // $3a(a0) up by $200 for 48 frames, so the top edge rises two lines a frame
+    // and the bottom falls two, opening to the full 192. $72302 is the same
+    // loop with the signs swapped, closing it again before the screen changes.
+    const half = menuBand();
+    if (half < 96) {
+      const top = 96 - half, bot = 96 + half;
+      for (let y = 0; y < 224; y++) {
+        if (y >= top && y < bot) continue;
+        img2.data.fill(0, y * SCREEN_W * 4, (y + 1) * SCREEN_W * 4);
+        for (let x = 0; x < SCREEN_W; x++) img2.data[(y * SCREEN_W + x) * 4 + 3] = 255;
+      }
+    }
+    ctx.putImageData(img2, 0, 0);
+    info.textContent = (mode === 'credits'
+      ? 'click ROOKIE or EXPERT - or wait for the level index'
+      : mode.startsWith('intro') ? 'any key to skip'
+      : mode === 'index' ? 'enter to continue   ' + man.menu.levels[pick].name
+      : '')
+      + '   build ' + BUILD_ID;
+  }
+
+  let parity = 0;
+  let menuPalette = false, outriderPhase = 0;
+  // $71e7e slides the arrow to the next level after a stage is cleared: it
+  // calls $71d32 sixteen times, waiting a vblank each time ($6fb98) and adding
+  // 2 to the scanline, so the arrow travels 32 lines - exactly one row - over
+  // sixteen frames. `arrowY` is that scanline; `arrowTo` is where it is headed.
+  let arrowY = 8, arrowAnim = 0;
+  // -1 = not advancing; otherwise frames since the index appeared.
+  let advT = -1;
+  let msFade = null, msOut = 0, msLen = 740;
+  // $72858/$728a0: with the guardian on its way, one more of level 6's blobs
+  // arrives every ten ticks, walking the list at $748e6 from the right-hand
+  // edge inward along the top and the bottom together.
+  let blobs = 0, blobT = 10;
+  // $722e6 opens the display window and $72302 closes it, and in the original
+  // they BRACKET a screen - the close runs to completion, then the next screen
+  // is built, then the open runs. Guessing at each screen's length and starting
+  // the close 48 frames from the end only works for the ones that time out;
+  // anything that ends on a keypress cut straight to the next.
+  //
+  // `closing` counts a close down and `pending` holds what to switch to when it
+  // reaches zero, so every transition goes through the same pair.
+  const IRIS = 48;                    // $722ea / $72306 moveq #$2f,d0
+  let closing = 0, pending = null;
+  function goTo(next) {
+    if (pending === next) return;
+    pending = next; closing = IRIS;
+  }
+  // A jump straight out of the game - death, the tally, ESC. There is no close
+  // to run because the game screen is not one of the ones the slit brackets,
+  // so any pending close is abandoned rather than left to fire later.
+  function jump(next) {
+    pending = null; closing = 0; mode = next; modeT = 0;
+    enterMode(next);
+  }
+  // Whatever route a screen is reached by - the iris close, or a jump straight
+  // out of the game - the music that belongs to it starts here.
+  //
+  //   $6fb24  moveq #$2,d0   the level theme, at the gameplay entry
+  //   $71a54  moveq #$1,d0   the interlude, at the level index
+  //
+  // The index started tune 1 and nothing ever started tune 2 again: the route
+  // in is index -> mothership -> game, and none of those three played it, so
+  // the interlude ran under the whole level and the "tune change" heard mid
+  // level was just its 58 second loop coming round.
+  function enterMode(m, force = false) {
+    if (!soundOn) return;
+    // $6fb1a skips the gameplay tune request while $1a3 is set; the demo
+    // inherits whatever the attract loop was already playing.
+    if (attract && m === 'game') return;
+    const tune = musicForMode(m, lstate.state, phase && phase.warning, afterScores);
+    if (tune === null) {
+      if (force || audio.musicN !== null) audio.stopMusic();
+    } else if (force || audio.musicN !== tune) audio.playMusic(tune);
+  }
+  function menuBand() {
+    if (closing > 0) return Math.max(0, closing * 2);
+    return Math.min(96, modeT * 2);
+  }
+  let spawnDelay = PathVM.SPAWN_DELAY_FIRST;   // $4c(a5), $f in the template
+  // $70(a5): the DANGER voice's repeat timer. $72680 counts it down and every
+  // expiry plays effect $82 on ALL FOUR channels ($6fff0), reloading with 10:
+  //
+  //   7266c  cmpi.w #$2,$54(a5) / bne     ; only while the guardian arrives
+  //   072680  tst.b $515c4 / bne          ; not while a sample is still running
+  //   07268a  subq.w #1,$70(a5) / bne
+  //   072692  move.w #$a,$70(a5)
+  //   072698  move.w #$82,d0 / bsr $6fff0
+  //
+  // Effect $82 was packed and then never triggered by anything here - it is the
+  // only one of $80..$87 that is not a pickup, and it is the voice.
+  let warned = false;
+  // $6a(a5), from the globals template - see PathVM.GATE_TIMER. $7196c reloads
+  // it for each level, and it only runs while the guardian gate is active.
+  let gateTimer = PathVM.GATE_TIMER;
+  // $6e(a5)'s rotation is handled inside Paula.sfx; this only remembers the
+  // previous frame per record so the boom fires on entry to frame 0.
+  let bossBoom = new Array(12).fill(-1);
+  function frame(now) {
+    // Non-visual state hook used by the headless route regression. It keeps
+    // that check behavioral without parsing presentation text.
+    if (c.dataset) c.dataset.mode = mode;
+    // $71690's pause spins the CPU until the fire button changes, which stops
+    // everything the game is doing - vloop, the copper animations, the screen
+    // clocks, all of it. This does the same by not letting the 50 Hz clock
+    // advance: no tick runs, nothing is redrawn, and the canvas keeps showing
+    // the frame it was on. The clock is reset rather than banked, or unpausing
+    // would replay every frame the pause lasted in one go.
+    if (paused) {
+      clock.reset(now);
+      info.textContent = 'PAUSED - P to resume   build ' + BUILD_ID;
+      requestAnimationFrame(frame);
+      return;
+    }
+    const steps = clock.advance(now);
+    if (mode === 'game' && menuPalette) {
+      pf.resetPalette();
+      menuPalette = false;
+      fade = new Fade(pf.basePalette, 4);
+      fade.start(pf.pal);                 // $7231e - fade back in
+    }
+    if (mode !== 'game') {
+      // $71b76 gives up after 500 frames and falls through to the index.
+      // Both the screen clock and the closing slit run on the 50 Hz tick, not
+      // on rAF - counting the close per animation frame made its speed depend
+      // on the monitor.
+      for (let step = 0; step < steps; step++) {
+        modeT++;
+        if (closing > 0 && --closing === 0) {
+          mode = pending; pending = null; modeT = 0;   // $72302 has finished
+          enterMode(mode);
+        }
+      }
+      // Consume at most one fresh fire edge per displayed screen. Edges that
+      // arrive while an iris is closing are deliberately discarded.
+      const confirm = menuConfirm;
+      menuConfirm = false;
+      // $72094: the letter grid is driven by the stick and the fire button,
+      // and nothing here was driving it - the screen drew, but entry.done could
+      // never become true, so a qualifying score parked on it forever.
+      //
+      //   720ca  tst.w d2 / bne     ; a stick step moves the cursor
+      //   720d6  bsr $702d0 / bne   ; fire
+      //   720e6  tst.b $d(a5) / bne ; ...latched, one letter a press
+      //   720ee  st $d(a5)
+      //   720f2  move.w #$30c,d0 / jsr $6ffe0   ; effect 12, on the ACCEPT
+      //
+      // Effect 12 was the fifth sample that looked orphaned.
+      if (mode === 'nameentry' && entry) {
+        const dx = (held.right ? 1 : 0) - (held.left ? 1 : 0);
+        const dy = (held.down ? 1 : 0) - (held.up ? 1 : 0);
+        if (dx || dy) {
+          if (!nameLatch) { entry.move(dx, dy); nameLatch = true; }
+        } else nameLatch = false;
+        if (entry.fire(firing) && soundOn && !sfxMuted) audio.sfx(12);  // $720f2
+      }
+      // $71b76 gives up after 500 frames; the attract loop then cycles the
+      // legend and the index, as the two text blocks at x=100 imply.
+      if (closing > 0) { /* $72302 still running - nothing else happens */ }
+      else if (mode === 'intro0' && modeT > 200) goTo('intro1');
+      else if (mode === 'intro1' && modeT > 200) goTo('intro2');
+      else if (mode === 'intro2' && modeT > 200) goTo('credits');
+      else if (mode === 'credits' && modeT > 500) goTo('legend');
+      else if (mode === 'legend' && modeT > 300) goTo('index');
+      // $71b04 `move.w #$5dc,$60(a5)` when the index comes up, and $72664
+      // counts it down to $71680, which clears $1a0/$1a1 - the carried state -
+      // and returns to the title. 1500 frames, not the 400 that was guessed
+      // here: the original gives you thirty seconds to choose, not eight.
+      else if (mode === 'index' && modeT > 1500 && advT < 0) {
+        // $71ab4 -> $71af8: no input at the index sets attract mode and starts
+        // an invulnerable, input-free level rather than cycling another menu.
+        startGame(0, true);
+        goTo('mothership');
+      }
+      else if (mode === 'mothership' && modeT === msLen - 15) { msOut = 15; }
+      else if (mode === 'mothership' && modeT > msLen) { goTo('game'); msFade = null; }
+      else if (mode === 'tally' && modeT > 250) {
+        // $71dfc: the sixth level ends the game; anything else advances.
+        if (Number(lvSel.value) < man.levels.length - 1) {
+          // $71e7e does not jump straight into the next level - it goes back to
+          // the index, breaks the thumbnail of the stage just cleared, and
+          // slides the arrow down to the next one, sixteen frames at two
+          // scanlines a frame, before $71ea6 initialises anything.
+          // $71dc0's order, and it is an order: the index appears with the
+          // thumbnail still WHOLE, two effects play ($11 and $111), $71df8
+          // breaks it, and only then does $71e7e slide the arrow.
+          advT = 0;
+          arrowY = Number(lvSel.value) * 32 + 8;
+          arrowAnim = 0;
+          goTo('index');
+        }
+        else goTo('ending');
+      }
+      else if (mode === 'index' && advT >= 0) {
+        advT++;
+        if (advT === 50) {                 // $71de4/$71dec, then $71df8
+          cleared = Number(lvSel.value) + 1;
+          if (soundOn && !sfxMuted) { audio.sfx(0x11); audio.sfx(0x11); }
+        }
+        else if (advT === 90) arrowAnim = 16;   // $71e7e
+        else if (arrowAnim > 0) {
+          arrowY += 2;                     // $71e8c addq.w #2,d0
+          if (--arrowAnim === 0) {
+            advT = -1;
+            pick = cleared;
+            advanceLevel();
+            // $71ae6 only runs while $1a0(a5) is clear, and $71e9a set it on
+            // the first advance - the mothership is a once-per-game screen.
+            goTo('game');
+          }
+        }
+      }
+      else if (mode === 'ending' && modeT > 520) goTo('mothershipEnd');
+      else if (mode === 'mothershipEnd' && modeT === msLen - 15) { msOut = 15; }
+      else if (mode === 'mothershipEnd' && modeT > msLen) { goTo('continue'); msFade = null; }
+      else if (mode === 'continue' && modeT > 250) {
+        afterScores = 'credits';
+        if (qualifies()) { entry = new NameEntry(); goTo('nameentry'); }
+        else goTo('hiscore');
+      }
+      else if (mode === 'nameentry' && entry.done) {
+        // $71ff0 shuffles the table down and inserts; $72c56 then writes it out.
+        hiscores = insertScore(hiscores, scoreValue(),
+                               entry.name.trim() || 'PLAYER').table;
+        saveScores(hiscores);
+        goTo('hiscore');
+      }
+      else if (mode === 'hiscore'
+               && (modeT > 300 || (modeT >= IRIS && confirm))) goTo(afterScores);
+      else if (mode === 'death' && modeT >= IRIS && confirm) {
+        // $71ed6 leaves gameplay permanently: death/restart prompt, tally,
+        // qualification/name entry, scores, then the outer/title loop. It does
+        // not thaw the half-dead level behind these screens.
+        goTo('deathTally');
+      }
+      else if (mode === 'deathTally' && modeT >= IRIS && confirm) {
+        afterScores = 'deathRestart';
+        if (qualifies()) { entry = new NameEntry(); goTo('nameentry'); }
+        else goTo('hiscore');
+      }
+      else if (mode === 'deathRestart' && modeT >= IRIS && confirm) {
+        startGame(Number(lvSel.value));
+        goTo('game');
+      }
+      drawMenu();
+      requestAnimationFrame(frame);
+      return;
+    }
+    // This flag describes work performed by this callback only. Leaving the
+    // previous callback's value here repeats a collision on high-Hz displays.
+    let tick25 = false;
+    for (let step = 0; step < steps; step++) {
+      if (deadFor && --deadFor === 0) {
+        // The explosion has finished; $7426e block 1 is the death screen and
+        // block 2 offers the restart.
+        jump('death');
+        break;
+      }
+      // checkpf1 ($6fbd0), checkpf2 ($6fbec) and drawfgnds ($70580) all open
+      // with `cmpi.w #$3,$54(a5) / beq`, so at phase 3 BOTH playfields stop
+      // and nothing further is drawn: the guardian fight happens on a static
+      // screen. Scrolling through it changes how the fight reads.
+      if (phase.scrolls) x += 1;
+      // $705c8: the level ends when the map runs out, it does not wrap.
+      const ev = phase.step(Math.floor(x / 16) + SCREEN_W / 16, Math.floor(x / 16));
+      if (ev === 'guardianPalette') {
+        // $6fc8a bsr $70718 loads colours 8-15, $6fc8e switches the shot
+        // artwork to the second bank, and $71872/$71876 take both weapon
+        // flags away. None of it waits for anything to be killed.
+        shotBank = 1;
+        power.disarmForGuardian();
+        guardX0 = x;
+        pf.guardDamage = null;
+        pf.useGuardianPalette();       // $6fc8a bsr $70718, once
+      }
+      if (phase.phase === 0 && x > (pf.level.cols - SCREEN_W / 16) * 16) x = 0;
+      // moveship is the only 50 Hz routine; everything else alternates.
+      ship.step(attract ? {} : held);
+      // The trigger is polled from moveship, so it is 50 Hz even though the
+      // shots themselves move at 25.
+      if (trigger.step(firing)) wantShot = true;
+      power.tick();                         // $70060, beside moveship
+      // $701b8 updates this at the game's 50 Hz, not once per browser paint.
+      if (!dmg.dead && --outriderPhase <= 0) {
+        outriderPhase = 4;
+        const d6 = held.right ? 1 : (held.left ? -1 : 0);
+        aim = Math.max(1, Math.min(5, aim + d6));
+      }
+      // Collection is the ship overlapping the pod, which on the hardware is
+      // the PF2 collision gated by $15(a5).
+      parity ^= 1;
+      if (parity === 0) {
+        tick25 = true;
+        if (attract && --demoT <= 0) {
+          attract = false;
+          tick25 = false;
+          jump('credits');                 // $72664 -> $71680
+          break;
+        }
+        // update.missiles, collision, print.score and levels.code occupy this
+        // 25 Hz half of vloop. process.aliens runs in the `else` half below.
+        if (man.bubble && Number(lvSel.value) === man.bubble.level && lstate.state
+            && --blobT <= 0) { blobT = man.bubble.period; blobs++; }
+        // The fade runs before the pulse, or the pulse writes a colour the
+        // fade then overwrites on its way up.
+        fade.tick(pf.pal);
+        fx.tick(pf.pal);
+        // $71766 wrote the wave's eight into the same copper words the fade and
+        // the pulse walk over, and it wrote them last. The fade still gets the
+        // screen to itself, because in the original it finishes during the
+        // level-start sequence and the first copy.path only runs once vloop is
+        // going - so a wave never competes with it.
+        if (fade.done) pf.applyWave();
+        // $7268a: a four-channel pulse while the guardian approaches and the
+        // music is off.
+        const al = alarm.tick(phase.phase, audio.sfxBusy(ALARM_SFX));
+        if (al && soundOn && !sfxMuted) audio.sfxAll(al);   // $6fff0, all four
+        if (wantShot) {
+          // $70322 fires every weapon the ship is currently carrying, each from
+          // its own muzzle. Weapon $8 is unconditional - it is the gun you start
+          // with. $9 needs $e(a5) and ammo in $3e(a5); $a needs $f(a5) and
+          // $40(a5); $b and $c need the two outrider pods, $4/$5(a5), and aim
+          // where $44(a5) points them. The $e/$f flags are not modelled
+          // separately here - a non-empty bar stands in for them.
+          // $70326 requests this before the weapon routines look for a free
+          // missile slot and before $7048a/$704c2 spend their ammo.
+          if (soundOn && !sfxMuted)
+            audio.sfx(fireSfx(dmg.cannons, dmg.lasers));
+          const fired = weapons.fire(ship, {
+            laser: power.cannons && dmg.cannons > 0,
+            beam: power.lasers && dmg.lasers > 0,
+            podTop: power.outriders >= 1, podBot: power.outriders >= 2 }, aim);
+          // $7048a / $704c2 spend two from the firing weapon's own bar. Weapon
+          // $8 has no bar - it is the gun you never run out of.
+          if (fired.includes(1)) dmg.spend('cannons');
+          if (fired.includes(2)) dmg.spend('lasers');
+          wantShot = false;
+          // $70326: the shot sound is NOT a constant. $70328 tests the two
+          // weapon BARS - not the armed flags - and indexes a four byte table:
+          //
+          //   070328  tst.w $3e(a5) / sne d1 / andi.w #$1,d1   ; cannons
+          //   070332  tst.w $40(a5) / sne d2 / andi.w #$2,d2   ; lasers
+          //   07033c  add.w d1,d0 / add.w d2,d0
+          //   070340  lea $7031e(pc),a0 / move.b $0(a0,d0.w),d0
+          //   070348  jsr $6ffe0
+          //
+          //   $7031e:  16 15 03 07     none, cannons, lasers, both
+          //
+          // Those four are effects 22, 21, 3 and 7 - every one of the samples
+          // that looked orphaned. A flat sfx(1) was playing effect $101, the
+          // ALIEN KILL sound, on every shot.
+        }
+        weapons.tick();
+        // $7111c: a shot that hits is removed the same tick ($71124 bclr).
+        for (const { s: sh, w: wi } of weapons.live) {
+          // $7111e/$71184/$711ec/$7127a: each weapon tests a different point of
+          // its own shape, not its top-left corner.
+          const hx = sh.x + man.weapons[wi].hit[0];
+          const hy = sh.y + man.weapons[wi].hit[1];
+          // $71336: while a bonus is out, a shot cycles it instead of hitting
+          // an alien - the pod takes priority.
+          if (bonus.active && pf.shotOverlapsFrame(
+              man.shot, man.weapons[wi], shotBank, Number(lvSel.value), sh.x, sh.y,
+              man.bonus.data, man.bonus.w, man.bonus.h, bonus.frame,
+              bonus.x - 16, bonus.y)) {
+            bonus.shot(); sh.live = false;
+            if (soundOn && !sfxMuted) audio.sfx(19);      // $71438 effect $13, cycling the pod
+            continue;
+          }
+          const h = vm.hitTest(hx, hy, (a) => pf.shotOverlapsAlien(
+            man.shot, man.weapons[wi], shotBank, Number(lvSel.value), sh.x, sh.y, a));
+          if (h) {
+            sh.live = false;
+            // $71384 compares the WHOLE sprite byte, mirror bit and all, so a
+            // mirrored type 3 ($83) does not arm it.
+            if (!h.armored) fx.arm(h.raw === 3, !!lstate.state); // $71384 / $7138a
+            // $71396 effect $06 on a hit, $71426 effect $01 on a kill.
+            if (soundOn && !sfxMuted && h.sfx) audio.sfx(h.sfx);
+            if (h.killed) {
+              kills += 1 + (h.linkedKills || 0);
+              score.awardKill(expert, h.linkedKills);  // $713b8 / $713d4
+              // $713a4: killing a type-3 alien sets $10(a5) to 2 and does
+              // nothing else. It does NOT summon the guardian - that is the
+              // map running out - it advances the guardian FIGHT one step,
+              // which is why the eye is a type-3 record.
+              lstate.noteKill(h.sprite);
+            }
+          }
+        }
+        if (boss) {
+          for (const { s: sh, w: wi } of weapons.live) {
+            const bh = boss.hitTest(sh.x + man.weapons[wi].hit[0],
+                                    sh.y + man.weapons[wi].hit[1],
+              (a) => pf.shotOverlapsAlien(
+                man.shot, man.weapons[wi], shotBank, Number(lvSel.value), sh.x, sh.y, a));
+            if (bh) {
+              sh.live = false;
+              if (!bh.armored) fx.arm(bh.raw === 3, !!lstate.state); // type-3 core
+              if (soundOn && !sfxMuted && bh.sfx) audio.sfx(bh.sfx);
+              if (bh.killed) {
+                kills += 1 + (bh.linkedKills || 0);
+                score.awardKill(expert, bh.linkedKills); // $713b8 / $713d4
+                lstate.noteKill(bh.sprite);         // $713a4, the eye
+              }
+            }
+          }
+        }
+        // print.score is later in the missile/collision branch. Award sites
+        // above use move.l, so the last write is consumed once here rather
+        // than being accumulated or delayed to another pass.
+        score.tick(Number(lvSel.value));
+        // $71710 -> $71814. Once $54(a5) is 3 the screen is static, and the
+        // fight is a small state machine on $10(a5) that only steps when
+        // check.path finds nothing alive ($716a8 tst.w $3c(a5)):
+        //
+        //   $10 = 0  ->  $71832  launch the group after the table's zero,
+        //                        set $10 = 1, jsr $50370 with d0 = 0
+        //   $10 = 2  ->  $71852  launch the one after that, set $10 = 3,
+        //                        jsr $5038c - the music stops
+        //   $10 = 3  ->  $71dc0  the level is complete
+        //
+        // So it is two waves in front of a static guardian, and killing the
+        // type-3 record in the first is what moves 1 to 2.
+        if (phase.fighting && !(boss && boss.actors.some((a) => a.x || a.y))) {
+          const launch = (idx) => {
+            const g = new PathVM(pf.level);
+            if (!g.spawnAt(idx)) return null;
+            // $71832/$71852 both end `bra $71764`, the tail of copy.path, so
+            // the group loads colours 0-7 from its own sprite.num.
+            pf.useAlienPalette(Math.max(0, g.spriteNum - 1));
+            return g;
+          };
+          const transition = lstate.step();
+          if (transition === 'start') {
+            boss = launch(lstate.spawn);
+            lstate.spawn = null;
+            if (boss && soundOn) audio.playMusic(0);
+          } else if (transition === 'guardian') {
+            boss = launch(lstate.spawn);
+            lstate.spawn = null;
+            if (soundOn) audio.fadeOutMusic(900);
+          } else if (lstate.state === S_GUARDIAN) {
+            // $7182c -> $71dc0. The break-up is not a separate effect: group
+            // 20 IS twelve sprite-4 records - explosions, aliased to slot 0 -
+            // scattered across the guardian's body, each holding its position
+            // for about 54 ticks. By the time check.path finds nothing alive
+            // they have all played out and the level is over.
+            boss = null;
+            lstate.complete();
+            jump('tally');
+            if (soundOn) audio.playMusic(2);
+          }
+        }
+        // $72680, on the same 25 Hz pass as the rest of process.aliens.
+        // The level theme goes out as the guardian starts arriving, leaving
+        // the alarm in the clear. Alarm itself owns the repeat timing.
+        if (phase.warning) {
+          if (!warned) { warned = true; if (soundOn) audio.fadeOutMusic(900); }
+        } else warned = false;
+        // $7169e `cmpi.b #$1,$10(a5) / beq $717bc` - while the gate group is
+        // up, the timer runs in place of check.path. It is above $716b0's
+        // `not.b $18(a5)`, so it ticks on every pass, not alternate ones: 999
+        // at 25 Hz is the forty seconds you get to find the eye.
+        //
+        // When it expires the gate's ELEVEN projectiles are exploded and record
+        // 0, the eye, is left; once they have finished, $71808 launches the next
+        // group and writes $ff to $10(a5). $71814 tests 0, 2 and 3 and falls
+        // through for $ff, so the machine parks there - which is exactly the
+        // state emu/run.js --anchor 0 14000 was found in, $10 reading $ff00 as
+        // a word after forty seconds of nobody shooting the eye.
+        if (lstate.state === S_PLAYING && boss) {
+          if (gateTimer > 0) gateTimer--;                       // $717c4
+          else if (boss.gateCleanup() === 'done') {             // $717f2
+            const g = new PathVM(pf.level);
+            if (g.spawnAt(lstate.bossIndex)) {                  // $71808
+              boss = g;
+              pf.useAlienPalette(Math.max(0, g.spriteNum - 1)); // $71810 -> $71764
+            }
+            lstate.park();                                      // $7180a
+          }
+        }
+        // $71710: waves only spawn during phase 0.
+        // $716b0 not.b $18(a5) / bne - check.path only acts on alternate
+        // passes, so everything below it, the $4c(a5) countdown included, runs
+        // at 12.5 Hz rather than 25.
+        checkPathTick = !checkPathTick;
+        // $716a8 `tst.w $3c(a5) / bne` - and $3c is every record's x ORed
+        // together, the POD's included, because the pod is path group 0 and
+        // walks the same list. So while it is on screen check.path does not run
+        // and no wave spawns: the pod has the playfield to itself.
+        //
+        // That is why its colours are stable in the original. Ours kept
+        // counting down and launched the next wave over the top, and $71766
+        // loaded that wave's eight colours - so the pod, whose artwork is
+        // colours 4-7, changed palette in mid-flight.
+        if (checkPathTick && phase.spawnsWaves && !bonus.active
+            && !actors.filter((a) => a.x).length) {
+          // $716c4/$716c8: a pending death spawns the POD INSTEAD of a wave -
+          // `beq $71710` is the only route to check.path, so the two never
+          // happen on the same pass - and $716d4 puts 10 back into $4c(a5), so
+          // the next wave is held off while the pod crosses.
+          //
+          // Spawning both together is what made the pod invisible even once it
+          // was reaching the screen: $7170a ends `bra $71764`, copy.path's own
+          // tail, so the pod loads colours 0-7 from group 0's sprite.num - and
+          // respawn() then loaded the incoming wave's eight over the top of
+          // them in the same pass. The pod's artwork is colours 4-7, so it
+          // drew in whatever the next wave happened to use.
+          if (!vm.bonusBlocked && !bonus.active && bonus.deathX && bonus.spawn()) {
+            pf.resetPalette();
+            pf.useAlienPalette(Math.max(0, bonus.vm.spriteNum - 1));   // $71764
+            spawnDelay = PathVM.SPAWN_DELAY;                           // $716d4
+          } else {
+            const delay = tickSpawnDelay(spawnDelay);             // $7172e
+            spawnDelay = delay.delay;
+            if (delay.ready) {
+              respawn();
+              spawnDelay = PathVM.SPAWN_DELAY;
+            }
+          }
+        }
+      } else {
+        // The other 25 Hz half is process.aliens: path movement, animation and
+        // drawing-side guardian awards. Keeping this separate means check.path
+        // above can only observe the result of the preceding alien pass, just
+        // as the original vloop does.
+        bonus.tick(ship.x, ship.y);
+        if (boss) {
+          boss.tick(ship.x, ship.y);
+          if (boss.sfxQueue.length) {
+            if (soundOn && !sfxMuted) for (const e of boss.sfxQueue) audio.sfx(e);
+            boss.sfxQueue.length = 0;
+          }
+        }
+        actors = vm.tick(ship.x, ship.y).slice();
+        // $7096e/$70a44 writes one pending award per alien-draw pass. It is
+        // consumed by print.score in the following missile/collision half.
+        const guardianPart = actors.some((a) => a.x > 0x30 && a.sprite === 4)
+          || (boss && boss.actors.some((a) => a.x > 0x30 && a.sprite === 4));
+        if (guardianPart) score.awardGuardianPart(expert);
+        if (vm.sfxQueue.length) {
+          if (soundOn && !sfxMuted) for (const e of vm.sfxQueue) audio.sfx(e);
+          vm.sfxQueue.length = 0;
+        }
+        if (vm.lastDeath) {
+          bonus.noteDeath(vm.lastDeath.x, vm.lastDeath.y);
+          vm.lastDeath = null;
+        }
+      }
+    }
+    // Digits are ORed into the panel bitmap, so start from a clean copy each
+    // frame or they accumulate into a smear.
+    // The pristine panel, captured ONCE. print.score ORs its digits into the
+    // panel bitmap itself ($71912) and drainBar masks bits out of it, so the
+    // copy has to be taken before either has run - clearing it on a level
+    // change re-captured a panel that already had a frame of digits baked in,
+    // and every frame after that ORed a new set on top of the old ones.
+    if (!panelClean) panelClean = man.panel.data.slice();
+    man.panel.data.set(panelClean);
+    pf.drawScore(man.menu.digits, score.digits());
+    // $718a6: the bars drain by masking, not by shortening.
+    // Rows 7, 15, 23 - the offsets $144, $2a4 and $404 that the powerup
+    // handlers hand to $71884, divided by the 44-byte panel row.
+    pf.drainBar(7, dmg.energy / START_ENERGY);
+    pf.drainBar(15, dmg.cannons / START_ENERGY);
+    pf.drainBar(23, dmg.lasers / START_ENERGY);
+    pf.render(x, Number(ratio.value));
+    if (bonus.active && man.bonus.data) {
+      pf.drawFrames(man.bonus.data, man.bonus.w, man.bonus.h, bonus.frame,
+                    bonus.x - 16 - ALIEN_ORIGIN_X, bonus.y - PF2_ORIGIN_Y);
+    }
+    // $70f62 draws every record through one routine: slot from $4(a4), frame
+    // from $5(a4), art from $78a3c + level*$60 + slot*4, geometry fixed at
+    // $180 a frame. Slot 2's pointer lands outside the alien art block, so the
+    // packer never exported it and nothing here could resolve it - the mines
+    // the aliens fire were simply absent. They are shared art, not per-level,
+    // so they hang off the manifest rather than off level.aliens.
+    const drawRecord = (a) => {
+      if (a.sprite === 2) {
+        if (!man.mine || !man.mine.data) return;
+        pf.drawFrames(man.mine.data, man.mine.w, man.mine.h,
+                      Math.min(a.anim, man.mine.frames - 1),
+                      a.x - 16 - ALIEN_ORIGIN_X, a.y - PF2_ORIGIN_Y, a.mirror);
+        return;
+      }
+      const m = pf.alienMeta(a.sprite);
+      if (m && m.frames)
+        pf.drawAlien(m, Math.min(a.anim, m.frames - 1),
+                     a.x - 16 - ALIEN_ORIGIN_X, a.y - PF2_ORIGIN_Y, a.mirror);
+    };
+    if (boss) {
+      for (let bi = 0; bi < boss.actors.length; bi++) {
+        const a = boss.actors[bi];
+        if (!a.x && !a.y) continue;
+        const m = pf.alienMeta(a.sprite);
+        // $709a2: draw.sprite4 - the guardian's break-up parts - plays effect
+        // $8a as it draws frame 0, stepping $6e(a5) through the four channels
+        // first so consecutive blasts land on different voices instead of
+        // cutting each other off:
+        //
+        //   0709a2  tst.b $5(a4) / bne     ; frame 0 only
+        //   0709aa  move.w $6e(a5),d0
+        //   0709ae  addi.w #$100,d0
+        //   0709b2  andi.w #$300,d0        ; wrap 0..3
+        //   0709ba  ori.w #$8a,d0 / jsr $6ffe0
+        //
+        // The sound is not attached to the records dying - they are spawned as
+        // explosions and never pass through $71404 - it is attached to DRAWING
+        // them, which is why nothing in the path table or the $10 2->3 entry
+        // ever referenced it. Fired on the transition into frame 0 so one
+        // explosion booms once rather than once per frame it holds there.
+        if (m && m.slot === 0 && phase.fighting) {
+          if (a.anim === 0 && bossBoom[bi] !== 0) {
+            if (soundOn && !sfxMuted) audio.sfx(0x8a);
+          }
+          bossBoom[bi] = a.anim;
+        }
+        // An explosion is blitted into PF1, which is BEHIND the guardian, so it
+        // would be invisible - except that it also eats the PF2 pixels above
+        // it, and PF2 is not redrawn once the scroll has stopped. The guardian
+        // rests over PF2 x 96, so a record at x lands at guardian-local
+        // (x - 16 - 96, y). This is what makes the body come apart as the
+        // twelve explosions play across it.
+        if (m && m.slot === 0 && phase.fighting)
+          pf.damageGuardian(pf.level.alienData, 32, 24,
+                            m.frame0 + Math.min(a.anim, m.frames - 1),
+                            a.x - 16 - ALIEN_ORIGIN_X - (96 - PF2_ORIGIN_X)
+                            - GUARDIAN_SCROLL_DX, a.y - PF2_ORIGIN_Y);
+        drawRecord(a);
+      }
+    }
+    for (const a of actors) {
+      // A record with x.pos 0 is a free slot. sprite.num 0 is NOT free - it is
+      // slot 0, explosion1, which $71408 switches a killed alien to, so it has
+      // to be drawn like any other.
+      if (!a.x && !a.y) continue;
+      // ARTWORK is indexed by sprite.num DIRECTLY ($70f8e lsl.w #2,d1 into the
+      // table, no subq). Only the PALETTE subtracts one ($71772). Using the
+      // palette's convention here drew every alien with the previous slot's
+      // artwork and frame count.
+      // $71352/$71366: x is CENTRED on x.pos, y is the TOP edge.
+      drawRecord(a);
+    }
+    if (phase.drawsGuardian) {
+      // $706ce writes each column at $2e + $34(a5) - byte 46 of a 92-byte PF2
+      // row, one whole fetch width ahead of the display - so every column
+      // lands at the same place on screen and the ones already there have
+      // scrolled left with the terrain. Seventeen cells later the scroll stops
+      // and the 256px picture is sitting against the right edge.
+      // Column k ends up at PF2 x 96 + 16k: its blit lands at byte $2e + $34,
+      // and $34 has advanced 34 more bytes by the time the scroll stops, so
+      // (46 - 34 + 2k) * 8 = 96 + 16k. The guardian therefore rests over PF2
+      // x 96..351 - screen 66..321 - which is what puts the eye, a PF2-space
+      // record at x 282, in the socket.
+      //
+      // While it is arriving it moves with the terrain, ONE PIXEL A FRAME.
+      // Stepping it 16 pixels once every 16 cells is the same average speed
+      // and a completely different thing to look at.
+      guardCols = phase.guardCols;
+      pf.drawGuardian(96 - PF2_ORIGIN_X + GUARDIAN_SCROLL_DX
+                      + Math.max(0, 17 * 16 - (x - guardX0)), 0, guardCols);
+    }
+    // $726ee: level 6 only, and only once $10(a5) is non-zero. It goes down
+    // AFTER the guardian: the original blits the guardian once, at phase 2, and
+    // the blobs into the same playfield from phase 3 on, so they sit on top of
+    // it. Here the guardian is redrawn every frame, and anything put down
+    // before it inside its 256 pixels was wiped - which left the mass looking
+    // as though it only ever grew on the left.
+    if (man.bubble && Number(lvSel.value) === man.bubble.level && lstate.state) {
+      const pts = man.bubble.points;
+      for (let i = 0; i < Math.min(blobs, pts.length); i++)
+        pf.drawBubble(man.bubble, pts[i][0], pts[i][1]);
+    }
+    // Shots go into PF2 with the terrain, before compositing.
+    for (const { s: sh, w: wi } of weapons.live)
+      pf.drawShot(man.shot, man.weapons[wi], shotBank, Number(lvSel.value),
+                  sh.x, sh.y);
+    // Aliens went into PF1 above; compose PF2 over them, then the panel.
+    pf.compose();
+    pf.readCLXDAT();
+    if (dmg.dead) {
+      // $6fdc2 builds the explosion's sprite positions from the ship's own
+      // x,y - it goes off where the ship was, not at a fixed point.
+      const fr = Math.min(man.explosion.frames - 1,
+                          man.explosion.frames - 1 - Math.floor(deadFor / 4));
+      // $6fdc2 builds the explosion's sprite control words from the ship's own
+      // position: HSTART is $26 + $80, the same as the ship's, and VSTART is
+      // $28 + $2c against the ship's $28 + $21 - so it sits eleven lines lower
+      // and starts at the ship's left edge. Three columns 16 px apart ($80000
+      // and $100000 added to HSTART) make the 48-wide picture the packer has.
+      pf.drawExplosion(man.explosion, Math.max(0, fr),
+                       ship.x + SHIP_SPRITE_DX, ship.y + SHIP_SPRITE_DY + 11);
+    } else {
+      pf.restorePalette();          // undo $6fe10's explosion override
+      // $70058/$70078: while $5e(a5) counts down, COLOR18 - black in every
+      // level's sprite palette - is driven to $00f, and bit 1 of the counter
+      // flips it to $00c every other frame. $70068 clears it back to black when
+      // the field runs out. That flicker IS the force field; there is no
+      // separate graphic for it.
+      if (power.field > 0) pf.pal[18] = (power.field & 2) ? 0x00c : 0x00f;
+      // $7020e/$70242 gate each pod on its own flag; $44(a5) animates them.
+      // $701b8: $46(a5) counts 4 frames down, then $44(a5) moves one step in
+      // direction d6 and clamps to 1..5. d6 is NOT free-running - $70108 sets
+      // it to +1 while right is held, -1 while left is held and 0 otherwise
+      // ($70110/$70124, in the same block that accelerates $5a(a5)). The pods
+      // are aimed by flying, which is why they swing forward as you push in.
+      // $6ff26/$6ff5c step $1c(a5) and $70022 reloads the sprite from it, so the
+      // ship visibly changes shape when a weapon pod is taken. Drawing from the
+      // debug dropdown instead meant collecting one looked like it did nothing.
+      pf.drawShip(man.ship, ship.config, ship.pitch,
+                  ship.x + SHIP_SPRITE_DX, ship.y + SHIP_SPRITE_DY,
+                  [power.outriders >= 1 ? aim : 0,
+                   power.outriders >= 2 ? aim : 0]);
+    }
+    let clx = pf.readCLXDAT();
+    // $6fe88 is not a proximity test. check.collision hands it CLXDAT and it
+    // masks with $6 - the two PLAYFIELD 1 bits - so the pod is collected by the
+    // same Denise collision that kills you on an alien, and $15(a5) is what
+    // turns that collision into a pickup instead:
+    //
+    //   6fe8a  andi.w #$6,d1     ; the ship against playfield 1
+    //   6fe92  tst.b $15(a5)     ; ...is a bonus out?
+    //   6fe9a  move.w $48(a5),d1 ; then this is which type
+    //
+    // That makes collection PIXEL EXACT, which a box never is: a 32x44 ship box
+    // against a 32x24 pod box collects along a border of transparent corners
+    // that are nowhere near the artwork. And there is no ambiguity about what
+    // was hit, because $3c(a5) stops any wave spawning while the pod is out -
+    // it has the playfield to itself, and the background cannot fire the bit
+    // because CLXCON only enables bitplane 5.
+    //
+    // Consuming the bits matters too: the original returns from the pickup and
+    // the same collision must not then be charged as damage.
+    if (tick25 && bonus.active && (clx & 0x6)) {
+      const result = power.collect(bonus.type, ship);
+      if (result.consumed) {
+        bonus.clear();
+        lastPick = TYPES[bonus.type].name;
+        if (result.sfx !== null && soundOn && !sfxMuted)
+          audio.sfxAll(result.sfx & 0xff);                     // $6fff0
+        if (TYPES[bonus.type].score) {
+          score.award(TYPES[bonus.type].score);
+          // The pickup handler precedes print.score in the collision pass.
+          score.tick(Number(lvSel.value));
+        }
+        clx &= ~0x6;
+      }
+    }
+    img.data.set(pf.toRGBA());
+    ctx.putImageData(img, 0, 0);
+    // check.collision is in the odd branch, so damage lands on the 25 Hz tick.
+    // Keying it on `parity` alone applied it once per animation frame, which at
+    // 60 Hz is more often than the game ever would - hence dying for no reason.
+    let outcome = null;
+    if (tick25 && !attract && !dmg.dead)
+      outcome = dmg.hit(clx, Number(lvSel.value), lstate.state, expert,
+                        { field: power.field > 0 || invuln.checked,
+                          guardianPhase: phase.aliensHurt });
+    if (dmg.dead && !deadFor) {
+      deaths++;
+      // $6fe38 addq.w #1,$68(a5) / andi.w #$3 - the frame steps every FOURTH
+      // pass, not every sixth.
+      deadFor = man.explosion.frames * 4;
+      // $6fdb4/$6fdba: death stops the music and plays effect $8a.
+      if (soundOn) { audio.stopMusic(); audio.sfxAll(138); }
+    }
+    const hit = clx & 0x46;
+    info.textContent = 'col ' + Math.floor(x / 16) + '/' + pf.level.cols
+                     + '   ship ' + ship.x + ',' + ship.y
+                     + '   actors ' + actors.filter((a) => a.sprite).length
+                     + '   shots ' + weapons.live.length
+                     + '   kills ' + kills
+                     + (attract ? '   DEMO' : '')
+                     + '   tune ' + (audio.musicN === null || audio.musicN === undefined
+                                            ? '-' : audio.musicN)
+                     + (bonus.active ? '   pod ' + TYPES[bonus.type].name : '')
+                     + '   got ' + lastPick
+                     + '   spd ' + ship.maxSpeed
+                     + '   nrg ' + dmg.energy + '/' + START_ENERGY
+                     + (dmg.dead ? '   DEAD' : (outcome ? '   ' + outcome : ''))
+                     + '   deaths ' + deaths + '   build ' + BUILD_ID
+                     + '   state ' + lstate.state
+                     + (lstate.state === S_GUARDIAN ? ' GUARDIAN' : '')
+                     + (boss ? '   boss hp ' + (boss.buf ? boss.buf[19] : '?') : '')
+                     + (fx.armed ? '   pulse' : '')
+                     + '   phase ' + phase.phase
+                     + (paused ? '   PAUSED' : '')
+                     + (sfxMuted ? '   sfx off' : '')
+                     + (hit ? '   HIT $' + hit.toString(16) : '');
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+} catch (e) {
+  err.textContent = 'failed to start: ' + e.message
+    + '\nServe this directory over HTTP (python tools/serve.py) - fetch() will not read file:// URLs.';
+}
+</script>

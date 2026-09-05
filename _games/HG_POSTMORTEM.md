@@ -4,8 +4,6 @@ title: "Hired Guns Web Port — Post-Mortem"
 categories: jekyll update
 ---
 
-# Hired Guns Web Port — Post-Mortem
-
 ## Executive summary
 
 We ported the Amiga CD32 version of *Hired Guns* to a browser-based runtime built with HTML, JavaScript, and WebGPU, with a Canvas 2D fallback. The objective was not simply to make a game that looked similar: it was to reproduce the original four-player, split-screen game at its native 320×212 resolution by treating the original assembly and assets as the specification.
