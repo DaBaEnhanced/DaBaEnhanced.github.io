@@ -1,0 +1,167 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Breathless — audio diagnosis</title>
+<style>
+  body { background: #12141a; color: #cfd6e4; font: 13px/1.6 ui-monospace, Consolas, monospace;
+         margin: 0; padding: 24px; }
+  h1 { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
+  p.lead { color: #8b95a8; margin: 0 0 18px; }
+  button { font: inherit; background: #2a6df4; color: #fff; border: 0; border-radius: 5px;
+           padding: 9px 18px; cursor: pointer; }
+  button:disabled { background: #3a4152; cursor: default; }
+  #log { margin-top: 18px; white-space: pre-wrap; }
+  .ok   { color: #56c271; }
+  .bad  { color: #e06c6c; }
+  .warn { color: #d8a657; }
+  .dim  { color: #6b7488; }
+</style>
+
+<h1>Breathless — audio diagnosis</h1>
+<p class="lead">Every step the game takes to start music, one at a time.
+Press the button (a click is required before a browser will allow any audio).</p>
+<button id="go">Start audio test</button>
+<div id="log"></div>
+
+<script type="module">
+import { fetchChecked } from './src/fetch.js';
+
+const log = document.getElementById('log');
+const line = (cls, text) => {
+  const d = document.createElement('div');
+  d.className = cls;
+  d.textContent = text;
+  log.append(d);
+};
+const ok   = (t) => line('ok',   '  OK    ' + t);
+const bad  = (t) => line('bad',  '  FAIL  ' + t);
+const warn = (t) => line('warn', '  ...   ' + t);
+const head = (t) => line('dim',  '\n' + t);
+
+document.getElementById('go').addEventListener('click', async (ev) => {
+  ev.target.disabled = true;
+  log.textContent = '';
+  let ctx = null;
+
+  head('1. AudioContext');
+  try {
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+    ok(`created, state = ${ctx.state}, sampleRate = ${ctx.sampleRate}`);
+  } catch (e) { bad('could not create one: ' + e.message); return; }
+
+  if (ctx.state === 'suspended') {
+    warn('suspended — calling resume()');
+    try { await ctx.resume(); } catch (e) { bad('resume() threw: ' + e.message); }
+  }
+  if (ctx.state === 'running') ok('state = running');
+  else bad(`state is still "${ctx.state}" — nothing will be audible`);
+
+  head('2. A plain tone, to prove the output works at all');
+  try {
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    g.gain.value = 0.15;
+    osc.frequency.value = 440;
+    osc.connect(g).connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.4);
+    ok('440 Hz for 0.4s — you should have heard a beep just now');
+  } catch (e) { bad('oscillator failed: ' + e.message); }
+
+  head('3. Fetching src/protracker.js (the worklet source)');
+  let src = null;
+  try {
+    const r = await fetchChecked('src/protracker.js');
+    if (!r.ok) { bad(`HTTP ${r.status} for src/protracker.js — wrong path or not served`); }
+    else {
+      src = await r.text();
+      if (/^\s*</.test(src)) bad('got HTML back, not JavaScript — the path is wrong');
+      else ok(`${src.length} bytes`);
+    }
+  } catch (e) { bad('fetch threw: ' + e.message); }
+
+  head('4. Building the worklet module');
+  let node = null;
+  if (src) {
+    const TAIL = `
+registerProcessor('probe', class extends AudioWorkletProcessor {
+  constructor() {
+    super();
+    this.player = null;
+    this.frames = 0;
+    this.loudest = 0;
+    this.port.onmessage = (e) => {
+      try {
+        const mod = parseMod(new Uint8Array(e.data.bytes));
+        this.player = new ModPlayer(mod, sampleRate);
+        this.port.postMessage({ type: 'loaded', patterns: mod.patterns.length });
+      } catch (err) {
+        this.port.postMessage({ type: 'error', message: String(err && err.message || err) });
+      }
+    };
+  }
+  process(_i, outputs) {
+    const out = outputs[0], L = out[0], R = out[1] ?? out[0];
+    L.fill(0); if (R !== L) R.fill(0);
+    if (this.player) {
+      this.player.mix(L, R, L.length);
+      for (let i = 0; i < L.length; i++) {
+        const v = Math.abs(L[i]);
+        if (v > this.loudest) this.loudest = v;
+      }
+      if (++this.frames % 200 === 0) {
+        this.port.postMessage({ type: 'level', peak: this.loudest, frames: this.frames });
+        this.loudest = 0;
+      }
+    }
+    return true;
+  }
+});`;
+    try {
+      const code = src.replace(/^export /gm, '') + TAIL;
+      const url = URL.createObjectURL(new Blob([code], { type: 'text/javascript' }));
+      await ctx.audioWorklet.addModule(url);
+      URL.revokeObjectURL(url);
+      ok('addModule() accepted the generated source');
+    } catch (e) { bad('addModule() threw: ' + e.message); src = null; }
+  }
+
+  head('5. Creating the AudioWorkletNode');
+  if (src) {
+    try {
+      node = new AudioWorkletNode(ctx, 'probe', { outputChannelCount: [2] });
+      const g = ctx.createGain();
+      g.gain.value = 0.6;
+      node.connect(g).connect(ctx.destination);
+      ok('node created and connected to the output');
+    } catch (e) { bad('AudioWorkletNode threw: ' + e.message); node = null; }
+  }
+
+  head('6. Fetching a module and playing it');
+  if (node) {
+    node.port.onmessage = (e) => {
+      const m = e.data;
+      if (m.type === 'loaded') ok(`the worklet parsed it: ${m.patterns} patterns`);
+      else if (m.type === 'error') bad('the worklet could not parse it: ' + m.message);
+      else if (m.type === 'level') {
+        if (m.peak > 0.002) ok(`producing audio, peak ${m.peak.toFixed(3)} — you should be hearing music`);
+        else bad(`the worklet is running but silent (peak ${m.peak.toFixed(4)})`);
+      }
+    };
+    try {
+      const r = await fetchChecked('assets/mods/MUST.mod');
+      if (!r.ok) { bad(`HTTP ${r.status} for assets/mods/MUST.mod`); }
+      else {
+        const bytes = await r.arrayBuffer();
+        ok(`fetched MUST.mod, ${bytes.byteLength} bytes`);
+        node.port.postMessage({ bytes }, [bytes]);
+        warn('posted to the worklet; waiting for it to report back...');
+      }
+    } catch (e) { bad('fetch threw: ' + e.message); }
+  }
+
+  head('If every step above is OK and you still hear nothing, the problem is');
+  line('dim', '  outside the page: system volume, output device, or the tab is muted.');
+  line('dim', '  Step 2 is the check for that — if the beep was silent too, nothing');
+  line('dim', '  this page does will help.');
+});
+</script>

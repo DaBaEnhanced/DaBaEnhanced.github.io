@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#000000">
+<title>Breathless</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body {
+    margin: 0; height: 100%; background: #090a0d; color: #b9b6ae; overflow: hidden;
+    font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Two rows: the bar takes its own height, the game gets everything else. The
+     bar is a ROW, not an overlay -- nothing is ever drawn on top of the game.
+     Same shape as the Saint Dragon shell. */
+  main { height: 100%; display: grid; grid-template-rows: auto 1fr; }
+
+  #shell {
+    min-height: 44px; padding: 6px 10px;
+    padding-top: calc(6px + env(safe-area-inset-top, 0px));
+    display: flex; align-items: center; gap: 8px;
+    background: #111317; border-bottom: 1px solid #343840;
+  }
+  .brand { margin-right: auto; color: #c8a24a; font-weight: 700; letter-spacing: .12em; }
+  @media (max-width: 620px) { .brand { display: none; } .sh-lbl { display: none; } }
+
+  .screen {
+    position: relative; min-height: 0; overflow: hidden;
+    display: grid; place-items: center; background: #000;
+  }
+  canvas {
+    image-rendering: pixelated; background: #000; outline: none; display: block;
+    touch-action: none;
+  }
+
+  .sh-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; padding: 0; cursor: pointer;
+    background: #20242a; color: #cfccc4; border: 1px solid #555b65; border-radius: 4px;
+  }
+  .sh-btn:hover { background: #30353d; border-color: #858c97; color: #fff; }
+  .sh-btn:focus-visible, .sh-sel:focus-visible { outline: 2px solid #c8a24a; outline-offset: 2px; }
+  .sh-btn.on { border-color: #c8a24a; color: #f0d9a0; }
+  .sh-sp { width: 4px; }
+  .sh-lbl { color: #6f6c66; letter-spacing: .06em; font-size: 11px; }
+  .sh-sel {
+    background: #20242a; color: #cfccc4; border: 1px solid #555b65;
+    border-radius: 4px; padding: 6px 8px; font: inherit; min-height: 34px;
+  }
+
+  #note {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    color: #c8a24a; text-shadow: 0 1px 3px #000; pointer-events: none; z-index: 9;
+  }
+  #hud { display: none; }
+
+  #fatal {
+    position: fixed; inset: 24px; overflow: auto; z-index: 20;
+    color: #d9534f; white-space: pre-wrap; font: 11px/1.4 ui-monospace, monospace;
+    background: rgba(0,0,0,.9); padding: 16px; border: 1px solid #d9534f;
+  }
+
+  /* Shown until the first tap/click, because a browser will not start audio or
+     go fullscreen without one. */
+  #start {
+    position: fixed; inset: 0; z-index: 30; display: grid; place-items: center;
+    background: #000; cursor: pointer; text-align: center; padding: 24px;
+  }
+  #start h1 { font-size: 22px; letter-spacing: .35em; margin: 0 0 6px; color: #cfccc4; }
+  #start p { margin: 4px 0; color: #6f6c66; }
+  #start .go { margin-top: 18px; color: #c8a24a; letter-spacing: .1em; }
+</style>
+</head>
+<body data-mode="play">
+  <main>
+    <div id="shell"><span class="brand">BREATHLESS</span></div>
+    <div class="screen">
+      <canvas id="screen" tabindex="0"></canvas>
+      <span id="note"></span>
+    </div>
+  </main>
+  <span id="hud"></span>
+  <select id="level" hidden></select>
+  <pre id="fatal" hidden></pre>
+
+  <div id="start">
+    <div>
+      <h1>BREATHLESS</h1>
+      <p>Fields of Vision / Power Computing, 1996</p>
+      <p style="margin-top:14px">Mouse to look &middot; <b>W A S D</b> to move &middot;
+         <b>Space</b> to fire &middot; <b>E</b> to open</p>
+      <p style="color:#c8a24a">Sound is off until you press the speaker in the bar.</p>
+      <p><b>Caps Lock</b> toggles running &middot; <b>Tab</b> map &middot;
+         <b>Esc</b> options</p>
+      <p style="margin-top:14px">On a phone: left thumb moves, right thumb looks,
+         tap right to fire, tap left to open.</p>
+      <p class="go">TAP OR CLICK TO START</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { forwardStartGesture } from './src/playstart.js';
+
+    const start = document.getElementById('start');
+    // Do not accept the overlay gesture until main.js has installed the canvas
+    // input/audio listeners. This closes the fast-tap race on cached pages.
+    start.style.pointerEvents = 'none';
+    const gameReady = import('./src/main.js');
+    gameReady.then(() => { start.style.pointerEvents = 'auto'; });
+    // The gesture that dismisses this panel is the one that buys us audio and
+    // fullscreen, so both are requested from inside its handler.
+    const begin = async (e) => {
+      e.preventDefault();
+      const canvas = document.getElementById('screen');
+      // Forward down AND up synchronously. A lone pointerdown used to latch the
+      // fire binding through both logos and strand the title waiting for a new
+      // transition that could never arrive on the first click.
+      forwardStartGesture(canvas);
+      start.remove();
+      try { await document.documentElement.requestFullscreen?.({ navigationUI: 'hide' }); }
+      catch { /* denied, or a browser that will not: play windowed */ }
+      try { await screen.orientation?.lock?.('landscape'); } catch { /* desktop */ }
+      canvas?.focus();
+    };
+    start.addEventListener('pointerdown', begin, { once: true });
+
+    gameReady.catch((e) => {
+      document.body.innerHTML =
+        `<pre style="color:#d9534f;padding:24px;white-space:pre-wrap">${e.message}\n\n` +
+        `Serve this directory over http:// rather than opening the file directly.</pre>`;
+      console.error(e);
+    });
+  </script>
+</body>
+</html>

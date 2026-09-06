@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breathless</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body {
+    margin: 0; height: 100%; background: #0b0b0e; color: #b9b6ae;
+    font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+  canvas { image-rendering: pixelated; background: #000; outline: none; border: 1px solid #24242c; }
+  .bar { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  select { background: #16161c; color: inherit; border: 1px solid #33333d; padding: 3px 6px; font: inherit; }
+  #hud { color: #6f6c66; min-width: 52ch; }
+  .note { color: #c8a24a; min-width: 22ch; }
+  kbd { background: #1c1c23; border: 1px solid #35353f; border-bottom-width: 2px;
+        border-radius: 3px; padding: 0 4px; color: #cfccc4; }
+  .err { color: #d9534f; max-width: 90ch; text-align: left; white-space: pre-wrap;
+         font: 11px/1.4 ui-monospace, monospace; margin: 0; }
+  body { padding: 8px 0; }
+  /* A bar across the top, not a panel floating over the picture. */
+  #shell { position: fixed; top: 0; left: 0; right: 0; min-height: 40px;
+           display: flex; gap: 6px; align-items: center; padding: 5px 10px;
+           background: #111317; border-bottom: 1px solid #343840; z-index: 10; }
+  .brand { margin-right: auto; color: #c8a24a; font-weight: 700; letter-spacing: .12em; }
+  body { padding-top: 46px; }
+  .sh-btn { display: inline-flex; align-items: center; justify-content: center;
+            width: 30px; height: 30px; padding: 0; cursor: pointer; background: #20242a;
+            color: #cfccc4; border: 1px solid #555b65; border-radius: 4px; }
+  .sh-btn:hover { background: #30353d; border-color: #858c97; color: #fff; }
+  .sh-btn.on { border-color: #c8a24a; color: #f0d9a0; }
+  .sh-sp { width: 4px; }
+  .sh-lbl { color: #6f6c66; letter-spacing: .06em; font-size: 11px; }
+  .sh-sel { background: #16161c; color: #cfccc4; border: 1px solid #33333d;
+            border-radius: 6px; padding: 4px 6px; font: inherit; }
+</style>
+</head>
+<body data-mode="dev">
+  <canvas id="screen" tabindex="0"></canvas>
+  <div id="shell"><span class="brand">BREATHLESS</span></div>
+  <pre id="fatal" class="err" hidden></pre>
+  <div class="bar">
+    <select id="level" aria-label="Level"></select>
+    <span id="hud"></span>
+    <span id="note" class="note"></span>
+  </div>
+  <div class="bar">
+    <span><a href="play.html" style="color:#7ab7ff">play fullscreen &rarr;</a></span>
+    <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move &middot; mouse to look</span>
+    <span><kbd>Space</kbd> fire &middot; <kbd>E</kbd> open doors / switches</span>
+    <span><kbd>Caps</kbd> run (toggle) &middot; <kbd>Shift</kbd>+<kbd>&larr;</kbd><kbd>&rarr;</kbd> strafe</span>
+    <span><kbd>1</kbd>-<kbd>6</kbd> weapon (owned only)</span>
+    <span><kbd>Tab</kbd> map &middot; <kbd>P</kbd> pause &middot; <kbd>G</kbd> fullscreen</span>
+    <span><kbd>Esc</kbd> configuration menu (keys rebindable under KEYBOARD)</span>
+    <span><kbd>PgUp</kbd><kbd>PgDn</kbd> look &middot; <kbd>Home</kbd> centre</span>
+    <span><kbd>-</kbd><kbd>+</kbd> window size &middot; <kbd>[</kbd><kbd>]</kbd> pixel size</span>
+    <span class="note">Render scale (1x/2x/4x) is under Esc &rarr; WINDOW</span>
+    <span class="note">Cheats are in the panel top-right, or <kbd>F9</kbd></span>
+    <span class="note"><a href="audiotest.html" style="color:#7ab7ff">audio diagnosis</a></span>
+  </div>
+  <script type="module">
+    import('./src/main.js').catch((e) => {
+      document.body.innerHTML =
+        `<p class="err">${e.message}</p>` +
+        `<p class="err">Serve this directory over http:// rather than opening ` +
+        `the file directly.</p>`;
+      console.error(e);
+    });
+  </script>
+</body>
+</html>

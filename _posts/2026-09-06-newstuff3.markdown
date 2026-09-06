@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Breathless"
+date: 2026-09-06 23:53:47 +0200
+categories: jekyll update
+excerpt: New Amiga port, and an FPS this time 1996's Breathless
+thumbnail: /breatheless/banner.jpg
+---
+
+A complete browser reconstruction of Breathless, Fields of Vision’s ambitious 1996 Amiga FPS, translated from the surviving original 68020 source into JavaScript and WebGPU. All 20 levels, enemies, weapons, effects, textures, music and game systems are preserved, while the old Amiga-specific plumbing falls away. The result is both a playable port and a fascinating look inside an engine built around a grid raycaster, per-column visibility lists, palette-based lighting, moving floors and ceilings, and a huge amount of clever compromise to make a texture-mapped shooter run on 14 MHz hardware.
+Check the <a href="/games">GAMES section!</a>
+Bye!

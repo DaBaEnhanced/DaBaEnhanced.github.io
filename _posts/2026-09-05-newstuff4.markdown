@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Menace"
+date: 2026-09-05 23:53:47 +0200
+categories: jekyll update
+excerpt: New Shot-'em up! 1988's Menace from DMA Design
+thumbnail: /menace/menace.jpg
+---
+
+Menace is two years earlier than Saint Dragon: DMA Design, published by
+Psyclapse in 1988, the first game by the studio that would later make Lemmings
+and Grand Theft Auto. It is a horizontally scrolling shooter with six levels,
+each ending in a large static guardian. And it comes with a cool post-mortem too.
+Check the <a href="/games">GAMES section!</a>
+Bye!

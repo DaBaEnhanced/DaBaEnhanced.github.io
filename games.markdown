@@ -4,11 +4,7 @@ title: "Games"
 permalink: /games
 ---
 
-## My games
-
-Here are games I've been developing lately (well, mostly vibecoding).
-
-Most of them are ports of old Amiga games to HTML/JavaScript. I am trying to test the limits of current LLMs by hacking, decoding, and disassembling old games.
+Here are the games I've been developing lately (well, mostly vibecoding), starting with my original projects and followed by [browser ports of old Amiga games](#browser-ports).
 
 <style>
 	.game-card {
@@ -182,6 +178,50 @@ Most of them are ports of old Amiga games to HTML/JavaScript. I am trying to tes
 	}
 </script>
 
+## Original games
+
+<article class="game-card" markdown="1">
+### The Moon That Forgot
+
+<img src="{{ site.cdn_url }}/images/moonforgot.jpg" alt="The Moon That Forgot title" style="object-position: center;" />
+
+**The Moon That Forgot** is a work-in-progress retro point-and-click adventure based on my novel of the same name. You wake inside a dying Ark with no clear memory of how long you’ve been asleep, accompanied only by a damaged maintenance robot named M7. Explore, talk, investigate, combine objects, and solve increasingly strange machine-logic puzzles as you uncover what happened to the sleepers, what the Ark has become, and what is still moving beyond its walls.
+Final art style would be different than what the banner above hint at, and more similar to my book cover's artworks.
+
+I am vibecoding the adventure game editor, tools to turn images into pixel art, background matting, de-spilling colors, closing animation loops, and using image gen, video gen and musicgen to generate almost all art assets.
+
+<div class="game-slideshow">
+	<a href="{{ site.cdn_url }}/images/MF/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/2.jpg" alt="Hired Guns screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/3.jpg" alt="Hired Guns screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/4.jpg" alt="Hired Guns screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/5.jpg" alt="Hired Guns screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/6.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/7.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/7.jpg" alt="Hired Guns screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/8.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/8.jpg" alt="Hired Guns screenshot 8" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/9.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/9.jpg" alt="Hired Guns screenshot 9" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/10.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/10.jpg" alt="Hired Guns screenshot 10" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/MF/11.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/11.jpg" alt="Hired Guns screenshot 11" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+</article>
+
+<article class="game-card" markdown="1">
+### MegaPop
+<img src="{{ site.cdn_url }}/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
+
+My next project won't be a port, but a new game.
+**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
+Think Populus meets Mega-lo-Mania!
+
+</article>
+
+## Browser ports
+
+These are unofficial, fan-made browser reconstructions created as technical and historical projects. Copyrights and trademarks in the original games and their assets belong to their respective rightsholders. No affiliation with or endorsement by those rightsholders is claimed.
+
+Planned addition are SWIV, Banshee, Alien Breed 3D and maybe Alien Breed 3D 2.
+
 <article class="game-card" markdown="1">
 
 ### Hired Guns
@@ -261,7 +301,7 @@ A complete browser reconstruction of Menace, DMA Design’s 1988 Amiga shoot ’
 	<a href="{{ site.cdn_url }}/menace/shot6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/menace/shot6.jpg" alt="menace screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
 
-And here it is in all its glory:
+Here you can play it or read the super-interesting Post-Mortem:
 
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/menace/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
@@ -273,38 +313,31 @@ And here it is in all its glory:
 
 
 <article class="game-card" markdown="1">
-### The Moon That Forgot 
+### Breatheless
 
-<img src="{{ site.cdn_url }}/images/moonforgot.jpg" alt="The Moon That Forgot title" style="object-position: center;" />
+<img src="{{ site.cdn_url }}/breatheless/banner.jpg" alt="Hired Guns screenshot 1" style="object-position: center;" />
 
-**The Moon That Forgot** is a work-in-progress retro point-and-click adventure based on my novel of the same name. You wake inside a dying Ark with no clear memory of how long you’ve been asleep, accompanied only by a damaged maintenance robot named M7. Explore, talk, investigate, combine objects, and solve increasingly strange machine-logic puzzles as you uncover what happened to the sleepers, what the Ark has become, and what is still moving beyond its walls.
-Final art style would be different than what the banner above hint at, and more similar to my book cover's artworks.
+A complete browser reconstruction of Breathless, Fields of Vision’s ambitious 1996 Amiga FPS, translated from the surviving original 68020 source into JavaScript and WebGPU. All 20 levels, enemies, weapons, effects, textures, music and game systems are preserved, while the old Amiga-specific plumbing falls away. The result is both a playable port and a fascinating look inside an engine built around a grid raycaster, per-column visibility lists, palette-based lighting, moving floors and ceilings, and a huge amount of clever compromise to make a texture-mapped shooter run on 14 MHz hardware.
+The post-mortem goes into more detail about Breathless's pseudo-3d engine and its differences with respect to something like Doom or Wolf3D.
+I made some QoL changes most notably in term of player control and higher resolutions support, but you can still play the game in its original 320*200 glory.
 
-I am vibecoding the adventure game editor, tools to turn images into pixel art, background matting, de-spilling colors, closing animation loops, and using image gen, video gen and musicgen to generate almost all art assets.
 
 <div class="game-slideshow">
-	<a href="{{ site.cdn_url }}/images/MF/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/2.jpg" alt="Hired Guns screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/3.jpg" alt="Hired Guns screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/4.jpg" alt="Hired Guns screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/5.jpg" alt="Hired Guns screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/6.jpg" alt="Hired Guns screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/7.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/7.jpg" alt="Hired Guns screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/8.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/8.jpg" alt="Hired Guns screenshot 8" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/9.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/9.jpg" alt="Hired Guns screenshot 9" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/10.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/10.jpg" alt="Hired Guns screenshot 10" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
-	<a href="{{ site.cdn_url }}/images/MF/11.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/11.jpg" alt="Hired Guns screenshot 11" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/breatheless/shot1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/breatheless/shot1.jpg" alt="breatheless screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/breatheless/shot2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/breatheless/shot2.jpg" alt="breatheless screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/breatheless/shot3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/breatheless/shot3.jpg" alt="breatheless screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/breatheless/shot4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/breatheless/shot4.jpg" alt="breatheless screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/breatheless/shot5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/breatheless/shot5.jpg" alt="breatheless screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/breatheless/shot6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/breatheless/shot6.jpg" alt="breatheless screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/breatheless/shot7.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/breatheless/shot7.jpg" alt="breatheless screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
 
-</article>
+Here you can play it or read the super-interesting Post-Mortem:
 
-<article class="game-card" markdown="1">
-### MegaPop
-<img src="{{ site.cdn_url }}/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
-
-My next project won't be a port, but a new game. 
-**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
-Think Populus meets Mega-lo-Mania!
-
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/breatheless/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="{{ site.cdn_url }}/breatheless.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="_games/BREATHLESS_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+</div>
 
 </article>
