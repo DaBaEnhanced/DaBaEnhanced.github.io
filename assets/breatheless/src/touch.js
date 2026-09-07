@@ -16,6 +16,27 @@
 // stick feeds `mousepos`, so looking goes through the same
 // `(delta * sensitivity) >> 2` the mouse does.
 
+/**
+ * Whether a pointerdown should ask for pointer lock.
+ *
+ * Lives here, next to the thing it protects, because the rule is about touch:
+ * **a touch pointer must never take pointer lock.** Under lock the browser
+ * freezes `clientX`/`clientY` and updates only `movementX`/`movementY` -- which
+ * is exactly what a mouse wants and exactly fatal for the thumbsticks, which
+ * read `clientX`/`clientY`. Asking for lock on the first tap killed both sticks
+ * after the single `pointermove` that landed before the lock engaged: one
+ * rotation of the view and then nothing, while tap-to-fire kept working,
+ * because a tap never needs the coordinates to change.
+ *
+ * It is a free function so a harness can assert the rule directly. Inline in
+ * main.js's listener it was unreachable from any test, which is why a phone
+ * found it and 31 harnesses did not.
+ */
+export function shouldGrabPointer({ pointerType, mouseOn, playing, locked }) {
+  if (pointerType === 'touch' || pointerType === 'pen') return false;
+  return !!mouseOn && !!playing && !locked;
+}
+
 const DEAD = 8;             // px of travel before a stick registers at all
 const RANGE = 56;           // px from the origin for a full deflection
 const TAP_MS = 250;         // longer than this and it is a hold, not a tap

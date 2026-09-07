@@ -16,7 +16,7 @@ import { Automap } from './automap.js';
 import { Messages } from './messages.js';
 import { Fade } from './fade.js';
 import { Shell } from './shell.js';
-import { Touch } from './touch.js';
+import { Touch, shouldGrabPointer } from './touch.js';
 import { codeFor, decodeCode } from './levelcode.js';
 import { drawText } from './textdraw.js';
 import { Config, expandView, VIEW_AREA_H } from './config.js';
@@ -462,12 +462,18 @@ window.addEventListener('keydown', wake);
 // browser's version of that same relative stream: without it the pointer would
 // stop at the window edge and the deltas would dry up mid-turn.
 function grabPointer() {
+  // Guarded at the choke point as well as at the listener, because there is a
+  // second caller -- closing the configuration menu re-grabs -- and it would
+  // have re-frozen the thumbsticks the first time a phone player opened and
+  // closed the menu. A device with no mouse has nothing to lock.
+  if (touch.enabled) return;
   if (document.pointerLockElement !== canvas) canvas.requestPointerLock?.();
 }
 canvas.addEventListener('pointerdown', (e) => {
   if (terminal?.open) return;
-  if (config.mouseOn && state === STATE.PLAYING
-      && document.pointerLockElement !== canvas) {
+  if (shouldGrabPointer({ pointerType: e.pointerType, mouseOn: config.mouseOn,
+                          playing: state === STATE.PLAYING,
+                          locked: document.pointerLockElement === canvas })) {
     grabPointer();
     e.preventDefault();
     return;
@@ -816,7 +822,10 @@ function step(ticks) {
   drawView(ticks);
   // Mouse mode is the default, and a browser will not give a page the pointer
   // without a click. Say so, until it has been given.
-  if (config.mouseOn && document.pointerLockElement !== canvas) {
+  // Not on a touchscreen: there is nothing to click, the sticks are already
+  // steering, and pointer lock is the one thing that must NOT happen there.
+  if (config.mouseOn && !touch.enabled
+      && document.pointerLockElement !== canvas) {
     messages.drawStatic(ui, SCREEN_W, VIEW_AREA_H, 'CLICK TO LOOK');
   }
   messages.draw(ui, SCREEN_W, VIEW_AREA_H);

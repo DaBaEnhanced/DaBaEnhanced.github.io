@@ -238,7 +238,15 @@ Think Populus meets Mega-lo-Mania!
 
 These are unofficial, fan-made browser reconstructions created as technical and historical projects. Copyrights and trademarks in the original games and their assets belong to their respective rightsholders. No affiliation with or endorsement by those rightsholders is claimed.
 
-Planned addition are SWIV, Banshee, Alien Breed 3D and maybe Alien Breed 3D 2. Lionheart and Legends of Valour.
+Planned addition are (in no specific order):
+- SWIV.
+- Banshee. 
+- Alien Breed 3D and maybe Alien Breed 3D 2. 
+- Lionheart (this is going to be hard probably given no source and a complex game).
+- Legends of Valour.
+- Hybris
+- Battle Squadron (I really want to disassemble this and find out if there is an actual ending)
+
 
 <article class="game-card" markdown="1">
 
