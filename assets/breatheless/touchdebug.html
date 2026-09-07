@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Breathless touch diagnostics</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body {
+    margin: 0; height: 100%; background: #090a0d; color: #cfccc4; overflow: hidden;
+    font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent;
+  }
+  main { height: 100%; display: grid; grid-template-rows: auto auto 1fr; }
+  header { padding: 8px 10px; padding-top: calc(8px + env(safe-area-inset-top, 0px));
+           background: #111317; border-bottom: 1px solid #343840; }
+  h1 { margin: 0 0 4px; font-size: 14px; color: #c8a24a; letter-spacing: .1em; }
+  #verdict { padding: 8px 10px; background: #16181d; border-bottom: 1px solid #343840;
+             white-space: pre-wrap; }
+  .bad  { color: #ff7a6b; font-weight: 700; }
+  .good { color: #7ddc86; }
+  .warn { color: #e8c46a; }
+  #pad { position: relative; background: #000; touch-action: none; overflow: hidden; }
+  #pad::after {
+    content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+    border-left: 1px dashed #333;
+  }
+  #hint { position: absolute; inset: 0; display: grid; place-items: center;
+          color: #55606e; text-align: center; padding: 0 20px; pointer-events: none; }
+  #log { position: absolute; inset: 0; overflow-y: auto; padding: 6px 8px;
+         font-size: 11px; white-space: pre; pointer-events: none; }
+  .row { color: #8f9aa8; }
+  .row b { color: #cfccc4; font-weight: 400; }
+  .froze { color: #ff7a6b; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>TOUCH DIAGNOSTICS</h1>
+    <div id="env">reading environment…</div>
+  </header>
+  <div id="verdict">Drag a finger below — left half, then right half.</div>
+  <div id="pad">
+    <div id="hint">drag here<br>left half = move stick · right half = look stick</div>
+    <div id="log"></div>
+  </div>
+</main>
+
+<script type="module">
+// A page whose only job is to answer: what does this phone actually do?
+//
+// Two rounds of reasoning about mobile input have now failed to fix the sticks,
+// so this stops reasoning. It reports the raw facts from the device: which
+// module version is live, whether pointer lock is engaging, and -- the thing no
+// harness can synthesise -- whether clientX/clientY actually CHANGE as a finger
+// moves. Everything below is measured on the device and printed.
+
+const envEl = document.getElementById('env');
+const verdict = document.getElementById('verdict');
+const pad = document.getElementById('pad');
+const log = document.getElementById('log');
+const hint = document.getElementById('hint');
+
+// ---- 1. which build is live ------------------------------------------------
+// The fix added `shouldGrabPointer` to touch.js. If it is missing, the deployed
+// bundle predates it and nothing else here matters.
+let mod = null, modErr = null;
+try { mod = await import('./src/touch.js'); }
+catch (e) { modErr = e; }
+
+const hasFix = !!mod?.shouldGrabPointer;
+const lines = [];
+lines.push(`touch.js       ${modErr ? 'FAILED: ' + modErr.message
+  : (hasFix ? 'has shouldGrabPointer' : 'MISSING shouldGrabPointer')}`);
+lines.push(`coarse pointer ${matchMedia('(pointer: coarse)').matches}`);
+lines.push(`maxTouchPoints ${navigator.maxTouchPoints}`);
+lines.push(`pointerLock    ${'pointerLockElement' in document
+  ? 'API present' : 'API absent'}`);
+lines.push(`requestLock    ${typeof pad.requestPointerLock === 'function'
+  ? 'supported on elements' : 'not supported'}`);
+lines.push(`UA             ${navigator.userAgent.slice(0, 60)}`);
+envEl.textContent = lines.join('\n');
+
+if (!hasFix && !modErr) {
+  verdict.innerHTML = '<span class="bad">The deployed build is OLD.</span>\n' +
+    'touch.js has no shouldGrabPointer, so this page is running the code from\n' +
+    'before the pointer-lock fix. Redeploy web/ and reload before testing.';
+}
+
+// ---- 2. what the device reports as a finger moves --------------------------
+const seen = new Map();          // pointerId -> {x0,y0,x,y,moves,frozen,side}
+let frozenAny = false, lockedEver = false, everMoved = false;
+const cap = 40;
+const rows = [];
+
+const put = (cls, text) => {
+  rows.push(`<div class="row ${cls}">${text}</div>`);
+  if (rows.length > cap) rows.shift();
+  log.innerHTML = rows.join('');
+  log.scrollTop = log.scrollHeight;
+};
+
+const side = (e) => {
+  const r = pad.getBoundingClientRect();
+  return (e.clientX - r.left) < r.width / 2 ? 'MOVE' : 'LOOK';
+};
+
+pad.addEventListener('pointerdown', (e) => {
+  e.preventDefault();
+  hint.style.display = 'none';
+  seen.set(e.pointerId, { x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY,
+                          moves: 0, distinct: 0, side: side(e) });
+  put('', `<b>DOWN</b> id=${e.pointerId} ${e.pointerType} ${side(e)} ` +
+          `@${e.clientX|0},${e.clientY|0}`);
+}, { passive: false });
+
+pad.addEventListener('pointermove', (e) => {
+  e.preventDefault();
+  const s = seen.get(e.pointerId);
+  if (!s) return;
+  s.moves++;
+  const moved = (e.clientX !== s.x || e.clientY !== s.y);
+  if (moved) { s.distinct++; everMoved = true; }
+  s.x = e.clientX; s.y = e.clientY;
+  // Report every 4th move so the log stays readable on a small screen.
+  if (s.moves % 4 === 1) {
+    put(moved ? '' : 'froze',
+      `move  id=${e.pointerId} ${s.side} @${e.clientX|0},${e.clientY|0} ` +
+      `d=${(e.clientX - s.x0)|0},${(e.clientY - s.y0)|0} ` +
+      `${moved ? '' : 'COORDS DID NOT CHANGE'}`);
+  }
+  // The signature of the pointer-lock freeze: many events, no distinct
+  // coordinates. movementX is still live under lock, so show both.
+  if (s.moves >= 6 && s.distinct === 0) {
+    frozenAny = true;
+    say(`<span class="bad">clientX/clientY are FROZEN.</span>\n` +
+        `${s.moves} pointermove events on ${s.side}, none with new coordinates.\n` +
+        `movementX/Y still reports ${e.movementX|0},${e.movementY|0}.\n` +
+        `pointerLockElement = ${document.pointerLockElement ? 'SET' : 'null'}\n` +
+        `That is pointer lock. The sticks read clientX/clientY, so they die.`);
+  }
+}, { passive: false });
+
+const end = (e) => {
+  const s = seen.get(e.pointerId);
+  if (!s) return;
+  seen.delete(e.pointerId);
+  put('', `<b>${e.type === 'pointercancel' ? 'CANCEL' : 'UP'}</b> ` +
+          `id=${e.pointerId} ${s.side} moves=${s.moves} withNewCoords=${s.distinct}`);
+  if (e.type === 'pointercancel') {
+    say('<span class="warn">The browser CANCELLED the pointer.</span>\n' +
+        'Something is stealing the gesture — a scroll, a pull-to-refresh, or a\n' +
+        'parent element without touch-action:none. The stick would go dead here.');
+  }
+};
+pad.addEventListener('pointerup', end, { passive: false });
+pad.addEventListener('pointercancel', end, { passive: false });
+
+function say(html) { verdict.innerHTML = html; }
+
+// ---- 3. a running verdict --------------------------------------------------
+setInterval(() => {
+  if (document.pointerLockElement) lockedEver = true;
+  if (frozenAny || !hasFix) return;              // a firm verdict already stands
+  if (lockedEver) {
+    say('<span class="bad">Pointer lock ENGAGED on this page.</span>\n' +
+        'Nothing here asks for it, so something else did. On the game page this\n' +
+        'is what freezes the sticks.');
+  } else if (everMoved) {
+    say('<span class="good">Coordinates are updating normally.</span>\n' +
+        'Pointer lock is not engaging and the events carry live positions, so\n' +
+        'the sticks have everything they need. If the game is still stuck, the\n' +
+        'fault is downstream of the events — screenshot the log and send it.');
+  }
+}, 250);
+</script>
+</body>
+</html>

@@ -61,6 +61,10 @@ export class Touch {
     canvas.addEventListener('pointermove', (e) => this.move(e), opts);
     canvas.addEventListener('pointerup', (e) => this.up(e), opts);
     canvas.addEventListener('pointercancel', (e) => this.up(e), opts);
+    // A pointer whose capture is taken away sends no further events to us, so
+    // its stick has to go with it. Without this the stick survives as a corpse
+    // that blocks its whole half of the screen -- see `down`.
+    canvas.addEventListener('lostpointercapture', (e) => this.up(e), opts);
     // Stop the browser treating a drag as a scroll or a double-tap as zoom.
     canvas.style.touchAction = 'none';
   }
@@ -75,8 +79,20 @@ export class Touch {
     if (!this.enabled || e.pointerType === 'mouse') return;
     e.preventDefault();
     const side = this.side(e);
-    // One stick per side; a second finger on the same side is ignored.
-    for (const s of this.sticks.values()) if (s.side === side) return;
+    // One stick per side, and the NEWEST finger owns it.
+    //
+    // This used to ignore the new touch and keep the old stick, which is only
+    // correct while every pointerup arrives. A single lost up or cancel -- a
+    // browser reclaiming the gesture, a capture taken away, an element
+    // re-created underneath the finger -- left a stick that no event could ever
+    // reach again, and because `down` then returned early, that half of the
+    // screen was dead for the rest of the session. "Everything gets stuck" is
+    // what that looks like from the sofa.
+    //
+    // Dropping the stale one instead costs nothing a player would notice (a
+    // second finger on the same half is not a gesture the game has) and makes
+    // every failure self-healing on the next touch.
+    for (const [id, st] of this.sticks) if (st.side === side) this.sticks.delete(id);
     this.sticks.set(e.pointerId, {
       side, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY,
       t0: performance.now(), moved: 0,
