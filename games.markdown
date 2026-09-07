@@ -38,6 +38,20 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 		max-width: 100%;
 	}
 
+	.games-banner {
+		border: 1px solid var(--vault-border, rgba(255, 255, 255, 0.08));
+		border-radius: 10px;
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+		margin: 1.5rem 0 2rem;
+		overflow: hidden;
+	}
+
+	.games-banner img {
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+
 	.game-actions {
 		display: flex;
 		flex-wrap: wrap;
@@ -178,6 +192,10 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 	}
 </script>
 
+<div class="games-banner">
+	<img src="{{ site.cdn_url }}/images/games_banner.jpg" alt="D. B. Waldtier — game ports, books, and worlds" />
+</div>
+
 ## Original games
 
 <article class="game-card" markdown="1">
@@ -220,7 +238,7 @@ Think Populus meets Mega-lo-Mania!
 
 These are unofficial, fan-made browser reconstructions created as technical and historical projects. Copyrights and trademarks in the original games and their assets belong to their respective rightsholders. No affiliation with or endorsement by those rightsholders is claimed.
 
-Planned addition are SWIV, Banshee, Alien Breed 3D and maybe Alien Breed 3D 2.
+Planned addition are SWIV, Banshee, Alien Breed 3D and maybe Alien Breed 3D 2. Lionheart and Legends of Valour.
 
 <article class="game-card" markdown="1">
 

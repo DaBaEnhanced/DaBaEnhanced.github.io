@@ -79,6 +79,10 @@ This is my personal space: AI stuff goes out under Clumsy.GiBa, the rest under D
 
 Written work is 99% human-made, though translations are mostly done with AI, and some poems were written directly in English. The novels are closer to 50-50: I handle the world-building, plots, and characters, while the LLM of the moment helps with prose and embellishments.
 
+### Games
+
+My games are a mix of original projects and browser reconstructions of classic Amiga titles. I use them to test how far current LLMs can go with reverse engineering, asset recovery, old assembly code, and modern browser technologies. The [games page](/games) includes playable builds, downloads, and detailed technical post-mortems.
+
 ### Video
 
 Videos are 99% AI-made. I use image-generation models, combined with constrained initialization and evolving custom prompts, to create weird, dream-like, trippy experiences. The models range from SD 1.5 to SDXL, mostly fine-tuned checkpoints found on [CivitAI](https://civitai.com/), using the [Deforum](https://deforum.art/) Python code as a starting point. Videos are upscaled to 2K using standard ESRGAN models. Lately I have mostly been using ChatGPT and Grok for images and video.
