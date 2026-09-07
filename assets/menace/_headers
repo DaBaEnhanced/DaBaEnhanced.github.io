@@ -1,0 +1,23 @@
+# Cloudflare Pages response headers.
+#
+# This exists because of a real afternoon lost to it: a fix was deployed, the
+# phone kept the old behaviour, and three rounds of debugging went into the
+# game's input code before the actual fault turned out to be that the browser
+# was still running the previous main.js. The modules are separate cache
+# entries, so force-reloading one of them (touch.js) fixed that file and left
+# its importer stale -- which looks exactly like "the fix does not work".
+#
+# `no-cache` does NOT mean "do not cache". It means "cache it, but revalidate
+# before reuse", so an unchanged file still costs only a 304 with no body. That
+# is the right trade for an ES module graph: the files are small, and the cost
+# of serving a stale one is measured in hours.
+/*
+  Cache-Control: no-cache
+
+# The asset binaries are the exception worth making. They are large -- the HD
+# texture and sprite sets are 9.5 MB and 46 MB -- and they change only when the
+# extraction or upscale tools are re-run. Revalidating them is still cheap
+# (304, no body), so they get the same treatment rather than a long immutable
+# max-age that would strand a rebuilt HD set in exactly the same way.
+/assets/*
+  Cache-Control: no-cache

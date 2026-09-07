@@ -418,7 +418,13 @@ const shell = new Shell({
 const touch = new Touch(canvas, input, {
   onFire: () => { fireQueue += 1; },
   onUse: () => { if (fx && cam) fx.pressSwitch(cam); },
-});
+// The letterboxed container, not the canvas: the black bands beside the picture
+// are where a thumb naturally rests, and reading input from the canvas alone
+// made them the one part of the screen that did nothing.
+// Only a real letterbox wrapper, never `parentElement` as a fallback: on the
+// dev page the canvas sits directly in <body>, and taking that as the input
+// surface would turn the level selector and the shell buttons into thumbsticks.
+}, canvas.closest?.('.screen') ?? canvas);
 
 let audioReady = false;
 // A generic gesture only starts audio if the player has already asked for it in
@@ -484,10 +490,16 @@ canvas.addEventListener('pointerdown', (e) => {
   // usable in a browser, so button 0 is treated as a fire press.
   // Feed the button in as whichever key the action is bound to, so a rebound
   // fire key still works from the mouse.
+  // A touch pointer reports button 0, so without this every finger put down
+  // anywhere -- including one dragging the movement stick -- held the fire key
+  // for as long as it stayed down. Touch input belongs to the Touch class,
+  // which fires on a TAP and knows the difference between that and a drag.
+  if (touch.enabled && e.pointerType === 'touch') return;
   if (e.button === 2) input.down.add(config.keys.switch[0]);
   else if (e.button === 0) input.down.add(config.keys.fire[0]);
 });
 canvas.addEventListener('pointerup', (e) => {
+  if (touch.enabled && e.pointerType === 'touch') return;
   if (e.button === 2) input.down.delete(config.keys.switch[0]);
   else if (e.button === 0) input.down.delete(config.keys.fire[0]);
 });
@@ -771,6 +783,10 @@ function step(ticks) {
   // runs by default. The stick's bitmask is handed straight to applyInput,
   // which cannot tell it from a keyboard.
   const touchDir = touch.direction();
+  // Looking is a rate now, integrated per frame from the held deflection, so a
+  // thumb parked at the rim keeps turning instead of stopping when it runs out
+  // of screen. Feeds the same mouse path, so MouseSensitivity still applies.
+  touch.lookRate(ticks / 50);
   if (touch.enabled) cam.running = true;
   if (!cam.dead) applyInput(input, cam, ticks / 50, config, touchDir);
   const wishX = cam.x - before.x, wishZ = cam.z - before.z;
@@ -974,6 +990,66 @@ window.addEventListener('resize', fit);
 window.addEventListener('orientationchange', fit);
 document.addEventListener('fullscreenchange', fit);
 picker.addEventListener('change', () => go(picker.value));
+
+// ---- ?touchdebug=1 --------------------------------------------------------
+//
+// A standalone diagnostics page measured raw pointer events on a plain div and
+// reported everything healthy while the game stayed broken -- because the game
+// does not use raw events on a div, it uses the Touch class on the canvas. So
+// this measures the real instance in the real place: whether Touch enabled
+// itself at all, whether its listeners are seeing anything, and what the
+// movement code is actually being handed each frame.
+//
+// Note the trap this exists to expose: fire works on a phone even when the
+// thumbsticks are completely inactive, because the pointerdown handler above
+// treats button 0 as a fire press. "Fire works" is therefore NOT evidence that
+// Touch is running.
+if (globalThis.location?.search?.includes('touchdebug')) {
+  const box = document.createElement('div');
+  // Safe-area padding and a border, because the first thing a diagnostic must
+  // do is be visible: in fullscreen on a notched phone the top-left corner sits
+  // under the status bar, and "no overlay" is the one reading that must never
+  // be ambiguous -- its absence is the version check for this very file.
+  box.style.cssText = 'position:fixed;left:0;top:0;z-index:2147483647;' +
+    'max-width:100%;background:#000e;color:#7ddc86;border:2px solid #7ddc86;' +
+    'font:11px/1.35 ui-monospace,monospace;white-space:pre;pointer-events:none;' +
+    'padding:6px 8px;padding-top:calc(6px + env(safe-area-inset-top, 0px));';
+  document.body.append(box);
+
+  // Bound on the canvas, alongside Touch's own listeners, to prove whether
+  // events reach the element Touch is actually listening to.
+  let raw = 0, lastRaw = '-', lastDown = '-', moved = 0;
+  const seenAt = { x: 0, y: 0 };
+  canvas.addEventListener('pointerdown', (e) => {
+    lastDown = `${e.pointerType} btn=${e.button} @${e.clientX | 0},${e.clientY | 0}`;
+    seenAt.x = e.clientX; seenAt.y = e.clientY;
+  });
+  canvas.addEventListener('pointermove', (e) => {
+    raw++;
+    if (e.clientX !== seenAt.x || e.clientY !== seenAt.y) moved++;
+    seenAt.x = e.clientX; seenAt.y = e.clientY;
+    lastRaw = `${e.pointerType} @${e.clientX | 0},${e.clientY | 0}`;
+  });
+
+  setInterval(() => {
+    const r = canvas.getBoundingClientRect();
+    const sticks = [...touch.sticks.values()]
+      .map((k) => `${k.side} d=${(k.x - k.x0) | 0},${(k.y - k.y0) | 0}`).join(' | ');
+    box.textContent = [
+      `touch.enabled   ${touch.enabled}   <- if false, NO sticks exist`,
+      `coarse pointer  ${globalThis.matchMedia?.('(pointer: coarse)')?.matches}`,
+      `canvas rect     ${r.width | 0}x${r.height | 0} at ${r.left | 0},${r.top | 0}`,
+      `canvas events   ${raw} moves, ${moved} with new coords`,
+      `last down       ${lastDown}`,
+      `last move       ${lastRaw}`,
+      `sticks          ${touch.sticks.size}${sticks ? '  ' + sticks : ''}`,
+      `direction()     ${touch.direction()}`,
+      `pointerLock     ${document.pointerLockElement ? 'LOCKED' : 'null'}`,
+      `state           ${state}  mouseOn=${config.mouseOn}`,
+      `cam             ${cam ? `falling=${!!cam.falling} dead=${!!cam.dead}` : 'none'}`,
+    ].join('\n');
+  }, 200);
+}
 
 fit();
 await setState(STATE.LOGO1, PRES.logo1);

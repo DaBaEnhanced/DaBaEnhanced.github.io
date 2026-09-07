@@ -17,6 +17,9 @@
   h1 { margin: 0 0 4px; font-size: 14px; color: #c8a24a; letter-spacing: .1em; }
   #verdict { padding: 8px 10px; background: #16181d; border-bottom: 1px solid #343840;
              white-space: pre-wrap; }
+  #nuke { margin-top: 6px; width: 100%; padding: 10px; background: #2a1e1e;
+          color: #ff9a8b; border: 1px solid #6a3b34; border-radius: 4px;
+          font: inherit; }
   .bad  { color: #ff7a6b; font-weight: 700; }
   .good { color: #7ddc86; }
   .warn { color: #e8c46a; }
@@ -39,6 +42,7 @@
   <header>
     <h1>TOUCH DIAGNOSTICS</h1>
     <div id="env">reading environment…</div>
+    <button id="nuke">clear caches + service workers, then reload</button>
   </header>
   <div id="verdict">Drag a finger below — left half, then right half.</div>
   <div id="pad">
@@ -83,9 +87,115 @@ lines.push(`UA             ${navigator.userAgent.slice(0, 60)}`);
 envEl.textContent = lines.join('\n');
 
 if (!hasFix && !modErr) {
-  verdict.innerHTML = '<span class="bad">The deployed build is OLD.</span>\n' +
-    'touch.js has no shouldGrabPointer, so this page is running the code from\n' +
-    'before the pointer-lock fix. Redeploy web/ and reload before testing.';
+  verdict.innerHTML = '<span class="bad">The deployed touch.js is OLD.</span>\n' +
+    'It has no shouldGrabPointer. Redeploy web/ and hard-reload before testing.';
+}
+
+// ---- 1b. the real Touch class, not a hand-rolled imitation -----------------
+//
+// The first version of this page watched raw pointer events on this div and
+// pronounced everything healthy while the game stayed broken -- because the
+// game does not use raw events on a div, it uses the Touch class on a canvas.
+// Measuring a lookalike is not measuring the thing. So drive the real class.
+let live = null;
+try {
+  live = new mod.Touch(pad, { addMouse() {} }, {});
+  lines.push(`Touch.enabled  ${live.enabled}` +
+    (live.enabled ? '' : '  <-- NO STICKS EXIST ON THIS DEVICE'));
+} catch (e) {
+  lines.push(`Touch          could not construct: ${e.message}`);
+}
+envEl.textContent = lines.join('\n');
+
+// ---- 1c. is the browser running the build that is deployed? ---------------
+//
+// The failure that cost the most time was not in any of the game code. A fix
+// was deployed, the phone kept the old behaviour, and the module that mattered
+// -- main.js -- was still being served from cache. Force-reloading touch.js
+// fixed that ONE file and left its importer stale, which is indistinguishable
+// from "the fix does not work".
+//
+// So: fetch each module twice. Once bypassing the cache entirely, to see what
+// the server has; once normally, to see what the browser would actually run.
+// If those differ, the deployment is fine and the cache is the problem.
+const MARKERS = { 'src/main.js': 'touchdebug',
+                  'src/touch.js': 'shouldGrabPointer' };
+for (const [file, marker] of Object.entries(MARKERS)) {
+  let fresh = null, cached = null, err = null;
+  try {
+    fresh = await (await fetch(`./${file}?cb=${Date.now()}`,
+                               { cache: 'no-store' })).text();
+    cached = await (await fetch(`./${file}`)).text();
+  } catch (e) { err = e; }
+  if (err) { lines.push(`${file.padEnd(14)} could not fetch: ${err.message}`); continue; }
+  const onServer = fresh.includes(marker);
+  const inBrowser = cached.includes(marker);
+  lines.push(`${file.padEnd(14)} server:${onServer ? 'NEW' : 'OLD'} ` +
+             `browser:${inBrowser ? 'NEW' : 'OLD'} ` +
+             `${fresh.length}/${cached.length} bytes`);
+  if (onServer && !inBrowser) {
+    verdict.innerHTML = `<span class="bad">STALE CACHE, not a code problem.</span>\n` +
+      `${file} on the server has the fix; the copy your browser would run does\n` +
+      `not. Deploying again will not help until the cached copy is evicted.\n\n` +
+      `Fix: the _headers file now sends Cache-Control: no-cache. Redeploy with\n` +
+      `it, purge the Cloudflare cache, then reload this page once.`;
+  } else if (!onServer) {
+    verdict.innerHTML = `<span class="bad">The SERVER has the old ${file}.</span>\n` +
+      `This is a deployment problem, not a cache one -- the new file never\n` +
+      `reached Cloudflare. Check what the Pages build actually publishes.`;
+  }
+}
+// A service worker outranks every cache header there is. Nothing in this repo
+// registers one, but one registered earlier on the same origin -- by anything
+// ever hosted at this domain -- keeps serving its own copies, survives closing
+// every tab, and is invisible unless specifically asked about.
+const sw = navigator.serviceWorker;
+if (sw) {
+  const regs = await sw.getRegistrations?.() ?? [];
+  lines.push(`serviceWorker  ${regs.length} registration(s)` +
+    (sw.controller ? ', THIS PAGE IS CONTROLLED BY ONE' : ', not controlling'));
+  if (sw.controller) {
+    verdict.innerHTML = '<span class="bad">A service worker is serving this ' +
+      'page.</span>\nIt overrides Cache-Control entirely and survives closing ' +
+      'every tab.\nTap the red button above, then reload.';
+  }
+}
+if (globalThis.caches?.keys) {
+  lines.push(`cacheStorage   ${(await caches.keys()).length} cache(s)`);
+}
+
+lines.push('');
+lines.push('If main.js says OLD in either column, nothing else on this page');
+lines.push('matters: the game is not running the code being debugged.');
+envEl.textContent = lines.join('\n');
+
+document.getElementById('nuke').addEventListener('click', async () => {
+  const done = [];
+  try {
+    for (const r of await navigator.serviceWorker?.getRegistrations?.() ?? []) {
+      await r.unregister(); done.push('unregistered a service worker');
+    }
+  } catch (e) { done.push('service workers: ' + e.message); }
+  try {
+    for (const k of await caches?.keys?.() ?? []) {
+      await caches.delete(k); done.push(`deleted cache ${k}`);
+    }
+  } catch (e) { done.push('cache storage: ' + e.message); }
+  // Re-request every module past the HTTP cache so the next load has fresh
+  // copies to revalidate against.
+  for (const f of Object.keys(MARKERS)) {
+    try { await fetch(`./${f}?bust=${Date.now()}`, { cache: 'reload' }); } catch {}
+  }
+  verdict.textContent = (done.length ? done.join('\n') : 'nothing to clear') +
+    '\n\nreloading…';
+  setTimeout(() => location.reload(true), 900);
+});
+
+if (live && !live.enabled) {
+  verdict.innerHTML = '<span class="bad">Touch disabled itself on this device.</span>\n' +
+    "matchMedia('(pointer: coarse)') is false here, so Touch binds no listeners\n" +
+    'at all and no thumbstick exists. Fire would still work in the game, because\n' +
+    'that comes from a different handler -- which is exactly how this hides.';
 }
 
 // ---- 2. what the device reports as a finger moves --------------------------
@@ -168,7 +278,11 @@ setInterval(() => {
         'Nothing here asks for it, so something else did. On the game page this\n' +
         'is what freezes the sticks.');
   } else if (everMoved) {
+    const d = live?.enabled ? live.direction() : null;
     say('<span class="good">Coordinates are updating normally.</span>\n' +
+        `Touch.direction() = ${d === null ? 'n/a (disabled)' : d}` +
+        ' — non-zero while a finger is held on the LEFT half means the\n' +
+        'stick itself is working.\n' +
         'Pointer lock is not engaging and the events carry live positions, so\n' +
         'the sticks have everything they need. If the game is still stuck, the\n' +
         'fault is downstream of the events — screenshot the log and send it.');

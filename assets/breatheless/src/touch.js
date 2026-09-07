@@ -41,11 +41,45 @@ const DEAD = 8;             // px of travel before a stick registers at all
 const RANGE = 56;           // px from the origin for a full deflection
 const TAP_MS = 250;         // longer than this and it is a hold, not a tap
 const TAP_PX = 12;          // further than this and it is a drag, not a tap
-const LOOK_GAIN = 1.6;      // px of finger travel -> units of mouse movement
+
+// Looking is a RATE, not a displacement.
+//
+// It used to feed finger travel straight in as mouse movement, which made the
+// screen a trackpad: one swipe turned you as far as the swipe was long, and to
+// turn around you had to lift and swipe again. A stick that holds a deflection
+// should keep turning while it is held, like the analogue stick it is drawn to
+// look like, so deflection maps to angular VELOCITY and the finger can sit
+// still at the edge and spin.
+const LOOK_RATE = 820;      // mouse units per second at full deflection
+// Weak exponential: a cubic blended with the linear response. Fine aim lives in
+// the middle of the stick where the curve is shallow, and the fast turn lives
+// at the rim. Pure cubic is too dead in the centre to track a moving target.
+const LOOK_EXPO = 0.35;     // 0 = linear, 1 = pure cubic
+
+/** Deflection (-1..1) to response (-1..1), past the deadzone, with expo. */
+function curve(n) {
+  const dead = DEAD / RANGE;
+  const a = Math.min(1, Math.abs(n));
+  if (a <= dead) return 0;
+  // Rescaled past the deadzone so the response GROWS from zero rather than
+  // stepping to a finite value the instant the stick clears it.
+  const t = (a - dead) / (1 - dead);
+  return Math.sign(n) * ((1 - LOOK_EXPO) * t + LOOK_EXPO * t * t * t);
+}
 
 export class Touch {
-  constructor(canvas, input, hooks = {}) {
+  /**
+   * `surface` is where the thumbs are read, and it is deliberately NOT the
+   * canvas. The canvas is letterboxed -- black bands down the sides in
+   * landscape, along the bottom in portrait -- and those bands are the most
+   * comfortable place on a phone to rest a thumb, because they are the only
+   * part of the screen not showing the game. Reading input from the canvas
+   * alone made the one region a player naturally reaches for the one region
+   * that did nothing.
+   */
+  constructor(canvas, input, hooks = {}, surface = canvas) {
     this.canvas = canvas;
+    this.surface = surface ?? canvas;
     this.input = input;
     this.hooks = hooks;
     this.sticks = new Map();          // pointerId -> stick state
@@ -57,22 +91,72 @@ export class Touch {
     if (!this.enabled) return;
 
     const opts = { passive: false };
-    canvas.addEventListener('pointerdown', (e) => this.down(e), opts);
-    canvas.addEventListener('pointermove', (e) => this.move(e), opts);
-    canvas.addEventListener('pointerup', (e) => this.up(e), opts);
-    canvas.addEventListener('pointercancel', (e) => this.up(e), opts);
+    const surf = this.surface;
+    surf.addEventListener('pointerdown', (e) => this.down(e), opts);
+    surf.addEventListener('pointermove', (e) => this.move(e), opts);
+    surf.addEventListener('pointerup', (e) => this.up(e), opts);
+    surf.addEventListener('pointercancel', (e) => this.up(e), opts);
     // A pointer whose capture is taken away sends no further events to us, so
     // its stick has to go with it. Without this the stick survives as a corpse
     // that blocks its whole half of the screen -- see `down`.
-    canvas.addEventListener('lostpointercapture', (e) => this.up(e), opts);
+    surf.addEventListener('lostpointercapture', (e) => this.up(e), opts);
     // Stop the browser treating a drag as a scroll or a double-tap as zoom.
-    canvas.style.touchAction = 'none';
+    surf.style.touchAction = 'none';
+    if (canvas !== surf) canvas.style.touchAction = 'none';
+    this.pads = this.buildPads();
   }
 
-  /** Which half of the canvas a touch started in. */
+  /** Which half of the input surface a touch started in. */
   side(e) {
-    const r = this.canvas.getBoundingClientRect();
+    const r = this.surface.getBoundingClientRect();
     return (e.clientX - r.left) < r.width / 2 ? 'move' : 'look';
+  }
+
+  /**
+   * Two always-visible stick markers, as DOM rather than framebuffer pixels.
+   *
+   * They have to be DOM: the whole point is that they sit in the letterbox
+   * bands, and the framebuffer by definition cannot reach outside the picture.
+   * Drawn faintly when idle so a thumb knows where to land without looking, and
+   * brightened while held.
+   */
+  buildPads() {
+    const doc = globalThis.document;
+    if (!doc?.createElement || !this.surface.append) return null;
+    const mk = (r, colour) => {
+      const el = doc.createElement('div');
+      el.style.cssText = 'position:absolute;pointer-events:none;border-radius:50%;' +
+        `width:${r * 2}px;height:${r * 2}px;margin:${-r}px 0 0 ${-r}px;` +
+        `border:2px solid ${colour};transition:opacity .18s;opacity:.22;` +
+        'box-sizing:border-box;z-index:5;';
+      this.surface.append(el);
+      return el;
+    };
+    // The surface must be a positioning context or the markers land relative to
+    // the page instead of the picture.
+    const cs = globalThis.getComputedStyle?.(this.surface);
+    if (cs && cs.position === 'static') this.surface.style.position = 'relative';
+    return {
+      move: { ring: mk(RANGE, '#8fb3ff'), knob: mk(11, '#8fb3ff') },
+      look: { ring: mk(RANGE, '#ffcf6b'), knob: mk(11, '#ffcf6b') },
+    };
+  }
+
+  /** Where each stick rests when nothing is touching it. */
+  homes() {
+    const s = this.surface.getBoundingClientRect();
+    const c = this.canvas.getBoundingClientRect();
+    // Prefer the centre of the letterbox band, which is the whole point of
+    // this: a thumb there covers nothing worth seeing. When there is no band to
+    // speak of -- a display that happens to match the aspect ratio -- fall back
+    // to insetting from the edges so the markers stay reachable.
+    const leftBand = c.left - s.left, rightBand = s.right - c.right;
+    const pad = RANGE + 14;
+    const y = Math.min(s.height - pad, Math.max(pad, s.height * 0.72));
+    return {
+      move: { x: leftBand > pad ? leftBand / 2 : pad, y },
+      look: { x: rightBand > pad ? s.width - rightBand / 2 : s.width - pad, y },
+    };
   }
 
   down(e) {
@@ -104,14 +188,26 @@ export class Touch {
     const s = this.sticks.get(e.pointerId);
     if (!s) return;
     e.preventDefault();
-    const dx = e.clientX - s.x, dy = e.clientY - s.y;
     s.moved = Math.max(s.moved, Math.hypot(e.clientX - s.x0, e.clientY - s.y0));
     s.x = e.clientX; s.y = e.clientY;
+    // Nothing is fed to the mouse here any more. Looking is integrated once a
+    // frame from the held deflection instead -- see `lookRate`.
+  }
 
-    if (s.side === 'look') {
-      // Feed the mouse path: movement.asm reads `mousepos` and scales it by
-      // MouseSensitivity, so the touch sensitivity slider is the mouse one.
-      this.input.addMouse(dx * LOOK_GAIN, dy * LOOK_GAIN);
+  /**
+   * Called once a frame with the frame's length in seconds. Turns the right
+   * stick's deflection into mouse movement, so looking goes through the same
+   * `(delta * MouseSensitivity) >> 2` the real mouse does and the sensitivity
+   * setting still means something.
+   */
+  lookRate(dt) {
+    if (!(dt > 0)) return;
+    for (const s of this.sticks.values()) {
+      if (s.side !== 'look') continue;
+      const rx = curve((s.x - s.x0) / RANGE);
+      const ry = curve((s.y - s.y0) / RANGE);
+      if (rx === 0 && ry === 0) continue;
+      this.input.addMouse(rx * LOOK_RATE * dt, ry * LOOK_RATE * dt);
     }
   }
 
@@ -154,9 +250,18 @@ export class Touch {
     return bits;
   }
 
-  /** Draw both sticks into the composite, in palette indices. */
+  /**
+   * Called once a frame. Updates the DOM markers when there are any, and
+   * otherwise falls back to drawing into the framebuffer.
+   *
+   * The framebuffer path cannot show a stick resting in a letterbox band --
+   * there are no pixels out there to write -- so it survives only for the case
+   * where no DOM surface was available.
+   */
   draw(fb, W, H) {
     if (!this.enabled) return;
+    if (this.pads) { this.updatePads(); return; }
+
     const r = this.canvas.getBoundingClientRect();
     if (!r.width || !r.height) return;
     const toX = (cx) => Math.round(((cx - r.left) / r.width) * W);
@@ -165,6 +270,33 @@ export class Touch {
       const ox = toX(s.x0), oy = toY(s.y0);
       ring(fb, W, H, ox, oy, Math.round((RANGE / r.width) * W), 21);
       disc(fb, W, H, toX(s.x), toY(s.y), 4, s.side === 'look' ? 61 : 195);
+    }
+  }
+
+  /** Park each marker at its home, or under the thumb that owns it. */
+  updatePads() {
+    const s = this.surface.getBoundingClientRect();
+    if (!s.width || !s.height) return;
+    const home = this.homes();
+    const live = { move: null, look: null };
+    for (const st of this.sticks.values()) live[st.side] = st;
+
+    for (const side of ['move', 'look']) {
+      const pad = this.pads[side], st = live[side];
+      const at = st ? { x: st.x0 - s.left, y: st.y0 - s.top } : home[side];
+      pad.ring.style.transform = `translate(${at.x}px,${at.y}px)`;
+      pad.ring.style.opacity = st ? '.75' : '.22';
+      // The knob shows the deflection, clamped to the ring so it never escapes
+      // the control it belongs to however far the thumb travels.
+      let kx = at.x, ky = at.y;
+      if (st) {
+        const dx = st.x - st.x0, dy = st.y - st.y0;
+        const d = Math.hypot(dx, dy);
+        const k = d > RANGE ? RANGE / d : 1;
+        kx += dx * k; ky += dy * k;
+      }
+      pad.knob.style.transform = `translate(${kx}px,${ky}px)`;
+      pad.knob.style.opacity = st ? '.9' : '.18';
     }
   }
 }
