@@ -7,14 +7,13 @@ layout: home
 
 <style>
   .vault-hero {
-    aspect-ratio: 3 / 1;
     background: #05060a;
     border-radius: 12px;
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
     isolation: isolate;
-    min-height: 22rem;
     overflow: hidden;
     position: relative;
+    width: 100%;
   }
 
   .vault-hero-media {
@@ -52,10 +51,10 @@ layout: home
     color: #f2d38f;
     display: flex;
     flex-direction: column;
-    inset: 0;
     justify-content: center;
+    min-height: clamp(18rem, 33.333vw, 24.6rem);
     padding: clamp(1.25rem, 3vw, 2.5rem);
-    position: absolute;
+    position: relative;
     text-align: center;
     text-shadow: 0 2px 12px #02060c, 0 0 28px rgba(2, 6, 12, 0.9);
     z-index: 2;
@@ -146,6 +145,7 @@ layout: home
     align-items: center;
     background: rgba(4, 10, 18, 0.82);
     border: 1px solid #d2a956;
+    box-sizing: border-box;
     box-shadow:
       inset 0 0 0 3px rgba(4, 10, 18, 0.92),
       inset 0 0 0 4px rgba(210, 169, 86, 0.42),
@@ -158,6 +158,7 @@ layout: home
     justify-content: center;
     line-height: 1.2;
     margin-top: clamp(0.75rem, 1.6vw, 1.1rem);
+    max-width: 100%;
     min-height: 3.15rem;
     padding: 0.75rem clamp(1rem, 2.5vw, 1.65rem);
     text-decoration: none;
@@ -199,36 +200,61 @@ layout: home
   }
 
   @media (max-width: 520px) {
-    .vault-hero {
-      min-height: 24rem;
-    }
-
     .vault-hero-media video,
     .vault-hero-media img {
       object-position: center center;
     }
 
     .vault-hero-copy {
-      padding: 1.25rem 0.85rem;
+      min-height: 18rem;
+      padding: 0.9rem 0.65rem;
     }
 
     .vault-hero-title {
-      font-size: clamp(2rem, 11vw, 3rem);
-      letter-spacing: 0.015em;
+      font-size: clamp(1.6rem, 8.4vw, 2.55rem);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
     .vault-hero-categories {
-      font-size: 0.76rem;
-      gap: 0.25rem 0.48rem;
-      letter-spacing: 0.13em;
+      font-size: clamp(0.66rem, 2.6vw, 0.76rem);
+      gap: 0.2rem 0.38rem;
+      letter-spacing: 0.09em;
     }
 
     .vault-hero-divider {
+      gap: 0.6rem;
+      margin: 0.4rem 0;
       width: 82%;
     }
 
+    .vault-hero-divider svg {
+      height: 1.1rem;
+      width: 1.6rem;
+    }
+
     .vault-hero-tagline {
+      font-size: clamp(1rem, 4.6vw, 1.2rem);
       max-width: 18rem;
+    }
+
+    .vault-kofi,
+    .vault-kofi:visited {
+      font-size: clamp(0.88rem, 4vw, 1rem);
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+      min-height: 2.7rem;
+      padding: 0.6rem 0.75rem;
+    }
+
+    .vault-kofi-icon {
+      height: 1.35rem;
+      width: 1.75rem;
+    }
+
+    .vault-kofi-icon svg {
+      height: 1rem;
+      width: 1.25rem;
     }
   }
 
