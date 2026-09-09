@@ -32,7 +32,7 @@ export const HITS_PER_STEP = 5;   // $7144a
 export const MAX_TYPE = 6;        // $71454
 const CYCLE_SFX = 0x113;          // effect $13 on channel 1 ($71438)
 
-import { PathVM, REC } from './paths.js?v=224303';
+import { PathVM, REC } from './paths.js?v=090432';
 
 export class Bonus {
   constructor(level) {

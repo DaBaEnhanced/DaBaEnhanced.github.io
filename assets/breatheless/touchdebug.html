@@ -118,50 +118,91 @@ envEl.textContent = lines.join('\n');
 // So: fetch each module twice. Once bypassing the cache entirely, to see what
 // the server has; once normally, to see what the browser would actually run.
 // If those differ, the deployment is fine and the cache is the problem.
-const MARKERS = { 'src/main.js': 'touchdebug',
-                  'src/touch.js': 'shouldGrabPointer' };
-for (const [file, marker] of Object.entries(MARKERS)) {
-  let fresh = null, cached = null, err = null;
+// Which build, exactly.
+//
+// The first version of this looked for identifiers -- does main.js contain the
+// word `touchdebug` -- which answers "is it newer than the deploy that added
+// that word", not "is it current". Every deploy since has contained it, so the
+// check reported NEW on a file that could be days old and read as reassurance.
+// A marker is a proxy; the build id is the thing itself.
+// Three layers, measured separately.
+//
+// There are three places a file can be stale and they need different fixes, so
+// asking "is it new?" once is not enough. The trick is that a query string
+// changes Cloudflare's cache KEY, so a cache-busted URL skips the edge as well
+// as the browser -- which is how a check that appended `?cb=` came to report
+// the code as current while every real visitor was served something older.
+// That check was reading the ORIGIN and calling it the server.
+//
+//   origin   ?cb=<unique>  + no-store   past the browser AND past the edge
+//   edge     canonical URL + no-store   past the browser, served by the edge
+//   browser  canonical URL, as normal   whatever is on this machine
+//
+// The layer where the id stops matching is the layer to fix.
+const buildOf = (src) => src.match(/^const BUILD = '([^']*)';/m)?.[1] ?? '(none)';
+const grab = async (url, init) => {
+  const r = await fetch(url, init);
+  return { text: await r.text(), cc: r.headers.get('cache-control') };
+};
+
+let served = '(no version.json)';
+try {
+  served = JSON.parse((await grab(`version.json?cb=${Date.now()}`,
+                                  { cache: 'no-store' })).text).build;
+} catch { /* not stamped, or offline */ }
+lines.push(`origin build   ${served}`);
+
+let layer = null;                       // where it first goes wrong
+for (const file of ['src/main.js', 'src/touch.js']) {
+  let origin, edge, browser;
   try {
-    fresh = await (await fetch(`./${file}?cb=${Date.now()}`,
-                               { cache: 'no-store' })).text();
-    cached = await (await fetch(`./${file}`)).text();
-  } catch (e) { err = e; }
-  if (err) { lines.push(`${file.padEnd(14)} could not fetch: ${err.message}`); continue; }
-  const onServer = fresh.includes(marker);
-  const inBrowser = cached.includes(marker);
-  lines.push(`${file.padEnd(14)} server:${onServer ? 'NEW' : 'OLD'} ` +
-             `browser:${inBrowser ? 'NEW' : 'OLD'} ` +
-             `${fresh.length}/${cached.length} bytes`);
-  if (onServer && !inBrowser) {
-    verdict.innerHTML = `<span class="bad">STALE CACHE, not a code problem.</span>\n` +
-      `${file} on the server has the fix; the copy your browser would run does\n` +
-      `not. Deploying again will not help until the cached copy is evicted.\n\n` +
-      `Fix: the _headers file now sends Cache-Control: no-cache. Redeploy with\n` +
-      `it, purge the Cloudflare cache, then reload this page once.`;
-  } else if (!onServer) {
-    verdict.innerHTML = `<span class="bad">The SERVER has the old ${file}.</span>\n` +
-      `This is a deployment problem, not a cache one -- the new file never\n` +
-      `reached Cloudflare. Check what the Pages build actually publishes.`;
+    origin = await grab(`./${file}?cb=${Date.now()}`, { cache: 'no-store' });
+    edge = await grab(`./${file}`, { cache: 'no-store' });
+    browser = await grab(`./${file}`);
+  } catch (e) {
+    lines.push(`${file.padEnd(12)} could not fetch: ${e.message}`);
+    continue;
+  }
+  const id = (g) => {
+    const b = buildOf(g.text);
+    return b === '(none)' ? `${g.text.length}B` : b;
+  };
+  lines.push(`${file.padEnd(12)} origin ${id(origin)}`);
+  lines.push(`${''.padEnd(12)} edge   ${id(edge)}` +
+             (edge.text.length === origin.text.length ? '' : '  <-- STALE'));
+  lines.push(`${''.padEnd(12)} browser ${id(browser)}` +
+             (browser.text.length === origin.text.length ? '' : '  <-- STALE'));
+  if (!layer && edge.text.length !== origin.text.length) layer = 'edge';
+  else if (!layer && browser.text.length !== origin.text.length) layer = 'browser';
+  // The header the server actually sends, which is the only way to tell from a
+  // phone whether _headers landed in the directory Pages publishes.
+  if (file === 'src/main.js') {
+    lines.push(`cache-control  ${edge.cc ?? '(none sent)'}`);
+    if (!edge.cc || !/no-cache|no-store|max-age=0/.test(edge.cc)) {
+      // On R2 this header is per-object metadata written at upload time, not a
+      // config file: `_headers` is a Cloudflare PAGES feature and is inert
+      // here, uploaded and ignored like any other object.
+      lines.push('               ^ this file will be cached and can go stale.');
+      lines.push('                 Re-upload with Cache-Control: no-cache');
+      lines.push('                 (node tools/deploy.mjs), or add a Cache Rule.');
+    }
   }
 }
-// A service worker outranks every cache header there is. Nothing in this repo
-// registers one, but one registered earlier on the same origin -- by anything
-// ever hosted at this domain -- keeps serving its own copies, survives closing
-// every tab, and is invisible unless specifically asked about.
-const sw = navigator.serviceWorker;
-if (sw) {
-  const regs = await sw.getRegistrations?.() ?? [];
-  lines.push(`serviceWorker  ${regs.length} registration(s)` +
-    (sw.controller ? ', THIS PAGE IS CONTROLLED BY ONE' : ', not controlling'));
-  if (sw.controller) {
-    verdict.innerHTML = '<span class="bad">A service worker is serving this ' +
-      'page.</span>\nIt overrides Cache-Control entirely and survives closing ' +
-      'every tab.\nTap the red button above, then reload.';
-  }
-}
-if (globalThis.caches?.keys) {
-  lines.push(`cacheStorage   ${(await caches.keys()).length} cache(s)`);
+
+if (layer === 'edge') {
+  verdict.innerHTML = '<span class="bad">Cloudflare\u2019s edge is serving an ' +
+    'old copy.</span>\nThe origin has the current build; the edge does not, and ' +
+    'a cache-busted\nURL skips the edge, which is why other checks looked fine. ' +
+    'Nothing you\ndo in the browser will help.\n\nFix: Caching \u2192 Purge ' +
+    'Everything in the Cloudflare dashboard.';
+} else if (layer === 'browser') {
+  verdict.innerHTML = '<span class="bad">This browser has an old copy.</span>\n' +
+    'The edge is serving the current build, so it is local: open a private tab,\n' +
+    'or clear site data for this origin.';
+} else if (served !== '(no version.json)') {
+  verdict.innerHTML = `<span class="good">Running build ${served}.</span>\n` +
+    'Origin, edge and browser all agree. Anything still wrong is a real bug,\n' +
+    'not a stale file.';
 }
 
 lines.push('');
@@ -183,7 +224,7 @@ document.getElementById('nuke').addEventListener('click', async () => {
   } catch (e) { done.push('cache storage: ' + e.message); }
   // Re-request every module past the HTTP cache so the next load has fresh
   // copies to revalidate against.
-  for (const f of Object.keys(MARKERS)) {
+  for (const f of ['src/main.js', 'src/touch.js', 'version.json']) {
     try { await fetch(`./${f}?bust=${Date.now()}`, { cache: 'reload' }); } catch {}
   }
   verdict.textContent = (done.length ? done.join('\n') : 'nothing to clear') +

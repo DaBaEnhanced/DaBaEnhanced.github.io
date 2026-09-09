@@ -127,16 +127,51 @@ export const PF2_ORIGIN_Y = 0;
 // the guardian alone.
 export const GUARDIAN_SCROLL_DX = 8;      // $70708 cmpi.w #$8,$30(a5)
 
-// Where the ship's sprite lands on screen, and both terms come out of $70df8
-// once PF2_ORIGIN_X is fixed. Seek mode aims an alien at
-// (($26 + $36) >> 1, ($28 + $e) >> 1), doubled back by the mover, so the ship's
-// centre in PF2 space is ($26 + 54, $28 + 26) - x is the alien's box centre and
-// y its box top over a box 24 tall. On screen that is ($26 + 14, $28 + 26), and
-// a 32x44 ship centred there has its top-left at ($26 - 2, $28 + 4).
+// Where the ship's sprite lands on screen. This is the ONE relationship the
+// emulator cannot measure - it places sprites from DIWSTRT and bitplanes from
+// the fetch origin - so it is anchored on how the two classes of object line up
+// against each other in the original instead.
 //
-// MUZZLE_DX is SHIP_SPRITE_DX + PF2_ORIGIN_X, so the muzzles are pinned to the
-// SUM of these two and do not move if both change together.
-export const SHIP_SPRITE_DX = -2, SHIP_SPRITE_DY = 4;
+// The anchor is the outriders: on the Amiga a pod fires from the CENTRE of its
+// own sprite. A pod is the full 16 px width of the ship's back sprite, so its
+// centre is ship_left + 8; the shot is a playfield 2 object whose record x is
+// $26 + $26 ($703d6) and whose 4 px bullet sits at columns 0..3 of a 16 wide
+// cell, so its centre is $26 + 38 - PF2_ORIGIN_X + 2. Equating the two:
+//
+//     SHIP_SPRITE_DX + PF2_ORIGIN_X = 32
+//
+// and PF2_ORIGIN_X is 40, pinned by the guardian resting at 64 and confirmed by
+// the socket measurement, so this is -8.
+//
+// A second, independent fact falls out of the same constant. The cannon's
+// record x is $26 + $3a and its ink is columns 2..12, so its bullet centre is
+// ship_left + 25 - and the ship is 32 wide, so the nose is ship_left + 24. At
+// -8 the cannon fires FROM THE NOSE; at -2 it fired five pixels inside the hull
+// and the pods fired six pixels behind themselves. One constant, two
+// observations, both satisfied.
+//
+// $70df8 was the previous source: seek mode aims an alien at
+// (($26 + $36) >> 1, ($28 + $e) >> 1), which doubled back is $26 + 54 in PF2
+// space, read as the ship's centre and giving -2. That reading is an
+// assumption - the seek target is where the ALIEN's box goes, not necessarily
+// the ship's exact middle - and it loses to two measurements that agree.
+//
+// SHIP_SPRITE_DY is anchored the same way, on the vertical. A pod is 11 lines
+// from topLine 0 and bottomLine 33 ($7023a then $70252's `adda.w #$58,a2`,
+// 88 bytes further into a sprite whose line is 4), so its centre is DY + 5 and
+// DY + 38; the shots are 3 rows tall at $28 + 6 and $28 + 40 ($703e0), so their
+// centres are 7.5 and 41.5. And the cannon, 2 rows at $28 + $18, has its centre
+// at 25 - which should be the middle of a 44 line ship, DY + 22.
+//
+//   DY   top pod    bottom pod   ship centre vs cannon
+//    2   +0.5        +1.5         +1.0
+//    3   -0.5        +0.5          0.0
+//    4   -1.5        -0.5         -1.0
+//
+// 3 puts the cannon exactly on the ship's centre line and both pods within half
+// a pixel, which is as close as integers allow. 4 left the top pod's shot one
+// and a half pixels high.
+export const SHIP_SPRITE_DX = -8, SHIP_SPRITE_DY = 3;
 const TILE = 16;
 
 export async function load(base = 'assets') {
@@ -637,7 +672,15 @@ export class Playfield {
         const sx = x + ix;
         if (sx < 0 || sx >= SCREEN_W) continue;
         const v = o.data[base + iy * o.w + ix];
-        if (v) this.idx[row + sx] = 16 + v * 4;
+        if (v && this.pf2[row + sx]) continue;   // BPLCON2 $44, as drawShip
+        // $7023a writes the pod into a2 = $7a(a5) + $38(a5) + 4, and a capture
+        // of the running game gives $7a = $75064, $38 = 0, SPR0PT = $75064 -
+        // so a2 lands inside SPRITE 0, the EVEN member of the ship's attached
+        // back pair. An attached pair takes bits 0,1 from the even sprite and
+        // 2,3 from the odd one, so the pod's two planes are the LOW bits:
+        // colours 17, 18, 19. `16 + v * 4` put it on the odd half, 20/24/28,
+        // which is the ship's own colours and not the pod's.
+        if (v) this.idx[row + sx] = 16 + v;
       }
     }
   }
@@ -672,7 +715,15 @@ export class Playfield {
           const sx = x + p.dx + ix;
           if (sx < 0 || sx >= SCREEN_W) continue;
           const v = p.data[base + iy * p.w + ix];
-          if (v) this.idx[o + sx] = v;
+          // BPLCON2 = $44 in the gameplay copper, read back out of the running
+          // game: PF2PRI set, PF2P = 0, PF1P = 4. Priority 4 puts a playfield
+          // BEHIND all sprites and 0 puts it in front, so playfield 2 - the
+          // scrolling ground, ceiling and foreground - draws OVER the ship,
+          // while playfield 1 (background and aliens) stays behind it.
+          //
+          // pf2 is still intact here because compose() reads it rather than
+          // consuming it, so the occlusion is just a lookup.
+          if (v && !this.pf2[o + sx]) this.idx[o + sx] = v;
         }
       }
     }

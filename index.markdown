@@ -7,62 +7,239 @@ layout: home
 
 <style>
   .vault-hero {
+    aspect-ratio: 3 / 1;
+    background: #05060a;
     border-radius: 12px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
+    isolation: isolate;
+    min-height: 22rem;
     overflow: hidden;
     position: relative;
   }
 
   .vault-hero-media {
-    aspect-ratio: 21 / 9;
-    background: #05060a;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .vault-hero-media video,
-  .vault-hero-media img {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-  }
-
-  .vault-hero-media::after {
-    background: linear-gradient(180deg, rgba(5, 6, 10, 0) 40%, rgba(5, 6, 10, 0.92) 100%);
-    content: "";
     inset: 0;
     position: absolute;
   }
 
-  .vault-hero-copy {
-    left: 0;
-    padding: 1.5rem clamp(1rem, 4vw, 2.5rem);
+  .vault-hero-media video,
+  .vault-hero-media img {
+    inset: 0;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    text-align: center;
+    width: 100%;
   }
 
-  .vault-eyebrow {
-    color: var(--vault-text-muted, #93a0b4);
-    font-family: "Space Grotesk", sans-serif;
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    letter-spacing: 0.1em;
-    margin: 0 0 0.5rem;
-    text-transform: uppercase;
+  .vault-hero-media video {
+    z-index: 1;
+  }
+
+  .vault-hero::after {
+    background:
+      radial-gradient(ellipse at center, rgba(3, 8, 15, 0.72) 0%, rgba(3, 8, 15, 0.5) 36%, rgba(3, 8, 15, 0.08) 72%),
+      linear-gradient(180deg, rgba(3, 5, 10, 0.12), rgba(3, 5, 10, 0.3));
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .vault-hero-copy {
+    align-items: center;
+    color: #f2d38f;
+    display: flex;
+    flex-direction: column;
+    inset: 0;
+    justify-content: center;
+    padding: clamp(1.25rem, 3vw, 2.5rem);
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 2px 12px #02060c, 0 0 28px rgba(2, 6, 12, 0.9);
+    z-index: 2;
   }
 
   .vault-hero-title {
-    font-size: clamp(1.8rem, 4vw, 2.75rem);
-    margin: 0 0 0.5rem;
+    color: #f0c975;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(2.15rem, 6.2vw, 4.9rem);
+    font-weight: 600;
+    letter-spacing: 0.035em;
+    line-height: 0.95;
+    margin: 0;
+    text-shadow:
+      0 2px 1px rgba(74, 39, 10, 0.9),
+      0 4px 18px #02060c,
+      0 0 34px rgba(2, 6, 12, 0.95);
+  }
+
+  .vault-hero-categories {
+    color: #f6dfa5;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(0.82rem, 2vw, 1.25rem);
+    font-weight: 600;
+    gap: 0.4em 0.72em;
+    justify-content: center;
+    letter-spacing: 0.24em;
+    line-height: 1.35;
+    margin: clamp(0.55rem, 1.2vw, 0.9rem) 0 0;
+  }
+
+  .vault-hero-categories span {
+    white-space: nowrap;
+  }
+
+  .vault-hero-categories .vault-category-dot {
+    color: #ddb768;
+    letter-spacing: 0;
+  }
+
+  .vault-hero-divider {
+    align-items: center;
+    display: flex;
+    gap: 0.85rem;
+    margin: clamp(0.55rem, 1.5vw, 1rem) 0;
+    width: min(29rem, 66%);
+  }
+
+  .vault-hero-divider::before,
+  .vault-hero-divider::after {
+    background: linear-gradient(90deg, transparent, #e5c475);
+    content: "";
+    flex: 1;
+    height: 1px;
+  }
+
+  .vault-hero-divider::after {
+    background: linear-gradient(90deg, #e5c475, transparent);
+  }
+
+  .vault-hero-divider svg {
+    fill: none;
+    flex: 0 0 auto;
+    height: 1.45rem;
+    stroke: #f0ce7e;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+    transform: rotate(-12deg);
+    width: 2rem;
   }
 
   .vault-hero-tagline {
-    color: var(--vault-text-muted, #93a0b4);
-    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-    margin: 0 auto;
-    max-width: 42rem;
+    color: #f1d99e;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.15rem, 2.35vw, 1.65rem);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .vault-kofi,
+  .vault-kofi:visited {
+    align-items: center;
+    background: rgba(4, 10, 18, 0.82);
+    border: 1px solid #d2a956;
+    box-shadow:
+      inset 0 0 0 3px rgba(4, 10, 18, 0.92),
+      inset 0 0 0 4px rgba(210, 169, 86, 0.42),
+      0 4px 18px rgba(0, 0, 0, 0.35);
+    color: #f4d898;
+    display: inline-flex;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1rem, 1.9vw, 1.3rem);
+    gap: 0.65rem;
+    justify-content: center;
+    line-height: 1.2;
+    margin-top: clamp(0.75rem, 1.6vw, 1.1rem);
+    min-height: 3.15rem;
+    padding: 0.75rem clamp(1rem, 2.5vw, 1.65rem);
+    text-decoration: none;
+    transition: background 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .vault-kofi:hover,
+  .vault-kofi:focus-visible {
+    background: rgba(18, 28, 39, 0.96);
+    box-shadow:
+      inset 0 0 0 3px rgba(4, 10, 18, 0.92),
+      inset 0 0 0 4px rgba(245, 211, 139, 0.75),
+      0 7px 24px rgba(0, 0, 0, 0.48);
+    color: #fff2c8;
+    transform: translateY(-2px);
+  }
+
+  .vault-kofi:focus-visible {
+    outline: 2px solid #fff2c8;
+    outline-offset: 3px;
+  }
+
+  .vault-kofi-icon {
+    align-items: center;
+    background: #fff;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: 1.55rem;
+    justify-content: center;
+    text-shadow: none;
+    width: 2rem;
+  }
+
+  .vault-kofi-icon svg {
+    height: 1.15rem;
+    width: 1.4rem;
+  }
+
+  @media (max-width: 520px) {
+    .vault-hero {
+      min-height: 24rem;
+    }
+
+    .vault-hero-media video,
+    .vault-hero-media img {
+      object-position: center center;
+    }
+
+    .vault-hero-copy {
+      padding: 1.25rem 0.85rem;
+    }
+
+    .vault-hero-title {
+      font-size: clamp(2rem, 11vw, 3rem);
+      letter-spacing: 0.015em;
+    }
+
+    .vault-hero-categories {
+      font-size: 0.76rem;
+      gap: 0.25rem 0.48rem;
+      letter-spacing: 0.13em;
+    }
+
+    .vault-hero-divider {
+      width: 82%;
+    }
+
+    .vault-hero-tagline {
+      max-width: 18rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vault-hero-media video {
+      display: none;
+    }
+
+    .vault-kofi {
+      transition: none;
+    }
   }
 
   .vault-grid {
@@ -143,9 +320,10 @@ layout: home
 
   .vault-card-title {
     color: var(--vault-heading, #f5f7fb);
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Cinzel", Georgia, serif;
     font-size: 1.15rem;
     font-weight: 600;
+    letter-spacing: 0.025em;
     margin: 0.6rem 0 0.35rem;
   }
 
@@ -157,24 +335,39 @@ layout: home
   }
 </style>
 
-<div class="vault-hero">
+<section class="vault-hero" aria-labelledby="vault-hero-title">
   <div class="vault-hero-media">
-    <video src="{{ site.cdn_url }}/videos/banner.mp4"
-      poster="{{ site.cdn_url }}/images/banner.jpg"
+    <img src="{{ site.cdn_url }}/images/new_banner.jpg" alt="" aria-hidden="true" />
+    <video
+      poster="{{ site.cdn_url }}/images/new_banner.jpg"
       autoplay
       loop
       muted
-      playsinline>
-      <img src="{{ site.cdn_url }}/images/banner.jpg" alt="Banner image" />
-      Your browser does not support the video tag.
+      playsinline
+      preload="metadata"
+      aria-hidden="true">
+      <source src="{{ site.cdn_url }}/videos/new_banner.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="vault-hero-copy">
-    <p class="vault-eyebrow">D. B. Waldtier</p>
-    <h1 class="vault-hero-title">Welcome to the Vault</h1>
-    <p class="vault-hero-tagline">A.K.A. Clumsy.GiBa on socials. Novels, poems, and old Amiga games rebuilt from scratch, alongside a healthy amount of AI-assisted experiments.</p>
+    <h1 class="vault-hero-title" id="vault-hero-title">D.B. WALDTIER</h1>
+    <p class="vault-hero-categories">
+      <span>GAME PORTS</span><span class="vault-category-dot" aria-hidden="true">&bull;</span>
+      <span>BOOKS</span><span class="vault-category-dot" aria-hidden="true">&bull;</span>
+      <span>WORLDS</span>
+    </p>
+    <div class="vault-hero-divider" aria-hidden="true">
+      <svg viewBox="0 0 32 22"><ellipse cx="16" cy="11" rx="7" ry="7"/><path d="M2 15c4.5 2.4 12.7 1.6 19.4-1.8S31 6.8 30 5.2c-1.1-1.8-6.1-.6-11.4 2"/></svg>
+    </div>
+    <p class="vault-hero-tagline">Retro games rebuilt. Strange worlds imagined.</p>
+    <a class="vault-kofi" href="https://ko-fi.com/dbwaldtier" target="_blank" rel="noopener">
+      <span class="vault-kofi-icon" aria-hidden="true">
+        <svg viewBox="0 0 28 22"><path fill="#ff5e5b" d="M13.9 19.2C8.4 15.8 5.1 12.8 5.1 8.6c0-2.6 1.9-4.5 4.3-4.5 1.8 0 3.3 1 4.5 2.5 1.2-1.5 2.7-2.5 4.5-2.5 2.4 0 4.3 1.9 4.3 4.5 0 4.2-3.3 7.2-8.8 10.6z"/><path fill="none" stroke="#1d2935" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 2.2h20v8.7c0 5.1-3.6 8.3-8.5 8.3h-3c-4.9 0-8.5-3.2-8.5-8.3zM22.5 5h1.2a3.8 3.8 0 0 1 0 7.6h-1.9"/></svg>
+      </span>
+      <span>Support my work on Ko-fi</span>
+    </a>
   </div>
-</div>
+</section>
 
 <div class="vault-grid">
   <a class="vault-card" style="--accent: #e3b341;" href="/books">

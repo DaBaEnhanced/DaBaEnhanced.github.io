@@ -19,7 +19,7 @@
 // the pods shoot where they point, from straight ahead round to straight back.
 //
 // Every loop sits in the ODD branch of vloop, so all of this runs at 25 Hz.
-import { SHIP_SPRITE_DX, SHIP_SPRITE_DY, PF2_ORIGIN_X, PF2_ORIGIN_Y } from './engine.js?v=224303';
+import { SHIP_SPRITE_DX, SHIP_SPRITE_DY, PF2_ORIGIN_X, PF2_ORIGIN_Y } from './engine.js?v=090432';
 
 export const SLOTS = 4;
 
@@ -55,7 +55,7 @@ export const fireSfx = (cannons, lasers) =>
 // back sprite - at y+0 and y+33.
 //
 // This replaces MUZZLE_BIAS, a -26 fudge fitted by eye to a picture.
-export const MUZZLE_DX = SHIP_SPRITE_DX + PF2_ORIGIN_X;   // 8 + 30 = 38
+export const MUZZLE_DX = SHIP_SPRITE_DX + PF2_ORIGIN_X;   // -8 + 40 = 32
 export const MUZZLE_DY = SHIP_SPRITE_DY + PF2_ORIGIN_Y;   // 4 + 0  = 4
 
 export const X_LIMIT = 0x168;   // $710fe / $7116c / $711d4 / $7123e

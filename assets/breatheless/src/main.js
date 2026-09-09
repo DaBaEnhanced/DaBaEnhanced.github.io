@@ -21,6 +21,86 @@ import { codeFor, decodeCode } from './levelcode.js';
 import { drawText } from './textdraw.js';
 import { Config, expandView, VIEW_AREA_H } from './config.js';
 import { fetchBytes } from './fetch.js';
+import { staleAction } from './build.js';
+
+// ---- am I the build that is deployed? -------------------------------------
+//
+// Rewritten by `node tools/stamp.mjs`, which also writes the same id into
+// web/version.json. If the two disagree, the browser is running a cached copy
+// of this file while the server has a newer one -- and there is no way to tell
+// that from inside the game, because old code and broken code behave
+// identically. Three rounds of debugging went into the input system once for
+// exactly this reason.
+//
+// Everything here is best-effort and silent on failure: a missing version.json
+// (a local checkout, a harness) must never stop the game loading.
+const BUILD = '202609071405-4da4fa86';
+checkBuild();
+
+async function checkBuild() {
+  // TWO fetches of the same file, because a query string changes a CDN's cache
+  // key: the busted URL reaches the origin, the plain one is answered by the
+  // edge. Comparing them is the only way from in here to tell "this browser is
+  // behind" from "everyone is behind", and those have nothing in common as
+  // fixes.
+  let served, atEdge;
+  try {
+    const r = await fetch(`version.json?cb=${Date.now()}`, { cache: 'no-store' });
+    if (!r.ok) return;
+    served = (await r.json()).build;
+  } catch { return; }                      // not deployed, or offline
+  try {
+    atEdge = (await (await fetch('version.json', { cache: 'no-store' })).json())
+      .build;
+  } catch { atEdge = served; }             // unknown; assume it is not the edge
+  const edgeStale = !!atEdge && atEdge !== served;
+  let tries = 0;
+  try { tries = Number(sessionStorage.getItem('breathless.stale') || 0); } catch {}
+  // The decision is `staleAction`, so it can be asserted rather than reasoned
+  // about; everything here is the doing, not the deciding.
+  const act = staleAction(BUILD, served, tries, edgeStale);
+  if (act === 'ok') return;
+
+  // One automatic recovery, at startup, before play begins -- clearing caches
+  // mid-game would be worse than the staleness.
+  if (act === 'reload') {
+    try { sessionStorage.setItem('breathless.stale', String(tries + 1)); } catch {}
+    try {
+      for (const reg of await navigator.serviceWorker?.getRegistrations?.() ?? []) {
+        await reg.unregister();
+      }
+      for (const k of await globalThis.caches?.keys?.() ?? []) await caches.delete(k);
+    } catch { /* nothing to clear */ }
+    location.reload();
+    return;
+  }
+
+  // Reloading did not help, so the cache is not under our control -- a proxy, a
+  // service worker from another app on this origin, a browser ignoring the
+  // headers. Say so plainly rather than letting it look like a game bug.
+  try {
+    const bar = document.createElement('div');
+    // Say which layer, because the fixes do not overlap.
+    bar.textContent = edgeStale
+      ? `Running build ${BUILD}; the origin has ${served} but the CDN is still ` +
+        `serving ${atEdge}. Purge the CDN cache -- clearing this browser will ` +
+        'not help.'
+      : `Running an old build (${BUILD}); the server has ${served}. ` +
+        'Tap to clear site data and reload.';
+    bar.style.cssText = 'position:fixed;left:0;right:0;top:0;z-index:2147483647;' +
+      'background:#5a1e18;color:#ffd9d2;font:12px/1.4 ui-monospace,monospace;' +
+      'padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top,0px));' +
+      'text-align:center;cursor:pointer;';
+    bar.addEventListener('click', async () => {
+      try { sessionStorage.removeItem('breathless.stale'); } catch {}
+      try {
+        for (const k of await globalThis.caches?.keys?.() ?? []) await caches.delete(k);
+      } catch {}
+      location.reload();
+    });
+    document.body.append(bar);
+  } catch { /* no DOM to complain into */ }
+}
 
 const canvas = document.getElementById('screen');
 const hud = document.getElementById('hud');
@@ -416,8 +496,18 @@ const shell = new Shell({
 });
 
 const touch = new Touch(canvas, input, {
-  onFire: () => { fireQueue += 1; },
-  onUse: () => { if (fx && cam) fx.pressSwitch(cam); },
+  // Outside play a tap is the "press a key" that walks the logos and the title
+  // into the game. The canvas handlers below ignore touch entirely -- Touch
+  // owns it -- so without this there was no way to START the game on a phone,
+  // which is a worse bug than any of the ones being fixed around it.
+  onFire: () => {
+    if (state !== STATE.PLAYING) { advance(); return; }
+    fireQueue += 1;
+  },
+  onUse: () => {
+    if (state !== STATE.PLAYING) { advance(); return; }
+    if (fx && cam) fx.pressSwitch(cam);
+  },
 // The letterboxed container, not the canvas: the black bands beside the picture
 // are where a thumb naturally rests, and reading input from the canvas alone
 // made them the one part of the screen that did nothing.
@@ -851,7 +941,9 @@ function step(ticks) {
   }
   drawPanel();
 
-  touch.draw(ui, SCREEN_W, VIEW_AREA_H);
+  // SCREEN_H, not VIEW_AREA_H, is the canvas's height in buffer rows: the
+  // markers are positioned against the whole canvas and clipped to the view.
+  touch.draw(ui, SCREEN_W, VIEW_AREA_H, SCREEN_H);
 
   // Play mode writes no diagnostics anywhere. frame() does the presenting, so
   // there is nothing else in this function to skip.

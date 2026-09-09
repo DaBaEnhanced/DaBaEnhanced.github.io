@@ -80,6 +80,36 @@
   body.fs .console, html.clean .console {
     width:min(100%, calc((100dvh - 36px) * 320 / 224));
   }
+  /* ...and in the side-by-side landscape pad the bar is shorter too, so the
+     picture may be correspondingly taller. */
+  @media (hover:none) and (pointer:coarse) and (orientation:landscape) {
+    body.fs .console, html.clean .console { width:100%; }
+    body.fs .frame, html.clean .frame {
+      width:min(100%, calc((100dvh - 36px) * 320 / 224));
+    }
+  }
+  /* Landscape on a touch device: the controls come OFF the picture and sit
+     either side of it, which is both a handheld's layout and the only one where
+     a thumb is not covering the playfield. `display:contents` on .touch lets the
+     stick and the button become grid items of .console directly, so no wrapper
+     has to be positioned. The frame keeps its 320:224 and is bounded by the
+     shorter of the two axes, so widening the pads never crops the game. */
+  @media (hover:none) and (pointer:coarse) and (orientation:landscape) {
+    .screen { place-items:center stretch; }
+    .console { width:100%; height:100%; display:grid; align-items:center;
+               grid-template-columns:minmax(84px, 20vw) 1fr minmax(84px, 20vw);
+               gap:clamp(4px, 1.5vw, 18px); padding:0 max(6px, env(safe-area-inset-left)); }
+    /* Bounded by the shorter axis: the column's width, or what the viewport
+       height allows at 320:224 once the bar is taken off. */
+    .frame { grid-column:2; grid-row:1; justify-self:center; aspect-ratio:320/224;
+             width:min(100%, calc((100dvh - 48px) * 320 / 224)); }
+    .touch { display:contents; }
+    .stick, .fire { position:relative; inset:auto; grid-row:1; justify-self:center;
+                    width:min(100%, clamp(84px, 17vh, 132px)); bottom:auto; right:auto;
+                    left:auto; transform:none; }
+    .stick { grid-column:1; }
+    .fire  { grid-column:3; }
+  }
   /* Portrait: the pad moves out from under the picture and sits below it. */
   @media (hover:none) and (pointer:coarse) and (orientation:portrait) {
     .screen { place-items:stretch center; }
@@ -146,27 +176,27 @@
 // is visible at a glance instead of looking like a failed fix.
 // Input handling here stands in for $715d2 check.keys, which reads the Amiga
 // keyboard; the browser delivers keys directly.
-const BUILD_ID = '224303';
+const BUILD_ID = '090432';
 import { load, Playfield, SCREEN_W, SCREEN_H, PLAYFIELD_H, SHIP_SPRITE_DX, SHIP_SPRITE_DY,
          PF2_ORIGIN_X, PF2_ORIGIN_Y, ALIEN_ORIGIN_X,
-         GUARDIAN_SCROLL_DX } from './engine/engine.js?v=224303';
-import { PathVM, tickSpawnDelay } from './engine/paths.js?v=224303';
-import { Ship } from './engine/ship.js?v=224303';
-import { Weapons, Trigger, MUZZLE_DX, MUZZLE_DY, fireSfx } from './engine/missiles.js?v=224303';
-import { Bonus } from './engine/bonus.js?v=224303';
-import { Powerups, TYPES } from './engine/powerups.js?v=224303';
-import { Damage, START_ENERGY, FULL_SHIELD } from './engine/damage.js?v=224303';
-import { LevelState, LevelPhase, S_PLAYING, S_GUARDIAN } from './engine/level.js?v=224303';
-import { Audio, musicForMode } from './engine/paula.js?v=224303';
+         GUARDIAN_SCROLL_DX } from './engine/engine.js?v=090432';
+import { PathVM, tickSpawnDelay } from './engine/paths.js?v=090432';
+import { Ship } from './engine/ship.js?v=090432';
+import { Weapons, Trigger, MUZZLE_DX, MUZZLE_DY, fireSfx } from './engine/missiles.js?v=090432';
+import { Bonus } from './engine/bonus.js?v=090432';
+import { Powerups, TYPES } from './engine/powerups.js?v=090432';
+import { Damage, START_ENERGY, FULL_SHIELD } from './engine/damage.js?v=090432';
+import { LevelState, LevelPhase, S_PLAYING, S_GUARDIAN } from './engine/level.js?v=090432';
+import { Audio, musicForMode } from './engine/paula.js?v=090432';
 import { Screens, BLOCK, drawBlock, drawTally, loadScores, saveScores,
          insertScore, defaultScores, drawScores }
-  from './engine/screens.js?v=224303';
-import { Score } from './engine/score.js?v=224303';
-import { Fade } from './engine/fade.js?v=224303';
-import { LevelEffect, Alarm, ALARM_SFX } from './engine/effects.js?v=224303';
-import { NameEntry, COLS, ROWS } from './engine/nameentry.js?v=224303';
-import { FrameClock } from './engine/timing.js?v=224303';
-import { captureCarry, applyCarry } from './engine/carry.js?v=224303';
+  from './engine/screens.js?v=090432';
+import { Score } from './engine/score.js?v=090432';
+import { Fade } from './engine/fade.js?v=090432';
+import { LevelEffect, Alarm, ALARM_SFX } from './engine/effects.js?v=090432';
+import { NameEntry, COLS, ROWS } from './engine/nameentry.js?v=090432';
+import { FrameClock } from './engine/timing.js?v=090432';
+import { captureCarry, applyCarry } from './engine/carry.js?v=090432';
 
 const c = document.getElementById('c'), ctx = c.getContext('2d');
 const img = ctx.createImageData(SCREEN_W, SCREEN_H);

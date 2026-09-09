@@ -50,7 +50,7 @@ const TAP_PX = 12;          // further than this and it is a drag, not a tap
 // should keep turning while it is held, like the analogue stick it is drawn to
 // look like, so deflection maps to angular VELOCITY and the finger can sit
 // still at the edge and spin.
-const LOOK_RATE = 820;      // mouse units per second at full deflection
+const LOOK_RATE = 620;      // mouse units per second at full deflection
 // Weak exponential: a cubic blended with the linear response. Fine aim lives in
 // the middle of the stick where the curve is shallow, and the fast turn lives
 // at the rim. Pure cubic is too dead in the centre to track a moving target.
@@ -123,12 +123,22 @@ export class Touch {
   buildPads() {
     const doc = globalThis.document;
     if (!doc?.createElement || !this.surface.append) return null;
+    // Only into a real container. A <canvas> accepts appended children and
+    // renders exactly none of them, so building markers there produced no
+    // sticks at all AND suppressed the framebuffer fallback that would have
+    // drawn them -- worse than either path alone.
+    if (this.surface === this.canvas) return null;
     const mk = (r, colour) => {
       const el = doc.createElement('div');
-      el.style.cssText = 'position:absolute;pointer-events:none;border-radius:50%;' +
-        `width:${r * 2}px;height:${r * 2}px;margin:${-r}px 0 0 ${-r}px;` +
-        `border:2px solid ${colour};transition:opacity .18s;opacity:.22;` +
-        'box-sizing:border-box;z-index:5;';
+      // `left:0;top:0` is not decoration. Without an offset an absolutely
+      // positioned element falls back to its STATIC position, and the surface
+      // is a grid with place-items:center -- so the markers started from the
+      // centred cell and every translate() carried them off the screen. They
+      // were being drawn correctly, somewhere nobody could see.
+      el.style.cssText = 'position:absolute;left:0;top:0;pointer-events:none;' +
+        `border-radius:50%;width:${r * 2}px;height:${r * 2}px;` +
+        `margin:${-r}px 0 0 ${-r}px;border:2px solid ${colour};` +
+        'transition:opacity .18s;opacity:.25;box-sizing:border-box;z-index:5;';
       this.surface.append(el);
       return el;
     };
@@ -142,21 +152,37 @@ export class Touch {
     };
   }
 
-  /** Where each stick rests when nothing is touching it. */
+  /**
+   * Where the two markers sit. Fixed, not floating: down the sides in
+   * landscape and along the bottom in portrait, wherever the letterbox band
+   * happens to be. A control that moves to wherever you last touched is
+   * impossible to find without looking at it, which on a phone means looking
+   * away from the game.
+   *
+   * The INPUT stays floating -- a thumb anywhere in a half drives that stick --
+   * so the marker is an indicator of state rather than a target to hit.
+   */
   homes() {
     const s = this.surface.getBoundingClientRect();
     const c = this.canvas.getBoundingClientRect();
-    // Prefer the centre of the letterbox band, which is the whole point of
-    // this: a thumb there covers nothing worth seeing. When there is no band to
-    // speak of -- a display that happens to match the aspect ratio -- fall back
-    // to insetting from the edges so the markers stay reachable.
-    const leftBand = c.left - s.left, rightBand = s.right - c.right;
     const pad = RANGE + 14;
-    const y = Math.min(s.height - pad, Math.max(pad, s.height * 0.72));
-    return {
-      move: { x: leftBand > pad ? leftBand / 2 : pad, y },
-      look: { x: rightBand > pad ? s.width - rightBand / 2 : s.width - pad, y },
-    };
+    const sideL = c.left - s.left, sideR = s.right - c.right;
+    const below = s.bottom - c.bottom;
+
+    // Landscape: bands down the sides, which is where a thumb already rests.
+    if (sideL > pad && sideR > pad) {
+      const y = Math.min(s.height - pad, Math.max(pad, s.height * 0.72));
+      return { move: { x: sideL / 2, y }, look: { x: s.width - sideR / 2, y } };
+    }
+    // Portrait: the band is under the picture instead.
+    if (below > pad) {
+      const y = Math.min(s.height - pad, s.bottom - s.top - below / 2);
+      return { move: { x: s.width * 0.22, y }, look: { x: s.width * 0.78, y } };
+    }
+    // No band worth the name: inset from the corners so both stay reachable
+    // and neither hangs off the edge.
+    const y = Math.min(s.height - pad, Math.max(pad, s.height * 0.78));
+    return { move: { x: pad, y }, look: { x: s.width - pad, y } };
   }
 
   down(e) {
@@ -219,7 +245,12 @@ export class Touch {
     const held = performance.now() - s.t0;
     if (s.moved < TAP_PX && held < TAP_MS) {
       // A tap, not a drag. Right side shoots, left side opens things.
-      if (s.side === 'look') this.hooks.onFire?.();
+      // Fire is on the MOVEMENT thumb and use is on the look thumb. That is
+      // the opposite of the obvious arrangement and it is the right way round
+      // in practice: shooting happens while the aiming thumb is busy holding an
+      // aim, and a tap there drags the view off target at the moment it matters
+      // most. The walking thumb is idle at the instant you shoot.
+      if (s.side === 'move') this.hooks.onFire?.();
       else this.hooks.onUse?.();
     }
     if (s.side === 'move') this.dir = { x: 0, y: 0 };
@@ -258,14 +289,18 @@ export class Touch {
    * there are no pixels out there to write -- so it survives only for the case
    * where no DOM surface was available.
    */
-  draw(fb, W, H) {
+  draw(fb, W, H, mapH = H) {
     if (!this.enabled) return;
     if (this.pads) { this.updatePads(); return; }
 
     const r = this.canvas.getBoundingClientRect();
     if (!r.width || !r.height) return;
+    // `mapH` is the canvas's height in framebuffer rows, which is NOT `H` --
+    // the buffer being drawn into is the 200-row view area while the canvas
+    // shows all 240 rows including the panel. Mapping against `H` squeezed
+    // every marker about 17% up the screen, away from the finger holding it.
     const toX = (cx) => Math.round(((cx - r.left) / r.width) * W);
-    const toY = (cy) => Math.round(((cy - r.top) / r.height) * H);
+    const toY = (cy) => Math.round(((cy - r.top) / r.height) * mapH);
     for (const s of this.sticks.values()) {
       const ox = toX(s.x0), oy = toY(s.y0);
       ring(fb, W, H, ox, oy, Math.round((RANGE / r.width) * W), 21);
@@ -283,9 +318,11 @@ export class Touch {
 
     for (const side of ['move', 'look']) {
       const pad = this.pads[side], st = live[side];
-      const at = st ? { x: st.x0 - s.left, y: st.y0 - s.top } : home[side];
+      // The ring never moves -- see `homes`. Only the knob and the brightness
+      // respond, so the control stays where the thumb learned it was.
+      const at = home[side];
       pad.ring.style.transform = `translate(${at.x}px,${at.y}px)`;
-      pad.ring.style.opacity = st ? '.75' : '.22';
+      pad.ring.style.opacity = st ? '.8' : '.25';
       // The knob shows the deflection, clamped to the ring so it never escapes
       // the control it belongs to however far the thumb travels.
       let kx = at.x, ky = at.y;
