@@ -1,0 +1,130 @@
+[
+  {
+    "id": "A",
+    "file": "level_a.json",
+    "zones": 138,
+    "edges": 597,
+    "points": 304,
+    "endZone": 132
+  },
+  {
+    "id": "B",
+    "file": "level_b.json",
+    "zones": 154,
+    "edges": 707,
+    "points": 340,
+    "endZone": 149
+  },
+  {
+    "id": "C",
+    "file": "level_c.json",
+    "zones": 160,
+    "edges": 736,
+    "points": 346,
+    "endZone": 155
+  },
+  {
+    "id": "D",
+    "file": "level_d.json",
+    "zones": 238,
+    "edges": 1085,
+    "points": 542,
+    "endZone": 107
+  },
+  {
+    "id": "E",
+    "file": "level_e.json",
+    "zones": 152,
+    "edges": 703,
+    "points": 372,
+    "endZone": 67
+  },
+  {
+    "id": "F",
+    "file": "level_f.json",
+    "zones": 141,
+    "edges": 619,
+    "points": 306,
+    "endZone": 132
+  },
+  {
+    "id": "G",
+    "file": "level_g.json",
+    "zones": 208,
+    "edges": 939,
+    "points": 489,
+    "endZone": 203
+  },
+  {
+    "id": "H",
+    "file": "level_h.json",
+    "zones": 171,
+    "edges": 772,
+    "points": 379,
+    "endZone": 166
+  },
+  {
+    "id": "I",
+    "file": "level_i.json",
+    "zones": 135,
+    "edges": 582,
+    "points": 273,
+    "endZone": 118
+  },
+  {
+    "id": "J",
+    "file": "level_j.json",
+    "zones": 123,
+    "edges": 569,
+    "points": 324,
+    "endZone": 102
+  },
+  {
+    "id": "K",
+    "file": "level_k.json",
+    "zones": 107,
+    "edges": 501,
+    "points": 298,
+    "endZone": 103
+  },
+  {
+    "id": "L",
+    "file": "level_l.json",
+    "zones": 93,
+    "edges": 402,
+    "points": 209,
+    "endZone": 2
+  },
+  {
+    "id": "M",
+    "file": "level_m.json",
+    "zones": 137,
+    "edges": 602,
+    "points": 295,
+    "endZone": 98
+  },
+  {
+    "id": "N",
+    "file": "level_n.json",
+    "zones": 252,
+    "edges": 1120,
+    "points": 585,
+    "endZone": 0
+  },
+  {
+    "id": "O",
+    "file": "level_o.json",
+    "zones": 183,
+    "edges": 814,
+    "points": 403,
+    "endZone": 148
+  },
+  {
+    "id": "P",
+    "file": "level_p.json",
+    "zones": 104,
+    "edges": 442,
+    "points": 227,
+    "endZone": 103
+  }
+]

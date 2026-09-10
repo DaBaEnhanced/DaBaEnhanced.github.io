@@ -1,0 +1,327 @@
+:root {
+  color-scheme: dark;
+  --ink: #e9e6dc;
+  --muted: #9ba5a0;
+  --panel: #101719;
+  --panel-2: #151f21;
+  --line: #304144;
+  --acid: #d8e230;
+  --portal: #3bdad5;
+  --danger: #e64739;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 76% -20%, #27413d 0, transparent 38rem),
+    #080c0d;
+  color: var(--ink);
+  font: 14px/1.5 Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+button, select, input { font: inherit; }
+
+.masthead {
+  min-height: 154px;
+  display: grid;
+  grid-template-columns: 174px minmax(240px, 1fr) auto;
+  align-items: center;
+  gap: clamp(18px, 4vw, 56px);
+  padding: 0 clamp(18px, 4vw, 58px);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(8, 12, 13, .96), rgba(16, 23, 25, .8));
+}
+
+.masthead img {
+  width: 174px;
+  height: 139px;
+  object-fit: cover;
+  object-position: top;
+  image-rendering: pixelated;
+  filter: saturate(.9) contrast(1.08);
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--acid);
+  font: 700 11px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+h1 { margin: 0; font-size: clamp(25px, 3vw, 42px); line-height: 1.05; letter-spacing: -.03em; }
+.lede { max-width: 670px; margin: 9px 0 0; color: var(--muted); }
+
+.recovery { min-width: 130px; text-align: right; }
+.recovery strong { display: block; color: var(--acid); font: 700 42px/1 ui-monospace, monospace; }
+.recovery span { color: var(--muted); font-size: 12px; }
+
+.workspace {
+  height: calc(100dvh - 154px);
+  min-height: 440px;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+}
+
+.controls {
+  overflow: auto;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+  background: rgba(16, 23, 25, .94);
+}
+
+.controls > label, legend {
+  color: var(--muted);
+  font: 700 11px/1.2 ui-monospace, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+select, button {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 7px;
+  border: 1px solid #405256;
+  border-radius: 3px;
+  background: #182326;
+  color: var(--ink);
+}
+
+.view-label { display: block; margin-top: 16px; }
+.view-switch { display: grid; grid-template-columns: 1fr 1.35fr; gap: 5px; }
+.view-switch button { padding: 0 5px; font-size: 11px; }
+.view-switch button.active { border-color: var(--acid); background: #283032; color: var(--acid); }
+
+button { cursor: pointer; font-weight: 700; }
+button:hover { border-color: var(--acid); color: var(--acid); }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--acid); outline-offset: 2px; }
+.browser-cheats { margin-top: 18px; padding-top: 14px; border-top: 1px solid #2a393c; }
+.browser-cheats .eyebrow { color: var(--muted); }
+.cheat-toggle[aria-pressed="true"] {
+  border-color: var(--acid);
+  background: #30351b;
+  color: var(--acid);
+}
+.play-link {
+  display: grid;
+  min-height: 40px;
+  margin-top: 7px;
+  place-items: center;
+  border: 1px solid var(--acid);
+  border-radius: 3px;
+  color: var(--acid);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin: 18px 0; }
+.stats div { padding: 10px 4px; text-align: center; background: var(--panel-2); border: 1px solid #253437; }
+.stats span { display: block; color: var(--muted); font-size: 10px; text-transform: uppercase; }
+.stats strong { font: 700 17px/1.4 ui-monospace, monospace; }
+
+fieldset { display: grid; gap: 7px; margin: 0 0 14px; padding: 12px; border: 1px solid #2a393c; }
+.check { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+.check input { accent-color: var(--acid); }
+
+.legend { margin: 20px 0; color: var(--muted); font-size: 12px; }
+.legend p { margin: 5px 0; }
+.legend i { display: inline-block; width: 22px; margin-right: 7px; border-top: 2px solid; vertical-align: middle; }
+.legend .solid { border-color: var(--ink); }
+.legend .portal { border-color: var(--portal); }
+.legend .selected { border-color: var(--acid); border-width: 3px; }
+
+.selection { padding-top: 15px; border-top: 1px solid #2a393c; }
+.selection h2 { margin: 0 0 10px; font-size: 16px; }
+.selection dl { display: grid; grid-template-columns: 1fr auto; gap: 5px 10px; margin: 0; font: 12px/1.3 ui-monospace, monospace; }
+.selection dt { color: var(--muted); }
+.selection dd { margin: 0; color: var(--ink); text-align: right; }
+body.view-3d .controls fieldset,
+body.view-3d .controls .legend,
+body.view-3d .controls .selection { display: none; }
+
+.map-shell { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+canvas { display: block; width: 100%; height: 100%; cursor: crosshair; image-rendering: pixelated; }
+/* Explicit browser presentation option: this is not attributed to the retail renderer. */
+body.crt-filter.view-3d canvas {
+  filter: brightness(.93) contrast(1.1) saturate(.92);
+}
+body.crt-filter.view-3d .map-shell::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 2px,
+      rgba(0, 0, 0, .22) 2px, rgba(0, 0, 0, .22) 4px),
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .42) 100%);
+}
+canvas.dragging { cursor: grabbing; }
+.map-help { position: absolute; right: 14px; bottom: 12px; padding: 5px 8px; color: #94a4a2; background: rgba(8, 12, 13, .78); font: 11px/1.3 ui-monospace, monospace; pointer-events: none; }
+body.view-3d .map-help { display: none; }
+body.presentation .map-help { display: none; }
+#error { position: absolute; z-index: 3; left: 18px; bottom: 18px; max-width: min(600px, 80%); color: #ff8c82; white-space: pre-wrap; }
+.touch-controls { display: none; }
+
+/* play.html is a browser delivery shell. The game framebuffer and all game
+   rules remain the same source-derived renderer/simulation used by index.html. */
+[hidden] { display: none !important; }
+body.play-mode {
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  background: #000;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.play-layout {
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+.play-toolbar {
+  z-index: 10;
+  min-height: 46px;
+  padding: calc(5px + env(safe-area-inset-top, 0px))
+    calc(8px + env(safe-area-inset-right, 0px)) 5px
+    calc(8px + env(safe-area-inset-left, 0px));
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  background: #101719;
+  border-bottom: 1px solid var(--line);
+}
+.play-brand {
+  margin-right: auto;
+  color: var(--acid);
+  font: 700 12px/1 ui-monospace, monospace;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+.play-toolbar button {
+  width: auto;
+  min-width: 54px;
+  min-height: 34px;
+  margin: 0;
+  padding: 4px 9px;
+  white-space: nowrap;
+}
+.play-screen {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+  touch-action: none;
+}
+.play-mode canvas {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: none;
+}
+.play-mode canvas:fullscreen, .play-mode canvas.pointer-locked { cursor: none; }
+body.play-mode.view-3d .map-help { display: block; }
+.touch-stick-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-radius: 50%;
+  opacity: .25;
+  pointer-events: none;
+  transition: opacity .18s;
+}
+#play-start {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #000;
+  color: var(--muted);
+  text-align: center;
+  cursor: pointer;
+}
+#play-start h1 {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: clamp(22px, 5vw, 42px);
+  letter-spacing: .12em;
+}
+#play-start p { margin: 6px 0; }
+#play-start .play-go {
+  margin-top: 22px;
+  color: var(--acid);
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+:fullscreen body, :fullscreen main, :fullscreen .workspace { height: 100%; }
+:fullscreen .masthead { display: none; }
+:fullscreen .workspace { min-height: 100%; }
+:fullscreen .play-layout { height: 100%; }
+
+@media (max-width: 720px) {
+  .masthead { min-height: 104px; grid-template-columns: 98px 1fr; padding: 0 14px; }
+  .masthead img { width: 98px; height: 92px; }
+  .masthead .lede, .recovery { display: none; }
+  .workspace { height: calc(100dvh - 104px); grid-template-columns: 154px minmax(0, 1fr); }
+  .controls { padding: 13px 10px; }
+  .stats { grid-template-columns: 1fr; }
+  .stats div { padding: 4px; display: flex; justify-content: space-between; }
+  .legend, .selection { display: none; }
+  .map-help { display: none; }
+}
+
+@media (pointer: coarse) {
+  body.view-3d .workspace { grid-template-columns: minmax(0, 1fr); }
+  body.view-3d .controls { display: none; }
+  body.view-3d .touch-controls {
+    position: absolute;
+    inset: auto 12px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    pointer-events: none;
+    z-index: 2;
+  }
+  body.presentation .touch-controls { display: none; }
+  .touch-controls > div { display: grid; gap: 5px; pointer-events: auto; }
+  .touch-move { grid-template-columns: repeat(3, 48px); }
+  .touch-move button:first-child { grid-column: 2; }
+  .touch-move button:nth-child(2) { grid-column: 1; }
+  .touch-actions { grid-template-columns: repeat(2, 52px); }
+  .touch-controls button {
+    width: auto;
+    min-height: 44px;
+    margin: 0;
+    padding: 4px;
+    border-color: rgba(216, 226, 48, .7);
+    background: rgba(8, 12, 13, .72);
+    touch-action: none;
+  }
+  #touch-fullscreen { grid-column: 2; }
+  canvas { touch-action: none; }
+  .play-brand { display: none; }
+  .play-toolbar { justify-content: center; }
+  .play-toolbar button { min-width: 48px; padding-inline: 7px; }
+}
+
+@media (pointer: fine) {
+  .touch-intro { display: none; }
+}

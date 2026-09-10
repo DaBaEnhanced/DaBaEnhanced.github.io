@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+  <title>Alien Breed 3D</title>
+  <link rel="stylesheet" href="styles.css?v=source-fidelity-6">
+</head>
+<body class="view-3d play-mode" data-mode="play">
+  <main class="play-layout">
+    <header class="play-toolbar" aria-label="Browser game controls">
+      <strong class="play-brand">ALIEN BREED 3D</strong>
+      <button id="menu" type="button">Menu</button>
+      <button id="play-pause" type="button">Pause</button>
+      <button id="play-weapon" type="button">Weapon</button>
+      <button id="play-duck" type="button">Duck</button>
+      <button id="fullscreen" type="button">Fullscreen</button>
+      <button id="cheat-invulnerability" class="cheat-toggle" type="button"
+        aria-pressed="false">God: off</button>
+      <button id="cheat-infinite-bullets" class="cheat-toggle" type="button"
+        aria-pressed="false">Ammo: off</button>
+    </header>
+    <section class="play-screen map-shell">
+      <canvas id="map" tabindex="0" aria-label="Alien Breed 3D game"></canvas>
+      <div class="map-help" id="map-help"></div>
+      <pre id="error" role="alert"></pre>
+    </section>
+  </main>
+
+  <!-- main.js also powers the recovery page. These hidden hooks retain one
+       campaign/runtime implementation without exposing diagnostics in play mode. -->
+  <div class="play-support" hidden>
+    <span id="level-count"></span><span id="zones"></span><span id="edges"></span><span id="points"></span>
+    <select id="level" aria-label="Retail level"></select>
+    <input id="portals" type="checkbox" checked>
+    <input id="grid" type="checkbox" checked>
+    <input id="starts" type="checkbox" checked>
+    <button id="fit" type="button"></button>
+    <button id="ending" type="button"></button>
+    <button id="save" type="button"></button>
+    <button id="load" type="button"></button>
+    <button id="touch-fullscreen" type="button"></button>
+    <button type="button" data-view="map"></button>
+    <button type="button" data-view="first-person" class="active"></button>
+    <span id="selection-title"></span><dl id="selection-data"></dl>
+  </div>
+
+  <div id="play-start">
+    <div>
+      <h1>ALIEN BREED 3D</h1>
+      <p>WASD moves · mouse looks (vertical in Enhanced) · Ctrl or click fires · Space operates</p>
+      <p>Shift runs · C ducks · 1–5 select weapons · P pauses · Escape opens the menu</p>
+      <p class="touch-intro">Phone: left thumb moves, right thumb looks; tap left to fire and right to operate.</p>
+      <p class="play-go">TAP OR CLICK TO START</p>
+    </div>
+  </div>
+
+  <script type="module">
+    const overlay = document.querySelector('#play-start');
+    overlay.style.pointerEvents = 'none';
+    const game = await import('./engine/main.js?v=source-fidelity-136');
+    if (await game.ready) overlay.style.pointerEvents = 'auto';
+    else overlay.remove();
+    overlay.addEventListener('pointerdown', async event => {
+      event.preventDefault();
+      // Start both privileged requests synchronously inside the gesture. An
+      // await before requestFullscreen can consume mobile user activation.
+      const audioRequest = game.unlockAudio();
+      overlay.remove();
+      let fullscreenRequest = Promise.resolve();
+      try {
+        fullscreenRequest = document.documentElement.requestFullscreen?.({ navigationUI: 'hide' })
+          ?? Promise.resolve();
+      } catch { /* Fullscreen can be denied; windowed play remains complete. */ }
+      await Promise.allSettled([audioRequest, fullscreenRequest]);
+      try { await globalThis.screen?.orientation?.lock?.('landscape'); } catch { /* desktop */ }
+      document.querySelector('#map')?.focus();
+    }, { once: true });
+  </script>
+</body>
+</html>

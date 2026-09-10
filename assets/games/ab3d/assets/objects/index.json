@@ -1,0 +1,1482 @@
+{
+  "format": "alien-breed-3d-object-atlases-v1",
+  "paletteSource": "WHDLOAD/AlienBreed3DAGA/data/abd8ch",
+  "paletteAnchor": "alienbreed3d2_CPORT/media/includes/texturemaps",
+  "gunDraw": {
+    "yOffsets": [
+      20,
+      20,
+      0,
+      20,
+      20,
+      0,
+      0,
+      20
+    ],
+    "yOffsetsOffset": 22140,
+    "lastRow": 78,
+    "drawChunkOffset": 22660
+  },
+  "atlases": {
+    "alien2": {
+      "width": 1216,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "alien2.indices",
+      "preview": "alien2.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/alien2.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/alien2.wad"
+    },
+    "pickups": {
+      "width": 320,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "pickups.indices",
+      "preview": "pickups.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/pickups.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/pickups.wad"
+    },
+    "bigbullet": {
+      "width": 320,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "bigbullet.indices",
+      "preview": "bigbullet.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/bigbullet.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/bigbullet.wad"
+    },
+    "explosion": {
+      "width": 576,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "explosion.indices",
+      "preview": "explosion.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/explosion.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/explosion.wad"
+    },
+    "flyingalien": {
+      "width": 1344,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "flyingalien.indices",
+      "preview": "flyingalien.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/flyingalien.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/flyingalien.wad"
+    },
+    "keys": {
+      "width": 64,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "keys.indices",
+      "preview": "keys.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/keys.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/keys.wad"
+    },
+    "rockets": {
+      "width": 192,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "rockets.indices",
+      "preview": "rockets.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/rockets.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/rockets.wad"
+    },
+    "barrel": {
+      "width": 64,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "barrel.indices",
+      "preview": "barrel.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/barrel.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/barrel.wad"
+    },
+    "newgunsinhand": {
+      "width": 2688,
+      "height": 96,
+      "storageHeight": 98,
+      "file": "newgunsinhand.indices",
+      "preview": "newgunsinhand.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/newgunsinhand.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/newgunsinhand.wad"
+    },
+    "newmarine": {
+      "width": 1216,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "newmarine.indices",
+      "preview": "newmarine.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/newmarine.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/newmarine.wad"
+    },
+    "lamps": {
+      "width": 64,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "lamps.indices",
+      "preview": "lamps.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/lamps.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/lamps.wad"
+    },
+    "worm": {
+      "width": 1890,
+      "height": 100,
+      "storageHeight": 102,
+      "file": "worm.indices",
+      "preview": "worm.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/worm.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/worm.wad"
+    },
+    "bigclaws": {
+      "width": 2304,
+      "height": 128,
+      "storageHeight": 130,
+      "file": "bigclaws.indices",
+      "preview": "bigclaws.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/bigclaws.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/bigclaws.wad"
+    },
+    "tree": {
+      "width": 384,
+      "height": 64,
+      "storageHeight": 66,
+      "file": "tree.indices",
+      "preview": "tree.png",
+      "ptrSource": "WHDLOAD/AlienBreed3DAGA/data/includes/tree.ptr",
+      "wadSource": "WHDLOAD/AlienBreed3DAGA/data/includes/tree.wad"
+    }
+  },
+  "palettes": {
+    "tree": {
+      "file": "tree.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "bigclaws": {
+      "file": "bigclaws.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "worm": {
+      "file": "worm.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "lamps": {
+      "file": "lamps.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "bigalien": {
+      "file": "bigalien.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "flamemarine": {
+      "file": "flamemarine.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "toughmarine": {
+      "file": "toughmarine.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "marine": {
+      "file": "marine.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "guns": {
+      "file": "guns.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "barrel": {
+      "file": "barrel.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "rockets": {
+      "file": "rockets.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "keys": {
+      "file": "keys.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "flying": {
+      "file": "flying.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "ugly": {
+      "file": "ugly.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "explosion": {
+      "file": "explosion.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "bigbullet": {
+      "file": "bigbullet.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "pickups": {
+      "file": "pickups.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    },
+    "alien": {
+      "file": "alien.palette.rgb12be",
+      "levels": 15,
+      "colours": 32
+    }
+  },
+  "graphicTypes": [
+    {
+      "id": 0,
+      "atlas": "alien2",
+      "palette": "alien",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 320,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 448,
+          "y": 0
+        },
+        {
+          "x": 512,
+          "y": 0
+        },
+        {
+          "x": 576,
+          "y": 0
+        },
+        {
+          "x": 640,
+          "y": 0
+        },
+        {
+          "x": 704,
+          "y": 0
+        },
+        {
+          "x": 768,
+          "y": 0
+        },
+        {
+          "x": 832,
+          "y": 0
+        },
+        {
+          "x": 896,
+          "y": 0
+        },
+        {
+          "x": 960,
+          "y": 0
+        },
+        {
+          "x": 1024,
+          "y": 0
+        },
+        {
+          "x": 1040,
+          "y": 0
+        },
+        {
+          "x": 1056,
+          "y": 0
+        },
+        {
+          "x": 1072,
+          "y": 0
+        },
+        {
+          "x": 1024,
+          "y": 16
+        },
+        {
+          "x": 1040,
+          "y": 16
+        },
+        {
+          "x": 1056,
+          "y": 16
+        },
+        {
+          "x": 1072,
+          "y": 16
+        },
+        {
+          "x": 1024,
+          "y": 32
+        },
+        {
+          "x": 1040,
+          "y": 32
+        },
+        {
+          "x": 1056,
+          "y": 32
+        },
+        {
+          "x": 1072,
+          "y": 32
+        },
+        {
+          "x": 1024,
+          "y": 48
+        },
+        {
+          "x": 1040,
+          "y": 48
+        },
+        {
+          "x": 1056,
+          "y": 48
+        },
+        {
+          "x": 1072,
+          "y": 48
+        },
+        {
+          "x": 1088,
+          "y": 0
+        },
+        {
+          "x": 1152,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "atlas": "pickups",
+      "palette": "pickups",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 32
+        },
+        {
+          "x": 64,
+          "y": 32
+        },
+        {
+          "x": 32,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 144,
+          "y": 0
+        },
+        {
+          "x": 160,
+          "y": 0
+        },
+        {
+          "x": 176,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 16
+        },
+        {
+          "x": 144,
+          "y": 16
+        },
+        {
+          "x": 160,
+          "y": 16
+        },
+        {
+          "x": 176,
+          "y": 16
+        },
+        {
+          "x": 128,
+          "y": 32
+        },
+        {
+          "x": 144,
+          "y": 32
+        },
+        {
+          "x": 160,
+          "y": 32
+        },
+        {
+          "x": 80,
+          "y": 32
+        },
+        {
+          "x": 64,
+          "y": 48
+        },
+        {
+          "x": 80,
+          "y": 48
+        },
+        {
+          "x": 96,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 32
+        },
+        {
+          "x": 80,
+          "y": 32
+        },
+        {
+          "x": 80,
+          "y": 48
+        },
+        {
+          "x": 64,
+          "y": 48
+        },
+        {
+          "x": 128,
+          "y": 32
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 32
+        },
+        {
+          "x": 224,
+          "y": 0
+        },
+        {
+          "x": 224,
+          "y": 32
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "atlas": "bigbullet",
+      "palette": "bigbullet",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 32
+        },
+        {
+          "x": 32,
+          "y": 0
+        },
+        {
+          "x": 32,
+          "y": 32
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 32
+        },
+        {
+          "x": 96,
+          "y": 0
+        },
+        {
+          "x": 96,
+          "y": 32
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 32
+        },
+        {
+          "x": 160,
+          "y": 0
+        },
+        {
+          "x": 160,
+          "y": 32
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 32
+        },
+        {
+          "x": 224,
+          "y": 0
+        },
+        {
+          "x": 224,
+          "y": 32
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 32
+        },
+        {
+          "x": 288,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 32
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "atlas": "flyingalien",
+      "palette": "flying",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 320,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 448,
+          "y": 0
+        },
+        {
+          "x": 512,
+          "y": 0
+        },
+        {
+          "x": 576,
+          "y": 0
+        },
+        {
+          "x": 640,
+          "y": 0
+        },
+        {
+          "x": 704,
+          "y": 0
+        },
+        {
+          "x": 768,
+          "y": 0
+        },
+        {
+          "x": 832,
+          "y": 0
+        },
+        {
+          "x": 896,
+          "y": 0
+        },
+        {
+          "x": 960,
+          "y": 0
+        },
+        {
+          "x": 1024,
+          "y": 0
+        },
+        {
+          "x": 1088,
+          "y": 0
+        },
+        {
+          "x": 1152,
+          "y": 0
+        },
+        {
+          "x": 1216,
+          "y": 0
+        },
+        {
+          "x": 1280,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "atlas": "keys",
+      "palette": "keys",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 32
+        },
+        {
+          "x": 32,
+          "y": 0
+        },
+        {
+          "x": 32,
+          "y": 32
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "atlas": "rockets",
+      "palette": "rockets",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 32,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 32
+        },
+        {
+          "x": 32,
+          "y": 32
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 96,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 32
+        },
+        {
+          "x": 96,
+          "y": 32
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 160,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 32
+        },
+        {
+          "x": 160,
+          "y": 32
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "atlas": "barrel",
+      "palette": "barrel",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "atlas": "explosion",
+      "palette": "explosion",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 320,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 448,
+          "y": 0
+        },
+        {
+          "x": 512,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "atlas": "newgunsinhand",
+      "palette": "guns",
+      "frames": [
+        {
+          "x": 1920,
+          "y": 0
+        },
+        {
+          "x": 2016,
+          "y": 0
+        },
+        {
+          "x": 2112,
+          "y": 0
+        },
+        {
+          "x": 2208,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 480,
+          "y": 0
+        },
+        {
+          "x": 576,
+          "y": 0
+        },
+        {
+          "x": 672,
+          "y": 0
+        },
+        {
+          "x": 1536,
+          "y": 0
+        },
+        {
+          "x": 1632,
+          "y": 0
+        },
+        {
+          "x": 1728,
+          "y": 0
+        },
+        {
+          "x": 1824,
+          "y": 0
+        },
+        {
+          "x": 1152,
+          "y": 0
+        },
+        {
+          "x": 1248,
+          "y": 0
+        },
+        {
+          "x": 1344,
+          "y": 0
+        },
+        {
+          "x": 1440,
+          "y": 0
+        },
+        {
+          "x": 2304,
+          "y": 0
+        },
+        {
+          "x": 2400,
+          "y": 0
+        },
+        {
+          "x": 2496,
+          "y": 0
+        },
+        {
+          "x": 2592,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 96,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "atlas": "newmarine",
+      "palette": "marine",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 320,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 448,
+          "y": 0
+        },
+        {
+          "x": 512,
+          "y": 0
+        },
+        {
+          "x": 576,
+          "y": 0
+        },
+        {
+          "x": 640,
+          "y": 0
+        },
+        {
+          "x": 704,
+          "y": 0
+        },
+        {
+          "x": 768,
+          "y": 0
+        },
+        {
+          "x": 832,
+          "y": 0
+        },
+        {
+          "x": 896,
+          "y": 0
+        },
+        {
+          "x": 960,
+          "y": 0
+        },
+        {
+          "x": 1024,
+          "y": 0
+        },
+        {
+          "x": 1088,
+          "y": 0
+        },
+        {
+          "x": 1152,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "atlas": "lamps",
+      "palette": "lamps",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "atlas": "worm",
+      "palette": "worm",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 90,
+          "y": 0
+        },
+        {
+          "x": 180,
+          "y": 0
+        },
+        {
+          "x": 270,
+          "y": 0
+        },
+        {
+          "x": 360,
+          "y": 0
+        },
+        {
+          "x": 450,
+          "y": 0
+        },
+        {
+          "x": 540,
+          "y": 0
+        },
+        {
+          "x": 630,
+          "y": 0
+        },
+        {
+          "x": 720,
+          "y": 0
+        },
+        {
+          "x": 810,
+          "y": 0
+        },
+        {
+          "x": 900,
+          "y": 0
+        },
+        {
+          "x": 990,
+          "y": 0
+        },
+        {
+          "x": 1080,
+          "y": 0
+        },
+        {
+          "x": 1170,
+          "y": 0
+        },
+        {
+          "x": 1260,
+          "y": 0
+        },
+        {
+          "x": 1350,
+          "y": 0
+        },
+        {
+          "x": 1440,
+          "y": 0
+        },
+        {
+          "x": 1530,
+          "y": 0
+        },
+        {
+          "x": 1620,
+          "y": 0
+        },
+        {
+          "x": 1710,
+          "y": 0
+        },
+        {
+          "x": 1800,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "atlas": "bigclaws",
+      "palette": "bigclaws",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 512,
+          "y": 0
+        },
+        {
+          "x": 640,
+          "y": 0
+        },
+        {
+          "x": 768,
+          "y": 0
+        },
+        {
+          "x": 896,
+          "y": 0
+        },
+        {
+          "x": 1024,
+          "y": 0
+        },
+        {
+          "x": 1152,
+          "y": 0
+        },
+        {
+          "x": 1280,
+          "y": 0
+        },
+        {
+          "x": 1408,
+          "y": 0
+        },
+        {
+          "x": 1536,
+          "y": 0
+        },
+        {
+          "x": 1664,
+          "y": 0
+        },
+        {
+          "x": 1792,
+          "y": 0
+        },
+        {
+          "x": 1920,
+          "y": 0
+        },
+        {
+          "x": 2048,
+          "y": 0
+        },
+        {
+          "x": 2176,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "atlas": "tree",
+      "palette": "tree",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 0
+        },
+        {
+          "x": 320,
+          "y": 0
+        },
+        {
+          "x": 352,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "atlas": "newmarine",
+      "palette": "toughmarine",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 320,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 448,
+          "y": 0
+        },
+        {
+          "x": 512,
+          "y": 0
+        },
+        {
+          "x": 576,
+          "y": 0
+        },
+        {
+          "x": 640,
+          "y": 0
+        },
+        {
+          "x": 704,
+          "y": 0
+        },
+        {
+          "x": 768,
+          "y": 0
+        },
+        {
+          "x": 832,
+          "y": 0
+        },
+        {
+          "x": 896,
+          "y": 0
+        },
+        {
+          "x": 960,
+          "y": 0
+        },
+        {
+          "x": 1024,
+          "y": 0
+        },
+        {
+          "x": 1088,
+          "y": 0
+        },
+        {
+          "x": 1152,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "atlas": "newmarine",
+      "palette": "flamemarine",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 320,
+          "y": 0
+        },
+        {
+          "x": 384,
+          "y": 0
+        },
+        {
+          "x": 448,
+          "y": 0
+        },
+        {
+          "x": 512,
+          "y": 0
+        },
+        {
+          "x": 576,
+          "y": 0
+        },
+        {
+          "x": 640,
+          "y": 0
+        },
+        {
+          "x": 704,
+          "y": 0
+        },
+        {
+          "x": 768,
+          "y": 0
+        },
+        {
+          "x": 832,
+          "y": 0
+        },
+        {
+          "x": 896,
+          "y": 0
+        },
+        {
+          "x": 960,
+          "y": 0
+        },
+        {
+          "x": 1024,
+          "y": 0
+        },
+        {
+          "x": 1088,
+          "y": 0
+        },
+        {
+          "x": 1152,
+          "y": 0
+        }
+      ]
+    }
+  ]
+}

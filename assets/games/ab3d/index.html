@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c0d">
+  <title>Alien Breed 3D — source-port recovery</title>
+  <link rel="stylesheet" href="styles.css?v=source-fidelity-6">
+</head>
+<body class="view-3d">
+  <main>
+    <header class="masthead">
+      <img src="assets/title.png" alt="Alien Breed 3D" width="320" height="256">
+      <div>
+        <p class="eyebrow">Source-port recovery lab</p>
+        <h1>Recovered retail renderer</h1>
+        <p class="lede">Original AGA geometry, texture banks, and copper colours interpreted from the released 68000 source.</p>
+      </div>
+      <div class="recovery">
+        <strong id="level-count">16</strong>
+        <span>retail levels recovered</span>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="controls">
+        <label for="level">Level</label>
+        <select id="level" aria-label="Retail level"></select>
+
+        <label class="view-label">View</label>
+        <div class="view-switch" role="group" aria-label="View mode">
+          <button type="button" data-view="map">Map</button>
+          <button type="button" data-view="first-person" class="active">3D source view</button>
+        </div>
+
+        <div class="stats" aria-live="polite">
+          <div><span>Zones</span><strong id="zones">—</strong></div>
+          <div><span>Edges</span><strong id="edges">—</strong></div>
+          <div><span>Points</span><strong id="points">—</strong></div>
+        </div>
+
+        <fieldset>
+          <legend>Display</legend>
+          <label class="check"><input id="portals" type="checkbox" checked> Portals</label>
+          <label class="check"><input id="grid" type="checkbox" checked> Grid</label>
+          <label class="check"><input id="starts" type="checkbox" checked> Player starts</label>
+        </fieldset>
+
+        <button id="fit" type="button">Reset camera</button>
+        <button id="menu" type="button">Retail title / menu</button>
+        <button id="ending" type="button">Ending scroll diagnostic</button>
+        <button id="save" type="button">Save retail password</button>
+        <button id="load" type="button">Load saved password</button>
+        <button id="fullscreen" type="button">Fullscreen</button>
+        <a class="play-link" href="play.html">Play full campaign</a>
+
+        <div class="browser-cheats" aria-label="Browser-only cheats">
+          <p class="eyebrow">Port cheats (browser only)</p>
+          <button id="cheat-invulnerability" class="cheat-toggle" type="button"
+            aria-pressed="false">Invulnerability: off</button>
+          <button id="cheat-infinite-bullets" class="cheat-toggle" type="button"
+            aria-pressed="false">Infinite bullets: off</button>
+        </div>
+
+        <div class="legend">
+          <p><i class="solid"></i> Solid wall</p>
+          <p><i class="portal"></i> Zone portal</p>
+          <p><i class="selected"></i> Selected zone</p>
+        </div>
+
+        <section class="selection">
+          <p class="eyebrow">Inspector</p>
+          <h2 id="selection-title">Select a wall</h2>
+          <dl id="selection-data"></dl>
+        </section>
+      </aside>
+
+      <div class="map-shell">
+        <canvas id="map" aria-label="Top-down Alien Breed 3D level geometry"></canvas>
+        <div class="touch-controls" aria-label="Touch game controls">
+          <div class="touch-move">
+            <button type="button" data-hold="KeyW" aria-label="Move forward">&#9650;</button>
+            <button type="button" data-hold="KeyA" aria-label="Sidestep left">&#9664;</button>
+            <button type="button" data-hold="KeyS" aria-label="Move backward">&#9660;</button>
+            <button type="button" data-hold="KeyD" aria-label="Sidestep right">&#9654;</button>
+          </div>
+          <div class="touch-actions">
+            <button type="button" data-hold="KeyQ" aria-label="Turn left">&#8630;</button>
+            <button type="button" data-hold="KeyE" aria-label="Turn right">&#8631;</button>
+            <button type="button" data-hold="KeyF">Fire</button>
+            <button type="button" data-hold="Space">Use</button>
+            <button type="button" data-hold="ShiftRight">Run</button>
+            <button type="button" data-action="duck">Duck</button>
+            <button type="button" data-hold="KeyL">Look</button>
+            <button type="button" id="touch-fullscreen" aria-label="Fullscreen">&#9974;</button>
+          </div>
+        </div>
+        <div class="map-help" id="map-help">WASD move · mouse look (vertical in Enhanced) · Shift run · C duck · L look back · Space use · Ctrl/click fire</div>
+        <div id="error" role="alert"></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="engine/main.js?v=source-fidelity-136"></script>
+</body>
+</html>

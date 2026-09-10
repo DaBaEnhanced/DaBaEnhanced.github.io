@@ -1,0 +1,87 @@
+{
+  "format": "alien-breed-3d-vector-objects-v1",
+  "executableSource": "WHDLOAD/AlienBreed3DAGA/data/abd8ch",
+  "objects": {
+    "0": {
+      "name": "robot",
+      "file": "robot.vec",
+      "bytes": 10568,
+      "frames": 22,
+      "unpackedExecutableOffset": 142962
+    },
+    "1": {
+      "name": "medikit",
+      "file": "medikit.vec",
+      "bytes": 2080,
+      "frames": 1,
+      "unpackedExecutableOffset": 153530
+    },
+    "2": {
+      "name": "exit-sign",
+      "file": "exit.vec",
+      "bytes": 248,
+      "frames": 1,
+      "unpackedExecutableOffset": 155610
+    },
+    "3": {
+      "name": "crate",
+      "file": "crate.vec",
+      "bytes": 1148,
+      "frames": 1,
+      "unpackedExecutableOffset": 155858
+    },
+    "4": {
+      "name": "terminal",
+      "file": "terminal.vec",
+      "bytes": 806,
+      "frames": 1,
+      "unpackedExecutableOffset": 157006
+    },
+    "5": {
+      "name": "blue-indicator",
+      "file": "blue.vec",
+      "bytes": 722,
+      "frames": 1,
+      "unpackedExecutableOffset": 157812
+    },
+    "6": {
+      "name": "green-indicator",
+      "file": "green.vec",
+      "bytes": 722,
+      "frames": 1,
+      "unpackedExecutableOffset": 158534
+    },
+    "7": {
+      "name": "red-indicator",
+      "file": "red.vec",
+      "bytes": 722,
+      "frames": 1,
+      "unpackedExecutableOffset": 159256
+    },
+    "8": {
+      "name": "yellow-indicator",
+      "file": "yellow.vec",
+      "bytes": 722,
+      "frames": 1,
+      "unpackedExecutableOffset": 159978
+    },
+    "9": {
+      "name": "gas-pipe",
+      "file": "gaspipe.vec",
+      "bytes": 188,
+      "frames": 1,
+      "unpackedExecutableOffset": 160700
+    }
+  },
+  "textureMaps": {
+    "file": "texturemaps.indices",
+    "bytes": 65536,
+    "unpackedExecutableOffset": 188562
+  },
+  "palette": {
+    "file": "texturepalscaled.rgb12be",
+    "levels": 15,
+    "colours": 256,
+    "unpackedExecutableOffset": 254098
+  }
+}

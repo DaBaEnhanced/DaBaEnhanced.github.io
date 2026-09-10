@@ -1,0 +1,1139 @@
+{
+  "format": "alien-breed-3d-ending-v1",
+  "source": "alienbreed3d2_CPORT/ab3d/level_blurb",
+  "sourceSha256": "44bb21a9e4702255103f864a97a0777456b2cd7ec26e2fb32323e275c4292808",
+  "width": 640,
+  "height": 256,
+  "lineHeight": 16,
+  "initialLines": 16,
+  "sourceTicksPerPixel": 3,
+  "intro": [
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Dazed and shaking, I stagger along the gloomy passages. The emergency shuttle"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "should be - must be - in this area. I round one final corner and there, glinting"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "in the twilight, stands my escape route. I am on the verge of collapse; my legs"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "giving out, my arms torn by the Breed and scorched by the red-hot casing of the"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "gun dangling limply by my side. But I am alive."
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "I drag myself to the accelleration couch and painfully strap myself in."
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Everything seems to be moving in slow motion; the cockpit spins sickeningly"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "around me as I reach for the launch controls.... there! I let myself fall back,"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "utterly exhausted. The quiet tones of the shipboard computer announces the"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "countdown, but for me the words are fading as if into a great distance."
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Something makes a dull thudding sound against the hull; the engines starting?"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "No, they cut in a moment later with a muted roar. The computer chatters to"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "itself and flashes coloured lights at me; I must have left the airlock open. No"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "matter. The computer will close it automatically before liftoff. I can stay"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "awake no longer. All I can think as I sink into unconsciousness is that I'm"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "feeling very... very... heavy..."
+    }
+  ],
+  "scroll": [
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "ALIEN BREED 3D"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "A Team 17 Production"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "of a"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Short But Purple Software/Team 17"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "game"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "THE CAST:"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Arnold the Alien"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Initially enthusiastic about his role, Arnold was mildly put out at being the"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "only unarmed combatant, and hence his vain attempts to sidle out of the line of"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "fire. Arnold was also somewhat dismayed by the stylish, fashion conscious, but"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "distressingly prominent shade of bright red his contract demanded he wear."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Melvin the Mutant"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Melvin showed off his acting ability to the full in this, his latest appearance,"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "in which he played no fewer than three roles simultaneously: a pistol-wielding"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "psychotic soldier, a plasma-gun wielding psychotic soldier, and a shotgun"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "wielding psychotic soldier. He brushes aside claims that the difference between"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "the roles was purely cosmetic, saying that each required a completely different"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "mind-set, and regards it as his most challenging role to date."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Frank the Floating Thing"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Another versatile actor, Frank spent a lot of time getting into his role, force-"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "feeding himself tons of weight gain pills and full-fat milkshakes so as to gain"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "personal experience of the lifestyle of the huge blubbery floating mound he"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "portrays. Now that's commitment for you!"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Worm Dude"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Teased at a tender age for his delicate pastel colouring, Worm grew up into the"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "bad boy of the Hollywood jetset. It is rumoured that he sawed off both his arms"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "and replaced them with powerful energy weapons in an attempt to upstage the"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "other members of the cast. After his success in AB3D, he says it is 'doubtful'"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "that he will return to his previous employment, serving in a fast food"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "establishment."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Theresa Tentacle"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Theresa has the honour of wearing the most make-up of any cast member in this"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "production, or any other production for that matter. Terrence was fitted with a"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "a complete alien suit which moved around in response to her wrigglings. She"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "remarks that the hours spent getting in and out of the suit were 'worth it'."
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "She is confident that her role in AB3D will get her noticed by other"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "entertainment companies, and that this will be only the first of many openings"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "for her."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Eric the Eyeball"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Eric was thrilled to discover he would be actually flying in his new role. He"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "says it is something he has always wanted to try, particularly if he could spit"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "fire at the same time. When the offer came up, he rolled at it straight away."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Robbie the Robot"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Big, ugly, aggressive and none too bright, that's Robbie all over."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Rupert the Really REALLY Big Thing on the Last Level"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Rupert was delighted to finally find a role which he fit comfortably. Previous"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "attempts to integrate him into the cast of films has, inevitably perhaps,"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "involved enormous trenches, improbably high stacks of boxes or, in extreme cases"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "amputation of the lower body in order to bring him down to the level of other"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "actors."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "THE CREW:"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Programming, Game Code, Graphics, Game Design, Level Editor & Manual"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Andrew Clitheroe"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Alien Design, Alien Graphics & Weapon Graphics"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Michael Green"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Serial Link, 3D Object Editor and 3D Object Design"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Charles Blessing"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Music and Sound Effects"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Bjorn Lynne"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Alien Graphics"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Simon Butler"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Creative Director"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Martyn Brown"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Project Manager and Manual"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Martin O'Donnell"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Cover Illustration and Logo"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Kevin Jenkins"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Packaging and Manual Design"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Paul Sharpe"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "QA and Playtest"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 1,
+      "centred": true,
+      "text": "Phil Quirke-Webster & The Wolves"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "A 'Who To Blame' guide to the levels:"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "The Gate                    Andrew Clitheroe"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Storage Bay                      Ben Chanter"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Sewer Network                    Ben Chanter"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "The Courtyard               Andrew Clitheroe"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "System Purge                Andrew Clitheroe"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "The Mines                   Andrew Clitheroe"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "The Furnace                    Michael Green"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Test Arena Gamma                 Jackie Lang"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Surface Zone                Andrew Clitheroe"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Training Area                    Jackie Lang"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Admin Block                 Andrew Clitheroe"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "The Pit                          Kai Barrett"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Strata                           Ben Chanter"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Reactor Core                Charles Blessing"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Cooling Tower               Andrew Clitheroe"
+    },
+    {
+      "font": 2,
+      "centred": true,
+      "text": "Command Centre              Andrew Clitheroe"
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "Thanks to all those who bought this game; presumably you enjoyed it enough to"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "bother finishing it. A lot of work went into it, probably more than you think."
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "It took a very long time to get just right. I hope you think it was worth the"
+    },
+    {
+      "font": 0,
+      "centred": true,
+      "text": "wait."
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    },
+    {
+      "font": -1,
+      "centred": false,
+      "text": ""
+    }
+  ]
+}

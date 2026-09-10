@@ -247,7 +247,7 @@ These are unofficial, fan-made browser reconstructions created as technical and 
 Planned addition are (in no specific order):
 - SWIV.
 - Banshee. 
-- Alien Breed 3D and maybe Alien Breed 3D 2. 
+- ~~Alien Breed 3D~~ and maybe Alien Breed 3D 2. (done the first)
 - Lionheart (this is going to be hard probably given no source and a complex game).
 - Legends of Valour.
 - Hybris
@@ -370,6 +370,33 @@ Here you can play it or read the super-interesting Post-Mortem:
 	<a class="game-button" href="{{ site.cdn_url }}/breatheless/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="{{ site.cdn_url }}/breatheless.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="_games/BREATHLESS_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+</div>
+
+</article>
+
+<article class="game-card" markdown="1">
+### Alien Breed 3D
+
+<img src="{{ site.cdn_url }}/games/ab3d/ab3d_banner.jpg" alt="Alien Breed 3D banner" style="object-position: center;" />
+
+A complete browser reconstruction of Alien Breed 3D, rebuilt from a messy mix of surviving source snapshots, retail data, WHDLoad media and the shipped executable itself. Rather than simply translating one clean codebase, the project had to piece together what the 1995 game actually did when the surviving sources disagreed. The result restores all 16 levels, weapons, enemies, bosses, doors, lifts, pickups, audio, passwords and ending in native HTML/JavaScript, with no emulator required at runtime. It also preserves the game’s wonderfully unusual renderer, where the Amiga’s Copper is effectively used as a tiny direct-colour framebuffer, while adding optional sharp and enhanced browser display modes alongside the faithful original presentation.
+
+<div class="game-slideshow">
+	<a href="{{ site.cdn_url }}/games/ab3d/shot1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/games/ab3d/shot1.jpg" alt="Alien Breed 3D screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/games/ab3d/shot2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/games/ab3d/shot2.jpg" alt="Alien Breed 3D screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/games/ab3d/shot3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/games/ab3d/shot3.jpg" alt="Alien Breed 3D screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/games/ab3d/shot4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/games/ab3d/shot4.jpg" alt="Alien Breed 3D screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/games/ab3d/shot5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/games/ab3d/shot5.jpg" alt="Alien Breed 3D screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/games/ab3d/shot6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/games/ab3d/shot6.jpg" alt="Alien Breed 3D screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/games/ab3d/shot7.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/games/ab3d/shot7.jpg" alt="Alien Breed 3D screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+And here you can play it or read the post-mortem:
+
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/games/ab3d/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/ab3d.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="_games/ALIENBREED3D_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
 </div>
 
 </article>

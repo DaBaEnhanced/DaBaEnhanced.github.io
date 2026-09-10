@@ -1,0 +1,89 @@
+{
+  "format": "alien-breed-3d-panel-v1",
+  "width": 320,
+  "height": 96,
+  "planes": 8,
+  "indices": "panel.indices",
+  "palette": "panel.palette.rgb24",
+  "rgba": "panel.rgba",
+  "preview": "panel.png",
+  "source": "WHDLOAD/AlienBreed3DAGA/data/includes/panelraw",
+  "paletteSource": "alienbreed3d2_CPORT/media/includes/panelpal",
+  "paletteOffset": 669142,
+  "keys": {
+    "file": "keys.indices",
+    "width": 48,
+    "height": 22,
+    "positions": [
+      {
+        "x": 80,
+        "y": 43
+      },
+      {
+        "x": 96,
+        "y": 11
+      },
+      {
+        "x": 176,
+        "y": 11
+      },
+      {
+        "x": 192,
+        "y": 43
+      }
+    ],
+    "names": [
+      "greenkey",
+      "redkey",
+      "yellowkey",
+      "bluekey"
+    ],
+    "masks": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "sourceOffset": 643916,
+    "layoutSource": "WHDLOAD/AlienBreed3DAGA/data/abd8ch",
+    "layoutSourceOffset": 97774
+  },
+  "borders": {
+    "width": 64,
+    "height": 160,
+    "planes": 4,
+    "spriteBytes": 2592,
+    "left": "left-border.sprites",
+    "right": "right-border.sprites",
+    "palette": "border.palette.rgb24",
+    "sourceOffset": 632364,
+    "paletteSource": "alienbreed3d2_CPORT/media/includes/borderpal",
+    "paletteSourceOffsets": [
+      668652,
+      668856
+    ],
+    "verticalStart": 52,
+    "verticalStop": 212,
+    "displayStart": 44,
+    "spriteSetupOffset": 11822,
+    "smallDisplaySetupOffset": 21038,
+    "scanlinePalette": {
+      "file": "border-scanline15.rgb12be",
+      "source": "alienbreed3d2_CPORT/media/includes/healthpal",
+      "sourceOffset": 643756,
+      "colourIndex": 15,
+      "rows": 80,
+      "displayLineRepeat": 2
+    },
+    "health": {
+      "file": "health.strip",
+      "maximum": 127,
+      "destination": 406
+    },
+    "ammo": {
+      "file": "ammo.strip",
+      "maximum": 63,
+      "destination": 401
+    }
+  }
+}
