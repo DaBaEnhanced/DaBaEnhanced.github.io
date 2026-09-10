@@ -149,6 +149,11 @@
       "sha256": "ab0d04272266d623872d6f84997a5d0a576d7a44f59ae716484a396722fb0935"
     },
     {
+      "path": "alienbreed3d2_CPORT/media/sounds/abreed3d.med",
+      "bytes": 154302,
+      "sha256": "ba6a4c675e93cdda3f7e04a799d7f99562ee58d8f3570afaa2cd8291bce69888"
+    },
+    {
       "path": "Sources/-ScreenPlay-/Commercial/AlienBreed3D2/Includes/bigsine",
       "bytes": 16384,
       "sha256": "4a9eb361b8b4f1680974585b4bdf34da8b3d96a8c5e4b9d53d51e00a1e90f3df"
@@ -170,18 +175,18 @@
     },
     {
       "path": "tools/build_audio.js",
-      "bytes": 6147,
-      "sha256": "f66003adb95b4d594978fd299d878c3b2f8a746a0e82b85effc0ff7ed5410c08"
+      "bytes": 9931,
+      "sha256": "324283eb7c2d91474ea5d9f398ee172c2a5c7152306131d34756e0430ec1d20d"
     },
     {
       "path": "tools/build_ending.js",
-      "bytes": 2963,
-      "sha256": "eae6222af2d695e714448eca89fa6414e35b0489f594326cd471022f4b79e79d"
+      "bytes": 3330,
+      "sha256": "f06e0d39b80e6e2ea8a0aaa8462a19a3a7fe1a022c92645f3129a4e49de1bb4e"
     },
     {
       "path": "tools/build_fonts.js",
-      "bytes": 4545,
-      "sha256": "7dbc1ea85c0ac796079a45a4b4211d7685957dfff1d64f1f11b162e1486bea9c"
+      "bytes": 6054,
+      "sha256": "0503302e27653b9377ec820dfa7701c7ae3881afa7c6d8726c2c8fc057f60558"
     },
     {
       "path": "tools/build_levels.js",
@@ -250,8 +255,8 @@
     },
     {
       "path": "web/engine/audio.js",
-      "bytes": 21439,
-      "sha256": "6b1c3e2849a1054619f53f0c5498804678164e1226004957d602e5e4e1c9e185"
+      "bytes": 26696,
+      "sha256": "4b1768501a7fa7b8455537b242e2a36e3386a9284f5141ed84295dc55db09dfe"
     },
     {
       "path": "web/engine/controls.js",
@@ -260,18 +265,18 @@
     },
     {
       "path": "web/engine/ending.js",
-      "bytes": 5256,
-      "sha256": "3cf055b7d25d643d0ffa67f531ebe33fa94e486892868d9b553220850e60295b"
+      "bytes": 8852,
+      "sha256": "61eac7899baa96450f36c080ba330f78a9d48c4846362428f865bdd9aa6df8fb"
     },
     {
       "path": "web/engine/fonts.js",
-      "bytes": 2485,
-      "sha256": "1aab771ad96ae95f4d26cb6f0c73847ae749ac0cbd2c6a9d20851e7e55369efa"
+      "bytes": 3328,
+      "sha256": "3e6f40d6cbdaeeecaead1692c199c871a44ae4223d795d3cbb388e9f55108cc2"
     },
     {
       "path": "web/engine/frontend.js",
-      "bytes": 14040,
-      "sha256": "729bd61e89d1e69066409e25bee4fcda5d49bf7f7beb36fab776dafed506f0b9"
+      "bytes": 15097,
+      "sha256": "0be5107a6a47b1ca6427755f356e58d57c2bb348e4e3e03b3603731c74bb94fa"
     },
     {
       "path": "web/engine/geometry.js",
@@ -280,8 +285,8 @@
     },
     {
       "path": "web/engine/main.js",
-      "bytes": 37034,
-      "sha256": "70aea5018d553de1f2b3f456da75116768eabe415cc7f548314cd1db1c12f952"
+      "bytes": 39854,
+      "sha256": "1d4d38c9ea30f9a50057858b06a24cf7142b3cbdae45d69cd5eda8eddcef7683"
     },
     {
       "path": "web/engine/movement.js",
@@ -301,12 +306,12 @@
     {
       "path": "web/engine/renderer3d.js",
       "bytes": 152861,
-      "sha256": "177108dd7c1341059d301694596b5fbd86bde5855756cb19745cdeb1e9086b0d"
+      "sha256": "58debca582117ae1cb2663835c0637697e68edaa13be0b247ed026bc977827a7"
     },
     {
       "path": "web/engine/simulation.js",
-      "bytes": 216850,
-      "sha256": "fb974c87d79e9fb1e417848f0659343ac789b9c677b9a7fedaf7bf0c2af1a491"
+      "bytes": 216960,
+      "sha256": "83c94215ddbf0a718f9a8f83bd6239b4a3fb46036b18dea75b197d06342e7199"
     },
     {
       "path": "web/engine/textures.js",
@@ -326,7 +331,7 @@
     {
       "path": "web/index.html",
       "bytes": 4909,
-      "sha256": "0e6e816dc11bfc7c2f2f81fa0c8a21bc1780cf8e19ae64d345dc8ee4d66a66e5"
+      "sha256": "7b459431b02a318f7f03b2b2ee454b87663f405c98155b02f3b8a8d2052e5a9f"
     },
     {
       "path": "web/package.json",
@@ -336,7 +341,7 @@
     {
       "path": "web/play.html",
       "bytes": 4068,
-      "sha256": "6a58e970d07ff910c41f41ece56079b138d6218f1e6c7ff10481e517be9e244a"
+      "sha256": "7cad5980da8b6bfdf248a7a25f2a77df18f342628a58a67bdff891120fa8c52a"
     },
     {
       "path": "web/styles.css",
@@ -1091,14 +1096,44 @@
       "sha256": "1a3103272690d5d82d71b86d77777d9afd36e2f4d25462b53071673ce4510c43"
     },
     {
+      "path": "web/assets/audio/gameOver.mod",
+      "bytes": 30282,
+      "sha256": "6d951f182d693ba4b6701b9c67ab5c28c6e4c36b69a933b8fdf46fa101d8e571"
+    },
+    {
+      "path": "web/assets/audio/gameOver.ogg",
+      "bytes": 122667,
+      "sha256": "739c50d2281938ff72d771f3418cfbd8804132c58ec88e8e05e981ed8121f071"
+    },
+    {
       "path": "web/assets/audio/index.json",
-      "bytes": 15426,
-      "sha256": "1ccc49add6cefa1fc966595b0678d1d68f3317a31607097037e3d77d0afcd2f6"
+      "bytes": 17034,
+      "sha256": "b31b06187c115753d8d539c72c986fdd54dea94179d77b4edd23e00dd37cda55"
+    },
+    {
+      "path": "web/assets/audio/levelComplete.mod",
+      "bytes": 33028,
+      "sha256": "bfaf977fa794bbf01179f0fa173497cc19bddff6500ec2fa583d933731c1ea6d"
+    },
+    {
+      "path": "web/assets/audio/levelComplete.ogg",
+      "bytes": 46645,
+      "sha256": "817c7ed14f628388a9d0e38b9daaa02a1ce49318dc4584d1c5f675bc980149b9"
+    },
+    {
+      "path": "web/assets/audio/title.med",
+      "bytes": 154302,
+      "sha256": "ba6a4c675e93cdda3f7e04a799d7f99562ee58d8f3570afaa2cd8291bce69888"
+    },
+    {
+      "path": "web/assets/audio/title.ogg",
+      "bytes": 2594278,
+      "sha256": "e322927eabcf7e22e06d0cdea01e291070d54ac28b043dfff2d7e4c332d41e77"
     },
     {
       "path": "web/assets/ending/index.json",
-      "bytes": 21652,
-      "sha256": "112a0975160243dc3c43bdd1c4011a89f186bd6f2f583e3ab1bcfde2ece96665"
+      "bytes": 52215,
+      "sha256": "b263d4a507af50aa0921fe1fddf92e84f716876ec432c953589b5ba8fd48efc5"
     },
     {
       "path": "web/assets/fonts/ending-0.indices",
@@ -1132,8 +1167,13 @@
     },
     {
       "path": "web/assets/fonts/index.json",
-      "bytes": 3597,
-      "sha256": "b0e598611273f2d5c7fdb7aa4b0797f8e1ae4e9c4f66bcbb658743d7d7302d40"
+      "bytes": 3879,
+      "sha256": "95859c695dd87e7ff9be596c0a53a2cefd5449727328d62d5a5ffcc1463cd9f5"
+    },
+    {
+      "path": "web/assets/fonts/menu-raster.rgb12be",
+      "bytes": 512,
+      "sha256": "2273dd7cf466cdb788c9de533ae3e9925276dd1ab22f3f866034d482c60bfbd5"
     },
     {
       "path": "web/assets/fonts/optfont.indices",

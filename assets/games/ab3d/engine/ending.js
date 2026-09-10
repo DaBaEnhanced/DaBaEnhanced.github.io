@@ -1,6 +1,11 @@
 const SOURCE_HZ = 50;
 const FADE_FRAMES = 16 * 16;
 const HOLD_FRAMES = 401;
+const STORY_FADE_FRAMES = 8;
+
+function rgb12(value) {
+  return [value >> 8 & 15, value >> 4 & 15, value & 15].map(channel => channel * 17);
+}
 
 export class EndingTimeline {
   constructor(manifest) {
@@ -85,7 +90,7 @@ export class EndingSequence extends EndingTimeline {
   }
 
   static async load(fonts, baseUrl = 'assets/ending') {
-    const response = await fetch(`${baseUrl}/index.json`);
+    const response = await fetch(`${baseUrl}/index.json?v=source-fidelity-2`);
     if (!response.ok) throw new Error(`ending manifest request failed: HTTP ${response.status}`);
     const manifest = await response.json();
     if (manifest.format !== 'alien-breed-3d-ending-v1') {
@@ -100,13 +105,21 @@ export class EndingSequence extends EndingTimeline {
     const glyph = this.fonts.glyph(fontName, code);
     if (!glyph) return null;
     const canvas = document.createElement('canvas');
-    canvas.width = glyph.font.glyphWidth;
+    // newtwo.s:DRAWLINEOFTEXT loads each 16-bit font row into the low word of
+    // D0, then BFINS consumes CHARWIDTHS[n] bits from the right of that value.
+    // The recovered rows are consequently right-aligned inside their 16-bit
+    // cells. Widths above 16 insert zeroes before the complete stored row.
+    canvas.width = glyph.advance;
     canvas.height = glyph.font.glyphHeight;
     const context = canvas.getContext('2d');
     context.fillStyle = '#fff';
     for (let y = 0; y < glyph.font.glyphHeight; y++) {
-      for (let x = 0; x < glyph.font.glyphWidth; x++) {
-        if (this.fonts.sample(fontName, code, x, y)) context.fillRect(x, y, 1, 1);
+      for (let x = 0; x < glyph.advance; x++) {
+        const sourceX = x + 16 - glyph.advance;
+        if (sourceX >= 0 && sourceX < 16 &&
+            this.fonts.sample(fontName, code, sourceX, y)) {
+          context.fillRect(x, y, 1, 1);
+        }
       }
     }
     const cached = { canvas, advance: glyph.advance };
@@ -147,6 +160,88 @@ export class EndingSequence extends EndingTimeline {
     // as a 320-pixel lores screen.
     const scale = Math.min(width / 320, height / 256);
     target.drawImage(this.surface, (width - 320 * scale) / 2, (height - 256 * scale) / 2,
+      320 * scale, 256 * scale);
+  }
+}
+
+export class StorySequence {
+  constructor(manifest, fonts) {
+    if (!Array.isArray(manifest.stories) || manifest.stories.length !== 16) {
+      throw new Error('ending manifest lacks the sixteen released level stories');
+    }
+    this.manifest = manifest;
+    this.text = new EndingSequence(manifest, fonts);
+    this.active = false;
+    this.phase = 'fade-in';
+    this.frames = 0;
+    this.level = 0;
+  }
+
+  start(level) {
+    this.level = Math.max(0, Math.min(15, level | 0));
+    this.active = true;
+    this.phase = 'fade-in';
+    this.frames = 0;
+  }
+
+  stop() { this.active = false; }
+
+  dismiss() {
+    // newtwo.s:PLAYTHEGAME waits for either mouse button or `lastpressed`
+    // after the loading work, then starts the eight-frame $8f8..$111 fade.
+    if (this.active && this.phase === 'wait') {
+      this.phase = 'fade-out';
+      this.frames = 0;
+      return true;
+    }
+    return false;
+  }
+
+  colour() {
+    if (this.phase === 'wait') return rgb12(0x7f7);
+    const frame = Math.min(STORY_FADE_FRAMES - 1, Math.floor(this.frames));
+    // newtwo.s:PLAYTHEGAME .fdup adds/subtracts exactly $121 once per VBlank.
+    return rgb12(this.phase === 'fade-out' ? 0x8f8 - frame * 0x121 : 0x010 + frame * 0x121);
+  }
+
+  update(seconds) {
+    if (!this.active || seconds <= 0) return { redraw: false, completed: false };
+    if (this.phase === 'wait') return { redraw: false, completed: false };
+    this.frames += seconds * SOURCE_HZ;
+    if (this.frames < STORY_FADE_FRAMES) return { redraw: true, completed: false };
+    if (this.phase === 'fade-in') {
+      this.phase = 'wait';
+      this.frames = 0;
+      return { redraw: true, completed: false };
+    }
+    this.active = false;
+    return { redraw: true, completed: true };
+  }
+
+  draw(target, width, height) {
+    const renderer = this.text;
+    const context = renderer.context;
+    context.globalCompositeOperation = 'source-over';
+    context.globalAlpha = 1;
+    context.clearRect(0, 0, this.manifest.width, this.manifest.height);
+    // TWEENTEXT draws records 0..14; the sixteenth record in every released
+    // block is storage padding and is not visited by DOWNTEXT's DBRA #14.
+    for (let row = 0; row < 15; row++) {
+      renderer.drawRecord(this.manifest.stories[this.level][row], row * this.manifest.lineHeight);
+    }
+    context.globalCompositeOperation = 'source-in';
+    const [red, green, blue] = this.colour();
+    context.fillStyle = `rgb(${red} ${green} ${blue})`;
+    context.fillRect(0, 0, this.manifest.width, this.manifest.height);
+    context.globalCompositeOperation = 'destination-over';
+    context.fillStyle = '#000';
+    context.fillRect(0, 0, this.manifest.width, this.manifest.height);
+    context.globalCompositeOperation = 'source-over';
+
+    target.imageSmoothingEnabled = false;
+    target.clearRect(0, 0, width, height);
+    const scale = Math.min(width / 320, height / 256);
+    target.drawImage(renderer.surface, (width - 320 * scale) / 2, (height - 256 * scale) / 2,
       320 * scale, 256 * scale);
   }
 }

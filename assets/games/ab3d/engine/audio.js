@@ -256,7 +256,7 @@ export function soundRequestForEvent(event) {
 
 export class AudioEngine {
   static async load() {
-    const response = await fetch('assets/audio/index.json');
+    const response = await fetch('assets/audio/index.json?v=source-fidelity-2');
     if (!response.ok) throw new Error(`audio manifest request failed: HTTP ${response.status}`);
     return new AudioEngine(await response.json());
   }
@@ -267,8 +267,10 @@ export class AudioEngine {
     }
     this.manifest = manifest;
     this.samples = new Map(manifest.samples.map(sample => [sample.slot, sample]));
+    this.musicTracks = new Map((manifest.music || []).map(track => [track.id, track]));
     this.pcmBuffers = new Map();
     this.buffers = new Map();
+    this.musicBuffers = new Map();
     this.context = null;
     this.paulaNode = null;
     this.paulaSetup = null;
@@ -287,6 +289,65 @@ export class AudioEngine {
     this.playQueue = Promise.resolve();
     this.world = null;
     this.eventCursor = 0;
+    this.musicRequest = null;
+    this.musicSource = null;
+    this.musicToken = 0;
+    this.outputContext = null;
+    this.outputInput = null;
+    this.outputFilter = null;
+    this.outputDry = null;
+    this.outputWet = null;
+    this.underwaterFilter = false;
+  }
+
+  outputNode() {
+    if (!this.context) return null;
+    if (this.outputContext === this.context && this.outputInput) return this.outputInput;
+    this.outputContext = this.context;
+    this.outputInput = null;
+    this.outputFilter = null;
+    this.outputDry = null;
+    this.outputWet = null;
+    if (!this.context.createGain || !this.context.createBiquadFilter) {
+      return this.context.destination;
+    }
+    const input = this.context.createGain();
+    const dry = this.context.createGain();
+    const wet = this.context.createGain();
+    const filter = this.context.createBiquadFilter();
+    filter.type = 'lowpass';
+    // CIAA PRA bit 1 selects the Amiga's fixed analogue LED filter; the game
+    // supplies no frequency parameter. 3275 Hz is the hardware-delivery fit
+    // already documented in BREATHLESS_POSTMORTEM.md, not a game-play value.
+    filter.frequency.value = 3275;
+    filter.Q.value = Math.SQRT1_2;
+    input.connect(dry).connect(this.context.destination);
+    input.connect(filter).connect(wet).connect(this.context.destination);
+    this.outputInput = input;
+    this.outputFilter = filter;
+    this.outputDry = dry;
+    this.outputWet = wet;
+    this.applyUnderwaterFilterState();
+    return input;
+  }
+
+  applyUnderwaterFilterState() {
+    if (!this.outputDry || !this.outputWet || !this.context) return;
+    const dry = this.underwaterFilter ? 0 : 1;
+    const wet = this.underwaterFilter ? 1 : 0;
+    const set = (parameter, value) => parameter.setValueAtTime
+      ? parameter.setValueAtTime(value, this.context.currentTime) : parameter.value = value;
+    set(this.outputDry.gain, dry);
+    set(this.outputWet.gain, wet);
+  }
+
+  setUnderwaterFilter(enabled) {
+    // newtwo.s:DrawDisplay clears CIAA $bfe001 bit 1 whenever fillscrnwater is
+    // nonzero and sets it again on the dry path. proplayer.a commands F8/F9
+    // identify those states explicitly as filter off/on.
+    this.underwaterFilter = Boolean(enabled);
+    this.outputNode();
+    this.applyUnderwaterFilterState();
   }
 
   setSourcePreferences(channelCount, stereo) {
@@ -322,12 +383,90 @@ export class AudioEngine {
     const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
     if (!Context) return false;
     if (!this.context) this.context = new Context();
+    this.outputNode();
     if (!this.paulaSetup && this.context.audioWorklet && globalThis.AudioWorkletNode) {
       this.paulaSetup = this.setupPaulaWorklet();
     }
     if (this.paulaSetup) await this.paulaSetup;
     if (this.context.state === 'suspended') await this.context.resume();
+    if (this.context.state === 'running' && this.musicRequest && !this.musicSource) {
+      await this.startRequestedMusic(this.musicRequest);
+    }
     return this.context.state === 'running';
+  }
+
+  async musicBuffer(id) {
+    if (this.musicBuffers.has(id)) return this.musicBuffers.get(id);
+    const track = this.musicTracks.get(id);
+    if (!track || !this.context?.decodeAudioData) return null;
+    const promise = fetch(`assets/audio/${track.file}`).then(async response => {
+      if (!response.ok) throw new Error(`music request failed: HTTP ${response.status}`);
+      return this.context.decodeAudioData(await response.arrayBuffer());
+    });
+    this.musicBuffers.set(id, promise);
+    return promise;
+  }
+
+  stopMusic() {
+    this.musicToken++;
+    const request = this.musicRequest;
+    this.musicRequest = null;
+    const source = this.musicSource;
+    this.musicSource = null;
+    if (source) {
+      source.onended = null;
+      try { source.stop(); } catch { /* an already-ended browser source */ }
+    }
+    request?.resolve?.(false);
+  }
+
+  playMusic(id) {
+    const track = this.musicTracks.get(id);
+    if (!track) return Promise.resolve(false);
+    if (this.musicRequest?.id === id && this.musicSource) return Promise.resolve(true);
+    this.stopMusic();
+    const request = { id, loop: track.loop, token: ++this.musicToken, resolve: null };
+    this.musicRequest = request;
+    return this.startRequestedMusic(request);
+  }
+
+  playMusicOnce(id) {
+    const track = this.musicTracks.get(id);
+    if (!track || !this.context || this.context.state !== 'running') return Promise.resolve(false);
+    this.stopMusic();
+    return new Promise(resolve => {
+      const request = { id, loop: false, token: ++this.musicToken, resolve };
+      this.musicRequest = request;
+      void this.startRequestedMusic(request).then(started => {
+        if (!started && this.musicRequest === request) {
+          this.musicRequest = null;
+          resolve(false);
+        }
+      }, () => {
+        if (this.musicRequest === request) this.musicRequest = null;
+        resolve(false);
+      });
+    });
+  }
+
+  async startRequestedMusic(request) {
+    if (!request || this.musicRequest !== request || !this.context ||
+        this.context.state !== 'running') return false;
+    const buffer = await this.musicBuffer(request.id);
+    if (!buffer || this.musicRequest !== request || request.token !== this.musicToken) return false;
+    const source = this.context.createBufferSource();
+    source.buffer = buffer;
+    source.loop = request.loop;
+    source.connect(this.outputNode());
+    this.musicSource = source;
+    source.onended = () => {
+      if (this.musicSource !== source || this.musicRequest !== request) return;
+      this.musicSource = null;
+      this.musicRequest = null;
+      request.resolve?.(true);
+    };
+    source.start();
+    return true;
   }
 
   async setupPaulaWorklet() {
@@ -349,7 +488,7 @@ export class AudioEngine {
           this.finishPaulaVoice(event.data.channel, event.data.token);
         }
       };
-      this.paulaNode.connect(this.context.destination);
+      this.paulaNode.connect(this.outputNode());
     } catch {
       // Older Web Audio implementations retain the source-selected fallback
       // below; this is an explicitly non-Paula delivery path, not game logic.
@@ -487,7 +626,7 @@ export class AudioEngine {
       gain.gain.value = allocation.volume / 64;
       const panner = this.context.createStereoPanner();
       panner.pan.value = allocation.side === 'left' ? -1 : 1;
-      source.connect(gain).connect(panner).connect(this.context.destination);
+      source.connect(gain).connect(panner).connect(this.outputNode());
       const voice = {
         source, importance: record.importance, identity: identity ?? 0,
         channel: allocation.index, ended: false,

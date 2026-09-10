@@ -34,7 +34,7 @@ import { staleAction } from './build.js';
 //
 // Everything here is best-effort and silent on failure: a missing version.json
 // (a local checkout, a harness) must never stop the game loading.
-const BUILD = '202609071405-4da4fa86';
+const BUILD = '202609102228-0e87ebca';
 checkBuild();
 
 async function checkBuild() {
@@ -449,7 +449,7 @@ window.addEventListener('keydown', (e) => {
 // inside go(), because the things worth watching earliest -- the audio context
 // and the worklet -- are set up on the first gesture, long before a level.
 globalThis.__dbg = {
-  audio,
+  audio, input,
   get level() { return level; }, get cam() { return cam; },
   get fx() { return fx; }, get world() { return world; },
   get renderer() { return renderer; }, get terminal() { return terminal; },
@@ -501,10 +501,13 @@ const touch = new Touch(canvas, input, {
   // owns it -- so without this there was no way to START the game on a phone,
   // which is a worse bug than any of the ones being fixed around it.
   onFire: () => {
+    // The terminal owns the screen while it is up, on any platform.
+    if (terminal?.open) { terminal.choose(cam); return; }
     if (state !== STATE.PLAYING) { advance(); return; }
     fireQueue += 1;
   },
   onUse: () => {
+    if (terminal?.open) { terminal.back(); if (!terminal.open) closeTerminal(); return; }
     if (state !== STATE.PLAYING) { advance(); return; }
     if (fx && cam) fx.pressSwitch(cam);
   },
@@ -687,6 +690,12 @@ async function go(id) {
       terminal.open = true; terminal.page = 'main';
       terminal.sel = 0; terminal.number = n; terminal.message = '';
       termHeld = true;                 // Space is usually still down; see above
+      // You walk INTO a terminal, so forward is usually still held when it
+      // opens -- and `pressed` tests up before down, so a held forward key
+      // masks every attempt to move the selection down for as long as it is
+      // held. The menu looks dead rather than slow. The world is paused here
+      // anyway, so nothing is owed a held key.
+      input.down.clear();
       const ids = Object.keys(assets.manifest.levels);
       const i = ids.indexOf(currentLevel);
       terminal.code = codeFor(cam, Math.floor(i / 5), i % 5);
@@ -772,8 +781,14 @@ window.addEventListener('keydown', (e) => {
 let termHeld = false;
 function stepTerminal() {
   if (terminal.binding) { termHeld = input.down.size > 0; return; }
-  const pressed = input.has('ArrowUp', 'KeyW') ? -1
-    : input.has('ArrowDown', 'KeyS') ? 1 : 0;
+  // A phone has no keyboard, and the terminal is a full menu. Without this the
+  // shop was unreachable on the one platform the game actually ships to: the
+  // pages drew perfectly and nothing could be selected. The movement stick
+  // drives the menu, a tap on that side confirms, a tap on the look side goes
+  // back -- the same fire/use split as in play.
+  const tdir = touch.enabled ? touch.direction() : 0;
+  const pressed = (input.has('ArrowUp', 'KeyW') || (tdir & 8)) ? -1
+    : (input.has('ArrowDown', 'KeyS') || (tdir & 4)) ? 1 : 0;
   const sideways = input.has('ArrowRight', 'KeyD') ? 1
     : input.has('ArrowLeft', 'KeyA') ? -1 : 0;
   const enter = input.has(...(config.keys.fire ?? []), ...(config.keys.switch ?? []));
@@ -784,6 +799,8 @@ function stepTerminal() {
     else if (enter) terminal.choose(cam);
     else if (esc) { terminal.open = false; closeTerminal(); }
   }
+  // The stick counts as held too, or a thumb resting on it would step the
+  // selection every frame.
   termHeld = pressed !== 0 || sideways !== 0 || enter || esc;
 }
 

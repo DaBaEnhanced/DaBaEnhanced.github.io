@@ -3,12 +3,12 @@ import {
 } from './geometry.js?v=source-fidelity-7';
 import { ObjectTextures, PanelTexture, TextureBanks } from './textures.js?v=source-fidelity-21';
 import { VectorObjects } from './vectorObjects.js?v=source-fidelity-2';
-import { FontTextures } from './fonts.js';
-import { advanceCampaign, FrontendController, FrontendRenderer } from './frontend.js?v=source-fidelity-6';
-import { EndingSequence } from './ending.js';
-import { AudioEngine } from './audio.js?v=source-fidelity-17';
+import { FontTextures } from './fonts.js?v=source-fidelity-2';
+import { advanceCampaign, FrontendController, FrontendRenderer } from './frontend.js?v=source-fidelity-8';
+import { EndingSequence, StorySequence } from './ending.js?v=source-fidelity-3';
+import { AudioEngine } from './audio.js?v=source-fidelity-19';
 import { GAMEPAD_BUTTONS, loadCampaign, readGamepad, saveCampaign } from './controls.js?v=source-fidelity-2';
-import { SourceViewRenderer } from './renderer3d.js?v=source-fidelity-125';
+import { SourceViewRenderer } from './renderer3d.js?v=source-fidelity-126';
 import { shouldGrabPointer, TouchControls } from './touch.js?v=browser-controls-2';
 
 const canvas = document.querySelector('#map');
@@ -35,6 +35,8 @@ let renderer = null;
 const frontend = new FrontendController();
 let frontendRenderer = null;
 let ending = null;
+let story = null;
+let storyStats = null;
 let audio = null;
 let viewMode = 'first-person';
 let paused = false;
@@ -160,11 +162,18 @@ function clearRuntimeError() {
 }
 
 function draw() {
+  if (story?.active) {
+    audio?.setUnderwaterFilter(false);
+    story.draw(context, canvas.clientWidth, canvas.clientHeight);
+    return;
+  }
   if (ending?.active) {
+    audio?.setUnderwaterFilter(false);
     ending.draw(context, canvas.clientWidth, canvas.clientHeight);
     return;
   }
   if (frontend.active && frontendRenderer) {
+    audio?.setUnderwaterFilter(false);
     frontendRenderer.draw(frontend, context, canvas.clientWidth, canvas.clientHeight);
     return;
   }
@@ -180,6 +189,7 @@ function draw() {
       // black and then escape requestAnimationFrame, freezing all controls.
       try {
         renderer.render(level, context, canvas.clientWidth, canvas.clientHeight, paused);
+        audio?.setUnderwaterFilter(Boolean(renderer.sourceWaterFill));
         clearRuntimeError();
       } catch (error) {
         reportRuntimeError(error);
@@ -323,7 +333,7 @@ function setBrowserCheat(name, enabled) {
 }
 
 function setPaused(next = !paused) {
-  if (viewMode !== 'first-person' || frontend.active || ending?.active || dead) return;
+  if (viewMode !== 'first-person' || frontend.active || story?.active || ending?.active || dead) return;
   paused = next;
   keys.clear();
   document.querySelector('#map-help').textContent = paused
@@ -398,24 +408,50 @@ async function handleFrontendAction(action) {
     return;
   }
   if (action.type === 'play') {
-    if (campaignTransitionPending) return;
-    campaignTransitionPending = true;
-    try {
-      // Browser-only loading is asynchronous. Keep the front end active until
-      // the replacement world exists: otherwise animate() can revisit the old
-      // world's latched `completed` byte and apply `wevewon`'s single MAXLEVEL
-      // increment a second time. The retail transition itself is synchronous
-      // (newtwo.s:wevewon lines 4632-4638, then ControlLoop.s GETSTATS).
-      levelSelect.value = String.fromCharCode(65 + action.stats.level);
-      if (!await loadLevel(levelSelect.value)) return;
-      applyPasswordStats(action.stats);
-      frontend.close();
-      document.body.classList.remove('presentation');
-      document.querySelector('#map-help').textContent = viewHelp();
-      draw();
-    } finally {
-      campaignTransitionPending = false;
+    if (campaignTransitionPending || story?.active) return;
+    beginStory(action.stats);
+  }
+}
+
+function beginStory(stats) {
+  // newtwo.s:PLAYTHEGAME always runs TWEENTEXT for single-player `mors='n'`
+  // before it exposes the loaded world. Preserve the password-rounded state
+  // while the released 16-record LEVELTEXT block is on screen.
+  storyStats = {
+    level: stats.level | 0, energy: stats.energy | 0,
+    guns: [...stats.guns], ammo: [...stats.ammo],
+  };
+  keys.clear();
+  frontend.close();
+  ending?.stop();
+  audio?.stopMusic();
+  story.start(storyStats.level);
+  document.body.classList.add('presentation');
+  document.querySelector('#map-help').textContent =
+    'Retail level story · press any key or click to continue';
+  draw();
+}
+
+async function completeStory() {
+  if (campaignTransitionPending || !storyStats) return;
+  campaignTransitionPending = true;
+  const stats = storyStats;
+  storyStats = null;
+  try {
+    // Browser-only loading is asynchronous. The presentation latch prevents
+    // the old world's completed byte from applying wevewon twice while fetch
+    // replaces it (newtwo.s:wevewon; controlloop.s GETSTATS).
+    levelSelect.value = String.fromCharCode(65 + stats.level);
+    if (!await loadLevel(levelSelect.value)) {
+      openFrontend();
+      return;
     }
+    applyPasswordStats(stats);
+    document.body.classList.remove('presentation');
+    document.querySelector('#map-help').textContent = viewHelp();
+    draw();
+  } finally {
+    campaignTransitionPending = false;
   }
 }
 
@@ -423,7 +459,10 @@ function openFrontend(reset = false) {
   keys.clear();
   paused = false;
   dead = false;
+  story?.stop();
+  storyStats = null;
   ending?.stop();
+  void audio?.playMusic('title');
   if (document.pointerLockElement === canvas) document.exitPointerLock?.();
   document.body.classList.add('presentation');
   if (reset) frontend.resetStats();
@@ -433,28 +472,50 @@ function openFrontend(reset = false) {
   draw();
 }
 
-function finishLevel() {
-  const transition = advanceCampaign(currentStats());
-  keys.clear();
-  operateQueued = false;
-  paused = false;
-  dead = false;
-  frontend.close();
-  if (document.pointerLockElement === canvas) document.exitPointerLock?.();
-  document.body.classList.add('presentation');
-  if (transition.type === 'ending') {
-    ending.start();
-    document.querySelector('#map-help').textContent =
-      'Retail ending · click/Space skips the opening hold · Escape returns to title';
-  } else {
-    ending.stop();
-    frontend.open();
-    frontend.setStats(transition.stats);
-    levelSelect.value = String.fromCharCode(65 + transition.stats.level);
-    document.querySelector('#map-help').textContent =
-      'Level complete · next retail level selected · Enter/Space continues';
+async function finishLevel() {
+  if (campaignTransitionPending) return;
+  campaignTransitionPending = true;
+  try {
+    const transition = advanceCampaign(currentStats());
+    keys.clear();
+    operateQueued = false;
+    paused = false;
+    dead = false;
+    frontend.close();
+    story?.stop();
+    ending?.stop();
+    if (document.pointerLockElement === canvas) document.exitPointerLock?.();
+    document.querySelector('#map-help').textContent = 'Level complete';
+    // newtwo.s:wevewon selects embedded `welldone`, sets UseAllChannels, and
+    // calls mt_music until the module sets reachedend. Keep the last gameplay
+    // buffer visible for that complete one-shot before changing presentation.
+    await audio?.playMusicOnce('levelComplete');
+    document.body.classList.add('presentation');
+    if (transition.type === 'ending') {
+      ending.start();
+      document.querySelector('#map-help').textContent =
+        'Retail ending · click/Space skips the opening hold · Escape returns to title';
+    } else {
+      frontend.open();
+      frontend.setStats(transition.stats);
+      levelSelect.value = String.fromCharCode(65 + transition.stats.level);
+      void audio?.playMusic('title');
+      document.querySelector('#map-help').textContent =
+        'Level complete · next retail level selected · Enter/Space continues';
+    }
+    draw();
+  } finally {
+    // An adapter/decoder failure must not leave the old completed world behind
+    // an eternal browser-only transition latch.
+    campaignTransitionPending = false;
   }
-  draw();
+}
+
+async function playGameOverMusic() {
+  // newtwo.s:end follows the same frozen-buffer path with embedded `gameover`
+  // and returns through closeeverything only after reachedend.
+  await audio?.playMusicOnce('gameOver');
+  if (dead && !frontend.active && !story?.active && !ending?.active) openFrontend(true);
 }
 
 async function start() {
@@ -475,6 +536,7 @@ async function start() {
   frontend.setDisplayMode(renderer.displayMode);
   frontend.setCrtFilter(document.body.classList.contains('crt-filter'));
   ending = await EndingSequence.load(fonts);
+  story = new StorySequence(ending.manifest, fonts);
   audio = loadedAudio;
   const index = await response.json();
   document.querySelector('#level-count').textContent = index.length;
@@ -505,6 +567,9 @@ document.querySelector('#menu').addEventListener('click', () => openFrontend());
 document.querySelector('#ending').addEventListener('click', () => {
   keys.clear();
   frontend.close();
+  story?.stop();
+  storyStats = null;
+  audio?.stopMusic();
   paused = false;
   dead = false;
   ending.start();
@@ -542,6 +607,11 @@ document.querySelectorAll('[data-view]').forEach(button => button.addEventListen
 }));
 
 function handleTouchConfirm() {
+  if (story?.active) {
+    story.dismiss();
+    draw();
+    return true;
+  }
   if (ending?.active) {
     ending.skipIntro();
     draw();
@@ -568,7 +638,7 @@ const touch = PLAY_MODE ? new TouchControls(canvas, {
   onFire: () => { touchFireQueued = true; },
   onUse: () => { operateQueued = true; },
   onLook: (horizontal, vertical = 0) => {
-    if (viewMode !== 'first-person' || paused || frontend.active || ending?.active || dead) return;
+    if (viewMode !== 'first-person' || paused || frontend.active || story?.active || ending?.active || dead) return;
     if (horizontal) renderer?.turn(horizontal * .008);
     const pitched = vertical ? renderer?.lookVertical(vertical * .008) : false;
     lookMoved ||= Boolean(horizontal) || pitched;
@@ -596,6 +666,11 @@ canvas.addEventListener('wheel', event => {
 canvas.addEventListener('pointerdown', event => {
   void audio?.unlock();
   if (touch.enabled && (event.pointerType === 'touch' || event.pointerType === 'pen')) return;
+  if (story?.active) {
+    story.dismiss();
+    draw();
+    return;
+  }
   if (ending?.active) {
     ending.skipIntro();
     draw();
@@ -675,7 +750,7 @@ canvas.addEventListener('pointerup', event => {
 canvas.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('mousemove', event => {
   if (document.pointerLockElement !== canvas || viewMode !== 'first-person' ||
-      paused || frontend.active || ending?.active || dead) return;
+      paused || frontend.active || story?.active || ending?.active || dead) return;
   if (event.movementX || event.movementY) {
     if (event.movementX) renderer?.turn(event.movementX * .008);
     if (event.movementY) renderer?.lookVertical(event.movementY * .008);
@@ -739,6 +814,12 @@ document.querySelector('#touch-fullscreen').addEventListener('click', event => {
 
 addEventListener('keydown', event => {
   void audio?.unlock();
+  if (story?.active) {
+    event.preventDefault();
+    story.dismiss();
+    draw();
+    return;
+  }
   if (ending?.active) {
     event.preventDefault();
     if (event.code === 'Escape') openFrontend();
@@ -844,7 +925,12 @@ function animate(now) {
     const gamepad = readGamepad(navigator.getGamepads?.() || [], previousGamepadButtons);
     previousGamepadButtons = gamepad.buttons;
     touch.updatePads();
-    if (ending?.active) {
+    if (story?.active) {
+    if (gamepad.pressed.size) story.dismiss();
+    const storyUpdate = story.update(elapsed);
+    if (storyUpdate.redraw) draw();
+    if (storyUpdate.completed) void completeStory();
+  } else if (ending?.active) {
     if (gamepad.pressed.has(GAMEPAD_BUTTONS.back)) openFrontend();
     else if (gamepad.pressed.has(GAMEPAD_BUTTONS.confirm)) ending.skipIntro();
     if (ending.update(elapsed)) draw();
@@ -920,13 +1006,14 @@ function animate(now) {
     }
     lookMoved = false;
     if (renderer.world.completed) {
-      finishLevel();
+      void finishLevel();
     } else if (renderer.world.playerState.energy <= 0) {
       dead = true;
       keys.clear();
       document.querySelector('#map-help').textContent =
         'Game over · Enter/Space/Escape returns to the retail title';
       draw();
+      void playGameOverMusic();
     }
   } else if (paused) {
     if (gamepad.pressed.has(GAMEPAD_BUTTONS.back)

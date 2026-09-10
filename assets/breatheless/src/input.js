@@ -106,8 +106,8 @@ const UPD_SPEED = {
   5: { 1: -1, 2: 1, 8: 1 },
   6: { 1: 1, 8: 1 },
   8: { 1: 1, 2: 1, 5: 1, 6: 1 },
-  9: { 2: 1, 4: 1, 6: -1 },
-  10: { 1: 1, 4: 1, 5: -1 },
+  9: { 2: 1, 4: 1 },
+  10: { 1: 1, 2: -1, 4: 1 },
 };
 
 /** Accelerate `cur` toward `max` by `accel`, clamping instead of overshooting. */

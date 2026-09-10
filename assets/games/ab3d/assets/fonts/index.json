@@ -1,6 +1,14 @@
 {
   "format": "alien-breed-3d-fonts-v1",
   "decoder": "tools/build_fonts.js",
+  "menuRasterColours": {
+    "file": "menu-raster.rgb12be",
+    "format": "rgb12be",
+    "count": 256,
+    "source": "WHDLOAD/AlienBreed3DAGA/data/abd8ch",
+    "unpackedExecutableOffset": 324168,
+    "sha256": "2273dd7cf466cdb788c9de533ae3e9925276dd1ab22f3f866034d482c60bfbd5"
+  },
   "fonts": {
     "ending-0": {
       "file": "ending-0.indices",

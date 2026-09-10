@@ -7,6 +7,1320 @@
   "lineHeight": 16,
   "initialLines": 16,
   "sourceTicksPerPixel": 3,
+  "stories": [
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "The base looms dead and silent in front of me, blotting out the sky. The main"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "entrance is out of the question; choked with rubble and bodies, not all of them"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "human. I didn't look too closely. Picking my way through the debris around the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "perimeter, I find a way in: a service entrance located in a storage bay below"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "ground level. I grip my pulse rifle tightly and lower myself into the pit."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "No turning back now."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Taking my life in my hands, I jump into the teleporter, hoping it will take me"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "further into the complex, although I'm pretty hazy about what I'm going to do"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "when I get there. As I materialize, however, my hopes sink. The transporter was"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "intended for freight only, and I find myself in a huge empty storage room."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Looks like I'll have to find some other way in. The Breed howl their greetings"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "as I stride forward...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "In the computer room I try to call up a map, or blueprint, or anything to tell"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "me where I ought to be heading. The only plans I can access from this terminal,"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "however, are some schematics for the sewer system. Poring over them I find a"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "possible route: there's a waste outlet I can reach from my current location"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "which seems to lead further into the complex. Unfortunately, the sewers are"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "partially flooded most of he time, and sloshing through thigh-deep sewage is not"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "my idea  of fun. It seems to be the only way forward, though, and retreat into"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "the infested passages behind me is an even less inviting prospect...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Shivering and sweating at the same time, I try to shake the icy water from my"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "clothes and take in my new surroundings. I think I must be somewhere in the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "research department; the token military presence I commanded here was always"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "discouraged from poking their noses into matters that 'didn't concern them.'"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Looking around I catch my breath: this place is enormous; even bigger than I had"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "thought. The purpose of this area eludes me; the cavernous rooms and winding"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "staircases serve no immediately visible function. Stepping over the huddled body"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "of another luckless soldier I back up against the cold stone wall and edge"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "towards the corner. The hate-filled cries of the Breed echo through the dim"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "vaulted chambers; this strange place is anything but deserted...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "As I pause for breath I notice a sign on the wall nearby:"
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "COMBAT TEST ARENA: ALPHA"
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "pointing back the way I have just come. Now it makes more sense! All those rooms"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "and walkways were some sort of testing ground for - what? The grotesque"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "experiments now littering the halls with their bodies? Or something else -"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "something I haven't seen yet, perhaps? I glance around nervously as the thought"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "takes shape, but as my eyes adjust to the gloom I see nothing but bank upon bank"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "of computers stretching as far as the eye can see. Now this is more like it! If"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "I can  gain access somehow, I might be able to find a way to escape! A databank"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "this size must hold all sorts of useful information. There are no terminals"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "though. Maybe if I find my way out I can hack in from somewhere nearby."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "A gurgling, half-human grunt behind me makes me spin around, heart pounding...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "As I had hoped, there is a room just outside the entrance to the computer store"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "with an operational terminal. After nearly two hours of desperate hacking, the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "computers grudgingly furnish me with the information I need: a replay of the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "message my second in command sent to our superiors off-planet when the outbreak"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "became unstoppable. He was planning to escape on our private shuttle, after"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "disabling the cooling system on the main reactor. I watch in dismay as his"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "message is cut short; the horde of slavering Breed which break down the door and"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "devour him alive pay no heed to the camera still recording his screams. A split"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "second later the net security catches up with my activities and the terminal"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "shuts down. I know what I must do. A reactor meltdown would blow this whole"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "wretched place into orbit and the Breed with it. And I might just live to see it"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "happen. But to go any further I need a high-clearance access card: the security"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "systems here are not responding to my palm print or retina scan. The Breed howl"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "mockingly as I set out to find it...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "I found the access card, along with the remains of its owner. What posessed him"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "to flee into the mines no-one will ever know. His mildly surprised face gazing"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "up at me from its watery hiding place is an image I have difficulty banishing"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "from my mind. Along with many others. The transporter takes me down and down,"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "into the substructure of the base. According to my route plan, I should be able"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "to get back into the main building further on, saving time and avoiding some"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "dangerous areas. This way is far from safe though; a lot of fuel lines go"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "through this area...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "As soon as I step onto the transporter I realise something is wrong. The"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "instrument panel dangles from a jumble of wires; sparks and smoke issue from"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "within. I curse loudly and lunge for the door; a faulty transporter can be"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "lethal. But before I can get out, something within the scorched mess of"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "electronics crackles and I am - somewhere else."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "After checking that I am, in fact, still whole, I look uneasily around myself."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "An icy chill settles over my heart as I see a sign - scored and dented by some"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "massive impact - which reads:"
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "COMBAT TEST ARENA: GAMMA"
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "The huge exit door is locked. I'm going to have to find the key. Hopefully"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "whatever they were testing isn't still here...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Glad to be alive, I stumble out of the combat arena and collapse, the door"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "slamming shut behind me. When I come to to my senses again, I find myself on"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "some sort of lift. The only way seems to be upwards, but I have no idea where it"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "will take me. My only hope is to find another terminal and get back on track."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Exhausted, I bandage my wounds as best I can and stagger to my feet. I press a"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "nearby button and the lift judders upwards in response. I wipe my sweaty palms"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "on my jacket and grip my gun more tightly - things are too quiet up there...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "I am beginning to think that there is simply no end to this hellish place."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "My fevered imagination conjures up an entire planet riddled with these dark"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "corridors and rooms, empty and deserted except for the screams of the Breed."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "With difficulty I get a grip on myself. A barely readable notice on the wall"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "gives me hope: one of the facilities it mentions, the administration block, was"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "right near the route the computer gave me. Straightening with new purpose, I set"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "my jaw and continue. But in the shadows ahead, the breed reach out for me...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "I made it! The transporter dumps me in a brightly-lit room in the administration"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "centre. Supplies are at hand, and I waste no time provisioning myself. All that"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "remains is for me to find my way out of here and I'll be right on top of the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "reactor core! I press the panel which opens the door with renewed hope; I might"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "just beat them yet...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "I slam the door of the admin block behind me, and stare about wildly. I hadn't"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "expected so much resistance; what has happened here? I can only assume that I am"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "approaching the centre of the infestation. But there! On the wall opposite: a"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "sign pointing the way to the reactor control room! I lurch off in the direction"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "it points, but am brought up short with a shout of despair. The whole corridor"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "is blocked with rubble! I punch the wall in anger and frustration, but I will"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "not - cannot - give up now. I look around desperately; a wall plan nearby shows"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "no other connecting corridors, but there is an alternative route: a winding"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "tunnel leading to a deep borehole. From there I can ride a lift back up to the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "surface and gain access to the reactor from the other side. I stare for a while"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "at the mountain of debris, mere yards on the other side of which is my goal,"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "then turn my back and walk away...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "The lift takes me up to ground level, but what had been marked as a passageway"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "on the plans turns out to be still under construction. Wetting a finger and"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "holding it aloft I find that there is indeed a sluggish current of air from the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "black passage ahead, but the labyrinth of caves also echoes with the cries of"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "the enemy. I briefly consider returning to the pit and trying to find a"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "different way, but shudder and dismiss the idea immediately. Gritting my teeth,"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "I plunge into the darkness with guns ablaze...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Getting to the reactor control centre proves to be only half the battle. The"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "place is a maze of corridors and rooms centred around the - maddeningly close"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "but still unreachable - reactor core itself. Somehow I must raise the walk-ways"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "leading to the cooling system and extract it from the core. Then I'll have about"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "two hours to get into orbit before meltdown occurs. If the shuttle is flight-"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "ready, that's no problem. If not..."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Mission accomplished, I pelt out of the reactor core towards the command centre,"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "which lies some distance from the main base. First though I have to get out of"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "the power plant, and with fuel coming to the boil in the groaning pipes all"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "around me, that's easier said than done. The corridors here are thick with the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Breed too, and I'm going to have to wade right through them. My own scream of"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "rage and hate rising to challenge the horde, I charge the lot of them...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ],
+    [
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Slamming the door shut on the grasping claws and rending teeth, silence engulfs"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "me. I turn and lean on the wall, heaving a sigh of relief. The reactor is behind"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "me now, and all that remains is for me to find the shuttle and get out of here."
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "Grabbing as much equipment as I can carry, I set off, the nearness of my goal"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "spurring me on. I pass a sign:"
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "COMMAND CENTRE: AUTHORIZED PERSONNEL ONLY. CLEARANCE"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "MU T BE OB AINED FRO"
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "the rest of it is unreadable; a charred mess. I resolve to be on the look out"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "for anyone who looks likely to hold a passkey. As I step outside I can see the"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "command centre, the only access from this side seemingly via a gantry high"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "overhead. Somewhere there must be a way up to that gantry. And somewhere there's"
+      },
+      {
+        "font": 0,
+        "centred": true,
+        "text": "a passkey to get me inside...."
+      },
+      {
+        "font": 0,
+        "centred": false,
+        "text": ""
+      }
+    ]
+  ],
   "intro": [
     {
       "font": 0,

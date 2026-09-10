@@ -456,5 +456,45 @@
       "packedSha256": "dd99b2f3c57985a88b30a162484fb4f56230e8a63fe49fc04878f38b3ee1aab1",
       "pcmSha256": "1a3103272690d5d82d71b86d77777d9afd36e2f4d25462b53071673ce4510c43"
     }
+  ],
+  "music": [
+    {
+      "id": "title",
+      "file": "title.ogg",
+      "moduleFile": "title.med",
+      "container": "OctaMED MMD1",
+      "loop": true,
+      "source": "alienbreed3d2_CPORT/media/sounds/abreed3d.med",
+      "moduleBytes": 154302,
+      "moduleSha256": "ba6a4c675e93cdda3f7e04a799d7f99562ee58d8f3570afaa2cd8291bce69888",
+      "renderedSha256": "e322927eabcf7e22e06d0cdea01e291070d54ac28b043dfff2d7e4c332d41e77",
+      "renderer": "ffmpeg/libopenmpt; 48000 Hz; Vorbis q5; unity gain"
+    },
+    {
+      "id": "gameOver",
+      "file": "gameOver.ogg",
+      "moduleFile": "gameOver.mod",
+      "container": "ProTracker M.K.",
+      "loop": false,
+      "source": "WHDLOAD/AlienBreed3DAGA/data/abd8ch",
+      "unpackedExecutableOffset": 685700,
+      "moduleBytes": 30282,
+      "moduleSha256": "6d951f182d693ba4b6701b9c67ab5c28c6e4c36b69a933b8fdf46fa101d8e571",
+      "renderedSha256": "739c50d2281938ff72d771f3418cfbd8804132c58ec88e8e05e981ed8121f071",
+      "renderer": "ffmpeg/libopenmpt; 48000 Hz; Vorbis q5; unity gain"
+    },
+    {
+      "id": "levelComplete",
+      "file": "levelComplete.ogg",
+      "moduleFile": "levelComplete.mod",
+      "container": "ProTracker M.K.",
+      "loop": false,
+      "source": "WHDLOAD/AlienBreed3DAGA/data/abd8ch",
+      "unpackedExecutableOffset": 715982,
+      "moduleBytes": 33028,
+      "moduleSha256": "bfaf977fa794bbf01179f0fa173497cc19bddff6500ec2fa583d933731c1ea6d",
+      "renderedSha256": "817c7ed14f628388a9d0e38b9daaa02a1ce49318dc4584d1c5f675bc980149b9",
+      "renderer": "ffmpeg/libopenmpt; 48000 Hz; Vorbis q5; unity gain"
+    }
   ]
 }

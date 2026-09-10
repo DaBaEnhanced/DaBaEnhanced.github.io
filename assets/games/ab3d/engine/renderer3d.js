@@ -3,7 +3,7 @@ import {
 } from './geometry.js?v=source-fidelity-7';
 import {
   DynamicWorld, sourceDivsWord, weaponView,
-} from './simulation.js?v=source-fidelity-57';
+} from './simulation.js?v=source-fidelity-58';
 import { decodeRGB12, objectLightRow } from './textures.js?v=source-fidelity-21';
 import {
   CROUCHED_STEP, radiansToSourceAngle, sourceAngleRadians, sourceAngleTrig,

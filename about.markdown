@@ -77,7 +77,7 @@ This is my personal space: AI stuff goes out under Clumsy.GiBa, the rest under D
 
 ### Writing
 
-Written work is 99% human-made, though translations are mostly done with AI, and some poems were written directly in English. The novels are closer to 50-50: I handle the world-building, plots, and characters, while the LLM of the moment helps with prose and embellishments.
+Written work is 99% human-made, though translations are mostly done with AI, and some poems were written directly in English. The novels are closer to 75-25: I handle the world-building, plots, characters, planning and first draft, while the LLM of the moment helps with prose and embellishments.
 
 ### Games
 

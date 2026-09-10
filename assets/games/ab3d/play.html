@@ -62,7 +62,7 @@
   <script type="module">
     const overlay = document.querySelector('#play-start');
     overlay.style.pointerEvents = 'none';
-    const game = await import('./engine/main.js?v=source-fidelity-136');
+    const game = await import('./engine/main.js?v=source-fidelity-138');
     if (await game.ready) overlay.style.pointerEvents = 'auto';
     else overlay.remove();
     overlay.addEventListener('pointerdown', async event => {

@@ -58,6 +58,24 @@ const CREDIT_LINES = [
   [30, '           Phil and The Wolves          '],
 ];
 
+// titlecop.s:OPTCOP changes sprite colours 2/3 once per eight-line glyph.
+// controlloop.s:HIGHLIGHT skips the 16-byte sprite header and then inverts
+// only the second sprite bitplane: normal glyph pixels remain colour 1;
+// selected background becomes colour 2 and selected glyphs become colour 3.
+const MENU_HIGHLIGHT_BACKGROUND = Object.freeze([
+  [34, 0, 0], [68, 0, 0], [102, 0, 0], [136, 0, 0],
+  [136, 0, 0], [102, 0, 0], [68, 0, 0], [34, 0, 0],
+]);
+const MENU_HIGHLIGHT_FOREGROUND = Object.freeze([
+  [68, 68, 136], [119, 119, 170], [170, 170, 204], [204, 204, 255],
+  [204, 204, 255], [170, 170, 204], [119, 119, 170], [68, 68, 136],
+]);
+
+export function sourceMenuPixelColour(set, inverted, scanline, normalColour = null) {
+  if (!inverted) return set ? normalColour : null;
+  return (set ? MENU_HIGHLIGHT_FOREGROUND : MENU_HIGHLIGHT_BACKGROUND)[scanline & 7];
+}
+
 function byte(value) { return value & 0xff; }
 
 export function withSourceParity(value) {
@@ -374,11 +392,14 @@ export class FrontendRenderer {
   }
 
   drawGlyph(context, code, x, y, inverted = false) {
-    context.fillStyle = '#ffffff';
     for (let py = 0; py < 8; py++) {
+      const normalColour = this.fonts.menuColour(y + py);
       for (let px = 0; px < 8; px++) {
         const set = Boolean(this.fonts.sample('optfont', code, px, py));
-        if (inverted ? !set : set) context.fillRect(x + px, y + py, 1, 1);
+        const colour = sourceMenuPixelColour(set, inverted, py, normalColour);
+        if (!colour) continue;
+        context.fillStyle = `rgb(${colour[0]} ${colour[1]} ${colour[2]})`;
+        context.fillRect(x + px, y + py, 1, 1);
       }
     }
   }

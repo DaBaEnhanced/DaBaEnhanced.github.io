@@ -200,6 +200,19 @@ export class Terminal {
     this.message = 'PURCHASED';
   }
 
+  /**
+   * Go up one page, or close from the root -- what choosing EXIT does, without
+   * having to find EXIT first. Esc does this on a keyboard; on a touchscreen it
+   * is a tap on the look side, because there is no Esc to press.
+   */
+  back() {
+    const SUB = ['window', 'sound', 'keys', 'controls'];
+    if (this.page === 'main') { this.open = false; this.onClose?.(); return; }
+    if (SUB.includes(this.page)) this.page = this.configOnly ? 'main' : 'config';
+    else this.page = 'main';
+    this.sel = 0; this.message = '';
+  }
+
   move(delta) {
     const n = this.items().length;
     this.sel = (this.sel + delta + n) % n;

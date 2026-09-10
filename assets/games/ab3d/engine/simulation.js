@@ -3753,10 +3753,11 @@ export class DynamicWorld {
       const bottom = door.current * 64;
       for (const wall of door.walls) {
         this.wallBottoms.set(wall.renderOffset, bottom);
-        // DoorRoutine rebuilds the packed texture pointer as textureBase plus
-        // ((-current / 4) & 255) on every tick. The exported command splits that
-        // address into its horizontal 16-pixel page and vertical byte offset.
-        this.wallTextureOffsets.set(wall.renderOffset, wall.textureBase >>> 12);
+        // archive/amos/leveld.asc:1879 writes ZWG*4096, then
+        // anims:DoorRoutine copies that long directly to command offset 10.
+        // itsawalldraw reads the long's high word as the horizontal tile page;
+        // do not divide by 4096 and repair the editor's shipped encoding.
+        this.wallTextureOffsets.set(wall.renderOffset, wall.textureBase >>> 16);
         this.wallTextureYOffsets.set(wall.renderOffset, (-Math.trunc(door.current / 4)) & 255);
         if (this.zoneFloor(door.zone) - bottom < PLAYER_HEIGHT_FIXED) {
           this.blockedEdges.add(wall.edge);
@@ -3768,9 +3769,10 @@ export class DynamicWorld {
       const top = lift.current * 64;
       for (const wall of lift.walls) {
         this.wallTops.set(wall.renderOffset, top);
-        // LiftRoutine applies the same moving texture-pointer calculation as
-        // DoorRoutine; only the wall endpoint moves in the opposite direction.
-        this.wallTextureOffsets.set(wall.renderOffset, wall.textureBase >>> 12);
+        // archive/amos/leveld.asc:1934 and anims:LiftRoutine use the identical
+        // raw-longword path as doors. Every released mover base is below 65536,
+        // so its installed horizontal page is zero.
+        this.wallTextureOffsets.set(wall.renderOffset, wall.textureBase >>> 16);
         this.wallTextureYOffsets.set(wall.renderOffset, (-Math.trunc(lift.current / 4)) & 255);
       }
     }
