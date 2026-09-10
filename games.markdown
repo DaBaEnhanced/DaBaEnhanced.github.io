@@ -222,6 +222,12 @@ I am vibecoding the adventure game editor, tools to turn images into pixel art, 
 	<a href="{{ site.cdn_url }}/images/MF/11.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/11.jpg" alt="Hired Guns screenshot 11" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
 
+Here is a work-in-progress taste of the game's first chapter!
+
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/games/moonforgot/game/index.html?bundle=../bundle.json"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the Chapter 1 demo in browser</a>
+</div>
+
 </article>
 
 <article class="game-card" markdown="1">

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <title>The Moon That Forgot</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <main id="game-shell" aria-label="The Moon That Forgot game">
+    <section id="command-bar" aria-label="Commands">
+      <div class="sidebar-title">Actions</div>
+      <div id="verbs" role="toolbar" aria-label="Actions">
+        <button data-verb="walk">Walk</button>
+        <button data-verb="look">Look</button>
+        <button data-verb="use">Use</button>
+        <button data-verb="talk">Talk</button>
+        <button data-verb="pickUp">Take</button>
+      </div>
+      <div id="status-line">Walk to…</div>
+      <div id="system-buttons">
+        <button id="save-button" title="Save game">Save</button>
+        <button id="load-button" title="Load game">Load</button>
+        <button id="help-button" title="Controls">?</button>
+      </div>
+    </section>
+    <section id="stage" aria-label="Game view">
+      <canvas id="game-canvas" width="320" height="180" tabindex="0" aria-label="Point and click game canvas"></canvas>
+      <div id="loading" role="status">WAKING MEMORY…</div>
+      <div id="toast" aria-live="polite"></div>
+      <div id="speech" class="panel hidden" aria-live="polite">
+        <img id="speaker-portrait" class="hidden" alt="">
+        <div id="speech-content">
+          <div id="speaker"></div>
+          <div id="speech-text"></div>
+          <div id="choices" class="hidden"></div>
+          <div id="continue-hint">click to continue</div>
+        </div>
+      </div>
+      <div id="fade"></div>
+    </section>
+    <section id="inventory-panel" aria-label="Inventory">
+      <div class="sidebar-title">Inventory</div>
+      <div id="inventory" aria-label="Inventory"></div>
+    </section>
+    <section id="launch-screen" aria-labelledby="launch-title">
+      <img id="launch-background" class="hidden" alt="">
+      <div class="launch-shade"></div>
+      <div class="launch-content">
+        <div class="launch-kicker">A point-and-click adventure</div>
+        <h1 id="launch-title">The Moon That Forgot</h1>
+        <button id="launch-button" type="button" disabled>Loading…</button>
+        <div class="launch-hint">Click to begin with audio enabled</div>
+      </div>
+    </section>
+    <aside id="help" class="modal hidden" aria-label="Controls">
+      <div class="modal-card">
+        <h1>How to play</h1>
+        <p>Choose a verb, then click the scene. Select an inventory item and click a target to use it. Right-click examines. Double-click exits to walk faster.</p>
+        <p><kbd>1–5</kbd> verbs · <kbd>H</kbd> hotspot assist · <kbd>D</kbd> debug · <kbd>Esc</kbd> cancel</p>
+        <button id="close-help">Continue</button>
+      </div>
+    </aside>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
