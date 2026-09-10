@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Alien Breed 3D and The Moon That Forgot demo"
+date: 2026-09-11 23:53:47 +0200
+categories: jekyll update
+excerpt: New Amiga port, and The Moon That Forgot demo
+thumbnail: /games/ab3d/ab3d_banner.jpg
+---
+
+So, I've completed the port to HTML/Js of Alien Breed 3D, it was quite a trip so check the game and the post-mortem. Porting a game whose code relied heavily on hardware and registers side effects was fun.
+I've also published a demo of Chapter 1 of The Moon That Forgot, and adventure game made with the old-school point-and-click adventure games editor I've been vibe-coding lately.
+Check the <a href="/games">GAMES section!</a>
+Bye!
