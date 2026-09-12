@@ -6920,6 +6920,39 @@ let startedWithShift = false;
 window.addEventListener('keydown', (e) => { if (e.key === 'Shift') startedWithShift = true; },
 	{ once: true, capture: true });
 
+/**
+ * Assets the game cannot actually run without.
+ *
+ * Most are loaded with a catch so one missing extra does not take the whole
+ * boot down, and for briefing art or end screens that is right. For these it is
+ * not: carrying on without them produces a game that LOOKS like it started and
+ * quietly does not work.
+ *
+ * monsters.json is the one that bites. Without it createMonsterState gets an
+ * empty defs table, addMonster refuses every type, and so every egg silently
+ * fails to hatch. What is left on screen are the monster blocks baked into the
+ * map data -- 162 of them across 14 of the shipped maps -- which render like
+ * enemies, never move, and cannot be killed because no record backs them.
+ * It reads exactly like a bug in the monster code, and it comes back clean on
+ * reload, which makes it about the worst kind of failure to chase.
+ *
+ * So: check, and refuse to start rather than start broken.
+ */
+const REQUIRED_ASSETS = [
+	['viewtables.json', () => game.tables],
+	['items.json', () => game.itemDefs],
+	['monsters.json', () => game.monsterDefs],
+	['monster-graphics.json', () => game.monsterGraphics],
+	['characters.json', () => game.characters],
+	['exgfx.json', () => game.exgfx],
+	['windows.json', () => game.windows],
+	['gamefont.json', () => game.font],
+];
+
+function missingRequiredAssets() {
+	return REQUIRED_ASSETS.filter(([, present]) => !present()).map(([name]) => name);
+}
+
 async function main() {
 	const canvas = $('screen');
 
@@ -6962,8 +6995,11 @@ async function main() {
 			data: atlasData,
 		};
 	}
-	game.monsterDefs = await loadJSON('monsters.json').catch(() => null);
-	game.monsterGraphics = await loadJSON('monster-graphics.json').catch(() => null);
+	// No catch, as with items.json above. Swallowing a failure here leaves defs
+	// empty, and an empty defs table makes addMonster refuse every egg -- see
+	// REQUIRED_ASSETS for why that is worse than not starting at all.
+	game.monsterDefs = await loadJSON('monsters.json');
+	game.monsterGraphics = await loadJSON('monster-graphics.json');
 	if (game.monsterGraphics) {
 		const atlasData = await loadBytes(game.monsterGraphics.atlas.file);
 		game.monsterAtlas = {
@@ -7059,6 +7095,14 @@ async function main() {
 	const index = await loadJSON('maps/maps.json');
 	game.mapIndex = index;
 
+	// Everything is in. Anything still missing from the required list got there
+	// through a catch, so it already failed all of fetchAsset's retries. Refuse
+	// to start rather than start a game that looks fine and is not.
+	const missing = missingRequiredAssets();
+	if (missing.length) {
+		throw new Error(`could not load ${missing.join(', ')} -- reload the page`);
+	}
+
 	const select = $('map');
 	for (const m of index.maps) {
 		const opt = document.createElement('option');
@@ -7151,4 +7195,13 @@ async function main() {
 main().catch((e) => {
 	status(`error: ${e.message}`);
 	console.error(e);
+	// A boot failure has to be impossible to miss. The whole point of the
+	// required-asset check is that a half-loaded game is worse than one that
+	// plainly did not start, so say so over the top of everything rather than
+	// in the status line, which is easy to walk straight past.
+	const hint = $('drop-hint');
+	if (hint) {
+		hint.textContent = `${e.message}`;
+		hint.classList.add('on');
+	}
 });
