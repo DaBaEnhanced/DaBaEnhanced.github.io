@@ -149,5 +149,47 @@ process.exitCode = fail ? 1 : 0;
 	ok(!customKey('../../etc/passwd').includes('..'), 'path characters are stripped from names');
 }
 
+// --- every shipped map opens in the editor ------------------------------------
+//
+// The editor used to open 01-ArtificialIsland and nothing else; the picker now
+// lists the whole index, so every entry in it has to actually load. A map that
+// throws here is one the picker offers and cannot open.
+{
+	const index = JSON.parse(fs.readFileSync(path.join(dir, 'maps.json'), 'utf8'));
+	ok(index.maps.length > 40, `the index lists ${index.maps.length} maps`);
+
+	let opened = 0;
+	const broken = [];
+	for (const m of index.maps) {
+		try {
+			const json = JSON.parse(fs.readFileSync(path.join(dir, `${m.key}.json`), 'utf8'));
+			const cells = new Uint8Array(fs.readFileSync(path.join(dir, `${m.key}.cells`)));
+			const panels = json.panels
+				? new Uint8Array(fs.readFileSync(path.join(dir, path.basename(json.panels.file)))) : null;
+			const horizon = json.horizon
+				? new Uint8Array(fs.readFileSync(path.join(dir, path.basename(json.horizon.file)))) : null;
+			const doc = createMapDoc(json, cells, panels, horizon);
+			if (!doc.layers?.cells?.length) throw new Error('no cell layer');
+			if (!doc.meta) throw new Error('no header');
+			opened++;
+		} catch (e) {
+			broken.push(`${m.key}: ${e.message}`);
+		}
+	}
+	ok(opened === index.maps.length,
+		`every indexed map opens as a doc (${broken.join('; ') || 'none broken'})`);
+
+	// And the picker is wired to that index rather than a list of its own.
+	const main = fs.readFileSync(path.join(__dirname, '..', 'src', 'main.js'), 'utf8');
+	ok(/function buildSourcePicker\(\)/.test(main), 'the editor has a source picker');
+	const fn = main.slice(main.indexOf('function buildSourcePicker()'));
+	const body = fn.slice(0, fn.indexOf('\n}\n'));
+	ok(/game\.mapIndex\?\.maps/.test(body), 'it lists the map index');
+	ok(/openEditor\(key\)/.test(body), 'and opening one switches the editor to it');
+	ok(/editor\.dirty &&/.test(body), 'with unsaved work confirmed first');
+	ok(/buildSourcePicker\(\);/.test(main.slice(main.indexOf('async function openEditor('))),
+		'and it is rebuilt whenever the editor opens');
+}
+
 console.log(`mapdoc + store: ${pass} passed, ${fail} failed`);
 process.exitCode = fail ? 1 : 0;

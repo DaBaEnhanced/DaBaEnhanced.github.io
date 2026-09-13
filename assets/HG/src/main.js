@@ -1116,6 +1116,7 @@ async function openEditor(sourceKey = '01-ArtificialIsland') {
 			: null;
 		editor.source = sourceKey;
 		editor.open = true;
+		buildSourcePicker();
 		buildToolPalette();
 		await buildPackGrid();
 		buildPlacePickers();
@@ -1308,6 +1309,46 @@ function refreshRegionBar() {
 		const b = $(id);
 		if (b) b.disabled = !editor.select;
 	}
+}
+
+/**
+ * The editor's map picker.
+ *
+ * The editor used to open 01-ArtificialIsland and nothing else -- every other
+ * shipped map could only be reached by exporting it from the game and importing
+ * the file back. This lists all of them straight from the map index.
+ *
+ * Editing is always on a copy: openEditor builds a fresh doc from the shipped
+ * bytes and "save as custom" writes somewhere else, so picking a map here
+ * cannot damage the original.
+ */
+function buildSourcePicker() {
+	const select = $('ed-source');
+	if (!select) return;
+	const maps = game.mapIndex?.maps || [];
+	// Rebuilt on every open, so a map saved since last time shows up.
+	select.textContent = '';
+	for (const m of maps) {
+		const opt = document.createElement('option');
+		opt.value = m.key;
+		opt.textContent = m.name ? `${m.key} - ${m.name}` : m.key;
+		select.appendChild(opt);
+	}
+	select.value = editor.source || maps[0]?.key || '';
+	if (select.dataset.bound) return;
+	select.dataset.bound = '1';
+	select.addEventListener('change', async () => {
+		const key = select.value;
+		select.blur();                       // or the arrow keys stay in the list
+		if (key === editor.source) return;
+		// Unsaved work is only in memory, so this is the one chance to keep it.
+		if (editor.dirty &&
+			!confirm('Open a different map? Unsaved changes to this one are lost.')) {
+			select.value = editor.source;
+			return;
+		}
+		await openEditor(key);
+	});
 }
 
 /**
@@ -7182,6 +7223,67 @@ async function main() {
 	// has to stay out of the way over the canvas.
 	screen.addEventListener('contextmenu', (e) => e.preventDefault());
 	requestAnimationFrame(frame);
+
+	/**
+	 * Why is that monster not moving, and why can I not kill it?
+	 *
+	 * Run hgMonsterCheck() in the console with the stuck monster on screen.
+	 *
+	 * A monster is two things: a block stamped in the map, and a record in the
+	 * monster table. moveMonsters only walks records, and damageOccupantAtCell
+	 * looks the record up BY CELL -- so a block with no record at its cell is
+	 * both immobile and invulnerable, and it still occupies the square.
+	 *
+	 * The other half is a record whose x/y/floor have drifted from its own
+	 * cell: findClosestPlayer works in x/y/floor and weights the floor by four
+	 * before squaring against a cutoff of 100, so a record two floors adrift
+	 * stops finding targets and the monster stands still without being a ghost.
+	 */
+	window.hgMonsterCheck = () => {
+		const cells = game.cells, st = game.monsterState;
+		if (!cells || !st) return 'no map loaded';
+		const W = MAP_WIDTH, LEVEL = LEVEL_CELLS;
+		const where = (i) => `${i % LEVEL % W},${Math.floor((i % LEVEL) / W)} f${Math.floor(i / LEVEL)}`;
+		const isMon = (v) => (v & BLOCK_HERE) &&
+			((v >>> BLOCK_SHIFT) & BLOCK_MASK) >= BLOCK_MONSTER_FIRST &&
+			((v >>> BLOCK_SHIFT) & BLOCK_MASK) <= BLOCK_MONSTER_LAST;
+
+		const ghosts = [];
+		for (let i = 0; i < cells.length; i++) {
+			if (isMon(cells[i] >>> 0) && !monsterAtCell(st, i)) ghosts.push(where(i));
+		}
+		const live = activeMonsters(st);
+		const stale = live
+			.filter((m) => m.cell >= 0 &&
+				m.floor * LEVEL + m.y * W + m.x !== m.cell)
+			.map((m) => `${m.def?.name} record ${where(m.floor * LEVEL + m.y * W + m.x)} but cell ${where(m.cell)}`);
+		const unstamped = live
+			.filter((m) => m.cell >= 0 && !isMon(cells[m.cell] >>> 0))
+			.map((m) => `${m.def?.name} at ${where(m.cell)}`);
+		const noTarget = live.filter((m) => {
+			let best = 0x7fff;
+			for (const p of game.players || []) {
+				if (!p || p.dead || p.inExit || p.active === false) continue;
+				const dx = (p.x | 0) - m.x, dy = (p.y | 0) - m.y, dz = ((p.floor | 0) - m.floor) << 2;
+				best = Math.min(best, dx * dx + dy * dy + dz * dz);
+			}
+			return best >= 100;
+		}).length;
+
+		const out = {
+			map: game.map?.key ?? '?',
+			activeMonsters: live.length,
+			ghostBlocks: ghosts,
+			staleRecords: stale,
+			unstampedRecords: unstamped,
+			idleBecauseOutOfRange: noTarget,
+			// speed 255 sign-extends to -1, which means "does not walk" -- sentry
+			// guns and the like. Those are meant to stand still.
+			stationaryByDesign: live.filter((m) => (((m.def?.speed | 0) << 24) >> 24) < 0).length,
+		};
+		console.log(out);
+		return out;
+	};
 
 	// Exposed so the render output can be diffed against the Node reference
 	// renderer (tools/render-view.js) from the console or a test harness.

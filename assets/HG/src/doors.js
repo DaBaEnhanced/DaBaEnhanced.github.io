@@ -54,7 +54,17 @@ export function triggerDoor(state, cellIdx, opts = {}) {
 	if (!door) return { found: false };
 	if (door.buttonOnly) return { found: true, locked: true, buttonOnly: true, key: 0 };
 	if (door.direction === DOOR.LOCKED) {
-		if (door.key && !(opts.carrying && opts.carrying(door.key))) {
+		// A locked door with NO key never opens by hand. open_door (Main.s:2921)
+		// reads door_key and branches to .do_lock the moment it is zero -- before
+		// it ever looks at what you are carrying -- so the only thing that can
+		// shift it is a button wired to unlock, which is trig 4.
+		//
+		// This used to read `if (door.key && ...)`, which refused only when there
+		// WAS a key you lacked and unlocked everything else. 49 doors across 17
+		// maps ship locked with key 0, including all four outer doors of
+		// 04-Laboratory -- those open onto the map boundary, so walking through
+		// one left you standing in a dead end.
+		if (!door.key || !(opts.carrying && opts.carrying(door.key))) {
 			return { found: true, locked: true, key: door.key };
 		}
 		door.direction = DOOR.STOPPED;

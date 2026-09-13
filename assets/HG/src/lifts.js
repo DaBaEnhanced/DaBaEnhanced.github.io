@@ -180,6 +180,18 @@ function travel(lift, cells, riders, dy, opts, state = null) {
 		if (riderCell === from) {
 			if ('cell' in p) {
 				p.cell = to;
+				// A monster is addressed by cell but ALSO carries x/y/floor, and
+				// those have to follow it up the shaft. findClosestPlayer works
+				// in x/y/floor and weights the floor difference by four before
+				// squaring, against a cutoff of 100 -- so a monster left three
+				// floors stale scores 144 for a player standing right next to
+				// it, finds no target, and is skipped by moveMonsters for the
+				// rest of the level. It stands on its cell, blocking it, while
+				// everything that never rode a lift behaves normally.
+				//
+				// A lift only travels vertically, so the floor is the only part
+				// that moves. Sentries carry no floor and are unaffected.
+				if (typeof p.floor === 'number') p.floor += dy;
 			} else {
 				p.floor += dy;
 				// find_heads_owner_quick: only a PLAYER being carried sets the
