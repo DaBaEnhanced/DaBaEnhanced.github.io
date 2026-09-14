@@ -32,16 +32,21 @@ export const ACTION = {
 	DOOR_LOCK: 17, DOOR_UNLOCK: 18,
 };
 
-// DEVIATION FROM THE ORIGINAL. do_button_action is synchronous there: a button
-// press lands the same frame. This port defers it, so a button has a settling
-// time before the lift starts or the door moves.
+// do_button_action is a bare jump table (Controls&Movement.s:6748): the action
+// lands the same frame the button is pressed. Nothing in the original waits.
 //
-// The delay lives in button_pad1, a byte the original never used -- it is zero
-// in all 573 buttons across all 47 shipped maps, so nothing is being
-// overwritten. It is read in TENTHS of a second, with 0 meaning "use the
-// default", which is how every existing map inherits the default without any
-// map data changing.
-export const DEFAULT_BUTTON_DELAY_S = 1;
+// This port briefly defaulted to a one-second settling time, and because the
+// delay byte is zero in all 573 buttons across all 47 shipped maps, EVERY
+// button in the game inherited it. That broke the Abandoned Depot: pad 6 at
+// x11 y7 f11 unlocks the door three cells north at x11 y4, and you reach the
+// door in well under a second -- so it said LOCKED, and only opened if you
+// walked into it a second time, after the unlock had finally landed. Every
+// button-driven door and lift in the campaign had the same lag.
+//
+// The delay stays available for maps that ask for it. It lives in button_pad1,
+// a byte the original never used, and is read in TENTHS of a second; 0 means
+// no delay, which is what every shipped map carries and what the original does.
+export const DEFAULT_BUTTON_DELAY_S = 0;
 const VBLANK_HZ = 50;
 const TENTHS_TO_TICKS = VBLANK_HZ / 10;
 

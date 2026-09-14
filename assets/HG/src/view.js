@@ -311,9 +311,21 @@ const BLOCK_MONSTER_LAST = 15;
 // Drawviews.s:3595. A monster carrying m_flashed blits with redraw_temp
 // %0000010000111111 and redraw_solid 1 -- bit 10 sends draw_bob down its
 // .solid path, filling the whole silhouette with colour 1. That is the white
-// flash when a monster takes a hit. m_outlined uses colour 6 instead.
+// flash when a monster takes a hit.
+//
+// m_outlined is NOT the same thing with a different colour. It sets redraw_temp
+// %0001000000111111, and bit 12 is a separate flag: blit_bob draws the bob
+// TWICE (Miscroutines.s:100) -- once as a solid colour-6 silhouette shifted one
+// pixel up, then again normally on top. What shows is a one-pixel rim along the
+// top edge, the bevel the psi-casting skeletons in the cave system wear. Filling
+// the silhouette instead turned them into flat blue cut-outs.
 const MONSTER_SOLID_WHITE = 1;
 const MONSTER_SOLID_OUTLINE = 6;
+// The solid pass swaps solid_table in for bob_plane, so the plane-5 control
+// that carries the lighting is bypassed and DEF_PLANE clears planes 4 and 5
+// from the colour bits. A solid fill is an absolute palette index, never a
+// bank-shifted one -- unlike the outline's second pass, which lights normally.
+export const OUTLINE_RISE = 1;
 const BLOCK_PLAYER_FIRST = 32;
 const BLOCK_PLAYER_LAST = 47;
 const AUX_SKELETON = 7;
@@ -464,11 +476,12 @@ function cellLayers(cell, out, isAbove, direction, slot, tables, ctx) {
 			// as variant bit 0 (m_flashed) and clears the flag straight after, so
 			// the flash lasts exactly one redraw, as in the original.
 			const variant = (cell >>> SHIFT.variant) & MASK.variant;
-			const solid = (variant & 1) ? MONSTER_SOLID_WHITE
-				: (variant & 2) ? MONSTER_SOLID_OUTLINE : 0;
+			// m_flashed is tested first and returns, so a flashing monster does
+			// not also wear its outline that frame.
 			out.push({
 				g: GFX_BLOCK_BASE + blockType, lit, useVariant: true,
-				...(solid ? { solid } : {}),
+				...((variant & 1) ? { solid: MONSTER_SOLID_WHITE }
+					: (variant & 2) ? { outline: MONSTER_SOLID_OUTLINE } : {}),
 			});
 			return;
 		}
@@ -715,10 +728,14 @@ export function buildDrawList({ cells, items, x, y, floor, direction, tables, st
 				half(s.mirror, gap);
 				continue;
 			}
-			// `solid` (a flashed or outlined monster) has to ride along with the
-			// atlas rect, or draw_bob's .solid path never runs.
-			const tint = L.lit || L.solid
-				? { ...(L.lit ? { lit: true } : {}), ...(L.solid ? { solid: L.solid } : {}) }
+			// `solid` (a flashed monster) and `outline` (a psi one) have to ride
+			// along with the atlas rect, or blit_bob's extra passes never run.
+			const tint = L.lit || L.solid || L.outline
+				? {
+					...(L.lit ? { lit: true } : {}),
+					...(L.solid ? { solid: L.solid } : {}),
+					...(L.outline ? { outline: L.outline } : {}),
+				}
 				: null;
 			list.push(tint ? { ...s, ...tint } : s);
 			// control=2 bobs store only their upper half; the lower half is the

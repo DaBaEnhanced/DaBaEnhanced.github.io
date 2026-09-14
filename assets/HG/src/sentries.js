@@ -142,6 +142,8 @@ function sentryFire(s, cells, combatState, seen, items, hooks) {
 }
 
 function addSentryFireball(s, cells, combatState, seen, items, hooks) {
+	// sentry_fire (Main.s:3459) plays extra sample 8 at period 95 as it shoots.
+	hooks.onSentryFire?.(s);
 	return addFireball(combatState, cells, seen, items, s.cell, {
 		direction: s.direction & 3,
 		speed: 1,

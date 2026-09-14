@@ -84,9 +84,16 @@ const comp = new IndexCompositor();
 comp.clear();
 comp.drawPlayerFigure({ ...layer, solid: 6, lit: true, slot: layer.slot }, charAtlas,
 	0, 0, 142, 84);
-let c38 = 0;
-for (const v of comp.indices) if (v === 6 + LIGHT_OFFSET) c38++;
-assert(c38 > 20, `lit shield colour ${6 + LIGHT_OFFSET} missing (${c38})`);
+// Absolute, NOT bank-shifted, even though the figure is lit. Bit 10 makes
+// blit_bob swap solid_table in for bob_plane (Miscroutines.s:428), and the
+// plane-5 control that carries the CD32 lighting (Drawviews.s:3874) lives in
+// bob_plane -- so it is bypassed. DEF_PLANE then walks the colour's own bits
+// into the six planes with asr.b #1, clearing planes 4 and 5 for colour 6.
+// This file used to assert 6 + LIGHT_OFFSET, which the assembly does not do.
+let c38 = 0, banked = 0;
+for (const v of comp.indices) { if (v === 6) c38++; if (v === 6 + LIGHT_OFFSET) banked++; }
+assert(c38 > 20, `lit shield colour 6 missing (${c38})`);
+assert(banked === 0, `a solid fill must not be bank-shifted (${banked} px at ${6 + LIGHT_OFFSET})`);
 
 const renderArgs = {
 	cells, items,
@@ -105,7 +112,7 @@ const normal = R.renderView(renderArgs).pixels;
 let changed = 0, whites = 0;
 for (let i = 0; i < flashed.length; i++) {
 	if (flashed[i] !== normal[i]) changed++;
-	if (flashed[i] === 1 + LIGHT_OFFSET) whites++;
+	if (flashed[i] === 1) whites++;
 }
 assert(changed > 20 && whites > 20, `oracle flash ${changed} diffs ${whites} lit-white`);
 

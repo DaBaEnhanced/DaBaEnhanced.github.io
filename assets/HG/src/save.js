@@ -5,7 +5,7 @@ const PREFIX = 'hiredguns-save-';
 
 const PLAYER_KEEP = [
 	'index', 'x', 'y', 'floor', 'direction', 'active', 'dead', 'inExit', 'inTeam',
-	'windowType', 'path', 'hasAux', 'infoScroll', 'usingGrenade', 'throwGrenadeMode',
+	'windowType', 'path', 'hasAux', 'behindPushable', 'infoScroll', 'usingGrenade', 'throwGrenadeMode',
 	'spellShield', 'spellImmune', 'spellWater', 'spellWings', 'spellWeights',
 	'poisoned', 'poisonedStrength', 'poisonedCount', 'poisonedCountStore',
 	'poisonedTotal', 'underwaterCount', 'drowningCount', 'tooHeavy',

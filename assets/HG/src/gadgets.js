@@ -130,8 +130,11 @@ export function tableForPlayer(player) {
 		case WINDOW.EXIT:
 			return EXIT_GADGETS;
 		default:
-			if (player?.usingGrenade && player?.hasAux) return VIEW_AUX_GRENADE_GADGETS;
-			if (player?.usingGrenade) return VIEW_GRENADE_GADGETS;
+			// behind_pushable cancels using_grenade outright -- see the note by
+			// facingPushableOrPanel in main.js for the arithmetic it comes from.
+			const grenade = player?.usingGrenade && !player?.behindPushable;
+			if (grenade && player?.hasAux) return VIEW_AUX_GRENADE_GADGETS;
+			if (grenade) return VIEW_GRENADE_GADGETS;
 			if (player?.hasAux) return VIEW_AUX_GADGETS;
 			return VIEW_GADGETS;
 	}

@@ -60,9 +60,14 @@ const main = fs.readFileSync(path.join(SRC, 'Main.s'), 'utf8');
 	const FLOOR_HERE = 1;
 	const at = (x, y, f) => f * LEVEL + y * W + x;
 	const cell = at(5, 5, 4);
-	// An empty shaft: only the platform itself carries a floor, or travel()
-	// refuses to rise into one and the lift never moves.
-	cells[cell] = FLOOR_HERE;
+	// A lift cell is floor type 2 -- that is measured, not assumed: all 284
+	// lifts across the 47 shipped maps carry it, and the descent loop keys on
+	// it (any other floor type holds its load up instead of riding down).
+	// Whoever stands on the platform also stamps their block into the cell,
+	// and .lift_nothing_up -- a platform with neither block nor aux -- never
+	// looks for a rider at all.
+	const PLATFORM = 1 | (2 << 9) | 2;
+	cells[cell] = (PLATFORM | (32 << 11)) >>> 0;   // a player riding
 	const state = createLiftState([
 		{ posn: cell << 2, height: 4, minHeight: 2, maxHeight: 8, direction: 0, weight: 1 },
 	]);
@@ -112,7 +117,7 @@ const main = fs.readFileSync(path.join(SRC, 'Main.s'), 'utf8');
 	const W = 23, D = 23, LEVEL = W * D;
 	const cells = new Uint32Array(LEVEL * 20);
 	const cell = 4 * LEVEL + 5 * W + 5;
-	cells[cell] = 1;
+	cells[cell] = (1 | (2 << 9) | 2 | (32 << 11)) >>> 0;
 	const state = createLiftState([
 		{ posn: cell << 2, height: 4, minHeight: 2, maxHeight: 8, direction: 0, weight: 1 },
 	]);
@@ -136,7 +141,7 @@ const main = fs.readFileSync(path.join(SRC, 'Main.s'), 'utf8');
 	const state = createLiftState([
 		{ posn: cell << 2, height: 4, minHeight: 2, maxHeight: 8, direction: 0, weight: 1 },
 	]);
-	cells[cell] = 1;
+	cells[cell] = (1 | (2 << 9) | 2 | (8 << 11)) >>> 0;
 	const monster = { cell, dead: false };
 	liftUp(state, cell);
 	moveLifts(state, cells, [monster], 51);

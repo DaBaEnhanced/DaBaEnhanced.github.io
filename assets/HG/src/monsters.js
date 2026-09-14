@@ -625,6 +625,13 @@ function killMonster(state, cells, m) {
 			}
 		}
 	}
+	// Kept for diagnosis: where this monster was when it died, and whether its
+	// block was actually there to be cleared. A ghost block whose cell matches a
+	// diedAt means the clear missed; one that matches nothing was stamped
+	// somewhere the record never claimed to be.
+	m.diedAt = idx;
+	m.diedStamped = idx >= 0 && idx < cells.length
+		? ((cells[idx] >>> 0) & BLOCK_HERE) !== 0 : false;
 	m.active = false;
 	m.cell = -1;
 	m.fitness = 0;

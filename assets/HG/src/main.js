@@ -501,7 +501,33 @@ function buildPalette() {
 	return pal;
 }
 
+/**
+ * Swap in a map, with the world held still while it happens.
+ *
+ * game.cells is installed well before game.monsterState is rebuilt, and there
+ * are four awaits in between -- style JSON, its atlas, the overlay metas, their
+ * atlases. The frame loop keeps running through all of them, so the OLD map's
+ * monsters were stepping against the NEW map's cells and stamping themselves
+ * into it. The fresh state that replaced them had no record of those stamps.
+ *
+ * What that left were monster blocks nothing owned. They never moved, because
+ * moveMonsters only walks records; they could not be killed, because
+ * damageOccupantAtCell looks the record up by cell; and they still occupied the
+ * square. Doors, lifts, water and falling all had the same window.
+ *
+ * The flag is cleared in a finally: a load that throws must not leave the world
+ * frozen for the rest of the session.
+ */
 async function loadMap(key) {
+	game.loading = true;
+	try {
+		return await loadMapInner(key);
+	} finally {
+		game.loading = false;
+	}
+}
+
+async function loadMapInner(key) {
 	status(`loading ${key}...`);
 	// A map can arrive three ways, and they differ only in where the four pieces
 	// come from:
@@ -711,6 +737,8 @@ async function loadMap(key) {
 			poisonedCountStore: 0,
 			poisonedTotal: 0,
 			underwaterCount: 0,
+			// grunt_count: ticks at 50Hz, gates the pain grunt (Main.s:1482).
+			gruntCount: GRUNT_COOLDOWN_TICKS,
 			drowningCount: 0,
 		};
 		refreshPlayerFlags(p);
@@ -3516,6 +3544,11 @@ function sfxMisc(index, opts) { game.audio?.playMisc(index, opts); }
 // plays at natural pitch.
 // .explosion (Main.s:3650, 3729): moresfx slot 7 at period 550, both kinds.
 const GRENADE_EXPL_SAMPLE = 7, GRENADE_EXPL_PERIOD = 550;
+const BLASTER_IMAGE = 18, BLASTER_SAMPLE = 30, BLASTER_PERIOD = 128;
+// reload_item (Controls&Movement.s:7443) has two reload noises, chosen by the
+// weapon: extra sample 22 is the machine-gun class, and a clip of 49 the beam.
+const RELOAD_MG_EXSAMPLE = 22, RELOAD_MG = 32, RELOAD_MG_PERIOD = 128, RELOAD_MG_VOLUME = 50;
+const RELOAD_BEAM_CLIP = 49, RELOAD_BEAM = 25, RELOAD_BEAM_PERIOD = 271;
 const LAND_EX_BIGCLANG = 28, LAND_EX_PERIOD = 153;
 const LAND_MISC_THUD = 2, LAND_MISC_PERIOD = 600;
 // DEVIATION (opt-in): the original uses BigClang for every character. Mechs
@@ -3701,9 +3734,15 @@ function itemMetaByNum(num) {
 	return game.itemDefs?.items?.[(num | 0) - 1] || null;
 }
 
+// Equates.i:992. The five awards: a newly seen cell, a kill (the monster's
+// physique/10 per hit), a door unlocked, a psi power used, and 500 to the
+// first character through the exit. EXP_MAX caps the lot.
+const EXP_NEWBLOCK = 1, EXP_UNLOCK = 15, EXP_PSI = 5, EXP_EXIT = 500;
+const EXP_MAX = 60000;
+
 function addExperience(p, amount) {
 	if (!p?.stats || amount <= 0) return;
-	p.stats.experience = Math.min(60000, (p.stats.experience | 0) + (amount | 0));
+	p.stats.experience = Math.min(EXP_MAX, (p.stats.experience | 0) + (amount | 0));
 }
 
 function incrementFitness(p, amount) {
@@ -3773,6 +3812,7 @@ function combatHooks() {
 		activeMonsters: () => activeMonsters(game.monsterState),
 		stunMonster: (m, count) => { if (m) m.stun = Math.max(m.stun || 0, count | 0); },
 		onGrenadeExplode: (_cell, stun) => grenadeExploded(stun),
+		onExplosion: (density) => explosionSfx(density),
 	};
 }
 
@@ -3863,6 +3903,9 @@ function poisonPlayerFromMonster(monster, cell) {
 function stepPlayerEffects(p, ticks) {
 	if (!p) return false;
 	let changed = false;
+	// ColdStartup.s:1215 bumps grunt_count once per vblank for every player.
+	// Capped so a long quiet spell cannot overflow into anything odd.
+	p.gruntCount = Math.min(GRUNT_COOLDOWN_TICKS, (p.gruntCount | 0) + (ticks | 0));
 	for (const [dur, spell] of [
 		['iconShieldDur', 'spellShield'],
 		['iconImmuDur', 'spellImmune'],
@@ -3970,9 +4013,35 @@ function stepDrowning(ticks) {
 	return changed;
 }
 
+// Drawviews.s:300. behind_pushable is 2 when the cell directly ahead holds a
+// pushable block, or a panel of any type but 0; otherwise it is cleared.
+//
+// The gadget picker reads aux_here + using_grenade - behind_pushable, correcting
+// a negative result by adding 2 back (ColdStartup.s:2458). Since using_grenade
+// and behind_pushable are both 2, that arithmetic works out to one rule: a crate
+// or a panel in front of you cancels the grenade gadgets exactly, and leaves the
+// pick-up gadget alone. You cannot lob one at a wall you are standing against.
+const KEEP_PANEL_FIELD = ((0x3 << 19) | (1 << 3)) >>> 0;   // keep_panel
+const PANEL_HERE_BIT = 1 << 3;
+function facingPushableOrPanel(p) {
+	if (!game.cells) return false;
+	const [dx, dy] = STEP_DELTA[p.direction & 3];
+	const x = p.x + dx, y = p.y + dy;
+	if (x < 0 || y < 0 || x >= MAP_WIDTH || y >= MAP_DEPTH) return false;
+	const idx = cellIndex(x, y, p.floor);
+	if (idx < 0 || idx >= game.cells.length) return false;
+	const cell = game.cells[idx] >>> 0;
+	if (cell & PUSHABLE_BIT) return true;
+	// Panel present and not type 0 -- written as the source's two tests, so a
+	// type field with no here-bit lands the same way it does there.
+	const panel = (cell & KEEP_PANEL_FIELD) >>> 0;
+	return panel !== 0 && panel !== PANEL_HERE_BIT;
+}
+
 function refreshPlayerFlags(p) {
 	refreshInventory(p, game.itemDefs);
 	p.hasAux = !!(game.cells && game.items && hasLooseItem(game.cells, game.items, playerCell(p)));
+	p.behindPushable = facingPushableOrPanel(p);
 }
 
 function refreshAllPlayerFlags() {
@@ -4003,8 +4072,104 @@ function displayedHandItem(p) {
 	return floor ? { item: floor, floor: true } : null;
 }
 
+// decr_fitness rate-limits the grunt: it only plays once grunt_count has
+// reached 100, then resets it (Main.s:1482). The counter ticks once per vblank
+// for every player (ColdStartup.s:1215), so that is a two-second cooldown. The
+// port grunted on every single hit, which under sustained fire is a stream of
+// them.
+const GRUNT_COOLDOWN_TICKS = 100;
+
+/**
+ * The noise a monster makes when it lands a blow.
+ *
+ * MonsterMovement.s:588 and :626 -- one site for hitting a player, one for
+ * hitting a sentry, both
+ *
+ *   tst.w mdfn_effect(a0)
+ *   beq   .not_noise
+ *   PLAY_EX_SAMPLE_RAND mdfn_effect(a0),ch,#63,mdfn_period(a0)
+ *
+ * so it is the def's own extra sample, at its own period, and silent for a def
+ * that names none (only the Shark). RAND is the period wobble, which playEx
+ * applies by default. This was missing altogether: all you could hear was the
+ * player's grunt at being hit, never the claw or the bark that caused it.
+ */
+// .do_explosion (Main.s:2711) picks the blast period from the explosion's
+// density: 3 -> 316, 2 -> 296, 1 -> 276, anything else 256. Extra sample 26.
+const EXPLOSION_SAMPLE = 26;
+const EXPLOSION_PERIOD = [256, 276, 296, 316];
+
+function explosionSfx(density) {
+	sfxEx(EXPLOSION_SAMPLE, { period: EXPLOSION_PERIOD[Math.max(0, Math.min(3, density | 0))] });
+}
+
+// sentry_fire (Main.s:3459) and a monster loosing a fireball
+// (MonsterMovement.s:910) both play extra sample 8 at period 95.
+const GUN_SAMPLE = 8, GUN_PERIOD = 95;
+function rangedFireSfx() { sfxEx(GUN_SAMPLE, { period: GUN_PERIOD }); }
+
+/**
+ * The noise a shot makes where it lands (muzzle_hit, ColdStartup.s:1715).
+ *
+ * Volume falls with distance -- fire_dist_vol starts at 63 and loses 10 a cell,
+ * floored at zero (ItemUsage.s:468, 496) -- and which sample plays depends on
+ * the weapon and a die roll:
+ *
+ *   fire_ricochet set   always the dull thud
+ *   otherwise, roll <= 20000 of 65536   a ricochet
+ *   otherwise, into a door              a metal clang
+ *   otherwise                           the thud
+ *
+ * fire_ricochet is set for exSample 24 and for samples 8 and 9
+ * (ItemUsage.s:632, 640, 644) -- those weapons never ricochet.
+ */
+const IMPACT_RICOCHET = 29, IMPACT_RICOCHET_PERIOD = 128;
+const IMPACT_DOOR = 11, IMPACT_DOOR_PERIOD = 150;
+const IMPACT_THUD = 9, IMPACT_THUD_PERIOD = 428;
+const RICOCHET_ROLL = 20000;
+
+function weaponImpactSfx(meta, target) {
+	if (!target) return;
+	const volume = Math.max(0, 63 - 10 * (target.dist | 0));
+	if (!volume) return;
+	const thud = () => sfxMisc(IMPACT_THUD, { period: IMPACT_THUD_PERIOD, volume });
+	// The weapons that never ricochet.
+	if (meta?.exSample === 24 || meta?.sample === 8 || meta?.sample === 9) return thud();
+	// The port's own stream rather than the source's rol.w #7, but the same
+	// one-in-three-ish split.
+	if ((nextCombatRandom() & 0xffff) <= RICOCHET_ROLL) {
+		sfxEx(IMPACT_RICOCHET, { period: IMPACT_RICOCHET_PERIOD, volume });
+		return;
+	}
+	const cell = game.cells[target.cell] >>> 0;
+	const block = (cell & BLOCK_HERE) ? (cell >>> BLOCK_SHIFT) & BLOCK_MASK : -1;
+	if (block === BLOCK.DOOR_FRONT || block === BLOCK.DOOR_SIDE) {
+		sfxEx(IMPACT_DOOR, { period: IMPACT_DOOR_PERIOD, volume });
+		return;
+	}
+	thud();
+}
+
+function monsterAttackSfx(monster) {
+	const def = monster?.def;
+	if (!def?.sample) return;
+	sfxEx(def.sample, { period: def.samplePeriod || 0 });
+}
+
+function playerGrunt(p) {
+	if ((p.gruntCount | 0) < GRUNT_COOLDOWN_TICKS) return;
+	p.gruntCount = 0;
+	sfxEx(p.character?.gender === 1 ? 7 : 10, { period: p.character?.gruntPeriod || 128 });
+}
+
 function damagePlayerFitness(p, hit) {
 	if (!p?.stats || hit <= 0) return 0;
+	// A corpse takes no further damage. dead_flag gates every interaction with a
+	// dead character in the original (Controls&Movement.s:4220 and friends);
+	// without that, each new hit ran the whole path again on a body that was
+	// already at zero fitness -- so it grunted, and re-entered handle_dead, and
+	// screamed, for as long as anything kept hitting it.
+	if (p.dead) return 0;
 	// cheat_mode3 in decr_fitness bails before touching fitness at all, so no
 	// grunt, no flash, no damage.
 	if (game.cheat) return 0;
@@ -4015,7 +4180,7 @@ function damagePlayerFitness(p, hit) {
 	const amount = (Math.floor((hit >>> 0) / physique) * 100) >>> 1;
 	const before = p.stats.fitness | 0;
 	p.fireWhite = true;
-	sfxEx(p.character?.gender === 1 ? 7 : 10, { period: p.character?.gruntPeriod || 128 });
+	playerGrunt(p);
 	startFitnessFlash(p, amount << 1);
 	if (amount <= 0) return 0;
 	p.stats.fitness = Math.max(0, before - amount);
@@ -4030,6 +4195,7 @@ function damagePlayerFitness(p, hit) {
 
 function decrPlayerFitness(p, damage) {
 	if (!p?.stats || damage <= 0) return 0;
+	if (p.dead) return 0;
 	p.fireWhite = true;
 	const before = p.stats.fitness | 0;
 	const amount = (damage | 0) >>> 1;
@@ -4132,6 +4298,32 @@ function handlePlayerDead(p) {
 }
 
 /**
+ * Trade places with the party member you just walked into.
+ *
+ * The mover has already been lifted out of the map by step(), so only the other
+ * one has to come out; both go back in at their new squares.
+ *
+ * @returns true when a swap happened
+ */
+function swapWithPartyMember(p, target) {
+	const other = game.players.find((q) => q && q !== p && !q.dead &&
+		q.active !== false && cellIndex(q.x, q.y, q.floor) === target);
+	if (!other) return false;
+	removeHeadFromMap(game.cells, other.x, other.y, other.floor);
+	const x = p.x, y = p.y, floor = p.floor;
+	p.x = other.x; p.y = other.y; p.floor = other.floor;
+	other.x = x; other.y = y; other.floor = floor;
+	putHeadInMap(game.cells, other);
+	if (!p.dead) putHeadInMap(game.cells, p);
+	// The same footstep the move itself plays, skipped mid-shot as the source
+	// skips it (.firing).
+	if (!p.fireAnim) sfxMisc(8, { period: p.character?.footstepPeriod || 720 });
+	clearMovedHud(p);
+	game.dirty = true;
+	return true;
+}
+
+/**
  * One step, through the real `move` port. The player's figure is stamped into
  * the map, so it has to be lifted out before the target is tested and put back
  * afterwards -- otherwise you collide with yourself.
@@ -4147,7 +4339,7 @@ function step(p, dir, auto = false) {
 		if (r.unlocked && r.key) {
 			showUsedHud(p, r.key);
 			removeCarriedItem(p, game.itemDefs, r.key);
-			addExperience(p, 15);
+			addExperience(p, EXP_UNLOCK);
 			sfxEx(17, { period: 136, vary: false });
 			status(`used ${itemName(game.itemDefs, r.key) || `key ${r.key}`}`);
 		} else {
@@ -4160,7 +4352,7 @@ function step(p, dir, auto = false) {
 	} else if (result === MOVE.EXIT) {
 		if (!p.inExit && game.exitWinner == null) {
 			game.exitWinner = p.index;
-			addExperience(p, 500);
+			addExperience(p, EXP_EXIT);
 		}
 		p.inExit = true;
 		p.windowType = WINDOW.EXIT;
@@ -4203,6 +4395,17 @@ function step(p, dir, auto = false) {
 		clearNoMonster(game.items, cellIndex(p.x, p.y, p.floor));
 		testMineForPlayer(p);
 		layPath(p);
+	}
+	// Walking into a party member trades places with them, which is how you
+	// reorder the party in a corridor. Controls&Movement.s:4476 swaps xpos/ypos
+	// and mem_position outright, with a footstep unless you are mid-shot.
+	//
+	// The gate reads backwards at a glance: beq .same_player jumps INTO the swap
+	// when both characters share a control method, and only a pair on DIFFERENT
+	// inputs has to be walking into each other at the same moment. Every
+	// character here shares one input, so the swap always applies.
+	if (result === MOVE.BUMPED_PLAYER && swapWithPartyMember(p, target)) {
+		return result;
 	}
 	if (!auto && (result === MOVE.BUMP || result === MOVE.NONE || result === MOVE.BUMPED_PLAYER)) {
 		sfxMisc(9);
@@ -4590,13 +4793,26 @@ function markSeenFromView(p) {
 	const seenBit = SEEN_BIT_BASE + (p.index | 0);
 	const seenMask = 1 << seenBit;
 	const { view, hidden } = hiddenViewSlots(p);
+	// Drawviews.s:2669. Every cell a character sees for the FIRST time is worth
+	// EXP_NEWBLOCK. The original accumulates it in exp(a0) across the 67 view
+	// slots and flushes the total into that player's stats the moment draw_view
+	// returns (Drawviews.s:66-69), which is once per player per redraw. Since
+	// the award only fires on a bit that was clear, counting it here comes to
+	// the same thing however often this runs.
+	//
+	// The seen bit is per-player, so four characters exploring apart each earn
+	// their own. This is the steady drip that pays for exploring, and the port
+	// was setting the bit without ever paying out.
+	let discovered = 0;
 	for (let slot = 0; slot < descan.length; slot++) {
 		const off = descan[slot];
 		if (off == null || hidden[slot] || ((view[slot] || 0) & INVISIBLE_BIT)) continue;
 		const idx = base + off;
 		if (idx < 0 || idx >= game.seen.length) continue;
+		if (!(game.seen[idx] & seenMask)) discovered += EXP_NEWBLOCK;
 		game.seen[idx] = (game.seen[idx] | seenMask) >>> 0;
 	}
+	if (discovered) addExperience(p, discovered);
 }
 
 function dtsTileRect(tile) {
@@ -5319,10 +5535,25 @@ function dropNukeOnGenerator(p, item, removeItem) {
 	};
 }
 
+/**
+ * reload_item (Controls&Movement.s:7443) has two reload noises and picks by
+ * weapon class: extra sample 22 marks the machine-gun family, and a first clip
+ * of 49 the beam weapons. The port played the beam one for everything.
+ */
+function reloadSfx(meta) {
+	if (meta?.exSample === RELOAD_MG_EXSAMPLE) {
+		sfxEx(RELOAD_MG, { period: RELOAD_MG_PERIOD, volume: RELOAD_MG_VOLUME, vary: false });
+		return;
+	}
+	if ((meta?.gun?.clips?.[0] | 0) === RELOAD_BEAM_CLIP) {
+		sfxEx(RELOAD_BEAM, { period: RELOAD_BEAM_PERIOD, vary: false });
+	}
+}
+
 function runReload(p) {
 	const r = reloadHeldItem(p, game.itemDefs);
 	if (r.changed) {
-		sfxEx(25, { period: 271, vary: false });
+		reloadSfx(itemMeta(game.itemDefs, p.inventory?.using));
 		status(`reloaded ${heldName(p)}`);
 	}
 	else if (r.reason === 'no_ammo') {
@@ -5423,6 +5654,12 @@ function fireRelativeArcs(p, arcs, opts = {}) {
  * the moresfx bank.
  */
 function fireItemSfx(meta) {
+	// CD32 only: the Blaster 52-C swaps its sample for the blaster one
+	// (ItemUsage.s:646), keyed on the item's image rather than its number.
+	if (meta.image === BLASTER_IMAGE) {
+		sfxEx(BLASTER_SAMPLE, { period: BLASTER_PERIOD });
+		return;
+	}
 	if (meta.exSample) sfxEx(meta.exSample, { period: meta.exSamplePeriod || 180 });
 	else if (meta.sample) sfxMore(meta.sample, { period: meta.samplePeriod || 0 });
 }
@@ -5447,6 +5684,7 @@ function useWeapon(p, meta, withFireballs = false, directHit = true) {
 			p.direction & 3, game.map?.locn?.style | 0, 128, combatHooks());
 	startFireAnimation(p, meta, target);
 	fireItemSfx(meta);
+	weaponImpactSfx(meta, target);
 	status(`fired ${itemName(game.itemDefs, held)}`);
 	finishInventoryAction(p);
 	game.dirty = true;
@@ -5663,7 +5901,7 @@ function usePsiAmmo(p) {
 	}
 	if (held.ammo === 1) p.inventory.using = { num: 0, damage: 0, ammo: 0, outlined: 0 };
 	else held.ammo--;
-	addExperience(p, 5);
+	addExperience(p, EXP_PSI);
 	refreshPlayerFlags(p);
 	return true;
 }
@@ -6586,7 +6824,8 @@ function frame() {
 	if (game.audio) game.audio.setUnderwater(activePlayerSubmerged());
 
 	if (game.missionGrace) game.missionGrace = Math.max(0, (game.missionGrace | 0) - (ticks || 0));
-	if (game.shell?.mode === SHELL.GAME && game.map && ticks && !game.mission?.complete) {
+	if (game.shell?.mode === SHELL.GAME && game.map && ticks &&
+			!game.mission?.complete && !game.loading) {
 		game.fieldPosn = ((game.fieldPosn || 0) + ticks) % FIELD_COLOUR_PERIOD;
 		paletteChanged = true;
 		if (game.hasVisibleField) game.dirty = true;
@@ -6648,14 +6887,18 @@ function frame() {
 					const owner = game.players[(s.owner | 0) - 1];
 					if (owner) owner.activeCount = 150;
 				},
+				// sentry_fire (Main.s:3459) makes a noise as it shoots.
+				onSentryFire: () => rangedFireSfx(),
 			})) game.dirty = true;
 		if (moveMonsters(game.monsterState, game.cells, game.items, game.players, ticks, {
 			style: game.map?.locn?.style | 0,
 			openDoor: (cell) => triggerDoor(game.doors, cell),
-			addFireball: (from, opts) => addCombatFireball(from, opts),
+			// MonsterMovement.s:910 -- a monster loosing a fireball is audible.
+			addFireball: (from, opts) => { rangedFireSfx(); return addCombatFireball(from, opts); },
 			onAttackPlayer: (monster, cell, amount) => {
 				const p = game.players.find((pl) => pl && cellIndex(pl.x, pl.y, pl.floor) === cell);
 				if (!p) return;
+				monsterAttackSfx(monster);
 				startMonsterHitEffect(p, amount, monster);
 				if (damagePlayerFitness(p, amount)) {
 					status(`${monster.def?.name || 'monster'} hit player ${p.index + 1}`);
@@ -6663,8 +6906,10 @@ function frame() {
 				}
 			},
 			onPoisonPlayer: (monster, cell) => poisonPlayerFromMonster(monster, cell),
-			onAttackSentry: (_monster, cell, amount) =>
-				damageSentryAtCell(game.sentryState, game.cells, cell, amount),
+			onAttackSentry: (monster, cell, amount) => {
+				monsterAttackSfx(monster);
+				damageSentryAtCell(game.sentryState, game.cells, cell, amount);
+			},
 		})) game.dirty = true;
 		for (const m of activeMonsters(game.monsterState)) {
 			if (testMineForMonster(m)) game.dirty = true;
@@ -7270,10 +7515,22 @@ async function main() {
 			return best >= 100;
 		}).length;
 
+		// Correlate each ghost with a death. killMonster records where the
+		// monster was and whether a block was actually there to clear, so a
+		// ghost that matches a diedAt means the clear missed its target, while
+		// one that matches nothing was stamped somewhere no record ever was.
+		const dead = st.monsters.filter((m) => !m.active && m.diedAt >= 0);
+		const deaths = dead.map((m) => where(m.diedAt));
+		const fromDeaths = ghosts.filter((g) => deaths.includes(g));
 		const out = {
 			map: game.map?.key ?? '?',
 			activeMonsters: live.length,
 			ghostBlocks: ghosts,
+			ghostsAtADeathSite: fromDeaths,
+			ghostsNotExplainedByADeath: ghosts.filter((g) => !deaths.includes(g)),
+			deaths: deaths.length,
+			deathsWhereNoBlockWasThereToClear:
+				dead.filter((m) => !m.diedStamped).map((m) => where(m.diedAt)),
 			staleRecords: stale,
 			unstampedRecords: unstamped,
 			idleBecauseOutOfRange: noTarget,

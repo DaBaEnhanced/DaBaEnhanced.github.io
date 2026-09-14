@@ -159,6 +159,10 @@ export function addFireball(state, cells, seen, items, from, opts = {}, hooks = 
 	});
 	fireballHits(state, cells, seen, items, slot, opts.style | 0, hooks);
 	stampExplosion(cells, slot.pos, slot.density);
+	// .do_explosion (Main.s:2711) plays the blast at a period chosen by the
+	// density. Reported rather than played here so combat.js stays clear of the
+	// audio layer, as with onGrenadeExplode.
+	hooks.onExplosion?.(slot.density);
 	return true;
 }
 

@@ -1094,18 +1094,32 @@ export function markedLocations(shell) {
  * Hovering reads ANY marker while clicking only accepts reachable ones: being
  * told what a place is costs nothing, and refusing to name it is just a mystery.
  */
+// locn_hit_width / locn_hit_height, for a location that names neither.
+const DEFAULT_HIT_W = 10, DEFAULT_HIT_H = 10;
+
 export function pickWorldMarker(shell, sx, sy, art = {}) {
 	if (shell.mode !== SHELL.WORLD || sy >= WORLD_VIEW_H) return null;
 	const cam = worldCamera(shell, art);
+	// A location's hit area is a BOX it carries itself: locn_hit_width and
+	// locn_hit_height, tested as x +/- w and y +/- h (WorldMap.s:777). Every
+	// shipped location is 10x10, so the reachable area is 20 pixels across.
+	//
+	// This used to be a circle of radius 40 -- four times the real span -- which
+	// is why a pointer nowhere near a marker still picked one up. Nearest-first
+	// is kept among the boxes that do contain the point, so overlapping markers
+	// still resolve to the closer one.
 	let best = null, bestD = 1e9;
 	for (const l of markedLocations(shell)) {
 		const pin = locnToMap(l);
 		const dx = (pin.x - cam.cx + WORLD_VIEW_X + MARKER_W / 2) - sx;
 		const dy = (pin.y - cam.cy + MARKER_H / 2) - sy;
+		const hw = (l.hitWidth | 0) || DEFAULT_HIT_W;
+		const hh = (l.hitHeight | 0) || DEFAULT_HIT_H;
+		if (Math.abs(dx) > hw || Math.abs(dy) > hh) continue;
 		const d = dx * dx + dy * dy;
 		if (d < bestD) { bestD = d; best = l; }
 	}
-	return bestD < 1600 ? best : null;
+	return best;
 }
 
 /**

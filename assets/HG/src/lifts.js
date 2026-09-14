@@ -32,6 +32,18 @@ const KEEP_ITEM_DATA_NO_QUESTION = 0x40ffffff;
 const KEEP_BLOCK_FALL = KEEP_BLOCK | KEEP_PANEL | OPAQUE_BIT | PUSHABLE_BIT;
 const CARRIED = KEEP_BLOCK_FALL | KEEP_FLOOR | KEEP_VARIANT | KEEP_AUX;
 const HYDRAULIC = (BLOCK.HYDRAULIC << SHIFT.block) | BLOCK_HERE;
+// What jams a rising lift: keep_block!keep_panel!keep_floor, type fields and
+// here-bits alike (Main.s:1869).
+const UP_BLOCKED = KEEP_BLOCK | KEEP_PANEL | KEEP_FLOOR;
+// A floor holds its load up unless it is type 2, the open grating.
+const FLOOR_OPEN = ((2 << SHIFT.floor) | FLOOR_HERE) >>> 0;
+// erase_block_fall & erase_floor & erase_variant -- note aux is NOT cleared,
+// which is the one place the down path differs from a plain CARRIED wipe.
+const CLEAR_BELOW = (KEEP_BLOCK_FALL | KEEP_FLOOR | KEEP_VARIANT) >>> 0;
+// Blocks 22 and 23 are the thrown and launched grenade. A lift carries the
+// floor out from under one but leaves the grenade itself in place.
+const GRENADE_A = ((22 << SHIFT.block) | BLOCK_HERE) >>> 0;
+const GRENADE_B = ((23 << SHIFT.block) | BLOCK_HERE) >>> 0;
 
 export const LIFT = { STOPPED: 0, UP: 1, DOWN: 2, AUTO_UP: 3, AUTO_DOWN: 4 };
 
@@ -139,68 +151,165 @@ function stepLift(lift, cells, riders, opts, state = null) {
 	return settle(lift, cells);
 }
 
-/** Move the lift one level, carrying whatever is on it. */
+/**
+ * Move the lift one level. The two directions are not mirror images of each
+ * other in the source and must not be written as one path with a sign flip.
+ */
 function travel(lift, cells, riders, dy, opts, state = null) {
 	const from = lift.cell;
 	const to = from + dy * LEVEL_CELLS;
 	if (to < 0 || to >= cells.length) { lift.direction = LIFT.STOPPED; return false; }
+	return dy > 0
+		? travelUp(lift, cells, riders, from, to, opts, state)
+		: travelDown(lift, cells, riders, from, to, opts, state);
+}
 
+/** What a cell takes with it. A grenade leaves its block behind (Main.s:1925). */
+const isGrenade = (cell) => {
+	const b = (cell & KEEP_BLOCK) >>> 0;
+	return b === GRENADE_A || b === GRENADE_B;
+};
+const carriedMask = (cell) => (isGrenade(cell) ? KEEP_FLOOR | KEEP_AUX : CARRIED);
+
+/** Shift one cell's contents a level, stamping a fresh hydraulic behind it. */
+function shift(cells, from, to, mask, hydraulic) {
+	const carried = cells[from] & mask;
+	cells[from] = hydraulic
+		? ((cells[from] & ~mask) | HYDRAULIC) >>> 0
+		: (cells[from] & ~mask) >>> 0;
+	cells[to] = ((cells[to] & ~mask) | carried) >>> 0;
+}
+
+/**
+ * Going up carries exactly one cell, and it is the only direction that consults
+ * the weight: `.move_up` runs the class checks and `tst.b lift_weight`, while
+ * `.move_down` decrements the height before it looks at anything. A weight-0
+ * lift therefore refuses to raise a load but still lowers one, and ten of the
+ * 284 shipped lifts are weight 0. The port applied the gate both ways, so
+ * riding one of those down stopped it dead and left the rider a level high.
+ */
+function travelUp(lift, cells, riders, from, to, opts, state) {
 	const cell = cells[from];
-	// Going up, the destination must be clear: a block, panel or floor jams it.
-	if (dy > 0 && (cells[to] & (BLOCK_HERE | PANEL_HERE | FLOOR_HERE))) {
-		lift.direction = LIFT.STOPPED;
-		return false;
+	// keep_block!keep_panel!keep_floor -- the type fields as well as the
+	// here-bits, which is what the source ANDs against.
+	if (cells[to] & UP_BLOCKED) { lift.direction = LIFT.STOPPED; return false; }
+
+	// .lift_nothing_up: a bare platform rises carrying only the floor, and
+	// never consults the weight.
+	if (!(cell & (KEEP_BLOCK | KEEP_AUX))) {
+		lift.height += 1;
+		lift.cell = to;
+		shift(cells, from, to, KEEP_FLOOR, true);
+		return true;
 	}
-	// Something on board that the lift is not rated to carry stops it dead.
-	if ((cell & BLOCK_HERE) && (!lift.weight || !carriable(cell))) {
-		lift.direction = LIFT.STOPPED;
-		return false;
+	// Aux with no block rides free too; only a block is weighed.
+	if (cell & KEEP_BLOCK) {
+		if (!lift.weight || !carriable(cell)) { lift.direction = LIFT.STOPPED; return false; }
 	}
 
-	lift.height += dy;
+	lift.height += 1;
+	lift.cell = to;
+	if (cell & PUSHABLE_BIT) movePushableAddress(opts.pushables, from, to, opts);
+	shift(cells, from, to, carriedMask(cell), true);
+	carryDataLayers(opts.seen, opts.items, from, to);
+	moveRiders(riders, from, to, +1, state);
+	return true;
+}
+
+/**
+ * Going down commits first and asks questions afterwards: `.move_down` drops
+ * the height and the position before it has even read the platform.
+ */
+function travelDown(lift, cells, riders, from, to, opts, state) {
+	lift.height -= 1;
 	lift.cell = to;
 
-	if (cell & PUSHABLE_BIT) movePushableAddress(opts.pushables, from, to, opts);
+	// .nothing_going_down: bare platform, floor only, and the destination loses
+	// its block and variant but keeps its aux.
+	if (!(cells[from] & (KEEP_BLOCK | KEEP_AUX))) {
+		const carried = cells[from] & KEEP_FLOOR;
+		cells[from] = (cells[from] & ~KEEP_FLOOR) >>> 0;
+		cells[to] = ((cells[to] & ~CLEAR_BELOW) | carried) >>> 0;
+		return true;
+	}
+	descend(cells, riders, from, to, opts, state);
+	return true;
+}
 
-	// Shift the contents. Going UP the vacated cell becomes another section of
-	// hydraulic column, which is what the platform rides on; going DOWN the
-	// column shrinks instead, so the cell is cleared. Stamping a hydraulic in
-	// both directions walls the lift in and it jams on the return trip.
-	const carried = cell & CARRIED;
-	cells[from] = dy > 0
-		? ((cell & ~CARRIED) | HYDRAULIC) >>> 0
-		: (cell & ~CARRIED) >>> 0;
-	cells[to] = ((cells[to] & ~CARRIED) | carried) >>> 0;
-	carryDataLayers(opts.seen, opts.items, from, to);
+/**
+ * `.move_down_loop`: a descending lift carries the whole COLUMN standing on it,
+ * not just the cell above the hydraulic. Each pass moves one level down and
+ * then steps both addresses up by `MAP_WIDTH*MAP_DEPTH*map_cell_size`, so a
+ * crate with something standing on it arrives intact. The port moved a single
+ * cell, which left everything above the platform hanging in the air.
+ *
+ * The walk stops at the first cell that is empty of block and aux, or that has
+ * a floor of any type but 2 -- a real floor holds its load up rather than
+ * letting the lift drag it down.
+ */
+function descend(cells, riders, from, to, opts, state) {
+	const floors = Math.floor(cells.length / LEVEL_CELLS);
+	let src = from, dst = to;
+	for (let step = 0; step < floors; step++) {
+		if (src >= cells.length) return;
+		const cell = cells[src];
+		if (!(cell & (KEEP_BLOCK | KEEP_AUX))) return;
+		const floor = (cell & KEEP_FLOOR) >>> 0;
+		if (floor && floor !== FLOOR_OPEN) return;
 
-	// Anyone standing on it rides along.
+		carryDataLayers(opts.seen, opts.items, src, dst);
+
+		if (cell & PUSHABLE_BIT) {
+			movePushableAddress(opts.pushables, src, dst, opts);
+			shift(cells, src, dst, CARRIED, false);
+		} else if (cell & OPAQUE_BIT) {
+			// .not_opaque_down is the branch AROUND this: an opaque block stays
+			// where it is, only the floor beneath it travels, and nothing above
+			// it is considered.
+			const carried = cell & KEEP_FLOOR;
+			cells[src] = (cell & ~KEEP_FLOOR) >>> 0;
+			cells[dst] = ((cells[dst] & ~CLEAR_BELOW) | carried) >>> 0;
+			return;
+		} else if (isGrenade(cell)) {
+			shift(cells, src, dst, KEEP_FLOOR | KEEP_AUX, false);
+			return;
+		} else {
+			shift(cells, src, dst, CARRIED, false);
+		}
+
+		moveRiders(riders, src, dst, -1, state);
+		src += LEVEL_CELLS;
+		dst += LEVEL_CELLS;
+	}
+}
+
+/** find_heads_owner_quick / find_monsters_owner: whoever stood there rides. */
+function moveRiders(riders, from, to, dy, state) {
 	for (const p of riders) {
 		if (!p || p.dead) continue;
 		const riderCell = ('cell' in p) ? p.cell : cellIndex(p.x, p.y, p.floor);
-		if (riderCell === from) {
-			if ('cell' in p) {
-				p.cell = to;
-				// A monster is addressed by cell but ALSO carries x/y/floor, and
-				// those have to follow it up the shaft. findClosestPlayer works
-				// in x/y/floor and weights the floor difference by four before
-				// squaring, against a cutoff of 100 -- so a monster left three
-				// floors stale scores 144 for a player standing right next to
-				// it, finds no target, and is skipped by moveMonsters for the
-				// rest of the level. It stands on its cell, blocking it, while
-				// everything that never rode a lift behaves normally.
-				//
-				// A lift only travels vertically, so the floor is the only part
-				// that moves. Sentries carry no floor and are unaffected.
-				if (typeof p.floor === 'number') p.floor += dy;
-			} else {
-				p.floor += dy;
-				// find_heads_owner_quick: only a PLAYER being carried sets the
-				// flag, which is why a lift moving a monster is silent.
-				if (state) state.onLift = true;
-			}
+		if (riderCell !== from) continue;
+		if ('cell' in p) {
+			p.cell = to;
+			// A monster is addressed by cell but ALSO carries x/y/floor, and
+			// those have to follow it up the shaft. findClosestPlayer works in
+			// x/y/floor and weights the floor difference by four before
+			// squaring, against a cutoff of 100 -- so a monster left three
+			// floors stale scores 144 for a player standing right next to it,
+			// finds no target, and is skipped by moveMonsters for the rest of
+			// the level. It stands on its cell, blocking it, while everything
+			// that never rode a lift behaves normally.
+			//
+			// A lift only travels vertically, so the floor is the only part
+			// that moves. Sentries carry no floor and are unaffected.
+			if (typeof p.floor === 'number') p.floor += dy;
+		} else {
+			p.floor += dy;
+			// find_heads_owner_quick: only a PLAYER being carried sets the
+			// flag, which is why a lift moving a monster is silent.
+			if (state) state.onLift = true;
 		}
 	}
-	return true;
 }
 
 function carryDataLayers(seen, items, from, to) {

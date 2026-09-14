@@ -26,7 +26,9 @@ const cellOf = (o) => o.floor * LEVEL + o.y * W + o.x;
 function shaft(floor, x = 10, y = 10) {
 	const cells = new Uint32Array(LEVEL * 20);
 	const cell = floor * LEVEL + y * W + x;
-	cells[cell] = 1 | 2 | (8 << 11);        // floor + a mon1 block facing north
+	// Floor type 2: every one of the 284 shipped lifts carries it, and the
+	// descent loop keys on it -- any other floor type holds its load up.
+	cells[cell] = 1 | (2 << 9) | 2 | (8 << 11);   // platform + a mon1 block
 	return { cells, cell };
 }
 

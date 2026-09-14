@@ -235,6 +235,8 @@ const HORIZON_FAR_COLOUR = 22, HORIZON_NEAR_COLOUR = 0, HORIZON_FAR_BASE = 176;
 // pixel to 32+i -- the brighter copper bank. So lighting is an INDEX OFFSET
 // applied after the block is drawn, never a blit.
 const LIGHT_OFFSET = 32;
+// blit_bob draws an outlined bob's solid pass at d7-1 (Miscroutines.s:107).
+const OUTLINE_RISE = 1;
 const LIGHT_BIT = 31;            // keep_light_bit_num, in the items layer
 // Light set index -> which neighbour must be a stone(0) or push(1) block.
 const LIGHT_SIDE = 0, LIGHT_REAR = 1, LIGHT_FLOOR = 2;
@@ -483,7 +485,9 @@ function renderView({ cells, base, direction, tables, style, atlas, items, horiz
 				const s = record?.figures?.[part]?.slots?.[bobIndex];
 				if (s && playerAtlas) {
 					const bank = L.lit ? LIGHT_OFFSET : 0;
-					if (L.solid) blitSolid(pixels, playerAtlas, s, (L.solid + bank) & 255);
+					// Absolute, not bank-shifted: bit 10 swaps solid_table in for
+					// bob_plane, so the plane-5 lighting control never runs.
+					if (L.solid) blitSolid(pixels, playerAtlas, s, L.solid & 255);
 					else blit(pixels, playerAtlas, s, bank);
 					drawn++;
 				}
@@ -538,11 +542,20 @@ function renderView({ cells, base, direction, tables, style, atlas, items, horiz
 				drawn += 2;
 				continue;
 			}
-			blit(pixels, atlas, s, layerBank);
+			// A flashed monster fills solid; an outlined one is drawn twice --
+			// the colour-6 silhouette a pixel up, then the sprite over it.
+			const paint = (r) => {
+				if (L.solid) { blitSolid(pixels, atlas, r, L.solid & 255); return; }
+				if (L.outline) {
+					blitSolid(pixels, atlas, { ...r, y: r.y - OUTLINE_RISE }, L.outline & 255);
+				}
+				blit(pixels, atlas, r, layerBank);
+			};
+			paint(s);
 			drawn++;
 			// control=2 bobs store only their upper half; the lower half is the
 			// same image mirrored directly beneath (see build-graphics.js).
-			if (s.mirror) { blit(pixels, atlas, s.mirror, layerBank); drawn++; }
+			if (s.mirror) { paint(s.mirror); drawn++; }
 
 			// Text-panel content rides on the panel plate: slot 57 only, panel
 			// type 0 only (Drawviews.s:3318).

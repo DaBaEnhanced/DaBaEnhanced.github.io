@@ -12,6 +12,7 @@ import {
 	SKY_BAND_HEIGHT, SKY_UPPER_INDEX, SKY_LOWER_INDEX,
 	SKY_GRADIENT_ROWS, skyRowIndex,
 	LIGHT_OFFSET, WATER_OFFSET, EXPLOSION_COLOUR, FOAM_COLOUR, HW_INDEX_COUNT,
+	OUTLINE_RISE,
 	FIELD_COLOUR_BASE, FIELD_COLOUR_ROWS,
 } from './view.js';
 
@@ -318,21 +319,35 @@ export class IndexCompositor {
 			// stay inside the closed door's extent as they slide apart.
 			const lo = s.clipY0 !== undefined ? Math.max(clipY0, clipY0 + s.clipY0) : clipY0;
 			const hi = s.clipY1 !== undefined ? Math.min(clipY1, clipY0 + s.clipY1) : clipY1;
-			for (let yy = 0; yy < s.h; yy++) {
-				const dy = dy0 + yy;
-				if (dy < lo || dy >= hi) continue;
-				let src = (s.ay + yy) * atlas.width + s.ax;
-				let dst = dy * SCREEN_W + dx0;
-				const bank = s.lit ? LIGHT_OFFSET : 0;
-				// draw_bob's .solid path: every masked pixel takes one colour
-				// instead of the bob's own, which is how a hit monster flashes.
-				const paint = s.solid ? (s.solid + bank) & 255 : -1;
-				for (let xx = 0; xx < s.w; xx++, src++, dst++) {
-					const dx = dx0 + xx;
-					if (dx < clipX0 || dx >= clipX1) continue;
-					const v = atlas.data[src];
-					if (v) indices[dst] = paint >= 0 ? paint : (v - 1) + bank;  // atlas stores index+1
-				}
+			const bank = s.lit ? LIGHT_OFFSET : 0;
+			// draw_bob's .solid path: every masked pixel takes one colour
+			// instead of the bob's own, which is how a hit monster flashes.
+			// The colour is absolute -- solid_table replaces bob_plane, so the
+			// plane-5 control carrying the lighting never runs and DEF_PLANE
+			// clears planes 4 and 5 out of the colour bits.
+			const paint = s.solid ? s.solid & 255 : -1;
+			// bit 12: the same silhouette in colour 6, one pixel up, laid down
+			// FIRST so the normal sprite covers all but the rim.
+			if (s.outline) {
+				this.blitRun(atlas, indices, s, dx0, dy0 - OUTLINE_RISE,
+					lo, hi, clipX0, clipX1, 0, s.outline & 255);
+			}
+			this.blitRun(atlas, indices, s, dx0, dy0, lo, hi, clipX0, clipX1, bank, paint);
+		}
+	}
+
+	/** One pass of the masked sprite loop; `paint` < 0 keeps the bob's own colours. */
+	blitRun(atlas, indices, s, dx0, dy0, lo, hi, clipX0, clipX1, bank, paint) {
+		for (let yy = 0; yy < s.h; yy++) {
+			const dy = dy0 + yy;
+			if (dy < lo || dy >= hi) continue;
+			let src = (s.ay + yy) * atlas.width + s.ax;
+			let dst = dy * SCREEN_W + dx0;
+			for (let xx = 0; xx < s.w; xx++, src++, dst++) {
+				const dx = dx0 + xx;
+				if (dx < clipX0 || dx >= clipX1) continue;
+				const v = atlas.data[src];
+				if (v) indices[dst] = paint >= 0 ? paint : (v - 1) + bank;  // atlas stores index+1
 			}
 		}
 	}
@@ -350,7 +365,8 @@ export class IndexCompositor {
 		const clip = { x0: clipX0, y0: clipY0, x1: clipX1, y1: clipY1 };
 		const bank = s.lit ? LIGHT_OFFSET : 0;
 		if (s.solid) {
-			this.drawMaskedSolid(rect, players, clipX0, clipY0, (s.solid + bank) & 255, clip);
+			// Absolute, not bank-shifted: see the note beside `paint` above.
+			this.drawMaskedSolid(rect, players, clipX0, clipY0, s.solid & 255, clip);
 			return;
 		}
 		this.drawIndexedSpriteClipped(rect, players, clipX0, clipY0, clip, bank);
