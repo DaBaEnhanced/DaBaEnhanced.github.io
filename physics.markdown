@@ -1,11 +1,9 @@
 ---
-title: "Physics"
+title: "The Recurrent Causal Code"
 subtitle: "A speculative framework with designated falsifiable branches, for emergent spacetime, matter, gravity, and quantum measurement"
-version: "0.4"
-date: "2026-07-26"
+version: "0.9"
+date: "2026-09-17"
 status: "Research programme, not an established physical theory"
-layout: page
-permalink: /physics
 ---
 
 # The Recurrent Causal Code
@@ -13,11 +11,6 @@ permalink: /physics
 A semi-serious attempt at a weird theory of everything. *Very semi-serious.* **Very.**
 
 This serves as the basis for my upcoming sci-fi novel, *The Recovery Horizon*, and for more to come. Do not take it as actual research. I am mostly using AI to come up with a weird theory that could still describe our real world coherently, including the Standard Model and general relativity, all that for my sci-fi novels only.
-
-<a href="{{ site.cdn_url }}/physic/rcc_phase1.py" target="_blank" rel="noopener">RCC Phase 1 python sims</a>
-<a href="{{ site.cdn_url }}/physic/rcc_phase2.zip" target="_blank" rel="noopener">RCC Phase 2 python sims</a>
-<a href="{{ site.cdn_url }}/physic/rcc_phase2_cmds.sh" target="_blank" rel="noopener">RCC Phase 2 launch commands</a>
-
 ## A speculative framework with designated falsifiable branches, for emergent spacetime, matter, gravity, and quantum measurement
 
 > **Core claim:** The universe is a self-correcting recurrent quantum network. Spacetime is the geometry of reliable information transfer through that network. Matter is made of persistent recurrent defects. Gauge fields compare local code frames. Gravity is the universal deformation of decoding capacity produced by energy and information flow. [W, decomposed and tagged claim by claim below and in Appendix F]
@@ -36,6 +29,52 @@ That separation matters, so from v0.2 onward every substantive claim carries an 
 | [S] | Solid but conjectural. A serious research literature exists, competent people defend it, it is not settled. |
 | [W] | Wild. An extrapolation. A direction to push, not a claim to believe. |
 | [P] | Promissory. A place where "emergent" or "should follow" appears without a mechanism. Physics is littered with unpaid promissory notes; the honest thing is to stamp them as they are written. |
+
+## Changes in v0.9
+
+1. Added Appendix K, opening Phase 4: **the first $\gamma$ realization with the gravitational sign — and $\gamma\to1$ at a distinguished point.** The probe lives entirely in the code layer: a toric-code $\mathbb{Z}_2$ syndrome cellular automaton with thermal noise set by local stabiliser couplings and a local recurrent decoder. Clock = emergent syndrome autocorrelation time; metric = G.9 cost of the *measured* anyon exposure. No correlational proxy, no inserted functional forms (K.1).
+2. Sign result: a capacity load slows the local clock AND lengthens code distances, at every parameter tested — the first realization in the programme with both signs right, where all four matter-correlation realizations (v0.5-v0.8) gave metric contraction (K.2).
+3. Magnitude result: $\gamma$ is generically $O(1)$ (1-8, no tuning needed for order unity) and falls monotonically with vacuum defect density; the linearized $\gamma$ **crosses 1 at $\bar n\approx0.22$**, coinciding within resolution with the knee of the decoder's capacity curve ($\bar n_{\max}\approx0.29$): $\gamma=1$ at marginal repair utilization. Postulate 6 independently places the vacuum at the critical coding point — the first structural, rather than tuned, route to $\gamma=1$ the programme has exhibited (K.3). Tagged honestly: coincidence-of-scale at present, not a theorem (K.4).
+4. Exhibited gaps: the crossing point is metric-definition dependent at $O(1)$ precision (linearized vs compounded cost differ); and the response has **no far field** — geodesic $\gamma$ decays within a few ball radii, as it must while nothing propagates the strain. A $1/r$ potential requires dynamical capacity (a field equation), which is the Phase 5 object (K.4).
+5. Companion code: `code_layer.py` (bitwise GPU CA, gauge-invariant syndrome-sector observables, common-random-number variance reduction), `--exp gamma5`, validation suite `tests/smoke3.py`. Two instructive bugs are recorded: the raw error field is gauge-variant (observables must be syndrome-sector), and anyon residence time is decoder-blind (the honest clock is the autocorrelation time).
+6. Kill-criterion 15 status updated: the scoped exclusion of v0.7-v0.8 stands, but "no working mechanism" no longer describes the situation — the code layer supplies sign, magnitude, and a candidate selection principle. What it does not yet supply: definition-independence of the crossing, and a far field.
+
+## Changes in v0.8
+
+1. **Successor requirement 1 of §13.4 — interacting matter — tested at the mean-field level, and closed negative (J.3c).** Self-consistent Hartree-Fock for spinless fermions with nearest-neighbour interaction $V$ adds the two backreaction channels the free theory lacked (Fock bond renormalisation, Hartree density potentials). Repulsive $V$ amplifies the metric response roughly tenfold — through the same wrong-sign channel ($\gamma_{\mathrm{mi}}\to-0.14$ at $V=1.5$, distances still shrink), while the canonical proxy moves small-positive: the proxies now disagree on sign, both far from $+1$. Attractive $V$ destabilises the HF iteration near phase separation with no coherent trend. $V=0$ reproduces the static probe exactly.
+2. Scope: mean-field interacting matter is excluded; genuinely correlated vacua (beyond-HF, e.g. DMRG-class) remain open but are no longer the natural next step — three independent realizations have now failed through the same symptom (capacity load shortens correlational distances). The remaining §13.4 successors — strain on the code layer, operational code-subspace geometry — are Phase-4 objects and are now the *only* open routes.
+3. Companion code: `hf_state` (Anderson-accelerated HF with per-step chemical-potential solve, CDW order parameter reported — the half-filled model orders for $V\gtrsim0.5$ as it must), `gamma_probe_hf`, `--exp gamma4`; validation suite extended to 14 groups.
+
+## Changes in v0.7
+
+1. **The variational backreaction $\gamma$ probe — the last structural exit of J.3 — was run, and it failed. Kill criterion 15 fires for the free-fermion capacity-strain realization.** Both states relaxed as true equilibria of $F(w)=\Omega_{\mathrm{matter}}(w;T)+\tfrac{\kappa}{2}\sum_e(w_e-w^{\mathrm{load}}_e)^2$ (Anderson-accelerated stationarity solve, residuals $10^{-8}$; $\kappa\to\infty$ reproduces the static probe exactly). Across $L=24,32,48$, both sectors, the stable regime $\kappa\ge1$ gives $|\gamma_{\mathrm{mi}}|\le0.05$ — the static blindness persists at genuine backreacted equilibria — and the soft regime $\kappa\approx0.5$, just above capacity collapse, gives converged fixed points with $\gamma_{\mathrm{mi}}=-1.4$ to $-1.7$: order unity, **wrong sign** (distances shrink under load). No $\kappa$ yields $\gamma\approx+1$ (J.3b).
+2. Scope of the kill, stated precisely: what is excluded is the conjunction {free-fermion matter, link-capacity scalar strain, correlational reconstruction metrics}. §13.4's mechanism survives, if at all, only in realizations with interacting matter, strain acting on the code layer rather than hopping amplitudes, or genuinely operational (code-subspace) geometry — each a Phase 4-5 object, none currently exhibited (§13.4, §26).
+3. Solver delivered and validated: `variational_weights` (smeared grand potential, Anderson mixing, honest converged/stalled/collapsed classification), `gamma_probe_var`, `--exp gamma3` κ-ladder runner; smoke tests extended to 13 groups, including exact $\kappa\to\infty$ equivalence at matched smearing. A methods note: at criticality the $T=0$ ground state is discontinuous in the weights through zero-mode reshuffling; relaxation and measurement must share the same small smearing $T$.
+4. Pointers updated in §13.4, §22.4, §26; Appendix F ledger extended; J.8 table updated.
+
+## Changes in v0.6
+
+1. Added Appendix J, delivering the Phase-2.5 remainder tests of Appendix I: the two $\gamma$ exits, the gapless binding tail, the 3D cone rerun, shortcut certification, and annealing with degree-preserving moves. Companion code extended (`petz.py`, `strain2.py`, upgraded `cone.py`, `geometry.py`, `anneal.py`); every claim is backed by the validation suite `tests/smoke2.py`.
+2. **$\gamma$ exit 1 closed, negative:** the proxy is not the culprit. Three independent recoverability proxies — mutual information, canonical-correlation transport, and exact many-body Petz recovery fidelity — all measure $|\gamma_{\mathrm{proxy}}|\le0.08$ under a static load (J.2). The static free-fermion realization genuinely lacks the metric response.
+3. **$\gamma$ exit 2 tested: backreaction produces an instability, not $\gamma=1$.** The self-consistent capacity-follows-flux map has no stable intermediate fixed point: subcritical coupling returns to small negative $\gamma$; supercritical coupling collapses the *entire lattice* to minimum capacity (a Jeans-like runaway with no restoring term). $|\gamma|$ crosses unity only on unconverged transients (J.3). The designed successor probe is variational: minimise $E_{\mathrm{matter}}(w)+\tfrac{\kappa}{2}\sum_e(w_e-w^{\mathrm{load}}_e)^2$, restoring the quadratic strain cost of §24.4 that the flux map omitted.
+4. **Correction to I.9:** the defect-defect force is not uniformly attractive. The exact $O(\varepsilon^2)$ polarization measurement resolves a strict parity alternation (repulsive at even, attractive at odd separations on the bipartite half-filled lattice); the v0.5 scan sampled odd $r$ only. Critical mediator: power-law envelope $|V|\sim r^{-6.0\pm0.3}$ ($R^2=0.99$, size-independent); gapped: exponential $\xi\approx0.65a$ (J.4). Consequence: the matter-mediated force is Casimir/RKKY-grade, not gravity-grade — §12's gravity must live in the capacity sector, not in matter-mediated dispersion forces.
+5. 3D cone delivered: with the saturation-bracketing time grid the 3D fronts are ballistic in the emergent metric, $v=7.04\to6.88$ and anisotropy $4.5\%\to3.1\%$ over $L=14\to18$ — the isotropizing-cone trend now holds in three dimensions; the 2D rerun cross-validates the method against the fixed grid to $0.3\%$ (J.5).
+6. Shortcut certification delivered: the flagged far pairs decompose into metric-inflation artifacts (graph-close pairs the cell metric mislabels far; they carry every extreme MI ratio, dominant in gapped vacua) and the fat tail of critical correlations just above the lenient nearest-neighbour-median threshold. No wormhole class: the §7.2 no-shortcut condition passes once thresholds are gap-scaled (J.6).
+7. Annealing with degree-preserving swaps: acceptance unfroze, deeper minima found — and they are *less* geometric ($d_{\mathrm{eff}}\approx0.0$-$0.24$ at the cold rungs). The sampler is exonerated; the §24.5 action itself has a non-geometric ground state. Kill criterion 5 is now engaged for this action family; Phase 3 requires action redesign, not more compute (J.7).
+8. Pointers updated in §13.4, §22.4, §25, §26; Appendix F ledger extended; Appendix I subsections annotated with their J resolutions.
+
+## Changes in v0.5
+
+1. Added Appendix I, delivering Phase 2 of the roadmap: reconstruction geometry at scale, measured on exact free-fermion (Gaussian) vacua. All numbers are reproducible with the companion package `rcc_phase2/` and the driver script `rcc_phase2_cmds.sh` distributed alongside this document; every quoted value is the mean over four independent replicas in fp64.
+2. Emergent metric delivered: the MI-proxy reconstruction metric on two-dimensional lattice vacua measures $d_{\mathrm{eff}}=2.06\pm0.01$ with curvature proxy $\to0$ as $L$ grows; three-dimensional vacua flow $2.19\to2.92\to3.18$ toward $3$; a degree-6 expander control correctly *fails* to look geometric — the estimators do not hallucinate geometry (I.2, I.3).
+3. Partition covariance measured: the G.9 scaling-window promissory note is now a trend, Pearson $0.960\to0.978\to0.987$ and stress $0.099\to0.073\to0.055$ over $L=32\to64$ (I.4).
+4. Area law scoped: gapped sectors obey a clean area law, $S/|\partial A|=0.184$ stable across sizes; critical sectors show the known logarithmic violation [62, 63] — §15's area-law language presumes a gapped sector (I.5).
+5. Geodesic propagation delivered in two dimensions: influence fronts are linear in the *emergent* metric with anisotropy $3.8\%\to3.1\%\to1.9\%$ over $L=32\to64$, falling roughly as $1/L$; the correlational and dynamical faces of Postulate 5 agree in-model (I.7). The 3D cone runs were instrumentally invalid (front saturation) and are a rerun item.
+6. **Key negative finding: the §13.4 $\gamma$ mechanism fails in this realization.** Under a capacity load the clock proxy responds at $O(\varepsilon)$ while the MI-metric response is two to three orders smaller and of the opposite sign: $\gamma_{\mathrm{proxy}}\in[-0.08,0]$ across all 72 (size, load, radius, sector) runs, with no drift toward 1 as $L$ grows. Kill criterion 15 is not formally triggered — the proxy-to-PPN mapping is [P] — but the first in-model test of the structural mechanism is failed, converting §13.4 from hopeful to exhibited-unpaid (I.8).
+7. Goal-4 attraction probe positive: two capacity loads attract through the fermionic vacuum, $V(r)<0$ with magnitude $\propto\varepsilon^2$ and exponential range under a gapped mediator — an induced, universal, short-range attraction, Casimir/RKKY-like (I.9).
+8. Goal-1 annealing bridge negative so far: the pure graph action anneals into non-geometric clumps ($d_{\mathrm{eff}}\approx-4.9$); adding fermionic matter pushes cold rungs toward geometry ($d_{\mathrm{eff}}\approx0.2$–$1.0$) but the chains freeze before any two-dimensional phase forms. Kill criterion 5 untested, not triggered (I.10).
+9. Shortcut certification incomplete: the §7.2 no-shortcut condition is passed cleanly at $L=32$ but the far-pair MI count and ratio grow with $L$; partition-artifact versus genuine-outlier is unresolved and needs a node-level operational check (I.6).
+10. Phase 2 of §25 marked delivered-with-remainders; pointers in §7.2, §7.3, §13.4, §15.1, §22.1, §22.4, §26; references 62-64; Appendix F ledger extended.
 
 ## Changes in v0.4
 
@@ -114,7 +153,10 @@ A theory of quantum gravity does not become serious because it uses advanced voc
 33. [Appendix F: tagged claim ledger](#appendix-f-tagged-claim-ledger)  
 34. [Appendix G: formal foundations (Phase 0)](#appendix-g-formal-foundations-phase-0)  
 35. [Appendix H: Phase 1 — fixed-graph recurrent matter](#appendix-h-phase-1--fixed-graph-recurrent-matter)  
-36. [References](#references)  
+36. [Appendix I: Phase 2 — reconstruction geometry at scale](#appendix-i-phase-2--reconstruction-geometry-at-scale)  
+37. [Appendix J: Phase 2.5 — remainder tests](#appendix-j-phase-25--remainder-tests)  
+38. [Appendix K: Phase 4 opening — the code-layer gamma](#appendix-k-phase-4-opening--the-code-layer-gamma)  
+39. [References](#references)  
 
 ---
 
@@ -723,6 +765,8 @@ The theorem is elementary. Its physical value comes from what is inserted into $
 
 A second caveat: chained decoders make the path construction an *achievability* bound. Small infidelities compose subadditively, so a path of good hops certifies that the true reconstruction cost obeys $d_{\mathrm{true}}(i,j)\le L(\gamma)$. Nothing forbids a direct reconstruction cheaper than every path: long-range entanglement is a nonlocal shortcut. So $d_R$ equals the operational cost only if the vacuum admits no shortcuts, and absence of shortcuts is part of the definition of a geometric phase [P]. Conversely, controlled shortcuts sourced by shared entanglement are not a bug: they are the RCC face of the ER=EPR intuition, expected to behave as geometric handles rather than metric violations [W].
 
+Status after v0.5: the shortcut scan on free-fermion lattice vacua is clean at $L=32$ but the number of far pairs with anomalously high mutual information grows with system size, and whether they are partition artifacts or genuine metric outliers is unresolved (Appendix I.6). The no-shortcut condition is measured, not yet certified.
+
 ## 7.3 Effective dimension
 
 Choose a reference region $i$ and define the reconstruction ball
@@ -755,6 +799,8 @@ d_{\mathrm{eff}}(r)\rightarrow3
 $$
 
 for large spatial scales while possibly flowing to another value near the microscopic scale.
+
+Status after v0.5: measured with the MI-proxy metric on free-fermion vacua. Two-dimensional lattices reconstruct $d_{\mathrm{eff}}=2.06\pm0.01$ with a flat running-dimension plateau; three-dimensional lattices flow $2.19\to2.92\to3.18$ toward $3$ as the side grows; a random-regular control graph correctly fails to yield any stable dimension (Appendix I.2, I.3).
 
 ## 7.4 Curvature from reconstruction geometry
 
@@ -1572,6 +1618,16 @@ A candidate mechanism worth developing: if the same channel-capacity reduction t
 
 Deriving or refuting this equality in the Goal-4 simulations (§22.4) is re-ranked in v0.2 as the top gravitational priority, ahead of the area coefficient. It is where scalar-flavoured emergent-gravity models historically die, and it is cheaper to test numerically than $1/4G\hbar$.
 
+**Status after v0.5: the test was run, and the candidate mechanism fails in the realization tested.** In the free-fermion, MI-proxy realization of Appendix I.8, a capacity load of strength $\varepsilon$ reduces the local clock proxy at $O(\varepsilon)$ but changes emergent reconstruction distances by only $10^{-4}$-$10^{-2}$ fractionally — and in the *shortening* direction. The measured ratio is $\gamma_{\mathrm{proxy}}\in[-0.08,0]$ across all 72 parameter combinations, with no drift toward 1 with system size. "Both controlled by a single capacity field" is therefore not something a static correlational metric does for free: either the operational (Petz) reconstruction cost departs from the MI proxy exactly here, or the mechanism needs genuine dynamical backreaction (the load must deform the state the geometry is read from, self-consistently), or the mechanism is wrong. This is now the framework's most urgent exhibited failure, of the same epistemic grade as the Phase-1 cone-universality failure (H.6).
+
+**Status after v0.6 (Appendix J.2-J.3): the first two exits are closed, both negative.** The operational proxies (canonical-correlation transport, exact Petz recovery) are as blind as mutual information under a static load — the proxy was not the culprit. And the first dynamical-backreaction realization (capacity follows bond flux) exhibits an instability rather than $\gamma=1$: no stable fixed point exists between "metric barely responds" and "the whole lattice collapses to minimum capacity." What survives is precise: a *stabilized* backreaction — the quadratic strain cost of §24.4, which the flux map omitted — is now the only remaining structural route to $\gamma=1$ in this model class. If the variational probe (J.3) also fails, criterion 15 fires for the free-fermion realization.
+
+**Status after v0.7 (Appendix J.3b): the third exit is closed, and criterion 15 has fired for this realization.** The variational probe — true equilibria of matter plus quadratic capacity strain at every stiffness $\kappa$ — gives either negligible spatial response (stiff), or order-unity response of the wrong sign just above capacity collapse (soft), never $\gamma\approx+1$. Free-fermion matter with scalar link-capacity strain and correlational geometry is excluded as a mechanism for gravity. Any successor realization must exhibit at least one of: interacting matter whose loaded vacuum *lengthens* reconstruction distances; strain acting on the code layer (stabiliser weights, decoder depth) rather than on hopping amplitudes; or a genuinely operational code-subspace geometry that responds where correlational metrics do not. Those are Phase 4-5 objects. Until one is exhibited, the gravitational sector of RCC has no working mechanism — stated plainly because the kill-criterion framework exists for exactly this.
+
+**Status after v0.8 (Appendix J.3c): successor 1 — interacting matter — is closed at the mean-field level.** Hartree-Fock interactions amplify the metric response tenfold through the same wrong-sign channel. Three independent realizations now fail identically: a capacity load shortens correlational distances, because weakening a region's couplings weakens its correlations globally, which $-\log q$ metrics read as contraction. The surviving routes — code-layer strain and operational code-subspace geometry — both require an actual code (Phase 4). The gravitational sector is now formally blocked on Phase 4.
+
+**Status after v0.9 (Appendix K): the code-layer realization works where every matter realization failed.** With clock and metric both read from the syndrome dynamics of an actual code, a capacity load slows clocks AND lengthens operational distances — the gravitational sign, structurally, because degrading repair capacity makes a region genuinely harder to transport logical information through. $\gamma$ is $O(1)$ without tuning and crosses $1$ where the decoder runs at marginal capacity — the critical coding point where Postulate 6 independently places the vacuum. The candidate mechanism of this section is, for the first time, *exhibited rather than hoped for*, in one realization, at coincidence-of-scale precision. Still owed: definition-independence of the crossing, and a far field (Appendix K.4).
+
 ---
 
 # 14. Conditional recovery of Einstein gravity
@@ -1733,6 +1789,8 @@ $$
 $\square$
 
 If the number of crossing channels scales with emergent area, entropy obeys an area law.
+
+Status after v0.5: measured on free-fermion vacua (Appendix I.5). Gapped sectors obey a clean area law, $S/|\partial A|=0.184$ nats per boundary link, stable across system sizes. Critical (gapless) sectors violate it logarithmically, exactly as the Gioev-Klich-Widom analysis requires [62, 63]. The area-law language of this section therefore presumes a gapped vacuum sector; whether the physical vacuum is such a sector is part of Postulate 6 [P].
 
 ## 15.2 Horizon as decoding transition
 
@@ -2594,6 +2652,8 @@ Measure whether the ground or steady phase develops:
 - foliation-covariance of $d_R$ across maximal antichains (§7.1),
 - and absence of nonlocal reconstruction shortcuts (§7.2).
 
+Status after v0.5 (Appendix I): the *static* half of this checklist is measured on fixed-graph free-fermion vacua — dimension near the target value, curvature proxy → 0, partition covariance trending to 1, area law in gapped sectors, cone anisotropy falling as $1/L$; the shortcut certification is incomplete (I.6). The *dynamical* half — a spontaneous geometric phase from graph annealing — has not been achieved: the pure graph action of §24.5 anneals into non-geometric clumps, and coupling fermionic matter improves but does not geometrise the cold rungs (I.10).
+
 ## 22.2 Goal 2: defect propagation
 
 Insert a protected defect and measure:
@@ -2656,6 +2716,10 @@ $$
 $$
 
 The priority measurement in this goal is $\gamma$: extract the clock-rate deformation and the spatial reconstruction-metric deformation produced by the same load, and test whether their ratio is unity (§13.4). A ratio away from one at the continuum fixed point kills the strain picture against Cassini [42].
+
+Status after v0.5 (Appendix I.8, I.9): the $\gamma$ measurement was performed in the free-fermion MI-proxy realization and **failed** — $\gamma_{\mathrm{proxy}}\in[-0.08,0]$, clock side at $O(\varepsilon)$, metric side two to three orders smaller and of opposite sign, no drift toward 1 with size (§13.4). Two items on the list above did pass: local recurrence-latency proxies rise under load, and a universal attractive potential between two capacity loads is measured, $V(r)\propto-\varepsilon^2 e^{-r/\xi}$ with $\xi$ set by the mediator gap. The attraction exists; the metric response does not, in this realization.
+
+Status after v0.6 (Appendix J): the failure is now known to be neither the proxy (J.2) nor curable by flux-coupled backreaction (J.3, unstable); and the "universal attraction" is corrected to a parity-alternating RKKY force with a $r^{-6}$ critical envelope (J.4) — not a gravity precursor. The Goal-4 burden now rests entirely on the stabilized variational backreaction probe.
 
 ## 22.5 Goal 5: equivalence principle
 
@@ -2951,16 +3015,20 @@ Fixed one- and two-dimensional graphs. Deliverables and status:
 
 Remainders assigned onward: particle-antiparticle annihilation, two-dimensional defects with genuine topological charge (beyond symmetry protection), dynamical gauge fields (Phase 4), and — promoted by H.6 — a mechanism enforcing cone universality across composites (Phase 3).
 
-## Phase 2: reconstruction geometry
+## Phase 2: reconstruction geometry — delivered in v0.5 (Appendix I), with remainders
 
-Make link capacity state dependent.
+Exact free-fermion vacua on fixed graphs; geometry read out through the MI-proxy metric of G.9. Deliverables and status:
 
-Deliverables:
+- emergent metric — **delivered**: metric reconstruction succeeds on lattice vacua and correctly refuses an expander control (I.2, I.3) [E, in-model, MI-proxy],
+- dimension flow — **delivered**: $d_{\mathrm{eff}}=2.06\pm0.01$ in 2D; 3D flowing to $3$ with visible finite-size bias (I.2) [E, in-model],
+- curvature estimators — **delivered as proxies**: ball-volume curvature → 0 on flat vacua with the correct size trend (I.2) [E, in-model],
+- geodesic propagation — **delivered in 2D**: influence fronts linear in the emergent metric, anisotropy falling as $\sim1/L$ (I.7) [E, in-model]; 3D rerun needed.
 
-- emergent metric,
-- dimension flow,
-- curvature estimators,
-- and geodesic propagation.
+Beyond the four listed deliverables, Phase 2 also produced: the G.9 covariance trend (I.4), the gapped-sector area law with the known critical violation (I.5), the failed $\gamma$ probe (I.8) — the phase's most consequential output — and the measured defect-defect attraction (I.9).
+
+Remainders assigned onward: node-level operational (Petz) shortcut and $\gamma$ checks against the MI proxy; a dynamical-backreaction $\gamma$ probe in which the load and the geometry respond self-consistently (Phase 5 prerequisite); 3D cone rerun with a corrected time grid; state-dependent link capacity as a dynamical variable rather than a static perturbation.
+
+Phase-2.5 update (v0.6, Appendix J): all four remainders were executed. Operational $\gamma$ checks — done, negative (J.2); dynamical-backreaction $\gamma$ — done, unstable rather than $\gamma=1$ (J.3); 3D cone — done, cone isotropizes in 3D (J.5); shortcut certification — done, no wormhole class (J.6). New remainder: the variational (strain-cost) backreaction probe.
 
 ## Phase 3: dynamical graph vacuum
 
@@ -2972,6 +3040,10 @@ Deliverables:
 - stable Lorentz-like cone,
 - suppression of preferred-frame operators,
 - and phase diagram.
+
+First contact made in v0.5: parallel-tempering annealing of the §24.5 graph action, with and without fermionic matter (I.10). Result so far negative — no geometric phase; matter coupling moves the cold rungs in the geometric direction but the Monte Carlo freezes. The phase needs better moves (cluster or worm updates), longer ladders, and a matter term whose backreaction is computed rather than annealed against.
+
+Second contact in v0.6 (J.7): degree-preserving swap moves unfroze the sampler, which then found *deeper and less geometric* minima. The obstruction is the action, not the sampling. Phase 3 begins from action redesign: candidate ingredients are a matter term with genuine backreaction weight, a locality reward tied to the emergent metric at shorter refresh intervals, and suppression of the triangle term's clique attractor.
 
 ## Phase 4: gauge and chirality
 
@@ -3036,7 +3108,7 @@ The framework should be abandoned or radically revised if any of the following o
 
 4. **The recurrence-mass mechanism fails beyond free $1+1$-dimensional toys.**
 
-5. **No dynamical graph phase produces stable $3+1$-dimensional locality.**
+5. **No dynamical graph phase produces stable $3+1$-dimensional locality.** Status after v0.6: engaged for the §24.5 action family — with unfrozen sampling, its deeper minima are *less* geometric (Appendix J.7). Not yet a trigger: the criterion quantifies over actions, and only one family is excluded. Phase 3 must now exhibit a better action or start conceding this point.
 
 6. **The area coefficient cannot be related to $G$ without inserting it by hand.**
 
@@ -3056,7 +3128,7 @@ The framework should be abandoned or radically revised if any of the following o
 
 14. **The complete model requires more arbitrary parameters than the theories it is meant to explain.**
 
-15. **The microscopic model produces $\Phi\neq\Psi$, that is PPN $\gamma\neq1$, above the $10^{-5}$ level without a protective mechanism.**
+15. **The microscopic model produces $\Phi\neq\Psi$, that is PPN $\gamma\neq1$, above the $10^{-5}$ level without a protective mechanism.** Status after v0.5: the first in-model test (free-fermion, MI-proxy, static load) produced $\gamma_{\mathrm{proxy}}\approx0$, far from 1 (Appendix I.8). Not a formal trigger — the proxy-to-PPN mapping is [P] — but the burden of proof has shifted: some realization must now exhibit $\gamma\to1$, or this criterion fires. Status after v0.6: two of the three exits are closed negative (operational proxies equally blind; flux-coupled backreaction unstable, Appendix J.2-J.3). One structural route remains — the stabilized variational backreaction — before this criterion fires for the model class. **Status after v0.7: the third exit is closed negative (Appendix J.3b), and the criterion FIRES, scoped: free-fermion matter with scalar link-capacity strain and correlational reconstruction geometry is excluded.** The framework survives only through realizations not yet exhibited (§13.4). Status after v0.9: such a realization is now exhibited — the code-layer probe has the right sign everywhere and $\gamma_{\mathrm{lin}}=1$ at marginal decoder utilization (Appendix K). The scoped exclusion stands; the criterion's pressure on the framework is relieved but not resolved until the crossing is definition-independent and a far field exists.
 
 16. **DR3-class cosmological data confirm a robust phantom crossing of $w(z)$, if the rigid redundancy-pressure ansatz of §18.2 is retained.**
 
@@ -3672,6 +3744,43 @@ Every substantive claim of the framework, tagged. [E] certifies mathematics or r
 | Composite dispersion relativistic with $c^\ast=0.897c$ (H.6c) | [E] | Residual $1.2\times10^{-4}$; rest quasienergy defines composite mass |
 | Cone universality fails in-model; vacuum must enforce it | [E] as finding | Repair mechanism [P]; Phase 3 target |
 
+## Phase 2 reconstruction geometry (v0.5)
+
+| Claim | Tag | Notes / upgrade path |
+|---|---|---|
+| 2D vacua reconstruct $d_{\mathrm{eff}}=2.06\pm0.01$, curvature proxy $\to0$ (I.2) | [E, in-model, MI-proxy] | Positive control; residual $+0.06$ is finite-window bias |
+| 3D dimension flow $2.19\to2.92\to3.18$ toward 3 (I.2) | [E, in-model, MI-proxy] | Finite-size still strong at $n=5832$ |
+| Expander control: reconstruction correctly fails (I.3) | [E, in-model] | Estimators do not hallucinate geometry; supports Postulate 5 tooling |
+| Partition covariance: Pearson $0.960\to0.987$, stress $0.099\to0.055$ over $L=32\to64$ (I.4) | [E, in-model] | G.9 window trend; exact limit and circuit-picture cut-covariance remain [P] |
+| Gapped area law $S/\lvert\partial A\rvert=0.184$, size-stable (I.5) | [E, in-model] | Critical sectors violate logarithmically, as known [62, 63] |
+| Shortcut certification incomplete at $L=64$ (I.6) | [E] as finding | Partition artifact vs genuine outlier unresolved; needs node-level Petz check |
+| Influence cone linear in emergent metric; anisotropy $1.9\%$ at $L=64$, $\sim1/L$ (I.7) | [E, in-model] | Dynamical and correlational proxies of Postulate 5 agree |
+| $\gamma_{\mathrm{proxy}}\in[-0.08,0]\ll1$ in all 72 runs (I.8) | [E] as finding | §13.4 mechanism fails in this realization; PPN mapping still [P]; kill criterion 15 burden shifted |
+| Capacity loads attract: $V\propto-\varepsilon^2e^{-r/\xi}$ (I.9) | corrected in v0.6 | Parity-alternating RKKY force, $r^{-6}$ critical envelope (J.4) |
+| Annealing: no geometric phase; matter helps but chains freeze (I.10) | [E] as finding | Kill criterion 5 untested, not triggered; Phase 3 needs better sampling |
+
+## Phase 2.5 remainder tests (v0.6)
+
+| Claim | Tag | Notes / upgrade path |
+|---|---|---|
+| All three proxies blind under static load: $\lvert\gamma\rvert\le0.08$ for MI, canonical, Petz (J.2) | [E, in-model] | Exit 1 of I.8 closed negative; the proxy is not the failure |
+| Flux-coupled backreaction has no stable intermediate fixed point (J.3) | [E, in-model] | Jeans-like collapse above $\kappa_c$; $\gamma$ crosses 1 only on unconverged transients |
+| Stabilized variational backreaction is the last structural route to $\gamma=1$ (J.3) | [P] | Designed; criterion 15 fires for this class if it fails |
+| Defect force parity-alternates; critical envelope $\lvert V\rvert\sim r^{-6.0\pm0.3}$, gapped $\xi\approx0.65a$ (J.4) | [E, in-model] | Corrects I.9; RKKY-grade, not gravity-grade |
+| 3D cone ballistic and isotropizing: $4.5\%\to3.1\%$ over $L=14\to18$ (J.5) | [E, in-model] | Auto grid cross-validated in 2D to $0.3\%$ |
+| No wormhole class among flagged far pairs (J.6) | [E, in-model] | Metric-inflation artifacts + critical MI tail; §7.2 condition passes with gap-scaled thresholds |
+| §24.5 action's deeper minima are less geometric (J.7) | [E, in-model] | Sampler exonerated; kill criterion 5 engaged for this action family |
+| Variational-equilibrium $\gamma$: stiff $\Rightarrow$ blind, soft $\Rightarrow$ wrong sign, never $+1$ (J.3b, v0.7) | [E, in-model] | **Criterion 15 fired, scoped to the free-fermion capacity-strain realization**; successor requirements listed in §13.4 |
+
+## Phase 4 opening: code-layer gamma (v0.9)
+
+| Claim | Tag | Notes / upgrade path |
+|---|---|---|
+| Capacity load slows code clocks and lengthens code distances, everywhere tested (K.2) | [E, in-model] | First gravitational-sign realization; structural, not tuned |
+| $\gamma_{\mathrm{lin}}$ monotone in vacuum density, crosses 1 at $\bar n\approx0.22$ (K.3) | [E, in-model] | Coincides with the decoder capacity knee at current precision |
+| $\gamma=1$ at the critical coding point, meshing with Postulate 6 (K.3) | [S]/[P] | Coincidence of scales, not a theorem; needs operational metric + decoder universality |
+| Static capacity has no far field (K.4) | [E, in-model] | Newtonian tail requires dynamical capacity — the Phase 5 object |
+
 ---
 
 # Appendix G: formal foundations (Phase 0)
@@ -4040,6 +4149,327 @@ Remainders: particle-antiparticle annihilation; $\ge2$D defects with genuine top
 
 ---
 
+# Appendix I: Phase 2 — reconstruction geometry at scale
+
+This appendix delivers Phase 2 of §25: the emergent metric, dimension flow, curvature estimators, and geodesic propagation, plus the Goal-1 static checklist (§22.1), the Goal-4 $\gamma$ probe and attraction probe (§22.4, §13.4), and a first annealing bridge to Phase 3. All results are produced by the companion package `rcc_phase2/` driven by `rcc_phase2_cmds.sh`; every quoted number is the mean over four independent replicas (seeds), computed in fp64.
+
+## I.1 The measured system, and what the numbers can honestly mean
+
+The matter sector is free fermions on a fixed graph: nearest-neighbour hopping $H_{ij}=-A_{ij}$, optionally with a staggered on-site mass $\pm\delta$ that opens a gap. Gaussian ground states are the largest system class in which subsystem entropies, mutual informations, and propagators are *exact* [64], so every geometric quantity below is a controlled measurement rather than a variational estimate. Sizes run to $n=4096$ sites (2D), $n=5832$ (3D).
+
+Geometry is read out at the cell level: the graph is partitioned into BFS cells of $\sim16$ sites, and neighbouring cells $i,j$ get the edge cost of G.9 with the correlational proxy
+
+$$
+q_{ij}=\frac{I(i\!:\!j)}{2\min(S_i,S_j)}\in(0,1],
+\qquad
+\ell_{ij}=-\log q_{ij},
+$$
+
+followed by all-pairs shortest paths. Honesty ledger, fixed before the runs and unchanged after them:
+
+- $q_{ij}$ is the mutual-information proxy for Petz recoverability. Its equivalence to the operational $q$ of G.9 is [P]. Every number below carries the implicit tag **[E, in-model, MI-proxy]**.
+- The influence cone (I.7) is the *independent dynamical* proxy of Postulate 5; agreement between the two proxies is itself a measurement, not an assumption.
+- "Foliation covariance" is tested as partition covariance of $d_R$ in a Hamiltonian ground state; true cut-covariance in the circuit picture remains [P] (G.10).
+- The curvature number is the ball-volume proxy of §7.4, not a theorem.
+- $\gamma_{\mathrm{proxy}}$ maps onto PPN $\gamma$ only through the strain dictionary of §12-13, which is [P]. What is measured is the in-model ratio §13.4 asks for.
+
+## I.2 Emergent metric, dimension flow, curvature
+
+Two-dimensional lattice vacua, critical ($\delta=0$) and gapped ($\delta=0.8$, staggered), sides $L=32,48,64$:
+
+| $L$ | $d_{\mathrm{eff}}$ (crit / gap) | curvature proxy (crit) | spectral-dimension tail |
+|---|---|---|---|
+| 32 | 1.995 / 2.005 | $+9.6\times10^{-4}$ | 2.06 |
+| 48 | 2.071 / 2.063 | $-1.1\times10^{-4}$ | 2.03 |
+| 64 | 2.065 / 2.056 | $-5.0\times10^{-5}$ | 2.02 |
+
+The running dimension $d(r)$ is flat across the fitting window at $2.05\pm0.03$ (no dimensional flow between the cell scale and the system scale, as it should be for a flat vacuum), and the ball-volume curvature proxy decays toward zero with size: the reconstruction geometry of a flat lattice vacuum is flat, in both the volume-growth and heat-kernel senses. The residual $+0.06$ in $d_{\mathrm{eff}}$ is finite-window bias, visible because the gapped and critical values share it.
+
+Three-dimensional lattices, sides $L=10,14,18$ ($n=1000$-$5832$): $d_{\mathrm{eff}}=2.19\to2.92\to3.18$ and spectral-dimension tail $3.77\to3.50\to3.30$. Both estimators are converging toward 3 from opposite sides, but three-dimensional reconstruction is visibly harder: at $n\approx6000$ the window bias is an order of magnitude larger than in 2D at comparable node count. Extracting continuum 3D geometry will need either larger systems or better estimators — a known cost item for Phases 3 and 5.
+
+## I.3 The negative control: an expander is not geometric
+
+The same pipeline applied to random 6-regular graphs ($n=1024, 2304$) returns $d_{\mathrm{eff}}$ fit failures (negative slopes), partition Pearson $\approx0.19$-$0.23$, and curvature proxies $0.4$-$0.8$ — two orders above the lattice values. The diagnostics refuse to see geometry where there is none. This matters: a reconstruction-geometry programme whose estimators returned "dimension $\approx3$" for an expander would be fitting noise. Postulate 5's tooling passes both its positive and negative controls.
+
+## I.4 Partition covariance: the G.9 window test
+
+Rebuilding the metric from an independently seeded partition and correlating the two node-level distance matrices gives, in 2D:
+
+$$
+\text{Pearson}=0.960,\ 0.978,\ 0.987,
+\qquad
+\text{stress}=0.099,\ 0.073,\ 0.055
+\qquad
+(L=32, 48, 64),
+$$
+
+and in 3D Pearson $0.78\to0.88\to0.92$ over $L=10\to18$. The trend is monotone toward covariance in the large-size limit, consistent with the existence of the G.9 scaling window on which $d_R$ stabilises. The promissory note of G.9 is now a measured trend; the limit itself, and cut-covariance in the circuit picture, remain [P].
+
+## I.5 Area law, scoped
+
+Ball-boundary entropy scans give, for the gapped sector, $S/|\partial A|=0.1842,\ 0.1838,\ 0.1837$ nats per boundary link at $L=32,48,64$: a clean, size-stable area law, matching Theorem 9's mechanism. For the critical sector the fitted slope *grows* with size ($0.447\to0.483\to0.508$) with a large compensating logarithmic term: the known Gioev-Klich-Widom multiplicative logarithm of gapless fermions [62, 63], reproduced rather than discovered. Consequence for §15: the area-law statements presume a gapped vacuum sector, and gaplessness of any sector shows up directly as an area-law violation in reconstruction geometry.
+
+## I.6 Shortcut scan: measured, not certified
+
+*(Resolved in v0.6: Appendix J.6 — no wormhole class; the flags decompose into metric-inflation artifacts and the critical MI tail.)*
+
+At $L=32$ the scan is clean (0.2 far pairs per replica above the median nearest-neighbour MI, max far-MI ratio 0.75). But both the count and the ratio grow with size: 3.2 and 7.0 pairs (of 400 sampled), ratios 1.9 and 6.3 (critical) and up to 13.2 (gapped) at $L=48,64$. Two readings are consistent with the data: BFS-partition artifacts (straggly cells misplaced by the cell metric) or genuine metric outliers of the MI proxy. The saved outputs do not retain the offending pairs, so the discrimination — are the high-MI far pairs graph-adjacent? — is a rerun item requiring node-level bookkeeping. Until then the §7.2 no-shortcut condition is *measured but not certified* at the largest sizes. Recorded as a remainder, not smoothed over.
+
+## I.7 Geodesic propagation: the cone in the emergent metric
+
+Single-particle propagator fronts $|G_{j,\mathrm{src}}(t)|^2$, with front radius measured in the *emergent* distance $d_R$ rather than graph hops, eight sources per replica:
+
+| $L$ | $v_{\mathrm{mean}}$ | anisotropy $v_{\mathrm{std}}/v_{\mathrm{mean}}$ |
+|---|---|---|
+| 32 | 3.537 | 0.038 |
+| 48 | 3.384 | 0.031 |
+| 64 | 3.311 | 0.019 |
+
+Fronts are linear in $t$ until saturation at the system diameter — ballistic propagation with a well-defined speed *in the reconstructed metric*. The anisotropy falls roughly as $1/L$, and a $1/L$ extrapolation of the speed gives $v_\infty\approx3.1$ (emergent units). This is the promised consistency check of Postulate 5: the correlational metric (MI) and the dynamical metric (influence) agree to within 2% at the largest size, with the residual shrinking. The three-dimensional cone runs are excluded: their fronts saturate at the graph diameter by the second time sample (the time grid outran the small systems), so the fitted speeds are artifacts. Rerun with an earlier, denser grid at $L\ge14$. *(Done in v0.6: Appendix J.5 — the 3D cone is ballistic and isotropizing.)*
+
+## I.8 The $\gamma$ probe: performed, and failed in this realization
+
+The §13.4 test, as specified in §22.4: weaken all hoppings inside a ball of radius $r$ hops by $(1-\varepsilon)$ — a capacity load — and measure two fractional responses in the ground state. The clock proxy $d_\alpha$ is the fractional drop of the local energy scale $\alpha_i=\sqrt{\langle i|H^2|i\rangle}$ inside the ball (the $g_{00}$ side). The spatial proxy $d_\ell$ is the fractional lengthening of emergent distances between anchor pairs whose baseline geodesics cross the ball (the $g_{ij}$ side). The scan: $L\in\{24,32,48\}$, $\varepsilon\in\{0.05,0.1,0.2,0.3\}$, $r\in\{2,3,5\}$, critical and gapped — 72 runs, four replicas each.
+
+Result:
+
+- $d_\alpha=O(\varepsilon)$, linear across the whole range (e.g. $0.14$ at $\varepsilon=0.2$, $r=3$): the clock side responds at first order, as the strain picture requires.
+- $d_\ell$ is **two to three orders of magnitude smaller** ($10^{-4}$-$10^{-2}$) and **negative**: emergent distances through the loaded region very slightly *shrink*.
+- $\gamma_{\mathrm{proxy}}=d_\ell/d_\alpha\in[-0.08,0]$ over all 72 runs. At the largest size, critical sector: $-0.001$ to $-0.007$; gapped: $-0.02$ to $-0.04$. No trend toward 1 with size (critical trends toward 0), no trend with $\varepsilon$ (pure linear response), no trend with load radius.
+
+The candidate mechanism of §13.4 — one capacity field controlling both responses with equal coefficient — is therefore *not* what this realization does. The static MI metric of a loaded free-fermion vacuum is nearly blind to the load that the clocks see at first order, and what little it sees has the wrong sign (plausibly geodesic rerouting around the degraded region plus MI redistribution, though the saved data cannot fully resolve this).
+
+Three exits, in decreasing order of comfort for the framework, all testable:
+
+1. **The proxy is the failure.** The operational reconstruction cost (Petz transport fidelity, G.9) may respond at $O(\varepsilon)$ where raw mutual information does not. Direct node-level Petz measurement under load is the immediate follow-up.
+2. **Staticity is the failure.** In GR the spatial metric response is sourced dynamically; a static ground-state comparison may simply be the wrong observable, and a self-consistent backreacting load (capacity that responds to the state it deforms) is required. This is the Phase 5 route.
+3. **The mechanism is the failure.** Scalar-flavoured strain gravity dies exactly here, historically (§13.4). If exits 1 and 2 also fail, criterion 15 fires and the gravitational sector of RCC as currently formulated is dead.
+
+Tagged honestly: the finding is [E, in-model]; which exit is correct is open. What is no longer available is the unexamined hope that $\gamma=1$ comes for free.
+
+## I.9 Two loads attract: the Goal-4 attraction probe
+
+> **Correction (v0.6, Appendix J.4):** the claim of uniform attraction below is an artifact of sampling odd separations only. The exact $O(\varepsilon^2)$ measurement shows a strict parity alternation — repulsive at even, attractive at odd $r$ — with a power-law envelope $|V|\sim r^{-6}$ for gapless mediators. The interaction is RKKY/Casimir-grade, not gravity-grade.
+
+The interaction potential between two capacity loads, $V(r)=E_{12}(r)-E_1-E_2+E_0$ from exact fermionic ground energies (gapped mediator, $\delta\ge0.5$):
+
+- $V(r)<0$ at short range, always: capacity defects **attract** through the matter vacuum, with no sign choice anywhere in the construction.
+- Magnitude scales as $\varepsilon^2$ (measured $-1.9\times10^{-6},\ -8.1\times10^{-6},\ -3.8\times10^{-5},\ -9.8\times10^{-5}$ at $\varepsilon=0.05$-$0.3$, $r=3$): a second-order induced interaction, of Casimir/RKKY type.
+- Range is exponential with $\xi\lesssim1$ lattice spacing — a Yukawa-like force, as it must be with a gapped mediator.
+- Values are independent of system size from $L=24$ up: converged.
+
+This is the correct qualitative skeleton for §12's claim that capacity consumption sources universal attraction — existence and sign are now measured, not asserted. What is missing for gravity is the long-range tail: a $1/r$-type potential requires a gapless mediator, and the critical-matter binding measurement runs into the fp64 energy-difference floor ($\sim10^{-13}$) beyond $r\approx15$. A dedicated high-precision or perturbative treatment is the follow-up. Note the tension with I.8: the *energetic* response to paired loads is robustly present while the *metric* response to a single load is not — whatever gravity is in this framework, its potential side is currently easier to exhibit than its geometric side.
+
+## I.10 Annealing: no spontaneous geometric phase yet
+
+Parallel-tempering Monte Carlo on the graph action of §24.5 (degree term $z_0=6$, triangle reward, sparsity penalty), four temperature rungs, starting from random regular graphs.
+
+- **Without matter** ($n=1024$, $5\times10^4$ steps): the cold rungs anneal into configurations with $d_{\mathrm{eff}}\approx-4.5$ to $-4.9$ and curvature proxy $\approx0.8$ — non-geometric clumps, further from geometry than the random start.
+- **With fermionic matter** ($n=576$, $2\times10^4$ steps, one exact diagonalisation per step): the cold rungs reach $d_{\mathrm{eff}}\approx0.16$-$0.98$, curvature proxy $\approx0.2$-$0.3$ — a large move in the geometric direction, to roughly one-dimensional structures, but nowhere near a 2D or 3D phase. Cold-rung acceptance rates of $0.2\%$-$1.5\%$ show the chains freeze long before equilibrium.
+
+Two honest readings. Encouraging: matter backreaction demonstrably pushes graph configurations toward geometry, consistent with the RCC position that geometry and matter must stabilise each other rather than geometry standing alone. Sobering: the §24.5 action, as written, does not have a geometric ground state that this sampler can find, and kill criterion 5 has not yet been *tested*, only approached. Phase 3 needs cluster-grade Monte Carlo moves, longer ladders, and possibly a modified action before the criterion means anything.
+
+## I.11 Phase-2 delivery table
+
+| Deliverable (§25, Phase 2) | Status |
+|---|---|
+| Emergent metric | Delivered — lattice vacua reconstruct correctly; expander control correctly fails (I.2, I.3) [E, in-model, MI-proxy] |
+| Dimension flow | Delivered — 2D: $2.06\pm0.01$, flat plateau; 3D: converging to 3 with strong finite-size bias (I.2) [E, in-model] |
+| Curvature estimators | Delivered as proxies — flat-vacuum curvature $\to0$ with size (I.2) [E, in-model] |
+| Geodesic propagation | Delivered in 2D — ballistic front in the emergent metric, anisotropy $\sim1/L$ (I.7) [E, in-model]; 3D rerun needed |
+| §22.1 static checklist | Covariance trend, area law (gapped), cone isotropy delivered; shortcut certification incomplete (I.4-I.7) |
+| §13.4 $\gamma$ probe | **Performed and failed in this realization** — $\gamma_{\mathrm{proxy}}\approx0$, wrong sign (I.8) [E, in-model] |
+| Goal-4 attraction | Delivered — universal $\varepsilon^2$ attraction, gapped range (I.9) [E, in-model] |
+| Goal-1 annealing bridge | Negative so far — no geometric phase; matter helps; sampler freezes (I.10) [E as finding] |
+
+Remainders: node-level Petz measurements of shortcuts and of $\gamma$ (the proxy-vs-operational discrimination); self-consistent backreacting $\gamma$ probe; gapless-mediator binding tail; 3D cone rerun; cluster-move annealing. The most consequential single item carried forward is the failed $\gamma$ probe: it is now the framework's second exhibited failure, alongside Phase 1's cone-universality failure, and both must be repaired by the same object — a vacuum that *enforces* universality instead of hoping for it. *(All five remainders executed in v0.6: Appendix J.)*
+
+---
+
+# Appendix J: Phase 2.5 — remainder tests
+
+This appendix executes the remainders of Appendix I. Companion code: `petz.py` (dense fermionic states, Petz recovery, canonical-correlation transport), `strain2.py` (multi-proxy and self-consistent $\gamma$, exact second-order binding), upgraded `cone.py` (saturation-bracketing time grids), `geometry.py` (shortcut certification), `anneal.py` (degree-preserving swaps). Every new physics path is validated against an exact reference in `tests/smoke2.py` (dense reduced density matrices agree with Gaussian entropies and correlations at $10^{-7}$; the perturbative binding agrees with exact differencing at $0.2$–$2\%$). Four replicas per point, fp64 throughout.
+
+## J.1 What the two new proxies are
+
+The MI proxy of G.9 was joined by two *operational* recoverability measures.
+
+**Canonical-correlation transport.** For number-conserving Gaussian states the singular values of the cross-correlation block $C_{ij}$ are invariant under local mode rotations on either cell; $q_{\mathrm{can}}=2\sigma_{\max}\in(0,1]$ is the best single-mode correlation transferable between the cells by local Gaussian operations. Scales to $L=64$.
+
+**Exact Petz recovery.** The many-body reduced state $\rho_{ij}$ is built exactly from the Gaussian correlations via the entanglement Hamiltonian [64]; cell $i$ is kicked by a weak parity-even unitary, erased, and Petz-recovered from $j$ with the vacuum prior; $q_{\mathrm{petz}}$ is the Uhlmann fidelity of the recovery, minimised over directions. This is a *redundancy* measure: by monogamy a pure Bell-type pair has $q_{\mathrm{can}}=1$ but low $q_{\mathrm{petz}}$ (a phase kick on one half is invisible to the other). The two are complementary faces of G.9's recoverability, and the discrimination below does not depend on which face is "right."
+
+## J.2 Exit 1 closed: the proxy is not the failure
+
+Static-load $\gamma$ with all three proxies on shared anchor pairs ($L=24,32,48$, critical and gapped, $\varepsilon=0.2$, $r=3$):
+
+| vacuum | $\gamma_{\mathrm{mi}}$ | $\gamma_{\mathrm{can}}$ | $\gamma_{\mathrm{petz}}$ ($L\le32$) |
+|---|---|---|---|
+| critical | $-0.001$ to $-0.009$ | $-0.008$ to $+0.003$ | $+0.015$ to $+0.024$ |
+| gapped | $-0.027$ to $-0.044$ | $+0.032$ to $+0.049$ | $+0.064$ to $+0.075$ |
+
+All three measures agree: $|\gamma_{\mathrm{proxy}}|\le0.08$, two orders below unity, signs scattered around zero. The static free-fermion vacuum genuinely lacks the spatial response — the v0.5 hope that the operational cost responds where raw mutual information does not (I.8, exit 1) is now closed, negative. [E, in-model]
+
+## J.3 Exit 2 tested: backreaction gives an instability, not $\gamma=1$
+
+The first dynamical realization couples capacity to the flux it carries: $w_e = w^{\mathrm{load}}_e(1+\kappa\,\Delta b_e)$, iterated to a fixed point (damped, warm-started along the $\kappa$ ladder, outcomes classified as converged / collapsed / stalled). The measured ladder (critical, $L=24$–$48$):
+
+- $\kappa\lesssim0.5$: iteration stalls while $|\gamma|$ grows through unity ($-0.3$ at $\kappa=0.25$, $-1.4$ at $\kappa=0.5$) with *shrinking* distances — transients, not fixed points;
+- $\kappa\gtrsim1$: the fixed point is global capacity collapse — essentially **every** edge of the lattice pins at the minimum weight (e.g. 3455 of 4608 edges at $L=48$), the clock proxy inverts sign, and the $\gamma$ values ($+1.2$ to $+16$, replica spread of the same order) are ratios of meaningless quantities.
+
+Interpretation: amplifying local feedback with no restoring term is a Jeans-type instability. Attraction-like response exists, but there is no stable intermediate regime in which $\gamma$ could settle at 1. This closes exit 2 *as realized*. [E, in-model]
+
+What it does not close: the §24.4 strain term is a **quadratic cost** $\tfrac{\kappa}{2}\sum_e(n_e-c_e)^2$, i.e. precisely the restoring term this map omitted. The designed successor probe is variational — minimise $E_{\mathrm{matter}}(w)+\tfrac{\kappa}{2}\sum_e(w_e-w^{\mathrm{load}}_e)^2$ over weights, which is bounded and always converges — and is the last structural route to $\gamma=1$ in this model class [P]. If it too fails, criterion 15 fires for free-fermion capacity strain.
+
+## J.3b The variational probe: run in v0.7, and failed
+
+The successor probe was executed (`gamma3`; both the baseline and the loaded state are relaxed to converged stationary points of $F$ at the same $\kappa$, warm-started down a $\kappa$ ladder; stationarity residuals $\lesssim10^{-8}$; the $\kappa\to\infty$ limit reproduces the static probe exactly at matched smearing $T=0.02$). Results over $L=24,32,48$, critical and gapped, two seeds:
+
+| regime | outcome |
+|---|---|
+| $\kappa\in[1,16]$ (stiff capacity; all points converged) | $|\gamma_{\mathrm{mi}}|\le0.05$, $|\gamma_{\mathrm{can}}|\le0.13$, signs scattered about zero — the static blindness persists at genuine backreacted equilibria |
+| $\kappa\approx0.5$ (soft capacity, just above collapse; converged points at $L=32,48$) | $\gamma_{\mathrm{mi}}=-1.44$ ($L=32$), $-1.68$ ($L=48$); $d_\ell<0$ throughout — order-unity response of the **wrong sign** |
+| $\kappa\lesssim0.3$ | capacity collapse (edges pinned at the floor), as in J.3 |
+
+There is no $\kappa$, in either sector, at any size tested, where the spatial response approaches $+1$ times the clock response. The capacity field interpolates smoothly between "too stiff to see" and "soft enough to see — with inverted sign — then collapse." A $\gamma=+1$ point would require the load to *lengthen* reconstruction distances; in this realization relaxation systematically *shortens* them (the uplifted equilibrium weights overcompensate around the loaded ball).
+
+**Consequence: kill criterion 15 fires for this realization.** The conjunction {free-fermion matter + scalar link-capacity strain + correlational reconstruction metric} cannot reproduce $\Phi=\Psi$ and is excluded as a mechanism for gravity, by the framework's own standard. This is the first formal firing of a kill criterion in the programme; it is scoped to the realization, not the framework, and §13.4 records what any successor must now exhibit. [E, in-model]
+
+## J.3c Successor 1 tested: interacting matter at mean field, closed
+
+The first §13.4 successor requirement — interacting matter whose loaded vacuum lengthens reconstruction distances — was tested in the largest tractable class: self-consistent Hartree-Fock for spinless fermions with nearest-neighbour interaction $V\sum_{\langle ij\rangle}n_in_j$ at half filling (`gamma4`; Anderson-accelerated, chemical potential re-solved each step, residuals $10^{-10}$; $V=0$ reproduces the static probe exactly). The interaction provides exactly the two channels the free theory lacked: the Fock term renormalises bonds by $V\chi_{ij}$, the Hartree term converts density redistribution into potentials.
+
+Results ($L=24,32$, critical bare matter, two seeds, both interaction signs):
+
+| $V$ | outcome |
+|---|---|
+| $0\to+1.5$ (converged; CDW order $0\to0.38$, as perfect nesting requires) | $\gamma_{\mathrm{mi}}$: $-0.01\to-0.14$ — amplified an order of magnitude, sign unchanged (distances shrink); $\gamma_{\mathrm{can}}$: $+0.1$-$+0.27$ — opposite sign, also far from 1 |
+| $-0.25\to-1$ | HF stalls near phase separation; responses small and incoherent; at $V=-1$ even the clock proxy loses its sign |
+
+Mean-field interaction therefore *amplifies the failure* rather than curing it: the new backreaction channels feed the same wrong-sign metric response, and the two operational proxies part ways on sign — neither approaching $+1$. With three independent realizations now failing through the identical symptom (a capacity load *shortens* correlational reconstruction distances), the evidence points at something structural: in fermionic vacua, weakening a region's couplings weakens its correlations with everything, which the $-\log q$ metric reads as the region *contracting*, not lengthening. A realization that inverts this — load lengthens operational distance — plausibly requires geometry read from the code layer itself (stabiliser weights, decoder depth), not from matter correlations. That is the surviving §13.4 route, and it is a Phase-4 object. [E, in-model]
+
+## J.4 The binding tail, and a correction to I.9
+
+The exact $O(\varepsilon^2)$ polarization formula (validated against differencing; $T$-sequence stable at the $10^{-3}$ level from $T=0.02$ down) resolves what energy differencing could not:
+
+- **Correction:** the force is not uniformly attractive. It alternates strictly with parity — repulsive at even, attractive at odd separations ($V(2)=+6.9\times10^{-5}$, $V(3)=-7.6\times10^{-6}$, $V(4)=+1.5\times10^{-6}$, ...): a $2k_F$ commensurate oscillation on the bipartite half-filled lattice. The v0.5 scan sampled odd $r$ only and reported "universal attraction"; the claim ledger is amended (Appendix F).
+- Critical mediator: **power-law envelope** $|V|\sim r^{-6.0\pm0.3}$ ($R^2=0.99$ on the even branch; even/odd branches and $L=48/64$ agree; power law beats exponential decisively). Gapped mediator: exponential, $\xi\approx0.65a$, measured cleanly down to $|V|\sim10^{-22}$.
+- Values are size-converged at $L=48$.
+
+Consequence: the matter-vacuum-mediated interaction between capacity defects is an RKKY/Casimir-type dispersion force — sign-alternating, $r^{-6}$ — and cannot be the Newtonian sector. If RCC gravity exists it lives in the capacity/strain sector of §12, not in matter exchange. This sharpens Goal 4 rather than merely failing it. [E, in-model]
+
+## J.5 The 3D cone, delivered
+
+With the saturation-bracketing time grid (the fit no longer sees saturated fronts):
+
+| lattice | $v_{\mathrm{mean}}$ | anisotropy |
+|---|---|---|
+| 3D, $L=14$ | 7.04 | 4.5% |
+| 3D, $L=18$ | 6.88 | 3.1% |
+| 2D, $L=64$ (rerun) | 3.32 | 1.9% |
+
+The 3D fronts are ballistic in the emergent metric with a well-defined speed, and the anisotropy falls with size — the isotropizing-cone trend of I.7 now holds in three dimensions. The 2D rerun agrees with the fixed-grid v0.5 value to $0.3\%$, cross-validating the method. [E, in-model]
+
+## J.6 Shortcut certification: no wormholes
+
+Node-level certification of every flagged far pair (graph-hop distance between the cells, cell-straggliness radii, hop-versus-metric consistency score $h/2d_R$, which is $\approx1$ when the cell metric is faithful):
+
+- **Metric-inflation artifacts** (score $\le0.75$: graph-close pairs the metric mislabels as far): carry essentially all extreme MI ratios (up to 67), dominate the gapped vacua (58 of 62 flags at $L=48$) — these are poorly-correlated contact edges inflating $d_R$ locally, a cell-partition pathology, not physics.
+- **Faithful far pairs** (score $>0.75$): modest ratios (median 1.3–2.1), more numerous at criticality — the fat tail of critical correlations sitting just above the deliberately lenient nearest-neighbour-median threshold. Expected physics, not shortcuts.
+
+No third population exists: nothing is simultaneously metric-far, graph-far, and strongly correlated. The §7.2 no-shortcut condition passes once the flag threshold is scaled to the vacuum's correlation decay, and the I.6 growth-with-$L$ is explained (both populations grow with sample size). Remainder: fixing the cell-metric inflation (better partitions or edge-cost regularisation) is engineering, not physics. [E, in-model]
+
+## J.7 Annealing: the action is the obstruction
+
+With degree-preserving double-edge swaps the cold rungs unfroze (acceptance $0.008$–$0.10$ at low $T$ versus $0.002$ before; replica-exchange acceptance now nonzero) and the sampler found **deeper** minima — at $L=24$ with matter, $E=-491$ versus $-411$ in v0.5 — which are **less geometric**: $d_{\mathrm{eff}}\approx0.0$–$0.24$ at the cold rungs, curvature proxy $\approx0.3$. The pure graph action still clumps ($d_{\mathrm{eff}}<0$).
+
+This inverts the v0.5 diagnosis. The sampler was the suspect; it is now exonerated: the §24.5 action family, as written, has a non-geometric ground state, and matter as an annealed spectator does not fix it. Kill criterion 5 is engaged for this family. Phase 3 therefore begins from action redesign — matter with real backreaction weight, a locality term refreshed against the emergent metric, and taming of the triangle term's clique attractor — with the honest possibility that no local graph action in this class produces geometry. [E, in-model]
+
+## J.8 Phase-2.5 delivery table
+
+| Remainder (I.11) | Status |
+|---|---|
+| Operational $\gamma$ (Petz + canonical) | Done — all proxies blind; exit 1 closed negative (J.2) [E, in-model] |
+| Self-consistent backreaction $\gamma$ | Done — instability, not $\gamma=1$; variational successor designed (J.3) [E / P] |
+| Variational backreaction $\gamma$ (v0.7) | **Done — failed; criterion 15 fires for this realization** (J.3b) [E, in-model] |
+| Interacting-matter $\gamma$, mean field (v0.8) | **Done — failed; amplifies the wrong-sign response** (J.3c) [E, in-model] |
+| Gapless binding tail | Done — parity-alternating, $r^{-6}$ envelope; corrects I.9 (J.4) [E, in-model] |
+| 3D cone rerun | Done — ballistic, isotropizing (J.5) [E, in-model] |
+| Shortcut certification | Done — no wormhole class (J.6) [E, in-model] |
+| Unfrozen annealing | Done — action, not sampler, is the obstruction (J.7) [E, in-model] |
+
+The state of the gravitational sector after Phase 2.5, stated plainly: matter-mediated forces are RKKY-grade and cannot be gravity; static reconstruction metrics do not respond to capacity load under any proxy; naive amplifying backreaction collapses. Everything now rides on whether a *stabilized* capacity field — the actual §24.4 term — deforms clocks and distances with equal coefficient. That is a single, sharply posed, cheap computation, and it is the next thing to run.
+
+---
+
+# Appendix K: Phase 4 opening — the code-layer gamma
+
+Appendix J closed every matter-correlation route to $\gamma=1$ and diagnosed the common failure: weakening a region's couplings weakens its correlations with everything, which any $-\log q$ correlational metric reads as *contraction*. The surviving §13.4 route was strain on the code layer itself. This appendix opens Phase 4 by realizing it in the smallest honest model, and it produces the programme's first positive gravitational result.
+
+## K.1 The model, and why nothing is inserted
+
+The $\mathbb{Z}_2$ (bit-flip) sector of a toric code on an $L\times L$ torus. Edge qubits carry stabiliser couplings $J_e$; thermal noise flips edge $e$ with probability $\mathrm{sig}(-2\beta J_e)$ per step; a *local recurrent decoder* — anyons hop toward the strongest nearby syndrome density, sublattice-alternating — runs continuously, exactly the always-on repair dynamics of Postulate 3. A capacity load weakens $J_e$ inside a ball of radius $r$.
+
+Both sides of $\gamma$ are then measured from the same stochastic steady state, entirely in the *syndrome sector* (the raw error field is gauge-variant: error plus correction accumulates harmless closed loops, driving raw edge occupation to $1/2$ while the syndrome stays sparse — the validation suite caught precisely this):
+
+- **clock** $(g_{00})$: the integrated autocorrelation time $\tau_v$ of the local syndrome field — an emergent settling time, congestion-dressed by the decoder. (Anyon residence time is *not* usable: the decoder relocates defects every other step, making residence constant and load-blind — the second bug the suite caught.)
+- **metric** $(g_{ij})$: the G.9 cost $\ell_e=-\log(1-2p_e)$ with $p_e$ the *measured* steady-state anyon exposure of the edge — transporting logical information along a path is degraded by the defects adjacent to it.
+
+The dressing is real, not tautological: the measured density gain under load is $0.35$–$0.93\times$ the bare Boltzmann gain depending on load strength (decoder congestion is nonlinear). Common random numbers make base and loaded runs agree replica-by-replica to three digits. `code_layer.py`, `--exp gamma5`, `tests/smoke3.py`; $L=48$, $M=32$ replicas, $3\times10^4$ measurement steps per point.
+
+## K.2 The sign result
+
+At every parameter tested ($J_0=1.0$–$3.0$, $\varepsilon=0.05$–$0.5$):
+
+$$
+d_\alpha>0
+\quad\text{and}\quad
+d_\ell>0.
+$$
+
+A capacity load slows the local clock **and lengthens operational distances** — locally and along geodesics through the ball, with geodesic rerouting (lensing-like avoidance) visible at larger impact parameter. This is the first realization in the programme with the gravitational sign, and the reason is structural, not accidental: degrading repair capacity makes a region genuinely harder to transport logical information through. Correlational metrics could not see this because they measure what the region *knows about its neighbours*, not what it *can carry*. [E, in-model]
+
+## K.3 The magnitude result: $\gamma\to1$ at marginal decoder utilization
+
+The linearized $\gamma$ (density-based metric response over clock response, in the linear-response window $\varepsilon\le0.1$) falls monotonically with the vacuum defect density $\bar n$:
+
+| $J_0$ | vacuum $\bar n$ | $\gamma_{\mathrm{lin}}$ |
+|---|---|---|
+| 3.0 | 0.024 | 6.9 |
+| 2.5 | 0.056 | 2.8 |
+| 2.25 | 0.081 | 2.2 |
+| 2.0 | 0.112 | 1.73 |
+| 1.8 | 0.139 | 1.49 |
+| 1.6 | 0.167 | 1.26 |
+| 1.4 | 0.196 | 1.13 |
+| 1.2 | 0.224 | **1.01** |
+| 1.0 | 0.248 | 0.92 |
+
+$\gamma_{\mathrm{lin}}$ **crosses 1 at $\bar n\approx0.22$**. Independently, the homogeneous capacity curve of this decoder saturates at $\bar n_{\max}\approx0.29$, with its knee — the onset of marginal repair utilization — in the $0.20$–$0.25$ range. The crossing sits on the knee.
+
+The mechanism is legible: in a congested repair medium, the settling time is proportional to the defect load, so the clock and the (density-built) metric become *the same field* — the literal content of §13.4's "one capacity field controls both." In the dilute limit the decoder is idle, defects are independent, and the metric outresponds the clock ($\gamma>1$); at saturation the clock outresponds ($\gamma<1$); equality is the marginal point. And the marginal point is where Postulate 6 already places the physical vacuum: at the critical coding threshold. This is the first *structural* — as opposed to tuned — route to $\gamma=1$ the programme has exhibited. [E, in-model, at coincidence-of-scale precision]
+
+## K.4 What this does and does not establish
+
+Does: sign (universal in this realization); magnitude $O(1)$ with no tuning; a candidate selection principle ($\gamma=1$ at the critical coding point) that meshes with an independent postulate.
+
+Does not, yet:
+
+1. **Definition-independence.** The compounded-cost $\gamma_{\mathrm{loc}}$ crosses 1 at a different density than $\gamma_{\mathrm{lin}}$ (the two metrics differ at $O(\bar n)$). At the current precision the selection principle is a coincidence of scales. Sharpening it requires the operational metric (logical failure rates of actual test strings, not exposure proxies) and a decoder-robustness scan — if the crossing tracks the capacity knee across decoders, it is a principle; if not, an accident.
+2. **A far field.** The geodesic response dies within a few ball radii: static capacity does not propagate. Newtonian $1/r$ requires the capacity field to be dynamical — a relaxation/field equation for $J_e$ sourced by defect load, which is precisely the §24.4 strain term promoted from penalty to dynamics. That is the Phase 5 object, and it now has a concrete substrate to be built on.
+3. **Universality.** One decoder, one code, one noise model. The claim worth testing is that $\gamma=1$-at-criticality is a property of *any* self-correcting phase at marginal utilization.
+
+## K.5 Delivery table
+
+| Item | Status |
+|---|---|
+| Code-layer realization of §13.4 | Delivered — toric-code CA, syndrome-sector observables (K.1) [E, in-model] |
+| Sign of $\gamma$ | **Positive, both responses, everywhere tested** (K.2) [E, in-model] |
+| Magnitude of $\gamma$ | $O(1)$ untuned; monotone in vacuum density (K.3) [E, in-model] |
+| $\gamma=1$ selection principle | Crossing at marginal decoder utilization $\approx$ capacity knee; meshes with Postulate 6 (K.3) | 
+| Remainders | Definition-independence; operational string-failure metric; decoder universality; dynamical capacity (far field) — Phase 5 (K.4) [P] |
+
+---
+
 # References
 
 1. J. S. Bell, “On the Einstein Podolsky Rosen Paradox,” *Physics Physique Fizika* **1**, 195–200 (1964).
@@ -4163,3 +4593,9 @@ Remainders: particle-antiparticle annihilation; $\ge2$D defects with genuine top
 60. R. Jackiw and C. Rebbi, “Solitons with Fermion Number 1/2,” *Physical Review D* **13**, 3398–3409 (1976).
 
 61. C. Cedzich, T. Rybár, A. H. Werner, A. Alberti, M. Genske, and R. F. Werner, “Propagation of Quantum Walks in Electric Fields,” *Physical Review Letters* **111**, 160601 (2013), arXiv:1302.2081.
+
+62. D. Gioev and I. Klich, “Entanglement Entropy of Fermions in Any Dimension and the Widom Conjecture,” *Physical Review Letters* **96**, 100503 (2006), arXiv:quant-ph/0504151.
+
+63. M. M. Wolf, “Violation of the Entropic Area Law for Fermions,” *Physical Review Letters* **96**, 010404 (2006), arXiv:quant-ph/0507188.
+
+64. I. Peschel, “Calculation of Reduced Density Matrices from Correlation Functions,” *Journal of Physics A* **36**, L205 (2003), arXiv:cond-mat/0212631.
