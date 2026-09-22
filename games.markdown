@@ -244,7 +244,7 @@ Think Populus meets Mega-lo-Mania!
 
 These are unofficial, fan-made browser reconstructions created as technical and historical projects. Copyrights and trademarks in the original games and their assets belong to their respective rightsholders. No affiliation with or endorsement by those rightsholders is claimed.
 
-Planned addition are (in no specific order):
+Planned addition I'd like to do next are (in no specific order):
 - SWIV.
 - Banshee. 
 - ~~Alien Breed 3D~~ and maybe Alien Breed 3D 2. (done the first)
@@ -252,6 +252,11 @@ Planned addition are (in no specific order):
 - Legends of Valour.
 - Hybris
 - Battle Squadron (I really want to disassemble this and find out if there is an actual ending)
+- Nitro
+- Utopia
+- Fightin Spirit?
+- Super Hang On or Black Viper
+- Lotus Turbo Challenge 2
 
 
 <article class="game-card" markdown="1">
