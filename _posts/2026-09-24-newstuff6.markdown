@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Megapop is finallyhere!"
+title: "Megapop is finally here!"
 date: 2026-09-22 23:53:47 +0200
 categories: jekyll update
 excerpt: My latest game, beta version
