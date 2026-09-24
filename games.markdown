@@ -237,6 +237,13 @@ My next project won't be a port, but a new game.
 **PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
 Think Populus meets Mega-lo-Mania!
 
+Here is the beta version. For multiplayer you have to downlaod the zip and launch tools/serve.py.
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/game/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the beta!</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/megapop.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+</div>
+
+
 </article>
 
 ## Browser ports
