@@ -291,7 +291,6 @@ For the cool bits and technical details of the port, read the post-mortem:
 
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/HG/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
-	<a class="game-button" href="{{ site.cdn_url }}/HG.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="_games/HG_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
 </div>
 
@@ -321,7 +320,6 @@ And here it is in all its glory:
 
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/saintdragon/engine/full.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
-	<a class="game-button" href="{{ site.cdn_url }}/saint.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="_games/SD_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
 </div>
 
@@ -348,7 +346,6 @@ Here you can play it or read the super-interesting Post-Mortem:
 
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/menace/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
-	<a class="game-button" href="{{ site.cdn_url }}/menace/menace.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="_games/MENACE_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
 </div>
 
@@ -379,7 +376,6 @@ Here you can play it or read the super-interesting Post-Mortem:
 
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/breatheless/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
-	<a class="game-button" href="{{ site.cdn_url }}/breatheless.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="_games/BREATHLESS_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
 </div>
 
@@ -406,7 +402,6 @@ And here you can play it or read the post-mortem:
 
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/games/ab3d/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
-	<a class="game-button" href="{{ site.cdn_url }}/games/ab3d.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="_games/ALIENBREED3D_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
 </div>
 
