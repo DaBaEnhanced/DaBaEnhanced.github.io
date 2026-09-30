@@ -4,7 +4,7 @@ title: "Games"
 permalink: /games
 ---
 
-Here are the games I've been developing lately (well, mostly vibecoding), starting with my original projects and followed by [browser ports of old Amiga games](#browser-ports).
+Here are the games I've been developing lately (well, mostly vibecoding), starting with my original projects (check [**PROJECT MEGAPOP**](#megapop)) and followed by [browser ports of old Amiga games](#browser-ports).
 
 <style>
 	.game-card {
@@ -239,7 +239,7 @@ Think Populus meets Mega-lo-Mania!
 
 Here is the full RC1 version. For multiplayer you have to download the zip and launch tools/serve.py (but check DEPLOY.md for details).
 <div class="game-actions">
-	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the beta!</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the latest release candidate!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/docs/Megapop_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 </div>
