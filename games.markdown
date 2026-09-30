@@ -125,9 +125,36 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 		width: 100% !important;
 	}
 
+	.game-media-row {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin: 0.5rem 0 1rem;
+	}
+
+	.game-media-row .game-slideshow {
+		margin: 0;
+		max-width: none;
+		width: 100%;
+	}
+
+	.game-video {
+		aspect-ratio: 16 / 9;
+	}
+
+	.game-video iframe {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+
 	@media (max-width: 699px) {
 		.game-slideshow {
 			width: 100%;
+		}
+
+		.game-media-row {
+			grid-template-columns: 1fr;
 		}
 	}
 
@@ -199,6 +226,28 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 ## Original games
 
 <article class="game-card" markdown="1">
+### MegaPop
+<img src="{{ site.cdn_url }}/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
+
+My first, original, fully released project!.
+**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
+Think Populus meets Mega-lo-Mania!
+
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/_21-Gv8oUUs?si=J-7osjqc_UMXRCJF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Here is the full RC1 version. For multiplayer you have to download the zip and launch tools/serve.py (but check DEPLOY.md for details).
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the beta!</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/docs/Megapop_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/megapop.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+</div>
+
+
+</article>
+
+<article class="game-card" markdown="1">
 ### The Moon That Forgot
 
 <img src="{{ site.cdn_url }}/images/moonforgot.jpg" alt="The Moon That Forgot title" style="object-position: center;" />
@@ -207,6 +256,7 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 I am vibecoding the adventure game editor, tools to turn images into pixel art, background matting, de-spilling colors, closing animation loops, and using image gen, video gen and musicgen to generate almost all art assets.
 
+<div class="game-media-row">
 <div class="game-slideshow">
 	<a href="{{ site.cdn_url }}/images/MF/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="{{ site.cdn_url }}/images/MF/2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/2.jpg" alt="Hired Guns screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
@@ -220,6 +270,10 @@ I am vibecoding the adventure game editor, tools to turn images into pixel art, 
 	<a href="{{ site.cdn_url }}/images/MF/10.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/10.jpg" alt="Hired Guns screenshot 10" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 	<a href="{{ site.cdn_url }}/images/MF/11.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/11.jpg" alt="Hired Guns screenshot 11" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
 </div>
+<div class="game-video">
+	<iframe src="https://www.youtube.com/embed/1yzcNJH0L5U" title="The Moon That Forgot | Chapter 1 Gameplay Trailer | Sci-Fi Point-and-Click Adventure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
 
 Here is a work-in-progress taste of the game's first chapter!
 
@@ -229,22 +283,7 @@ Here is a work-in-progress taste of the game's first chapter!
 
 </article>
 
-<article class="game-card" markdown="1">
-### MegaPop
-<img src="{{ site.cdn_url }}/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
 
-My next project won't be a port, but a new game.
-**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
-Think Populus meets Mega-lo-Mania!
-
-Here is the beta version. For multiplayer you have to downlaod the zip and launch tools/serve.py.
-<div class="game-actions">
-	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the beta!</a>
-	<a class="game-button" href="{{ site.cdn_url }}/games/megapop.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
-</div>
-
-
-</article>
 
 ## Browser ports
 

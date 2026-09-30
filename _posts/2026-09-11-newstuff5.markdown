@@ -11,3 +11,7 @@ So, I've completed the port to HTML/Js of Alien Breed 3D, it was quite a trip so
 I've also published a demo of Chapter 1 of The Moon That Forgot, and adventure game made with the old-school point-and-click adventure games editor I've been vibe-coding lately.
 Check the <a href="/games">GAMES section!</a>
 Bye!
+
+<div style="text-align: center; margin-top: 20px;">
+<iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/1yzcNJH0L5U" title="The Moon That Forgot | Chapter 1 Gameplay Trailer | Sci-Fi Point-and-Click Adventure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>

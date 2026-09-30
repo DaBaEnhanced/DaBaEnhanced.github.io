@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Megapop updated!"
+date: 2026-09-30 23:53:47 +0200
+categories: jekyll update
+excerpt: Megapop Release Candidate 1
+thumbnail: /images/megapop.jpg
+---
+
+I've made substantial updates to **PROJECT MEGAPOP**. Better late game mechanics, some new effects, new sounds. Tutorial mode and better tooltip, some QoL additions to town infos, etc.
+Also added a nice little PDF manual.
+
+**PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.
+Think Populus meets Mega-lo-Mania!
+
+Check the <a href="/games">GAMES section!</a>
+Bye!
+
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/_21-Gv8oUUs?si=J-7osjqc_UMXRCJF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
