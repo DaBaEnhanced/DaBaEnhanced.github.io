@@ -37,6 +37,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 cdn_url: "https://assets.waldtier.com"
 instagram_username: clumsy.giba
 github_username: dabaenhanced
+giscus:
+  repo: DaBaEnhanced/DaBaEnhanced.github.io
+  repo_id: R_kgDOOTn7Ew
+  category: General
+  category_id: DIC_kwDOOTn7E84DHHiq
 youtube_username: "@clumsy_giba"
 snapchat_username: clumsygiba
 show_excerpts: true

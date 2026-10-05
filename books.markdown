@@ -95,7 +95,7 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
     <video src="{{ site.cdn_url }}/videos/ce1.mp4" poster="{{ site.cdn_url }}/videos/ce1.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Songs On Rocks - Consent Engines Book One</p>
   </a>
-  <!--a href="https://www.amazon.com/dp/B0FZ53T8Z8"><p>Buy it on Amazon</p></a-->
+  <a href="https://www.amazon.com/dp/B0HKRX4GM5"><p>Get it on Amazon</p></a>
 </div>
 <div class="consent-engines-book">
   <a href="{{ site.cdn_url }}/pdf/Consent Engines 2_ Redshift Vows TRUE FINAL.pdf">

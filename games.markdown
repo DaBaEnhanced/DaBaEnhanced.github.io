@@ -445,3 +445,27 @@ And here you can play it or read the post-mortem:
 </div>
 
 </article>
+
+## Talk about the games
+
+Share feedback, ask questions, suggest ideas, or vote in a poll in [GitHub Discussions](https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions). A GitHub account is needed to post.
+
+{% if site.giscus.repo_id != empty and site.giscus.category_id != empty %}
+### Comments on this page
+
+<script src="https://giscus.app/client.js"
+        data-repo="{{ site.giscus.repo }}"
+        data-repo-id="{{ site.giscus.repo_id }}"
+        data-category="{{ site.giscus.category }}"
+        data-category-id="{{ site.giscus.category_id }}"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+{% endif %}
