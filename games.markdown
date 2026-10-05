@@ -242,6 +242,7 @@ Here is the full RC1 version. For multiplayer you have to download the zip and l
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the latest release candidate!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/docs/Megapop_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/megapop">Discuss this game</a>
 </div>
 
 
@@ -279,6 +280,7 @@ Here is a work-in-progress taste of the game's first chapter!
 
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/games/moonforgot/game/index.html?bundle=../bundle.json"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the Chapter 1 demo in browser</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/the-moon-that-forgot">Discuss this game</a>
 </div>
 
 </article>
@@ -331,6 +333,7 @@ For the cool bits and technical details of the port, read the post-mortem:
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/HG/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="_games/HG_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/hired-guns">Discuss this game</a>
 </div>
 
 </article>
@@ -360,6 +363,7 @@ And here it is in all its glory:
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/saintdragon/engine/full.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="_games/SD_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/saint-dragon">Discuss this game</a>
 </div>
 
 </article>
@@ -386,13 +390,14 @@ Here you can play it or read the super-interesting Post-Mortem:
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/menace/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="_games/MENACE_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/menace">Discuss this game</a>
 </div>
 
 </article>
 
 
 <article class="game-card" markdown="1">
-### Breatheless
+### Breathless
 
 <img src="{{ site.cdn_url }}/breatheless/banner.jpg" alt="Hired Guns screenshot 1" style="object-position: center;" />
 
@@ -416,6 +421,7 @@ Here you can play it or read the super-interesting Post-Mortem:
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/breatheless/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="_games/BREATHLESS_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/breathless">Discuss this game</a>
 </div>
 
 </article>
@@ -442,6 +448,7 @@ And here you can play it or read the post-mortem:
 <div class="game-actions">
 	<a class="game-button" href="{{ site.cdn_url }}/games/ab3d/play.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="_games/ALIENBREED3D_POSTMORTEM.html"><span class="game-button-icon" aria-hidden="true">&#128196;</span>Post-mortem</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/alien-breed-3d">Discuss this game</a>
 </div>
 
 </article>
