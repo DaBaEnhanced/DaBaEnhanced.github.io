@@ -6,6 +6,7 @@ permalink: /books
 
 This is a collection of the full-length books I have written. Some are published; others are still being finished or edited. They are written under the pseudonym D.B. Waldtier.
 
+
 ## The Consent Engines Series
 
 Consent Engines is a hard-science saga set in a far-future diaspora that survives on standards, consent, and ships you can fix with a checklist. Humans are almost immortals, families live for centuries aboard magsails arks that travel at sub-light speeds between star systems; exchange marriages keep diversity alive; sentient companions serve as auditors and partners. Courts convene under auroras, mirror budgets stay stingy, and sodium clouds turn space into evidence.
@@ -77,6 +78,48 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
     text-align: center;
   }
 
+  .consent-engines-book a.buy-button,
+  .consent-engines-book a.buy-button:visited {
+    align-items: center;
+    background: #ff9900;
+    border: 1px solid #e68a00;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(31, 35, 40, 0.18);
+    color: #181818;
+    display: inline-flex;
+    font-weight: 700;
+    gap: 0.65rem;
+    justify-content: center;
+    margin: 0.25rem auto 0.5rem;
+    padding: 0.65rem 1rem;
+    text-decoration: none;
+    transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  }
+
+  .consent-engines-book a.buy-button:hover,
+  .consent-engines-book a.buy-button:focus-visible {
+    background: #ffad33;
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.28);
+    color: #111111;
+    transform: translateY(-1px);
+  }
+
+  .consent-engines-book a.buy-button:focus-visible {
+    outline: 3px solid rgba(255, 173, 51, 0.42);
+    outline-offset: 2px;
+  }
+
+  .buy-button-icon {
+    fill: none;
+    flex: 0 0 auto;
+    height: 1.2rem;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 1.2rem;
+  }
+
   @media (min-width: 700px) {
     .consent-engines-books,
     .arks-books {
@@ -95,7 +138,13 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
     <video src="{{ site.cdn_url }}/videos/ce1.mp4" poster="{{ site.cdn_url }}/videos/ce1.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Songs On Rocks - Consent Engines Book One</p>
   </a>
-  <a href="https://www.amazon.com/dp/B0HKRX4GM5"><p>Get it on Amazon</p></a>
+  <a class="buy-button" href="https://www.amazon.com/dp/B0HKRX4GM5" target="_blank" rel="noopener">
+    <svg class="buy-button-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6.5 8.5h11l1 11h-13z" />
+      <path d="M9 9V6.5a3 3 0 0 1 6 0V9" />
+    </svg>
+    <span>Buy on Amazon</span>
+  </a>
 </div>
 <div class="consent-engines-book">
   <a href="{{ site.cdn_url }}/pdf/Consent Engines 2_ Redshift Vows TRUE FINAL.pdf">

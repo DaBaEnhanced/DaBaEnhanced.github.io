@@ -225,6 +225,8 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 ## Original games
 
+MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and make it habitable? Stay tuned for my next games!
+
 <article class="game-card" markdown="1">
 ### MegaPop
 <img src="{{ site.cdn_url }}/images/megapop.jpg" alt="Megapop title" style="object-position: center;" />
