@@ -1,0 +1,22 @@
+---
+layout: post
+title: "The Mysterious Island: Castaways released!"
+date: 2026-10-10 23:53:47 +0200
+categories: jekyll update
+excerpt: The Mysterious Island - Castaways + Manual
+thumbnail: /games/mysteriousisland/the_mysterious_island_castaways.jpg
+---
+
+My second game, The Mysterious Island: Castaways, has been released! It is a full game, playable in your browser, with a nice manual.
+
+1865\. Five Union prisoners escape by balloon and are flung onto an uncharted island in the South Pacific, with nothing but the clothes on their backs. Lead Cyrus Smith's castaways from bare survival to a Victorian colony with forges, farms, a telegraph, and a home carved into Granite House. Uncover the island's secrets before the volcano tears it apart. Then build a ship and sail south through five more islands, from feverish jungles to the Antarctic ice, against pirates, mutineers, and the sea itself.
+A hand-crafted colony saga after Jules Verne. Free to explore, hard to survive, impossible to forget.
+
+It's a cool little isometric base builder that combines exploration and adventure in Jules Verne's world. The first island follows the book's story; then you can explore new islands, fight pirates and mutineers, and much more.
+
+Check the <a href="/games">GAMES section!</a>
+Bye!
+
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/7cl0i2zevSk?si=6HHUJnkdHE1xz1EO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>

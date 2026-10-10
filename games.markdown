@@ -251,6 +251,30 @@ Here is the full RC1 version. For multiplayer you have to download the zip and l
 </article>
 
 <article class="game-card" markdown="1">
+### The Mysterious Island: Castaways
+<img src="{{ site.cdn_url }}/games/mysteriousisland/the_mysterious_island_castaways.jpg" alt="Megapop title" style="object-position: center;" />
+
+My second, original, fully released project!.
+1865\. Five Union prisoners escape by balloon and are flung onto an uncharted island in the South Pacific, with nothing but the clothes on their backs. Lead Cyrus Smith’s castaways from bare survival to a Victorian colony with forges, farms, a telegraph and a home carved into Granite House. Uncover the island’s secrets before the volcano tears it apart. Then build a ship and sail south through five more islands, from fever jungles to the Antarctic ice, against pirates, mutineers and the sea itself.
+A hand-crafted colony saga after Jules Verne. Free to explore, hard to survive, impossible to forget.
+
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/7cl0i2zevSk?si=6HHUJnkdHE1xz1EO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Here is the full version.
+
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the latest release candidate!</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland/docs/TheMysteriousIsland_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/the-mysterious-island-castaways">Discuss this game</a>
+</div>
+
+
+</article>
+
+<article class="game-card" markdown="1">
 ### The Moon That Forgot
 
 <img src="{{ site.cdn_url }}/images/moonforgot.jpg" alt="The Moon That Forgot title" style="object-position: center;" />
