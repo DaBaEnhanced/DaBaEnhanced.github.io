@@ -283,6 +283,8 @@ Here is the full version.
 
 I am vibecoding the adventure game editor, tools to turn images into pixel art, background matting, de-spilling colors, closing animation loops, and using image gen, video gen and musicgen to generate almost all art assets.
 
+This is really very early, I still don't like some rooms (especially the starting one). It's mostly a proof of concept of what I can do with the asset and pipelines coded.
+
 <div class="game-media-row">
 <div class="game-slideshow">
 	<a href="{{ site.cdn_url }}/images/MF/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/MF/1.jpg" alt="Hired Guns screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
