@@ -519,3 +519,9 @@ Share feedback, ask questions, suggest ideas, or vote in a poll in [GitHub Discu
         async>
 </script>
 {% endif %}
+
+## The Waldtier Dispatch
+
+New books, game releases and behind-the-scenes notes, about once a month. No spam.
+
+<div class="ml-embedded" data-form="pxunda"></div>

@@ -408,3 +408,9 @@ If you like mind-bending twists, tight worldbuilding, and heart under pressure, 
   <video src="{{ site.cdn_url }}/videos/dialogues.mp4" poster="{{ site.cdn_url }}/videos/dialogues.jpg" style="width: 400px; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
 </a>
 </div>
+
+## The Waldtier Dispatch
+
+New books, game releases and behind-the-scenes notes, about once a month. No spam.
+
+<div class="ml-embedded" data-form="pxunda"></div>
