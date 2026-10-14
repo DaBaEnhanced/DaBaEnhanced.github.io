@@ -92,6 +92,19 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 		line-height: 1;
 	}
 
+	.game-button.itch-button,
+	.game-button.itch-button:visited {
+		background: #fa5c5c;
+		border-color: #e04848;
+		color: #ffffff;
+	}
+
+	.game-button.itch-button:hover,
+	.game-button.itch-button:focus-visible {
+		background: #ff7676;
+		box-shadow: 0 4px 10px rgba(250, 92, 92, 0.35);
+	}
+
 	.game-slideshow {
 		background: #24292f;
 		border-radius: 6px;
@@ -241,6 +254,7 @@ Think Populus meets Mega-lo-Mania!
 
 Here is the full RC1 version. For multiplayer you have to download the zip and launch tools/serve.py (but check DEPLOY.md for details).
 <div class="game-actions">
+	<a class="game-button itch-button" href="https://waldtier.itch.io/megapop" target="_blank" rel="noopener"><span class="game-button-icon" aria-hidden="true">&#9733;</span>Play on itch.io</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the latest release candidate!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop/docs/Megapop_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/megapop.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
@@ -265,6 +279,7 @@ A hand-crafted colony saga after Jules Verne. Free to explore, hard to survive, 
 Here is the full version.
 
 <div class="game-actions">
+	<a class="game-button itch-button" href="https://waldtier.itch.io/mysterious-island-castaways" target="_blank" rel="noopener"><span class="game-button-icon" aria-hidden="true">&#9733;</span>Play on itch.io</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play the latest release candidate!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland/docs/TheMysteriousIsland_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
