@@ -134,7 +134,7 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
 
 <div class="consent-engines-books">
 <div class="consent-engines-book">
-  <a href="{{ site.cdn_url }}/pdf/Consent Engines 1_ Songs On Rocks TRUE FINAL.pdf">
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 1_ Songs On Rocks Sample.pdf">
     <video src="{{ site.cdn_url }}/videos/ce1.mp4" poster="{{ site.cdn_url }}/videos/ce1.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Songs On Rocks - Consent Engines Book One</p>
   </a>
@@ -147,7 +147,7 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
   </a>
 </div>
 <div class="consent-engines-book">
-  <a href="{{ site.cdn_url }}/pdf/Consent Engines 2_ Redshift Vows TRUE FINAL.pdf">
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 2_ Redshift Vows Sample.pdf">
     <video src="{{ site.cdn_url }}/videos/ce2.mp4" poster="{{ site.cdn_url }}/videos/ce2.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Redshift Vows - Consent Engines Book Two</p>
   </a>
@@ -160,13 +160,13 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
   </a>
 </div>
 <div class="consent-engines-book">
-  <a href="{{ site.cdn_url }}/pdf/Consent Engines 3_ The Mosaic Drift TRUE FINAL.pdf">
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 3_ The Mosaic Drift Sample.pdf">
     <video src="{{ site.cdn_url }}/videos/ce3.mp4" poster="{{ site.cdn_url }}/videos/ce3.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Mosaic Drift - Consent Engines Book Three</p>
   </a>
 </div>
 <div class="consent-engines-book">
-  <a href="{{ site.cdn_url }}/pdf/Consent Engines 4_ The Revocation War TRUE FINAL.pdf">
+  <a href="{{ site.cdn_url }}/pdf/Consent Engines 4_ The Revocation War Sample.pdf">
     <video src="{{ site.cdn_url }}/videos/ce4.mp4" poster="{{ site.cdn_url }}/videos/ce4.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>The Revocation War - Consent Engines Book Four</p>
   </a>

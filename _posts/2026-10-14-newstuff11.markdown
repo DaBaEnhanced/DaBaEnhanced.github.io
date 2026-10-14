@@ -1,0 +1,15 @@
+---
+layout: post
+title: "A sneak peek to my next game Living Worlds!"
+date: 2026-10-14 23:53:48 +0200
+categories: jekyll update
+excerpt: Kindle, Paperback and Hardcover
+thumbnail: /images/livingworlds1.jpg
+---
+
+Ever wondered what it feels like to be a god and make planets habitable?
+That's what Living Worlds is about: you're given a world with plausible but challenging conditions for life, and your job is to help it thrive.
+
+<div style="text-align: center; margin-top: 20px;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zabLduFUxT8?si=Qzqffq3MvNtcXfSC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
