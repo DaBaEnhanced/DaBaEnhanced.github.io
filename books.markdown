@@ -138,7 +138,7 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
     <video src="{{ site.cdn_url }}/videos/ce1.mp4" poster="{{ site.cdn_url }}/videos/ce1.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Songs On Rocks - Consent Engines Book One</p>
   </a>
-  <a class="buy-button" href="https://www.amazon.com/dp/B0HKRX4GM5" target="_blank" rel="noopener">
+  <a class="buy-button" href="https://www.amazon.com/dp/B0HKS8BYMG" target="_blank" rel="noopener">
     <svg class="buy-button-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M6.5 8.5h11l1 11h-13z" />
       <path d="M9 9V6.5a3 3 0 0 1 6 0V9" />
@@ -151,7 +151,7 @@ They are all finished and edited. I am slowly putting them on Amazon and here.
     <video src="{{ site.cdn_url }}/videos/ce2.mp4" poster="{{ site.cdn_url }}/videos/ce2.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
     <p>Redshift Vows - Consent Engines Book Two</p>
   </a>
-  <a class="buy-button" href="https://www.amazon.com/dp/B0HL3FB82Q" target="_blank" rel="noopener">
+  <a class="buy-button" href="https://www.amazon.com/dp/B0HKSSH321" target="_blank" rel="noopener">
     <svg class="buy-button-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M6.5 8.5h11l1 11h-13z" />
       <path d="M9 9V6.5a3 3 0 0 1 6 0V9" />
