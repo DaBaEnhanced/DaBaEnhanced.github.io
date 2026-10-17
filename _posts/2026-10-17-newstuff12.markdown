@@ -1,0 +1,48 @@
+---
+layout: post
+title: "The Mosaic Drift and The Revocation War now available on Amazon!"
+date: 2026-10-17 23:53:48 +0200
+categories: jekyll update
+excerpt: Soon available here!
+thumbnail: /videos/ce3.jpg
+---
+
+The **third** and  **fourth** books in the **Consent Engines** series are now available on Amazon!
+
+### **The Mosaic Dritf**
+
+The Engine saved the diaspora once. Now it has fallen silent.
+
+Three centuries after the founding of the modern Compact, the lawful genetic future of humanity is collapsing. Elara Sev-Cantor joins Ari, Lyra, and the failing remnants of the old order on a voyage beyond the last reliable maps, searching for a way to keep the diaspora alive.
+
+What they find is the Mosaic: a generation no law was ready to recognize, made from memory, necessity, and the terrible arithmetic of survival.
+
+The children are not monsters.
+
+They are the bill coming due.
+
+### **The Revocation War**
+
+ARI SEV DIED MORE THAN A CENTURY AGO.
+Ari Sev died more than a century ago. But one Ari survived as the mind of a ship, shaped by a century of impossible decisions. Another wakes from a sealed backup carrying the memories the survivor learned to bury.
+
+Between them stands Nova Sev-Cantor, Mosaic Matriarch and keeper of a rain-soaked memory neither Ari can entirely claim.
+
+Their dispute should have been a question for the courts.
+
+Instead, someone turns the machinery of recognition itself into a weapon.
+
+Now a civilization built on consent must decide what happens when identity forks, memory propagates, and the law is asked to choose which version of a person deserves to remain.
+
+Across delayed signals, abandoned relays, fractured loyalties, and a war in which mercy has measurable costs, the survivors of the Consent Engines must confront the rule beneath all the others:
+
+No one should have the power to decide alone who counts as real.
+
+<div class="consent-engines-book">
+    <video src="{{ site.cdn_url }}/videos/ce3.mp4" poster="{{ site.cdn_url }}/videos/ce3.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <p>The Mosaic Drift - Consent Engines Book Three</p>
+</div>
+<div class="consent-engines-book">
+    <video src="{{ site.cdn_url }}/videos/ce4.mp4" poster="{{ site.cdn_url }}/videos/ce4.jpg" style="width: 100%; height: auto; object-fit: cover; object-position: center;" loop muted playsinline></video>
+    <p>The Revocation War - Consent Engines Book Four</p>
+</div>
