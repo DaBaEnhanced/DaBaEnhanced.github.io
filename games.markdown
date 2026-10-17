@@ -238,7 +238,7 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 ## Original games
 
-MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and make it habitable? Stay tuned for my next games!
+MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds), my newest game!
 
 <article class="game-card" markdown="1">
 ### MegaPop
@@ -284,6 +284,32 @@ Here is the full version.
 	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland/docs/TheMysteriousIsland_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/mysteriousisland.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/the-mysterious-island-castaways">Discuss this game</a>
+</div>
+
+
+</article>
+
+<article class="game-card" markdown="1">
+### Living Worlds
+<img src="{{ site.cdn_url }}/images/livingworlds.jpg" alt="Living Worlds title" style="object-position: center;" />
+
+My third, original, fully released project!
+**LIVING WORLDS** is an ecosystem god game about small planets and patient life. You can raise mountains and cut saddles, call down the rain, open the crust to the heat beneath, lean on a planet's tilt and nudge its moon. What you cannot do is place a single living thing. Life arrives as a thin crust of mats on a wet shore, and from then on it grows where it can, dies where it can't, spreads, adapts and changes its own world. When the biosphere is ready, your powers recede and the world faces its resilience trial alone: a drought, a dimming star, a waking caldera, the king tides.
+Nine Living Worlds, from a gentle young shore to a sunless planet around a black hole, then nine Desperate Worlds: a binary planet, a 2.4 g super-Earth, a moon of a gas giant, a flaring red dwarf, a runaway greenhouse, a planet torn loose from its sun. Water, soil, carbon and nutrients are all conserved, and every failure explains itself.
+Think Populous meets SimEarth!
+
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/zabLduFUxT8" title="Living Worlds trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+It runs in the browser on WebGPU: Chrome or Edge on a desktop with a reasonably modern graphics card.
+
+<div class="game-actions">
+	<a class="game-button itch-button" href="https://waldtier.itch.io/living-worlds" target="_blank" rel="noopener"><span class="game-button-icon" aria-hidden="true">&#9733;</span>Play on itch.io</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/livingworlds/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/livingworlds/docs/LivingWorlds_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/livingworlds.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/living-worlds">Discuss this game</a>
 </div>
 
 

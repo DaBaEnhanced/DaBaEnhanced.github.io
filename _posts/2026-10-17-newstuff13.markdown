@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Living Worlds released!"
+date: 2026-10-17 23:55:00 +0200
+categories: jekyll update
+excerpt: Living Worlds - an ecosystem god game + Manual
+thumbnail: /images/livingworlds.jpg
+---
+
+My third game, **Living Worlds**, is out! It is a full game, playable in your browser, and of course it comes with a nice manual.
+
+A few days ago I showed you a sneak peek. Here is the idea again: you are given a small planet with plausible but challenging conditions for life, and your job is to help it thrive. You can raise mountains and cut saddles, call down the rain, open the crust to the heat beneath, lean on the planet's tilt and nudge its moon. What you cannot do is place a single living thing. Life arrives as a thin crust of mats on a wet shore, and from then on it grows where it can, dies where it can't, spreads, adapts and changes its own world.
+
+When the biosphere is ready, your powers recede and the world faces its resilience trial alone: a drought, a dimming star, a waking caldera, the king tides. One lush valley rarely survives. Separate refuges, a working loop of growth and decay, and water that stays where life needs it usually do.
+
+There are nine Living Worlds, from a gentle young shore to a sunless planet around a black hole. Pass the eighth and nine Desperate Worlds unlock: a binary planet, a 2.4 g super-Earth, a moon of a gas giant, a flaring red dwarf, a runaway greenhouse, a planet torn loose from its sun... I'm not even sure all of them can be saved. Under the hood it's a real simulation: water, soil, carbon and nutrients are all conserved, and when something dies the game tells you exactly why.
+
+It runs on WebGPU, so use Chrome or Edge on a desktop with a decent graphics card.
+
+You can play it on [itch.io](https://waldtier.itch.io/living-worlds) or right here, and read the [manual]({{ site.cdn_url }}/games/livingworlds/docs/LivingWorlds_Manual.pdf).
+Check the <a href="/games">GAMES section!</a>
+Bye!
+
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/zabLduFUxT8" title="Living Worlds trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
