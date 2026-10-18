@@ -317,7 +317,7 @@ It runs in the browser on WebGPU: Chrome or Edge on a desktop with a reasonably 
 
 <article class="game-card" markdown="1">
 ### The Wrong Laws
-{% assign twl_video = "https://youtu.be/HjzOfJ2J4G0" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+{% assign twl_video = "HjzOfJ2J4G0" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
 <img src="{{ site.cdn_url }}/images/thewronglaws.jpg" alt="The Wrong Laws title" style="object-position: center;" />
 
 My fourth, original, game. This is closer to a proof of concept than a complete game and will require extensive additional level design.
