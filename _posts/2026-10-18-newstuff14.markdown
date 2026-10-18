@@ -1,0 +1,38 @@
+---
+layout: post
+title: "The Wrong Laws: a physics puzzle game (proof of concept)"
+date: 2026-10-18 23:50:00 +0200
+categories: jekyll update
+excerpt: A first-person puzzle game about borrowed physics, playable in your browser
+thumbnail: /images/thewronglaws.jpg
+---
+{% assign twl_video = "" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+
+Here is my fourth game, **The Wrong Laws**, a first-person physics puzzle game.
+
+A word of warning first: the game is complete. You can play it from the first chamber to the ending, and every puzzle has been solved by an automated test. But it is closer to a **proof of concept** than to a full release. The tools, the physics, the rendering, the sound and the story are all in place. What it needs is a lot more **level design**: more chambers, better pacing, puzzles that teach each law more gradually and then combine them in more surprising ways. Think of it as a vertical slice of a much bigger game.
+
+The premise: in 1961 the small town of Hollin borrowed its physical constants from somewhere else. Now the loan is being recalled, building by building, and you walk through the town with a repair kit that bends what is left:
+- a projector that slows light to a crawl inside a capsule you draw in the air;
+- a launcher that fires pocket singularities, which bend light and eat through floors;
+- a recorder that replays your own echoes, so you can be in two places at once;
+- polarising filters and standing mirrors;
+- a cutter and printer that carve and add matter.
+
+Twenty chambers in five wings, from the Glassworks to the Gate: light bent around a mass, a muon that only survives the run on its own clock, two slits that interfere, a lock that opens to a shadow. Everything is real physics, deliberately set wrong: slow light really refracts, the singularities really lens, relativity really dilates time.
+
+Under the hood it is a voxel world (Teardown-style 2.5 cm props, modelled in Blender and voxelized), rendered with three.js on WebGPU, with ambient occlusion, volumetric light and lensing post effects, and with music and sound effects generated for it.
+
+It runs in the browser: Chrome or Edge on a desktop with a decent graphics card (WebGPU, with a WebGL 2 fallback). Mouse and keyboard, or a gamepad.
+
+{% if twl_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ twl_video }}" title="The Wrong Laws trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% else %}
+<img src="{{ site.cdn_url }}/images/thewronglaws.jpg" alt="The Wrong Laws" style="width: 100%; height: auto;" />
+{% endif %}
+
+You can [play it in your browser]({{ site.cdn_url }}/games/thewronglaws/index.html) or [download it]({{ site.cdn_url }}/games/thewronglaws.zip). Feedback is very welcome, especially on which chambers work and which don't: that is exactly what the level design pass will need.
+Check the <a href="/games">GAMES section!</a>
+Bye!

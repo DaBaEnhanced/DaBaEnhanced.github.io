@@ -238,7 +238,7 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 ## Original games
 
-MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds), my newest game!
+MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws), my newest game!
 
 <article class="game-card" markdown="1">
 ### MegaPop
@@ -310,6 +310,33 @@ It runs in the browser on WebGPU: Chrome or Edge on a desktop with a reasonably 
 	<a class="game-button" href="{{ site.cdn_url }}/games/livingworlds/docs/LivingWorlds_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/livingworlds.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/living-worlds">Discuss this game</a>
+</div>
+
+
+</article>
+
+<article class="game-card" markdown="1">
+### The Wrong Laws
+{% assign twl_video = "https://youtu.be/HjzOfJ2J4G0" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+<img src="{{ site.cdn_url }}/images/thewronglaws.jpg" alt="The Wrong Laws title" style="object-position: center;" />
+
+My fourth, original, game. This is closer to a proof of concept than a complete game and will require extensive additional level design.
+**THE WRONG LAWS** is a first-person physics puzzle game set in Hollin, a small town that in 1961 borrowed its physical constants from somewhere else. Now the loan is being recalled, building by building, and you walk the town with a repair kit that bends what is left: a projector that slows light to a crawl, a launcher that carries pocket singularities, a recorder that replays your own echoes, polarising filters, mirrors, and a cutter that carves and prints matter.
+Twenty chambers across five wings, from the Glassworks to the Gate: light that falls into gravity wells, a muon that only survives on its own clock, two slits that interfere, locks that open to your shadow. Every puzzle is real physics, deliberately set wrong.
+Think Portal meets The Talos Principle, with a physics textbook left out in the rain!
+
+{% if twl_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ twl_video }}" title="The Wrong Laws trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+It runs in the browser on WebGPU (with a WebGL 2 fallback): Chrome or Edge on a desktop with a reasonably modern graphics card. Mouse and keyboard, or a gamepad.
+
+<div class="game-actions">
+	<a class="game-button" href="{{ site.cdn_url }}/games/thewronglaws/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/thewronglaws.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/the-wrong-laws">Discuss this game</a>
 </div>
 
 
