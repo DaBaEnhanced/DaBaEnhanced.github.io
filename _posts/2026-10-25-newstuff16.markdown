@@ -1,0 +1,36 @@
+---
+layout: post
+title: "AFTERGLOW released!"
+date: 2026-10-25 15:00:00 +0100
+categories: jekyll update
+excerpt: AFTERGLOW - a retrowave combat racer
+thumbnail: /images/afterglow.jpg
+---
+{% assign ag_video = "2GyO2QgSwAc" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+
+My sixth game, **AFTERGLOW**, is out! It is an arcade combat racer with a story, and a love letter to *Lotus Esprit Turbo Challenge 2*, *Black Viper* and late-night anime tapes: 1999, as imagined in 1986.
+
+Port Avalon runs on rain, neon and other people's memories. Vic Calloway sells them for a living, until a delivery goes wrong and leaves him with a cracked chip and a stolen prototype. He plugs the chip into the dashboard, and a girl wakes up in the car: **LYRA**, a mind cut into seven shards and sold across a broken continent. Every shard you bring back gives her a memory and gives the car a new ability. He rebuilt her piece by piece. Then he had to stop her.
+
+What's in it:
+- seven chapters and 21 stages, from rain-soaked downtown to the sunset coast, a desert of satellite dishes, a snowbound pass, the flooded lowlands, an industrial wasteland and the city grid at dawn;
+- ramps and jumps, OutRun-style forks, tunnels, toll gates, trains and weather;
+- guns that overheat, mines, oil, smoke and EMP, bikers, gun vans, interceptors, drones and a gunship;
+- seven abilities from LYRA's shards, including Overdrive, which rewards turbo and gear shifts on the beat of the music;
+- Mama Dolores's garage, six cars, memory reels to keep or sell, and the story told in 80s-OVA comic panels;
+- Arcade, Time Trial, Endless Highway, Night Shift, and split-screen Versus and Convoy for two players;
+- a retrowave and late-80s club soundtrack, a car radio and, of course, a CRT filter.
+
+It runs in the browser: Chrome or Edge on a desktop works best (WebGPU, with a WebGL 2 fallback), and it also plays on phones and tablets, with on-screen touch controls.
+
+{% if ag_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ ag_video }}" title="AFTERGLOW trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% else %}
+<img src="{{ site.cdn_url }}/images/afterglow.jpg" alt="AFTERGLOW" style="width: 100%; height: auto;" />
+{% endif %}
+
+You can play it on [itch.io](https://waldtier.itch.io/afterglow), [right here in your browser]({{ site.cdn_url }}/games/afterglow/index.html), or [download it]({{ site.cdn_url }}/games/afterglow.zip). There is also a 16-page [instruction manual]({{ site.cdn_url }}/games/afterglow/docs/AFTERGLOW_Manual.pdf), in the spirit of the old boxed games.
+Check the <a href="/games">GAMES section!</a>
+Bye!

@@ -238,7 +238,7 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 ## Original games
 
-MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws). Or just grow a dragon's spine out of an empire's war machines and burn it all down in [**Vertebra**](#vertebra), my newest game!
+MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws). Or just grow a dragon's spine out of an empire's war machines and burn it all down in [**Vertebra**](#vertebra). And if you would rather race a stolen prototype through 1999 as imagined in 1986, with a girl living in the dashboard, that's [**AFTERGLOW**](#afterglow), my newest game!
 
 <article class="game-card" markdown="1">
 ### MegaPop
@@ -375,6 +375,43 @@ It runs in the browser on WebGPU (with a WebGL 2 fallback): Chrome or Edge recom
 	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra/docs/Vertebra_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
+</div>
+
+</article>
+
+<article class="game-card" markdown="1">
+### AFTERGLOW
+{% assign ag_video = "2GyO2QgSwAc" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+<img src="{{ site.cdn_url }}/images/afterglow.jpg" alt="AFTERGLOW title" style="object-position: center;" />
+
+My sixth original game: 1999, as imagined in 1986, by way of Lotus Esprit Turbo Challenge 2, Black Viper and a stack of rented anime tapes.
+**AFTERGLOW** is an arcade combat racer with a story. Vic Calloway, a memory dealer with a stolen prototype, plugs a cracked chip into his dashboard and a girl wakes up in the car: LYRA, a mind cut into seven shards and sold across a broken continent. Every shard you bring back gives her a memory and gives the car a new ability. He rebuilt her piece by piece. Then he had to stop her.
+Seven chapters and 21 stages on a hand-pixelled pseudo-3D road, with ramps, forks, weather, trains, guns that overheat, mines, oil, smoke and EMP, bikers, interceptors and a gunship, Mama Dolores's garage, six cars, memory reels, comic panels in 80s-OVA style, Arcade, Time Trial, Endless Highway, Night Shift, and split-screen Versus and Convoy for two players. And a CRT filter, of course.
+
+<div class="game-slideshow">
+	<a href="{{ site.cdn_url }}/images/AG/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/1.jpg" alt="AFTERGLOW screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/AG/2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/2.jpg" alt="AFTERGLOW screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/AG/3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/3.jpg" alt="AFTERGLOW screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/AG/4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/4.jpg" alt="AFTERGLOW screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/AG/5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/5.jpg" alt="AFTERGLOW screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/AG/6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/6.jpg" alt="AFTERGLOW screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/AG/7.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/7.jpg" alt="AFTERGLOW screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/AG/8.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/AG/8.jpg" alt="AFTERGLOW screenshot 8" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+{% if ag_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ ag_video }}" title="AFTERGLOW trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+It runs in the browser on WebGPU (with a WebGL 2 fallback): Chrome or Edge recommended. Keyboard or gamepad, and the keys can be remapped. It also plays on phones and tablets, with on-screen touch controls.
+
+<div class="game-actions">
+	<a class="game-button itch-button" href="https://waldtier.itch.io/afterglow" target="_blank" rel="noopener"><span class="game-button-icon" aria-hidden="true">&#9733;</span>Play on itch.io</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/afterglow/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/afterglow.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/afterglow/docs/AFTERGLOW_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
 </div>
 
 </article>
