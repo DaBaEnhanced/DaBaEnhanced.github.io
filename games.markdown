@@ -238,7 +238,7 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 ## Original games
 
-MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws), my newest game!
+MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws). Or just grow a dragon's spine out of an empire's war machines and burn it all down in [**Vertebra**](#vertebra), my newest game!
 
 <article class="game-card" markdown="1">
 ### MegaPop
@@ -339,6 +339,43 @@ It runs in the browser on WebGPU (with a WebGL 2 fallback): Chrome or Edge on a 
 	<a class="game-button" href="https://github.com/DaBaEnhanced/DaBaEnhanced.github.io/discussions/categories/the-wrong-laws">Discuss this game</a>
 </div>
 
+
+</article>
+
+<article class="game-card" markdown="1">
+### Vertebra
+{% assign vtb_video = "QpiFohWyQ80" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+<img src="{{ site.cdn_url }}/images/vertebra.jpg" alt="Vertebra title" style="object-position: center;" />
+
+My fifth original game, and a love letter to Saint Dragon, the Amiga shooter I ported a while ago.
+**VERTEBRA** is a side-scrolling shoot 'em up roguelite. You are a flying dragon skull, and your body is your build: every enemy you destroy can become a new vertebra chained behind you. Armour plates, turrets, mirrors that bounce bullets back, bombs, healers, amplifiers, relics torn from the bosses. Block bullets with your spine, curl it into a shield around the skull, whip the tail, shed it as a bomb, and when the Charge is full, unleash a Burst that clears the screen.
+Six regions, from the Foundry Coast to a secret sixth one, 30 enemy types, 6 elites and 6 bosses, more than fifty segments with adjacency combos and bone sets, six playable Skulls, ten Heat modifiers, Story / Standard / Arcade difficulty, a Daily Run, an Arcade Gauntlet and a Practice mode. And a CRT filter, of course.
+
+<div class="game-slideshow">
+	<a href="{{ site.cdn_url }}/images/VB/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/1.jpg" alt="Vertebra screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/VB/2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/2.jpg" alt="Vertebra screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/VB/3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/3.jpg" alt="Vertebra screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/VB/4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/4.jpg" alt="Vertebra screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/VB/5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/5.jpg" alt="Vertebra screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/VB/6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/6.jpg" alt="Vertebra screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/VB/7.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/7.jpg" alt="Vertebra screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/VB/8.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/VB/8.jpg" alt="Vertebra screenshot 8" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+{% if vtb_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ vtb_video }}" title="Vertebra trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+It runs in the browser on WebGPU (with a WebGL 2 fallback): Chrome or Edge recommended. Keyboard or gamepad, and the keys can be remapped.
+
+<div class="game-actions">
+	<a class="game-button itch-button" href="https://waldtier.itch.io/vertebra" target="_blank" rel="noopener"><span class="game-button-icon" aria-hidden="true">&#9733;</span>Play on itch.io</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra/docs/Vertebra_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
+</div>
 
 </article>
 

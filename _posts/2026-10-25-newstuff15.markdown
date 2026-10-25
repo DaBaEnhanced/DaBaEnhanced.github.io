@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Vertebra released!"
+date: 2026-10-25 12:30:00 +0100
+categories: jekyll update
+excerpt: Vertebra - a shmup roguelite of bone and fire
+thumbnail: /images/vertebra.jpg
+---
+{% assign vtb_video = "QpiFohWyQ80" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+
+My fifth game, **Vertebra**, is out! It is a side-scrolling shoot 'em up roguelite, and it grew out of my port of **Saint Dragon**: I kept wondering what that game would be like if the dragon's body were the whole point.
+
+So here it is. The Empire built its city from the bones of a serpent, and one skull woke up. You fly that skull, and your body is your build: every enemy you destroy can become a new vertebra chained behind you. Plates that soak up bullets, turrets that fire with your breath, mirror scales that send shots back, bombs, healers, amplifiers that make the turret behind them fire faster, and relics torn out of the bosses. The body is not just decoration: it blocks bullets, you can curl it into a shield around the skull, whip the tail, shed it as a bomb, and when the Charge is full you unleash a Burst across the whole screen. The order of the segments matters, and the shrines let you rearrange it.
+
+What's in it:
+- six regions, from the Foundry Coast to a secret sixth one, each with its own enemies, an elite and a boss;
+- 30 enemy types, 6 elites and 6 bosses (the Engineer-Queen is my favourite);
+- more than fifty segments and relics, with adjacency combos and bone sets;
+- six playable Skulls, each with its own breath and Burst;
+- Story, Standard and Arcade difficulty, plus ten Heat modifiers for when it gets too easy;
+- a Daily Run, an Arcade Gauntlet and a Practice mode;
+- remappable controls, gamepad support, colour-blind bullet sets and, of course, a CRT filter.
+
+It runs in the browser: Chrome or Edge on a desktop (WebGPU, with a WebGL 2 fallback).
+
+{% if vtb_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ vtb_video }}" title="Vertebra trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% else %}
+<img src="{{ site.cdn_url }}/images/vertebra.jpg" alt="Vertebra" style="width: 100%; height: auto;" />
+{% endif %}
+
+You can play it on [itch.io](https://waldtier.itch.io/vertebra), [right here in your browser]({{ site.cdn_url }}/games/vertebra/index.html), or [download it]({{ site.cdn_url }}/games/vertebra.zip). There is also a 35-page [instruction manual]({{ site.cdn_url }}/games/vertebra/docs/Vertebra_Manual.pdf), in the spirit of the old boxed games.
+Check the <a href="/games">GAMES section!</a>
+Bye!
