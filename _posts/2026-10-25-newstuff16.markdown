@@ -31,6 +31,6 @@ It runs in the browser: Chrome or Edge on a desktop works best (WebGPU, with a W
 <img src="{{ site.cdn_url }}/images/afterglow.jpg" alt="AFTERGLOW" style="width: 100%; height: auto;" />
 {% endif %}
 
-You can play it on [itch.io](https://waldtier.itch.io/afterglow), [right here in your browser]({{ site.cdn_url }}/games/afterglow/index.html), or [download it]({{ site.cdn_url }}/games/afterglow.zip). There is also a 16-page [instruction manual]({{ site.cdn_url }}/games/afterglow/docs/AFTERGLOW_Manual.pdf), in the spirit of the old boxed games, and the whole soundtrack, 16 tracks plus two alternate takes of the theme: listen to it in the GAMES section, or [download it]({{ site.cdn_url }}/games/afterglow_soundtrack.zip) (MP3).
+You can play it on [itch.io](https://waldtier.itch.io/afterglow), [right here in your browser]({{ site.cdn_url }}/games/afterglow/index.html), or [download it]({{ site.cdn_url }}/games/afterglow.zip). There is also a 16-page [instruction manual]({{ site.cdn_url }}/games/afterglow/docs/AFTERGLOW_Manual.pdf), in the spirit of the old boxed games, and the whole soundtrack, all 16 tracks: listen to it in the GAMES section, or [download it]({{ site.cdn_url }}/games/afterglow_soundtrack.zip) (MP3).
 Check the <a href="/games">GAMES section!</a>
 Bye!
