@@ -375,6 +375,8 @@ It runs in the browser on WebGPU (with a WebGL 2 fallback): Chrome or Edge recom
 	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download</a>
 	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra/docs/Vertebra_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
+	<a class="game-button" href="#vertebra" data-ost="vertebra"><span class="game-button-icon" aria-hidden="true">&#9835;</span>Listen to the soundtrack</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/vertebra_soundtrack.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download the soundtrack</a>
 </div>
 
 </article>

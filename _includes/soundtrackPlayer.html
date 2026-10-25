@@ -49,6 +49,28 @@
 		background: #1a1430; color: #ffe8f4; border: 1px solid #ff4fa3; box-shadow: 0 0 18px rgba(255, 79, 163, 0.35); cursor: pointer; font-size: 0.85rem; max-width: calc(100vw - 32px); }
 	.ost-pill.show { display: inline-flex; }
 	.ost-pill b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+	/* per-album themes (data-theme on the modal and the pill) */
+	.ost-modal[data-theme="vertebra"] { background: rgba(6, 2, 3, 0.82); }
+	.ost-modal[data-theme="vertebra"] .ost-box { background: radial-gradient(ellipse at 30% 0%, #2a1512 0%, #120a0a 55%, #0b0608 100%); color: #e6d8bc;
+		border: 2px solid #8a6a3a; border-radius: 4px; box-shadow: 0 0 0 1px #000, inset 0 0 0 1px rgba(242, 198, 109, 0.18), 0 0 46px rgba(199, 54, 28, 0.38); }
+	.ost-modal[data-theme="vertebra"] .ost-box::after { border-radius: 4px; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.14) 0 1px, transparent 1px 3px); }
+	.ost-modal[data-theme="vertebra"] .ost-side { border-right-color: rgba(242, 198, 109, 0.22); }
+	.ost-modal[data-theme="vertebra"] .ost-cover { border-radius: 2px; border: 1px solid rgba(242, 198, 109, 0.35); }
+	.ost-modal[data-theme="vertebra"] .ost-now span, .ost-modal[data-theme="vertebra"] .ost-head p, .ost-modal[data-theme="vertebra"] .ost-list .t small, .ost-modal[data-theme="vertebra"] .ost-vol { color: #a8957a; }
+	.ost-modal[data-theme="vertebra"] .ost-head h3 { color: #f2c66d; text-shadow: 0 2px 0 #3a1408; }
+	.ost-modal[data-theme="vertebra"] .ost-seek, .ost-modal[data-theme="vertebra"] .ost-list .d { color: #ff8a3a; }
+	.ost-modal[data-theme="vertebra"] .ost-ctl button, .ost-modal[data-theme="vertebra"] .ost-x { border-color: rgba(242, 198, 109, 0.6); background: rgba(199, 54, 28, 0.1); color: #f2e6cc; }
+	.ost-modal[data-theme="vertebra"] .ost-ctl button:hover, .ost-modal[data-theme="vertebra"] .ost-x:hover { background: rgba(199, 54, 28, 0.35); }
+	.ost-modal[data-theme="vertebra"] .ost-ctl .ost-play { background: radial-gradient(circle at 40% 30%, #d65228, #7a1e10); border-color: #ff8a3a; }
+	.ost-modal[data-theme="vertebra"] input[type=range] { accent-color: #ff8a3a; }
+	.ost-modal[data-theme="vertebra"] .ost-dl { background: #c7361c; border-radius: 3px; }
+	.ost-modal[data-theme="vertebra"] .ost-dl:hover { background: #e04a26; }
+	.ost-modal[data-theme="vertebra"] .ost-list li { border-radius: 3px; }
+	.ost-modal[data-theme="vertebra"] .ost-list li:hover { background: rgba(242, 198, 109, 0.07); }
+	.ost-modal[data-theme="vertebra"] .ost-list li.cur { background: rgba(199, 54, 28, 0.22); }
+	.ost-modal[data-theme="vertebra"] .ost-list .n { color: #ff8a3a; }
+	.ost-modal[data-theme="vertebra"] .ost-list .t { color: #f2e6cc; }
+	.ost-pill[data-theme="vertebra"] { background: #1a0f10; color: #f2e6cc; border-color: #c7361c; box-shadow: 0 0 18px rgba(199, 54, 28, 0.4); }
 	@media (max-width: 699px) {
 		.ost-box { grid-template-columns: 1fr; overflow-y: auto; }
 		.ost-side { border-right: 0; border-bottom: 1px solid rgba(255, 79, 163, 0.25); }
@@ -89,6 +111,7 @@ window.OST = Object.assign(window.OST || {}, {
 		base: "{{ site.cdn_url }}/games/afterglow/soundtrack/",
 		cover: "cover.jpg",
 		zip: "{{ site.cdn_url }}/games/afterglow_soundtrack.zip",
+		size: "110 MB",
 		artist: "D. B. Waldtier",
 		tracks: [
 			["Afterglow", "Title theme and end credits", "01-afterglow.mp3", 182],
@@ -108,6 +131,39 @@ window.OST = Object.assign(window.OST || {}, {
 			["Signal to Everything", "Chapter 7 finale", "15-signal-to-everything.mp3", 152],
 			["Sunrise Over the Tower", "Ending", "16-sunrise-over-the-tower.mp3", 148]
 		]
+	},
+	vertebra: {
+		title: "VERTEBRA · Original Soundtrack",
+		sub: "22 tracks · the music of the bone serpent's flight across the Empire",
+		base: "{{ site.cdn_url }}/games/vertebra/soundtrack/",
+		cover: "cover.jpg",
+		zip: "{{ site.cdn_url }}/games/vertebra_soundtrack.zip",
+		size: "115 MB",
+		artist: "D. B. Waldtier",
+		tracks: [
+			["Vertebra", "Main title", "01-vertebra.mp3", 220],
+			["Bones Remember", "The road: map, shrines, forge and market", "02-bones-remember.mp3", 173],
+			["The Foundry Coast", "Region I", "03-the-foundry-coast.mp3", 233],
+			["Furnace Hounds", "Region I, elite", "04-furnace-hounds.mp3", 233],
+			["The Drydock", "Region I, boss", "05-the-drydock.mp3", 173],
+			["The Spire Gardens", "Region II", "06-the-spire-gardens.mp3", 233],
+			["Thorns Under Glass", "Region II, elite", "07-thorns-under-glass.mp3", 233],
+			["The Gardener", "Region II, boss", "08-the-gardener.mp3", 173],
+			["The Storm Engines", "Region III", "09-the-storm-engines.mp3", 233],
+			["Lightning Rod", "Region III, elite", "10-lightning-rod.mp3", 233],
+			["The Conductor", "Region III, boss", "11-the-conductor.mp3", 173],
+			["The Ossuary Mines", "Region IV", "12-the-ossuary-mines.mp3", 233],
+			["Deep Seam", "Region IV, elite", "13-deep-seam.mp3", 233],
+			["The Bonewright", "Region IV, boss", "14-the-bonewright.mp3", 173],
+			["The Imperial Ring", "Region V", "15-the-imperial-ring.mp3", 233],
+			["Crown Guard", "Region V, elite", "16-crown-guard.mp3", 233],
+			["The Engineer-Queen", "Region V, boss", "17-the-engineer-queen.mp3", 173],
+			["The Heart of the Serpent", "The secret region", "18-the-heart-of-the-serpent.mp3", 233],
+			["The First Head", "Final boss", "19-the-first-head.mp3", 173],
+			["Ashes of the Empire", "Ending", "20-ashes-of-the-empire.mp3", 75],
+			["The Ossuary", "Unlocks, codex and records", "21-the-ossuary.mp3", 169],
+			["Arcade Gauntlet", "Gauntlet mode", "22-arcade-gauntlet.mp3", 233]
+		]
 	}
 });
 
@@ -122,10 +178,10 @@ window.OST = Object.assign(window.OST || {}, {
 	function open(id) {
 		var a = window.OST[id]; if (!a) return;
 		if (album !== a) {
-			album = a; idx = -1;
+			album = a; idx = -1; modal.setAttribute("data-theme", id); pill.setAttribute("data-theme", id);
 			$("ost-title").textContent = a.title; $("ost-sub").textContent = a.sub || "";
 			$("ost-cover").src = a.base + a.cover; $("ost-cover").alt = a.title + " cover";
-			$("ost-dl").href = a.zip;
+			$("ost-dl").href = a.zip; $("ost-dl").innerHTML = "&#8681; Download the soundtrack" + (a.size ? " (" + a.size + ")" : "");
 			list.innerHTML = "";
 			a.tracks.forEach(function (t, i) {
 				var li = document.createElement("li");

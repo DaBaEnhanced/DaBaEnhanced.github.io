@@ -31,6 +31,6 @@ It runs in the browser: Chrome or Edge on a desktop (WebGPU, with a WebGL 2 fall
 <img src="{{ site.cdn_url }}/images/vertebra.jpg" alt="Vertebra" style="width: 100%; height: auto;" />
 {% endif %}
 
-You can play it on [itch.io](https://waldtier.itch.io/vertebra), [right here in your browser]({{ site.cdn_url }}/games/vertebra/index.html), or [download it]({{ site.cdn_url }}/games/vertebra.zip). There is also a 35-page [instruction manual]({{ site.cdn_url }}/games/vertebra/docs/Vertebra_Manual.pdf), in the spirit of the old boxed games.
+You can play it on [itch.io](https://waldtier.itch.io/vertebra), [right here in your browser]({{ site.cdn_url }}/games/vertebra/index.html), or [download it]({{ site.cdn_url }}/games/vertebra.zip). There is also a 35-page [instruction manual]({{ site.cdn_url }}/games/vertebra/docs/Vertebra_Manual.pdf), in the spirit of the old boxed games. And the whole soundtrack, 22 tracks, can be played from the Vertebra card in the <a href="/games#vertebra">GAMES section</a> or [downloaded as a zip]({{ site.cdn_url }}/games/vertebra_soundtrack.zip).
 Check the <a href="/games">GAMES section!</a>
 Bye!
