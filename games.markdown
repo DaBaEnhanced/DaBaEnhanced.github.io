@@ -176,6 +176,72 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 			transition: none;
 		}
 	}
+	/* Collapsible game cards: collapsed shows title + banner only */
+	.game-card.is-collapsible > h3,
+	.game-card.is-collapsible > .game-card-banner {
+		cursor: pointer;
+	}
+	.game-card.is-collapsible > h3 {
+		align-items: center;
+		display: flex;
+		gap: 0.75rem;
+		justify-content: space-between;
+		user-select: none;
+	}
+	.game-card.is-collapsible > h3::after {
+		color: #e5484d;
+		content: "\25BE";
+		flex: 0 0 auto;
+		font-size: 1.1em;
+		transition: transform 250ms ease;
+	}
+	.game-card.is-collapsible:not(.is-open) > h3::after {
+		transform: rotate(-90deg);
+	}
+	.game-card.is-collapsible > h3:focus-visible {
+		outline: 2px solid #e5484d;
+		outline-offset: 4px;
+	}
+	.game-card-body {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 350ms ease;
+	}
+	.game-card.is-open > .game-card-body {
+		grid-template-rows: 1fr;
+	}
+	.game-card-body > .game-card-inner {
+		min-height: 0;
+		overflow: hidden;
+	}
+	.game-card:not(.is-open) > .game-card-banner {
+		margin-bottom: 0;
+	}
+	.game-card.is-collapsible:not(.is-open) > .game-card-banner::after {
+		color: rgba(255, 255, 255, 0.55);
+		content: "Click to show details";
+		display: block;
+		font-size: 0.85rem;
+		margin-top: 0.4rem;
+		text-align: center;
+	}
+	.games-toggle-all {
+		background: none;
+		border: 1px solid #e5484d;
+		border-radius: 6px;
+		color: inherit;
+		cursor: pointer;
+		font: inherit;
+		font-size: 0.9rem;
+		margin: 0.5rem 0;
+		padding: 0.35rem 0.8rem;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.game-card-body,
+		.game-card.is-collapsible > h3::after {
+			transition: none;
+		}
+	}
 </style>
 
 <script>
@@ -223,6 +289,112 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 			slideshow.addEventListener("focusout", start);
 			start();
 		});
+	}
+
+	function initializeCollapsibleGames() {
+		const cards = Array.from(document.querySelectorAll("article.game-card"));
+		if (!cards.length) {
+			return;
+		}
+
+		const setOpen = function (card, open) {
+			card.classList.toggle("is-open", open);
+			card._title.setAttribute("aria-expanded", open ? "true" : "false");
+			if (open) {
+				card._body.removeAttribute("inert");
+			} else {
+				card._body.setAttribute("inert", "");
+			}
+		};
+
+		cards.forEach(function (card, index) {
+			const title = card.querySelector(":scope > h3");
+			if (!title) {
+				return;
+			}
+			let banner = title.nextElementSibling;
+			if (banner && !(banner.tagName === "IMG" || (banner.children.length === 1 && banner.querySelector(":scope > img")))) {
+				banner = null;
+			}
+
+			const body = document.createElement("div");
+			const inner = document.createElement("div");
+			body.className = "game-card-body";
+			inner.className = "game-card-inner";
+			body.id = "game-card-body-" + index;
+			body.appendChild(inner);
+
+			let node = (banner || title).nextSibling;
+			while (node) {
+				const next = node.nextSibling;
+				inner.appendChild(node);
+				node = next;
+			}
+			card.appendChild(body);
+
+			card._title = title;
+			card._body = body;
+			card.classList.add("is-collapsible");
+			title.setAttribute("role", "button");
+			title.setAttribute("tabindex", "0");
+			title.setAttribute("aria-controls", body.id);
+
+			const toggle = function () {
+				setOpen(card, !card.classList.contains("is-open"));
+			};
+			title.addEventListener("click", toggle);
+			title.addEventListener("keydown", function (event) {
+				if (event.key === "Enter" || event.key === " ") {
+					event.preventDefault();
+					toggle();
+				}
+			});
+			if (banner) {
+				banner.classList.add("game-card-banner");
+				banner.addEventListener("click", toggle);
+			}
+			setOpen(card, false);
+		});
+
+		const openFromHash = function () {
+			if (!location.hash) {
+				return;
+			}
+			let target;
+			try {
+				target = document.querySelector(decodeURIComponent(location.hash));
+			} catch (error) {
+				return;
+			}
+			const card = target && target.closest("article.game-card.is-collapsible");
+			if (card) {
+				setOpen(card, true);
+				window.setTimeout(function () {
+					card.scrollIntoView({ block: "start" });
+				}, 50);
+			}
+		};
+		openFromHash();
+		window.addEventListener("hashchange", openFromHash);
+
+		const firstCard = cards[0];
+		const toggleAll = document.createElement("button");
+		toggleAll.type = "button";
+		toggleAll.className = "games-toggle-all";
+		toggleAll.textContent = "Expand all games";
+		toggleAll.addEventListener("click", function () {
+			const collapsible = cards.filter(function (card) { return card.classList.contains("is-collapsible"); });
+			const anyClosed = collapsible.some(function (card) { return !card.classList.contains("is-open"); });
+			collapsible.forEach(function (card) { setOpen(card, anyClosed); });
+			toggleAll.textContent = anyClosed ? "Collapse all games" : "Expand all games";
+		});
+		firstCard.parentNode.insertBefore(toggleAll, firstCard);
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initializeCollapsibleGames);
+	} else {
+		initializeCollapsibleGames();
 	}
 
 	if (document.readyState === "loading") {
