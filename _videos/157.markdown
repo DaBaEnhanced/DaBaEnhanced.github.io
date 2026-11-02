@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Paladin's Adventures
 thumbnail: "/images/157vid.jpg"
 videoid: b9Ri_P_l7hg
+description: "The Paladin's Adventures: an AI-generated animation by D. B. Waldtier. The Paladin's Adventures."
+image: https://assets.waldtier.com/images/157vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

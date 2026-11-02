@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Future Fragments
 thumbnail: "/images/206vid.jpg"
 videoid: PkrZYf9psMo
+description: "Future Fragments: an AI-generated animation by D. B. Waldtier. Future Fragments."
+image: https://assets.waldtier.com/images/206vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

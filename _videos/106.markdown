@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Sailing in the sky
 thumbnail: "/images/106vid.jpg"
 videoid: 2UeQyB5_5zA
+description: "Sailing in the sky: an AI-generated animation by D. B. Waldtier. Sailing in the sky."
+image: https://assets.waldtier.com/images/106vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: From galaxy and stars to beyond atoms.
 thumbnail: "/images/003vid.jpg"
 videoid: NogHFrtzH_c
+description: "Beyond Reality: an AI-generated animation by D. B. Waldtier. From galaxy and stars to beyond atoms."
+image: https://assets.waldtier.com/images/003vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

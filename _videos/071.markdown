@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Realm
 thumbnail: "/images/071vid.jpg"
 videoid: sOAmuGmQ_L4
+description: "The Realm: an AI-generated animation by D. B. Waldtier. The Realm."
+image: https://assets.waldtier.com/images/071vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Collision course
 thumbnail: "/images/115vid.jpg"
 videoid: BLp68jKgJ8E
+description: "Collision course: an AI-generated animation by D. B. Waldtier. Collision course."
+image: https://assets.waldtier.com/images/115vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

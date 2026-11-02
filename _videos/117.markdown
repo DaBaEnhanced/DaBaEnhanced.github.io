@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Colony
 thumbnail: "/images/117vid.jpg"
 videoid: gCBVfoqiNzw
+description: "The Colony: an AI-generated animation by D. B. Waldtier. The Colony."
+image: https://assets.waldtier.com/images/117vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

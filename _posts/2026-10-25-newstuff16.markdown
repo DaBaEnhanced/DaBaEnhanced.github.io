@@ -2,9 +2,12 @@
 layout: post
 title: "AFTERGLOW released!"
 date: 2026-10-25 15:00:00 +0100
-categories: jekyll update
 excerpt: AFTERGLOW - a retrowave combat racer
 thumbnail: /images/afterglow.jpg
+slug: afterglow-released
+description: "AFTERGLOW, a free retrowave arcade combat racer with a story, playable in your browser. A love letter to Lotus Esprit Turbo Challenge 2."
+image: https://assets.waldtier.com/images/afterglow.jpg
+redirect_from: /jekyll/update/2026/10/25/newstuff16.html
 ---
 {% assign ag_video = "2GyO2QgSwAc" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
 

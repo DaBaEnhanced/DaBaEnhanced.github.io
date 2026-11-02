@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The very first one I created
 thumbnail: "/images/001vid.jpg"
 videoid: Q2ycGBjHcVg
+description: "Acid Space: an AI-generated animation by D. B. Waldtier. The very first one I created."
+image: https://assets.waldtier.com/images/001vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

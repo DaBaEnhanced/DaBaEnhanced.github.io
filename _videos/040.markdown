@@ -6,6 +6,8 @@ categories: jekyll update
 summary: X-Files
 thumbnail: "/images/040vid.jpg"
 videoid: JnKqRdyxT40
+description: "XFiles: an AI-generated animation by D. B. Waldtier. X-Files."
+image: https://assets.waldtier.com/images/040vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

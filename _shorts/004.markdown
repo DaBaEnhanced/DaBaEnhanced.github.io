@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A gloryhole? Really?
 thumbnail_img: "/images/004short.jpg"
 thumbnail: "/videos/004short.mp4"
+description: "Europa's Unexpected Encounter​: a science fiction short story by D. B. Waldtier. A gloryhole? Really?"
+image: https://assets.waldtier.com/images/004short.jpg
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

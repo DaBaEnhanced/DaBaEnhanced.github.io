@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Genesis
 thumbnail: "/images/055vid.jpg"
 videoid: ucLNYxsweEQ
+description: "Genesis: an AI-generated animation by D. B. Waldtier. Genesis."
+image: https://assets.waldtier.com/images/055vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

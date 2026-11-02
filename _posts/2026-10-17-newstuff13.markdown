@@ -2,9 +2,12 @@
 layout: post
 title: "Living Worlds released!"
 date: 2026-10-17 23:55:00 +0200
-categories: jekyll update
 excerpt: Living Worlds - an ecosystem god game + Manual
 thumbnail: /images/livingworlds.jpg
+slug: living-worlds-released
+description: "Living Worlds, a free ecosystem god game in your browser: make a small planet habitable and help life thrive. Comes with a full manual."
+image: https://assets.waldtier.com/images/livingworlds.jpg
+redirect_from: /jekyll/update/2026/10/17/newstuff13.html
 ---
 
 My third game, **Living Worlds**, is out! It is a full game, playable in your browser, and of course it comes with a nice manual.

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Ink Tripping
 thumbnail: "/images/135vid.jpg"
 videoid: SAnevpjsmJ0
+description: "Ink Tripping: an AI-generated animation by D. B. Waldtier. Ink Tripping."
+image: https://assets.waldtier.com/images/135vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

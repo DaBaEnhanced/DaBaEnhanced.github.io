@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Microcosm
 thumbnail: "/images/113vid.jpg"
 videoid: 8KnwPuMrx3o
+description: "Microcosm: an AI-generated animation by D. B. Waldtier. Microcosm."
+image: https://assets.waldtier.com/images/113vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

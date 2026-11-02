@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Desert city, post apoc wars.
 thumbnail: "/images/004vid.jpg"
 videoid: K6HvFo8vnoY
+description: "Desert City: an AI-generated animation by D. B. Waldtier. Desert city, post apoc wars."
+image: https://assets.waldtier.com/images/004vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

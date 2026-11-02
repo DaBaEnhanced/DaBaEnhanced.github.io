@@ -2,9 +2,12 @@
 layout: post
 title: "Alien Breed 3D and The Moon That Forgot demo"
 date: 2026-09-11 23:53:47 +0200
-categories: jekyll update
 excerpt: New Amiga port, and The Moon That Forgot demo
 thumbnail: /games/ab3d/ab3d_banner.jpg
+slug: alien-breed-3d-port-and-moon-that-forgot-demo
+description: "Alien Breed 3D ported to HTML/JavaScript and playable in the browser, with a post-mortem, plus a demo of The Moon That Forgot, Chapter 1."
+image: https://assets.waldtier.com/games/ab3d/ab3d_banner.jpg
+redirect_from: /jekyll/update/2026/09/11/newstuff5.html
 ---
 
 So, I've completed the port to HTML/Js of Alien Breed 3D, it was quite a trip so check the game and the post-mortem. Porting a game whose code relied heavily on hardware and registers side effects was fun.

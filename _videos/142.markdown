@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Battlestar
 thumbnail: "/images/142vid.jpg"
 videoid: WTAhgX_BHrc
+description: "Battlestar: an AI-generated animation by D. B. Waldtier. Battlestar."
+image: https://assets.waldtier.com/images/142vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

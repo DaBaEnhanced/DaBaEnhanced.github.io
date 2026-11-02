@@ -2,9 +2,12 @@
 layout: post
 title: "A sneak peek to my next game Living Worlds!"
 date: 2026-10-14 23:53:48 +0200
-categories: jekyll update
 excerpt: Soon available here!
 thumbnail: /images/livingworlds1.jpg
+slug: living-worlds-sneak-peek
+description: "A sneak peek at Living Worlds, a god game where you help life take hold on a planet with plausible but challenging conditions."
+image: https://assets.waldtier.com/images/livingworlds1.jpg
+redirect_from: /jekyll/update/2026/10/14/newstuff11.html
 ---
 
 Ever wondered what it feels like to be a god and make planets habitable?

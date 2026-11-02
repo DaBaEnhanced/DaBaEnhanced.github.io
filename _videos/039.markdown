@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Tannhauser Gates
 thumbnail: "/images/039vid.jpg"
 videoid: 6iZ-QSTpJJM
+description: "Tannhauser Gates: an AI-generated animation by D. B. Waldtier. Tannhauser Gates."
+image: https://assets.waldtier.com/images/039vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

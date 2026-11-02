@@ -6,6 +6,8 @@ categories: jekyll update
 summary: That explains everything
 thumbnail_img: "/images/006short.jpg"
 thumbnail: "/videos/006short.mp4"
+description: "The Accidental Creator​​​: a science fiction short story by D. B. Waldtier. That explains everything."
+image: https://assets.waldtier.com/images/006short.jpg
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

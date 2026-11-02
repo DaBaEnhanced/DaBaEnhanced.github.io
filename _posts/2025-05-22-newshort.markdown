@@ -2,9 +2,11 @@
 layout: post
 title: "New short story"
 date: 2025-05-22 23:53:47 +0200
-categories: jekyll update
 excerpt: 036 - The Affection Algorithm
 thumbnail: /images/036short.jpg
+slug: short-story-36
+image: https://assets.waldtier.com/images/036short.jpg
+redirect_from: /jekyll/update/2025/05/22/newshort.html
 ---
 
 I've added a new short story to the [short]({% link short.markdown %}) section.<br>

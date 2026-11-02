@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Lost ship
 thumbnail_img: "/images/025short.jpg"
 thumbnail: "/videos/025short.mp4"
+description: "The Inheritors: a science fiction short story by D. B. Waldtier. Lost ship."
+image: https://assets.waldtier.com/images/025short.jpg
 ---
 
 The tether connected with a soft thud against the massive hull of the Wanderer. Commander Elena Vasquez watched through her helmet as the magnetic clamps secured their position, the alien vessel dwarfing their shuttle like a whale beside a remora.<br>

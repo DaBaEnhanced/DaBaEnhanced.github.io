@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Space DIEversity?
 thumbnail_img: "/images/027short.jpg"
 thumbnail: "/videos/027short.mp4"
+description: "Misplaced: a science fiction short story by D. B. Waldtier. Space DIEversity?"
+image: https://assets.waldtier.com/images/027short.jpg
 ---
 
 Dave Harrington stared at the gelatinous blob of purple goo that had just slid into the seat across from him in the space station's cafeteria. The blob—Dave was pretty sure its name was Xor'blatt, a mid-level administrator from Sector 7—rippled pleasantly in what passed for a greeting.<br>

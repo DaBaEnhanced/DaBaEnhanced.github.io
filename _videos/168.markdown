@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Space Troopers
 thumbnail: "/images/168vid.jpg"
 videoid: lxfeiWnn_nk
+description: "Space Troopers: an AI-generated animation by D. B. Waldtier. Space Troopers."
+image: https://assets.waldtier.com/images/168vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

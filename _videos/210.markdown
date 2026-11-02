@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Happy Easter
 thumbnail: "/images/210vid.jpg"
 videoid: sGcw84DTCls
+description: "Happy Easter: an AI-generated animation by D. B. Waldtier. Happy Easter."
+image: https://assets.waldtier.com/images/210vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

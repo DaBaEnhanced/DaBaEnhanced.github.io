@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Cyborg Dragons
 thumbnail: "/images/042vid.jpg"
 videoid: ery_lAVQaNU
+description: "Cyborg Dragons: an AI-generated animation by D. B. Waldtier. Cyborg Dragons."
+image: https://assets.waldtier.com/images/042vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

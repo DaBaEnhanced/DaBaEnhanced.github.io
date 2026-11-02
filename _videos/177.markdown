@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Heart Of Fire
 thumbnail: "/images/177vid.jpg"
 videoid: yuibsfQquf0
+description: "Heart Of Fire: an AI-generated animation by D. B. Waldtier. Heart Of Fire."
+image: https://assets.waldtier.com/images/177vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

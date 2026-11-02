@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Tool's Parabola
 thumbnail: "/images/026vid.jpg"
 videoid: Q_5pSYAj3B0
+description: "Parabola: an AI-generated animation by D. B. Waldtier. Tool's Parabola."
+image: https://assets.waldtier.com/images/026vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

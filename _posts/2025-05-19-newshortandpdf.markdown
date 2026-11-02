@@ -2,8 +2,9 @@
 layout: post
 title: "New short story and PDF"
 date: 2025-05-19 23:53:47 +0200
-categories: jekyll update
 excerpt: 034 - Shadows on Titan
+slug: short-story-34-and-pdf
+redirect_from: /jekyll/update/2025/05/19/newshortandpdf.html
 ---
 
 I've added a new short story to the [short]({% link short.markdown %}) section.<br>

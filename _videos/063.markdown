@@ -6,6 +6,8 @@ categories: jekyll update
 summary: To The Mountain Of Madness
 thumbnail: "/images/063vid.jpg"
 videoid: FCAr6DCbShw
+description: "To The Mountain Of Madness: an AI-generated animation by D. B. Waldtier. To The Mountain Of Madness."
+image: https://assets.waldtier.com/images/063vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

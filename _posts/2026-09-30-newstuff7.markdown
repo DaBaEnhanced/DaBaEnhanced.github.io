@@ -2,9 +2,12 @@
 layout: post
 title: "Megapop updated!"
 date: 2026-09-30 23:53:47 +0200
-categories: jekyll update
 excerpt: Megapop Release Candidate 1 + Manual
 thumbnail: /images/megapop.jpg
+slug: project-megapop-update
+description: "PROJECT MEGAPOP update: better late-game mechanics, new effects and sounds, a tutorial mode, better tooltips and a PDF manual."
+image: https://assets.waldtier.com/images/megapop.jpg
+redirect_from: /jekyll/update/2026/09/30/newstuff7.html
 ---
 
 I've made substantial updates to **PROJECT MEGAPOP**. Better late game mechanics, some new effects, new sounds. Tutorial mode and better tooltip, some QoL additions to town infos, etc.

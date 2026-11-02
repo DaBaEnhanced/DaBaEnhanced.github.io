@@ -6,6 +6,8 @@ categories: jekyll update
 summary: On the doorstep of knowledge
 thumbnail: "/images/136vid.jpg"
 videoid: aaQsVnu9WTE
+description: "On the doorstep of knowledge: an AI-generated animation by D. B. Waldtier. On the doorstep of knowledge."
+image: https://assets.waldtier.com/images/136vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

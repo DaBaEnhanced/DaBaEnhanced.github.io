@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Medium
 thumbnail: "/images/116vid.jpg"
 videoid: eQPJi_1ckcU
+description: "The Medium: an AI-generated animation by D. B. Waldtier. The Medium."
+image: https://assets.waldtier.com/images/116vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

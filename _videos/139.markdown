@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Avatar
 thumbnail: "/images/139vid.jpg"
 videoid: lCNtXDuVBBs
+description: "The Avatar: an AI-generated animation by D. B. Waldtier. The Avatar."
+image: https://assets.waldtier.com/images/139vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

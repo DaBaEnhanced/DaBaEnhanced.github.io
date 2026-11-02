@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Eden
 thumbnail: "/images/029vid.jpg"
 videoid: NG-sF26njVg
+description: "Eden: an AI-generated animation by D. B. Waldtier. Eden."
+image: https://assets.waldtier.com/images/029vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

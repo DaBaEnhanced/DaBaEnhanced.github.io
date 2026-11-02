@@ -6,6 +6,8 @@ categories: jekyll update
 summary: In Search Of The Lost Temple
 thumbnail: "/images/046vid.jpg"
 videoid: AHcWQxVg0_Q
+description: "In Search Of The Lost Temple: an AI-generated animation by D. B. Waldtier. In Search Of The Lost Temple."
+image: https://assets.waldtier.com/images/046vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

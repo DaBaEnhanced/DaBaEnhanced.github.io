@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Black Sabbath
 thumbnail: "/images/154vid.jpg"
 videoid: kyJ6ZsWQCM0
+description: "The Black Sabbath: an AI-generated animation by D. B. Waldtier. The Black Sabbath."
+image: https://assets.waldtier.com/images/154vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

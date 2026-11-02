@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Fellowship
 thumbnail: "/images/031vid.jpg"
 videoid: Erredx02Qxs
+description: "The Fellowship: an AI-generated animation by D. B. Waldtier. The Fellowship."
+image: https://assets.waldtier.com/images/031vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

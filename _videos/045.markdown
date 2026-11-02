@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Fairies Against The Machines
 thumbnail: "/images/045vid.jpg"
 videoid: XQI3qAjpg-Y
+description: "Fairies Against The Machines: an AI-generated animation by D. B. Waldtier. Fairies Against The Machines."
+image: https://assets.waldtier.com/images/045vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

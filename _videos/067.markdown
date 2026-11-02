@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Procession To Calvary
 thumbnail: "/images/067vid.jpg"
 videoid: _yFExy7OeXQ
+description: "The Procession To Calvary: an AI-generated animation by D. B. Waldtier. The Procession To Calvary."
+image: https://assets.waldtier.com/images/067vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

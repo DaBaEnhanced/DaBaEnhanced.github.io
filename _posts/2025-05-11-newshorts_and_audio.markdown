@@ -2,8 +2,9 @@
 layout: post
 title: "New short stories and audio stuff"
 date: 2025-05-11 23:53:47 +0200
-categories: jekyll update
 excerpt: 031, 032, 033 + audio
+slug: short-stories-31-33-audio
+redirect_from: /jekyll/update/2025/05/11/newshorts_and_audio.html
 ---
 
 I've added 3 new short stories to the [short]({% link short.markdown %}) section.<br>

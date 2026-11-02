@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Wizardry
 thumbnail: "/images/110vid.jpg"
 videoid: 5l1H_lJyGGM
+description: "Wizardry: an AI-generated animation by D. B. Waldtier. Wizardry."
+image: https://assets.waldtier.com/images/110vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

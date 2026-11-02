@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Navigator
 thumbnail: "/images/138vid.jpg"
 videoid: SZDbMC0gojI
+description: "The Navigator: an AI-generated animation by D. B. Waldtier. The Navigator."
+image: https://assets.waldtier.com/images/138vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

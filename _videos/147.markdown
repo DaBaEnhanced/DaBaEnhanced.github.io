@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Steampunk Adventures
 thumbnail: "/images/147vid.jpg"
 videoid: zXx_b_7Atm8
+description: "Steampunk Adventures: an AI-generated animation by D. B. Waldtier. Steampunk Adventures."
+image: https://assets.waldtier.com/images/147vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

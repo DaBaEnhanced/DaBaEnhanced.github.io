@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Motherly Love
 thumbnail: "/images/105vid.jpg"
 videoid: dEY2TYyFd2Y
+description: "Motherly Love: an AI-generated animation by D. B. Waldtier. Motherly Love."
+image: https://assets.waldtier.com/images/105vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

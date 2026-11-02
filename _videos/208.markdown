@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Traveller
 thumbnail: "/images/208vid.jpg"
 videoid: rAT7OQHu8X4
+description: "The Traveller: an AI-generated animation by D. B. Waldtier. The Traveller."
+image: https://assets.waldtier.com/images/208vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

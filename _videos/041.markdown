@@ -6,6 +6,8 @@ categories: jekyll update
 summary: DJing In Space
 thumbnail: "/images/041vid.jpg"
 videoid: DJewisEFx_M
+description: "DJing In Space: an AI-generated animation by D. B. Waldtier. DJing In Space."
+image: https://assets.waldtier.com/images/041vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

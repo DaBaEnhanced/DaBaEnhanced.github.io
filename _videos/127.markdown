@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The house that was
 thumbnail: "/images/127vid.jpg"
 videoid: mRdOOT7IfIQ
+description: "The house that was: an AI-generated animation by D. B. Waldtier. The house that was."
+image: https://assets.waldtier.com/images/127vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

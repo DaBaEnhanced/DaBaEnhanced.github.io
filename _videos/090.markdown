@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Bunny
 thumbnail: "/images/090vid.jpg"
 videoid: RR_TSlXg3Bs
+description: "Bunny: an AI-generated animation by D. B. Waldtier. Bunny."
+image: https://assets.waldtier.com/images/090vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

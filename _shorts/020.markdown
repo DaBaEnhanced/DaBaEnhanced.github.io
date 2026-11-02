@@ -6,6 +6,8 @@ categories: jekyll update
 summary: First contact on Enceladus
 thumbnail_img: "/images/020short.jpg"
 thumbnail: "/videos/020short.mp4"
+description: "Whispers Below the Ice: a science fiction short story by D. B. Waldtier. First contact on Enceladus."
+image: https://assets.waldtier.com/images/020short.jpg
 ---
 
 The deep sea probe Poseidon glided through the inky void beneath Enceladus's ice shell, its external lights barely penetrating the abyssal darkness. Ten kilometers of frozen crust separated the exploration vehicle from the spacecraft Hyperion waiting in orbit above Saturn's pale moon. The robotic submersible's titanium hull occasionally creaked under the immense pressure—sounds that traveled through the comm system as ghostly whispers.<br>

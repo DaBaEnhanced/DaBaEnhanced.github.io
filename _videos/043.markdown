@@ -6,6 +6,8 @@ categories: jekyll update
 summary: 20000 Leagues Under The Sea
 thumbnail: "/images/043vid.jpg"
 videoid: 6yolQ30XWfs
+description: "20000 Leagues Under The Sea: an AI-generated animation by D. B. Waldtier. 20000 Leagues Under The Sea."
+image: https://assets.waldtier.com/images/043vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

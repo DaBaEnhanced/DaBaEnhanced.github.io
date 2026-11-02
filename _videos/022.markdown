@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Return of The Kings
 thumbnail: "/images/022vid.jpg"
 videoid: ipWIEinl9IY
+description: "The Return of The Kings: an AI-generated animation by D. B. Waldtier. The Return of The Kings."
+image: https://assets.waldtier.com/images/022vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

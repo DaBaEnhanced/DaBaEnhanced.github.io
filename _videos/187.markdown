@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Perfect Christmas
 thumbnail: "/images/187vid.jpg"
 videoid: QoygksS39W8
+description: "Perfect Christmas: an AI-generated animation by D. B. Waldtier. Perfect Christmas."
+image: https://assets.waldtier.com/images/187vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

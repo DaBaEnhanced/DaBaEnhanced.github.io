@@ -2,9 +2,12 @@
 layout: post
 title: "Vertebra released!"
 date: 2026-10-25 12:30:00 +0100
-categories: jekyll update
 excerpt: Vertebra - a shmup roguelite of bone and fire
 thumbnail: /images/vertebra.jpg
+slug: vertebra-released
+description: "Vertebra, a free side-scrolling shoot 'em up roguelite playable in your browser, grown out of the Saint Dragon port."
+image: https://assets.waldtier.com/images/vertebra.jpg
+redirect_from: /jekyll/update/2026/10/25/newstuff15.html
 ---
 {% assign vtb_video = "QpiFohWyQ80" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
 

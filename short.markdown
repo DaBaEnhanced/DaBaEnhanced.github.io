@@ -2,6 +2,8 @@
 layout: page
 title: "Short Stories"
 permalink: /short
+description: "Free science fiction short stories by D. B. Waldtier: AI, first contact, mind uploading and posthuman futures, many with audiobook versions."
+image: https://assets.waldtier.com/videos/shorts.jpg
 ---
 
 <style>

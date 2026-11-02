@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Land Of Oz
 thumbnail: "/images/058vid.jpg"
 videoid: 07sFnkJ-mxQ
+description: "Land Of Oz: an AI-generated animation by D. B. Waldtier. Land Of Oz."
+image: https://assets.waldtier.com/images/058vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

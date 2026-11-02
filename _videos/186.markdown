@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Arcanum
 thumbnail: "/images/186vid.jpg"
 videoid: UOCtaCDqd_I
+description: "Arcanum: an AI-generated animation by D. B. Waldtier. Arcanum."
+image: https://assets.waldtier.com/images/186vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

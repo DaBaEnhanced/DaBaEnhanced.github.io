@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Princess
 thumbnail: "/images/112vid.jpg"
 videoid: O7eMlGm0Fmk
+description: "Princess: an AI-generated animation by D. B. Waldtier. Princess."
+image: https://assets.waldtier.com/images/112vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

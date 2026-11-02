@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A trippy video about astronauts
 thumbnail: "/images/014vid.jpg"
 videoid: pg_QLmrpKk8
+description: "Astronauts On Acid: an AI-generated animation by D. B. Waldtier. A trippy video about astronauts."
+image: https://assets.waldtier.com/images/014vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

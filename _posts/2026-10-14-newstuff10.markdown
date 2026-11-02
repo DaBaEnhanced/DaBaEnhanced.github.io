@@ -2,9 +2,12 @@
 layout: post
 title: "Redshift Vows now available on Amazon!"
 date: 2026-10-14 23:53:47 +0200
-categories: jekyll update
 excerpt: Kindle, Paperback and Hardcover
 thumbnail: /videos/ce2.jpg
+slug: redshift-vows-on-amazon
+description: "Redshift Vows, book two of the Consent Engines hard science fiction series, is out on Amazon in Kindle, paperback and hardcover."
+image: https://assets.waldtier.com/videos/ce2.jpg
+redirect_from: /jekyll/update/2026/10/14/newstuff10.html
 ---
 
 **Redshift Vows**, the second book in the **Consent Engines** series, is now available on Amazon in Kindle, paperback, and hardcover editions.

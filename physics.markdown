@@ -4,6 +4,7 @@ subtitle: "A speculative framework with designated falsifiable branches, for eme
 version: "0.9"
 date: "2026-09-17"
 status: "Research programme, not an established physical theory"
+description: "The Recurrent Causal Code (RCC): a speculative framework for emergent spacetime, matter, gravity and quantum measurement, with falsifiable branches."
 ---
 
 # The Recurrent Causal Code

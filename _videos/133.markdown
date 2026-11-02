@@ -6,6 +6,8 @@ categories: jekyll update
 summary: When fairies go to war
 thumbnail: "/images/133vid.jpg"
 videoid: UsOgkN_mnyQ
+description: "When fairies go to war: an AI-generated animation by D. B. Waldtier. When fairies go to war."
+image: https://assets.waldtier.com/images/133vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

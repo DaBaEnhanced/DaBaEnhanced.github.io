@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A depiction
 thumbnail: "/images/197vid.jpg"
 videoid: CCmEkxM64UM
+description: "The 7 Deadly Sins: Greed: an AI-generated animation by D. B. Waldtier. A depiction."
+image: https://assets.waldtier.com/images/197vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

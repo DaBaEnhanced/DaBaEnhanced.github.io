@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Byzantine
 thumbnail: "/images/152vid.jpg"
 videoid: n0MLuF5gT3A
+description: "The Byzantine: an AI-generated animation by D. B. Waldtier. The Byzantine."
+image: https://assets.waldtier.com/images/152vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

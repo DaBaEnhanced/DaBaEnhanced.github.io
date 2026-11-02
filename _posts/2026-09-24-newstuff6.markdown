@@ -2,9 +2,12 @@
 layout: post
 title: "Megapop is finally here!"
 date: 2026-09-22 23:53:47 +0200
-categories: jekyll update
 excerpt: My latest game, beta version
 thumbnail: /images/megapop.jpg
+slug: project-megapop-released
+description: "PROJECT MEGAPOP: a free retro god game in your browser. Guide a civilization from primitive settlements to a dangerous technological future."
+image: https://assets.waldtier.com/images/megapop.jpg
+redirect_from: /jekyll/update/2026/09/22/newstuff6.html
 ---
 
 **PROJECT MEGAPOP** is a retro-inspired god game where you guide a semi-autonomous civilization from primitive settlements to a dangerous technological future. Shape the land, influence your people, uncover local resources, push research forward, build industry, wage wars, and unleash divine powers as the world evolves around you. Every mountain moved, city founded, resource discovered, and war fought can change the course of history. And by the time your followers reach the nuclear age, they may have become powerful enough to survive without you... or destroy everything you helped them build.

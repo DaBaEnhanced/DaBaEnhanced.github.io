@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Renaissance
 thumbnail: "/images/204vid.jpg"
 videoid: k-GmgG1TD2E
+description: "Renaissance: an AI-generated animation by D. B. Waldtier. Renaissance."
+image: https://assets.waldtier.com/images/204vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

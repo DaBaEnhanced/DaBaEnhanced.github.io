@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Mad Maxine
 thumbnail: "/images/166vid.jpg"
 videoid: 6PJJNHYaUhE
+description: "Mad Maxine: an AI-generated animation by D. B. Waldtier. Mad Maxine."
+image: https://assets.waldtier.com/images/166vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

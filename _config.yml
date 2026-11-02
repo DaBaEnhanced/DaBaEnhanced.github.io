@@ -24,9 +24,23 @@ subtitle: >- # this means to ignore newlines until "baseurl:"
   A collection of random stuff I wrote, and some AI-generated content.
 #email: dabaenhanced@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Books, poems, games and old AI videos.
+  Hard science fiction novels (the Consent Engines series) and free browser
+  games: original indie games and Amiga classics rebuilt to play online.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://waldtier.com" # the base hostname & protocol for your site
+
+# SEO defaults (used by jekyll-seo-tag)
+lang: en_US
+image: https://assets.waldtier.com/images/new_banner.jpg
+twitter:
+  card: summary_large_image
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: /news/:title/
+      author: D. B. Waldtier
 
 # Base for every asset (image/video/audio/zip/pdf/game bundle) referenced
 # across the site. Locally this stays "/assets" (served from this repo's
@@ -54,6 +68,9 @@ kramdown:
 #remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-seo-tag
 #  - jekyll-remote-theme
 
 collections:
@@ -78,6 +95,11 @@ header_pages:
   - physics.markdown
 
 exclude:
+  - tmp
+  - pwd.txt.txt
+  - "*.bak"
+  - "*.old"
+  - assets/itch
   - assets/videos
   - assets/images
   - assets/audio

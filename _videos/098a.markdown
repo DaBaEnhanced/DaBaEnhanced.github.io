@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Cloud Dragons
 thumbnail: "/images/098Avid.jpg"
 videoid: FHJoqsPXv-8
+description: "Cloud Dragons: an AI-generated animation by D. B. Waldtier. Cloud Dragons."
+image: https://assets.waldtier.com/images/098Avid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

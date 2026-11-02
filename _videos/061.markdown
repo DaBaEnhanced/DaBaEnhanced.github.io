@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Tigerman
 thumbnail: "/images/061vid.jpg"
 videoid: u0M1-Q8lMSY
+description: "Tigerman: an AI-generated animation by D. B. Waldtier. Tigerman."
+image: https://assets.waldtier.com/images/061vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

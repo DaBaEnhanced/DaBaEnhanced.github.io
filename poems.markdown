@@ -2,6 +2,8 @@
 layout: page
 title: "Poetry"
 permalink: /poems
+description: "Poems by D. B. Waldtier, written in English and Italian years before generative AI. 100% human-made."
+image: https://assets.waldtier.com/images/poetry.jpg
 ---
 
 <style>

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Dreamscape
 thumbnail: "/images/182vid.jpg"
 videoid: zP7pF4wIo5M
+description: "Dreamscape: an AI-generated animation by D. B. Waldtier. Dreamscape."
+image: https://assets.waldtier.com/images/182vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

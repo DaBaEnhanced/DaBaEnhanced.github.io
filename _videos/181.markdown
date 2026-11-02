@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Alp's Secrets
 thumbnail: "/images/181vid.jpg"
 videoid: elVv4cmqzmM
+description: "The Alp's Secrets: an AI-generated animation by D. B. Waldtier. The Alp's Secrets."
+image: https://assets.waldtier.com/images/181vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

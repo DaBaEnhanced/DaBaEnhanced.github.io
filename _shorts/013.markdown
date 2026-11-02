@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Another take on multi-dimensionality
 thumbnail_img: "/images/013short.jpg"
 thumbnail: "/videos/013short.mp4"
+description: "THE QUANTUM PLUNGE: a science fiction short story by D. B. Waldtier. Another take on multi-dimensionality."
+image: https://assets.waldtier.com/images/013short.jpg
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

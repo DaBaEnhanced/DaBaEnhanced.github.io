@@ -2,9 +2,12 @@
 layout: post
 title: "The Wrong Laws: a physics puzzle game (proof of concept)"
 date: 2026-10-18 23:50:00 +0200
-categories: jekyll update
 excerpt: A first-person puzzle game about borrowed physics, playable in your browser
 thumbnail: /images/thewronglaws.jpg
+slug: the-wrong-laws-physics-puzzle
+description: "The Wrong Laws: a free first-person voxel puzzle game. Carry tools that bend the local laws of physics and use the consequences to escape."
+image: https://assets.waldtier.com/images/thewronglaws.jpg
+redirect_from: /jekyll/update/2026/10/18/newstuff14.html
 ---
 {% assign twl_video = "" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
 

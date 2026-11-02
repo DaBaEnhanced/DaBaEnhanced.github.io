@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Can't stop a comedian
 thumbnail_img: "/images/001short.jpg"
 thumbnail: "/videos/001short.mp4"
+description: "The Last Incorrect: a science fiction short story by D. B. Waldtier. Can't stop a comedian."
+image: https://assets.waldtier.com/images/001short.jpg
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

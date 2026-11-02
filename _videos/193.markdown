@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A depiction
 thumbnail: "/images/193vid.jpg"
 videoid: 3vK95G-rQv4
+description: "The 7 Deadly Sins: Envy: an AI-generated animation by D. B. Waldtier. A depiction."
+image: https://assets.waldtier.com/images/193vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Back Home
 thumbnail: "/images/205vid.jpg"
 videoid: OaJl2KKmMFM
+description: "Back Home: an AI-generated animation by D. B. Waldtier. Back Home."
+image: https://assets.waldtier.com/images/205vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

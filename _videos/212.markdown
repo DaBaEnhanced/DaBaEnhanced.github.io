@@ -6,6 +6,8 @@ categories: jekyll update
 summary: I, The Robot
 thumbnail: "/images/212vid.jpg"
 videoid: qkw7ijbm4ZE
+description: "I, The Robot: an AI-generated animation by D. B. Waldtier. I, The Robot."
+image: https://assets.waldtier.com/images/212vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: When hyper capitalism meet with blockchains
 thumbnail_img: "/images/031short.jpg"
 thumbnail: "/videos/031short.mp4"
+description: "The Worth Chain: a science fiction short story by D. B. Waldtier. When hyper capitalism meet with blockchains."
+image: https://assets.waldtier.com/images/031short.jpg
 ---
 
 In New Ledger City, every breath carried its own timestamp. Lara Nakamura watched her NetWorth score blink in the bottom corner of her vision: 483.279 LifeCoins, steadily ticking down as she processed oxygen.<br>

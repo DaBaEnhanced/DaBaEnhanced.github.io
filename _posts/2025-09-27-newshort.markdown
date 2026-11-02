@@ -2,9 +2,11 @@
 layout: post
 title: "New short story and a new book!"
 date: 2025-09-27 23:53:47 +0200
-categories: jekyll update
 excerpt: 037 - Digital Genesis
 thumbnail: /videos/ark01.jpg
+slug: short-story-37-and-new-book
+image: https://assets.waldtier.com/videos/ark01.jpg
+redirect_from: /jekyll/update/2025/09/27/newshort.html
 ---
 
 I've added a new short story to the [short]({% link short.markdown %}) section.

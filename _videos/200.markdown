@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Civilization
 thumbnail: "/images/200vid.jpg"
 videoid: W2A41AGWJLk
+description: "Civilization: an AI-generated animation by D. B. Waldtier. Civilization."
+image: https://assets.waldtier.com/images/200vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

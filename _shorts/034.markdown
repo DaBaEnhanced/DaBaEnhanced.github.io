@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Some gulfs cannot be bridged
 thumbnail_img: "/images/034short.jpg"
 thumbnail: "/videos/034short.mp4"
+description: "Shadows on Titan: a science fiction short story by D. B. Waldtier. Some gulfs cannot be bridged."
+image: https://assets.waldtier.com/images/034short.jpg
 ---
 
 ## I. Arrival

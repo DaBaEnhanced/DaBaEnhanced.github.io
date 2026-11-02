@@ -6,6 +6,8 @@ categories: jekyll update
 summary: What if hell is real and we aren't?
 thumbnail_img: "/images/014short.jpg"
 thumbnail: "/videos/014short.mp4"
+description: "The Exit Point: a science fiction short story by D. B. Waldtier. What if hell is real and we aren't?"
+image: https://assets.waldtier.com/images/014short.jpg
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

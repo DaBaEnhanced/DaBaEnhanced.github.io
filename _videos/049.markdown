@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Grow
 thumbnail: "/images/049vid.jpg"
 videoid: 2doI_dnUggA
+description: "Grow: an AI-generated animation by D. B. Waldtier. Grow."
+image: https://assets.waldtier.com/images/049vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

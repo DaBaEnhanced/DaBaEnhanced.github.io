@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Stone Keep
 thumbnail: "/images/072vid.jpg"
 videoid: ZQczEas0Od8
+description: "Stone Keep: an AI-generated animation by D. B. Waldtier. Stone Keep."
+image: https://assets.waldtier.com/images/072vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

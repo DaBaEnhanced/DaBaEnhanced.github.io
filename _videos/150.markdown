@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Invasion
 thumbnail: "/images/150vid.jpg"
 videoid: jNbi_mG7Y4M
+description: "The Invasion: an AI-generated animation by D. B. Waldtier. The Invasion."
+image: https://assets.waldtier.com/images/150vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

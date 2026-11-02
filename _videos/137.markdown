@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Alps in Technicolor
 thumbnail: "/images/137vid.jpg"
 videoid: deQddgmJdTM
+description: "The Alps in Technicolor: an AI-generated animation by D. B. Waldtier. The Alps in Technicolor."
+image: https://assets.waldtier.com/images/137vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A trip through alien space
 thumbnail: "/images/002vid.jpg"
 videoid: SKV9ZLsUUjw
+description: "Alien World: an AI-generated animation by D. B. Waldtier. A trip through alien space."
+image: https://assets.waldtier.com/images/002vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

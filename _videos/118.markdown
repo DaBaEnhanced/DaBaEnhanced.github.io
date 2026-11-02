@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Glued into another universe
 thumbnail: "/images/118vid.jpg"
 videoid: rkJOpF5GnpU
+description: "Glued into another universe: an AI-generated animation by D. B. Waldtier. Glued into another universe."
+image: https://assets.waldtier.com/images/118vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The World Below
 thumbnail: "/images/036vid.jpg"
 videoid: jgDM8Acutdc
+description: "The World Below: an AI-generated animation by D. B. Waldtier. The World Below."
+image: https://assets.waldtier.com/images/036vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

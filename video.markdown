@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Videos"
+description: "AI-generated animations by D. B. Waldtier from the early diffusion-model era, with original soundtracks."
 ---
 
 <style>

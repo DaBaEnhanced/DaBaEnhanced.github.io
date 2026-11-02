@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Rise of the Dragons
 thumbnail: "/images/096vid.jpg"
 videoid: YdnW8Q7KNnE
+description: "Rise of the Dragons: an AI-generated animation by D. B. Waldtier. Rise of the Dragons."
+image: https://assets.waldtier.com/images/096vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

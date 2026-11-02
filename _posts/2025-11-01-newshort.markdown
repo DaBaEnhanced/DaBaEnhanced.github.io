@@ -2,9 +2,11 @@
 layout: post
 title: "New book!"
 date: 2025-11-01 23:53:47 +0200
-categories: jekyll update
 excerpt: Songs on Rocks - The Consent Engines Book One
 thumbnail: /videos/ce1.jpg
+slug: consent-engines-first-book
+image: https://assets.waldtier.com/videos/ce1.jpg
+redirect_from: /jekyll/update/2025/11/01/newshort.html
 ---
 
 I've added a new book to the [book]({% link books.markdown %}) section.

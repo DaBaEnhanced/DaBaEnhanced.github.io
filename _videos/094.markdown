@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Descent
 thumbnail: "/images/094vid.jpg"
 videoid: m-RuSB2h8Cw
+description: "The Descent: an AI-generated animation by D. B. Waldtier. The Descent."
+image: https://assets.waldtier.com/images/094vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

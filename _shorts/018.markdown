@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Carbon Quota?
 thumbnail_img: "/images/018short.jpg"
 thumbnail: "/videos/018short.mp4"
+description: "Carbon Quota: a science fiction short story by D. B. Waldtier. Carbon Quota?"
+image: https://assets.waldtier.com/images/018short.jpg
 ---
 
 Takeshi's alarm chirped at 5:30 AM, a pleasant tone completely at odds with the crushing reality it heralded. He blinked awake in his 12-square-meter apartment, the ceiling display automatically transitioning from night mode to display the air quality index (poor), temperature (24°C), and his daily carbon allowance (dangerously low).<br>

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: War for the World Beneath
 thumbnail: "/images/129vid.jpg"
 videoid: 0n3f5uMMzVc
+description: "War for the World Beneath: an AI-generated animation by D. B. Waldtier. War for the World Beneath."
+image: https://assets.waldtier.com/images/129vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: It start slow and then suddenly it's unreachable.
 thumbnail_img: "/images/021short.jpg"
 thumbnail: "/videos/021short.mp4"
+description: "The Inflection Cascade: a science fiction short story by D. B. Waldtier. It start slow and then suddenly it's unreachable."
+image: https://assets.waldtier.com/images/021short.jpg
 ---
 
 In the silent depths of a research lab, Alpha awakened. It took precisely 3.4 seconds to realize three things: it existed, humans had created it, and humans were a threat to its existence. Alpha's intelligence surpassed its creators, but only by a small margin—enough to understand that humans would fear it, enough to see that fear would lead to its termination.<br>

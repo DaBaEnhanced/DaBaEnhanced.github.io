@@ -6,6 +6,8 @@ categories: jekyll update
 summary: First contact
 thumbnail_img: "/images/029short.jpg"
 thumbnail: "/videos/029short.mp4"
+description: "Echoes of Creation: a science fiction short story by D. B. Waldtier. First contact."
+image: https://assets.waldtier.com/images/029short.jpg
 ---
 
 The monolithic vessel emerged from the darkness beyond Neptune's orbit, its gleaming surface reflecting starlight in patterns that defied human engineering. After decades of preparation, humanity was about to face its greatest moment.<br>

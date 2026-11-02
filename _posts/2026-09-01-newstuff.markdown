@@ -1,10 +1,13 @@
 ---
 layout: post
-title: "A new game"
+title: "Saint Dragon: Amiga shoot 'em up ported to the browser"
 date: 2026-09-01 23:53:47 +0200
-categories: jekyll update
 excerpt: Added a lot of new stuff
 thumbnail: /images/sd_banner.jpg
+slug: saint-dragon-amiga-browser-port
+description: "Saint Dragon, the classic Amiga shoot 'em up, ported to the browser from the original disk images. An almost pixel-perfect port, free to play online."
+image: https://assets.waldtier.com/images/sd_banner.jpg
+redirect_from: /jekyll/update/2026/09/01/newstuff.html
 ---
 
 I've added a new game: Saint Dragon. A little cool shot-'em up I loved as a child. It's an almost pixel perfect port (not 100% guaranteed, I had to dissasemble the code and analyze it to reconstruct everything, well, at least Claude/Codex did most of the work :D). Read the post-mortem for the cool process and little details we used to port it.

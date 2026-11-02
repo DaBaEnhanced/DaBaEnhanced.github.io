@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Necromancer
 thumbnail: "/images/159vid.jpg"
 videoid: J1wvLqDSIMg
+description: "The Necromancer: an AI-generated animation by D. B. Waldtier. The Necromancer."
+image: https://assets.waldtier.com/images/159vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

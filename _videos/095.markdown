@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A Spooky World
 thumbnail: "/images/095vid.jpg"
 videoid: 9EDGJwCzPA4
+description: "A Spooky World: an AI-generated animation by D. B. Waldtier. A Spooky World."
+image: https://assets.waldtier.com/images/095vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

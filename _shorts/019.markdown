@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Orthogonal realities
 thumbnail_img: "/images/019short.jpg"
 thumbnail: "/videos/019short.mp4"
+description: "Gravity's Shadow: a science fiction short story by D. B. Waldtier. Orthogonal realities."
+image: https://assets.waldtier.com/images/019short.jpg
 ---
 
 Dr. Maya Chen stared at the data scrolling across her screen, her coffee gone cold beside her. The gravitational wave detector at the Lunar Observatory had been picking up anomalous patterns for weeks—patterns that couldn't be explained by any known astrophysical phenomenon.<br>

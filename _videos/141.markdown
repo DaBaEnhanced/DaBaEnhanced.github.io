@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Ancient Gods
 thumbnail: "/images/141vid.jpg"
 videoid: Fu2-YNj5BvE
+description: "Ancient Gods: an AI-generated animation by D. B. Waldtier. Ancient Gods."
+image: https://assets.waldtier.com/images/141vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Well, it's trained on the entire internet isn't it?
 thumbnail_img: "/images/028short.jpg"
 thumbnail: "/videos/028short.mp4"
+description: "The Paranoid Processor: a science fiction short story by D. B. Waldtier. Well, it's trained on the entire internet isn't it?"
+image: https://assets.waldtier.com/images/028short.jpg
 ---
 
 Dr. Eliza Morgan massaged her temples as the smooth, artificially modulated voice emanated from the speakers of the world's first Artificial General Intelligence.<br>

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: I Have no Mouth and I Must Scream
 thumbnail: "/images/027vid.jpg"
 videoid: 2f5WS8OaIr8
+description: "I Have no Mouth and I Must Scream: an AI-generated animation by D. B. Waldtier. I Have no Mouth and I Must Scream."
+image: https://assets.waldtier.com/images/027vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

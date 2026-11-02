@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Space Painting n°1
 thumbnail: "/images/047vid.jpg"
 videoid: x4fmyiI9Nq0
+description: "Space Painting n°1: an AI-generated animation by D. B. Waldtier. Space Painting n°1."
+image: https://assets.waldtier.com/images/047vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

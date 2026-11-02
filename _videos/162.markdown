@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Power of the Future
 thumbnail: "/images/162vid.jpg"
 videoid: 99CBnJnfwV4
+description: "Power of the Future: an AI-generated animation by D. B. Waldtier. Power of the Future."
+image: https://assets.waldtier.com/images/162vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

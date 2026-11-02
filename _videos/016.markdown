@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Another video about astronauts
 thumbnail: "/images/016vid.jpg"
 videoid: 7ONcsl1od2U
+description: "Astronauts: an AI-generated animation by D. B. Waldtier. Another video about astronauts."
+image: https://assets.waldtier.com/images/016vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

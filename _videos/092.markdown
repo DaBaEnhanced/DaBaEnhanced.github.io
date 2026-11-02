@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Gate
 thumbnail: "/images/092vid.jpg"
 videoid: pqnXwJ-nik8
+description: "The Gate: an AI-generated animation by D. B. Waldtier. The Gate."
+image: https://assets.waldtier.com/images/092vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Into The Wild
 thumbnail: "/images/054vid.jpg"
 videoid: MzeBasThJPI
+description: "Into The Wild: an AI-generated animation by D. B. Waldtier. Into The Wild."
+image: https://assets.waldtier.com/images/054vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

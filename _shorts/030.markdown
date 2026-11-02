@@ -6,6 +6,8 @@ categories: jekyll update
 summary: One last game
 thumbnail_img: "/images/030short.jpg"
 thumbnail: "/videos/030short.mp4"
+description: "The Green Hills of Elsewhere: a science fiction short story by D. B. Waldtier. One last game."
+image: https://assets.waldtier.com/images/030short.jpg
 ---
 
 The morning light filtered through lace curtains, casting dappled shadows across Thomas's bedroom floor. He stretched, feeling the pleasant ache of yesterday's labor in his muscles. Spring had arrived in Meadowbrook, and with it came the yearly ritual of preparing the soil for planting.

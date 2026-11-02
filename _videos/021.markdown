@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Skyline
 thumbnail: "/images/021vid.jpg"
 videoid: n2aR3rZhluc
+description: "Skyline: an AI-generated animation by D. B. Waldtier. Skyline."
+image: https://assets.waldtier.com/images/021vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

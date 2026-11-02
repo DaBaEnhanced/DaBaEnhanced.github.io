@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+image: https://assets.waldtier.com/images/new_banner.jpg
 ---
 
 <style>

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A Nightmare On Sesame Street
 thumbnail: "/images/156vid.jpg"
 videoid: BTxKQOsEjA0
+description: "A Nightmare On Sesame Street: an AI-generated animation by D. B. Waldtier. A Nightmare On Sesame Street."
+image: https://assets.waldtier.com/images/156vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

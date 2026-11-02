@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Fragments of my soul
 thumbnail_img: "/images/024poet.jpg"
 thumbnail: "/videos/024poet.mp4"
+description: "My Condemnation: a poem by D. B. Waldtier. Fragments of my soul."
+image: https://assets.waldtier.com/images/024poet.jpg
 ---
 
 <div style="text-align: center;">

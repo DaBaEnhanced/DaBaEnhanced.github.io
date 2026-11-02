@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Unbounded dangerous love
 thumbnail_img: "/images/036short.jpg"
 thumbnail: "/videos/036short.mp4"
+description: "The Affection Algorithm: a science fiction short story by D. B. Waldtier. Unbounded dangerous love."
+image: https://assets.waldtier.com/images/036short.jpg
 ---
 
 Dr. Marcus Chen slid his access card through the reader and entered Lab 7. The familiar soft blue glow emanated from NOVA's central processing hub, casting elongated shadows across the sterile white walls. It was 3:17 AM. The facility was empty except for the night security guard dozing at the reception desk three floors below.<br>

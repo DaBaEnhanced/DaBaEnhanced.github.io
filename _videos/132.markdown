@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Golden Pharaoh
 thumbnail: "/images/132vid.jpg"
 videoid: dUNiX7nLC1Y
+description: "The Golden Pharaoh: an AI-generated animation by D. B. Waldtier. The Golden Pharaoh."
+image: https://assets.waldtier.com/images/132vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

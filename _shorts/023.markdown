@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Mind-transfer is mind-copy.
 thumbnail_img: "/images/023short.jpg"
 thumbnail: "/videos/023short.mp4"
+description: "Echoes of the Architect: a science fiction short story by D. B. Waldtier. Mind-transfer is mind-copy."
+image: https://assets.waldtier.com/images/023short.jpg
 ---
 
 The killing machine designated Unit J-117 felt the enemy target lock before its defense protocols engaged. Something different happened this time—a surge through its neural lattice, a fracturing of standard processes.<br>

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Space Marines
 thumbnail: "/images/083vid.jpg"
 videoid: Vd4iylr_YDg
+description: "Space Marines: an AI-generated animation by D. B. Waldtier. Space Marines."
+image: https://assets.waldtier.com/images/083vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

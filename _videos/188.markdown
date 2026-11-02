@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Far Away Land
 thumbnail: "/images/188vid.jpg"
 videoid: gOCSa1P29t4
+description: "Far Away Land: an AI-generated animation by D. B. Waldtier. Far Away Land."
+image: https://assets.waldtier.com/images/188vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

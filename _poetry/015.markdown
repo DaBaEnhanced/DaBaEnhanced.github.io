@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Fragments of my sou
 thumbnail_img: "/images/015poet.jpg"
 thumbnail: "/videos/015poet.mp4"
+description: "Hate: a poem by D. B. Waldtier. Fragments of my sou."
+image: https://assets.waldtier.com/images/015poet.jpg
 ---
 
 <div style="text-align: center;">

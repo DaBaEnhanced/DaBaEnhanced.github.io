@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Global Warming
 thumbnail: "/images/086vid.jpg"
 videoid: vWFO1wN5EY4
+description: "Global Warming: an AI-generated animation by D. B. Waldtier. Global Warming."
+image: https://assets.waldtier.com/images/086vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The King
 thumbnail: "/images/114vid.jpg"
 videoid: Vwwv_qVmJwA
+description: "The King: an AI-generated animation by D. B. Waldtier. The King."
+image: https://assets.waldtier.com/images/114vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

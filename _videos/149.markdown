@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Party
 thumbnail: "/images/149vid.jpg"
 videoid: vpk7NNPsp70
+description: "The Party: an AI-generated animation by D. B. Waldtier. The Party."
+image: https://assets.waldtier.com/images/149vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

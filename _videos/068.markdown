@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Magical Garden
 thumbnail: "/images/068vid.jpg"
 videoid: SH8hbCTd1s4
+description: "Magical Garden: an AI-generated animation by D. B. Waldtier. Magical Garden."
+image: https://assets.waldtier.com/images/068vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Life's Road
 thumbnail: "/images/119vid.jpg"
 videoid: Ia16TZRMDxY
+description: "Life's Road: an AI-generated animation by D. B. Waldtier. Life's Road."
+image: https://assets.waldtier.com/images/119vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

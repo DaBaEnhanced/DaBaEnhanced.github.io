@@ -1,10 +1,13 @@
 ---
 layout: post
-title: "Menace"
+title: "Menace: DMA Design's Amiga shooter in the browser"
 date: 2026-09-05 23:53:47 +0200
-categories: jekyll update
 excerpt: New Shot-'em up! 1988's Menace from DMA Design
 thumbnail: /menace/menace.jpg
+slug: menace-amiga-browser-port
+description: "Menace (DMA Design, 1988), the first game by the studio that later made Lemmings, rebuilt for the browser and free to play online."
+image: https://assets.waldtier.com/menace/menace.jpg
+redirect_from: /jekyll/update/2026/09/05/newstuff4.html
 ---
 
 Menace is two years earlier than Saint Dragon: DMA Design, published by

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A depiction
 thumbnail: "/images/195vid.jpg"
 videoid: IIjBLwKj8kg
+description: "The 7 Deadly Sins: Lust: an AI-generated animation by D. B. Waldtier. A depiction."
+image: https://assets.waldtier.com/images/195vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

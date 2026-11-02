@@ -6,6 +6,8 @@ categories: jekyll update
 summary: In a galaxy far away
 thumbnail: "/images/199vid.jpg"
 videoid: cnQCpKEpO44
+description: "In a galaxy far away: an AI-generated animation by D. B. Waldtier. In a galaxy far away."
+image: https://assets.waldtier.com/images/199vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

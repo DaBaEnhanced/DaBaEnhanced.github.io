@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Space Cats
 thumbnail: "/images/019vid.jpg"
 videoid: geLVxzYmDU8
+description: "Space Cats: an AI-generated animation by D. B. Waldtier. Space Cats."
+image: https://assets.waldtier.com/images/019vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

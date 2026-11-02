@@ -6,6 +6,8 @@ categories: jekyll update
 summary: War Pigs
 thumbnail: "/images/037vid.jpg"
 videoid: cuCyZUIgecU
+description: "War Pigs: an AI-generated animation by D. B. Waldtier. War Pigs."
+image: https://assets.waldtier.com/images/037vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

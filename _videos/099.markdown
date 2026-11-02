@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Precog
 thumbnail: "/images/099vid.jpg"
 videoid: drWGDxNBBgo
+description: "The Precog: an AI-generated animation by D. B. Waldtier. The Precog."
+image: https://assets.waldtier.com/images/099vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

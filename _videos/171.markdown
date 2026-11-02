@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Dream of a Lifetime
 thumbnail: "/images/171vid.jpg"
 videoid: dOAKdDqmgaY
+description: "The Dream of a Lifetime: an AI-generated animation by D. B. Waldtier. The Dream of a Lifetime."
+image: https://assets.waldtier.com/images/171vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

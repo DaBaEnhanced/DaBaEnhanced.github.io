@@ -2,9 +2,12 @@
 layout: post
 title: "The Mosaic Drift and The Revocation War now available on Amazon!"
 date: 2026-10-17 23:53:48 +0200
-categories: jekyll update
 excerpt: Kindle, Paperback and Hardcover
 thumbnail: /videos/ce3.jpg
+slug: mosaic-drift-revocation-war-on-amazon
+description: "The Mosaic Drift and The Revocation War, books three and four of the Consent Engines hard science fiction series, are now on Amazon."
+image: https://assets.waldtier.com/videos/ce3.jpg
+redirect_from: /jekyll/update/2026/10/17/newstuff12.html
 ---
 
 The **third** and  **fourth** books in the **Consent Engines** series are now available on Amazon!

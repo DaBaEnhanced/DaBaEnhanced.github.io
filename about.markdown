@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+description: "About D. B. Waldtier: hard science fiction author, AI researcher and indie developer rebuilding Amiga classics for the browser."
 ---
 
 <style>

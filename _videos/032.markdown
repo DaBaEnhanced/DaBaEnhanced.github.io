@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Jungle Book
 thumbnail: "/images/032vid.jpg"
 videoid: gEys9r6zR4s
+description: "The Jungle Book: an AI-generated animation by D. B. Waldtier. The Jungle Book."
+image: https://assets.waldtier.com/images/032vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

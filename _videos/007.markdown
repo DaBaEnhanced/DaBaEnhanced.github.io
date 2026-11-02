@@ -6,6 +6,8 @@ categories: jekyll update
 summary: From The Universe To The Subatomic
 thumbnail: "/images/007vid.jpg"
 videoid: 497vWepEjPs
+description: "From The Universe To The Subatomic: an AI-generated animation by D. B. Waldtier. From The Universe To The Subatomic."
+image: https://assets.waldtier.com/images/007vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: a cyberpunk take
 thumbnail_img: "/images/033short.jpg"
 thumbnail: "/videos/033short.mp4"
+description: "The Vampire: a science fiction short story by D. B. Waldtier. A cyberpunk take."
+image: https://assets.waldtier.com/images/033short.jpg
 ---
 
 Elias Kane leaned against the railing of the hospital's emergency stairwell, eyes closed, breathing controlled. The hunt was on again. His specialized gear hummed silently against his spine, ready to capture what he needed.<br>

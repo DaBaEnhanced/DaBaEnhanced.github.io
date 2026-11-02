@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Warrior
 thumbnail: "/images/081vid.jpg"
 videoid: CWUCpd03WHE
+description: "The Warrior: an AI-generated animation by D. B. Waldtier. The Warrior."
+image: https://assets.waldtier.com/images/081vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

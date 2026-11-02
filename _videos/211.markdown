@@ -6,6 +6,8 @@ categories: jekyll update
 summary: UFO Wars
 thumbnail: "/images/211vid.jpg"
 videoid: e7ht7SqX8PQ
+description: "UFO Wars: an AI-generated animation by D. B. Waldtier. UFO Wars."
+image: https://assets.waldtier.com/images/211vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Beyond Flesh and Metal
 thumbnail_img: "/images/035short.jpg"
 thumbnail: "/videos/035short.mp4"
+description: "Falling Star: a science fiction short story by D. B. Waldtier. Beyond Flesh and Metal."
+image: https://assets.waldtier.com/images/035short.jpg
 ---
 
 Kai moved through the shadows of NovaTech's R&D facility like a ghost, his specialized carbon-fiber suit absorbing the soft blue emergency lights that lined the corridors. Fifteen years of thieving had honed his skills to perfection—silent footfalls, measured breathing, and an intimate knowledge of security systems that could be worth millions to the right buyer. In a world where mega-corporations had more power than governments, people like Kai made their living in the spaces between legality and necessity.<br>

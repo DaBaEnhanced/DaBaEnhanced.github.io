@@ -2,8 +2,9 @@
 layout: post
 title: "Poetry"
 date: 2025-04-05 23:53:47 +0200
-categories: jekyll update
 excerpt: The lad fancy himself a poet?
+slug: poetry-section
+redirect_from: /jekyll/update/2025/04/05/shorts.html
 ---
 
 I've added a [poetry]({% link poems.markdown %}) section. It contains old poems I wrote ages ago—back when nobody cared about neural networks, and SVMs and random forests were all the rage.

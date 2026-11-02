@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Last Tomb
 thumbnail: "/images/025vid.jpg"
 videoid: ZFby1Wmifxs
+description: "The Last Tomb: an AI-generated animation by D. B. Waldtier. The Last Tomb."
+image: https://assets.waldtier.com/images/025vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

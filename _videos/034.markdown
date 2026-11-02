@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Surreal West
 thumbnail: "/images/034vid.jpg"
 videoid: KWwA2_-hamw
+description: "Surreal West: an AI-generated animation by D. B. Waldtier. Surreal West."
+image: https://assets.waldtier.com/images/034vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Last Frontiers
 thumbnail: "/images/175vid.jpg"
 videoid: OyWb_LD2tM8
+description: "The Last Frontiers: an AI-generated animation by D. B. Waldtier. The Last Frontiers."
+image: https://assets.waldtier.com/images/175vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

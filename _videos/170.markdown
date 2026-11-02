@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Runner
 thumbnail: "/images/170vid.jpg"
 videoid: 4mu9M1Dhd-E
+description: "The Runner: an AI-generated animation by D. B. Waldtier. The Runner."
+image: https://assets.waldtier.com/images/170vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

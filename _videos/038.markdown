@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Surreal Aliens
 thumbnail: "/images/038vid.jpg"
 videoid: aOpSC_FNJNM
+description: "Surreal Aliens: an AI-generated animation by D. B. Waldtier. Surreal Aliens."
+image: https://assets.waldtier.com/images/038vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

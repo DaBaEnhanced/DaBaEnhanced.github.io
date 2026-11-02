@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Late Conan
 thumbnail: "/images/176vid.jpg"
 videoid: cQeu0PvzQhk
+description: "The Late Conan: an AI-generated animation by D. B. Waldtier. The Late Conan."
+image: https://assets.waldtier.com/images/176vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

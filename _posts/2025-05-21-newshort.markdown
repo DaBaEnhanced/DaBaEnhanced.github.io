@@ -2,8 +2,9 @@
 layout: post
 title: "New short story"
 date: 2025-05-21 23:53:47 +0200
-categories: jekyll update
 excerpt: 035 - Falling Star
+slug: short-story-35
+redirect_from: /jekyll/update/2025/05/21/newshort.html
 ---
 
 I've added a new short story to the [short]({% link short.markdown %}) section.<br>

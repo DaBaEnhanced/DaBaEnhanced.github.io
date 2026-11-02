@@ -6,6 +6,8 @@ categories: jekyll update
 summary: After The Bomb
 thumbnail: "/images/005vid.jpg"
 videoid: tzcPGY_ltVQ
+description: "After The Bomb: an AI-generated animation by D. B. Waldtier. After The Bomb."
+image: https://assets.waldtier.com/images/005vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

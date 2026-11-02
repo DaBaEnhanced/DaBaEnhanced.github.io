@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Flight of the Navigator
 thumbnail: "/images/160vid.jpg"
 videoid: nb6z7CrOyXw
+description: "Flight of the Navigator: an AI-generated animation by D. B. Waldtier. Flight of the Navigator."
+image: https://assets.waldtier.com/images/160vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

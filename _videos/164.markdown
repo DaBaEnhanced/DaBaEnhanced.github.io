@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Fallout
 thumbnail: "/images/164vid.jpg"
 videoid: Q5ohHbJOmaw
+description: "Fallout: an AI-generated animation by D. B. Waldtier. Fallout."
+image: https://assets.waldtier.com/images/164vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

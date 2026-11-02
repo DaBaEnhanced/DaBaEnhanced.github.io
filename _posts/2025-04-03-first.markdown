@@ -2,8 +2,9 @@
 layout: post
 title: "First!"
 date: 2025-04-03 23:53:47 +0200
-categories: jekyll update
 excerpt: well, the first post...
+slug: first-post
+redirect_from: /jekyll/update/2025/04/03/first.html
 ---
 
 ### FIRST POST!

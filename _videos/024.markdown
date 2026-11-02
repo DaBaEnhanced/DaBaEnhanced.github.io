@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Wood Elves
 thumbnail: "/images/024vid.jpg"
 videoid: fcaXLqBIZsg
+description: "Wood Elves: an AI-generated animation by D. B. Waldtier. Wood Elves."
+image: https://assets.waldtier.com/images/024vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: 1980s SpaceX
 thumbnail: "/images/184vid.jpg"
 videoid: jtwykxnlYkk
+description: "1980s SpaceX: an AI-generated animation by D. B. Waldtier. 1980s SpaceX."
+image: https://assets.waldtier.com/images/184vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

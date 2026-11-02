@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Dog Land
 thumbnail: "/images/213vid.jpg"
 videoid: qey2rkCvD9c
+description: "Dog Land: an AI-generated animation by D. B. Waldtier. Dog Land."
+image: https://assets.waldtier.com/images/213vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A depiction
 thumbnail: "/images/196vid.jpg"
 videoid: TMLvdbA7a10
+description: "The 7 Deadly Sins: Wrath: an AI-generated animation by D. B. Waldtier. A depiction."
+image: https://assets.waldtier.com/images/196vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

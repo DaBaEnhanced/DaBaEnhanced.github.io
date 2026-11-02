@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Last Days
 thumbnail: "/images/030vid.jpg"
 videoid: mhtzqWPINEo
+description: "The Last Days: an AI-generated animation by D. B. Waldtier. The Last Days."
+image: https://assets.waldtier.com/images/030vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

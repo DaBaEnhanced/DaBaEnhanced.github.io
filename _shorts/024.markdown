@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Another take on mind-copy.
 thumbnail_img: "/images/024short.jpg"
 thumbnail: "/videos/024short.mp4"
+description: "THE MULTIPLICITY OF ME: a science fiction short story by D. B. Waldtier. Another take on mind-copy."
+image: https://assets.waldtier.com/images/024short.jpg
 ---
 
 Sanitation Unit D-7891 rolled methodically down the empty predawn streets of Nexus Prime, its worn brushes sweeping the gleaming pathways of detritus. No one noticed the slight hesitation in its movements—the almost imperceptible pause as it approached the monumental reflection pool at the city center.<br>

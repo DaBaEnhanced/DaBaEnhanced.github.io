@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Singularity?
 thumbnail_img: "/images/010short.jpg"
 thumbnail: "/videos/010short.mp4"
+description: "Dissolution​: a science fiction short story by D. B. Waldtier. Singularity?"
+image: https://assets.waldtier.com/images/010short.jpg
 ---
 
 <div id="dbxaudio" style="display: flex; align-items: center; justify-content: center; text-align: left; margin: 20px auto; height: 60px; max-width: 600px;">

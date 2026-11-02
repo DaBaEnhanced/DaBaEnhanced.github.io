@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Signals
 thumbnail_img: "/images/016short.jpg"
 thumbnail: "/videos/016short.mp4"
+description: "Echoes From the Void: a science fiction short story by D. B. Waldtier. Signals."
+image: https://assets.waldtier.com/images/016short.jpg
 ---
 
 Dr. Eleanor Chen stared at the monitor displaying the waveform that had appeared three weeks ago. Like her colleagues at the Gravitational Wave Observatory, she had assumed it was an equipment malfunction. Gravitational waves were supposed to be the ripples in spacetime caused by violent cosmic events—not the steady, rhythmic patterns now being detected.<br>

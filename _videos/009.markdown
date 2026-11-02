@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Scenery from the civil war
 thumbnail: "/images/009vid.jpg"
 videoid: OUiCQREpNPc
+description: "Old War: an AI-generated animation by D. B. Waldtier. Scenery from the civil war."
+image: https://assets.waldtier.com/images/009vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Watching the world burn
 thumbnail: "/images/111vid.jpg"
 videoid: Tzph22YIyhI
+description: "Watching the world burn: an AI-generated animation by D. B. Waldtier. Watching the world burn."
+image: https://assets.waldtier.com/images/111vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Eagle's Flight
 thumbnail: "/images/125vid.jpg"
 videoid: uLeWgnVVmEI
+description: "The Eagle's Flight: an AI-generated animation by D. B. Waldtier. The Eagle's Flight."
+image: https://assets.waldtier.com/images/125vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

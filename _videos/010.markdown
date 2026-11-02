@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Spacemen in space suit trippin in space
 thumbnail: "/images/010vid.jpg"
 videoid: XoIY1wsGGM4
+description: "Cosmonauts: an AI-generated animation by D. B. Waldtier. Spacemen in space suit trippin in space."
+image: https://assets.waldtier.com/images/010vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -2,9 +2,12 @@
 layout: post
 title: "The Mysterious Island: Castaways released!"
 date: 2026-10-10 23:53:47 +0200
-categories: jekyll update
 excerpt: The Mysterious Island - Castaways + Manual
 thumbnail: /games/mysteriousisland/the_mysterious_island_castaways.jpg
+slug: mysterious-island-castaways-released
+description: "The Mysterious Island: Castaways, a free isometric survival colony game after Jules Verne, playable in your browser, with a full manual."
+image: https://assets.waldtier.com/games/mysteriousisland/the_mysterious_island_castaways.jpg
+redirect_from: /jekyll/update/2026/10/10/newstuff9.html
 ---
 
 My second game, The Mysterious Island: Castaways, has been released! It is a full game, playable in your browser, with a nice manual.

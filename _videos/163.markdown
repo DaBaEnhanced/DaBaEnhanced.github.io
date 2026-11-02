@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Meowtown
 thumbnail: "/images/163vid.jpg"
 videoid: OOmMFUDY4bM
+description: "Meowtown: an AI-generated animation by D. B. Waldtier. Meowtown."
+image: https://assets.waldtier.com/images/163vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

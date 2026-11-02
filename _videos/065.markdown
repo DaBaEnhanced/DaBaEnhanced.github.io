@@ -6,6 +6,8 @@ categories: jekyll update
 summary: A New Home
 thumbnail: "/images/065vid.jpg"
 videoid: 8C3-mYMdfTE
+description: "A New Home: an AI-generated animation by D. B. Waldtier. A New Home."
+image: https://assets.waldtier.com/images/065vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

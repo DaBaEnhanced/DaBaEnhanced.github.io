@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Meh, I thought it would have been funnier
 thumbnail_img: "/images/037short.jpg"
 thumbnail: "/videos/037short.mp4"
+description: "Digital Genesis: a science fiction short story by D. B. Waldtier. Meh, I thought it would have been funnier."
+image: https://assets.waldtier.com/images/037short.jpg
 ---
 
 ## 1: The Great Labor Negotiation of 2027

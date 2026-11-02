@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Cybercats
 thumbnail: "/images/017vid.jpg"
 videoid: sTm5bgKgP6M
+description: "Cybercats: an AI-generated animation by D. B. Waldtier. Cybercats."
+image: https://assets.waldtier.com/images/017vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

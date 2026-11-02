@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Easter
 thumbnail: "/images/089vid.jpg"
 videoid: 4t1Xx352yHM
+description: "Easter: an AI-generated animation by D. B. Waldtier. Easter."
+image: https://assets.waldtier.com/images/089vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

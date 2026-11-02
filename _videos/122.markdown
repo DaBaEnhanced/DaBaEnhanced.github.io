@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Doggy Space Force
 thumbnail: "/images/122vid.jpg"
 videoid: fbHma2nHwRM
+description: "Doggy Space Force: an AI-generated animation by D. B. Waldtier. Doggy Space Force."
+image: https://assets.waldtier.com/images/122vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

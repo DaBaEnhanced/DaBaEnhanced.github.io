@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Wonderland
 thumbnail: "/images/074vid.jpg"
 videoid: EIG6l85b8Jw
+description: "Wonderland: an AI-generated animation by D. B. Waldtier. Wonderland."
+image: https://assets.waldtier.com/images/074vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

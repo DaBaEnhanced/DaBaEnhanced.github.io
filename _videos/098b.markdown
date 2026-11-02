@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Ninth Gate
 thumbnail: "/images/098Bvid.jpg"
 videoid: 0xuQWPxZ5Nk
+description: "The Ninth Gate: an AI-generated animation by D. B. Waldtier. The Ninth Gate."
+image: https://assets.waldtier.com/images/098Bvid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

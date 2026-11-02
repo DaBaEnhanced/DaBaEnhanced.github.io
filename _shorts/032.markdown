@@ -6,6 +6,8 @@ categories: jekyll update
 summary: too good to be true
 thumbnail_img: "/images/032short.jpg"
 thumbnail: "/videos/032short.mp4"
+description: "The Long Thaw: a science fiction short story by D. B. Waldtier. Too good to be true."
+image: https://assets.waldtier.com/images/032short.jpg
 ---
 
 When Ellis opened his eyes, the first thing he noticed was the absence of pain. His joints, chronically inflamed for the last decade of his previous life, moved with fluid ease. The cancer that had forced his desperate gamble on experimental cryonics was nowhere to be felt in his body.<br>

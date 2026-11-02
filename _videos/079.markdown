@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Drought
 thumbnail: "/images/079vid.jpg"
 videoid: MxCGoRLoKHM
+description: "The Drought: an AI-generated animation by D. B. Waldtier. The Drought."
+image: https://assets.waldtier.com/images/079vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Babilonia
 thumbnail: "/images/075vid.jpg"
 videoid: fKNEPr2ZVCo
+description: "Babilonia: an AI-generated animation by D. B. Waldtier. Babilonia."
+image: https://assets.waldtier.com/images/075vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Alien Abduction in Wonderland
 thumbnail: "/images/155vid.jpg"
 videoid: QnfDzJkXo2Y
+description: "Alien Abduction in Wonderland: an AI-generated animation by D. B. Waldtier. Alien Abduction in Wonderland."
+image: https://assets.waldtier.com/images/155vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Empire Of The Suns
 thumbnail: "/images/069vid.jpg"
 videoid: qEi8wbtwIyk
+description: "Empire Of The Suns: an AI-generated animation by D. B. Waldtier. Empire Of The Suns."
+image: https://assets.waldtier.com/images/069vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

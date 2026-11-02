@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Roma Invicta
 thumbnail: "/images/057vid.jpg"
 videoid: j0SyjurDTmY
+description: "Roma Invicta: an AI-generated animation by D. B. Waldtier. Roma Invicta."
+image: https://assets.waldtier.com/images/057vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

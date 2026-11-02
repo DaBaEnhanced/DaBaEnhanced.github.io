@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Catdroid
 thumbnail: "/images/056vid.jpg"
 videoid: NxoaONcTkO4
+description: "Catdroid: an AI-generated animation by D. B. Waldtier. Catdroid."
+image: https://assets.waldtier.com/images/056vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

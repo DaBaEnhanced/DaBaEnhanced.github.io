@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Steel Dragons
 thumbnail: "/images/050vid.jpg"
 videoid: UUSgFxKNGrE
+description: "Steel Dragons: an AI-generated animation by D. B. Waldtier. Steel Dragons."
+image: https://assets.waldtier.com/images/050vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

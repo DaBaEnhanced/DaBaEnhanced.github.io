@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Driving in Night City
 thumbnail: "/images/011vid.jpg"
 videoid: POttxPp3CVw
+description: "Driving in Night City: an AI-generated animation by D. B. Waldtier. Driving in Night City."
+image: https://assets.waldtier.com/images/011vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: The Wizard's Tower
 thumbnail: "/images/126vid.jpg"
 videoid: geBtv1C1850
+description: "The Wizard's Tower: an AI-generated animation by D. B. Waldtier. The Wizard's Tower."
+image: https://assets.waldtier.com/images/126vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

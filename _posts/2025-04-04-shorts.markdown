@@ -2,8 +2,9 @@
 layout: post
 title: "About the short stories!"
 date: 2025-04-04 23:53:47 +0200
-categories: jekyll update
 excerpt: Somebody told me Claude 3.7 was really good at writing fiction,so, naturally, I had to try.
+slug: about-the-short-stories
+redirect_from: /jekyll/update/2025/04/04/shorts.html
 ---
 
 Somebody, somewhere, told me Claude 3.7 was really good at writing fiction, so, naturally, I had to give it a try.

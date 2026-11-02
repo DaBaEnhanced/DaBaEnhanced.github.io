@@ -6,6 +6,8 @@ categories: jekyll update
 summary: Hyperion
 thumbnail: "/images/173vid.jpg"
 videoid: 6q4owQc8UoQ
+description: "Hyperion: an AI-generated animation by D. B. Waldtier. Hyperion."
+image: https://assets.waldtier.com/images/173vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">

@@ -6,6 +6,8 @@ categories: jekyll update
 summary: They Live
 thumbnail: "/images/087vid.jpg"
 videoid: 0rB6jjtsHvg
+description: "They Live: an AI-generated animation by D. B. Waldtier. They Live."
+image: https://assets.waldtier.com/images/087vid.jpg
 ---
 
 <div style="text-align: center; margin-top: 20px;">
