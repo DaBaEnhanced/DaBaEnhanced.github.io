@@ -3,7 +3,7 @@ layout: page
 title: "Games"
 permalink: /games
 description: "Free browser games: original indie titles like Project Megapop, Vertebra and AFTERGLOW, plus Amiga classics like Saint Dragon and Alien Breed 3D."
-image: https://assets.waldtier.com/images/games_banner.jpg
+image: https://assets.waldtier.com/images/new_banner.jpg
 ---
 
 Here are the games I've been developing lately (well, mostly vibecoding), starting with my original projects (check [**PROJECT MEGAPOP**](#megapop)) and followed by [browser ports of old Amiga games](#browser-ports).
@@ -46,6 +46,10 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
 		margin: 1.5rem 0 2rem;
 		overflow: hidden;
+	}
+
+	.vault-hero {
+		margin: 1.5rem 0 2rem;
 	}
 
 	.games-banner img {
@@ -406,9 +410,7 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 	}
 </script>
 
-<div class="games-banner">
-	<img src="{{ site.cdn_url }}/images/games_banner.jpg" alt="D. B. Waldtier — game ports, books, and worlds" />
-</div>
+{% include vault-hero.html heading="p" %}
 
 ## Original games
 
