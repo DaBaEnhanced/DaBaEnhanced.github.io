@@ -41,6 +41,13 @@ defaults:
     values:
       permalink: /news/:title/
       author: D. B. Waldtier
+  # Video pages are just a YouTube embed + title: keep them out of Google's index
+  - scope:
+      path: ""
+      type: videos
+    values:
+      noindex: true
+      sitemap: false
 
 # Base for every asset (image/video/audio/zip/pdf/game bundle) referenced
 # across the site. Locally this stays "/assets" (served from this repo's

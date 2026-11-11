@@ -4,6 +4,7 @@ title: "Games"
 permalink: /games
 description: "Free browser games: original indie titles like Project Megapop, Vertebra and AFTERGLOW, plus Amiga classics like Saint Dragon and Alien Breed 3D."
 image: https://assets.waldtier.com/images/new_banner.jpg
+redirect_from: /Games.html
 ---
 
 Here are the games I've been developing lately (well, mostly vibecoding), starting with my original projects (check [**PROJECT MEGAPOP**](#megapop)) and followed by [browser ports of old Amiga games](#browser-ports).

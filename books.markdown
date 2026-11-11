@@ -4,6 +4,7 @@ title: "Books"
 permalink: /books
 description: "Hard science fiction novels by D. B. Waldtier: the Consent Engines series, the 13 Arks saga and standalone novels. Kindle, paperback and hardcover."
 image: /assets/aplus/CE1_header_970x600.jpg
+redirect_from: /Books.html
 ---
 
 This is a collection of the full-length books I have written. Some are published; others are still being finished or edited. They are written under the pseudonym D.B. Waldtier.
