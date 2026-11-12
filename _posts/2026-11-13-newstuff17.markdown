@@ -1,0 +1,39 @@
+---
+layout: post
+title: "Ark 02: The Losts released!"
+date: 2026-11-13 00:05:00 +0100
+excerpt: Ark 02 - The Losts - a turn-based squad survival game
+thumbnail: /images/thelosts.jpg
+slug: the-losts-released
+description: "Ark 02: The Losts, a turn-based squad survival game with RPG elements aboard a dying generation ship. Free demo in your browser, full game on itch.io."
+image: https://assets.waldtier.com/images/thelosts.jpg
+redirect_from: /jekyll/update/2026/11/13/newstuff17.html
+---
+{% assign tl_video = "W5TckWuOVMk" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+
+My seventh game, **Ark 02: The Losts**, is out! It is a turn-based squad survival game with RPG elements, played across isometric decks, and it is based on my Ark novels.
+
+Four colonists grown in pods and raised in a dream wake up for the first time inside Ark 02, a generation ship hollowed out of an asteroid that has drifted for a million years. Their only guide is **MEND**, a battered maintenance drone that speaks in a nursery voice. Nine thousand sleepers are still dreaming. Something in the walls is not.
+
+What's in it:
+- real-time exploration that turns into turn-based combat the moment something hostile shows up, with action points for every step, shot and door;
+- 29 creature types in five families, each hunting by its own sense: heat, noise, vibration, sight, rhythm or scent. And they learn: kill everything the same way and the next sector comes ready for it;
+- cover, flanking, shots from above, overwatch, harpoon pins, strobes, foam, nitrogen, fire, door crushes and braced doors;
+- bodies instead of hit points: wounds by body part, bleeding, broken limbs, infection, cold, hypoxia, stress and panic;
+- MEND, who crawls the ducts, scouts ahead, carries your spare gear and remembers how you treat it;
+- 28 sectors across four acts, two bases, crafting, a ship map, more sleepers to wake and three endings;
+- puzzles explained somewhere in the ark itself, in logs, terminals, graffiti and tactile glyphs;
+- an HD pack with dynamic lighting, an optional CRT filter, remappable keys and gamepad support.
+
+{% if tl_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ tl_video }}" title="Ark 02: The Losts trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% else %}
+<img src="{{ site.cdn_url }}/images/thelosts.jpg" alt="Ark 02: The Losts" style="width: 100%; height: auto;" />
+{% endif %}
+
+You can play the demo, the first three sectors of the ark, for free in your browser on [itch.io](https://waldtier.itch.io/the-losts) (Chrome or Edge on a desktop works best). The full game, for Windows and Linux, is on [itch.io](https://waldtier.itch.io/the-losts) for $4.99 and includes all 28 sectors, the HD pack, a 175-page hint book with the reconstructed history of Ark 02, and the original soundtrack. The 77-page [instruction manual]({{ site.cdn_url }}/games/thelosts/docs/The_Losts_Tactical_Edition_Manual.pdf) is free for everyone, and you can listen to the whole soundtrack in the GAMES section.
+
+Check the <a href="/games">GAMES section!</a>
+Bye!

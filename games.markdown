@@ -415,7 +415,41 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 ## Original games
 
-MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws). Or just grow a dragon's spine out of an empire's war machines and burn it all down in [**Vertebra**](#vertebra). And if you would rather race a stolen prototype through 1999 as imagined in 1986, with a girl living in the dashboard, that's [**AFTERGLOW**](#afterglow), my newest game!
+MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws). Or just grow a dragon's spine out of an empire's war machines and burn it all down in [**Vertebra**](#vertebra). And if you would rather race a stolen prototype through 1999 as imagined in 1986, with a girl living in the dashboard, that's [**AFTERGLOW**](#afterglow). And if you would rather lead four sleepers through a dying generation ship, one action point at a time, try my newest game, [**Ark 02: The Losts**](#ark-02-the-losts)!
+
+<article class="game-card" markdown="1">
+### Ark 02: The Losts
+{% assign tl_video = "W5TckWuOVMk" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+<img src="{{ site.cdn_url }}/images/thelosts.jpg" alt="Ark 02: The Losts title" style="object-position: center;" />
+
+My seventh original game, based on my Ark novels.
+**ARK 02: THE LOSTS** is a turn-based squad survival game with RPG elements, played across isometric decks. Four colonists grown in pods and raised in a dream wake up for the first time inside Ark 02, a generation ship hollowed out of an asteroid that has drifted for a million years. Their only guide is MEND, a battered maintenance drone with a nursery voice. Nine thousand sleepers are still dreaming. Something in the walls is not.
+You explore in real time; the moment something hostile shows up, the game goes turn-based and every step, shot and door costs action points. Every creature hunts by its own sense (heat, noise, vibration, sight, rhythm or scent), and they learn: kill everything the same way and the next sector comes ready for it. Cover, flanking, overwatch, harpoon pins, fire and door crushes; wounds by body part instead of hit points; 28 sectors across four acts, 29 creature types, crafting, a ship map and three endings.
+
+<div class="game-slideshow">
+	<a href="{{ site.cdn_url }}/images/TL/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/TL/1.jpg" alt="The Losts screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/TL/2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/TL/2.jpg" alt="The Losts screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/TL/3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/TL/3.jpg" alt="The Losts screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/TL/4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/TL/4.jpg" alt="The Losts screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/TL/5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/TL/5.jpg" alt="The Losts screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/TL/6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/TL/6.jpg" alt="The Losts screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+{% if tl_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ tl_video }}" title="Ark 02: The Losts trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+The demo (the first three sectors) is free in your browser on itch.io: Chrome or Edge on a desktop (WebGPU, with a WebGL 2 fallback). The full game, for Windows and Linux, is $4.99 on itch.io and includes all 28 sectors, the HD pack, a 175-page hint book and the soundtrack.
+
+<div class="game-actions">
+	<a class="game-button itch-button" href="https://waldtier.itch.io/the-losts" target="_blank" rel="noopener"><span class="game-button-icon" aria-hidden="true">&#9733;</span>Play the demo or get it on itch.io</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/thelosts/docs/The_Losts_Tactical_Edition_Manual.pdf"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Read the manual!</a>
+	<a class="game-button" href="#ark-02-the-losts" data-ost="thelosts"><span class="game-button-icon" aria-hidden="true">&#9835;</span>Listen to the soundtrack</a>
+</div>
+
+</article>
 
 <article class="game-card" markdown="1">
 ### MegaPop

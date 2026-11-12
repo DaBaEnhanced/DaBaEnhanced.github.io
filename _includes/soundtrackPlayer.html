@@ -71,6 +71,21 @@
 	.ost-modal[data-theme="vertebra"] .ost-list .n { color: #ff8a3a; }
 	.ost-modal[data-theme="vertebra"] .ost-list .t { color: #f2e6cc; }
 	.ost-pill[data-theme="vertebra"] { background: #1a0f10; color: #f2e6cc; border-color: #c7361c; box-shadow: 0 0 18px rgba(199, 54, 28, 0.4); }
+	.ost-modal[data-theme="thelosts"] { background: rgba(6, 2, 2, 0.84); }
+	.ost-modal[data-theme="thelosts"] .ost-box { background: radial-gradient(ellipse at 30% 0%, #2b0d0d 0%, #140808 55%, #0a0505 100%); color: #e8dcc4;
+		border: 1px solid #b0342a; border-radius: 6px; box-shadow: 0 0 0 1px #000, 0 0 44px rgba(176, 52, 42, 0.38); }
+	.ost-modal[data-theme="thelosts"] .ost-side { border-right-color: rgba(214, 164, 92, 0.22); }
+	.ost-modal[data-theme="thelosts"] .ost-head h3 { color: #f0d9a8; }
+	.ost-modal[data-theme="thelosts"] .ost-now span, .ost-modal[data-theme="thelosts"] .ost-head p, .ost-modal[data-theme="thelosts"] .ost-list .t small, .ost-modal[data-theme="thelosts"] .ost-vol { color: #a9927a; }
+	.ost-modal[data-theme="thelosts"] .ost-seek, .ost-modal[data-theme="thelosts"] .ost-list .d, .ost-modal[data-theme="thelosts"] .ost-list .n { color: #d6a45c; }
+	.ost-modal[data-theme="thelosts"] .ost-ctl button, .ost-modal[data-theme="thelosts"] .ost-x { border-color: rgba(214, 164, 92, 0.6); background: rgba(176, 52, 42, 0.12); color: #f4e8d0; box-shadow: 0 0 10px rgba(176, 52, 42, 0.3); }
+	.ost-modal[data-theme="thelosts"] .ost-ctl button:hover, .ost-modal[data-theme="thelosts"] .ost-x:hover { background: rgba(176, 52, 42, 0.35); }
+	.ost-modal[data-theme="thelosts"] .ost-ctl .ost-play { background: radial-gradient(circle at 40% 30%, #c23a2c, #6e1510); border-color: #d6a45c; }
+	.ost-modal[data-theme="thelosts"] input[type=range] { accent-color: #d6a45c; }
+	.ost-modal[data-theme="thelosts"] .ost-list li:hover { background: rgba(214, 164, 92, 0.07); }
+	.ost-modal[data-theme="thelosts"] .ost-list li.cur { background: rgba(176, 52, 42, 0.24); }
+	.ost-modal[data-theme="thelosts"] .ost-list .t { color: #f4e8d0; }
+	.ost-pill[data-theme="thelosts"] { background: #160909; color: #f4e8d0; border-color: #b0342a; box-shadow: 0 0 18px rgba(176, 52, 42, 0.4); }
 	@media (max-width: 699px) {
 		.ost-box { grid-template-columns: 1fr; overflow-y: auto; }
 		.ost-side { border-right: 0; border-bottom: 1px solid rgba(255, 79, 163, 0.25); }
@@ -105,6 +120,29 @@
 
 <script>
 window.OST = Object.assign(window.OST || {}, {
+	thelosts: {
+		title: "ARK 02: THE LOSTS · Original Soundtrack",
+		sub: "14 tracks · the music of the ark's decks, the dream village and the endings",
+		base: "{{ site.cdn_url }}/games/thelosts/soundtrack/",
+		cover: "cover.jpg",
+		artist: "D. B. Waldtier",
+		tracks: [
+			["Ark 02: The Losts", "Main title", "01-ark-02-the-losts-main-title.mp3", 80],
+			["Pod Bay", "Pod Bay sectors", "02-pod-bay.mp3", 80],
+			["The Core", "Core sectors", "03-the-core.mp3", 80],
+			["Vascular", "Vascular sectors", "04-vascular.mp3", 80],
+			["The Enclave", "The Enclave", "05-the-enclave.mp3", 80],
+			["The Breach", "The Breach", "06-the-breach.mp3", 80],
+			["Observation", "The observation dome", "07-observation.mp3", 80],
+			["The Village", "The dream village", "08-the-village.mp3", 80],
+			["Morning", "Story opening", "09-morning-story-opening.mp3", 90],
+			["Interlude", "Story interludes", "10-interlude-story.mp3", 90],
+			["Endings", "The three endings", "11-endings.mp3", 100],
+			["Trailer", "Trailer theme", "12-trailer.mp3", 100],
+			["Trailer II", "Trailer theme, second cut", "13-trailer2.mp3", 114],
+			["Combat", "Turn-based combat", "14-combat.mp3", 72]
+		]
+	},
 	afterglow: {
 		title: "AFTERGLOW · Original Soundtrack",
 		sub: "16 tracks · retrowave and late-80s club music from the game",
@@ -181,7 +219,7 @@ window.OST = Object.assign(window.OST || {}, {
 			album = a; idx = -1; modal.setAttribute("data-theme", id); pill.setAttribute("data-theme", id);
 			$("ost-title").textContent = a.title; $("ost-sub").textContent = a.sub || "";
 			$("ost-cover").src = a.base + a.cover; $("ost-cover").alt = a.title + " cover";
-			$("ost-dl").href = a.zip; $("ost-dl").innerHTML = "&#8681; Download the soundtrack" + (a.size ? " (" + a.size + ")" : "");
+			if (a.zip) { $("ost-dl").style.display = ""; $("ost-dl").href = a.zip; $("ost-dl").innerHTML = "&#8681; Download the soundtrack" + (a.size ? " (" + a.size + ")" : ""); } else { $("ost-dl").style.display = "none"; $("ost-dl").removeAttribute("href"); }
 			list.innerHTML = "";
 			a.tracks.forEach(function (t, i) {
 				var li = document.createElement("li");
