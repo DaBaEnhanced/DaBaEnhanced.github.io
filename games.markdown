@@ -2,7 +2,7 @@
 layout: page
 title: "Games"
 permalink: /games
-description: "Free browser games: original indie titles like Project Megapop, Vertebra and AFTERGLOW, plus Amiga classics like Saint Dragon and Alien Breed 3D."
+description: "Free browser games: original indie titles like Project Megapop, Vertebra, AFTERGLOW and DEEPLINK, plus Amiga classics like Saint Dragon and Alien Breed 3D."
 image: https://assets.waldtier.com/images/new_banner.jpg
 redirect_from: /Games.html
 ---
@@ -415,7 +415,44 @@ Here are the games I've been developing lately (well, mostly vibecoding), starti
 
 ## Original games
 
-MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws). Or just grow a dragon's spine out of an empire's war machines and burn it all down in [**Vertebra**](#vertebra). And if you would rather race a stolen prototype through 1999 as imagined in 1986, with a girl living in the dashboard, that's [**AFTERGLOW**](#afterglow). And if you would rather lead four sleepers through a dying generation ship, one action point at a time, try my newest game, [**Ark 02: The Losts**](#ark-02-the-losts)!
+MegaPop allows you to guide a semi-autonomous civilization to a dangerous technological future. But what about shaping a planet and making it habitable? That's [**Living Worlds**](#living-worlds)! And if you would rather bend the physics than the planet, try [**The Wrong Laws**](#the-wrong-laws). Or just grow a dragon's spine out of an empire's war machines and burn it all down in [**Vertebra**](#vertebra). And if you would rather race a stolen prototype through 1999 as imagined in 1986, with a girl living in the dashboard, that's [**AFTERGLOW**](#afterglow). And if you would rather lead four sleepers through a dying generation ship, one action point at a time, try [**Ark 02: The Losts**](#ark-02-the-losts). And if you would rather dive into 1996 cyberspace at 150 BPM and flip between two worlds on the beat, that's my newest game, [**DEEPLINK**](#deeplink)!
+
+<article class="game-card" markdown="1">
+### DEEPLINK
+{% assign dl_video = "j2j1P_euyS8" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+<img src="{{ site.cdn_url }}/images/deeplink.jpg" alt="DEEPLINK title" style="object-position: center;" />
+
+My eighth original game, made for GitHub Game Off 2026: 1996, as imagined in 1996.
+**DEEPLINK** is a high-speed 3D flight shooter through cyberspace, driven by mid-90s trance and hard techno, with the story told in black-and-white comic pages. Theo Brandt, a broke arcade champion, becomes the test pilot of CEREBRA's neural VR rig. Every dive makes him more than human, and every dive makes coming back harder.
+The music is the level: every dive is one track, its tempo sets your speed, the drop is the breach and the second drop is the boss. Press SHIFT to flip between the A-side and the B-side of every layer, and the music flips with the world, from trance to hard techno and back. Nine layers of early-90s CGI, each with its own shadow B-side, bosses that only bleed when you match their colour, a weapon you power up with the enemy's own shots, 30 dives with 33 original tracks, neural mods that change your body and your comic pages, three endings, and Free Dive, Endless Deep, Time Attack and Custom Music (bring your own track).
+
+<div class="game-slideshow">
+	<a href="{{ site.cdn_url }}/images/DL/1.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/1.jpg" alt="DEEPLINK screenshot 1" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/DL/2.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/2.jpg" alt="DEEPLINK screenshot 2" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/DL/3.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/3.jpg" alt="DEEPLINK screenshot 3" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/DL/4.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/4.jpg" alt="DEEPLINK screenshot 4" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/DL/5.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/5.jpg" alt="DEEPLINK screenshot 5" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/DL/6.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/6.jpg" alt="DEEPLINK screenshot 6" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/DL/7.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/7.jpg" alt="DEEPLINK screenshot 7" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+	<a href="{{ site.cdn_url }}/images/DL/8.jpg" target="_blank" rel="noopener"><img src="{{ site.cdn_url }}/images/DL/8.jpg" alt="DEEPLINK screenshot 8" style="flex: 0 0 240px; width: 240px; height: 160px; object-fit: cover; object-position: center;" /></a>
+</div>
+
+{% if dl_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ dl_video }}" title="DEEPLINK trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+It runs in the browser on WebGPU: Chrome or Edge on a desktop recommended. Keyboard and mouse or gamepad, remappable keys, a one-key mode, and on-screen touch controls on phones and tablets.
+
+<div class="game-actions">
+	<a class="game-button itch-button" href="https://waldtier.itch.io/deeplink" target="_blank" rel="noopener"><span class="game-button-icon" aria-hidden="true">&#9733;</span>Play on itch.io</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/deeplink/index.html"><span class="game-button-icon" aria-hidden="true">&#9654;</span>Play in browser</a>
+	<a class="game-button" href="#deeplink" data-ost="deeplink"><span class="game-button-icon" aria-hidden="true">&#9835;</span>Listen to the soundtrack</a>
+	<a class="game-button" href="{{ site.cdn_url }}/games/deeplink_soundtrack.zip"><span class="game-button-icon" aria-hidden="true">&#8681;</span>Download the soundtrack</a>
+</div>
+
+</article>
 
 <article class="game-card" markdown="1">
 ### Ark 02: The Losts

@@ -1,0 +1,38 @@
+---
+layout: post
+title: "DEEPLINK released!"
+date: 2026-11-21 12:00:00 +0100
+excerpt: DEEPLINK - a cyberspace flight shooter driven by 90s trance and hard techno
+thumbnail: /images/deeplink.jpg
+slug: deeplink-released
+description: "DEEPLINK, a high-speed 3D flight shooter through 1996 cyberspace, driven by mid-90s trance and hard techno. Free in your browser and on itch.io, with a 33-track soundtrack."
+image: https://assets.waldtier.com/images/deeplink.jpg
+redirect_from: /jekyll/update/2026/11/21/newstuff18.html
+---
+{% assign dl_video = "j2j1P_euyS8" %}<!-- paste the YouTube video ID of the trailer between the quotes -->
+
+My eighth game, **DEEPLINK**, is out! I made it for GitHub Game Off 2026: a high-speed 3D flight shooter through cyberspace, 1996 as imagined in 1996, driven by mid-90s trance and hard techno.
+
+Theo Brandt, a broke arcade champion, becomes the test pilot of CEREBRA's neural VR rig. Every dive makes him more than human, and every dive makes coming back harder. The story is told in black-and-white comic pages between the dives.
+
+What's in it:
+- the music is the level: every dive is one track, its tempo sets your speed, the drop is the breach and the second drop is the boss;
+- SHIFT: every layer has a shadow B-side laid over the same corridor, and when you flip worlds the music flips with you, from trance to hard techno;
+- bosses that live in both worlds and only take damage when you match their colour, and a weapon that grows from the shots you absorb;
+- nine layers of early-90s CGI, from a wireframe grid city to a chrome sea, a burning archive, ray-marched fractals and the collapsing Core;
+- 30 dives with 33 original tracks, neural mods that change Theo's body and the comic pages, and three endings;
+- Free Dive, Remix, Endless Deep, Time Attack and Custom Music, where you load your own track and the game builds a dive from it;
+- keyboard and mouse, gamepad, one-key mode and touch controls, plus a CRT filter, of course.
+
+{% if dl_video != "" %}
+<div style="text-align: center; margin-top: 20px;">
+  <iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/{{ dl_video }}" title="DEEPLINK trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% else %}
+<img src="{{ site.cdn_url }}/images/deeplink.jpg" alt="DEEPLINK" style="width: 100%; height: auto;" />
+{% endif %}
+
+You can play it for free on [itch.io](https://waldtier.itch.io/deeplink) or [right here in your browser]({{ site.cdn_url }}/games/deeplink/index.html) (Chrome or Edge on a desktop, WebGPU). The whole 33-track soundtrack is in the GAMES section, where you can listen to it or [download it]({{ site.cdn_url }}/games/deeplink_soundtrack.zip).
+
+Check the <a href="/games">GAMES section!</a>
+Bye!

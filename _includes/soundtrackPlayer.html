@@ -86,6 +86,23 @@
 	.ost-modal[data-theme="thelosts"] .ost-list li.cur { background: rgba(176, 52, 42, 0.24); }
 	.ost-modal[data-theme="thelosts"] .ost-list .t { color: #f4e8d0; }
 	.ost-pill[data-theme="thelosts"] { background: #160909; color: #f4e8d0; border-color: #b0342a; box-shadow: 0 0 18px rgba(176, 52, 42, 0.4); }
+	.ost-modal[data-theme="deeplink"] { background: rgba(0, 4, 10, 0.86); }
+	.ost-modal[data-theme="deeplink"] .ost-box { background: radial-gradient(ellipse at 30% 0%, #06283a 0%, #031018 55%, #010508 100%); color: #cfefff;
+		border: 1px solid #40f0ff; border-radius: 4px; box-shadow: 0 0 0 1px #000, 0 0 44px rgba(64, 240, 255, 0.32); }
+	.ost-modal[data-theme="deeplink"] .ost-box::after { border-radius: 4px; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 3px); }
+	.ost-modal[data-theme="deeplink"] .ost-side { border-right-color: rgba(64, 240, 255, 0.22); }
+	.ost-modal[data-theme="deeplink"] .ost-head h3 { color: #8ff8ff; text-shadow: 0 0 12px rgba(64, 240, 255, 0.6); }
+	.ost-modal[data-theme="deeplink"] .ost-now span, .ost-modal[data-theme="deeplink"] .ost-head p, .ost-modal[data-theme="deeplink"] .ost-list .t small, .ost-modal[data-theme="deeplink"] .ost-vol { color: #6fa3b8; }
+	.ost-modal[data-theme="deeplink"] .ost-seek, .ost-modal[data-theme="deeplink"] .ost-list .d { color: #ff50c8; }
+	.ost-modal[data-theme="deeplink"] .ost-list .n { color: #40f0ff; }
+	.ost-modal[data-theme="deeplink"] .ost-ctl button, .ost-modal[data-theme="deeplink"] .ost-x { border-color: rgba(64, 240, 255, 0.6); background: rgba(64, 240, 255, 0.08); color: #dffcff; box-shadow: 0 0 10px rgba(64, 240, 255, 0.3); }
+	.ost-modal[data-theme="deeplink"] .ost-ctl button:hover, .ost-modal[data-theme="deeplink"] .ost-x:hover { background: rgba(64, 240, 255, 0.25); }
+	.ost-modal[data-theme="deeplink"] .ost-ctl .ost-play { background: radial-gradient(circle at 40% 30%, #3ad0e8, #06485a); border-color: #ff50c8; }
+	.ost-modal[data-theme="deeplink"] input[type=range] { accent-color: #ff50c8; }
+	.ost-modal[data-theme="deeplink"] .ost-list li:hover { background: rgba(64, 240, 255, 0.07); }
+	.ost-modal[data-theme="deeplink"] .ost-list li.cur { background: rgba(255, 80, 200, 0.18); }
+	.ost-modal[data-theme="deeplink"] .ost-list .t { color: #e8fdff; }
+	.ost-pill[data-theme="deeplink"] { background: #031018; color: #dffcff; border-color: #40f0ff; box-shadow: 0 0 18px rgba(64, 240, 255, 0.4); }
 	@media (max-width: 699px) {
 		.ost-box { grid-template-columns: 1fr; overflow-y: auto; }
 		.ost-side { border-right: 0; border-bottom: 1px solid rgba(255, 79, 163, 0.25); }
@@ -120,6 +137,50 @@
 
 <script>
 window.OST = Object.assign(window.OST || {}, {
+	deeplink: {
+		title: "DEEPLINK · Original Soundtrack",
+		sub: "33 tracks · mid-90s trance and hard techno, one track for every dive",
+		base: "{{ site.cdn_url }}/games/deeplink/soundtrack/",
+		cover: "cover.jpg",
+		zip: "{{ site.cdn_url }}/games/deeplink_soundtrack.zip",
+		size: "268 MB",
+		artist: "D. B. Waldtier",
+		tracks: [
+			["Deeplink", "Title theme · 138 BPM", "01-deeplink.mp3", 178],
+			["Calibration", "Story dive 0 · 136 BPM", "02-calibration.mp3", 264],
+			["Grid City", "Story dive 1 · 138 BPM", "03-grid-city.mp3", 232],
+			["Chrome Sea", "Story dive 2 · 140 BPM", "04-chrome-sea.mp3", 300],
+			["Firewall", "Story dive 3 · 142 BPM", "05-firewall.mp3", 271],
+			["The Archive", "Story dive 4 · 136 BPM", "06-the-archive.mp3", 216],
+			["Fractal Bloom", "Story dive 5 · 145 BPM", "07-fractal-bloom.mp3", 213],
+			["Juno's Garden", "Story dive 6 · 140 BPM", "08-junos-garden.mp3", 195],
+			["Black ICE", "Story dive 7 · 150 BPM", "09-black-ice.mp3", 223],
+			["The Core", "The Core, the final dive · 155 BPM", "10-the-core.mp3", 281],
+			["Lab Hum", "Lab / storyboards · 90 BPM", "11-lab-hum.mp3", 113],
+			["Come Back", "End credits · 132 BPM", "12-come-back.mp3", 150],
+			["Stress Test", "Layer 1 contract · CEREBRA job · 140 BPM", "13-stress-test.mp3", 252],
+			["Phone Phreak", "Layer 1 contract · Pike's hack · 137 BPM", "14-phone-phreak.mp3", 300],
+			["Ghost Packet", "Layer 1 contract · Signal · 132 BPM", "15-ghost-packet.mp3", 224],
+			["Market Run", "Layer 2 contract · CEREBRA job · 142 BPM", "16-market-run.mp3", 239],
+			["Dead Drop", "Layer 2 contract · Pike's hack · 138 BPM", "17-dead-drop.mp3", 253],
+			["Drowned Signal", "Layer 2 contract · Signal · 134 BPM", "18-drowned-signal.mp3", 300],
+			["Extraction", "Layer 3 contract · CEREBRA job · 144 BPM", "19-extraction.mp3", 294],
+			["Paper Trail", "Layer 3 contract · Pike's hack · 140 BPM", "20-paper-trail.mp3", 239],
+			["Burn Marks", "Layer 3 contract · Signal · 136 BPM", "21-burn-marks.mp3", 300],
+			["Clean Up", "Layer 4 contract · CEREBRA job · 138 BPM", "22-clean-up.mp3", 294],
+			["Ledger", "Layer 4 contract · Pike's hack · 140 BPM", "23-ledger.mp3", 246],
+			["Juno's Diary", "Layer 4 contract · Signal · 130 BPM", "24-junos-diary.mp3", 222],
+			["Probe", "Layer 5 contract · CEREBRA job · 146 BPM", "25-probe.mp3", 219],
+			["Mirror Site", "Layer 5 contract · Pike's hack · 145 BPM", "26-mirror-site.mp3", 257],
+			["Seedling", "Layer 5 contract · Signal · 140 BPM", "27-seedling.mp3", 248],
+			["Harvest", "Layer 6 contract · CEREBRA job · 142 BPM", "28-harvest.mp3", 220],
+			["Lifeline", "Layer 6 contract · Pike's hack · 144 BPM", "29-lifeline.mp3", 260],
+			["Her Memories", "Layer 6 contract · Signal · 138 BPM", "30-her-memories.mp3", 300],
+			["Live Fire", "Layer 7 contract · CEREBRA job · 152 BPM", "31-live-fire.mp3", 300],
+			["Backdoor", "Layer 7 contract · Pike's hack · 148 BPM", "32-backdoor.mp3", 257],
+			["The Way Out", "Layer 7 contract · Signal · 150 BPM", "33-the-way-out.mp3", 232]
+		]
+	},
 	thelosts: {
 		title: "ARK 02: THE LOSTS · Original Soundtrack",
 		sub: "14 tracks · the music of the ark's decks, the dream village and the endings",
